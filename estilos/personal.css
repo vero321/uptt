@@ -1,0 +1,120 @@
+ .cab
+{
+    background-color:#00005C;
+
+      
+}
+
+a.enlace-claro
+{
+	color: #fff;
+}
+
+a.enlace-oscuro
+{
+	color: black;
+}
+
+.pie 
+{
+	background: #00005C;
+	color:#fff;
+	padding-top:10px;
+	padding-bottom:10px;
+	margin-top:100px;
+	position:relative;
+	bottom:0;
+	width:100%;
+}
+
+
+body
+{
+
+	font-family: sans-serif;
+}
+
+
+.agr{
+	border-bottom: solid 3px grey;
+}
+.modal-body table {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.modal-body td,
+.modal-body th
+{
+	text-align: left;
+}
+
+.modal-body th,
+.modal-body td {
+    padding: 2px;
+}
+
+
+
+
+.buscar-titulo{
+	color: navy;
+	font-size: 1.1rem;
+	font-weight: bolder;
+}
+
+.buscar-item{
+
+	margin-bottom: 1.2em;
+	font-size: 15px;
+}
+
+.buscar-pclave{
+	font-style: italic;
+	color: #008000;
+}
+
+.modal-body{
+	font-size:14px;
+}
+.modal-body h2{
+	font-size: 18px;
+	text-align: center;
+	border-bottom: solid 2px #0033AA;
+	padding:15px;
+	border-top: solid 2px #0033AA;
+}
+
+.form-busqueda{
+
+	padding: 15px;
+}
+
+.separador
+{
+	margin-right: 20px;
+
+}
+
+.boton
+{
+	margin-top: 20px;
+	margin-right: 20px;
+	
+}
+
+.usuario
+{
+	color: #FFF;
+	text-decoration: underline;
+	text-transform: capitalize;
+
+}
+
+
+.icon
+{
+	color: black;
+	font-size:22px;
+}
+
