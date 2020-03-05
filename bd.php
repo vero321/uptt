@@ -179,3 +179,13 @@ function usuarios_datos($login=NULL)
     }
     return $salida;
 }
+
+function bd_usuarios_contar(){
+    return sql2value("SELECT COUNT(*) FROM Usuarios");
+}
+
+
+function bd_personas_contar($criterio='1')
+{
+
+}
