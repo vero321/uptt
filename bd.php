@@ -181,7 +181,15 @@ function usuarios_datos($login=NULL)
 }
 
 function bd_usuarios_contar(){
-    return sql2value("SELECT COUNT(*) FROM Usuarios");
+    return sql2value("SELECT COUNT(*) FROM usuarios");
+}
+
+function bd_sedes_contar(){
+    return sql2value("SELECT COUNT(*) FROM sedes");
+}
+
+function bd_carreras_contar(){
+    return sql2value("SELECT COUNT(*) FROM carreras");
 }
 
 
