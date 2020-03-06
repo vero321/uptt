@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost:3306
--- Tiempo de generación: 01-03-2020 a las 11:52:05
+-- Tiempo de generación: 05-03-2020 a las 22:15:13
 -- Versión del servidor: 10.1.26-MariaDB-0+deb9u1
 -- Versión de PHP: 7.0.27-0+deb9u1
 
@@ -23,233 +23,153 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `Carreras`
---
--- Creación: 01-03-2020 a las 14:51:04
--- Última actualización: 01-03-2020 a las 14:51:04
+-- Estructura de tabla para la tabla `carreras`
 --
 
-CREATE TABLE `Carreras` (
+CREATE TABLE `carreras` (
   `id` int(11) NOT NULL,
   `nombre_largo` varchar(255) COLLATE utf8mb4_spanish_ci NOT NULL,
   `nombre_corto` varchar(100) COLLATE utf8mb4_spanish_ci NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
 
---
--- RELACIONES PARA LA TABLA `Carreras`:
---
-
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `Dependencia`
---
--- Creación: 01-03-2020 a las 14:53:28
+-- Estructura de tabla para la tabla `dependencia`
 --
 
-CREATE TABLE `Dependencia` (
+CREATE TABLE `dependencia` (
   `id` int(11) NOT NULL,
   `nombre_largo` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
   `nombre_corto` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `id_sede` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
---
--- RELACIONES PARA LA TABLA `Dependencia`:
---   `id_sede`
---       `Sedes` -> `id`
---
-
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `Equipo_Trabajo`
---
--- Creación: 01-03-2020 a las 15:04:14
+-- Estructura de tabla para la tabla `equipo_trabajo`
 --
 
-CREATE TABLE `Equipo_Trabajo` (
+CREATE TABLE `equipo_trabajo` (
   `id` int(11) NOT NULL,
   `equipo` tinytext COLLATE utf8_unicode_ci NOT NULL,
   `rol` varchar(100) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
---
--- RELACIONES PARA LA TABLA `Equipo_Trabajo`:
---
-
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `Participantes`
---
--- Creación: 01-03-2020 a las 15:02:07
+-- Estructura de tabla para la tabla `participantes`
 --
 
-CREATE TABLE `Participantes` (
+CREATE TABLE `participantes` (
   `id` int(11) NOT NULL,
   `id_personas` int(11) NOT NULL,
   `id_etra` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
---
--- RELACIONES PARA LA TABLA `Participantes`:
---   `id_etra`
---       `Equipo_Trabajo` -> `id`
---   `id_personas`
---       `Personas` -> `id`
---
-
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `Personas`
---
--- Creación: 01-03-2020 a las 14:38:37
--- Última actualización: 01-03-2020 a las 14:38:37
+-- Estructura de tabla para la tabla `personas`
 --
 
-CREATE TABLE `Personas` (
+CREATE TABLE `personas` (
   `id` int(11) NOT NULL,
   `nombre` varchar(255) COLLATE utf8mb4_spanish_ci NOT NULL,
   `apellido` varchar(255) COLLATE utf8mb4_spanish_ci NOT NULL,
   `correo` varchar(100) COLLATE utf8mb4_spanish_ci NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
 
---
--- RELACIONES PARA LA TABLA `Personas`:
---
-
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `Propuestas`
---
--- Creación: 01-03-2020 a las 15:14:14
+-- Estructura de tabla para la tabla `propuestas`
 --
 
-CREATE TABLE `Propuestas` (
+CREATE TABLE `propuestas` (
   `id` int(11) NOT NULL,
   `status` enum('APROVADA','CORRECCIONES','DECLINADA','RECHAZADA') COLLATE utf8_unicode_ci NOT NULL,
   `id_etra` int(11) NOT NULL,
   `id_trab` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
---
--- RELACIONES PARA LA TABLA `Propuestas`:
---   `id_etra`
---       `Equipo_Trabajo` -> `id`
---   `id_trab`
---       `Trabajos` -> `id`
---
-
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `Roles`
---
--- Creación: 01-03-2020 a las 14:50:27
+-- Estructura de tabla para la tabla `roles`
 --
 
-CREATE TABLE `Roles` (
+CREATE TABLE `roles` (
   `id` int(11) NOT NULL,
   `rol` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `privilegios` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `nivel` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
---
--- RELACIONES PARA LA TABLA `Roles`:
---
-
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `Sedes`
---
--- Creación: 01-03-2020 a las 14:52:18
+-- Estructura de tabla para la tabla `sedes`
 --
 
-CREATE TABLE `Sedes` (
+CREATE TABLE `sedes` (
   `id` int(11) NOT NULL,
   `nombre_largo` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
   `nombre_corto` varchar(100) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- RELACIONES PARA LA TABLA `Sedes`:
+-- Volcado de datos para la tabla `sedes`
 --
+
+INSERT INTO `sedes` (`id`, `nombre_largo`, `nombre_corto`) VALUES
+(1, 'Universidad Politecnica Mario Briceño Iragorry Sede La Beatriz', 'Beatriz');
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `Sedes-Carreras`
---
--- Creación: 01-03-2020 a las 14:47:35
+-- Estructura de tabla para la tabla `sedes-carreras`
 --
 
-CREATE TABLE `Sedes-Carreras` (
+CREATE TABLE `sedes-carreras` (
   `id` int(11) NOT NULL,
   `id_sede` int(11) NOT NULL,
   `id_carrera` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
---
--- RELACIONES PARA LA TABLA `Sedes-Carreras`:
---   `id_carrera`
---       `Carreras` -> `id`
---   `id_sede`
---       `Sedes` -> `id`
---
-
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `Tipo`
---
--- Creación: 01-03-2020 a las 15:37:51
+-- Estructura de tabla para la tabla `tipo`
 --
 
-CREATE TABLE `Tipo` (
+CREATE TABLE `tipo` (
   `id` int(11) NOT NULL,
   `nombre` varchar(50) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `id_rol` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
 
---
--- RELACIONES PARA LA TABLA `Tipo`:
---   `id_rol`
---       `Roles` -> `id`
---
-
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `Tipo_Documento`
---
--- Creación: 01-03-2020 a las 15:06:36
+-- Estructura de tabla para la tabla `tipo_documento`
 --
 
-CREATE TABLE `Tipo_Documento` (
+CREATE TABLE `tipo_documento` (
   `id` int(11) NOT NULL,
   `nombre` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `nivel` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
---
--- RELACIONES PARA LA TABLA `Tipo_Documento`:
---
-
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `Trabajos`
---
--- Creación: 01-03-2020 a las 15:00:49
--- Última actualización: 01-03-2020 a las 15:00:49
+-- Estructura de tabla para la tabla `trabajos`
 --
 
-CREATE TABLE `Trabajos` (
+CREATE TABLE `trabajos` (
   `id` int(11) NOT NULL,
   `descripcion` text COLLATE utf8mb4_spanish_ci NOT NULL,
   `f_mes` enum('SIN MES','ENERO','FEBRERO','MARZO','ABRIL','MAYO','JUNIO','JULIO','AGOSTO','SEPTIEMBRE','OCTUBRE','NOVIEMBRE','DICIEMBRE') COLLATE utf8mb4_spanish_ci NOT NULL,
@@ -262,47 +182,25 @@ CREATE TABLE `Trabajos` (
   `id_trayecto` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
 
---
--- RELACIONES PARA LA TABLA `Trabajos`:
---   `id_etra`
---       `Equipo_Trabajo` -> `id`
---   `id_tdoc`
---       `Tipo_Documento` -> `id`
---   `id_trayecto`
---       `Trayecto` -> `id`
---
-
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `Trayecto`
---
--- Creación: 01-03-2020 a las 15:11:42
+-- Estructura de tabla para la tabla `trayecto`
 --
 
-CREATE TABLE `Trayecto` (
+CREATE TABLE `trayecto` (
   `id` int(11) NOT NULL,
   `trayecto` enum('TRAYECTO I','TRAYECTO II','TRAYECTO III','TRAYECTO IV') COLLATE utf8_unicode_ci NOT NULL,
   `id_carrera` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
---
--- RELACIONES PARA LA TABLA `Trayecto`:
---   `id_carrera`
---       `Carreras` -> `id`
---
-
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `Usuarios`
---
--- Creación: 01-03-2020 a las 14:43:44
--- Última actualización: 01-03-2020 a las 14:43:44
--- Última revisión: 01-03-2020 a las 14:43:44
+-- Estructura de tabla para la tabla `usuarios`
 --
 
-CREATE TABLE `Usuarios` (
+CREATE TABLE `usuarios` (
   `id` varchar(100) COLLATE utf8mb4_spanish_ci NOT NULL,
   `clave` varchar(100) COLLATE utf8mb4_spanish_ci NOT NULL,
   `clave_temp` varchar(255) COLLATE utf8mb4_spanish_ci NOT NULL,
@@ -312,23 +210,13 @@ CREATE TABLE `Usuarios` (
   `id_rol` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
 
---
--- RELACIONES PARA LA TABLA `Usuarios`:
---   `id_rol`
---       `Roles` -> `id`
---   `id_tipo`
---       `Tipo` -> `id`
---
-
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `Usuarios-Tipos`
---
--- Creación: 01-03-2020 a las 14:46:29
+-- Estructura de tabla para la tabla `usuarios-tipos`
 --
 
-CREATE TABLE `Usuarios-Tipos` (
+CREATE TABLE `usuarios-tipos` (
   `id_usuario` int(11) NOT NULL,
   `id_rol` int(11) NOT NULL,
   `id_tipo` int(11) NOT NULL,
@@ -336,91 +224,79 @@ CREATE TABLE `Usuarios-Tipos` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- RELACIONES PARA LA TABLA `Usuarios-Tipos`:
---   `id_rol`
---       `Roles` -> `id`
---   `id_sede`
---       `Sedes` -> `id`
---   `id_tipo`
---       `Tipo` -> `id`
---   `id_usuario`
---       `Usuarios` -> `id`
---
-
---
 -- Índices para tablas volcadas
 --
 
 --
--- Indices de la tabla `Carreras`
+-- Indices de la tabla `carreras`
 --
-ALTER TABLE `Carreras`
+ALTER TABLE `carreras`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indices de la tabla `Dependencia`
+-- Indices de la tabla `dependencia`
 --
-ALTER TABLE `Dependencia`
+ALTER TABLE `dependencia`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indices de la tabla `Equipo_Trabajo`
+-- Indices de la tabla `equipo_trabajo`
 --
-ALTER TABLE `Equipo_Trabajo`
+ALTER TABLE `equipo_trabajo`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indices de la tabla `Personas`
+-- Indices de la tabla `personas`
 --
-ALTER TABLE `Personas`
+ALTER TABLE `personas`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indices de la tabla `Roles`
+-- Indices de la tabla `roles`
 --
-ALTER TABLE `Roles`
+ALTER TABLE `roles`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indices de la tabla `Sedes`
+-- Indices de la tabla `sedes`
 --
-ALTER TABLE `Sedes`
+ALTER TABLE `sedes`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indices de la tabla `Sedes-Carreras`
+-- Indices de la tabla `sedes-carreras`
 --
-ALTER TABLE `Sedes-Carreras`
+ALTER TABLE `sedes-carreras`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indices de la tabla `Tipo`
+-- Indices de la tabla `tipo`
 --
-ALTER TABLE `Tipo`
+ALTER TABLE `tipo`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indices de la tabla `Tipo_Documento`
+-- Indices de la tabla `tipo_documento`
 --
-ALTER TABLE `Tipo_Documento`
+ALTER TABLE `tipo_documento`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indices de la tabla `Trabajos`
+-- Indices de la tabla `trabajos`
 --
-ALTER TABLE `Trabajos`
+ALTER TABLE `trabajos`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indices de la tabla `Trayecto`
+-- Indices de la tabla `trayecto`
 --
-ALTER TABLE `Trayecto`
+ALTER TABLE `trayecto`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indices de la tabla `Usuarios`
+-- Indices de la tabla `usuarios`
 --
-ALTER TABLE `Usuarios`
+ALTER TABLE `usuarios`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -428,59 +304,59 @@ ALTER TABLE `Usuarios`
 --
 
 --
--- AUTO_INCREMENT de la tabla `Carreras`
+-- AUTO_INCREMENT de la tabla `carreras`
 --
-ALTER TABLE `Carreras`
+ALTER TABLE `carreras`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
--- AUTO_INCREMENT de la tabla `Dependencia`
+-- AUTO_INCREMENT de la tabla `dependencia`
 --
-ALTER TABLE `Dependencia`
+ALTER TABLE `dependencia`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
--- AUTO_INCREMENT de la tabla `Equipo_Trabajo`
+-- AUTO_INCREMENT de la tabla `equipo_trabajo`
 --
-ALTER TABLE `Equipo_Trabajo`
+ALTER TABLE `equipo_trabajo`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
--- AUTO_INCREMENT de la tabla `Personas`
+-- AUTO_INCREMENT de la tabla `personas`
 --
-ALTER TABLE `Personas`
+ALTER TABLE `personas`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
--- AUTO_INCREMENT de la tabla `Roles`
+-- AUTO_INCREMENT de la tabla `roles`
 --
-ALTER TABLE `Roles`
+ALTER TABLE `roles`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
--- AUTO_INCREMENT de la tabla `Sedes`
+-- AUTO_INCREMENT de la tabla `sedes`
 --
-ALTER TABLE `Sedes`
+ALTER TABLE `sedes`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT de la tabla `sedes-carreras`
+--
+ALTER TABLE `sedes-carreras`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
--- AUTO_INCREMENT de la tabla `Sedes-Carreras`
+-- AUTO_INCREMENT de la tabla `tipo`
 --
-ALTER TABLE `Sedes-Carreras`
+ALTER TABLE `tipo`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
--- AUTO_INCREMENT de la tabla `Tipo`
+-- AUTO_INCREMENT de la tabla `tipo_documento`
 --
-ALTER TABLE `Tipo`
+ALTER TABLE `tipo_documento`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
--- AUTO_INCREMENT de la tabla `Tipo_Documento`
+-- AUTO_INCREMENT de la tabla `trabajos`
 --
-ALTER TABLE `Tipo_Documento`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT de la tabla `Trabajos`
---
-ALTER TABLE `Trabajos`
+ALTER TABLE `trabajos`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
--- AUTO_INCREMENT de la tabla `Trayecto`
+-- AUTO_INCREMENT de la tabla `trayecto`
 --
-ALTER TABLE `Trayecto`
+ALTER TABLE `trayecto`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
