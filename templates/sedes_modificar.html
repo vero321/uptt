@@ -1,0 +1,55 @@
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+    	<h2>Modificar Sede o Dependencia</h2>
+      	<form 
+    	action="proc_modificar_sede.php" 
+    	method="POST" 
+    	class="px-4 py-3" 
+    	id="sedes_modificar"
+    	name="sedes_modificar">
+      <input type="hidden" name="id" value="{$d.id}">
+     	<div class="form-group">
+      	<div class="form-group">
+          <label for="nombre_largo">Nombre Completo</label>
+          <input 
+            type="text" 
+            title="Escriba el Nombre Completo" 
+            required="required" 
+            class="form-control" 
+            id="nombre_largo" 
+            name="nombre_largo"
+            placeholder="Jhon Doe"
+            value="Nombre Completo">
+        </div> 
+
+        <div class="form-group">
+          <label for="nombre_corto">Nombre Abreviado</label>
+          <input 
+            type="text" 
+            title="Escriba el nombre Abreviado" 
+            required="required" 
+            class="form-control" 
+            id="nombre_corto" 
+            name="nombre_corto"
+            placeholder="Jhon Doe"
+            value="Nombre Abreviado">
+        </div> 
+
+
+    	<div class="form-group">
+			<input 
+				class="btn-enviar boton" 
+				type="submit" 
+				name="enviar" 
+				value="Modificar">
+    	</div>
+
+    </form>
+    </div>
+    
+  </div>
+</div>
+
+
