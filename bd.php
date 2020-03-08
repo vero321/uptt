@@ -197,3 +197,71 @@ function bd_personas_contar($criterio='1')
 {
 
 }
+
+
+
+function bd_usuarios_datos($login=NULL)
+{
+    if ($login!=NULL) {
+        $sql="
+            SELECT *
+            FROM usuarios
+            WHERE id LIKE '{$login}'";
+        $salida = sql2row($sql);
+    } else {
+        $sql="
+            SELECT *
+            FROM usuarios
+            ";
+        $salida = sql2array($sql);
+    }
+    return $salida;
+}
+
+
+function paginar($totalpaginas,$rango,$pagina_actual=1)
+    {
+        $i       = 0;
+        $rgo     = $rango;
+        $paginas = array();
+
+        do{
+            $paginas[] = $i;
+            $i+=$rgo;
+        }while ( $i < $totalpaginas);
+
+        return $paginas;
+    }
+
+
+function bd_usuarios_datos2($inicio, $cantidad, $orden='id')
+{
+return sql2array("SELECT * FROM usuarios
+    ORDER BY $orden ASC
+    LIMIT $inicio,$cantidad
+    ");
+}
+
+function bd_usuarios_datos3($campos, $palabras,$cantidad){
+$miscampos = explode(',', $campos);
+foreach ($miscampos as $key => $value)
+{
+    $miscampos[$key] .= " LIKE '%{$palabras}%'";
+}
+
+$condicion = implode(' OR ', $miscampos);
+return sql2array("SELECT * FROM personas
+    WHERE $condicion
+        LIMIT $cantidad
+    ");
+}
+
+function bd_usuarios_eliminar($d)
+{
+    $sql = "
+        DELETE FROM usuarios
+        WHERE id = '{$d['id']}'
+        ";
+    sql($sql);
+    return $d['id'];
+}

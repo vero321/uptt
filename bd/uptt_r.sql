@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost:3306
--- Tiempo de generación: 05-03-2020 a las 22:15:13
--- Versión del servidor: 10.1.26-MariaDB-0+deb9u1
--- Versión de PHP: 7.0.27-0+deb9u1
+-- Tiempo de generación: 07-03-2020 a las 22:41:01
+-- Versión del servidor: 10.1.44-MariaDB-0+deb9u1
+-- Versión de PHP: 7.0.33-0+deb9u6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -45,6 +45,14 @@ CREATE TABLE `dependencia` (
   `id_sede` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+--
+-- Volcado de datos para la tabla `dependencia`
+--
+
+INSERT INTO `dependencia` (`id`, `nombre_largo`, `nombre_corto`, `id_sede`) VALUES
+(1, 'Programa Nacional de Formación en Informatica', 'Informatica', 0),
+(2, 'Programa Nacional de Formación en Electricidad', 'Electricidad', 0);
+
 -- --------------------------------------------------------
 
 --
@@ -78,8 +86,7 @@ CREATE TABLE `participantes` (
 CREATE TABLE `personas` (
   `id` int(11) NOT NULL,
   `nombre` varchar(255) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `apellido` varchar(255) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `correo` varchar(100) COLLATE utf8mb4_spanish_ci NOT NULL
+  `apellido` varchar(255) COLLATE utf8mb4_spanish_ci NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
 
 -- --------------------------------------------------------
@@ -107,6 +114,14 @@ CREATE TABLE `roles` (
   `privilegios` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `nivel` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Volcado de datos para la tabla `roles`
+--
+
+INSERT INTO `roles` (`id`, `rol`, `privilegios`, `nivel`) VALUES
+(1, 'Amisnistrador', '', 100),
+(2, 'Operador sede', '', 90);
 
 -- --------------------------------------------------------
 
@@ -150,6 +165,14 @@ CREATE TABLE `tipo` (
   `nombre` varchar(50) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `id_rol` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
+
+--
+-- Volcado de datos para la tabla `tipo`
+--
+
+INSERT INTO `tipo` (`id`, `nombre`, `id_rol`) VALUES
+(1, 'Administrador', 1),
+(2, 'Operador Sede', 2);
 
 -- --------------------------------------------------------
 
@@ -202,6 +225,7 @@ CREATE TABLE `trayecto` (
 
 CREATE TABLE `usuarios` (
   `id` varchar(100) COLLATE utf8mb4_spanish_ci NOT NULL,
+  `correo` varchar(50) COLLATE utf8mb4_spanish_ci NOT NULL,
   `clave` varchar(100) COLLATE utf8mb4_spanish_ci NOT NULL,
   `clave_temp` varchar(255) COLLATE utf8mb4_spanish_ci NOT NULL,
   `plazo` varchar(50) COLLATE utf8mb4_spanish_ci NOT NULL,
@@ -209,6 +233,16 @@ CREATE TABLE `usuarios` (
   `id_tipo` int(11) NOT NULL,
   `id_rol` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
+
+--
+-- Volcado de datos para la tabla `usuarios`
+--
+
+INSERT INTO `usuarios` (`id`, `correo`, `clave`, `clave_temp`, `plazo`, `jerarquia`, `id_tipo`, `id_rol`) VALUES
+('25171058', 'palencia575@gmail.com', '', '', '', '', 1, 1),
+('29052892', 'pedro@gmail.com', '', '', '', '', 2, 2),
+('13050683', 'mari@gmail.com', '', '', '', '', 2, 2),
+('12345678', 'jp@gmail.com', '', '', '', '', 2, 2);
 
 -- --------------------------------------------------------
 
@@ -312,7 +346,7 @@ ALTER TABLE `carreras`
 -- AUTO_INCREMENT de la tabla `dependencia`
 --
 ALTER TABLE `dependencia`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT de la tabla `equipo_trabajo`
 --
@@ -322,12 +356,12 @@ ALTER TABLE `equipo_trabajo`
 -- AUTO_INCREMENT de la tabla `personas`
 --
 ALTER TABLE `personas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22345124;
 --
 -- AUTO_INCREMENT de la tabla `roles`
 --
 ALTER TABLE `roles`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT de la tabla `sedes`
 --
@@ -342,7 +376,7 @@ ALTER TABLE `sedes-carreras`
 -- AUTO_INCREMENT de la tabla `tipo`
 --
 ALTER TABLE `tipo`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT de la tabla `tipo_documento`
 --

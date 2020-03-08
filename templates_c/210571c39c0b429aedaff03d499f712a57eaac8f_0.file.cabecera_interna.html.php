@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-03-05 09:00:04
+/* Smarty version 3.1.30, created on 2020-03-06 01:47:18
   from "/home/palencia/public_html/proyecto4/uptt/templates/cabecera_interna.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5e60f7d4dc7565_80016879',
+  'unifunc' => 'content_5e61e3e6d075a0_39537067',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '210571c39c0b429aedaff03d499f712a57eaac8f' => 
     array (
       0 => '/home/palencia/public_html/proyecto4/uptt/templates/cabecera_interna.html',
-      1 => 1583369265,
+      1 => 1583473635,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5e60f7d4dc7565_80016879 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5e61e3e6d075a0_39537067 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -47,22 +47,24 @@ function content_5e60f7d4dc7565_80016879 (Smarty_Internal_Template $_smarty_tpl)
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-                <a class="nav-link" href="#">Administrador</a>
+                <a class="nav-link" href="#"><i class="fa fa-gears"></i> Administrador</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">operador Carrera</a>
+            <li class="nav-item"><a class="nav-link" href="#">
+              <i class="fa fa-university"></i> Operador Sede</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Operador Sede</a>
+
+            <li class="nav-item"><a class="nav-link" href="#">
+            <i class="fa fa-leanpub"></i> Operador Carrera</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Comite Tecnico</a>
+            
+            <li class="nav-item"><a class="nav-link" href="#">
+            <i class="fa fa-object-group"></i> Comite Tecnico</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Profesor</a>
+            <li class="nav-item"><a class="nav-link" href="#">
+            <i class="fa fa-suitcase"></i> Profesor</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">estudiante</a>
+            <li class="nav-item"><a class="nav-link" href="#">
+            <i class="fa fa-graduation-cap"></i> Estudiante</a>
             </li>
             
     </ul>

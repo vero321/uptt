@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8"/>
+  <link href="./vendor/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="./estilos/personal.css">
+	<title>Repositorio</title>
+
+  <style >
+    .bg-dark{
+      background-color: {$smarty.const.color_barra_menu}!important ;
+      
+      }
+    .pie{
+      background-color: {$smarty.const.color_pie}!important;
+    } 
+    body{
+      background-color: {$smarty.const.color_fondo_app}!important;
+    }
+    a.enlace-claro{
+      color: {$smarty.const.color_enlace_claro}!important;
+    }
+  </style>
+
+{$cab|default:''}
+</head>
+
+<body>
+<div class="container">
+  <div class="row">
+    <div class="col-8 offset-2">
+<nav class="navbar  navbar-expand-lg navbar-dark bg-dark ">
+  <a class="navbar-brand" href="index.php"><img src="./{$smarty.const.logo_peq}"></a>
+</nav>
+

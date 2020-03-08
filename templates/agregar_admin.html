@@ -1,0 +1,71 @@
+<div class="container">
+<div class="row">
+  <div class="col-2"></div>
+  <div class="col-8">   
+    <section id="home" class="text-center"></section>
+        <section id="intro">
+            <div class="container">
+              <div class="centro"> 
+                  <h1 align="center">Registrar Usuario</h1>
+                    <form 
+                    	action="proc_registrar_admin.php" 
+                    	method="POST" 
+                    	class="px-4 py-3" 
+                    	id="registro_usuario"
+                    	name="registro_usuario"          	>
+                    
+                     	<div class="form-group">
+                        	<label for="id">Cedula</label>
+                        	 <input 
+                            type="email" 
+                            title="Escriba la ci del Usuario" 
+                            required="required" 
+                            class="form-control" 
+                            id="id" 
+                            name="id" 
+                            placeholder="login@correo.com">
+                      	</div>
+                    
+                           <div class="form-group">
+                          <label for="Tipo">Rol del usuario</label>
+                          <select 
+                            title="Seleccione el Tipo de Usuario que le Corresponda" 
+                            required="required" 
+                            id="privilegio" 
+                            name="privilegio" 
+                            class="form-control">
+                            {section name=i loop=$priv}<option value="{$priv[i].id}">{$priv[i].descripcion}</option>
+                            {/section}
+                          </select>
+                        </div>
+
+                        <div class="form-group">
+                          <label for="Tipo">Tipo de permiso</label>
+                          <select 
+                            title="Seleccione el Tipo de Usuario que le Corresponda" 
+                            required="required" 
+                            id="privilegio" 
+                            name="privilegio" 
+                            class="form-control">
+                            {section name=i loop=$priv}<option value="{$priv[i].id}">{$priv[i].descripcion}</option>
+                            {/section}
+                          </select>
+                        </div>
+
+
+                    	<div class="form-group">
+          							<input 
+          								class="btn-enviar boton" 
+          								type="submit" 
+          								name="enviar" 
+          								value="Registrar">
+                    	</div>
+                    </form>
+              </div> 
+            </div>
+        </section>
+  </div>
+  <div class="col-2"></div>
+
+</div>  
+</div>

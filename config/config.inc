@@ -5,10 +5,10 @@ debug = SI
 thumb=100
 
 [paginacion]
-num_items = 12
+num_items = 2
 
 [ajax]
-num_items = 20
+
 
 [bd]
 host  = localhost

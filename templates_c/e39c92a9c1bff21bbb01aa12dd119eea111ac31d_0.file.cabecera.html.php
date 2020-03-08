@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-03-05 08:59:38
+/* Smarty version 3.1.30, created on 2020-03-05 17:52:49
   from "/home/palencia/public_html/proyecto4/uptt/templates/cabecera.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5e60f7ba0cad35_01532793',
+  'unifunc' => 'content_5e6174b1ca0844_17543467',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5e60f7ba0cad35_01532793 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5e6174b1ca0844_17543467 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="es">

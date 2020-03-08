@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-03-05 09:00:32
+/* Smarty version 3.1.30, created on 2020-03-07 00:29:34
   from "/home/palencia/public_html/proyecto4/uptt/templates/usuarios.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5e60f7f08cc043_40056900',
+  'unifunc' => 'content_5e63232e11cda1_91972086',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '4f20745088feb4b99d548492de5e283b79b01666' => 
     array (
       0 => '/home/palencia/public_html/proyecto4/uptt/templates/usuarios.html',
-      1 => 1583369602,
+      1 => 1583555372,
       2 => 'file',
     ),
   ),
@@ -20,10 +20,11 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
     'file:cabecera_interna.html' => 1,
     'file:menu_lateral.html' => 1,
+    'file:modal/modal_box.html' => 1,
     'file:pie.html' => 1,
   ),
 ),false)) {
-function content_5e60f7f08cc043_40056900 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5e63232e11cda1_91972086 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:cabecera_interna.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -39,16 +40,21 @@ $_smarty_tpl->_subTemplateRender("file:cabecera_interna.html", $_smarty_tpl->cac
 
         </div>
         <div class="col-sm-10">
+
+
+
 <!--finaliza-->
-			<br>
-			<br>
-            <h2 align="center">Usuarios <a class="btn btn-sm btn-outline-primary mimodal" type="button"
-            data-href="#" title="Agregar usuario"><span class="fa fa-plus"></span></a></h2>
+      <br>
+      <br>
+
+            <h2 align="center"><small><?php echo $_smarty_tpl->tpl_vars['n_usuarios']->value;?>
+</small> Usuarios <a class="btn btn-sm btn-outline-primary mimodal" type="button"
+            data-href="agregar_admin.php" title="Agregar sede o dependencia"><span class="fa fa-plus"></span></a></h2>
 
             <div class="collapse" id="collapseExample">
               <div class="jumbotron jumbo_buscar">
                 <div class="container">  
-                  <form action="usuarios.php" method="POST">
+                  <form action="nucleos.php" method="POST">
                       <div class="input-group">
                         <input id="p" name="p" type="text" class="form-control" placeholder="Escriba aquí y pulse INTRO" aria-describedby="basic-addon1">
                         <span class="input-group-addon" id="basic-addon1" style="padding:0 12px;"><i class="fa fa-search"></i></span>
@@ -59,91 +65,143 @@ $_smarty_tpl->_subTemplateRender("file:cabecera_interna.html", $_smarty_tpl->cac
             </div>
             <br>
             
-
+            <div class="tabla" >
+              <div class="mipaginacion">
+                <form style="display:inline">
+                    <select style="margin-bottom: 1em;" name="ad" onchange="salta(this.form)"><?php
+$__section_ii_0_saved = isset($_smarty_tpl->tpl_vars['__smarty_section_ii']) ? $_smarty_tpl->tpl_vars['__smarty_section_ii'] : false;
+$__section_ii_0_loop = (is_array(@$_loop=$_smarty_tpl->tpl_vars['paginas']->value) ? count($_loop) : max(0, (int) $_loop));
+$__section_ii_0_total = $__section_ii_0_loop;
+$_smarty_tpl->tpl_vars['__smarty_section_ii'] = new Smarty_Variable(array());
+if ($__section_ii_0_total != 0) {
+for ($_smarty_tpl->tpl_vars['__smarty_section_ii']->value['iteration'] = 1, $_smarty_tpl->tpl_vars['__smarty_section_ii']->value['index'] = 0; $_smarty_tpl->tpl_vars['__smarty_section_ii']->value['iteration'] <= $__section_ii_0_total; $_smarty_tpl->tpl_vars['__smarty_section_ii']->value['iteration']++, $_smarty_tpl->tpl_vars['__smarty_section_ii']->value['index']++){
+?>
+                        <option <?php if ($_smarty_tpl->tpl_vars['pagina_actual']->value == (isset($_smarty_tpl->tpl_vars['__smarty_section_ii']->value['iteration']) ? $_smarty_tpl->tpl_vars['__smarty_section_ii']->value['iteration'] : null)) {?>selected="selected"<?php }?>
+                            value="usuarios.php?pag=<?php echo (isset($_smarty_tpl->tpl_vars['__smarty_section_ii']->value['iteration']) ? $_smarty_tpl->tpl_vars['__smarty_section_ii']->value['iteration'] : null);?>
+&i=<?php echo $_smarty_tpl->tpl_vars['paginas']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_ii']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_ii']->value['index'] : null)];?>
+">Página <?php echo (isset($_smarty_tpl->tpl_vars['__smarty_section_ii']->value['iteration']) ? $_smarty_tpl->tpl_vars['__smarty_section_ii']->value['iteration'] : null);?>
+</option>
+                    <?php
+}
+}
+if ($__section_ii_0_saved) {
+$_smarty_tpl->tpl_vars['__smarty_section_ii'] = $__section_ii_0_saved;
+}
+?></select>
+                </form> de <?php echo $_smarty_tpl->tpl_vars['n_paginas']->value;?>
+.
+            </div>
+          </div>
               <table class="table table-striped table-hover">
                 <thead class="thead-dark">
                   <tr>
-                    <th>Usuario</th>
-                    <th>Nombre</th>
-                    <th>Apellido</th>
+                    <th>Cedula</th>
                     <th>Correo</th>
-                    <th>Modificar</th>
-                    <th> <div class="btn-group">
+                    <th>Clave</th>
+                    <th>Tipo</th>
+                    <th>Rol</th>
+                    <th> Funciones</th>
+                    <th><div class="btn-group">
                     <!-- a class="btn btn-sm btn-outline-primary" 
                     type="button"
                     href="agregar_persona.php"><span class="fa fa-plus"></span></a-->
                           
-                    <button class="btn btn-sm btn-outline-info" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample" title="Buscar">
+                    <button class="btn btn-sm btn-outline-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample" title="Buscar">
                     <samp class="fa fa-search"></samp>
                     </button>
                 </div></th>
                   </tr>
                 </thead>
-                <tbody class="buscar" id="personas">
-
+                <tbody class="buscar" id="usuarios">
+<?php
+$__section_i_1_saved = isset($_smarty_tpl->tpl_vars['__smarty_section_i']) ? $_smarty_tpl->tpl_vars['__smarty_section_i'] : false;
+$__section_i_1_loop = (is_array(@$_loop=$_smarty_tpl->tpl_vars['usuarios']->value) ? count($_loop) : max(0, (int) $_loop));
+$__section_i_1_total = $__section_i_1_loop;
+$_smarty_tpl->tpl_vars['__smarty_section_i'] = new Smarty_Variable(array());
+if ($__section_i_1_total != 0) {
+for ($__section_i_1_iteration = 1, $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] = 0; $__section_i_1_iteration <= $__section_i_1_total; $__section_i_1_iteration++, $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']++){
+?>
                   <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-
+                    <td><?php echo $_smarty_tpl->tpl_vars['usuarios']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['id'];?>
+</td>
+                    <td><?php echo $_smarty_tpl->tpl_vars['usuarios']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['correo'];?>
+</td>
+                    <td><?php echo $_smarty_tpl->tpl_vars['usuarios']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['clave'];?>
+</td>
+                    <td><?php echo $_smarty_tpl->tpl_vars['usuarios']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['id_tipo'];?>
+</td>
+                    <td><?php echo $_smarty_tpl->tpl_vars['usuarios']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['id_rol'];?>
+</td>
                     <td class="text-center" style="white-space: nowrap;">
                     
                     <a 
                       style="margin-bottom:3px; color:blue;" 
                       class="btn btn-default mimodal" 
                       title="Modificar Usuario" 
-                      data-href="usuarios_modificar.php?id=<?php echo $_smarty_tpl->tpl_vars['d']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['id'];?>
-">
+                      data-href="usuarios_modificar.php">
                       <i class="fa fa-pencil-square-o"></i>
                     </a>
-                    <!--
-                    <?php if ($_smarty_tpl->tpl_vars['d']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['privilegio_id'] != "ADMINISTRADOR") {?>
-                    <a 
-                      style="margin-bottom:3px; color:blue;" 
-                      class="btn btn-default mimodal" 
-                      title="Eliminar Usuario"
-                      data-href="usuarios_eliminar.php?id=<?php echo $_smarty_tpl->tpl_vars['d']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['id'];?>
-"> 
-                      <i class="fa fa-trash-o"></i>
-                    </a><?php } else { ?>
-                      <a 
-                        href="#" 
-                        style="margin-bottom:3px; color:blue;" 
-                        class="btn btn-default mimodal" >
-                        <i class="fa fa-trash-o"></i>
-                      </a>
-                    <?php }?>
-					-->
                     <a 
                       style="margin-bottom:3px; color:blue;" 
                       class="btn btn-default mimodal"
-                      title="Cambiar Clave" 
-                      data-href="usuarios_cambiar_clave.php?id=<?php echo $_smarty_tpl->tpl_vars['d']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['id'];?>
+                      title="Eliminar Usuario" 
+                      data-href="usuarios_eliminar.php?id=<?php echo $_smarty_tpl->tpl_vars['usuarios']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['id'];?>
 ">
-                      <i class="fa fa-unlock-alt"></i>
+                      <i class="fa fa-trash"></i>
                     </a>
 
                     </td>
                   </tr>
-
+<?php
+}
+}
+if ($__section_i_1_saved) {
+$_smarty_tpl->tpl_vars['__smarty_section_i'] = $__section_i_1_saved;
+}
+?>
                 </tbody>
               </table>
-              <a href="#" data-toggle="modal" data-target="#myModal">.</a>
+                   <nav aria-label="Page navigation example">
+        <ul class="pagination">
+            <?php if ($_smarty_tpl->tpl_vars['pagina_actual']->value != 1) {?>
+              <li class="page-item"><a class="page-link" href="usuarios.php?pag=<?php echo $_smarty_tpl->tpl_vars['pagina_actual']->value-1;?>
+&i=<?php echo $_smarty_tpl->tpl_vars['i']->value-$_smarty_tpl->tpl_vars['b']->value;?>
+" >Anterior</a></li>
+              <?php }?>
+          <?php
+$__section_ii_2_saved = isset($_smarty_tpl->tpl_vars['__smarty_section_ii']) ? $_smarty_tpl->tpl_vars['__smarty_section_ii'] : false;
+$__section_ii_2_loop = (is_array(@$_loop=$_smarty_tpl->tpl_vars['paginas']->value) ? count($_loop) : max(0, (int) $_loop));
+$__section_ii_2_total = $__section_ii_2_loop;
+$_smarty_tpl->tpl_vars['__smarty_section_ii'] = new Smarty_Variable(array());
+if ($__section_ii_2_total != 0) {
+for ($_smarty_tpl->tpl_vars['__smarty_section_ii']->value['iteration'] = 1, $_smarty_tpl->tpl_vars['__smarty_section_ii']->value['index'] = 0; $_smarty_tpl->tpl_vars['__smarty_section_ii']->value['iteration'] <= $__section_ii_2_total; $_smarty_tpl->tpl_vars['__smarty_section_ii']->value['iteration']++, $_smarty_tpl->tpl_vars['__smarty_section_ii']->value['index']++){
+?>
+          <li class="page-item <?php if ((isset($_smarty_tpl->tpl_vars['__smarty_section_ii']->value['iteration']) ? $_smarty_tpl->tpl_vars['__smarty_section_ii']->value['iteration'] : null) == $_smarty_tpl->tpl_vars['pagina_actual']->value) {?> active <?php }?>"><a class="page-link" href="usuarios.php?pag=<?php echo (isset($_smarty_tpl->tpl_vars['__smarty_section_ii']->value['iteration']) ? $_smarty_tpl->tpl_vars['__smarty_section_ii']->value['iteration'] : null);?>
+&i=<?php echo $_smarty_tpl->tpl_vars['paginas']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_ii']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_ii']->value['index'] : null)];?>
+"><?php echo (isset($_smarty_tpl->tpl_vars['__smarty_section_ii']->value['iteration']) ? $_smarty_tpl->tpl_vars['__smarty_section_ii']->value['iteration'] : null);?>
+ <span class="sr-only">(current)</span></a></li>
+          <?php
+}
+}
+if ($__section_ii_2_saved) {
+$_smarty_tpl->tpl_vars['__smarty_section_ii'] = $__section_ii_2_saved;
+}
+?>
+            <?php if ($_smarty_tpl->tpl_vars['pagina_actual']->value != $_smarty_tpl->tpl_vars['n_paginas']->value) {?> 
+              <li class="page-item"><a class="page-link" href="usuarios.php?pag=<?php echo $_smarty_tpl->tpl_vars['pagina_actual']->value+1;?>
+&i=<?php echo $_smarty_tpl->tpl_vars['i']->value+$_smarty_tpl->tpl_vars['b']->value;?>
+">Siguiente</a></li>
+            <?php }?>
+        </ul>
+      </nav>
           </div>
         </div>
+
       </div>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
+<br><br><br><br><br><br><br><br><br>
+<?php $_smarty_tpl->_subTemplateRender("file:modal/modal_box.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('prueba'=>"Usuario"), 0, false);
+?>
+ 
 
 <?php $_smarty_tpl->_subTemplateRender("file:pie.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 }

@@ -13,15 +13,16 @@
 
 
 <!--finaliza-->
-			<br>
-			<br>
-            <h2 align="center">Usuarios <a class="btn btn-sm btn-outline-primary mimodal" type="button"
-            data-href="#" title="Agregar usuario"><span class="fa fa-plus"></span></a></h2>
+      <br>
+      <br>
+
+            <h2 align="center"><small>{$n_usuarios}</small> Usuarios <a class="btn btn-sm btn-outline-primary mimodal" type="button"
+            data-href="agregar_admin.php" title="Agregar sede o dependencia"><span class="fa fa-plus"></span></a></h2>
 
             <div class="collapse" id="collapseExample">
               <div class="jumbotron jumbo_buscar">
                 <div class="container">  
-                  <form action="usuarios.php" method="POST">
+                  <form action="nucleos.php" method="POST">
                       <div class="input-group">
                         <input id="p" name="p" type="text" class="form-control" placeholder="Escriba aquí y pulse INTRO" aria-describedby="basic-addon1">
                         <span class="input-group-addon" id="basic-addon1" style="padding:0 12px;"><i class="fa fa-search"></i></span>
@@ -32,76 +33,84 @@
             </div>
             <br>
             
-
+            <div class="tabla" >
+              <div class="mipaginacion">
+                <form style="display:inline">
+                    <select style="margin-bottom: 1em;" name="ad" onchange="salta(this.form)">{section name=ii loop=$paginas}
+                        <option {if $pagina_actual==$smarty.section.ii.iteration}selected="selected"{/if}
+                            value="usuarios.php?pag={$smarty.section.ii.iteration}&i={$paginas[ii]}">Página {$smarty.section.ii.iteration}</option>
+                    {/section}</select>
+                </form> de {$n_paginas}.
+            </div>
+          </div>
               <table class="table table-striped table-hover">
                 <thead class="thead-dark">
                   <tr>
-                    <th>Usuario</th>
-                    <th>Nombre</th>
-                    <th>Apellido</th>
+                    <th>Cedula</th>
                     <th>Correo</th>
-                    <th>Funciones</th>
-                    <th> <div class="btn-group">
+                    <th>Clave</th>
+                    <th>Tipo</th>
+                    <th>Rol</th>
+                    <th> Funciones</th>
+                    <th><div class="btn-group">
                     <!-- a class="btn btn-sm btn-outline-primary" 
                     type="button"
                     href="agregar_persona.php"><span class="fa fa-plus"></span></a-->
                           
-                    <button class="btn btn-sm btn-outline-info" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample" title="Buscar">
+                    <button class="btn btn-sm btn-outline-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample" title="Buscar">
                     <samp class="fa fa-search"></samp>
                     </button>
                 </div></th>
                   </tr>
                 </thead>
-                <tbody class="buscar" id="personas">
-
+                <tbody class="buscar" id="usuarios">
+{section name=i loop= $usuarios}
                   <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-
+                    <td>{$usuarios[i].id}</td>
+                    <td>{$usuarios[i].correo}</td>
+                    <td>{$usuarios[i].clave}</td>
+                    <td>{$usuarios[i].id_tipo}</td>
+                    <td>{$usuarios[i].id_rol}</td>
                     <td class="text-center" style="white-space: nowrap;">
                     
                     <a 
                       style="margin-bottom:3px; color:blue;" 
                       class="btn btn-default mimodal" 
                       title="Modificar Usuario" 
-                      data-href="usuarios_modificar.php?id={$d[i].id}">
+                      data-href="usuarios_modificar.php">
                       <i class="fa fa-pencil-square-o"></i>
                     </a>
-                    <!--
-                    {if $d[i].privilegio_id!="ADMINISTRADOR"}
-                    <a 
-                      style="margin-bottom:3px; color:blue;" 
-                      class="btn btn-default mimodal" 
-                      title="Eliminar Usuario"
-                      data-href="usuarios_eliminar.php?id={$d[i].id}"> 
-                      <i class="fa fa-trash-o"></i>
-                    </a>{else}
-                      <a 
-                        href="#" 
-                        style="margin-bottom:3px; color:blue;" 
-                        class="btn btn-default mimodal" >
-                        <i class="fa fa-trash-o"></i>
-                      </a>
-                    {/if}
-					-->
                     <a 
                       style="margin-bottom:3px; color:blue;" 
                       class="btn btn-default mimodal"
-                      title="Cambiar Clave" 
-                      data-href="usuarios_cambiar_clave.php?id={$d[i].id}">
-                      <i class="fa fa-unlock-alt"></i>
+                      title="Eliminar Usuario" 
+                      data-href="usuarios_eliminar.php?id={$usuarios[i].id}">
+                      <i class="fa fa-trash"></i>
                     </a>
 
                     </td>
                   </tr>
-
+{/section}
                 </tbody>
               </table>
-              <a href="#" data-toggle="modal" data-target="#myModal">.</a>
+                   <nav aria-label="Page navigation example">
+        <ul class="pagination">
+            {if $pagina_actual neq 1}
+              <li class="page-item"><a class="page-link" href="usuarios.php?pag={$pagina_actual-1}&i={$i-$b}" >Anterior</a></li>
+              {/if}
+          {section name=ii loop=$paginas}
+          <li class="page-item {if $smarty.section.ii.iteration eq $pagina_actual} active {/if}"><a class="page-link" href="usuarios.php?pag={$smarty.section.ii.iteration}&i={$paginas[ii]}">{$smarty.section.ii.iteration} <span class="sr-only">(current)</span></a></li>
+          {/section}
+            {if  $pagina_actual neq $n_paginas} 
+              <li class="page-item"><a class="page-link" href="usuarios.php?pag={$pagina_actual+1}&i={$i+$b}">Siguiente</a></li>
+            {/if}
+        </ul>
+      </nav>
           </div>
         </div>
+
       </div>
 <br><br><br><br><br><br><br><br><br>
+{include "modal/modal_box.html" prueba="Usuario"} 
+
 {include file="pie.html"}
