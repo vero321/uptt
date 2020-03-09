@@ -1,12 +1,12 @@
 <?php
 include_once "./inicializacion.php";
 
-$usurios=bd_usuarios_contar();
-$sedes=bd_sedes_contar();
-$carreras=bd_carreras_contar();
+$usuarios=bd_usuarios_contar();
+$nucleos=bd_nucleos_contar();
+$pnf=bd_pnf_contar();
 
-$smarty->assign('usurios',$usurios);
-$smarty->assign('sedes',$sedes);
-$smarty->assign('carreras',$carreras);
+$smarty->assign('usuarios',$usuarios);
+$smarty->assign('nucleos',$nucleos);
+$smarty->assign('pnf',$pnf);
 $smarty->display('inicio_interno.html');
 

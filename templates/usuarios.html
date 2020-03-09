@@ -16,13 +16,13 @@
       <br>
       <br>
 
-            <h2 align="center"><small>{$n_usuarios}</small> Usuarios <a class="btn btn-sm btn-outline-primary mimodal" type="button"
+            <h2 align="center"><span class="badge badge-secondary badge-pill">{$n_usuarios}</span>Usuarios <a class="btn btn-sm btn-outline-primary mimodal" type="button"
             data-href="agregar_admin.php" title="Agregar sede o dependencia"><span class="fa fa-plus"></span></a></h2>
 
             <div class="collapse" id="collapseExample">
               <div class="jumbotron jumbo_buscar">
                 <div class="container">  
-                  <form action="nucleos.php" method="POST">
+                  <form action="usuarios.php" method="POST">
                       <div class="input-group">
                         <input id="p" name="p" type="text" class="form-control" placeholder="Escriba aquí y pulse INTRO" aria-describedby="basic-addon1">
                         <span class="input-group-addon" id="basic-addon1" style="padding:0 12px;"><i class="fa fa-search"></i></span>
@@ -110,7 +110,7 @@
         </div>
 
       </div>
-<br><br><br><br><br><br><br><br><br>
+
 {include "modal/modal_box.html" prueba="Usuario"} 
 
-{include file="pie.html"}
+{include file="pie_interno.html"}

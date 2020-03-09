@@ -184,12 +184,12 @@ function bd_usuarios_contar(){
     return sql2value("SELECT COUNT(*) FROM usuarios");
 }
 
-function bd_sedes_contar(){
-    return sql2value("SELECT COUNT(*) FROM sedes");
+function bd_nucleos_contar(){
+    return sql2value("SELECT COUNT(*) FROM nucleos");
 }
 
-function bd_carreras_contar(){
-    return sql2value("SELECT COUNT(*) FROM carreras");
+function bd_pnf_contar(){
+    return sql2value("SELECT COUNT(*) FROM pnf");
 }
 
 
@@ -250,11 +250,13 @@ foreach ($miscampos as $key => $value)
 }
 
 $condicion = implode(' OR ', $miscampos);
-return sql2array("SELECT * FROM personas
+return sql2array("SELECT * FROM usuarios
     WHERE $condicion
         LIMIT $cantidad
     ");
 }
+
+
 
 function bd_usuarios_eliminar($d)
 {
@@ -264,4 +266,111 @@ function bd_usuarios_eliminar($d)
         ";
     sql($sql);
     return $d['id'];
+}
+
+
+function bd_nucleos_datos($id=NULL)
+{
+    if ($id!=NULL) {
+        $sql="
+            SELECT *
+            FROM nucleos
+            WHERE id LIKE '{$id}'";
+        $salida = sql2row($sql);
+    } else {
+        $sql="
+            SELECT *
+            FROM nucleos
+            ";
+        $salida = sql2array($sql);
+    }
+    return $salida;
+}
+
+function bd_nucleos_agregar($nucleos)
+{
+    $sql="
+        INSERT INTO nucleos (nombre_largo, nombre_corto)
+        VALUES ('{$nucleos['nombre_largo']}','{$nucleos['nombre_corto']}')";
+    sql($sql);
+    return "{$nucleos['id']}";
+
+}
+
+function bd_nucleos_modicar($nucleos)
+{
+    $sql = "
+        UPDATE nucleos SET
+            id = '{$nucleos['id']}',
+            nombre_largo = '{$nucleos['nombre_largo']}',
+            nombre_corto = '{$nucleos['nombre_corto']}'
+        WHERE
+            id = '{$nucleos['id']}'
+    ";
+    sql($sql);
+    return $nombre;
+}
+
+function bd_nucleos_eliminar($id)
+{
+    $sql = "
+        DELETE FROM nucleos
+        WHERE id = '{$id['id']}'
+        ";
+    sql($sql);
+    return $nucleos['id'];
+}
+
+
+function bd_pnf_datos($id=NULL)
+{
+    if ($id!=NULL) {
+        $sql="
+            SELECT *
+            FROM pnf
+            WHERE id LIKE '{$id}'";
+        $salida = sql2row($sql);
+    } else {
+        $sql="
+            SELECT *
+            FROM pnf
+            ";
+        $salida = sql2array($sql);
+    }
+    return $salida;
+}
+
+
+function bd_pnf_agregar($pnf)
+{
+    $sql="
+        INSERT INTO pnf (nombre_largo, nombre_corto)
+        VALUES ('{$pnf['nombre_largo']}','{$pnf['nombre_corto']}')";
+    sql($sql);
+    return "{$pnf['id']}";
+
+}
+
+function bd_pnf_eliminar($id)
+{
+    $sql = "
+        DELETE FROM pnf
+        WHERE id = '{$id['id']}'
+        ";
+    sql($sql);
+    return $pnf['id'];
+}
+
+function bd_pnf_modicar($pnf)
+{
+    $sql = "
+        UPDATE pnf SET
+            id = '{$pnf['id']}',
+            nombre_largo = '{$pnf['nombre_largo']}',
+            nombre_corto = '{$pnf['nombre_corto']}'
+        WHERE
+            id = '{$pnf['id']}'
+    ";
+    sql($sql);
+    return $nombre;
 }

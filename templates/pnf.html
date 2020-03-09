@@ -1,0 +1,89 @@
+{include file="cabecera_interna.html"}
+
+
+<!-- incluye menu y agrega el espasio de trbajo-->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-2"> 
+
+            {include file="menu_lateral.html"}
+        </div>
+        <div class="col-sm-10">
+
+
+
+<!--finaliza-->
+			<br>
+			<br>
+            <h2 align="center"><span class="badge badge-secondary badge-pill">{$n_pnf}</span>PNF <a class="btn btn-sm btn-outline-primary mimodal" type="button" data-href="pnf_agregar.php" title="Agregar PNF"><span class="fa fa-plus"></span></a></h2>
+
+            <div class="collapse" id="collapseExample">
+              <div class="jumbotron jumbo_buscar">
+                <div class="container">  
+                  <form action="pnf.php" method="POST">
+                      <div class="input-group">
+                        <input id="p" name="p" type="text" class="form-control" placeholder="Escriba aquí y pulse INTRO" aria-describedby="basic-addon1">
+                        <span class="input-group-addon" id="basic-addon1" style="padding:0 12px;"><i class="fa fa-search"></i></span>
+                      </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+            <br>
+            
+
+              <table class="table table-striped table-hover">
+                <thead class="thead-dark">
+                  <tr>
+                    <th>Nombre Largo</th>
+                    <th>Nombre Corto</th>
+                    <th>Funciones</th>
+                    <th> <div class="btn-group">
+                    <!-- a class="btn btn-sm btn-outline-primary" 
+                    type="button"
+                    href="agregar_persona.php"><span class="fa fa-plus"></span></a-->
+                          
+                    <button class="btn btn-sm btn-outline-info" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample" title="Buscar">
+                    <samp class="fa fa-search"></samp>
+                    </button>
+                </div></th>
+                  </tr>
+                </thead>
+                <tbody class="buscar" id="personas">
+
+                {section name=i loop=$pnf}
+
+                  <tr>
+                    <td>{$pnf[i].nombre_largo}</td>
+                    <td>{$pnf[i].nombre_corto}</td>
+
+                    <td class="text-center" style="white-space: nowrap;">
+                    
+                    <a 
+                      style="margin-bottom:3px; color:blue;" 
+                      class="btn btn-default mimodal" 
+                      title="Modificar PNF" 
+                      data-href="pnf_modificar.php?id={$pnf[i].id}">
+                      <i class="fa fa-pencil-square-o"></i>
+                    </a>
+                    <a 
+                      style="margin-bottom:3px; color:blue;" 
+                      class="btn btn-default mimodal"
+                      title="Eliminar PNF" 
+                      data-href="pnf_eliminar.php?id={$pnf[i].id}">
+                      <i class="fa fa-trash"></i>
+                    </a>
+
+                    </td>
+                  </tr>
+                {/section}
+
+                </tbody>
+              </table>
+              <a href="#" data-toggle="modal" data-target="#myModal">.</a>
+          </div>
+        </div>
+      </div>
+{include "modal/modal_box.html" prueba="Usuario"} 
+
+{include file="pie_interno.html"}

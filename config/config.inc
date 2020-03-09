@@ -5,13 +5,13 @@ debug = SI
 thumb=100
 
 [paginacion]
-num_items = 2
+num_items = 4
 
 [ajax]
-
+num_items = 20
 
 [bd]
 host  = localhost
-login = jose
-clave = 1234
+login = vero
+clave = vero
 bd    = uptt_r
