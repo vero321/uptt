@@ -5,5 +5,5 @@ $_SESSION=[];
 
 
 
-$smarty->display('beatriz.html');
+$smarty->display('NUES_san_luis.html');
 

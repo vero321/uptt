@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-03-09 16:44:14
-  from "/home/veronica/public_html/uptt/templates/beatriz.html" */
+/* Smarty version 3.1.30, created on 2020-03-09 17:06:43
+  from "/home/veronica/public_html/uptt/templates/NUES_san_luis.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5e66aa9ea51cc7_70320974',
+  'unifunc' => 'content_5e66afe3e46464_49314875',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    '04b3689ef33677a1218fb725969d1bd1157e2ab0' => 
+    'a21ade0e3f6c77ce66858511392e271e4bad4223' => 
     array (
-      0 => '/home/veronica/public_html/uptt/templates/beatriz.html',
-      1 => 1583786652,
+      0 => '/home/veronica/public_html/uptt/templates/NUES_san_luis.html',
+      1 => 1583787979,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:pie.html' => 1,
   ),
 ),false)) {
-function content_5e66aa9ea51cc7_70320974 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5e66afe3e46464_49314875 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:cabecera.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -33,7 +33,7 @@ $_smarty_tpl->_subTemplateRender("file:cabecera.html", $_smarty_tpl->cache_id, $
       <div class="row text-center" >
         <div class="col-md-8 offset-2">
           <div class="centro">
-           <h1 class="titulo" title="Nucleo Beatriz">nucleo beatriz</h1>
+           <h1 class="titulo" title="Nucleo Beatriz">NUES san luis</h1>
             <div class=""></div>
 						 
 					

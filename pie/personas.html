@@ -1,0 +1,42 @@
+
+
+     <script type="text/javascript">
+
+            (function ($) {
+
+                $('#p').keyup(function () {
+
+                    var rex = new RegExp($(this).val(), 'i');
+                    $('.buscar tr').hide();
+                    $('.buscar tr').filter(function () {
+                        return rex.test($(this).text());
+                    }).show();
+
+                })
+
+            }(jQuery));
+
+    
+
+    $('.mimodal').click(function(){
+        var dataURL = $(this).attr('data-href');
+
+        $('.modal-body').load(dataURL,function(){
+            var etiqueta = dataURL.split('.php')[0];
+            $('#myModal').modal({show:true});
+
+            switch (etiqueta) {
+                case "usuarios_cambiar_clave":
+                    $("#clave0").focus();
+                    break;
+                default:
+                    // statements_def
+                    break;
+            }
+        });
+    });
+
+
+
+</script>
+

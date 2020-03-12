@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-03-09 16:44:14
-  from "/home/veronica/public_html/uptt/templates/beatriz.html" */
+/* Smarty version 3.1.30, created on 2020-03-11 18:27:43
+  from "/home/veronica/public_html/uptt/templates/NUES_beatriz.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5e66aa9ea51cc7_70320974',
+  'unifunc' => 'content_5e6965dfecee43_33068149',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    '04b3689ef33677a1218fb725969d1bd1157e2ab0' => 
+    '63ea8754da17f3cb44ecef81f9cbf72ac919649e' => 
     array (
-      0 => '/home/veronica/public_html/uptt/templates/beatriz.html',
-      1 => 1583786652,
+      0 => '/home/veronica/public_html/uptt/templates/NUES_beatriz.html',
+      1 => 1583965660,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:pie.html' => 1,
   ),
 ),false)) {
-function content_5e66aa9ea51cc7_70320974 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5e6965dfecee43_33068149 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:cabecera.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -33,7 +33,7 @@ $_smarty_tpl->_subTemplateRender("file:cabecera.html", $_smarty_tpl->cache_id, $
       <div class="row text-center" >
         <div class="col-md-8 offset-2">
           <div class="centro">
-           <h1 class="titulo" title="Nucleo Beatriz">nucleo beatriz</h1>
+           <h1 class="titulo" title="Nucleo Beatriz">NUES beatriz</h1>
             <div class=""></div>
 						 
 					
@@ -52,28 +52,28 @@ $_smarty_tpl->_subTemplateRender("file:cabecera.html", $_smarty_tpl->cache_id, $
 			<div class="row">
 				<div class="col-md-4">
 					<div class="card border-0" align="center">
-						<a href="#"><i class="fa fa-leanpub fa-5x nucleo"></i>
+						<a href="NUES_PNF.php"><i class="fa fa-leanpub fa-5x nucleo"></i>
 							<h5 class="nucleo">administración</h5></a>
 					</div>
 				</div>
 				<div class="col-md-4">
 					<div class="card border-0" align="center">
-						<a href="#"><i class="fa fa-leanpub fa-5x nucleo"></i><h5 class="nucleo">turismo</h5></a>
+						<a href="NUES_PNF.php"><i class="fa fa-leanpub fa-5x nucleo"></i><h5 class="nucleo">turismo</h5></a>
 					</div></a>
 				</div>
 				<div class="col-md-4">
 					<div class="card border-0" align="center">
-						<a href="#"><i class="fa fa-leanpub fa-5x nucleo"></i><h5 class="nucleo">electricidad</h5></a>
+						<a href="NUES_PNF.php"><i class="fa fa-leanpub fa-5x nucleo"></i><h5 class="nucleo">electricidad</h5></a>
 					</div>
 				</div>
 				<div class="col-md-4">
 					<div class="card border-0" align="center">
-						<a href="#"><i class="fa fa-leanpub fa-5x nucleo"></i><h5 class="nucleo">informática</h5></a>
+						<a href="NUES_PNF.php"><i class="fa fa-leanpub fa-5x nucleo"></i><h5 class="nucleo">informática</h5></a>
 					</div>
 				</div>
 				<div class="col-md-4">
 					<div class="card border-0" align="center">
-						<a href="#"><i class="fa fa-leanpub fa-5x nucleo"></i><h5 class="nucleo">construcción civil</h5></a>
+						<a href="NUES_PNF.php"><i class="fa fa-leanpub fa-5x nucleo"></i><h5 class="nucleo">construcción civil</h5></a>
 					</div>
 				</div>
 			</div>

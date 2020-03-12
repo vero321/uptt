@@ -1,0 +1,45 @@
+{include file="cabecera.html"}
+
+<div class="container col-md-8 col-md-offset-2">
+  <div class="row">
+      <div class="col">
+        <form class="form"
+              action="buscar.php"
+              method="get"
+              id="frm_avanzada"
+              style="margin-top: 1em!important;"
+              >           
+              <div id="field_wrapper">
+              <div class="input-group form-row" style="margin-bottom: 1em!important;">
+                <div class="col-3">
+                    <select id="campo1" name="campo[]" class="form-control">
+                    </select>
+                </div>
+                <div class="col-8">
+                    <input type="text" class="form-control"
+                    id="texto1"  data-sel='1' name="texto[]" placeholder="Buscar">
+                </div>
+                <div class="col-1">
+                    <button href="##" class="btn btn-sm btn-outline-primary" type="button"
+                    id="btn-agregar-fila"><span class="fa fa-plus"></span></button>
+                </div>
+              </div>
+            </div>
+	            <input 
+							class="btn btn-light float-right" 
+							type="submit" 
+							name="enviar" 
+							value="Buscar">
+
+							<div class="input-group-addon">
+							<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+							<a class="link float-left btn btn-light" href="buscar.php"value="Sencilla"><i class="fa fa-search fa-lg"></i>Búsqueda Sencilla</a>
+							</div>
+    </div>
+  </div>
+</div>
+
+
+{include "modal/modal_box.html" prueba="Usuario"} 
+
+{include file="pie.html"}

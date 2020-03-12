@@ -341,3 +341,10 @@ body
 
 
 /* fin menu latera sidebar*/
+
+h2.subtitulo
+{
+    border-bottom: solid 1px #cbcaca;
+    width: 100%;
+    padding:15px;
+}
