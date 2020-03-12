@@ -157,28 +157,11 @@ function bd_usuarios_hash($login)
     $sql= "
         SELECT clave
         FROM usuarios
-        WHERE id LIKE '{$login}'";
+        WHERE id LIKE '{$login}' or correo LIKE '{$login}'";
     
     return sql2value($sql);
 }
 
-function usuarios_datos($login=NULL)
-{
-    if ($login!=NULL) {
-        $sql="
-            SELECT id, id_tipo, id_rol
-            FROM usuarios
-            WHERE id LIKE '{$login}'";
-        $salida = sql2row($sql);
-    } else {
-        $sql="
-            SELECT id, id_tipo, id_rol
-            FROM usuarios
-            ORDER BY nombre ASC";
-        $salida = sql2array($sql);
-    }
-    return $salida;
-}
 
 function bd_usuarios_contar(){
     return sql2value("SELECT COUNT(*) FROM usuarios");
@@ -199,25 +182,24 @@ function bd_personas_contar($criterio='1')
 }
 
 
-
 function bd_usuarios_datos($login=NULL)
 {
     if ($login!=NULL) {
         $sql="
-            SELECT *
-            FROM usuarios
-            WHERE id LIKE '{$login}'";
+            SELECT usuarios.id, correo, clave, clave_temp, plazo, jerarquia, id_tipo, id_rol, roles.id, privilegios, nivel
+            FROM usuarios, roles
+            WHERE (usuarios.id LIKE '{$login}' or correo LIKE '{$login}') && (roles.id = id_rol)";
         $salida = sql2row($sql);
     } else {
         $sql="
-            SELECT *
-            FROM usuarios
-            ";
+            SELECT usuarios.id, correo, clave, clave_temp, plazo, jerarquia, id_tipo, id_rol, roles.id, privilegios, nivel
+            FROM usuarios, roles
+            WHERE roles.id = id_rol
+            ORDER BY usuarios.id ASC";
         $salida = sql2array($sql);
     }
     return $salida;
 }
-
 
 function paginar($totalpaginas,$rango,$pagina_actual=1)
     {
@@ -233,11 +215,10 @@ function paginar($totalpaginas,$rango,$pagina_actual=1)
         return $paginas;
     }
 
-
-function bd_usuarios_datos2($inicio, $cantidad, $orden='id')
+function bd_usuarios_datos2($inicio, $cantidad, $orden='id', $nivel)
 {
-return sql2array("SELECT * FROM usuarios
-    ORDER BY $orden ASC
+return sql2array("SELECT usuarios.id, correo, id_rol, rol, nivel FROM usuarios, roles WHERE (id_rol = roles.id) && (nivel <= '{$nivel}') 
+    ORDER BY $orden ASC#
     LIMIT $inicio,$cantidad
     ");
 }
@@ -250,8 +231,8 @@ foreach ($miscampos as $key => $value)
 }
 
 $condicion = implode(' OR ', $miscampos);
-return sql2array("SELECT * FROM usuarios
-    WHERE $condicion
+return sql2array("SELECT usuarios.id, correo, id_rol, rol, nivel FROM usuarios, roles
+    WHERE ($condicion )&& (id_rol = roles.id) && (nivel <= '{$nivel}') 
         LIMIT $cantidad
     ");
 }
@@ -373,4 +354,69 @@ function bd_pnf_modicar($pnf)
     ";
     sql($sql);
     return $nombre;
+}
+
+function bd_roles_datos($login=NULL)
+{
+    if ($login!=NULL) {
+        $sql="
+            SELECT *
+            FROM roles
+            WHERE id LIKE '{$login}'";
+        $salida = sql2row($sql);
+    } else {
+        $sql="
+            SELECT *
+            FROM roles
+            ";
+        $salida = sql2array($sql);
+    }
+    return $salida;
+}
+
+function bd_tipo_datos($login=NULL)
+{
+    if ($login!=NULL) {
+        $sql="
+            SELECT *
+            FROM roles
+            WHERE id LIKE '{$login}'";
+        $salida = sql2row($sql);
+    } else {
+        $sql="
+            SELECT *
+            FROM roles
+            ";
+        $salida = sql2array($sql);
+    }
+    return $salida;
+}
+
+
+
+function bd_usuarios_registrar($usuario)
+{
+
+    $sql="
+        INSERT INTO usuarios(id, clave, correo, id_rol)
+        VALUES ('{$usuario['id']}','{$usuario['hash']}','{$usuario['correo']}','{$usuario['rol']}')
+        ";
+    sql($sql);
+    return "{$usuario['id']}";
+}
+
+
+function bd_usuarios_modificar($usuario)
+{
+    $sql = "
+        UPDATE usuarios SET
+            id = '{$id}',
+            id = '{$usuario['id_new']}',
+            correo = '{$usuario['correo']}',
+            id_rol = '{$usuario['rol']}'
+        WHERE
+            id = '{$usuario['id']}'
+    ";
+    sql($sql);
+    return $d['id'];
 }

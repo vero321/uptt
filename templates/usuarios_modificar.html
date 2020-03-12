@@ -8,23 +8,25 @@
               <div class="centro"> 
                   <h1 align="center">Registrar Usuario</h1>
                     <form 
-                    	action="proc_registrar_admin.php" 
-                    	method="POST" 
-                    	class="px-4 py-3" 
-                    	id="registro_usuario"
-                    	name="registro_usuario"          	>
+                      action="proc_modificar_usuarios.php" 
+                      method="POST" 
+                      class="px-4 py-3" 
+                      id="registro_usuario"
+                      name="registro_usuario"           >
                     
-                     	<div class="form-group">
-                        	<label for="id">Cedula</label>
-                        	 <input 
+                      <div class="form-group">
+                          <label for="id">Cedula</label>
+                           <input 
                             type="text" 
                             title="Escriba la ci del Usuario" 
                             required="required" 
                             class="form-control" 
-                            id="id" 
-                            name="id" 
-                            placeholder="12345678">
-                      	</div>
+                            id="id_new" 
+                            name="id_new" 
+                            placeholder=""
+                            value="{$usuario.id}">
+                            <input type="hidden" name="id" value="{$usuario.id}">
+                        </div>
 
                       <div class="form-group">
                           <label for="correo">Correo Electrónico</label>
@@ -35,7 +37,8 @@
                             class="form-control" 
                             id="correo" 
                             name="correo" 
-                            placeholder="login@correo.com">
+                            placeholder="{$usuario.correo}"
+                            value="{$usuario.correo}">
                         </div>
                     
                         <div class="form-group">
@@ -46,20 +49,19 @@
                             id="rol" 
                             name="rol" 
                             class="form-control"><option value="">-------</option>
-                            {section name=i loop=$roles}{if $roles[i].nivel<={$nivel}}<option value="{$roles[i].id}">{$roles[i].rol}</option>{/if}
-                              {/section}
-                            
+                            {section name=i loop=$roles}<option value="{$roles[i].id}">{$roles[i].rol}</option>
+                            {/section}
                           </select>
                         </div>
 
 
-                    	<div class="form-group">
-          							<input 
-          								class="btn-enviar boton" 
-          								type="submit" 
-          								name="enviar" 
-          								value="Registrar">
-                    	</div>
+                      <div class="form-group">
+                        <input 
+                          class="btn-enviar boton" 
+                          type="submit" 
+                          name="enviar" 
+                          value="Registrar">
+                      </div>
                     </form>
               </div> 
             </div>

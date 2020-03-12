@@ -1,8 +1,8 @@
 <?php 
 include_once "./inicializacion.php";
 
+$nivel="100";
 
-$miscampos  = array("id","correo","clave","id_tipo","id_rol");
 $n_datos = bd_usuarios_contar();
 $datos_por_pagina = $config['paginacion']['num_items'];
 
@@ -16,11 +16,10 @@ if( isset( $_REQUEST['pag'] ) ){
 }
 
 if( isset( $_REQUEST['p'] ) ){
-    $usuarios = bd_usuarios_datos3('id,correo,clave,id_tipo,id_rol' ,$_REQUEST['p'],$datos_por_pagina);
-
-
-} else {
-    $usuarios = bd_usuarios_datos2($i,$datos_por_pagina);
+    $usuarios = bd_usuarios_datos3('usuarios.id,correo,roles.id,rol, nivel',$_REQUEST['p'],$datos_por_pagina);
+} 
+else {
+    $usuarios = bd_usuarios_datos2($i, $datos_por_pagina, $orden='id', $nivel);
 
 }
 
@@ -35,8 +34,8 @@ $smarty->assign('n_usuarios',$n_datos);
 $smarty->assign('paginas',$paginas);
 $smarty->assign('pagina_actual',$pagina_actual);
 $smarty->assign('n_paginas',count($paginas));
+$smarty->assign('roles',$roles);
 $smarty->assign('usuarios',$usuarios);
-
 
 $smarty->assign('pie', file_get_contents('pie/usuarios.html'));
 $smarty->display('usuarios.html');
