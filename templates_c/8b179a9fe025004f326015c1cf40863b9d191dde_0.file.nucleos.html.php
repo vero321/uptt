@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-03-08 22:40:27
+/* Smarty version 3.1.30, created on 2020-03-12 10:17:43
   from "/home/veronica/public_html/uptt/templates/nucleos.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5e65ac9b662dd3_75975476',
+  'unifunc' => 'content_5e6a4487e11991_41350051',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '8b179a9fe025004f326015c1cf40863b9d191dde' => 
     array (
       0 => '/home/veronica/public_html/uptt/templates/nucleos.html',
-      1 => 1583721625,
+      1 => 1584022662,
       2 => 'file',
     ),
   ),
@@ -24,7 +24,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:pie_interno.html' => 1,
   ),
 ),false)) {
-function content_5e65ac9b662dd3_75975476 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5e6a4487e11991_41350051 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:cabecera_interna.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -44,10 +44,9 @@ $_smarty_tpl->_subTemplateRender("file:cabecera_interna.html", $_smarty_tpl->cac
 
 
 <!--finaliza-->
-			<br>
-			<br>
+			
 
-            <h2 align="center"><span class="badge badge-secondary badge-pill"><?php echo $_smarty_tpl->tpl_vars['n_nucleos']->value;?>
+            <h2 class="subtitulo" align="center"><span class="badge badge-secondary badge-pill"><?php echo $_smarty_tpl->tpl_vars['n_nucleos']->value;?>
 </span>Nucleos y Extensiones <a class="btn btn-sm btn-outline-primary mimodal" type="button"
             data-href="nucleos_agregar.php" title="Agregar nucleo o extensión"><span class="fa fa-plus"></span></a></h2>
 

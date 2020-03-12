@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-03-08 21:13:22
+/* Smarty version 3.1.30, created on 2020-03-12 10:15:39
   from "/home/veronica/public_html/uptt/templates/cabecera_interna.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5e659832223cc0_20328892',
+  'unifunc' => 'content_5e6a440b721528_49092162',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'bf79da9b1c1914b33bd6e839d11ba0adbe598d2e' => 
     array (
       0 => '/home/veronica/public_html/uptt/templates/cabecera_interna.html',
-      1 => 1583709685,
+      1 => 1584022534,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5e659832223cc0_20328892 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5e6a440b721528_49092162 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -72,8 +72,5 @@ function content_5e659832223cc0_20328892 (Smarty_Internal_Template $_smarty_tpl)
     <a href="#" class="btn btn-outline-danger">Salir</a>
   </div>
 </nav>
-
-<br>
-<br>
-<?php }
+<br><br><?php }
 }

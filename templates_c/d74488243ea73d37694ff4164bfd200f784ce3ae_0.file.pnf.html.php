@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-03-08 23:06:38
+/* Smarty version 3.1.30, created on 2020-03-12 10:18:35
   from "/home/veronica/public_html/uptt/templates/pnf.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5e65b2be0d1da1_59718372',
+  'unifunc' => 'content_5e6a44bb58bdb5_37062051',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'd74488243ea73d37694ff4164bfd200f784ce3ae' => 
     array (
       0 => '/home/veronica/public_html/uptt/templates/pnf.html',
-      1 => 1583723143,
+      1 => 1584022710,
       2 => 'file',
     ),
   ),
@@ -24,7 +24,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:pie_interno.html' => 1,
   ),
 ),false)) {
-function content_5e65b2be0d1da1_59718372 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5e6a44bb58bdb5_37062051 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:cabecera_interna.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -44,9 +44,7 @@ $_smarty_tpl->_subTemplateRender("file:cabecera_interna.html", $_smarty_tpl->cac
 
 
 <!--finaliza-->
-			<br>
-			<br>
-            <h2 align="center"><span class="badge badge-secondary badge-pill"><?php echo $_smarty_tpl->tpl_vars['n_pnf']->value;?>
+            <h2 class="subtitulo" align="center"><span class="badge badge-secondary badge-pill"><?php echo $_smarty_tpl->tpl_vars['n_pnf']->value;?>
 </span>PNF <a class="btn btn-sm btn-outline-primary mimodal" type="button" data-href="pnf_agregar.php" title="Agregar PNF"><span class="fa fa-plus"></span></a></h2>
 
             <div class="collapse" id="collapseExample">
