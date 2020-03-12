@@ -1,3 +1,27 @@
+<?php
+/* Smarty version 3.1.30, created on 2020-03-12 16:07:24
+  from "/home/palencia/public_html/proyecto4/uptt/templates/usuarios_modificar.html" */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.30',
+  'unifunc' => 'content_5e6a967c9ed146_73075402',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    'cb49a0e4fb17ea369c6777269640f051ca0533ab' => 
+    array (
+      0 => '/home/palencia/public_html/proyecto4/uptt/templates/usuarios_modificar.html',
+      1 => 1584043640,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_5e6a967c9ed146_73075402 (Smarty_Internal_Template $_smarty_tpl) {
+?>
 <div class="container">
 <div class="row">
   <div class="col-2"></div>
@@ -24,8 +48,10 @@
                             id="id_new" 
                             name="id_new" 
                             placeholder=""
-                            value="{$usuario.id}">
-                            <input type="hidden" name="id" value="{$usuario.id}">
+                            value="<?php echo $_smarty_tpl->tpl_vars['usuario']->value['id'];?>
+">
+                            <input type="hidden" name="id" value="<?php echo $_smarty_tpl->tpl_vars['usuario']->value['id'];?>
+">
                         </div>
 
                       <div class="form-group">
@@ -37,8 +63,10 @@
                             class="form-control" 
                             id="correo" 
                             name="correo" 
-                            placeholder="{$usuario.correo}"
-                            value="{$usuario.correo}">
+                            placeholder="<?php echo $_smarty_tpl->tpl_vars['usuario']->value['correo'];?>
+"
+                            value="<?php echo $_smarty_tpl->tpl_vars['usuario']->value['correo'];?>
+">
                         </div>
                     
                         <div class="form-group">
@@ -49,8 +77,23 @@
                             id="rol" 
                             name="rol" 
                             class="form-control"><option value="">-------</option>
-                            {section name=i loop=$roles}<option value="{$roles[i].id}">{$roles[i].rol}</option>
-                            {/section}
+                            <?php
+$__section_i_0_saved = isset($_smarty_tpl->tpl_vars['__smarty_section_i']) ? $_smarty_tpl->tpl_vars['__smarty_section_i'] : false;
+$__section_i_0_loop = (is_array(@$_loop=$_smarty_tpl->tpl_vars['roles']->value) ? count($_loop) : max(0, (int) $_loop));
+$__section_i_0_total = $__section_i_0_loop;
+$_smarty_tpl->tpl_vars['__smarty_section_i'] = new Smarty_Variable(array());
+if ($__section_i_0_total != 0) {
+for ($__section_i_0_iteration = 1, $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] = 0; $__section_i_0_iteration <= $__section_i_0_total; $__section_i_0_iteration++, $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']++){
+?><option value="<?php echo $_smarty_tpl->tpl_vars['roles']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['id'];?>
+"><?php echo $_smarty_tpl->tpl_vars['roles']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['rol'];?>
+</option>
+                            <?php
+}
+}
+if ($__section_i_0_saved) {
+$_smarty_tpl->tpl_vars['__smarty_section_i'] = $__section_i_0_saved;
+}
+?>
                           </select>
                         </div>
 
@@ -71,3 +114,5 @@
 
 </div>  
 </div>
+<?php }
+}

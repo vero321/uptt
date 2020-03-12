@@ -186,15 +186,15 @@ function bd_usuarios_datos($login=NULL)
 {
     if ($login!=NULL) {
         $sql="
-            SELECT usuarios.id, correo, clave, clave_temp, plazo, jerarquia, id_tipo, id_rol, roles.id, privilegios, nivel
+            SELECT usuarios.id, correo, clave, clave_temp, plazo, jerarquia, id_tipo, id_rol, rol, privilegios, nivel
             FROM usuarios, roles
             WHERE (usuarios.id LIKE '{$login}' or correo LIKE '{$login}') && (roles.id = id_rol)";
         $salida = sql2row($sql);
     } else {
         $sql="
-            SELECT usuarios.id, correo, clave, clave_temp, plazo, jerarquia, id_tipo, id_rol, roles.id, privilegios, nivel
+            SELECT usuarios.id, correo, clave, clave_temp, plazo, jerarquia, id_tipo, id_rol, rol, privilegios, nivel
             FROM usuarios, roles
-            WHERE roles.id = id_rol
+            WHERE id_rol = roles.id 
             ORDER BY usuarios.id ASC";
         $salida = sql2array($sql);
     }

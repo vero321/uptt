@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost:3306
--- Tiempo de generación: 09-03-2020 a las 16:37:14
--- Versión del servidor: 10.1.26-MariaDB-0+deb9u1
--- Versión de PHP: 7.0.27-0+deb9u1
+-- Tiempo de generación: 12-03-2020 a las 17:58:43
+-- Versión del servidor: 10.1.44-MariaDB-0+deb9u1
+-- Versión de PHP: 7.0.33-0+deb9u7
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -213,7 +213,7 @@ CREATE TABLE `roles` (
 --
 
 INSERT INTO `roles` (`id`, `rol`, `privilegios`, `nivel`) VALUES
-(1, 'Amisnistrador', '', 100),
+(1, 'Administrador', '', 100),
 (2, 'Operador Nucleo', '', 90),
 (3, 'Operador PNF', '', 80),
 (4, 'Profesor Proyecto', '', 70);
@@ -235,10 +235,10 @@ CREATE TABLE `tipo` (
 --
 
 INSERT INTO `tipo` (`id`, `nombre`, `id_rol`) VALUES
-(1, 'Administrador', 1),
-(2, 'Operador Sede', 2),
-(3, 'Operardor PNF', 3),
-(4, 'Profesor Proyecto', 4);
+(1, 'coordinar sedes', 1),
+(2, 'coordinar PNF', 1),
+(3, 'coordinar usuarios', 3),
+(4, 'asignar sedes', 4);
 
 -- --------------------------------------------------------
 
@@ -356,10 +356,10 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`id`, `correo`, `clave`, `clave_temp`, `plazo`, `jerarquia`, `id_tipo`, `id_rol`) VALUES
-('25171058', 'palencia575@gmail.com', '', '', '', '', 1, 1),
-('29052892', 'pedro@gmail.com', '', '', '', '', 2, 2),
-('13050683', 'mari@gmail.com', '', '', '', '', 2, 2),
-('12345678', 'jp@gmail.com', '', '', '', '', 2, 2);
+('25171058', 'palencia575@gmail.com', '', '', '', '', 0, 1),
+('29052892', 'pedro@gmail.com', '', '', '', '', 2, 1),
+('13050683', 'mari@gmail.com', '', '', '', '', 2, 3),
+('12345678', 'jp@gmail.com', '', '', '', '', 1, 2);
 
 -- --------------------------------------------------------
 
