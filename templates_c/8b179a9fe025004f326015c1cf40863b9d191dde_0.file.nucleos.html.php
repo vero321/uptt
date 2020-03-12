@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-03-12 10:17:43
+/* Smarty version 3.1.30, created on 2020-03-12 10:55:29
   from "/home/veronica/public_html/uptt/templates/nucleos.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5e6a4487e11991_41350051',
+  'unifunc' => 'content_5e6a4d6113b368_10158283',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '8b179a9fe025004f326015c1cf40863b9d191dde' => 
     array (
       0 => '/home/veronica/public_html/uptt/templates/nucleos.html',
-      1 => 1584022662,
+      1 => 1584024927,
       2 => 'file',
     ),
   ),
@@ -24,14 +24,14 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:pie_interno.html' => 1,
   ),
 ),false)) {
-function content_5e6a4487e11991_41350051 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5e6a4d6113b368_10158283 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:cabecera_interna.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
 
 
 <!-- incluye menu y agrega el espasio de trbajo-->
-<div class="container">
+<div class="container" >
     <div class="row">
         <div class="col-sm-2"> 
 
@@ -62,12 +62,11 @@ $_smarty_tpl->_subTemplateRender("file:cabecera_interna.html", $_smarty_tpl->cac
                 </div>
               </div>
             </div>
-            <br>
-
+           
     
             
 
-              <table class="table table-striped table-hover">
+              <table style="margin-top: 30px;" class="table table-striped table-hover">
                 <thead class="thead-dark">
                   <tr>
                     <th>Nombre Largo</th>

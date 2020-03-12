@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-03-12 10:08:35
+/* Smarty version 3.1.30, created on 2020-03-12 10:54:42
   from "/home/veronica/public_html/uptt/templates/usuarios.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5e6a4263d3e147_92001770',
+  'unifunc' => 'content_5e6a4d32d06859_34801937',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'deef6b7a8ceb2f8989f0cb978d9e29c8b91422c5' => 
     array (
       0 => '/home/veronica/public_html/uptt/templates/usuarios.html',
-      1 => 1584022113,
+      1 => 1584024798,
       2 => 'file',
     ),
   ),
@@ -24,7 +24,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:pie_interno.html' => 1,
   ),
 ),false)) {
-function content_5e6a4263d3e147_92001770 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5e6a4d32d06859_34801937 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:cabecera_interna.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -45,7 +45,7 @@ $_smarty_tpl->_subTemplateRender("file:cabecera_interna.html", $_smarty_tpl->cac
 
 <!--finaliza-->
 
-            <h2 align="center"><span class="badge badge-secondary badge-pill"><?php echo $_smarty_tpl->tpl_vars['n_usuarios']->value;?>
+            <h2  align="center"><span class="badge badge-secondary badge-pill"><?php echo $_smarty_tpl->tpl_vars['n_usuarios']->value;?>
 </span>Usuarios <a class="btn btn-sm btn-outline-primary mimodal" type="button"
             data-href="agregar_admin.php" title="Agregar sede o dependencia"><span class="fa fa-plus"></span></a></h2>
 
