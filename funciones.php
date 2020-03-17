@@ -3,6 +3,30 @@ include_once 'vendor/dBug/dBug.php';
 
 #--Funciones principales de Smarty---#
 
+function ver2($matriz) {
+  $estilo='style="font-size:8pt;font-family:arial;"';
+  $salida='<table border="1" cellspacing="3" cellpadding="3"  '
+    .$estilo
+    .' rules="cols">';
+  if (!is_array($matriz)){
+    var_dump($matriz);
+    return $matriz;
+  }
+  foreach($matriz as $key=>$value) {
+    if(count($value)>0){
+    if(is_array($value)||is_object($value)) {
+        $salida.="<tr><td valign='top'>$key</td><td>";
+        $salida.=ver2($value);
+        $salida.="</td></tr>";
+      }else{
+        $salida.="<tr><td valign='top'>$key</td><td>$value</td></tr>";
+      }
+    }
+  }
+  $salida.='</table>';
+  return $salida;
+}
+
 function ver($ss){
 /*   if(!(is_array($ss)||is_object($ss))){
       echo $ss;

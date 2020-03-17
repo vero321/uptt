@@ -8,11 +8,11 @@
               <div class="centro"> 
                   <h1 align="center">Registrar Usuario</h1>
                     <form 
-                    	action="proc_registrar_admin.php" 
+                    	action="proc_usuarios_registrar.php" 
                     	method="POST" 
                     	class="px-4 py-3" 
                     	id="registro_usuario"
-                    	name="registro_usuario"          	>
+                    	name="registro_usuario">
                     
                      	<div class="form-group">
                         	<label for="id">Cedula</label>
@@ -37,25 +37,25 @@
                             name="correo" 
                             placeholder="login@correo.com">
                         </div>
-                    
+
+                          <h5>Rol del usuario</h5>
                         <div class="form-group">
-                          <label for="Tipo">Rol del usuario</label>
-                          <select 
-                            title="Seleccione el Tipo de Usuario que le Corresponda" 
-                            required="required" 
-                            id="rol" 
-                            name="rol" 
-                            class="form-control"><option value="">-------</option>
-                            {section name=i loop=$roles}{if $roles[i].nivel<{$nivel}}<option value="{$roles[i].id}">{$roles[i].rol}</option>{/if}
-                              {/section}
-                            
-                          </select>
+                          {section name=i loop=$roles}
+                            <div class="form-check">
+
+                              <label class="form-check-label">
+                                <input type="checkbox"  class="form-check-input"  
+                                name="rol[]" value="{$roles[i].id}">
+                                {$roles[i].rol}
+                              </label>
+                            </div>
+                          {/section}
                         </div>
 
 
                     	<div class="form-group">
           							<input 
-          								class="btn-enviar boton" 
+          								class="btn-enviar btn btn-sm btn-primary" 
           								type="submit" 
           								name="enviar" 
           								value="Registrar">

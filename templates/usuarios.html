@@ -13,9 +13,11 @@
 
 
 <!--finaliza-->
+<br>
+<br>
 
             <h2  align="center"><span class="badge badge-secondary badge-pill">{$n_usuarios}</span>Usuarios <a class="btn btn-sm btn-outline-primary mimodal" type="button"
-            data-href="agregar_admin.php" title="Agregar sede o dependencia"><span class="fa fa-plus"></span></a></h2>
+            data-href="agregar_admin.php" title="Agregar Usuario"><span class="fa fa-plus"></span></a></h2>
 
             <div class="collapse" id="collapseExample">
               <div class="jumbotron jumbo_buscar">
@@ -36,7 +38,6 @@
                   <tr>
                     <th>Cedula</th>
                     <th>Correo</th>
-                    <th>Rol</th>
                     <th> Funciones</th>
                     <th><div class="btn-group">
                     <!-- a class="btn btn-sm btn-outline-primary" 
@@ -54,8 +55,14 @@
                   <tr>
                     <td>{$usuarios[i].id}</td>
                     <td>{$usuarios[i].correo}</td>
-                    <td>{$usuarios[i].rol}</td>
                     <td class="text-center" style="white-space: nowrap;">
+                    <a 
+                      style="margin-bottom:3px; color:blue;" 
+                      class="btn btn-default"
+                      title="Ver detalles de usuarios" 
+                      href="usuarios_datos.php?id={$usuarios[i].id}">
+                      <i class="fa fa-archive"></i>
+                    </a>
                     
                     <a 
                       style="margin-bottom:3px; color:blue;" 

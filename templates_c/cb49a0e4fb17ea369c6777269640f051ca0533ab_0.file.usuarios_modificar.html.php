@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-03-12 16:07:24
+/* Smarty version 3.1.30, created on 2020-03-16 16:28:39
   from "/home/palencia/public_html/proyecto4/uptt/templates/usuarios_modificar.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5e6a967c9ed146_73075402',
+  'unifunc' => 'content_5e6fe17755efa5_17457307',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'cb49a0e4fb17ea369c6777269640f051ca0533ab' => 
     array (
       0 => '/home/palencia/public_html/proyecto4/uptt/templates/usuarios_modificar.html',
-      1 => 1584043640,
+      1 => 1584390492,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5e6a967c9ed146_73075402 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5e6fe17755efa5_17457307 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <div class="container">
 <div class="row">
@@ -32,7 +32,7 @@ function content_5e6a967c9ed146_73075402 (Smarty_Internal_Template $_smarty_tpl)
               <div class="centro"> 
                   <h1 align="center">Modificar Usuario</h1>
                     <form 
-                      action="proc_modificar_usuarios.php" 
+                      action="proc_usuarios_modificar.php" 
                       method="POST" 
                       class="px-4 py-3" 
                       id="registro_usuario"
@@ -69,14 +69,15 @@ function content_5e6a967c9ed146_73075402 (Smarty_Internal_Template $_smarty_tpl)
 ">
                         </div>
                     
-                        <div class="form-group">
+                        <!--div class="form-group">
                           <label for="Tipo">Rol del usuario</label>
                           <select 
                             title="Seleccione el Tipo de Usuario que le Corresponda" 
                             required="required" 
                             id="rol" 
                             name="rol" 
-                            class="form-control"><option value="">-------</option>
+                            class="form-control"><option value="<?php echo $_smarty_tpl->tpl_vars['usuario']->value['id_rol'];?>
+">Rol actual</option>
                             <?php
 $__section_i_0_saved = isset($_smarty_tpl->tpl_vars['__smarty_section_i']) ? $_smarty_tpl->tpl_vars['__smarty_section_i'] : false;
 $__section_i_0_loop = (is_array(@$_loop=$_smarty_tpl->tpl_vars['roles']->value) ? count($_loop) : max(0, (int) $_loop));
@@ -95,12 +96,12 @@ $_smarty_tpl->tpl_vars['__smarty_section_i'] = $__section_i_0_saved;
 }
 ?>
                           </select>
-                        </div>
+                        </div-->
 
 
                       <div class="form-group">
                         <input 
-                          class="btn-enviar boton" 
+                          class="btn-enviar btn btn-sm btn-primary" 
                           type="submit" 
                           name="enviar" 
                           value="Modificar">

@@ -161,6 +161,16 @@ function bd_usuarios_hash($login)
     
     return sql2value($sql);
 }
+function bd_usuarios_hash_temporal($login)
+{
+    $sql= "
+        SELECT clave_temp, plazo
+        FROM usuarios
+        WHERE id LIKE '{$login}' or correo LIKE '{$login}'";
+    
+    return sql2row($sql);
+}
+
 
 
 function bd_usuarios_contar(){
@@ -186,15 +196,14 @@ function bd_usuarios_datos($login=NULL)
 {
     if ($login!=NULL) {
         $sql="
-            SELECT usuarios.id, correo, clave, clave_temp, plazo, jerarquia, id_tipo, id_rol, rol, privilegios, nivel
-            FROM usuarios, roles
-            WHERE (usuarios.id LIKE '{$login}' or correo LIKE '{$login}') && (roles.id = id_rol)";
+            SELECT *
+            FROM usuarios
+            WHERE id LIKE '{$login}'or correo LIKE '{$login}'";
         $salida = sql2row($sql);
     } else {
         $sql="
-            SELECT usuarios.id, correo, clave, clave_temp, plazo, jerarquia, id_tipo, id_rol, rol, privilegios, nivel
-            FROM usuarios, roles
-            WHERE id_rol = roles.id 
+            SELECT *
+            FROM usuarios
             ORDER BY usuarios.id ASC";
         $salida = sql2array($sql);
     }
@@ -217,7 +226,8 @@ function paginar($totalpaginas,$rango,$pagina_actual=1)
 
 function bd_usuarios_datos2($inicio, $cantidad, $orden='id', $nivel)
 {
-return sql2array("SELECT usuarios.id, correo, id_rol, rol, nivel FROM usuarios, roles WHERE (id_rol = roles.id) && (nivel <= '{$nivel}') 
+return sql2array("SELECT id, correo
+    FROM usuarios
     ORDER BY $orden ASC#
     LIMIT $inicio,$cantidad
     ");
@@ -231,12 +241,11 @@ foreach ($miscampos as $key => $value)
 }
 
 $condicion = implode(' OR ', $miscampos);
-return sql2array("SELECT usuarios.id, correo, id_rol, rol, nivel FROM usuarios, roles
-    WHERE ($condicion )&& (id_rol = roles.id) && (nivel <= '{$nivel}') 
+return sql2array("SELECT id, correo FROM usuarios
+    WHERE ($condicion )
         LIMIT $cantidad
     ");
 }
-
 
 
 function bd_usuarios_eliminar($d)
@@ -374,35 +383,46 @@ function bd_roles_datos($login=NULL)
     return $salida;
 }
 
-function bd_tipo_datos($login=NULL)
-{
-    if ($login!=NULL) {
-        $sql="
-            SELECT *
-            FROM roles
-            WHERE id LIKE '{$login}'";
-        $salida = sql2row($sql);
-    } else {
-        $sql="
-            SELECT *
-            FROM roles
-            ";
-        $salida = sql2array($sql);
-    }
-    return $salida;
-}
+function contar_valores($a,$buscado)
+ {
+  if(!is_array($a)) return NULL;
+  $i=0;
+  foreach($a as $v)
+   if($buscado===$v)
+    $i++;
+  return $i;
+ }
 
 
-
-function bd_usuarios_registrar($usuario)
-{
-
-    $sql="
-        INSERT INTO usuarios(id, clave, correo, id_rol)
-        VALUES ('{$usuario['id']}','{$usuario['hash']}','{$usuario['correo']}','{$usuario['rol']}')
+function bd_usuarios_registrar($usuario,$n_roles,$roles){   
+    $sql1="
+        INSERT INTO usuarios(id, clave, correo)
+        VALUES ('{$usuario['id']}','{$usuario['hash']}','{$usuario['correo']}')
         ";
-    sql($sql);
+    sql($sql1);
+
+    $consulta="SELECT id FROM personas WHERE id ='{$usuario['id']}'";
+    $verificar= sql($consulta);
+
+    if ($verificar < 1){
+        $sql2="
+            INSERT INTO personas(id)
+            VALUES('{$usuario['id']}');
+             ";
+    sql($sql2);
+    }
+
+    for ($i=0; $i <$n_roles ; $i++) { 
+        # code...
+        $rol=$roles[$i];
+        $sql="
+            INSERT INTO usuarios_tipos(id_usuario, id_rol, id_personas)
+            VALUES ('{$usuario['id']}','{$rol}','{$usuario['id']}')
+        ";
+        sql($sql);
+    }
     return "{$usuario['id']}";
+
 }
 
 
@@ -410,13 +430,32 @@ function bd_usuarios_modificar($usuario)
 {
     $sql = "
         UPDATE usuarios SET
-            id = '{$id}',
             id = '{$usuario['id_new']}',
-            correo = '{$usuario['correo']}',
-            id_rol = '{$usuario['rol']}'
-        WHERE
-            id = '{$usuario['id']}'
-    ";
+            correo = '{$usuario['correo']}'
+        WHERE id = '{$usuario['id']}' 
+            ";
     sql($sql);
     return $d['id'];
 }
+
+
+function bd_usuarios_roles_datos($id){
+
+    $sql="
+            SELECT *
+            FROM usuarios_tipos, roles 
+            WHERE id_usuario LIKE '{$id}' && id_rol = roles.id  ";
+        $salida = sql2array($sql);
+    return $salida;
+}
+
+
+function bd_eliminar_rol_usuario($id_usuario,$id_rol){   
+    $sql = "
+        DELETE FROM usuarios_tipos
+        WHERE id_usuario = '{$id_usuario}' && id_rol = '{$id_rol}'
+        ";
+    sql($sql);
+    return $pnf['id'];
+}
+

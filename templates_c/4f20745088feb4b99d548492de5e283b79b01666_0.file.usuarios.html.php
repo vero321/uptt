@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-03-12 17:16:21
+/* Smarty version 3.1.30, created on 2020-03-16 18:36:38
   from "/home/palencia/public_html/proyecto4/uptt/templates/usuarios.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5e6aa6a56dafa8_27390839',
+  'unifunc' => 'content_5e6fff768efb98_78077377',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '4f20745088feb4b99d548492de5e283b79b01666' => 
     array (
       0 => '/home/palencia/public_html/proyecto4/uptt/templates/usuarios.html',
-      1 => 1584047659,
+      1 => 1584398174,
       2 => 'file',
     ),
   ),
@@ -24,7 +24,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:pie_interno.html' => 1,
   ),
 ),false)) {
-function content_5e6aa6a56dafa8_27390839 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5e6fff768efb98_78077377 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:cabecera_interna.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -44,10 +44,12 @@ $_smarty_tpl->_subTemplateRender("file:cabecera_interna.html", $_smarty_tpl->cac
 
 
 <!--finaliza-->
+<br>
+<br>
 
             <h2  align="center"><span class="badge badge-secondary badge-pill"><?php echo $_smarty_tpl->tpl_vars['n_usuarios']->value;?>
 </span>Usuarios <a class="btn btn-sm btn-outline-primary mimodal" type="button"
-            data-href="agregar_admin.php" title="Agregar sede o dependencia"><span class="fa fa-plus"></span></a></h2>
+            data-href="agregar_admin.php" title="Agregar Usuario"><span class="fa fa-plus"></span></a></h2>
 
             <div class="collapse" id="collapseExample">
               <div class="jumbotron jumbo_buscar">
@@ -68,7 +70,6 @@ $_smarty_tpl->_subTemplateRender("file:cabecera_interna.html", $_smarty_tpl->cac
                   <tr>
                     <th>Cedula</th>
                     <th>Correo</th>
-                    <th>Rol</th>
                     <th> Funciones</th>
                     <th><div class="btn-group">
                     <!-- a class="btn btn-sm btn-outline-primary" 
@@ -95,9 +96,15 @@ for ($__section_i_0_iteration = 1, $_smarty_tpl->tpl_vars['__smarty_section_i']-
 </td>
                     <td><?php echo $_smarty_tpl->tpl_vars['usuarios']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['correo'];?>
 </td>
-                    <td><?php echo $_smarty_tpl->tpl_vars['usuarios']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['rol'];?>
-</td>
                     <td class="text-center" style="white-space: nowrap;">
+                    <a 
+                      style="margin-bottom:3px; color:blue;" 
+                      class="btn btn-default"
+                      title="Ver detalles de usuarios" 
+                      href="usuarios_datos.php?id=<?php echo $_smarty_tpl->tpl_vars['usuarios']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['id'];?>
+">
+                      <i class="fa fa-archive"></i>
+                    </a>
                     
                     <a 
                       style="margin-bottom:3px; color:blue;" 

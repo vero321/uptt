@@ -1,6 +1,6 @@
 <?php
 include_once "./inicializacion.php";
-$nivel="100";
+$nivel="1000";
 $roles=bd_roles_datos();
 $smarty->assign('nivel',$nivel);
 $smarty->assign('roles',$roles);

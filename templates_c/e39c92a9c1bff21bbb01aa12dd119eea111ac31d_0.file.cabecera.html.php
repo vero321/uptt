@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-03-12 17:33:49
+/* Smarty version 3.1.30, created on 2020-03-17 15:24:46
   from "/home/palencia/public_html/proyecto4/uptt/templates/cabecera.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5e6aaabd0811d2_69291484',
+  'unifunc' => 'content_5e7123feee8035_01352468',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'e39c92a9c1bff21bbb01aa12dd119eea111ac31d' => 
     array (
       0 => '/home/palencia/public_html/proyecto4/uptt/templates/cabecera.html',
-      1 => 1583782345,
+      1 => 1584473082,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5e6aaabd0811d2_69291484 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5e7123feee8035_01352468 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -57,7 +57,7 @@ function content_5e6aaabd0811d2_69291484 (Smarty_Internal_Template $_smarty_tpl)
         <div class="col">
         <div class="input-group "></div>
           <input 
-            type="email"  
+            type="text"  
             class="form-control" 
             id="login" 
             name="login" 

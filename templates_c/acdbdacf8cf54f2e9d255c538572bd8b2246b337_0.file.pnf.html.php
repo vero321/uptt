@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-03-12 17:17:31
+/* Smarty version 3.1.30, created on 2020-03-16 16:37:41
   from "/home/palencia/public_html/proyecto4/uptt/templates/pnf.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5e6aa6eb02a523_51123740',
+  'unifunc' => 'content_5e6fe395e7f2f5_40273846',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'acdbdacf8cf54f2e9d255c538572bd8b2246b337' => 
     array (
       0 => '/home/palencia/public_html/proyecto4/uptt/templates/pnf.html',
-      1 => 1584047659,
+      1 => 1584379536,
       2 => 'file',
     ),
   ),
@@ -24,7 +24,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:pie_interno.html' => 1,
   ),
 ),false)) {
-function content_5e6aa6eb02a523_51123740 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5e6fe395e7f2f5_40273846 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:cabecera_interna.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -95,7 +95,6 @@ for ($__section_i_0_iteration = 1, $_smarty_tpl->tpl_vars['__smarty_section_i']-
 </td>
                     <td><?php echo $_smarty_tpl->tpl_vars['pnf']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['nombre_corto'];?>
 </td>
-
                     <td class="text-center" style="white-space: nowrap;">
                     
                     <a 
