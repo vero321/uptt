@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-03-16 22:37:53
-  from "/home/palencia/public_html/proyecto4/uptt/templates/usuarios_datos.html" */
+/* Smarty version 3.1.30, created on 2020-03-17 21:11:56
+  from "/home/veronica/public_html/uptt/templates/usuarios_datos.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5e70380141a6f4_44876297',
+  'unifunc' => 'content_5e71755c558af8_42605694',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    'f388f389f4b38f9a6268c01701af8c311d96757a' => 
+    '54166e7b82bd5961b561c7d7bd1d8c68d6357cfa' => 
     array (
-      0 => '/home/palencia/public_html/proyecto4/uptt/templates/usuarios_datos.html',
-      1 => 1584412670,
+      0 => '/home/veronica/public_html/uptt/templates/usuarios_datos.html',
+      1 => 1584485323,
       2 => 'file',
     ),
   ),
@@ -24,14 +24,14 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:pie_interno.html' => 1,
   ),
 ),false)) {
-function content_5e70380141a6f4_44876297 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5e71755c558af8_42605694 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:cabecera_interna.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
 
 
 <!-- incluye menu y agrega el espasio de trbajo-->
-<div class="container">
+<div class="container" style="margin-top: 90px;">
     <div class="row">
         <div class="col-sm-2"> 
 

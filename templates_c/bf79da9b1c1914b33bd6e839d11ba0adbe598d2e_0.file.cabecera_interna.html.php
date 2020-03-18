@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-03-12 10:15:39
+/* Smarty version 3.1.30, created on 2020-03-17 21:56:53
   from "/home/veronica/public_html/uptt/templates/cabecera_interna.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5e6a440b721528_49092162',
+  'unifunc' => 'content_5e717fe524c8e1_85214964',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'bf79da9b1c1914b33bd6e839d11ba0adbe598d2e' => 
     array (
       0 => '/home/veronica/public_html/uptt/templates/cabecera_interna.html',
-      1 => 1584022534,
+      1 => 1584496611,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5e6a440b721528_49092162 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5e717fe524c8e1_85214964 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -68,9 +68,11 @@ function content_5e6a440b721528_49092162 (Smarty_Internal_Template $_smarty_tpl)
             </li>
             
     </ul>
-    <a href="#" class="btn btn-link usuario"><i class="fa fa-user fa-fw"></i>Pedro Paredes</a>
-    <a href="#" class="btn btn-outline-danger">Salir</a>
+    <a href="usuarios_datos2.php?id=<?php echo $_smarty_tpl->tpl_vars['usuario']->value['id'];?>
+" class="btn btn-link usuario"><i class="fa fa-user fa-fw"></i><?php echo $_SESSION["u"]["correo"];?>
+</a>
+    <a href="proc_exit.php" class="btn btn-outline-danger">Salir</a>
   </div>
 </nav>
-<br><br><?php }
+<?php }
 }

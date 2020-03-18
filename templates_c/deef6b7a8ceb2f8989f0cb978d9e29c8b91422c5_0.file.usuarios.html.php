@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-03-12 10:54:42
+/* Smarty version 3.1.30, created on 2020-03-17 21:18:12
   from "/home/veronica/public_html/uptt/templates/usuarios.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5e6a4d32d06859_34801937',
+  'unifunc' => 'content_5e7176d44411d0_55981882',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'deef6b7a8ceb2f8989f0cb978d9e29c8b91422c5' => 
     array (
       0 => '/home/veronica/public_html/uptt/templates/usuarios.html',
-      1 => 1584024798,
+      1 => 1584493660,
       2 => 'file',
     ),
   ),
@@ -24,14 +24,14 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:pie_interno.html' => 1,
   ),
 ),false)) {
-function content_5e6a4d32d06859_34801937 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5e7176d44411d0_55981882 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:cabecera_interna.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
 
 
 <!-- incluye menu y agrega el espasio de trbajo-->
-<div class="container">
+<div class="container" style="margin-top: 90px;" >
     <div class="row">
         <div class="col-sm-2"> 
 
@@ -45,9 +45,10 @@ $_smarty_tpl->_subTemplateRender("file:cabecera_interna.html", $_smarty_tpl->cac
 
 <!--finaliza-->
 
-            <h2  align="center"><span class="badge badge-secondary badge-pill"><?php echo $_smarty_tpl->tpl_vars['n_usuarios']->value;?>
+
+            <h2 class="subtitulo" align="center"><span class="badge badge-secondary badge-pill"><?php echo $_smarty_tpl->tpl_vars['n_usuarios']->value;?>
 </span>Usuarios <a class="btn btn-sm btn-outline-primary mimodal" type="button"
-            data-href="agregar_admin.php" title="Agregar sede o dependencia"><span class="fa fa-plus"></span></a></h2>
+            data-href="agregar_admin.php" title="Agregar Usuario"><span class="fa fa-plus"></span></a></h2>
 
             <div class="collapse" id="collapseExample">
               <div class="jumbotron jumbo_buscar">
@@ -61,15 +62,13 @@ $_smarty_tpl->_subTemplateRender("file:cabecera_interna.html", $_smarty_tpl->cac
                 </div>
               </div>
             </div>
-            <br>
-            
+          
            
-              <table class="table table-striped table-hover">
+              <table style="margin-top: 30px;" class="table table-striped table-hover">
                 <thead class="thead-dark">
                   <tr>
                     <th>Cedula</th>
                     <th>Correo</th>
-                    <th>Rol</th>
                     <th> Funciones</th>
                     <th><div class="btn-group">
                     <!-- a class="btn btn-sm btn-outline-primary" 
@@ -96,9 +95,15 @@ for ($__section_i_0_iteration = 1, $_smarty_tpl->tpl_vars['__smarty_section_i']-
 </td>
                     <td><?php echo $_smarty_tpl->tpl_vars['usuarios']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['correo'];?>
 </td>
-                    <td><?php echo $_smarty_tpl->tpl_vars['usuarios']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['rol'];?>
-</td>
                     <td class="text-center" style="white-space: nowrap;">
+                    <a 
+                      style="margin-bottom:3px; color:blue;" 
+                      class="btn btn-default"
+                      title="Ver detalles de usuarios" 
+                      href="usuarios_datos.php?id=<?php echo $_smarty_tpl->tpl_vars['usuarios']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['id'];?>
+">
+                      <i class="fa fa-archive"></i>
+                    </a>
                     
                     <a 
                       style="margin-bottom:3px; color:blue;" 
@@ -116,7 +121,7 @@ for ($__section_i_0_iteration = 1, $_smarty_tpl->tpl_vars['__smarty_section_i']-
 ">
                       <i class="fa fa-trash"></i>
                     </a>
-
+                  
                     </td>
                   </tr>
 <?php

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-03-08 21:13:16
+/* Smarty version 3.1.30, created on 2020-03-17 21:11:03
   from "/home/veronica/public_html/uptt/templates/pie.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5e65982cb8f732_21569517',
+  'unifunc' => 'content_5e7175273d4829_92241507',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'a03cad9b9f1bba935fc2857388124fa6ee38b400' => 
     array (
       0 => '/home/veronica/public_html/uptt/templates/pie.html',
-      1 => 1583604087,
+      1 => 1584024291,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5e65982cb8f732_21569517 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5e7175273d4829_92241507 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!--Comienzo del Pie de Página-->
 <nav class="footerTop" >

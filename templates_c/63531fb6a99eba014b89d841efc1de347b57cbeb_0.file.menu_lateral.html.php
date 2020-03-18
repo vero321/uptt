@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-03-08 21:13:22
+/* Smarty version 3.1.30, created on 2020-03-17 21:11:10
   from "/home/veronica/public_html/uptt/templates/menu_lateral.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5e65983227e721_02355292',
+  'unifunc' => 'content_5e71752ee1c987_32572816',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '63531fb6a99eba014b89d841efc1de347b57cbeb' => 
     array (
       0 => '/home/veronica/public_html/uptt/templates/menu_lateral.html',
-      1 => 1583710248,
+      1 => 1584053185,
       2 => 'file',
     ),
   ),
@@ -20,10 +20,10 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5e65983227e721_02355292 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5e71752ee1c987_32572816 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!--inicio menu lateral-->
-    <div id="wrapper">
+    <div id="wrapper" style="margin-top: -40px;">
         <div id="sidebar-wrapper">
             <aside id="sidebar">
                 <ul id="sidemenu" class="sidebar-nav">

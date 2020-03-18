@@ -259,6 +259,35 @@ function bd_usuarios_eliminar($d)
 }
 
 
+function bd_usuarios_modificar($usuario)
+{
+    $sql = "
+        UPDATE usuarios SET
+            id = '{$usuario['id_new']}',
+            correo = '{$usuario['correo']}'
+        WHERE id = '{$usuario['id']}' 
+            ";
+    sql($sql);
+    return $d['id'];
+}
+
+
+function bd_usuarios_modificar_clave($d)
+{
+    $id = $d[0];
+    $hash = $d[1];
+    $sql = "
+        UPDATE usuarios SET
+            clave = '{$hash}'
+        WHERE
+            id = '{$id}'
+    ";
+    sql($sql);
+    return $id;
+}
+
+#####Funciones para los nucleos
+
 function bd_nucleos_datos($id=NULL)
 {
     if ($id!=NULL) {
@@ -311,6 +340,7 @@ function bd_nucleos_eliminar($id)
     return $nucleos['id'];
 }
 
+###########################Funciones PNF
 
 function bd_pnf_datos($id=NULL)
 {
@@ -364,6 +394,8 @@ function bd_pnf_modicar($pnf)
     sql($sql);
     return $nombre;
 }
+
+##############################
 
 function bd_roles_datos($login=NULL)
 {
@@ -426,19 +458,6 @@ function bd_usuarios_registrar($usuario,$n_roles,$roles){
 }
 
 
-function bd_usuarios_modificar($usuario)
-{
-    $sql = "
-        UPDATE usuarios SET
-            id = '{$usuario['id_new']}',
-            correo = '{$usuario['correo']}'
-        WHERE id = '{$usuario['id']}' 
-            ";
-    sql($sql);
-    return $d['id'];
-}
-
-
 function bd_usuarios_roles_datos($id){
 
     $sql="
@@ -450,6 +469,8 @@ function bd_usuarios_roles_datos($id){
 }
 
 
+
+
 function bd_eliminar_rol_usuario($id_usuario,$id_rol){   
     $sql = "
         DELETE FROM usuarios_tipos
@@ -459,3 +480,22 @@ function bd_eliminar_rol_usuario($id_usuario,$id_rol){
     return $pnf['id'];
 }
 
+
+function bd_personas_datos($login=NULL)
+{
+    if ($login!=NULL){
+        $sql="
+                SELECT *
+                FROM  personas 
+                WHERE id LIKE '{$login}'";
+            $salida = sql2array($sql);
+    }else
+    {
+        $sql="
+            SELECT *
+            FROM personas
+            ";
+        $salida = sql2array($sql);
+    }
+    return $salida;
+}

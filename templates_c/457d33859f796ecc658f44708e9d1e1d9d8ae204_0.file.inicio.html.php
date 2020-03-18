@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-03-09 17:05:26
+/* Smarty version 3.1.30, created on 2020-03-17 21:11:03
   from "/home/veronica/public_html/uptt/templates/inicio.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5e66af963a7750_58321336',
+  'unifunc' => 'content_5e7175273c96a4_17103053',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '457d33859f796ecc658f44708e9d1e1d9d8ae204' => 
     array (
       0 => '/home/veronica/public_html/uptt/templates/inicio.html',
-      1 => 1583787922,
+      1 => 1584055001,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:pie.html' => 1,
   ),
 ),false)) {
-function content_5e66af963a7750_58321336 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5e7175273c96a4_17103053 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:cabecera.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -90,27 +90,27 @@ $_smarty_tpl->_subTemplateRender("file:cabecera.html", $_smarty_tpl->cache_id, $
 			<div class="row">
 				<div class="col-md-2">
 					<div class="card border-0" align="center">
-						<a href="NUES_beatriz.php"><i class="fa fa-university fa-5x nucleo"></i><h5 class="nucleo">beatriz</h5></a>
+						<a class="nucleo" href="NUES_beatriz.php"><i class="fa fa-university fa-5x nucleo"></i><h5 class="nucleo">beatriz</h5></a>
 					</div>
 				</div>
 				<div class="col-md-2">
 					<div class="card border-0" align="center">
-						<a href="NUES_san_luis.php"><i class="fa fa-university fa-5x nucleo"></i><h5 class="nucleo">san luis</h5></a>
+						<a class="nucleo" href="NUES_san_luis.php"><i class="fa fa-university fa-5x nucleo"></i><h5 class="nucleo">san luis</h5></a>
 					</div></a>
 				</div>
 				<div class="col-md-2">
 					<div class="card border-0" align="center">
-						<a href="NUES_bocono.php"><i class="fa fa-university fa-5x nucleo"></i><h5 class="nucleo">bocono</h5></a>
+						<a class="nucleo" href="NUES_bocono.php"><i class="fa fa-university fa-5x nucleo"></i><h5 class="nucleo">bocono</h5></a>
 					</div>
 				</div>
 				<div class="col-md-2">
 					<div class="card border-0" align="center">
-						<a href="NUES_trujillo.php"><i class="fa fa-university fa-5x nucleo"></i><h5 class="nucleo">trujillo</h5></a>
+						<a class="nucleo" href="NUES_trujillo.php"><i class="fa fa-university fa-5x nucleo"></i><h5 class="nucleo">trujillo</h5></a>
 					</div>
 				</div>
 				<div class="col-md-2">
 					<div class="card border-0" align="center">
-						<a href="NUES_dividive.php"><i class="fa fa-university fa-5x nucleo"></i><h5 class="nucleo">dividive</h5></a>
+						<a class="nucleo" href="NUES_dividive.php"><i class="fa fa-university fa-5x nucleo"></i><h5 class="nucleo">dividive</h5></a>
 					</div>
 				</div>
 			</div>
