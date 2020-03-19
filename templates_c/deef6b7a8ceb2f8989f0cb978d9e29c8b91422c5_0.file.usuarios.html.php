@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-03-17 21:18:12
+/* Smarty version 3.1.30, created on 2020-03-19 15:42:51
   from "/home/veronica/public_html/uptt/templates/usuarios.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5e7176d44411d0_55981882',
+  'unifunc' => 'content_5e73cb3bd10110_13749099',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'deef6b7a8ceb2f8989f0cb978d9e29c8b91422c5' => 
     array (
       0 => '/home/veronica/public_html/uptt/templates/usuarios.html',
-      1 => 1584493660,
+      1 => 1584646968,
       2 => 'file',
     ),
   ),
@@ -24,22 +24,20 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:pie_interno.html' => 1,
   ),
 ),false)) {
-function content_5e7176d44411d0_55981882 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5e73cb3bd10110_13749099 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:cabecera_interna.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
 
 
 <!-- incluye menu y agrega el espasio de trbajo-->
-<div class="container" style="margin-top: 90px;" >
-    <div class="row">
-        <div class="col-sm-2"> 
-
+<div class="container" style="margin-top: 90px;">
             <?php $_smarty_tpl->_subTemplateRender("file:menu_lateral.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
-        </div>
-        <div class="col-sm-10">
+    <div class="row" id="central">
+        
+        <div class="col-sm-9 offset-3"  >
 
 
 
@@ -64,16 +62,13 @@ $_smarty_tpl->_subTemplateRender("file:cabecera_interna.html", $_smarty_tpl->cac
             </div>
           
            
-              <table style="margin-top: 30px;" class="table table-striped table-hover">
+              <table style="margin-top: 30px;" class="table table-responsive-xl">
                 <thead class="thead-dark">
                   <tr>
                     <th>Cedula</th>
                     <th>Correo</th>
                     <th> Funciones</th>
                     <th><div class="btn-group">
-                    <!-- a class="btn btn-sm btn-outline-primary" 
-                    type="button"
-                    href="agregar_persona.php"><span class="fa fa-plus"></span></a-->
                           
                     <button class="btn btn-sm btn-outline-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample" title="Buscar">
                     <samp class="fa fa-search"></samp>
@@ -133,14 +128,15 @@ $_smarty_tpl->tpl_vars['__smarty_section_i'] = $__section_i_0_saved;
 ?>
                 </tbody>
               </table>
-                   <nav aria-label="Page navigation example">
-        <ul class="pagination">
-            <?php if ($_smarty_tpl->tpl_vars['pagina_actual']->value != 1) {?>
+          <nav aria-label="Page navigation example">
+            <ul class="pagination">
+              <?php if ($_smarty_tpl->tpl_vars['pagina_actual']->value != 1) {?>
               <li class="page-item"><a class="page-link" href="usuarios.php?pag=<?php echo $_smarty_tpl->tpl_vars['pagina_actual']->value-1;?>
 &i=<?php echo $_smarty_tpl->tpl_vars['i']->value-$_smarty_tpl->tpl_vars['b']->value;?>
-" >Anterior</a></li>
+" >Anterior</a>
+              </li>
               <?php }?>
-          <?php
+              <?php
 $__section_ii_1_saved = isset($_smarty_tpl->tpl_vars['__smarty_section_ii']) ? $_smarty_tpl->tpl_vars['__smarty_section_ii'] : false;
 $__section_ii_1_loop = (is_array(@$_loop=$_smarty_tpl->tpl_vars['paginas']->value) ? count($_loop) : max(0, (int) $_loop));
 $__section_ii_1_total = $__section_ii_1_loop;
@@ -148,28 +144,31 @@ $_smarty_tpl->tpl_vars['__smarty_section_ii'] = new Smarty_Variable(array());
 if ($__section_ii_1_total != 0) {
 for ($_smarty_tpl->tpl_vars['__smarty_section_ii']->value['iteration'] = 1, $_smarty_tpl->tpl_vars['__smarty_section_ii']->value['index'] = 0; $_smarty_tpl->tpl_vars['__smarty_section_ii']->value['iteration'] <= $__section_ii_1_total; $_smarty_tpl->tpl_vars['__smarty_section_ii']->value['iteration']++, $_smarty_tpl->tpl_vars['__smarty_section_ii']->value['index']++){
 ?>
-          <li class="page-item <?php if ((isset($_smarty_tpl->tpl_vars['__smarty_section_ii']->value['iteration']) ? $_smarty_tpl->tpl_vars['__smarty_section_ii']->value['iteration'] : null) == $_smarty_tpl->tpl_vars['pagina_actual']->value) {?> active <?php }?>"><a class="page-link" href="usuarios.php?pag=<?php echo (isset($_smarty_tpl->tpl_vars['__smarty_section_ii']->value['iteration']) ? $_smarty_tpl->tpl_vars['__smarty_section_ii']->value['iteration'] : null);?>
+              <li class="page-item <?php if ((isset($_smarty_tpl->tpl_vars['__smarty_section_ii']->value['iteration']) ? $_smarty_tpl->tpl_vars['__smarty_section_ii']->value['iteration'] : null) == $_smarty_tpl->tpl_vars['pagina_actual']->value) {?> active <?php }?>"><a class="page-link" href="usuarios.php?pag=<?php echo (isset($_smarty_tpl->tpl_vars['__smarty_section_ii']->value['iteration']) ? $_smarty_tpl->tpl_vars['__smarty_section_ii']->value['iteration'] : null);?>
 &i=<?php echo $_smarty_tpl->tpl_vars['paginas']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_ii']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_ii']->value['index'] : null)];?>
 "><?php echo (isset($_smarty_tpl->tpl_vars['__smarty_section_ii']->value['iteration']) ? $_smarty_tpl->tpl_vars['__smarty_section_ii']->value['iteration'] : null);?>
- <span class="sr-only">(current)</span></a></li>
-          <?php
+ <span class="sr-only">(current)</span></a>
+              </li>
+              <?php
 }
 }
 if ($__section_ii_1_saved) {
 $_smarty_tpl->tpl_vars['__smarty_section_ii'] = $__section_ii_1_saved;
 }
 ?>
-            <?php if ($_smarty_tpl->tpl_vars['pagina_actual']->value != $_smarty_tpl->tpl_vars['n_paginas']->value) {?> 
+              <?php if ($_smarty_tpl->tpl_vars['pagina_actual']->value != $_smarty_tpl->tpl_vars['n_paginas']->value) {?> 
               <li class="page-item"><a class="page-link" href="usuarios.php?pag=<?php echo $_smarty_tpl->tpl_vars['pagina_actual']->value+1;?>
 &i=<?php echo $_smarty_tpl->tpl_vars['i']->value+$_smarty_tpl->tpl_vars['b']->value;?>
-">Siguiente</a></li>
-            <?php }?>
-        </ul>
-      </nav>
-          </div>
-        </div>
+">Siguiente</a>
+              </li>
+              <?php }?>
+            </ul>
+          </nav>
 
-      </div>
+       </div>
+   </div>
+
+</div>
 
 <?php $_smarty_tpl->_subTemplateRender("file:modal/modal_box.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('prueba'=>"Usuario"), 0, false);
 ?>

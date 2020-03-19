@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-03-17 21:56:53
+/* Smarty version 3.1.30, created on 2020-03-19 15:08:00
   from "/home/veronica/public_html/uptt/templates/cabecera_interna.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5e717fe524c8e1_85214964',
+  'unifunc' => 'content_5e73c310888d93_41316284',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'bf79da9b1c1914b33bd6e839d11ba0adbe598d2e' => 
     array (
       0 => '/home/veronica/public_html/uptt/templates/cabecera_interna.html',
-      1 => 1584496611,
+      1 => 1584644878,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5e717fe524c8e1_85214964 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5e73c310888d93_41316284 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -28,6 +28,7 @@ function content_5e717fe524c8e1_85214964 (Smarty_Internal_Template $_smarty_tpl)
 <!--Comienzo de la Cabecera-->
 <head>
   <meta charset="utf-8"/>
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <link href="./vendor/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="./estilos/personal.css">
@@ -47,28 +48,28 @@ function content_5e717fe524c8e1_85214964 (Smarty_Internal_Template $_smarty_tpl)
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-                <a class="nav-link" href="#"><i class="fa fa-gears"></i> Administrador</a>
+                <a class="nav-link" href="#"> Administrador</a>
             </li>
             <li class="nav-item"><a class="nav-link" href="#">
-              <i class="fa fa-university"></i> Operador Nucleo</a>
+              Operador Nucleo</a>
             </li>
 
             <li class="nav-item"><a class="nav-link" href="#">
-            <i class="fa fa-leanpub"></i> Operador PNF</a>
+             Operador PNF</a>
             </li>
             
             <li class="nav-item"><a class="nav-link" href="#">
-            <i class="fa fa-object-group"></i> Comite Tecnico</a>
+            Comite Tecnico</a>
             </li>
             <li class="nav-item"><a class="nav-link" href="#">
-            <i class="fa fa-suitcase"></i> Profesor</a>
+            Profesor</a>
             </li>
             <li class="nav-item"><a class="nav-link" href="#">
-            <i class="fa fa-graduation-cap"></i> Estudiante</a>
+            Estudiante</a>
             </li>
             
     </ul>
-    <a href="usuarios_datos2.php?id=<?php echo $_smarty_tpl->tpl_vars['usuario']->value['id'];?>
+    <a href="personas_datos.php?id=<?php echo $_smarty_tpl->tpl_vars['usuario']->value['id'];?>
 " class="btn btn-link usuario"><i class="fa fa-user fa-fw"></i><?php echo $_SESSION["u"]["correo"];?>
 </a>
     <a href="proc_exit.php" class="btn btn-outline-danger">Salir</a>

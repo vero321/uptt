@@ -4,6 +4,7 @@
 <!--Comienzo de la Cabecera-->
 <head>
   <meta charset="utf-8"/>
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <link href="./vendor/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="./estilos/personal.css">
@@ -23,28 +24,28 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-                <a class="nav-link" href="#"><i class="fa fa-gears"></i> Administrador</a>
+                <a class="nav-link" href="#"> Administrador</a>
             </li>
             <li class="nav-item"><a class="nav-link" href="#">
-              <i class="fa fa-university"></i> Operador Nucleo</a>
+              Operador Nucleo</a>
             </li>
 
             <li class="nav-item"><a class="nav-link" href="#">
-            <i class="fa fa-leanpub"></i> Operador PNF</a>
+             Operador PNF</a>
             </li>
             
             <li class="nav-item"><a class="nav-link" href="#">
-            <i class="fa fa-object-group"></i> Comite Tecnico</a>
+            Comite Tecnico</a>
             </li>
             <li class="nav-item"><a class="nav-link" href="#">
-            <i class="fa fa-suitcase"></i> Profesor</a>
+            Profesor</a>
             </li>
             <li class="nav-item"><a class="nav-link" href="#">
-            <i class="fa fa-graduation-cap"></i> Estudiante</a>
+            Estudiante</a>
             </li>
             
     </ul>
-    <a href="usuarios_datos2.php?id={$usuario['id']}" class="btn btn-link usuario"><i class="fa fa-user fa-fw"></i>{$smarty.session["u"]["correo"]}</a>
+    <a href="personas_datos.php?id={$usuario['id']}" class="btn btn-link usuario"><i class="fa fa-user fa-fw"></i>{$smarty.session["u"]["correo"]}</a>
     <a href="proc_exit.php" class="btn btn-outline-danger">Salir</a>
   </div>
 </nav>

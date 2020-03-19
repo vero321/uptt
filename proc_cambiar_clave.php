@@ -21,9 +21,9 @@ if ( $clave1 == $clave2 and $clave1!='')
 	$claven = password_hash($clave1, PASSWORD_DEFAULT);
     bd_usuarios_modificar_clave([$id,$claven]);
     $m = "Su clave de acceso se cambió correctamente." ;
-    ir("mensaje.php?m={$m}&d=usuarios_datos2.php");
+    ir("mensaje.php?m={$m}&d=personas_datos.php");
 }else{
     $m = 'Error, intente nuevamente.';
-    ir("mensaje.php?m={$m}&d=usuarios_datos2.php");
+    ir("mensaje.php?m={$m}&d=personas_datos.php");
 }
     

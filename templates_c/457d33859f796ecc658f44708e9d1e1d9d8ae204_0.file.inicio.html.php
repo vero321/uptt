@@ -1,28 +1,28 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-03-17 21:11:03
+/* Smarty version 3.1.30, created on 2020-03-19 16:03:56
   from "/home/veronica/public_html/uptt/templates/inicio.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5e7175273c96a4_17103053',
+  'unifunc' => 'content_5e73d02cc90eb8_33586946',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '457d33859f796ecc658f44708e9d1e1d9d8ae204' => 
     array (
       0 => '/home/veronica/public_html/uptt/templates/inicio.html',
-      1 => 1584055001,
+      1 => 1584648235,
       2 => 'file',
     ),
   ),
   'includes' => 
   array (
     'file:cabecera.html' => 1,
-    'file:pie.html' => 1,
+    'file:pie_interno.html' => 1,
   ),
 ),false)) {
-function content_5e7175273c96a4_17103053 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5e73d02cc90eb8_33586946 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:cabecera.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -31,9 +31,11 @@ $_smarty_tpl->_subTemplateRender("file:cabecera.html", $_smarty_tpl->cache_id, $
   <section id="intro">
     <div class="container">
       <div class="row text-center" >
-        <div class="col-md-8 offset-2">
+        <div class="col-md-8 offset-md-2 col-sm-12">
           <div class="centro">
-            <a class="enlace-oscuro" data-toggle="collapse" href="#explicacion" role="button" aria-expanded="false" aria-controls="explicacion"><h1 class="titulo" title="Breve explicación sobre el Repositorio">repositorio institucional</h1></a>
+            
+            <a class="enlace-oscuro" data-toggle="collapse" href="#explicacion" aria-expanded="false" aria-controls="explicacion">
+            <h1 class="titulo" title="Breve explicación sobre el Repositorio">repositorio institucional</h1></a>
             <div class=""></div>
 						  <div class="collapse " id="explicacion">
 						    <div class="">
@@ -117,6 +119,6 @@ $_smarty_tpl->_subTemplateRender("file:cabecera.html", $_smarty_tpl->cache_id, $
 		</div>
 	</div>
 </div>
-<?php $_smarty_tpl->_subTemplateRender("file:pie.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+<?php $_smarty_tpl->_subTemplateRender("file:pie_interno.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 }
 }

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-03-17 22:48:34
+/* Smarty version 3.1.30, created on 2020-03-19 15:52:17
   from "/home/veronica/public_html/uptt/templates/pnf.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5e718c028867e1_03504749',
+  'unifunc' => 'content_5e73cd71a41041_60407697',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'd74488243ea73d37694ff4164bfd200f784ce3ae' => 
     array (
       0 => '/home/veronica/public_html/uptt/templates/pnf.html',
-      1 => 1584485229,
+      1 => 1584647535,
       2 => 'file',
     ),
   ),
@@ -24,22 +24,20 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:pie_interno.html' => 1,
   ),
 ),false)) {
-function content_5e718c028867e1_03504749 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5e73cd71a41041_60407697 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:cabecera_interna.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
 
 
 <!-- incluye menu y agrega el espasio de trbajo-->
-<div class="container" style="margin-top: 90px;" >
-    <div class="row">
-        <div class="col-sm-2"> 
-
+<div class="container" style="margin-top: 90px;">
             <?php $_smarty_tpl->_subTemplateRender("file:menu_lateral.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
-        </div>
-        <div class="col-sm-10">
+    <div class="row" id="central">
+        
+        <div class="col-sm-9 offset-3"  >
 
 
 
@@ -62,7 +60,7 @@ $_smarty_tpl->_subTemplateRender("file:cabecera_interna.html", $_smarty_tpl->cac
             <br>
             
 
-              <table class="table table-striped table-hover">
+              <table class="table table-responsive-xl">
                 <thead class="thead-dark">
                   <tr>
                     <th>Nombre Largo</th>

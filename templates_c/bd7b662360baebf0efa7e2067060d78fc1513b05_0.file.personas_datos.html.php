@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-03-18 10:05:55
-  from "/home/veronica/public_html/uptt/templates/usuarios_datos2.html" */
+/* Smarty version 3.1.30, created on 2020-03-19 16:00:13
+  from "/home/veronica/public_html/uptt/templates/personas_datos.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5e722ac39116d6_90121345',
+  'unifunc' => 'content_5e73cf4d1d59d5_56138028',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    'f52e2d778571adff85d89ed9c45112a8a42ff459' => 
+    'bd7b662360baebf0efa7e2067060d78fc1513b05' => 
     array (
-      0 => '/home/veronica/public_html/uptt/templates/usuarios_datos2.html',
-      1 => 1584540351,
+      0 => '/home/veronica/public_html/uptt/templates/personas_datos.html',
+      1 => 1584648010,
       2 => 'file',
     ),
   ),
@@ -20,10 +20,11 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
     'file:cabecera_interna.html' => 1,
     'file:menu_lateral.html' => 1,
+    'file:modal/modal_box.html' => 1,
     'file:pie_interno.html' => 1,
   ),
 ),false)) {
-function content_5e722ac39116d6_90121345 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5e73cf4d1d59d5_56138028 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:cabecera_interna.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -31,19 +32,17 @@ $_smarty_tpl->_subTemplateRender("file:cabecera_interna.html", $_smarty_tpl->cac
 
 <!-- incluye menu y agrega el espasio de trbajo-->
 <div class="container" style="margin-top: 90px;">
-    <div class="row">
-        <div class="col-sm-3"> 
-
             <?php $_smarty_tpl->_subTemplateRender("file:menu_lateral.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
-        </div>
+    <div class="row" id="central">
+        
+        <div class="col-sm-9 offset-3"  >
 
 
-        <div class="col-sm-8">
         <h2 class="subtitulo" align="center">Datos </h2>
         <form 
-          action="usuarios_datos2.php" 
+          action="peronas_datos.php" 
           method="POST" 
           class="px-4 py-3" 
           id="datos_usuario"
@@ -102,6 +101,15 @@ for ($__section_i_0_iteration = 1, $_smarty_tpl->tpl_vars['__smarty_section_i']-
               disabled="disabled">
         </div>
 
+
+          <a class="link float-left btn btn-light" href="usuarios_cambiar_clave.php" value="Avanzada">
+          <i class="fa fa-unlock-alt fa-lg"></i>Cambiar Clave</a>
+
+          <a class="link float-left btn btn-light mimodal" data-href="personas_modificar.php?id=<?php echo $_smarty_tpl->tpl_vars['personas']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['id'];?>
+" value="Avanzada">
+          <i class="fa fa-pencil-square-o fa-lg"></i>Modificar Datos</a>
+
+               </form>
 <?php
 }
 }
@@ -109,18 +117,14 @@ if ($__section_i_0_saved) {
 $_smarty_tpl->tpl_vars['__smarty_section_i'] = $__section_i_0_saved;
 }
 ?>
-
-          <a class="link float-left btn btn-light" href="usuarios_cambiar_clave.php" value="Avanzada">
-          <i class="fa fa-unlock-alt fa-lg"></i>Cambiar Clave</a>
-
-          <a class="link float-left btn btn-light" href="usuarios_modificar_datos.php" value="Avanzada">
-          <i class="fa fa-pencil-square-o fa-lg"></i>Modificar Datos</a>
-        </form>
         </div>
   </div>
 </div>
 
 
+<?php $_smarty_tpl->_subTemplateRender("file:modal/modal_box.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('prueba'=>"Usuario"), 0, false);
+?>
+ 
 
 
 <?php $_smarty_tpl->_subTemplateRender("file:pie_interno.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);

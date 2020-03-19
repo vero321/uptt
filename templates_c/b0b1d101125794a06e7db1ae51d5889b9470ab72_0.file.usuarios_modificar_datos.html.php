@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-03-19 15:59:23
-  from "/home/veronica/public_html/uptt/templates/usuarios_cambiar_clave.html" */
+/* Smarty version 3.1.30, created on 2020-03-18 10:11:02
+  from "/home/veronica/public_html/uptt/templates/usuarios_modificar_datos.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5e73cf1b573981_92052943',
+  'unifunc' => 'content_5e722bf6e0ae31_50213248',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    '71d1a47891e001b20e2e08b71820f61b8a445165' => 
+    'b0b1d101125794a06e7db1ae51d5889b9470ab72' => 
     array (
-      0 => '/home/veronica/public_html/uptt/templates/usuarios_cambiar_clave.html',
-      1 => 1584647961,
+      0 => '/home/veronica/public_html/uptt/templates/usuarios_modificar_datos.html',
+      1 => 1584540659,
       2 => 'file',
     ),
   ),
@@ -20,10 +20,9 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
     'file:cabecera_interna.html' => 1,
     'file:menu_lateral.html' => 1,
-    'file:pie_interno.html' => 1,
   ),
 ),false)) {
-function content_5e73cf1b573981_92052943 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5e722bf6e0ae31_50213248 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:cabecera_interna.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -31,54 +30,46 @@ $_smarty_tpl->_subTemplateRender("file:cabecera_interna.html", $_smarty_tpl->cac
 
 <!-- incluye menu y agrega el espasio de trbajo-->
 <div class="container" style="margin-top: 90px;">
+    <div class="row">
+        <div class="col-sm-3"> 
+
             <?php $_smarty_tpl->_subTemplateRender("file:menu_lateral.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
-    <div class="row" id="central">
-        
-        <div class="col-sm-9 offset-3"  >
+        </div>
+        <div class="col-sm-8">
 
     
-        <h2 class="subtitulo" align="center">Cambiar Clave</h2>
+        <h2 class="subtitulo" align="center">Modificar Datos</h2>
         <form 
                       method="POST" 
                       class="px-4 py-3" 
-                      id="cambiar_clave"
-                      name="cambiar_clave" 
-                      action="proc_cambiar_clave.php">
+                      id="modificar_datos"
+                      name="modificar_datos" 
+                      action="proc_modificar_datos.php">
 
                         <div class="form-group">
-                          <label for="clave0">Clave Actual</label>
+                          <label for="nombre">Nombre</label>
                           <input 
                             type="password" 
                             title="Escriba la Clave" 
                             required="required" 
                             class="form-control" 
-                            id="clave0" 
-                            name="clave0">
+                            id="nombre" 
+                            name="nombre">
                         </div>
 
                         <div class="form-group">
-                          <label for="clave1">Nueva Clave</label>
+                          <label for="apellido">Apellido</label>
                           <input 
                             type="password" 
                             title="Escriba la Clave" 
                             required="required" 
                             class="form-control" 
-                            id="clave1" 
-                            name="clave1">
+                            id="apellido" 
+                            name="apellido">
                         </div>
                     
-                        <div class="form-group">
-                          <label for="clave2">Repita la Clave</label>
-                          <input 
-                            type="password" 
-                            title="Repita la Clave" 
-                            required="required" 
-                            class="form-control" 
-                            id="clave2" 
-                            name="clave2">
-                        </div>
                       <div class="form-group">
                         <input 
                           class="link float-left btn btn-light" 
@@ -92,6 +83,5 @@ $_smarty_tpl->_subTemplateRender("file:cabecera_interna.html", $_smarty_tpl->cac
       </div>
     </div>
 </div>
-<?php $_smarty_tpl->_subTemplateRender("file:pie_interno.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
-}
+<?php }
 }
