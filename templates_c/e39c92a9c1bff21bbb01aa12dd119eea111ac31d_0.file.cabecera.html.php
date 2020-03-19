@@ -1,3 +1,27 @@
+<?php
+/* Smarty version 3.1.30, created on 2020-03-18 22:26:44
+  from "/home/palencia/public_html/proyecto4/uptt/templates/cabecera.html" */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.30',
+  'unifunc' => 'content_5e72d864ced2d9_01385459',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    'e39c92a9c1bff21bbb01aa12dd119eea111ac31d' => 
+    array (
+      0 => '/home/palencia/public_html/proyecto4/uptt/templates/cabecera.html',
+      1 => 1584584800,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_5e72d864ced2d9_01385459 (Smarty_Internal_Template $_smarty_tpl) {
+?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -65,7 +89,9 @@
 <!--Final del Formulario de Ingreso -->
  
 </nav>
-{$cab|default:''}
+<?php echo (($tmp = @$_smarty_tpl->tpl_vars['cab']->value)===null||$tmp==='' ? '' : $tmp);?>
+
 </head>
 <body>
-<!--Final de la Cabecera -->
+<!--Final de la Cabecera --><?php }
+}

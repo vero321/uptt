@@ -10,7 +10,8 @@ $temporal=bd_usuarios_hash_temporal($login);
 $hash2=$temporal['clave_temp'];
 $plazo=$temporal['plazo'];
 
-$actual=date('Y/m/d/H/i');
+$actual=date('Y-m-d-H-i');
+
 
 
 if ((password_verify($clave,$hash)) or ( (password_verify($clave,$hash2) ) && ( $actual<= $plazo ))){

@@ -471,13 +471,23 @@ function bd_usuarios_roles_datos($id){
 
 
 
-function bd_eliminar_rol_usuario($id_usuario,$id_rol){   
-    $sql = "
-        DELETE FROM usuarios_tipos
-        WHERE id_usuario = '{$id_usuario}' && id_rol = '{$id_rol}'
-        ";
-    sql($sql);
-    return $pnf['id'];
+function bd_eliminar_rol_usuario($id_usuario,$id_rol=NULL){ 
+    if ($id_rol != NULL) {
+        #un solo rol
+        $sql = "
+            DELETE FROM usuarios_tipos
+            WHERE id_usuario = '{$id_usuario}' && id_rol = '{$id_rol}'
+            ";
+        sql($sql);
+     }else{
+        # todos los roles del usuario
+         $sql = "
+            DELETE FROM usuarios_tipos
+            WHERE id_usuario = '{$id_usuario}'
+            ";
+        sql($sql);
+     }
+
 }
 
 
@@ -498,4 +508,19 @@ function bd_personas_datos($login=NULL)
         $salida = sql2array($sql);
     }
     return $salida;
+}
+
+function bd_crear_temp($correo){
+    $n_aleatorio=rand(1000,999999);
+    $hash=password_hash($n_aleatorio, PASSWORD_DEFAULT);
+    $diaSiguiente = time() + (1 * 24 * 60 * 60);
+    $plazo=date('Y-m-d-H-i', $diaSiguiente);
+    $sql = "
+        UPDATE usuarios SET
+        clave_temp = '{$hash}',
+        plazo = '{$plazo}'
+        WHERE correo = '{$correo}' 
+        ";
+    sql($sql);
+    return $n_aleatorio;
 }
