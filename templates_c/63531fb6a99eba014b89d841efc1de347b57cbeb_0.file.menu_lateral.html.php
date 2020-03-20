@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-03-19 10:07:18
+/* Smarty version 3.1.30, created on 2020-03-19 23:31:39
   from "/home/veronica/public_html/uptt/templates/menu_lateral.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5e737c960c2e18_53570253',
+  'unifunc' => 'content_5e74391b253478_24365558',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5e737c960c2e18_53570253 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5e74391b253478_24365558 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!--inicio menu lateral-->
     <div id="wrapper" style="margin-top: -40px; padding-right: 50px;">

@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-03-17 22:49:19
+/* Smarty version 3.1.30, created on 2020-03-19 23:33:38
   from "/home/veronica/public_html/uptt/templates/usuarios_eliminar.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5e718c2f15a036_05613085',
+  'unifunc' => 'content_5e743992176697_36452822',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5e718c2f15a036_05613085 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5e743992176697_36452822 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 
 <div class="container">

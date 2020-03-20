@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost:3306
--- Tiempo de generación: 19-03-2020 a las 20:19:06
+-- Tiempo de generación: 20-03-2020 a las 00:46:32
 -- Versión del servidor: 10.1.26-MariaDB-0+deb9u1
 -- Versión de PHP: 7.0.27-0+deb9u1
 
@@ -120,10 +120,10 @@ CREATE TABLE `LINEAS_DE_INVESTIGACION` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `LINEAS_TRABAJOS`
+-- Estructura de tabla para la tabla `LINEAS__TRABAJOS`
 --
 
-CREATE TABLE `LINEAS_TRABAJOS` (
+CREATE TABLE `LINEAS__TRABAJOS` (
   `id` int(11) NOT NULL,
   `id_linea` int(11) NOT NULL,
   `id_trabajo` int(11) NOT NULL
@@ -279,10 +279,10 @@ INSERT INTO `ROLES` (`id`, `nombre`, `rol`, `nivel`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `ROLES_PRIVILEGIOS`
+-- Estructura de tabla para la tabla `ROLES__PRIVILEGIOS`
 --
 
-CREATE TABLE `ROLES_PRIVILEGIOS` (
+CREATE TABLE `ROLES__PRIVILEGIOS` (
   `id` int(11) NOT NULL,
   `id_rol` int(11) NOT NULL,
   `id_privilegio` int(11) NOT NULL
@@ -343,10 +343,10 @@ INSERT INTO `TRABAJOS` (`id`, `descripcion`, `fecha_mes`, `fecha_anyo`, `observa
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `TRABAJOS_DOCUMENTOS`
+-- Estructura de tabla para la tabla `TRABAJOS__DOCUMENTOS`
 --
 
-CREATE TABLE `TRABAJOS_DOCUMENTOS` (
+CREATE TABLE `TRABAJOS__DOCUMENTOS` (
   `id` int(11) NOT NULL,
   `descripcion` int(11) NOT NULL,
   `fecha` int(11) NOT NULL,
@@ -422,17 +422,17 @@ CREATE TABLE `USUARIOS` (
 
 INSERT INTO `USUARIOS` (`id`, `correo`, `clave`, `clave_temporal`, `plazo`, `jerarquia`) VALUES
 ('12345678', 'pedro@gmail.com', '$2y$10$VMjPlAEg3L2VcBAs.s6vi.agwo2e3PkPhVx0MzlJGb6jDCpPDnmES', '', '0000-00-00 00:00:00', ''),
-('25913031', 'vero@gmail.com', '$2y$10$jhgqQHivv7OXUF8V4h19TOqXlqzltgPlNNjstjrbdLBzVk//twClm', '', '0000-00-00 00:00:00', ''),
+('25913031', 'vero@gmail.com', '$2y$10$8.yp0iKh0MVPH2oXK.2R4OmWBI34fThjgp0PDyxDCFndKMvWxZHSO', '', '0000-00-00 00:00:00', ''),
 ('25171058', 'palencia575@gmail.com', '$2y$10$3Nh82RwA3vhmRTGeaSRk1O1CfQt/ryCOKc1oWF4zXP6T/cNkr.cru', '$2y$10$d7y3t6IqDHXnVKoDTXbTe.Ws0ZtR5LWYqrE1eYJ.np0gR9Dfd6vjy', '2020-03-17 15:00:00', ''),
 ('25171057', 'juana@gmail.com', '$2y$10$9AeDTisIDLTeIvwIO0vLV.dpDahVfHC2bNoaQ33fgXU2EeECzpKIK', '', '0000-00-00 00:00:00', '');
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `USUARIOS_ROLES`
+-- Estructura de tabla para la tabla `USUARIOS__ROLES`
 --
 
-CREATE TABLE `USUARIOS_ROLES` (
+CREATE TABLE `USUARIOS__ROLES` (
   `id` int(11) NOT NULL,
   `id_usuario` int(11) NOT NULL,
   `id_rol` int(11) NOT NULL,
@@ -442,10 +442,10 @@ CREATE TABLE `USUARIOS_ROLES` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_slovenian_ci;
 
 --
--- Volcado de datos para la tabla `USUARIOS_ROLES`
+-- Volcado de datos para la tabla `USUARIOS__ROLES`
 --
 
-INSERT INTO `USUARIOS_ROLES` (`id`, `id_usuario`, `id_rol`, `id_nucleo`, `id_pnf`, `id_persona`) VALUES
+INSERT INTO `USUARIOS__ROLES` (`id`, `id_usuario`, `id_rol`, `id_nucleo`, `id_pnf`, `id_persona`) VALUES
 (1, 25913031, 1, 0, 0, 25913031),
 (2, 25913031, 2, 1, 0, 25913031),
 (4, 25171058, 2, 1, 1, 25171058),
@@ -460,7 +460,8 @@ INSERT INTO `USUARIOS_ROLES` (`id`, `id_usuario`, `id_rol`, `id_nucleo`, `id_pnf
 (13, 25913034, 2, 0, 0, 25913034),
 (14, 25913034, 3, 0, 0, 25913034),
 (15, 25913034, 4, 0, 0, 25913034),
-(16, 12345678, 1, 0, 0, 12345678);
+(16, 12345678, 1, 0, 0, 12345678),
+(17, 12345, 1, 0, 0, 12345);
 
 --
 -- Índices para tablas volcadas
@@ -503,9 +504,9 @@ ALTER TABLE `LINEAS_DE_INVESTIGACION`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indices de la tabla `LINEAS_TRABAJOS`
+-- Indices de la tabla `LINEAS__TRABAJOS`
 --
-ALTER TABLE `LINEAS_TRABAJOS`
+ALTER TABLE `LINEAS__TRABAJOS`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -551,9 +552,9 @@ ALTER TABLE `ROLES`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indices de la tabla `ROLES_PRIVILEGIOS`
+-- Indices de la tabla `ROLES__PRIVILEGIOS`
 --
-ALTER TABLE `ROLES_PRIVILEGIOS`
+ALTER TABLE `ROLES__PRIVILEGIOS`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -569,9 +570,9 @@ ALTER TABLE `TRABAJOS`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indices de la tabla `TRABAJOS_DOCUMENTOS`
+-- Indices de la tabla `TRABAJOS__DOCUMENTOS`
 --
-ALTER TABLE `TRABAJOS_DOCUMENTOS`
+ALTER TABLE `TRABAJOS__DOCUMENTOS`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -593,9 +594,9 @@ ALTER TABLE `USUARIOS`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indices de la tabla `USUARIOS_ROLES`
+-- Indices de la tabla `USUARIOS__ROLES`
 --
-ALTER TABLE `USUARIOS_ROLES`
+ALTER TABLE `USUARIOS__ROLES`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -633,15 +634,15 @@ ALTER TABLE `EXTENSIONES`
 ALTER TABLE `LINEAS_DE_INVESTIGACION`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
--- AUTO_INCREMENT de la tabla `LINEAS_TRABAJOS`
+-- AUTO_INCREMENT de la tabla `LINEAS__TRABAJOS`
 --
-ALTER TABLE `LINEAS_TRABAJOS`
+ALTER TABLE `LINEAS__TRABAJOS`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT de la tabla `NUCLEOS`
 --
 ALTER TABLE `NUCLEOS`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 --
 -- AUTO_INCREMENT de la tabla `NUCLEOS_PNF`
 --
@@ -656,7 +657,7 @@ ALTER TABLE `PERSONAS`
 -- AUTO_INCREMENT de la tabla `PNF`
 --
 ALTER TABLE `PNF`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 --
 -- AUTO_INCREMENT de la tabla `PRIVILEGIOS`
 --
@@ -673,9 +674,9 @@ ALTER TABLE `PROPUESTAS`
 ALTER TABLE `ROLES`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
--- AUTO_INCREMENT de la tabla `ROLES_PRIVILEGIOS`
+-- AUTO_INCREMENT de la tabla `ROLES__PRIVILEGIOS`
 --
-ALTER TABLE `ROLES_PRIVILEGIOS`
+ALTER TABLE `ROLES__PRIVILEGIOS`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT de la tabla `TIPOS_DE_DOCUMENTOS`
@@ -688,9 +689,9 @@ ALTER TABLE `TIPOS_DE_DOCUMENTOS`
 ALTER TABLE `TRABAJOS`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
--- AUTO_INCREMENT de la tabla `TRABAJOS_DOCUMENTOS`
+-- AUTO_INCREMENT de la tabla `TRABAJOS__DOCUMENTOS`
 --
-ALTER TABLE `TRABAJOS_DOCUMENTOS`
+ALTER TABLE `TRABAJOS__DOCUMENTOS`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT de la tabla `TRAYECTOS`
@@ -703,10 +704,10 @@ ALTER TABLE `TRAYECTOS`
 ALTER TABLE `TRAYECTOS_PNF`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
--- AUTO_INCREMENT de la tabla `USUARIOS_ROLES`
+-- AUTO_INCREMENT de la tabla `USUARIOS__ROLES`
 --
-ALTER TABLE `USUARIOS_ROLES`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+ALTER TABLE `USUARIOS__ROLES`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

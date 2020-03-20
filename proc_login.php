@@ -7,7 +7,7 @@ $login=$_POST['login'];
 $clave=($_POST['clave']);
 $hash=bd_usuarios_hash($login);
 $temporal=bd_usuarios_hash_temporal($login);
-$hash2=$temporal['clave_temp'];
+$hash2=$temporal['clave_temporal'];
 $plazo=$temporal['plazo'];
 
 $actual=date('Y-m-d-H-i');

@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-03-19 13:04:34
+/* Smarty version 3.1.30, created on 2020-03-19 23:19:47
   from "/home/veronica/public_html/uptt/templates/pie_interno.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5e73a62283ccf4_28445406',
+  'unifunc' => 'content_5e7436534a7bd0_33273473',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5e73a62283ccf4_28445406 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5e7436534a7bd0_33273473 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!--Comienzo del Pie de Página-->
 <div class="espacio">

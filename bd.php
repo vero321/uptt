@@ -318,10 +318,10 @@ function bd_nucleos_agregar($nucleos)
 
 }
 
-function bd_nucleos_modicar($NUCLEOS)
+function bd_nucleos_modicar($nucleos)
 {
     $sql = "
-        UPDATE nucleos SET
+        UPDATE NUCLEOS SET
             id = '{$nucleos['id']}',
             nombre_largo = '{$nucleos['nombre_largo']}',
             nombre_corto = '{$nucleos['nombre_corto']}'
@@ -465,7 +465,7 @@ function bd_usuarios_roles_datos($id){
     $sql="
             SELECT *
             FROM USUARIOS__ROLES, ROLES 
-            WHERE id_usuario LIKE '{$id}' && id_rol = roles.id  ";
+            WHERE id_usuario LIKE '{$id}' && id_rol = ROLES.id  ";
         $salida = sql2array($sql);
     return $salida;
 }

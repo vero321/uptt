@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-03-18 11:36:35
+/* Smarty version 3.1.30, created on 2020-03-19 23:42:36
   from "/home/veronica/public_html/uptt/templates/personas_modificar.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5e72400351b119_14554349',
+  'unifunc' => 'content_5e743bac7423f3_84774811',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5e72400351b119_14554349 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5e743bac7423f3_84774811 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 
 <div class="container">

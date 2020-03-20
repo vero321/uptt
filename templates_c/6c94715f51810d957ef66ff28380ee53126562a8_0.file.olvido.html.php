@@ -1,37 +1,36 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-03-18 23:11:05
-  from "/home/palencia/public_html/proyecto4/uptt/templates/olvido.html" */
+/* Smarty version 3.1.30, created on 2020-03-19 23:28:46
+  from "/home/veronica/public_html/uptt/templates/olvido.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5e72e2c94c5b08_45006509',
+  'unifunc' => 'content_5e74386e7f0bf7_36334943',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    '23f080d1c2d2fbfbb96ae130e4cdbe66fc47aaeb' => 
+    '6c94715f51810d957ef66ff28380ee53126562a8' => 
     array (
-      0 => '/home/palencia/public_html/proyecto4/uptt/templates/olvido.html',
-      1 => 1584587459,
+      0 => '/home/veronica/public_html/uptt/templates/olvido.html',
+      1 => 1584674886,
       2 => 'file',
     ),
   ),
   'includes' => 
   array (
     'file:cabecera.html' => 1,
-    'file:pie.html' => 1,
+    'file:pie_interno.html' => 1,
   ),
 ),false)) {
-function content_5e72e2c94c5b08_45006509 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5e74386e7f0bf7_36334943 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:cabecera.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
 
-<div class="container area">
-	<div class="row">
-        <div class="col-sm-2">
-        </div> 
-		<div class="col-sm-8">
+<div class="container" style="margin-top: 90px;">
+    <div class="row" id="central">
+        
+        <div class="col-sm-9 offset-3"  >
 			
 		<h1>¿0lvidaste tu contraseña?</h1>
 		<br>
@@ -69,6 +68,6 @@ $_smarty_tpl->_subTemplateRender("file:cabecera.html", $_smarty_tpl->cache_id, $
 </div>
 
 
-<?php $_smarty_tpl->_subTemplateRender("file:pie.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+<?php $_smarty_tpl->_subTemplateRender("file:pie_interno.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 }
 }
