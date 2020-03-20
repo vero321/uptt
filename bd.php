@@ -151,46 +151,12 @@ function sql2ids($sql) {
 }
 
 
-########################################### Funciones de Usuarios
-
-function bd_usuarios_registrar($usuario,$n_roles,$roles){   
-    $sql1="
-        INSERT INTO usuarios(id, clave, correo)
-        VALUES ('{$usuario['id']}','{$usuario['hash']}','{$usuario['correo']}')
-        ";
-    sql($sql1);
-
-    $consulta="SELECT id FROM personas WHERE id ='{$usuario['id']}'";
-    $verificar= sql($consulta);
-
-    if ($verificar < 1){
-        $sql2="
-            INSERT INTO personas(id)
-            VALUES('{$usuario['id']}');
-             ";
-    sql($sql2);
-    }
-
-    for ($i=0; $i <$n_roles ; $i++) { 
-        # code...
-        $rol=$roles[$i];
-        $sql="
-            INSERT INTO usuarios_tipos(id_usuario, id_rol, id_personas)
-            VALUES ('{$usuario['id']}','{$rol}','{$usuario['id']}')
-        ";
-        sql($sql);
-    }
-    return "{$usuario['id']}";
-
-}
-
-
-
+########################################### Funciones de la base de datos
 function bd_usuarios_hash($login)
 {
     $sql= "
         SELECT clave
-        FROM usuarios
+        FROM USUARIOS
         WHERE id LIKE '{$login}' or correo LIKE '{$login}'";
     
     return sql2value($sql);
@@ -198,8 +164,8 @@ function bd_usuarios_hash($login)
 function bd_usuarios_hash_temporal($login)
 {
     $sql= "
-        SELECT clave_temp, plazo
-        FROM usuarios
+        SELECT clave_temporal, plazo
+        FROM USUARIOS
         WHERE id LIKE '{$login}' or correo LIKE '{$login}'";
     
     return sql2row($sql);
@@ -208,15 +174,15 @@ function bd_usuarios_hash_temporal($login)
 
 
 function bd_usuarios_contar(){
-    return sql2value("SELECT COUNT(*) FROM usuarios");
+    return sql2value("SELECT COUNT(*) FROM USUARIOS");
 }
 
 function bd_nucleos_contar(){
-    return sql2value("SELECT COUNT(*) FROM nucleos");
+    return sql2value("SELECT COUNT(*) FROM NUCLEOS");
 }
 
 function bd_pnf_contar(){
-    return sql2value("SELECT COUNT(*) FROM pnf");
+    return sql2value("SELECT COUNT(*) FROM PNF");
 }
 
 
@@ -231,14 +197,14 @@ function bd_usuarios_datos($login=NULL)
     if ($login!=NULL) {
         $sql="
             SELECT *
-            FROM usuarios
+            FROM USUARIOS
             WHERE id LIKE '{$login}'or correo LIKE '{$login}'";
         $salida = sql2row($sql);
     } else {
         $sql="
             SELECT *
-            FROM usuarios
-            ORDER BY usuarios.id ASC";
+            FROM USUARIOS
+            ORDER BY USUARIOS.id ASC";
         $salida = sql2array($sql);
     }
     return $salida;
@@ -261,7 +227,7 @@ function paginar($totalpaginas,$rango,$pagina_actual=1)
 function bd_usuarios_datos2($inicio, $cantidad, $orden='id', $nivel)
 {
 return sql2array("SELECT id, correo
-    FROM usuarios
+    FROM USUARIOS
     ORDER BY $orden ASC#
     LIMIT $inicio,$cantidad
     ");
@@ -275,28 +241,28 @@ foreach ($miscampos as $key => $value)
 }
 
 $condicion = implode(' OR ', $miscampos);
-return sql2array("SELECT id, correo FROM usuarios
+return sql2array("SELECT id, correo FROM USUARIOS
     WHERE ($condicion )
         LIMIT $cantidad
     ");
 }
 
 
-function bd_usuarios_eliminar($d)
+function bd_usuarios_eliminar($id)
 {
     $sql = "
-        DELETE FROM usuarios
-        WHERE id = '{$d['id']}'
+        DELETE FROM USUARIOS
+        WHERE id = '{$id}'
         ";
     sql($sql);
-    return $d['id'];
+    return $id;
 }
 
 
 function bd_usuarios_modificar($usuario)
 {
     $sql = "
-        UPDATE usuarios SET
+        UPDATE USUARIOS SET
             id = '{$usuario['id_new']}',
             correo = '{$usuario['correo']}'
         WHERE id = '{$usuario['id']}' 
@@ -311,7 +277,7 @@ function bd_usuarios_modificar_clave($d)
     $id = $d[0];
     $hash = $d[1];
     $sql = "
-        UPDATE usuarios SET
+        UPDATE USUARIOS SET
             clave = '{$hash}'
         WHERE
             id = '{$id}'
@@ -320,20 +286,22 @@ function bd_usuarios_modificar_clave($d)
     return $id;
 }
 
-#####Funciones para los nucleos
+#####Funciones para los 
+
+
 
 function bd_nucleos_datos($id=NULL)
 {
     if ($id!=NULL) {
         $sql="
             SELECT *
-            FROM nucleos
+            FROM NUCLEOS
             WHERE id LIKE '{$id}'";
         $salida = sql2row($sql);
     } else {
         $sql="
             SELECT *
-            FROM nucleos
+            FROM NUCLEOS
             ";
         $salida = sql2array($sql);
     }
@@ -343,14 +311,14 @@ function bd_nucleos_datos($id=NULL)
 function bd_nucleos_agregar($nucleos)
 {
     $sql="
-        INSERT INTO nucleos (nombre_largo, nombre_corto)
+        INSERT INTO NUCLEOS (nombre_largo, nombre_corto)
         VALUES ('{$nucleos['nombre_largo']}','{$nucleos['nombre_corto']}')";
     sql($sql);
     return "{$nucleos['id']}";
 
 }
 
-function bd_nucleos_modicar($nucleos)
+function bd_nucleos_modicar($NUCLEOS)
 {
     $sql = "
         UPDATE nucleos SET
@@ -367,7 +335,7 @@ function bd_nucleos_modicar($nucleos)
 function bd_nucleos_eliminar($id)
 {
     $sql = "
-        DELETE FROM nucleos
+        DELETE FROM NUCLEOS
         WHERE id = '{$id['id']}'
         ";
     sql($sql);
@@ -381,13 +349,13 @@ function bd_pnf_datos($id=NULL)
     if ($id!=NULL) {
         $sql="
             SELECT *
-            FROM pnf
+            FROM PNF
             WHERE id LIKE '{$id}'";
         $salida = sql2row($sql);
     } else {
         $sql="
             SELECT *
-            FROM pnf
+            FROM PNF
             ";
         $salida = sql2array($sql);
     }
@@ -398,7 +366,7 @@ function bd_pnf_datos($id=NULL)
 function bd_pnf_agregar($pnf)
 {
     $sql="
-        INSERT INTO pnf (nombre_largo, nombre_corto)
+        INSERT INTO PNF (nombre_largo, nombre_corto)
         VALUES ('{$pnf['nombre_largo']}','{$pnf['nombre_corto']}')";
     sql($sql);
     return "{$pnf['id']}";
@@ -408,7 +376,7 @@ function bd_pnf_agregar($pnf)
 function bd_pnf_eliminar($id)
 {
     $sql = "
-        DELETE FROM pnf
+        DELETE FROM PNF
         WHERE id = '{$id['id']}'
         ";
     sql($sql);
@@ -418,7 +386,7 @@ function bd_pnf_eliminar($id)
 function bd_pnf_modicar($pnf)
 {
     $sql = "
-        UPDATE pnf SET
+        UPDATE PNF SET
             id = '{$pnf['id']}',
             nombre_largo = '{$pnf['nombre_largo']}',
             nombre_corto = '{$pnf['nombre_corto']}'
@@ -429,57 +397,20 @@ function bd_pnf_modicar($pnf)
     return $nombre;
 }
 
-##############################Funciones Personas
-
-function bd_personas_datos($login=NULL)
-{
-    if ($login!=NULL){
-        $sql="
-                SELECT *
-                FROM  personas 
-                WHERE id LIKE '{$login}'";
-            $salida = sql2array($sql);
-    }else
-    {
-        $sql="
-            SELECT *
-            FROM personas
-            ";
-        $salida = sql2array($sql);
-    }
-    return $salida;
-}
-
-function bd_personas_modicar($personas)
-    {
-    $sql = "
-        UPDATE personas SET
-            id = '{$personas['id']}',
-            nombre = '{$personas['nombre']}',
-            apellido = '{$personas['apellido']}',
-        WHERE
-            id = '{$personas['id']}'
-    ";
-    sql($sql);
-    return $nombre;
-    }
-
-
-
-######################Funciones Roles
+##############################
 
 function bd_roles_datos($login=NULL)
 {
     if ($login!=NULL) {
         $sql="
             SELECT *
-            FROM roles
+            FROM ROLES
             WHERE id LIKE '{$login}'";
         $salida = sql2row($sql);
     } else {
         $sql="
             SELECT *
-            FROM roles
+            FROM ROLES
             ";
         $salida = sql2array($sql);
     }
@@ -497,28 +428,63 @@ function contar_valores($a,$buscado)
  }
 
 
+function bd_usuarios_registrar($usuario,$n_roles,$roles){   
+    $sql1="
+        INSERT INTO USUARIOS(id, clave, correo)
+        VALUES ('{$usuario['id']}','{$usuario['hash']}','{$usuario['correo']}')
+        ";
+    sql($sql1);
+
+    $consulta="SELECT id FROM PERSONAS WHERE id ='{$usuario['id']}'";
+    $verificar= sql($consulta);
+
+    if ($verificar < 1){
+        $sql2="
+            INSERT INTO PERSONAS(id)
+            VALUES('{$usuario['id']}');
+             ";
+    sql($sql2);
+    }
+
+    for ($i=0; $i <$n_roles ; $i++) { 
+        # code...
+        $rol=$roles[$i];
+        $sql="
+            INSERT INTO USUARIOS__ROLES(id_usuario, id_rol, id_persona)
+            VALUES ('{$usuario['id']}','{$rol}','{$usuario['id']}')
+        ";
+        sql($sql);
+    }
+    return "{$usuario['id']}";
+
+}
+
+
 function bd_usuarios_roles_datos($id){
 
     $sql="
             SELECT *
-            FROM usuarios_tipos, roles 
+            FROM USUARIOS__ROLES, ROLES 
             WHERE id_usuario LIKE '{$id}' && id_rol = roles.id  ";
         $salida = sql2array($sql);
     return $salida;
 }
 
+
+
+
 function bd_eliminar_rol_usuario($id_usuario,$id_rol=NULL){ 
     if ($id_rol != NULL) {
         #un solo rol
         $sql = "
-            DELETE FROM usuarios_tipos
+            DELETE FROM USUARIOS__ROLES
             WHERE id_usuario = '{$id_usuario}' && id_rol = '{$id_rol}'
             ";
         sql($sql);
      }else{
         # todos los roles del usuario
          $sql = "
-            DELETE FROM usuarios_tipos
+            DELETE FROM USUARIOS__ROLES
             WHERE id_usuario = '{$id_usuario}'
             ";
         sql($sql);
@@ -527,6 +493,24 @@ function bd_eliminar_rol_usuario($id_usuario,$id_rol=NULL){
 }
 
 
+function bd_personas_datos($login=NULL)
+{
+    if ($login!=NULL){
+        $sql="
+                SELECT *
+                FROM  PERSONAS 
+                WHERE id LIKE '{$login}'";
+            $salida = sql2array($sql);
+    }else
+    {
+        $sql="
+            SELECT *
+            FROM PERSONAS
+            ";
+        $salida = sql2array($sql);
+    }
+    return $salida;
+}
 
 function bd_crear_temp($correo){
     $n_aleatorio=rand(1000,999999);
@@ -534,8 +518,8 @@ function bd_crear_temp($correo){
     $diaSiguiente = time() + (1 * 24 * 60 * 60);
     $plazo=date('Y-m-d-H-i', $diaSiguiente);
     $sql = "
-        UPDATE usuarios SET
-        clave_temp = '{$hash}',
+        UPDATE USUARIOS SET
+        clave_temporal = '{$hash}',
         plazo = '{$plazo}'
         WHERE correo = '{$correo}' 
         ";

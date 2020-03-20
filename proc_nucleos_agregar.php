@@ -4,7 +4,7 @@ require_once './inicializacion.php';
 	$nucleos = $_POST['nombre_corto'];
 
 	$sql="SELECT nombre_largo
-	            FROM nucleos
+	            FROM NUCLEOS
 	            WHERE nombre_largo LIKE '{$_POST['nombre_largo']}' and nombre_corto LIKE 
 	            '{$_POST['nombre_corto']}' ";
 	        $verificacion = sql2row($sql);

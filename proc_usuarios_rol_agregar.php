@@ -10,7 +10,7 @@ for ($i=0; $i <$n_roles ; $i++){
     # code...
     $rol=$roles[$i];
     $sql="
-        INSERT INTO usuarios_tipos(id_usuario, id_rol, id_personas)
+        INSERT INTO USUARIOS__ROLES(id_usuario, id_rol, id_persona)
         VALUES ('{$id}','{$rol}','{$id}')
         ";
 

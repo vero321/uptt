@@ -5,9 +5,9 @@ $n_roles=count($roles);
 $id=$_POST['id'];
 $correo=$_POST['correo'];
 
-$sql1="SELECT id, correo FROM usuarios WHERE id LIKE '{$id}'";
+$sql1="SELECT id, correo FROM USUARIOS WHERE id LIKE '{$id}'";
 
-$sql2="SELECT id, correo FROM usuarios WHERE correo LIKE '{$correo}' ";
+$sql2="SELECT id, correo FROM USUARIOS WHERE correo LIKE '{$correo}' ";
 
 $verificacion_id = sql2row($sql1);
 $verificacion_correo = sql2row($sql2);

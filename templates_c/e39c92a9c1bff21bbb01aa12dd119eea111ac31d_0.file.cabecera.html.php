@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-03-18 22:26:44
+/* Smarty version 3.1.30, created on 2020-03-19 10:36:02
   from "/home/palencia/public_html/proyecto4/uptt/templates/cabecera.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5e72d864ced2d9_01385459',
+  'unifunc' => 'content_5e7383526351a0_86566203',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'e39c92a9c1bff21bbb01aa12dd119eea111ac31d' => 
     array (
       0 => '/home/palencia/public_html/proyecto4/uptt/templates/cabecera.html',
-      1 => 1584584800,
+      1 => 1584628126,
       2 => 'file',
     ),
   ),
@@ -20,13 +20,14 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5e72d864ced2d9_01385459 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5e7383526351a0_86566203 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="es">
 
 <!--Comienzo de la Cabecera-->
 <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta charset="utf-8"/>
 
   <link href="./vendor/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">

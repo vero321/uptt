@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-03-18 22:40:08
+/* Smarty version 3.1.30, created on 2020-03-19 11:57:24
   from "/home/palencia/public_html/proyecto4/uptt/templates/inicio_interno.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5e72db882b1fe5_08782851',
+  'unifunc' => 'content_5e739664080df2_91306156',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'fa1e21777d16b2533c5914607500ac49c54a232c' => 
     array (
       0 => '/home/palencia/public_html/proyecto4/uptt/templates/inicio_interno.html',
-      1 => 1584585606,
+      1 => 1584633441,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:pie_interno.html' => 1,
   ),
 ),false)) {
-function content_5e72db882b1fe5_08782851 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5e739664080df2_91306156 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:cabecera_interna.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -42,16 +42,17 @@ $_smarty_tpl->_subTemplateRender("file:cabecera_interna.html", $_smarty_tpl->cac
            
 
             <div class="row">
-                <div class="col-sm-4">
-                    <div class=" text-white bg-primary " style="max-width: 20rem;">
+                 <div class="col-sm-4">
+                    
+                    <div class=" text-white bg-primary mb-3" style="max-width: 20rem;">
                         <div class="card-header"></div>
                         <div class="card-body">
-                            <h3 class="card-title"><i class="fa fa-user fa-fw"></i><small style="margin-left: 20px; margin-right: 20px;">Usuarios</small><?php echo $_smarty_tpl->tpl_vars['usuarios']->value;?>
+                            <h3 class="card-title"> <i class="fa fa-university"></i><small style="margin-left: 20px; margin-right: 20px;">Nucleos</small><?php echo $_smarty_tpl->tpl_vars['usuarios']->value;?>
 </h3>
                             <a href="#" class="button-left"><span class="fa fa-fw fa-bars "></span></a>
                         </div>
-                    </div>
-                </div>
+                    </div>  
+                </div> 
                 <div class="col-sm-4">
                     
                     <div class=" text-white bg-primary mb-3" style="max-width: 20rem;">
@@ -75,6 +76,7 @@ $_smarty_tpl->_subTemplateRender("file:cabecera_interna.html", $_smarty_tpl->cac
                     </div>
                 </div>
             </div> 
+
              
 
 

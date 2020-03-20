@@ -2,7 +2,7 @@
 include_once "./inicializacion.php";
 
 $correo=$_POST['correo'];
-$sql="SELECT correo FROM usuarios WHERE correo LIKE '{$correo}' ";
+$sql="SELECT correo FROM USUARIOS WHERE correo LIKE '{$correo}' ";
 $verificacion_correo = sql2row($sql);
 
 if ($verificacion_correo > 0) {
@@ -41,6 +41,6 @@ mail($para, $título, $mensaje, $cabeceras);
 	ir("mensaje.php?m=$m&d=index.php");
 }else{
 	# 
-	$m=" Cuenta de correoinvalida<strong>$correo</strong>";
+	$m="La cuenta de correo no esta registrada <strong>$correo</strong>";
 	ir("mensaje.php?m=$m&d=olvido.php");
 }
