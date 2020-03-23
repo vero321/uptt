@@ -185,6 +185,9 @@ function bd_pnf_contar(){
     return sql2value("SELECT COUNT(*) FROM PNF");
 }
 
+function bd_roles_contar(){
+    return sql2value("SELECT COUNT(*) FROM ROLES");
+}
 
 function bd_personas_contar($criterio='1')
 {
@@ -263,7 +266,6 @@ function bd_usuarios_modificar($usuario)
 {
     $sql = "
         UPDATE USUARIOS SET
-            id = '{$usuario['id_new']}',
             correo = '{$usuario['correo']}'
         WHERE id = '{$usuario['id']}' 
             ";
@@ -399,13 +401,13 @@ function bd_pnf_modicar($pnf)
 
 ##############################
 
-function bd_roles_datos($login=NULL)
-{
-    if ($login!=NULL) {
+function bd_roles_datos($id=NULL){
+    if ($id!=NULL) {
         $sql="
             SELECT *
             FROM ROLES
-            WHERE id LIKE '{$login}'";
+            WHERE id LIKE '{$id}'
+            ";
         $salida = sql2row($sql);
     } else {
         $sql="
@@ -450,8 +452,8 @@ function bd_usuarios_registrar($usuario,$n_roles,$roles){
         # code...
         $rol=$roles[$i];
         $sql="
-            INSERT INTO USUARIOS__ROLES(id_usuario, id_rol, id_persona)
-            VALUES ('{$usuario['id']}','{$rol}','{$usuario['id']}')
+            INSERT INTO USUARIOS__ROLES(id_usuario, id_rol)
+            VALUES ('{$usuario['id']}','{$rol}')
         ";
         sql($sql);
     }
@@ -463,9 +465,9 @@ function bd_usuarios_registrar($usuario,$n_roles,$roles){
 function bd_usuarios_roles_datos($id){
 
     $sql="
-            SELECT *
+            SELECT id_rol, id_nucleo, id_pnf, rol, nivel
             FROM USUARIOS__ROLES, ROLES 
-            WHERE id_usuario LIKE '{$id}' && id_rol = ROLES.id  ";
+            WHERE id_usuario LIKE '{$id}' && id_rol LIKE ROLES.id  ";
         $salida = sql2array($sql);
     return $salida;
 }
@@ -513,7 +515,7 @@ function bd_personas_datos($login=NULL)
 }
 
 function bd_crear_temp($correo){
-    $n_aleatorio=rand(1000,999999);
+    $n_aleatorio=rand(100000,999999);
     $hash=password_hash($n_aleatorio, PASSWORD_DEFAULT);
     $diaSiguiente = time() + (1 * 24 * 60 * 60);
     $plazo=date('Y-m-d-H-i', $diaSiguiente);
@@ -525,4 +527,83 @@ function bd_crear_temp($correo){
         ";
     sql($sql);
     return $n_aleatorio;
+}
+
+function bd_privilegios_datos($id=NULL){
+    if ($id!=NULL){
+        $sql="
+        SELECT *
+        FROM PRIVILEGIOS
+        WHERE id LIKE '{$id}'
+        ";
+       $salida= sql2row($sql);
+    }else
+    {
+        $sql="
+            SELECT *
+            FROM PRIVILEGIOS
+        ";
+        $salida= sql2array($sql);
+    }
+        return $salida;
+}
+
+function bd_roles_argregar($rol,$n_privilegios,$privilegios){
+    $unico=uniqid();
+    $sql1="
+        INSERT INTO ROLES(id, rol, nivel)
+        VALUES ('{$unico}','{$rol['rol']}','{$rol['nivel']}')
+        ";
+    sql($sql1);
+
+    for ($i=0; $i <$n_privilegios ; $i++) { 
+        # code...
+        $privilegio=$privilegios[$i];
+        $sql="
+            INSERT INTO ROLES__PRIVILEGIOS(id_rol, id_privilegio)
+            VALUES ('{$unico}','{$privilegio}')
+        ";
+        sql($sql);
+    }
+    return "{$usuario['id']}";
+}
+
+function bd_roles__privilegios($id){
+    $sql="
+        SELECT id_rol, id_privilegio, privilegio
+        FROM ROLES__PRIVILEGIOS, PRIVILEGIOS
+        WHERE id_rol LIKE '{$id}' && id_privilegio LIKE PRIVILEGIOS.id
+    ";
+    $salida=sql2array($sql);
+
+    return $salida;
+}
+
+
+function bd_eliminar_privilegios_rol($id_rol,$id_privilegio=NULL){ 
+    if ($id_privilegio != NULL) {
+        #un solo rol
+        $sql = "
+            DELETE FROM ROLES__PRIVILEGIOS
+            WHERE id_rol = '{$id_rol}' && id_privilegio = '{$id_privilegio}'
+            ";
+        sql($sql);
+     }else{
+        # todos los roles del usuario
+         $sql = "
+            DELETE FROM ROLES__PRIVILEGIOS
+            WHERE id_rol = '{$id_rol}'
+            ";
+        sql($sql);
+     }
+
+}
+
+function bd_roles_eliminar($id){
+    $sql = "
+        DELETE FROM ROLES
+        WHERE id = '{$id}'
+        ";
+    sql($sql);
+    return $id;
 }

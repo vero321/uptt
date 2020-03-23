@@ -14,32 +14,32 @@
 
 <!--finaliza-->
 
-              <h2 class="subtitulo" align="center"><span class="badge badge-secondary badge-pill"></span>Roles del usuario</h2>
+            <h2 class="subtitulo" align="center"><span class="badge badge-secondary badge-pill"></span>Privilegios del rol</h2>
            
               <table style="margin-top: 30px;" class="table table-striped table-hover">
                 <thead class="thead-dark">
                   <tr>
-                    <th>Cedula</th>
-                    <th>Correo</th>
-                    <th>Roles  
-						<a class="btn btn-sm btn-outline-primary mimodal" type="button" data-href="usuarios_rol_agregar.php?id={$usuario['id']}" title="Agregar Rol"><span class="fa fa-plus"></span></a>
+                    <th>Rol</th>
+                    <th>Nombre</th>
+                    <th>privilegios  
+						          <a class="btn btn-sm btn-outline-primary mimodal" type="button" data-href="rol_privilegio_agregar.php?id={$rol['id']}" title="Agregar Rol"><span class="fa fa-plus"></span></a>
                   </th>
                   </tr>
 
                 </thead>
                 <tbody class="buscar" id="usuarios">
                   <tr>
-                    <td>{$usuario['id']}</td>
-                    <td>{$usuario['correo']}</td>
+                    <td>{$rol['rol']}</td>
+                    <td>{$rol['nombre']}</td>
                     <td>
-                    	{section name=i loop=$roles}
+                    	{section name=i loop=$privilegios}
                     	<div class="list-group">
-                    		 <li class="list-group-item d-flex justify-content-between align-items-center">{$roles[i].rol}
+                    		 <li class="list-group-item d-flex justify-content-between align-items-center">{$privilegios[i].privilegio}
 			                    <a 
 			                      style="margin-bottom:3px; color:blue;" 
 			                      class="btn btn-default"
-			                      title="Eliminar Permiso" 
-			                      href="proc_usuarios_rol_eliminar.php?id={$usuario['id']}&rol={$roles[i].id}">
+			                      title="Eliminar privilegio" 
+			                      href="proc_rol_privilegio_eliminar.php?id={$rol['id']}&privilegio={$privilegios[i].id_privilegio}">
 			                      <i class="fa fa-trash"></i>
 			                    </a>
                     		 </li>

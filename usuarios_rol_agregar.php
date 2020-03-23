@@ -5,10 +5,19 @@ $roles_actuales=bd_usuarios_roles_datos($id);
 $roles=bd_roles_datos();
  
 $n=count($roles_actuales);
+$n2=count($roles);
 for ($i=0; $i < $n; $i++) { 
-	# code...
-	$k=$roles_actuales[$i]['id_rol']-1;
-	unset($roles[$k]);
+	#  busco la id del del rol para eliminarlo si el usario ya lo tiene
+	$k=$roles_actuales[$i]['id_rol']; #k diminutivo de key
+	for ($a=0; $a < $n2; $a++) { 
+		# code...
+		if ($roles[$a]['id'] == $k) {
+			# code...
+			unset($roles[$a]);
+		}else{
+		}
+	}
+	
 }
 $roles=array_reverse($roles);
 

@@ -3,21 +3,21 @@
   <div class="row">
     <div class="col-2"></div>
       <div class="col-8"> 
-        <h1>Eliminar Usuario</h1>
+        <h1>Eliminar Rol</h1>
 
         <form 
-          action="mensaje_eliminar.php" 
+          action="mensaje_eliminar3.php" 
           method="POST" 
           class="px-4 py-3" 
           id="eliminar_usuario"
           name="eliminar_usuario">
-          <input type="hidden" name="correo" value="{$d.correo}">
-          <input type="hidden" name="si" value="proc_eliminar.php">
-          <input type="hidden" name="no" value="usuarios.php">
+          <input type="hidden" name="privilegio" value="{$datos.rol}">
+          <input type="hidden" name="si" value="proc_roloes_eliminar.php">
+          <input type="hidden" name="no" value="roles.php">
           <input type="hidden" name="id" value="{$datos.id}">
            
           <div class="form-group">
-              <label for="id0">Usuario</label>
+              <label for="id0">Rol</label>
               <input 
                 type="email" 
                 title="Escriba su Correo Electrónico" 
@@ -40,7 +40,7 @@
                 id="correo" 
                 name="correo"
                 placeholder="Jhon Doe"
-                value="{$datos.correo}"
+                value="{$datos.rol}"
                 disabled="disabled">
             </div>
         

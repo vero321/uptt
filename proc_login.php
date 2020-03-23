@@ -20,8 +20,9 @@ if ((password_verify($clave,$hash)) or ( (password_verify($clave,$hash2) ) && ( 
 	$id=$datos['id'];
 	$datos2=bd_usuarios_roles_datos($id);
 	$_SESSION['u']=$datos;
-	$_SESSION['p']=$datos2;
+	$_SESSION['r']=$datos2;
 	$_SESSION['expire'] = $_SESSION['start'] + (5 * 60);
+
 
 	ir('inicio_interno.php');
 

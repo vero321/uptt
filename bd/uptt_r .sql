@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost:3306
--- Tiempo de generación: 20-03-2020 a las 00:46:32
+-- Tiempo de generación: 21-03-2020 a las 12:26:56
 -- Versión del servidor: 10.1.26-MariaDB-0+deb9u1
 -- Versión de PHP: 7.0.27-0+deb9u1
 
@@ -53,25 +53,27 @@ INSERT INTO `EMAIL` (`id`, `direccion`, `clave`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `EQUIPOS_DE_TRABAJOS`
+-- Estructura de tabla para la tabla `EQUIPOS`
 --
 
-CREATE TABLE `EQUIPOS_DE_TRABAJOS` (
+CREATE TABLE `EQUIPOS` (
   `id` int(11) NOT NULL,
   `equipo` tinytext COLLATE utf8_unicode_ci NOT NULL,
   `rol` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
-  `id_persona` int(11) NOT NULL
+  `id_persona` int(11) NOT NULL,
+  `id_nucleo` int(11) NOT NULL,
+  `id_pnf` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Volcado de datos para la tabla `EQUIPOS_DE_TRABAJOS`
+-- Volcado de datos para la tabla `EQUIPOS`
 --
 
-INSERT INTO `EQUIPOS_DE_TRABAJOS` (`id`, `equipo`, `rol`, `id_persona`) VALUES
-(1, 'veronica osuna', 'autor', 0),
-(2, 'marisela olmos', 'asesor academico', 0),
-(3, 'jose palencia', 'autor', 0),
-(4, 'karla quintero', 'autor', 0);
+INSERT INTO `EQUIPOS` (`id`, `equipo`, `rol`, `id_persona`, `id_nucleo`, `id_pnf`) VALUES
+(1, 'veronica osuna', 'autor', 0, 0, 0),
+(2, 'marisela olmos', 'asesor academico', 0, 0, 0),
+(3, 'jose palencia', 'autor', 0, 0, 0),
+(4, 'karla quintero', 'autor', 0, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -83,27 +85,6 @@ CREATE TABLE `ESTRUCTURAS` (
   `id` int(11) NOT NULL,
   `nombre` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `EXTENSIONES`
---
-
-CREATE TABLE `EXTENSIONES` (
-  `id` int(11) NOT NULL,
-  `nombre_largo` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
-  `nombre_corto` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
-  `id_nucleo` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
---
--- Volcado de datos para la tabla `EXTENSIONES`
---
-
-INSERT INTO `EXTENSIONES` (`id`, `nombre_largo`, `nombre_corto`, `id_nucleo`) VALUES
-(3, 'Extension de la UPTT La Puerta', 'Extension La Puerta', 1),
-(4, 'Extension de la UPTT Carache', 'Extension Carache', 2);
 
 -- --------------------------------------------------------
 
@@ -120,10 +101,10 @@ CREATE TABLE `LINEAS_DE_INVESTIGACION` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `LINEAS__TRABAJOS`
+-- Estructura de tabla para la tabla `LINEAS_DE_INVESTIGACION__TRABAJOS`
 --
 
-CREATE TABLE `LINEAS__TRABAJOS` (
+CREATE TABLE `LINEAS_DE_INVESTIGACION__TRABAJOS` (
   `id` int(11) NOT NULL,
   `id_linea` int(11) NOT NULL,
   `id_trabajo` int(11) NOT NULL
@@ -138,37 +119,38 @@ CREATE TABLE `LINEAS__TRABAJOS` (
 CREATE TABLE `NUCLEOS` (
   `id` int(11) NOT NULL,
   `nombre_largo` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
-  `nombre_corto` varchar(100) COLLATE utf8_unicode_ci NOT NULL
+  `nombre_corto` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `id_nucleo` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Volcado de datos para la tabla `NUCLEOS`
 --
 
-INSERT INTO `NUCLEOS` (`id`, `nombre_largo`, `nombre_corto`) VALUES
-(1, 'Núcleos Universitarios de Educación Socialista “Robert Serra” ', 'NUES Beatriz '),
-(2, 'Núcleos Universitarios de Educación Socialista “Hugo Rafael Chávez Frías”', 'NUES San Luis '),
-(3, 'Núcleos Universitarios de Educación Socialista “Fabricio Ojeda”', 'NUES Bocono'),
-(4, 'Núcleos Universitarios de Educación Socialista “Francisco de Miranda”', 'NUES Dividive'),
-(7, 'Núcleos Universitarios de Educación Socialista “Barbarita De La Torre”', 'NUES Trujillo');
+INSERT INTO `NUCLEOS` (`id`, `nombre_largo`, `nombre_corto`, `id_nucleo`) VALUES
+(1, 'Núcleos Universitarios de Educación Socialista “Robert Serra” ', 'NUES Beatriz ', 0),
+(2, 'Núcleos Universitarios de Educación Socialista “Hugo Rafael Chávez Frías”', 'NUES San Luis ', 0),
+(3, 'Núcleos Universitarios de Educación Socialista “Fabricio Ojeda”', 'NUES Bocono', 0),
+(4, 'Núcleos Universitarios de Educación Socialista “Francisco de Miranda”', 'NUES Dividive', 0),
+(7, 'Núcleos Universitarios de Educación Socialista “Barbarita De La Torre”', 'NUES Trujillo', 0);
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `NUCLEOS_PNF`
+-- Estructura de tabla para la tabla `NUCLEOS__PNF`
 --
 
-CREATE TABLE `NUCLEOS_PNF` (
+CREATE TABLE `NUCLEOS__PNF` (
   `id` int(11) NOT NULL,
   `id_nucleo` int(11) NOT NULL,
   `id_pnf` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Volcado de datos para la tabla `NUCLEOS_PNF`
+-- Volcado de datos para la tabla `NUCLEOS__PNF`
 --
 
-INSERT INTO `NUCLEOS_PNF` (`id`, `id_nucleo`, `id_pnf`) VALUES
+INSERT INTO `NUCLEOS__PNF` (`id`, `id_nucleo`, `id_pnf`) VALUES
 (1, 1, 1),
 (2, 3, 4),
 (3, 3, 2),
@@ -240,6 +222,9 @@ CREATE TABLE `PRIVILEGIOS` (
 CREATE TABLE `PROPUESTAS` (
   `id` int(11) NOT NULL,
   `status` enum('APROBADA','CORRECCIONES','DECLINADA','RECHAZADA') COLLATE utf8_unicode_ci NOT NULL,
+  `observacion` text COLLATE utf8_unicode_ci NOT NULL,
+  `id_trayecto_pnf` int(11) NOT NULL,
+  `id_nucleo_pnf` int(11) NOT NULL,
   `id_equipo_de_trabajo` int(11) NOT NULL,
   `id_trabajo` int(11) NOT NULL,
   `id_estructura` int(11) NOT NULL
@@ -249,9 +234,9 @@ CREATE TABLE `PROPUESTAS` (
 -- Volcado de datos para la tabla `PROPUESTAS`
 --
 
-INSERT INTO `PROPUESTAS` (`id`, `status`, `id_equipo_de_trabajo`, `id_trabajo`, `id_estructura`) VALUES
-(1, 'APROBADA', 1, 1, 0),
-(2, 'CORRECCIONES', 2, 2, 0);
+INSERT INTO `PROPUESTAS` (`id`, `status`, `observacion`, `id_trayecto_pnf`, `id_nucleo_pnf`, `id_equipo_de_trabajo`, `id_trabajo`, `id_estructura`) VALUES
+(1, 'APROBADA', '', 0, 0, 1, 1, 0),
+(2, 'CORRECCIONES', '', 0, 0, 2, 2, 0);
 
 -- --------------------------------------------------------
 
@@ -329,16 +314,17 @@ CREATE TABLE `TRABAJOS` (
   `id_equipo_de_trabajo` int(11) NOT NULL,
   `id_trayecto_pnf` int(11) NOT NULL,
   `id_estructura` int(11) NOT NULL,
-  `id_linea_trabajo` int(11) NOT NULL
+  `id_linea_trabajo` int(11) NOT NULL,
+  `id_nucleo_pnf` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
 
 --
 -- Volcado de datos para la tabla `TRABAJOS`
 --
 
-INSERT INTO `TRABAJOS` (`id`, `descripcion`, `fecha_mes`, `fecha_anyo`, `observacion`, `responsable`, `status`, `id_tipo_de_documento`, `id_equipo_de_trabajo`, `id_trayecto_pnf`, `id_estructura`, `id_linea_trabajo`) VALUES
-(1, 'repositorio', 'ENERO', 2020, 'repositorio uptt', 'veronica osuna', 'APROBADO', 1, 1, 4, 0, 0),
-(2, 'mmmmmmmmmmm.........', 'SEPTIEMBRE', 2018, 'mmmmmmmmmmmmmmmnnnnnnnnnnn.........', 'karla quintero', 'CORRECCIONES', 2, 2, 3, 0, 0);
+INSERT INTO `TRABAJOS` (`id`, `descripcion`, `fecha_mes`, `fecha_anyo`, `observacion`, `responsable`, `status`, `id_tipo_de_documento`, `id_equipo_de_trabajo`, `id_trayecto_pnf`, `id_estructura`, `id_linea_trabajo`, `id_nucleo_pnf`) VALUES
+(1, 'repositorio', 'ENERO', 2020, 'repositorio uptt', 'veronica osuna', 'APROBADO', 1, 1, 4, 0, 0, 0),
+(2, 'mmmmmmmmmmm.........', 'SEPTIEMBRE', 2018, 'mmmmmmmmmmmmmmmnnnnnnnnnnn.........', 'karla quintero', 'CORRECCIONES', 2, 2, 3, 0, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -380,20 +366,20 @@ INSERT INTO `TRAYECTOS` (`id`, `trayecto`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `TRAYECTOS_PNF`
+-- Estructura de tabla para la tabla `TRAYECTOS__PNF`
 --
 
-CREATE TABLE `TRAYECTOS_PNF` (
+CREATE TABLE `TRAYECTOS__PNF` (
   `id` int(11) NOT NULL,
   `id_pnf` int(11) NOT NULL,
   `id_trayecto` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
 
 --
--- Volcado de datos para la tabla `TRAYECTOS_PNF`
+-- Volcado de datos para la tabla `TRAYECTOS__PNF`
 --
 
-INSERT INTO `TRAYECTOS_PNF` (`id`, `id_pnf`, `id_trayecto`) VALUES
+INSERT INTO `TRAYECTOS__PNF` (`id`, `id_pnf`, `id_trayecto`) VALUES
 (1, 1, 1),
 (2, 1, 2),
 (3, 1, 3),
@@ -437,31 +423,30 @@ CREATE TABLE `USUARIOS__ROLES` (
   `id_usuario` int(11) NOT NULL,
   `id_rol` int(11) NOT NULL,
   `id_nucleo` int(11) NOT NULL,
-  `id_pnf` int(11) NOT NULL,
-  `id_persona` int(11) NOT NULL
+  `id_pnf` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_slovenian_ci;
 
 --
 -- Volcado de datos para la tabla `USUARIOS__ROLES`
 --
 
-INSERT INTO `USUARIOS__ROLES` (`id`, `id_usuario`, `id_rol`, `id_nucleo`, `id_pnf`, `id_persona`) VALUES
-(1, 25913031, 1, 0, 0, 25913031),
-(2, 25913031, 2, 1, 0, 25913031),
-(4, 25171058, 2, 1, 1, 25171058),
-(5, 25171058, 3, 1, 1, 25171058),
-(6, 25171058, 4, 0, 0, 25171058),
-(7, 25171058, 1, 0, 0, 25171058),
-(8, 2517105, 1, 0, 0, 2517105),
-(9, 2517105, 3, 0, 0, 2517105),
-(10, 25171057, 4, 0, 0, 25171057),
-(11, 25171057, 1, 0, 0, 25171057),
-(12, 1234, 3, 0, 0, 1234),
-(13, 25913034, 2, 0, 0, 25913034),
-(14, 25913034, 3, 0, 0, 25913034),
-(15, 25913034, 4, 0, 0, 25913034),
-(16, 12345678, 1, 0, 0, 12345678),
-(17, 12345, 1, 0, 0, 12345);
+INSERT INTO `USUARIOS__ROLES` (`id`, `id_usuario`, `id_rol`, `id_nucleo`, `id_pnf`) VALUES
+(1, 25913031, 1, 0, 0),
+(2, 25913031, 2, 1, 0),
+(4, 25171058, 2, 1, 1),
+(5, 25171058, 3, 1, 1),
+(6, 25171058, 4, 0, 0),
+(7, 25171058, 1, 0, 0),
+(8, 2517105, 1, 0, 0),
+(9, 2517105, 3, 0, 0),
+(10, 25171057, 4, 0, 0),
+(11, 25171057, 1, 0, 0),
+(12, 1234, 3, 0, 0),
+(13, 25913034, 2, 0, 0),
+(14, 25913034, 3, 0, 0),
+(15, 25913034, 4, 0, 0),
+(16, 12345678, 1, 0, 0),
+(17, 12345, 1, 0, 0);
 
 --
 -- Índices para tablas volcadas
@@ -480,9 +465,9 @@ ALTER TABLE `EMAIL`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indices de la tabla `EQUIPOS_DE_TRABAJOS`
+-- Indices de la tabla `EQUIPOS`
 --
-ALTER TABLE `EQUIPOS_DE_TRABAJOS`
+ALTER TABLE `EQUIPOS`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -492,21 +477,15 @@ ALTER TABLE `ESTRUCTURAS`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indices de la tabla `EXTENSIONES`
---
-ALTER TABLE `EXTENSIONES`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Indices de la tabla `LINEAS_DE_INVESTIGACION`
 --
 ALTER TABLE `LINEAS_DE_INVESTIGACION`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indices de la tabla `LINEAS__TRABAJOS`
+-- Indices de la tabla `LINEAS_DE_INVESTIGACION__TRABAJOS`
 --
-ALTER TABLE `LINEAS__TRABAJOS`
+ALTER TABLE `LINEAS_DE_INVESTIGACION__TRABAJOS`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -516,9 +495,9 @@ ALTER TABLE `NUCLEOS`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indices de la tabla `NUCLEOS_PNF`
+-- Indices de la tabla `NUCLEOS__PNF`
 --
-ALTER TABLE `NUCLEOS_PNF`
+ALTER TABLE `NUCLEOS__PNF`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -582,9 +561,9 @@ ALTER TABLE `TRAYECTOS`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indices de la tabla `TRAYECTOS_PNF`
+-- Indices de la tabla `TRAYECTOS__PNF`
 --
-ALTER TABLE `TRAYECTOS_PNF`
+ALTER TABLE `TRAYECTOS__PNF`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -614,9 +593,9 @@ ALTER TABLE `CENTROS_DE_INVESTIGACION`
 ALTER TABLE `EMAIL`
   MODIFY `id` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
--- AUTO_INCREMENT de la tabla `EQUIPOS_DE_TRABAJOS`
+-- AUTO_INCREMENT de la tabla `EQUIPOS`
 --
-ALTER TABLE `EQUIPOS_DE_TRABAJOS`
+ALTER TABLE `EQUIPOS`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT de la tabla `ESTRUCTURAS`
@@ -624,29 +603,24 @@ ALTER TABLE `EQUIPOS_DE_TRABAJOS`
 ALTER TABLE `ESTRUCTURAS`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
--- AUTO_INCREMENT de la tabla `EXTENSIONES`
---
-ALTER TABLE `EXTENSIONES`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
---
 -- AUTO_INCREMENT de la tabla `LINEAS_DE_INVESTIGACION`
 --
 ALTER TABLE `LINEAS_DE_INVESTIGACION`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
--- AUTO_INCREMENT de la tabla `LINEAS__TRABAJOS`
+-- AUTO_INCREMENT de la tabla `LINEAS_DE_INVESTIGACION__TRABAJOS`
 --
-ALTER TABLE `LINEAS__TRABAJOS`
+ALTER TABLE `LINEAS_DE_INVESTIGACION__TRABAJOS`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT de la tabla `NUCLEOS`
 --
 ALTER TABLE `NUCLEOS`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
--- AUTO_INCREMENT de la tabla `NUCLEOS_PNF`
+-- AUTO_INCREMENT de la tabla `NUCLEOS__PNF`
 --
-ALTER TABLE `NUCLEOS_PNF`
+ALTER TABLE `NUCLEOS__PNF`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT de la tabla `PERSONAS`
@@ -699,15 +673,15 @@ ALTER TABLE `TRABAJOS__DOCUMENTOS`
 ALTER TABLE `TRAYECTOS`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
--- AUTO_INCREMENT de la tabla `TRAYECTOS_PNF`
+-- AUTO_INCREMENT de la tabla `TRAYECTOS__PNF`
 --
-ALTER TABLE `TRAYECTOS_PNF`
+ALTER TABLE `TRAYECTOS__PNF`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT de la tabla `USUARIOS__ROLES`
 --
 ALTER TABLE `USUARIOS__ROLES`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

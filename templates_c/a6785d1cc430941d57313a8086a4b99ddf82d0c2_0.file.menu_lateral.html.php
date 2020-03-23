@@ -1,3 +1,27 @@
+<?php
+/* Smarty version 3.1.30, created on 2020-03-22 18:50:01
+  from "/home/jose/public_html/proyecto4/uptt/templates/menu_lateral.html" */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.30',
+  'unifunc' => 'content_5e77eb9967d199_60933257',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    'a6785d1cc430941d57313a8086a4b99ddf82d0c2' => 
+    array (
+      0 => '/home/jose/public_html/proyecto4/uptt/templates/menu_lateral.html',
+      1 => 1584917395,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_5e77eb9967d199_60933257 (Smarty_Internal_Template $_smarty_tpl) {
+?>
 <!--inicio menu lateral-->
     <div id="wrapper" style="margin-top: -40px; padding-right: 50px;">
         <div id="sidebar-wrapper">
@@ -50,3 +74,5 @@
     </div>
 
 <!--fin menu lateral-->
+<?php }
+}

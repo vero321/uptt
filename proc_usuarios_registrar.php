@@ -30,7 +30,7 @@ else{
 
 	
 
-	$m="Usuario <strong>$id</strong> se agregó correctamente a la lista de usuarios y se creó su carpeta personal.";
+	$m="Usuario <strong>$id</strong> se agregó correctamente a la lista de usuarios";
 	ir("mensaje.php?m=$m&d=usuarios.php");
 
 }
