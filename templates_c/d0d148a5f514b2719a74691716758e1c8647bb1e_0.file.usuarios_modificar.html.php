@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-03-19 23:33:29
+/* Smarty version 3.1.30, created on 2020-03-23 16:18:17
   from "/home/veronica/public_html/uptt/templates/usuarios_modificar.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5e743989d3e518_27374652',
+  'unifunc' => 'content_5e791989b5ec93_48834116',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'd0d148a5f514b2719a74691716758e1c8647bb1e' => 
     array (
       0 => '/home/veronica/public_html/uptt/templates/usuarios_modificar.html',
-      1 => 1584484970,
+      1 => 1584932592,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5e743989d3e518_27374652 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5e791989b5ec93_48834116 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <div class="container">
 <div class="row">
@@ -45,8 +45,7 @@ function content_5e743989d3e518_27374652 (Smarty_Internal_Template $_smarty_tpl)
                             title="Escriba la ci del Usuario" 
                             required="required" 
                             class="form-control" 
-                            id="id_new" 
-                            name="id_new" 
+                            disabled="disabled"
                             placeholder=""
                             value="<?php echo $_smarty_tpl->tpl_vars['usuario']->value['id'];?>
 ">

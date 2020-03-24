@@ -173,28 +173,6 @@ function bd_usuarios_hash_temporal($login)
 
 
 
-function bd_usuarios_contar(){
-    return sql2value("SELECT COUNT(*) FROM USUARIOS");
-}
-
-function bd_nucleos_contar(){
-    return sql2value("SELECT COUNT(*) FROM NUCLEOS");
-}
-
-function bd_pnf_contar(){
-    return sql2value("SELECT COUNT(*) FROM PNF");
-}
-
-function bd_roles_contar(){
-    return sql2value("SELECT COUNT(*) FROM ROLES");
-}
-
-function bd_personas_contar($criterio='1')
-{
-
-}
-
-
 function bd_usuarios_datos($login=NULL)
 {
     if ($login!=NULL) {
@@ -288,7 +266,67 @@ function bd_usuarios_modificar_clave($d)
     return $id;
 }
 
-#####Funciones para los 
+
+
+function bd_usuarios_registrar($usuario,$n_roles,$roles){   
+    $sql1="
+        INSERT INTO USUARIOS(id, clave, correo)
+        VALUES ('{$usuario['id']}','{$usuario['hash']}','{$usuario['correo']}')
+        ";
+    sql($sql1);
+
+    $consulta="SELECT id FROM PERSONAS WHERE id ='{$usuario['id']}'";
+    $verificar= sql($consulta);
+
+    if ($verificar < 1){
+        $sql2="
+            INSERT INTO PERSONAS(id)
+            VALUES('{$usuario['id']}');
+             ";
+    sql($sql2);
+    }
+
+    for ($i=0; $i <$n_roles ; $i++) { 
+        # code...
+        $rol=$roles[$i];
+        $sql="
+            INSERT INTO USUARIOS__ROLES(id_usuario, id_rol)
+            VALUES ('{$usuario['id']}','{$rol}')
+        ";
+        sql($sql);
+    }
+    return "{$usuario['id']}";
+
+}
+
+
+function bd_usuarios_roles_datos($id){
+
+    $sql="
+            SELECT id_rol, id_nucleo, id_pnf, rol, nivel
+            FROM USUARIOS__ROLES, ROLES 
+            WHERE id_usuario LIKE '{$id}' && id_rol LIKE ROLES.id  ";
+        $salida = sql2array($sql);
+    return $salida;
+}
+
+
+function bd_crear_temp($correo){
+    $n_aleatorio=rand(100000,999999);
+    $hash=password_hash($n_aleatorio, PASSWORD_DEFAULT);
+    $diaSiguiente = time() + (1 * 24 * 60 * 60);
+    $plazo=date('Y-m-d-H-i', $diaSiguiente);
+    $sql = "
+        UPDATE USUARIOS SET
+        clave_temporal = '{$hash}',
+        plazo = '{$plazo}'
+        WHERE correo = '{$correo}' 
+        ";
+    sql($sql);
+    return $n_aleatorio;
+}
+
+#####Funciones para los Nucleos
 
 
 
@@ -399,7 +437,7 @@ function bd_pnf_modicar($pnf)
     return $nombre;
 }
 
-##############################
+############################## Funciones Roles
 
 function bd_roles_datos($id=NULL){
     if ($id!=NULL) {
@@ -430,50 +468,6 @@ function contar_valores($a,$buscado)
  }
 
 
-function bd_usuarios_registrar($usuario,$n_roles,$roles){   
-    $sql1="
-        INSERT INTO USUARIOS(id, clave, correo)
-        VALUES ('{$usuario['id']}','{$usuario['hash']}','{$usuario['correo']}')
-        ";
-    sql($sql1);
-
-    $consulta="SELECT id FROM PERSONAS WHERE id ='{$usuario['id']}'";
-    $verificar= sql($consulta);
-
-    if ($verificar < 1){
-        $sql2="
-            INSERT INTO PERSONAS(id)
-            VALUES('{$usuario['id']}');
-             ";
-    sql($sql2);
-    }
-
-    for ($i=0; $i <$n_roles ; $i++) { 
-        # code...
-        $rol=$roles[$i];
-        $sql="
-            INSERT INTO USUARIOS__ROLES(id_usuario, id_rol)
-            VALUES ('{$usuario['id']}','{$rol}')
-        ";
-        sql($sql);
-    }
-    return "{$usuario['id']}";
-
-}
-
-
-function bd_usuarios_roles_datos($id){
-
-    $sql="
-            SELECT id_rol, id_nucleo, id_pnf, rol, nivel
-            FROM USUARIOS__ROLES, ROLES 
-            WHERE id_usuario LIKE '{$id}' && id_rol LIKE ROLES.id  ";
-        $salida = sql2array($sql);
-    return $salida;
-}
-
-
-
 
 function bd_eliminar_rol_usuario($id_usuario,$id_rol=NULL){ 
     if ($id_rol != NULL) {
@@ -495,39 +489,6 @@ function bd_eliminar_rol_usuario($id_usuario,$id_rol=NULL){
 }
 
 
-function bd_personas_datos($login=NULL)
-{
-    if ($login!=NULL){
-        $sql="
-                SELECT *
-                FROM  PERSONAS 
-                WHERE id LIKE '{$login}'";
-            $salida = sql2array($sql);
-    }else
-    {
-        $sql="
-            SELECT *
-            FROM PERSONAS
-            ";
-        $salida = sql2array($sql);
-    }
-    return $salida;
-}
-
-function bd_crear_temp($correo){
-    $n_aleatorio=rand(100000,999999);
-    $hash=password_hash($n_aleatorio, PASSWORD_DEFAULT);
-    $diaSiguiente = time() + (1 * 24 * 60 * 60);
-    $plazo=date('Y-m-d-H-i', $diaSiguiente);
-    $sql = "
-        UPDATE USUARIOS SET
-        clave_temporal = '{$hash}',
-        plazo = '{$plazo}'
-        WHERE correo = '{$correo}' 
-        ";
-    sql($sql);
-    return $n_aleatorio;
-}
 
 function bd_privilegios_datos($id=NULL){
     if ($id!=NULL){
@@ -606,4 +567,172 @@ function bd_roles_eliminar($id){
         ";
     sql($sql);
     return $id;
+}
+
+
+
+############################# Funciones Personas
+
+
+function bd_personas_datos($login=NULL)
+{
+    if ($login!=NULL){
+        $sql="
+                SELECT *
+                FROM  PERSONAS 
+                WHERE id LIKE '{$login}'";
+            $salida = sql2array($sql);
+    }else
+    {
+        $sql="
+            SELECT *
+            FROM PERSONAS
+            ";
+        $salida = sql2array($sql);
+    }
+    return $salida;
+}
+
+
+
+#################Contadores
+
+
+
+function bd_usuarios_contar(){
+    return sql2value("SELECT COUNT(*) FROM USUARIOS");
+}
+
+function bd_centros_contar(){
+    return sql2value("SELECT COUNT(*) FROM CENTROS_DE_INVESTIGACION");
+}
+
+function bd_lineas_contar(){
+    return sql2value("SELECT COUNT(*) FROM LINEAS_DE_INVESTIGACION");
+}
+
+function bd_nucleos_contar(){
+    return sql2value("SELECT COUNT(*) FROM NUCLEOS");
+}
+
+function bd_pnf_contar(){
+    return sql2value("SELECT COUNT(*) FROM PNF");
+}
+
+function bd_roles_contar(){
+    return sql2value("SELECT COUNT(*) FROM ROLES");
+}
+
+function bd_personas_contar($criterio='1')
+{
+
+}
+
+######################## Funciones Centros de Investigación
+
+function bd_centros_datos($id=NULL)
+{
+    if ($id!=NULL) {
+        $sql="
+            SELECT *
+            FROM CENTROS_DE_INVESTIGACION
+            WHERE id LIKE '{$id}'";
+        $salida = sql2row($sql);
+    } else {
+        $sql="
+            SELECT *
+            FROM CENTROS_DE_INVESTIGACION
+            ";
+        $salida = sql2array($sql);
+    }
+    return $salida;
+}
+
+function bd_centros_agregar($centros)
+{
+    $sql="
+        INSERT INTO CENTROS_DE_INVESTIGACION (nombre)
+        VALUES ('{$centros['nombre']}')";
+    sql($sql);
+    return "{$centros['id']}";
+
+}
+
+function bd_centros_eliminar($id)
+{
+    $sql = "
+        DELETE FROM CENTROS_DE_INVESTIGACION
+        WHERE id = '{$id['id']}'
+        ";
+    sql($sql);
+    return $centros['id'];
+}
+
+
+function bd_centros_modicar($centros)
+{
+    $sql = "
+        UPDATE CENTROS_DE_INVESTIGACION SET
+            id = '{$centros['id']}',
+            nombre = '{$centros['nombre']}'
+        WHERE
+            id = '{$centros['id']}'
+    ";
+    sql($sql);
+    return $nombre;
+}
+
+
+######################## Funciones Líneas de Investigación
+
+function bd_lineas_datos($id=NULL)
+{
+    if ($id!=NULL) {
+        $sql="
+            SELECT *
+            FROM LINEAS_DE_INVESTIGACION
+            WHERE id LIKE '{$id}'";
+        $salida = sql2row($sql);
+    } else {
+        $sql="
+            SELECT *
+            FROM LINEAS_DE_INVESTIGACION
+            ";
+        $salida = sql2array($sql);
+    }
+    return $salida;
+}
+
+function bd_lineas_agregar($lineas)
+{
+    $sql="
+        INSERT INTO LINEAS_DE_INVESTIGACION (nombre)
+        VALUES ('{$lineas['nombre']}')";
+    sql($sql);
+    return "{$lineas['id']}";
+
+}
+
+function bd_lineas_eliminar($id)
+{
+    $sql = "
+        DELETE FROM LINEAS_DE_INVESTIGACION
+        WHERE id = '{$id['id']}'
+        ";
+    sql($sql);
+    return $lineas['id'];
+}
+
+
+function bd_lineas_modicar($lineas)
+{
+    $sql = "
+        UPDATE LINEAS_DE_INVESTIGACION SET
+            id = '{$lineas['id']}',
+            nombre = '{$lineas['nombre']}'
+        WHERE
+            id = '{$lineas['id']}'
+    ";
+    sql($sql);
+    return $nombre;
 }

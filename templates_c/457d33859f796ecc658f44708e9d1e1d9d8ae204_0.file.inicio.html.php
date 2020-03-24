@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-03-19 23:19:47
+/* Smarty version 3.1.30, created on 2020-03-23 16:12:21
   from "/home/veronica/public_html/uptt/templates/inicio.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5e743653453a75_97671880',
+  'unifunc' => 'content_5e79182567f127_32213451',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '457d33859f796ecc658f44708e9d1e1d9d8ae204' => 
     array (
       0 => '/home/veronica/public_html/uptt/templates/inicio.html',
-      1 => 1584648235,
+      1 => 1584994338,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:pie_interno.html' => 1,
   ),
 ),false)) {
-function content_5e743653453a75_97671880 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5e79182567f127_32213451 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:cabecera.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -47,7 +47,7 @@ $_smarty_tpl->_subTemplateRender("file:cabecera.html", $_smarty_tpl->cache_id, $
 
 <!--Formulario de Busqueda -->
 					
-				<img src="./imagenes/logo.png" style="padding-top: 50px;" class="rounded float-left" alt="logo">
+				<img src="./imagenes/logo_ini.png" style="padding-top: 50px;" class="rounded float-left" alt="logo">
 				<img src="./imagenes/uptt.png" class="rounded float-right" alt="uptt">
 				<br><br><br>
 				<form class="form-group form-portada" action="buscar.php" method="get">

@@ -99,6 +99,7 @@ h5.nucleo
 
 .pie_interno 
 {
+    margin-top: 60px;
     position: absolute;
     bottom:0;
     height:80px; /*Alto del Pie de Página vero*/ 

@@ -1,0 +1,41 @@
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+    	<h2>Modificar Línea de Investigación</h2>
+      	<form 
+    	action="proc_lineas_modificar.php" 
+    	method="POST" 
+    	class="px-4 py-3" 
+    	id="lineas_modificar"
+    	name="lineas_modificar">
+      <input type="hidden" name="id" value="{$lineas.id}">
+     	<div class="form-group">
+      	<div class="form-group">
+          <label for="nombre">Nombre Completo</label>
+          <input 
+            type="text" 
+            title="Escriba el Nombre Completo de la Línea de Investigación" 
+            required="required" 
+            class="form-control" 
+            id="nombre" 
+            name="nombre"
+            placeholder="Jhon Doe"
+            value="{$lineas.nombre}">
+        </div> 
+
+    	<div class="form-group">
+			<input 
+				class="btn-enviar boton" 
+				type="submit" 
+				name="enviar" 
+				value="Modificar">
+    	</div>
+
+    </form>
+    </div>
+    
+  </div>
+</div>
+
+

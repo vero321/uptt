@@ -5,11 +5,15 @@ $nucleos=bd_nucleos_contar();
 $pnf=bd_pnf_contar();
 $roles=bd_roles_contar();
 $usuarios=bd_usuarios_contar();
+$lineas=bd_lineas_contar();
+$centros=bd_centros_contar();
 #vq($_SESSION['p']);
 
 
 
 $smarty->assign('nucleos',$nucleos);
+$smarty->assign('lineas',$lineas);
+$smarty->assign('centros',$centros);
 $smarty->assign('pnf',$pnf);
 $smarty->assign('usuarios',$usuarios);
 $smarty->assign('roles',$roles);

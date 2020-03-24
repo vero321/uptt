@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-03-19 23:19:47
+/* Smarty version 3.1.30, created on 2020-03-23 16:09:22
   from "/home/veronica/public_html/uptt/templates/cabecera.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5e74365345a3c4_03630669',
+  'unifunc' => 'content_5e791772115da0_66624431',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'b5e6059c010c5bd952516b080862d70e00838616' => 
     array (
       0 => '/home/veronica/public_html/uptt/templates/cabecera.html',
-      1 => 1584660618,
+      1 => 1584994148,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5e74365345a3c4_03630669 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5e791772115da0_66624431 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -39,7 +39,7 @@ function content_5e74365345a3c4_03630669 (Smarty_Internal_Template $_smarty_tpl)
 
 
   <nav  class="navbar navbar-expand-lg navbar-dark cab">
-  <a class="navbar-brand" href="index.php"><img src="./imagenes/logo.png"></a>
+  <a class="navbar-brand" href="index.php"><img src="./imagenes/logo_cab.png"></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
