@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-03-23 16:17:29
+/* Smarty version 3.1.30, created on 2020-03-24 14:48:43
   from "/home/veronica/public_html/uptt/templates/centros.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5e791959f3fd22_08227701',
+  'unifunc' => 'content_5e7a560baf3e54_71271037',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'eb8afac5e704b7181dd88dfada2296180991ad11' => 
     array (
       0 => '/home/veronica/public_html/uptt/templates/centros.html',
-      1 => 1584994613,
+      1 => 1585075538,
       2 => 'file',
     ),
   ),
@@ -24,13 +24,13 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:pie_interno.html' => 1,
   ),
 ),false)) {
-function content_5e791959f3fd22_08227701 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5e7a560baf3e54_71271037 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:cabecera_interna.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
 
 <!-- incluye menu y agrega el espasio de trbajo-->
-<div class="container" style="margin-top: 100px;">
+<div class="container" >
             <?php $_smarty_tpl->_subTemplateRender("file:menu_lateral.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 

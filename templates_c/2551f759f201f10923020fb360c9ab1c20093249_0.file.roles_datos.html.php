@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-03-23 14:56:49
+/* Smarty version 3.1.30, created on 2020-03-26 11:33:56
   from "/home/veronica/public_html/uptt/templates/roles_datos.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5e7906712b3221_60820115',
+  'unifunc' => 'content_5e7ccb64daf625_47973739',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '2551f759f201f10923020fb360c9ab1c20093249' => 
     array (
       0 => '/home/veronica/public_html/uptt/templates/roles_datos.html',
-      1 => 1584932592,
+      1 => 1585236655,
       2 => 'file',
     ),
   ),
@@ -24,22 +24,21 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:pie_interno.html' => 1,
   ),
 ),false)) {
-function content_5e7906712b3221_60820115 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5e7ccb64daf625_47973739 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:cabecera_interna.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
 
 
 <!-- incluye menu y agrega el espasio de trbajo-->
-<div class="container" style="margin-top: 90px;">
-    <div class="row">
-        <div class="col-sm-2"> 
-
+<div class="container" >
             <?php $_smarty_tpl->_subTemplateRender("file:menu_lateral.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
-        </div>
-        <div class="col-sm-10">
+    <div class="row" id="central">
+        
+        <div class="col-sm-9 offset-3"  >
+
 
 
 
@@ -47,7 +46,7 @@ $_smarty_tpl->_subTemplateRender("file:cabecera_interna.html", $_smarty_tpl->cac
 
             <h2 class="subtitulo" align="center"><span class="badge badge-secondary badge-pill"></span>Privilegios del rol</h2>
            
-              <table style="margin-top: 30px;" class="table table-striped table-hover">
+              <table style="margin-top: 30px;" class="table table-responsive-xl">
                 <thead class="thead-dark">
                   <tr>
                     <th>Rol</th>

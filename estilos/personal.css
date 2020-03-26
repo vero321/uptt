@@ -340,6 +340,7 @@ h2.subtitulo
 #central
 {
     justify-content: space-around;
+    margin-top: 105px;
 }
 
 .card-central

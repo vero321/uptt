@@ -3,7 +3,7 @@ include_once "./inicializacion.php";
 #vq($privilegios);
 
 $rol=$_POST['rol'];
-$privilegios=$_POST['privilegio'];
+$privilegios=$_POST['privilegios'];
 $n_privilegios=count($privilegios);
 $sql="SELECT id  FROM ROLES WHERE id LIKE '{$id}'";
 $verificacion_id = sql2row($sql);

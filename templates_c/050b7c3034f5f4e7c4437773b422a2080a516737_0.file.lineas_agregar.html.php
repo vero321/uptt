@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-03-23 14:00:42
+/* Smarty version 3.1.30, created on 2020-03-26 11:34:09
   from "/home/veronica/public_html/uptt/templates/lineas_agregar.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5e78f94a0d7e69_44037068',
+  'unifunc' => 'content_5e7ccb717591a0_44848575',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '050b7c3034f5f4e7c4437773b422a2080a516737' => 
     array (
       0 => '/home/veronica/public_html/uptt/templates/lineas_agregar.html',
-      1 => 1584943646,
+      1 => 1584986545,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5e78f94a0d7e69_44037068 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5e7ccb717591a0_44848575 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 
 <div class="container">
@@ -31,7 +31,7 @@ function content_5e78f94a0d7e69_44037068 (Smarty_Internal_Template $_smarty_tpl)
         <section id="intro">
             <div class="container">
               <div class="centro"> 
-                  <h2>Agreagar Centro de Investigación</h2>
+                  <h2>Agreagar Línea de Investigación</h2>
                     <form 
                     	action="proc_lineas_agregar.php" 
                     	method="POST" 

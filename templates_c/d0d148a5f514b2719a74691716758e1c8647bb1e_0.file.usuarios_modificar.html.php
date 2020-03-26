@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-03-23 16:18:17
+/* Smarty version 3.1.30, created on 2020-03-26 11:35:24
   from "/home/veronica/public_html/uptt/templates/usuarios_modificar.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5e791989b5ec93_48834116',
+  'unifunc' => 'content_5e7ccbbca7db51_55852365',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'd0d148a5f514b2719a74691716758e1c8647bb1e' => 
     array (
       0 => '/home/veronica/public_html/uptt/templates/usuarios_modificar.html',
-      1 => 1584932592,
+      1 => 1585236902,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5e791989b5ec93_48834116 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5e7ccbbca7db51_55852365 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <div class="container">
 <div class="row">
@@ -30,7 +30,7 @@ function content_5e791989b5ec93_48834116 (Smarty_Internal_Template $_smarty_tpl)
         <section id="intro">
             <div class="container">
               <div class="centro"> 
-                  <h1 align="center">Modificar Usuario</h1>
+                  <h2>Modificar Usuario</h2>
                     <form 
                       action="proc_usuarios_modificar.php" 
                       method="POST" 

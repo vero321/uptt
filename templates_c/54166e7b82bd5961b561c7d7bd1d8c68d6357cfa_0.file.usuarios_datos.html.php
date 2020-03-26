@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-03-19 23:33:18
+/* Smarty version 3.1.30, created on 2020-03-26 11:32:20
   from "/home/veronica/public_html/uptt/templates/usuarios_datos.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5e74397e2da6f1_40757138',
+  'unifunc' => 'content_5e7ccb04e24262_39798677',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '54166e7b82bd5961b561c7d7bd1d8c68d6357cfa' => 
     array (
       0 => '/home/veronica/public_html/uptt/templates/usuarios_datos.html',
-      1 => 1584485323,
+      1 => 1585236738,
       2 => 'file',
     ),
   ),
@@ -24,32 +24,27 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:pie_interno.html' => 1,
   ),
 ),false)) {
-function content_5e74397e2da6f1_40757138 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5e7ccb04e24262_39798677 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:cabecera_interna.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
 
 
 <!-- incluye menu y agrega el espasio de trbajo-->
-<div class="container" style="margin-top: 90px;">
-    <div class="row">
-        <div class="col-sm-2"> 
-
+<div class="container" >
             <?php $_smarty_tpl->_subTemplateRender("file:menu_lateral.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
-        </div>
-        <div class="col-sm-10">
-
+    <div class="row" id="central">
+        
+        <div class="col-sm-9 offset-3"  >
 
 
 <!--finaliza-->
-<br>
-<br>
 
-          
+              <h2 class="subtitulo" align="center"><span class="badge badge-secondary badge-pill"></span>Roles del usuario</h2>
            
-              <table style="margin-top: 30px;" class="table table-striped table-hover">
+              <table style="margin-top: 30px;" class="table table-responsive-xl">
                 <thead class="thead-dark">
                   <tr>
                     <th>Cedula</th>
@@ -81,9 +76,9 @@ for ($__section_i_0_iteration = 1, $_smarty_tpl->tpl_vars['__smarty_section_i']-
 
 			                    <a 
 			                      style="margin-bottom:3px; color:blue;" 
-			                      class="btn btn-default mimodal"
+			                      class="btn btn-default"
 			                      title="Eliminar Permiso" 
-			                      data-href="usuarios_rol_eliminar.php?id=<?php echo $_smarty_tpl->tpl_vars['usuario']->value['id'];?>
+			                      href="proc_usuarios_rol_eliminar.php?id=<?php echo $_smarty_tpl->tpl_vars['usuario']->value['id'];?>
 &rol=<?php echo $_smarty_tpl->tpl_vars['roles']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['id'];?>
 ">
 			                      <i class="fa fa-trash"></i>
