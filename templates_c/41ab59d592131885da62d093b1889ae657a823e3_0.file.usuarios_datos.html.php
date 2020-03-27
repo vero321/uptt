@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-03-26 13:08:16
+/* Smarty version 3.1.30, created on 2020-03-27 14:34:18
   from "/home/jose/public_html/proyecto4/uptt/templates/usuarios_datos.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5e7ce18022a600_99283004',
+  'unifunc' => 'content_5e7e472a2d0133_13359278',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '41ab59d592131885da62d093b1889ae657a823e3' => 
     array (
       0 => '/home/jose/public_html/proyecto4/uptt/templates/usuarios_datos.html',
-      1 => 1585239458,
+      1 => 1585334040,
       2 => 'file',
     ),
   ),
@@ -24,7 +24,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:pie_interno.html' => 1,
   ),
 ),false)) {
-function content_5e7ce18022a600_99283004 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5e7e472a2d0133_13359278 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:cabecera_interna.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -79,7 +79,7 @@ for ($__section_i_0_iteration = 1, $_smarty_tpl->tpl_vars['__smarty_section_i']-
 			                      class="btn btn-default"
 			                      title="Eliminar Permiso" 
 			                      href="proc_usuarios_rol_eliminar.php?id=<?php echo $_smarty_tpl->tpl_vars['usuario']->value['id'];?>
-&rol=<?php echo $_smarty_tpl->tpl_vars['roles']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['id'];?>
+&rol=<?php echo $_smarty_tpl->tpl_vars['roles']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['id_rol'];?>
 ">
 			                      <i class="fa fa-trash"></i>
 			                    </a>
