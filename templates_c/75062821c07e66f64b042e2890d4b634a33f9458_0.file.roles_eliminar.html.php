@@ -1,3 +1,27 @@
+<?php
+/* Smarty version 3.1.30, created on 2020-03-26 16:53:32
+  from "/home/jose/public_html/proyecto4/uptt/templates/roles_eliminar.html" */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.30',
+  'unifunc' => 'content_5e7d164c3ff010_30937190',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    '75062821c07e66f64b042e2890d4b634a33f9458' => 
+    array (
+      0 => '/home/jose/public_html/proyecto4/uptt/templates/roles_eliminar.html',
+      1 => 1585256005,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_5e7d164c3ff010_30937190 (Smarty_Internal_Template $_smarty_tpl) {
+?>
 
 <div class="container">
   <div class="row">
@@ -11,10 +35,12 @@
           class="px-4 py-3" 
           id="eliminar_usuario"
           name="eliminar_usuario">
-          <input type="hidden" name="privilegio" value="{$datos.rol}">
+          <input type="hidden" name="privilegio" value="<?php echo $_smarty_tpl->tpl_vars['datos']->value['rol'];?>
+">
           <input type="hidden" name="si" value="proc_roloes_eliminar.php">
           <input type="hidden" name="no" value="roles.php">
-          <input type="hidden" name="id" value="{$datos.id}">
+          <input type="hidden" name="id" value="<?php echo $_smarty_tpl->tpl_vars['datos']->value['id'];?>
+">
            
           <div class="form-group">
               <label for="id0">Rol</label>
@@ -26,7 +52,8 @@
                 id="id0" 
                 name="id0" 
                 placeholder="login@correo.com"
-                value="{$datos.rol}"
+                value="<?php echo $_smarty_tpl->tpl_vars['datos']->value['rol'];?>
+"
                 disabled="disabled">
             </div>
         
@@ -40,7 +67,8 @@
                 id="correo" 
                 name="correo"
                 placeholder="Jhon Doe"
-                value="{$datos.nombre}"
+                value="<?php echo $_smarty_tpl->tpl_vars['datos']->value['nombre'];?>
+"
                 disabled="disabled">
             </div>
         
@@ -62,3 +90,5 @@
 
 
 
+<?php }
+}
