@@ -30,5 +30,5 @@ if ((password_verify($clave,$hash)) or ( (password_verify($clave,$hash2) ) && ( 
 }
 else{
 	$m="Error al ingresar verifique sus datos ";
-	ir("mensaje.php?m=$m&d=index.php");
+	ir("mensaje_ingreso.php?m=$m&d=index.php");
 }

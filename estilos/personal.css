@@ -345,7 +345,21 @@ h2.subtitulo
 
 .card-central
 {
-margin: 0 10px 10px 10px;
+    margin: 0 10px 10px 10px;
+}
+
+.ejem
+{
+    margin: 6px 10px 10px 10px;
+
+}
+.ejem2
+{
+    margin-left: -40px;
+    margin-right: -40px;
+    margin-bottom: 5px;
+    border: solid 1px #D3D7CF;
+    justify-content: space-around;
 }
 
 

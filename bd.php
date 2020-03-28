@@ -310,6 +310,16 @@ function bd_usuarios_roles_datos($id){
     return $salida;
 }
 
+function bd_usuarios_privilegios_datos($id){
+
+    $sql="
+            SELECT id_rol, id_privilegio, privilegio, rol, nivel
+            FROM ROLES__PRIVILEGIOS, ROLES 
+            WHERE id_rol LIKE '{$id}' && id_privilegio LIKE PRIVILEGIOS.id  ";
+        $salida = sql2array($sql);
+    return $salida;
+}
+
 
 function bd_crear_temp($correo){
     $n_aleatorio=rand(100000,999999);
