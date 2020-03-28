@@ -603,6 +603,20 @@ function bd_personas_datos($login=NULL)
     return $salida;
 }
 
+function bd_personas_modicar($personas)
+{
+    $sql = "
+        UPDATE PERSONAS SET
+            id = '{$personas['id']}',
+            nombre = '{$personas['nombre']}',
+            apellido = '{$personas['apellido']}'
+        WHERE
+            id = '{$personas['id']}'
+    ";
+    sql($sql);
+    return $personas;
+}
+
 
 
 #################Contadores

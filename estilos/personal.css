@@ -101,10 +101,11 @@ h5.nucleo
 {
     margin-top: 60px;
     position: absolute;
+    border-top: solid 1px #C0C0C0;
     bottom:0;
     height:80px; /*Alto del Pie de Página vero*/ 
     text-align: right;
-    background: #f1f1f1;
+    background: #F0F0F0;
     color:#0747a6;
     padding-top:30px;
     padding-bottom:10px;
@@ -171,11 +172,9 @@ body
 	font-size:14px;
 }
 .modal-body h2{
-	font-size: 18px;
+	font-size: 20px;
 	text-align: center;
-	border-bottom: solid 2px #0033AA;
 	padding:15px;
-	border-top: solid 2px #0033AA;
 }
 
 .form-busqueda{
@@ -378,7 +377,8 @@ h2.subtitulo
     .pie_interno
     {
         font-size: small;
-        width: 100%;
+        position: fixed;
+
     }
 }
 

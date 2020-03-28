@@ -1,3 +1,27 @@
+<?php
+/* Smarty version 3.1.30, created on 2020-03-27 21:56:35
+  from "/home/veronica/public_html/uptt/templates/roles_agregar.html" */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.30',
+  'unifunc' => 'content_5e7eaed3804ea3_00170138',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    '5654c32732a51320a36f663a66961ec2a13b1e96' => 
+    array (
+      0 => '/home/veronica/public_html/uptt/templates/roles_agregar.html',
+      1 => 1585360591,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_5e7eaed3804ea3_00170138 (Smarty_Internal_Template $_smarty_tpl) {
+?>
 <div class="container">
 <div class="row">
   <div class="col-2"></div>
@@ -59,17 +83,32 @@
                       <div class="ejem2">
                       <div class="form-group">
 
-                      {section name=i loop=$privilegios}
+                      <?php
+$__section_i_0_saved = isset($_smarty_tpl->tpl_vars['__smarty_section_i']) ? $_smarty_tpl->tpl_vars['__smarty_section_i'] : false;
+$__section_i_0_loop = (is_array(@$_loop=$_smarty_tpl->tpl_vars['privilegios']->value) ? count($_loop) : max(0, (int) $_loop));
+$__section_i_0_total = $__section_i_0_loop;
+$_smarty_tpl->tpl_vars['__smarty_section_i'] = new Smarty_Variable(array());
+if ($__section_i_0_total != 0) {
+for ($__section_i_0_iteration = 1, $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] = 0; $__section_i_0_iteration <= $__section_i_0_total; $__section_i_0_iteration++, $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']++){
+?>
 
                       <div class="form-check form-check-inline ejem ">
                         <label class="form-check-label">
                           <input  type="checkbox"  class="form-check-input"  
-                          name="privilegio[]" value="{$privilegios[i].id}">
-                          {$privilegios[i].privilegio}
+                          name="privilegio[]" value="<?php echo $_smarty_tpl->tpl_vars['privilegios']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['id'];?>
+">
+                          <?php echo $_smarty_tpl->tpl_vars['privilegios']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['privilegio'];?>
+
                         </label>
                      
                       </div>
-                      {/section}
+                      <?php
+}
+}
+if ($__section_i_0_saved) {
+$_smarty_tpl->tpl_vars['__smarty_section_i'] = $__section_i_0_saved;
+}
+?>
                       </div>
                     </div>
                   </div>
@@ -91,3 +130,5 @@
 
 </div>  
 </div>
+<?php }
+}
