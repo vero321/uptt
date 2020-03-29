@@ -1,5 +1,6 @@
 <?php 
 include_once "./inicializacion.php";
+verificar();
 
 $n_pnf=bd_pnf_contar();
 $verificar=privilegios();

@@ -1,5 +1,7 @@
 <?php 
 include_once "./inicializacion.php";
+verificar();
+
 
 $n_lineas=bd_lineas_contar();
 

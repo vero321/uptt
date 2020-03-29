@@ -1,5 +1,7 @@
 <?php 
 include_once "./inicializacion.php";
+verificar();
+
 $nivel="1000";
 
 $n_datos=bd_usuarios_contar();

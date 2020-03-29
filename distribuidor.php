@@ -1,5 +1,7 @@
 <?php 
 include_once "./inicializacion.php";
+verificar();
+
 $rol=$_GET['rol'];
 $_SESSION['actual']=$rol;
 #vq($_SESSION);

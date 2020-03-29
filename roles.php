@@ -1,5 +1,7 @@
 <?php
 include_once "./inicializacion.php";
+verificar();
+
 $n_roles=bd_roles_contar();
 $roles=bd_roles_datos();
 

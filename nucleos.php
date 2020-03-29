@@ -1,5 +1,6 @@
 <?php 
 include_once "./inicializacion.php";
+verificar();
 
 $n_nucleos=bd_nucleos_contar();
 $verificar=privilegios();

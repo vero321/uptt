@@ -1,5 +1,7 @@
 <?php 
 include_once "./inicializacion.php";
+verificar();
+
 
 $n_centros=bd_centros_contar();
 

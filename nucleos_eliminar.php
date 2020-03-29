@@ -1,5 +1,6 @@
 <?php
 include_once "./inicializacion.php";
+verificar();
 
 
 $id = $_GET['id'];

@@ -1,5 +1,7 @@
 <?php
 include_once "./inicializacion.php";
+verificar();
+
 #$roles=bd_roles_datos();
 $id = $_GET['id'];
 $a=bd_usuarios_datos($id);

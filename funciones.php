@@ -66,17 +66,11 @@ for ($i=0; $i <$n ; $i++) {
 return $a;
 }
 
-function verificar($autorizados)
+function verificar()
 {	if (!isset($_SESSION['u'])) {
 	ir('index.php');
 }
-	if (!in_array($_SESSION['u']['rol_id'], $autorizados)) 
-	{
-		$temp=bd_privilegios_datos($_SESSION['u']['rol_id']);
-		$m=$temp['mensaje_error_acceso'];
-		$d=$temp['menu'];	
-    ir("mensaje.php?m=$m&d=$d") ;  
-	}
+
 }
 
 function frm_modal_editor($t){
