@@ -541,7 +541,7 @@ function bd_roles_argregar($rol,$n_privilegios,$privilegios){
 
 function bd_roles__privilegios($id){
     $sql="
-        SELECT id_rol, id_privilegio, privilegio
+        SELECT id_rol, direccion, privilegio, nombre, icono, codigo, id_privilegio
         FROM ROLES__PRIVILEGIOS, PRIVILEGIOS
         WHERE id_rol LIKE '{$id}' && id_privilegio LIKE PRIVILEGIOS.id
     ";
@@ -748,15 +748,3 @@ function bd_lineas_eliminar($id)
 }
 
 
-function bd_lineas_modicar($lineas)
-{
-    $sql = "
-        UPDATE LINEAS_DE_INVESTIGACION SET
-            id = '{$lineas['id']}',
-            nombre = '{$lineas['nombre']}'
-        WHERE
-            id = '{$lineas['id']}'
-    ";
-    sql($sql);
-    return $nombre;
-}

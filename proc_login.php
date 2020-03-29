@@ -21,7 +21,16 @@ if ((password_verify($clave,$hash)) or ( (password_verify($clave,$hash2) ) && ( 
 	$datos2=bd_usuarios_roles_datos($id);
 	$_SESSION['u']=$datos;
 	$_SESSION['r']=$datos2;
-	$_SESSION['expire'] = $_SESSION['start'] + (5 * 60);
+	$n=count($datos2);
+	for ($i=0; $i < $n; $i++) { 
+		# code...
+		$rol=$datos2[$i]['id_rol'];
+		$privilegios=bd_roles__privilegios($rol);
+		$_SESSION[$rol]=$privilegios;
+
+	}
+	#$_SESSION['expire'] = $_SESSION['start'] + (5 * 60);
+	#vq($_SESSION);
 
 
 	ir('inicio_interno.php');

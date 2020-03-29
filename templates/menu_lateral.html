@@ -3,47 +3,19 @@
   <div id="sidebar-wrapper">
     <aside id="sidebar">
       <ul id="sidemenu" class="sidebar-nav">
-        <li>
-            <a href="nucleos.php">
-                <span class="sidebar-icon"><i class="fa fa-university"></i></span>
-                <span class="sidebar-title">Nucleos</span>
-            </a>
-        </li>
-        <li>
-            <a href="pnf.php">
-                <span class="sidebar-icon"><i class="fa fa-leanpub"></i></span>
-                <span class="sidebar-title">PNF</span>
-            </a>
-        </li>
-        <li>
-            <a href="centros.php">
-                <span class="sidebar-icon"><i class="fa fa-building"></i></span>
-                <span class="sidebar-title">Centros</span>
-            </a>
-        </li>
-
-        <li>
-            <a href="lineas.php">
-                <span class="sidebar-icon"><i class="fa fa-area-chart"></i></span>
-                <span class="sidebar-title">Líneas</span>
-            </a>
-        </li>
-
-        <li>
-            <a href="roles.php">
-                <span class="sidebar-icon"><i class="fa fa-sitemap"></i></span>
-                <span class="sidebar-title">Roles</span>
-            </a>
-        </li>
+        {section  name=i loop= $smarty.session[{$smarty.session['actual']}] }
+        {if {$smarty.session[{$smarty.session['actual']}][i].direccion} != NULL }
+                <li>
+                    <a href="{$smarty.session[{$smarty.session['actual']}][i].direccion}">
+                        <span class="sidebar-icon"><i class="{$smarty.session[{$smarty.session['actual']}][i].icono}"></i></span>
+                        <span class="sidebar-title">{$smarty.session[{$smarty.session['actual']}][i].nombre}</span>
+                    </a>
+                </li>
+        {else}
+        {/if}
+            {/section}
 
 
-
-        <li>
-            <a href="usuarios.php">
-                <span class="sidebar-icon"><i class="fa fa-users"></i></span>
-                <span class="sidebar-title">Usuarios</span>
-            </a>
-        </li>
         <!--<li>
 
             <a class="accordion-toggle collapsed toggle-switch" data-toggle="collapse" href="#submenu-2">

@@ -11,7 +11,11 @@
 
 
 <!--finaliza-->
-            <h2 class="subtitulo" align="center"><span class="badge badge-secondary badge-pill">{$n_pnf}</span>PNF <a class="btn btn-sm btn-outline-primary mimodal" type="button" data-href="pnf_agregar.php" title="Agregar PNF"><span class="fa fa-plus"></span></a></h2>
+            <h2 class="subtitulo" align="center"><span class="badge badge-secondary badge-pill">{$n_pnf}</span>PNF
+              {if in_array("PNF_A",$verificar) == TRUE}
+              <a class="btn btn-sm btn-outline-primary mimodal" type="button" data-href="pnf_agregar.php" title="Agregar PNF"><span class="fa fa-plus"></span></a>
+              {/if}
+            </h2>
 
             <div class="collapse" id="collapseExample">
               <div class="jumbotron jumbo_buscar">
@@ -53,7 +57,7 @@
                     <td>{$pnf[i].nombre_largo}</td>
                     <td>{$pnf[i].nombre_corto}</td>
                     <td class="text-center" style="white-space: nowrap;">
-                    
+                    {if in_array("PNF_M",$verificar) == TRUE}
                     <a 
                       style="margin-bottom:3px; color:blue;" 
                       class="btn btn-default mimodal" 
@@ -61,6 +65,8 @@
                       data-href="pnf_modificar.php?id={$pnf[i].id}">
                       <i class="fa fa-pencil-square-o"></i>
                     </a>
+                    {/if}
+                    {if in_array("PNF_E",$verificar) == TRUE}
                     <a 
                       style="margin-bottom:3px; color:blue;" 
                       class="btn btn-default mimodal"
@@ -68,7 +74,7 @@
                       data-href="pnf_eliminar.php?id={$pnf[i].id}">
                       <i class="fa fa-trash"></i>
                     </a>
-
+                    {/if}
                     </td>
                   </tr>
                 {/section}

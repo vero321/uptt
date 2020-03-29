@@ -12,8 +12,12 @@
 <!--finaliza-->
 			
           
-            <h2 class="subtitulo" align="center"><span class="badge badge-secondary badge-pill">{$n_centros}</span>Centros de Investigación <a class="btn btn-sm btn-outline-primary mimodal" type="button"
-            data-href="centros_agregar.php" title="Agregar Centro de Investigación"><span class="fa fa-plus"></span></a></h2>
+            <h2 class="subtitulo" align="center"><span class="badge badge-secondary badge-pill">{$n_centros}</span>Centros de Investigación
+            {if in_array("CENT_A",$verificar) == TRUE}
+             <a class="btn btn-sm btn-outline-primary mimodal" type="button"
+            data-href="centros_agregar.php" title="Agregar Centro de Investigación"><span class="fa fa-plus"></span></a>
+            {/if}
+          </h2>
 
             <div class="collapse" id="collapseExample">
               <div class="jumbotron jumbo_buscar">
@@ -53,7 +57,7 @@
                     <td>{$centros[i].nombre}</td>
 
                     <td class="text-center" style="white-space: nowrap;">
-                    
+                    {if in_array("CENT_M",$verificar) == TRUE}
                     <a 
                       style="margin-bottom:3px; color:blue;" 
                       class="btn btn-default mimodal" 
@@ -61,6 +65,8 @@
                       data-href="centros_modificar.php?id={$centros[i].id}">
                       <i class="fa fa-pencil-square-o"></i>
                     </a>
+                    {/if}
+                    {if in_array("CENT_E",$verificar) == TRUE}
                     <a 
                       style="margin-bottom:3px; color:blue;" 
                       class="btn btn-default mimodal"
@@ -68,8 +74,7 @@
                       data-href="centros_eliminar.php?id={$centros[i].id}">
                       <i class="fa fa-trash"></i>
                     </a>
-                    
-
+                    {/if}
                     </td>
                   </tr>
                 {/section}

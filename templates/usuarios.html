@@ -13,8 +13,13 @@
 <!--finaliza-->
 
 
-            <h2 class="subtitulo" align="center"><span class="badge badge-secondary badge-pill">{$n_usuarios}</span>Usuarios <a class="btn btn-sm btn-outline-primary mimodal" type="button"
-            data-href="agregar_admin.php" title="Agregar Usuario"><span class="fa fa-plus"></span></a></h2>
+            <h2 class="subtitulo" align="center"><span class="badge badge-secondary badge-pill">{$n_usuarios}</span>Usuarios
+            {if in_array("USUA_A",$verificar) == TRUE}
+
+              <a class="btn btn-sm btn-outline-primary mimodal" type="button"
+            data-href="agregar_admin.php" title="Agregar Usuario"><span class="fa fa-plus"></span></a>
+            {/if}
+            </h2>
 
             <div class="collapse" id="collapseExample">
               <div class="jumbotron jumbo_buscar">
@@ -50,6 +55,7 @@
                     <td>{$usuarios[i].id}</td>
                     <td>{$usuarios[i].correo}</td>
                     <td class="text-center" style="white-space: nowrap;">
+                    {if in_array("USUA_VR",$verificar) == TRUE}
                     <a 
                       style="margin-bottom:3px; color:blue;" 
                       class="btn btn-default"
@@ -57,7 +63,8 @@
                       href="usuarios_datos.php?id={$usuarios[i].id}">
                       <i class="fa fa-archive"></i>
                     </a>
-                    
+                    {/if}
+                    {if in_array("USUA_M",$verificar) == TRUE}
                     <a 
                       style="margin-bottom:3px; color:blue;" 
                       class="btn btn-default mimodal" 
@@ -65,6 +72,8 @@
                       data-href="usuarios_modificar.php?id={$usuarios[i].id}">
                       <i class="fa fa-pencil-square-o"></i>
                     </a>
+                    {/if}
+                    {if in_array("USUA_E",$verificar) == TRUE}
                     <a 
                       style="margin-bottom:3px; color:blue;" 
                       class="btn btn-default mimodal"
@@ -72,6 +81,7 @@
                       data-href="usuarios_eliminar.php?id={$usuarios[i].id}">
                       <i class="fa fa-trash"></i>
                     </a>
+                    {/if}
                   
                     </td>
                   </tr>

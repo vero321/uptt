@@ -26,7 +26,7 @@
         <ul class="navbar-nav mr-auto">
           {section  name=i loop= $smarty.session["r"] }
             <li class="nav-item">
-                <a class="nav-link" href="#"> {$smarty.session["r"][i].rol}</a>
+                <a class="nav-link" href="distribuidor.php?rol={$smarty.session['r'][i].id_rol}"> {$smarty.session["r"][i].rol}</a>
             </li>
           {/section}
 

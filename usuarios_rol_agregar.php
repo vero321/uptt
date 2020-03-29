@@ -20,6 +20,7 @@ for ($i=0; $i < $n; $i++) {
 	
 }
 $roles=array_reverse($roles);
+$roles=array_reverse($roles);
 
 $smarty->assign('id',$id);
 $smarty->assign('roles',$roles);

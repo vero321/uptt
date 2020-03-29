@@ -55,6 +55,17 @@ function v(){
 
 #--Funciones del Sistema---#
 
+function privilegios(){
+    $actual=$_SESSION['actual'];
+    $n=count($_SESSION[$actual]);
+
+for ($i=0; $i <$n ; $i++) { 
+    #Buscar privilegios 
+    $a[$i]=$_SESSION[$actual][$i]['codigo'];
+}
+return $a;
+}
+
 function verificar($autorizados)
 {	if (!isset($_SESSION['u'])) {
 	ir('index.php');

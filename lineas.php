@@ -3,6 +3,9 @@ include_once "./inicializacion.php";
 
 $n_lineas=bd_lineas_contar();
 
+$verificar=privilegios();
+$smarty->assign('verificar',$verificar);
+
 
 
 $smarty->assign('lineas', bd_lineas_datos());
