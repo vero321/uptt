@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-03-27 20:42:03
+/* Smarty version 3.1.30, created on 2020-03-29 12:35:15
   from "/home/veronica/public_html/uptt/templates/usuarios.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5e7e9d5b3090a6_74681837',
+  'unifunc' => 'content_5e80ce439fcac0_61851709',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'deef6b7a8ceb2f8989f0cb978d9e29c8b91422c5' => 
     array (
       0 => '/home/veronica/public_html/uptt/templates/usuarios.html',
-      1 => 1585075673,
+      1 => 1585499168,
       2 => 'file',
     ),
   ),
@@ -24,7 +24,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:pie_interno.html' => 1,
   ),
 ),false)) {
-function content_5e7e9d5b3090a6_74681837 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5e80ce439fcac0_61851709 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:cabecera_interna.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -45,8 +45,13 @@ $_smarty_tpl->_subTemplateRender("file:cabecera_interna.html", $_smarty_tpl->cac
 
 
             <h2 class="subtitulo" align="center"><span class="badge badge-secondary badge-pill"><?php echo $_smarty_tpl->tpl_vars['n_usuarios']->value;?>
-</span>Usuarios <a class="btn btn-sm btn-outline-primary mimodal" type="button"
-            data-href="agregar_admin.php" title="Agregar Usuario"><span class="fa fa-plus"></span></a></h2>
+</span>Usuarios
+            <?php if (in_array("USUA_A",$_smarty_tpl->tpl_vars['verificar']->value) == TRUE) {?>
+
+              <a class="btn btn-sm btn-outline-primary mimodal" type="button"
+            data-href="agregar_admin.php" title="Agregar Usuario"><span class="fa fa-plus"></span></a>
+            <?php }?>
+            </h2>
 
             <div class="collapse" id="collapseExample">
               <div class="jumbotron jumbo_buscar">
@@ -91,6 +96,7 @@ for ($__section_i_0_iteration = 1, $_smarty_tpl->tpl_vars['__smarty_section_i']-
                     <td><?php echo $_smarty_tpl->tpl_vars['usuarios']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['correo'];?>
 </td>
                     <td class="text-center" style="white-space: nowrap;">
+                    <?php if (in_array("USUA_VR",$_smarty_tpl->tpl_vars['verificar']->value) == TRUE) {?>
                     <a 
                       style="margin-bottom:3px; color:blue;" 
                       class="btn btn-default"
@@ -99,7 +105,8 @@ for ($__section_i_0_iteration = 1, $_smarty_tpl->tpl_vars['__smarty_section_i']-
 ">
                       <i class="fa fa-archive"></i>
                     </a>
-                    
+                    <?php }?>
+                    <?php if (in_array("USUA_M",$_smarty_tpl->tpl_vars['verificar']->value) == TRUE) {?>
                     <a 
                       style="margin-bottom:3px; color:blue;" 
                       class="btn btn-default mimodal" 
@@ -108,6 +115,8 @@ for ($__section_i_0_iteration = 1, $_smarty_tpl->tpl_vars['__smarty_section_i']-
 ">
                       <i class="fa fa-pencil-square-o"></i>
                     </a>
+                    <?php }?>
+                    <?php if (in_array("USUA_E",$_smarty_tpl->tpl_vars['verificar']->value) == TRUE) {?>
                     <a 
                       style="margin-bottom:3px; color:blue;" 
                       class="btn btn-default mimodal"
@@ -116,6 +125,7 @@ for ($__section_i_0_iteration = 1, $_smarty_tpl->tpl_vars['__smarty_section_i']-
 ">
                       <i class="fa fa-trash"></i>
                     </a>
+                    <?php }?>
                   
                     </td>
                   </tr>

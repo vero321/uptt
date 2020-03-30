@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-03-27 20:56:09
+/* Smarty version 3.1.30, created on 2020-03-29 12:35:24
   from "/home/veronica/public_html/uptt/templates/lineas.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5e7ea0a9060e08_09807813',
+  'unifunc' => 'content_5e80ce4cc93363_22490532',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '4eab7b425e4e3b8839b53b93cb358aed63101c9d' => 
     array (
       0 => '/home/veronica/public_html/uptt/templates/lineas.html',
-      1 => 1585075575,
+      1 => 1585499168,
       2 => 'file',
     ),
   ),
@@ -24,7 +24,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:pie_interno.html' => 1,
   ),
 ),false)) {
-function content_5e7ea0a9060e08_09807813 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5e80ce4cc93363_22490532 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:cabecera_interna.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -45,8 +45,12 @@ $_smarty_tpl->_subTemplateRender("file:cabecera_interna.html", $_smarty_tpl->cac
 			
           
             <h2 class="subtitulo" align="center"><span class="badge badge-secondary badge-pill"><?php echo $_smarty_tpl->tpl_vars['n_lineas']->value;?>
-</span>Líneas de Investigación <a class="btn btn-sm btn-outline-primary mimodal" type="button"
-            data-href="lineas_agregar.php" title="Agregar Línea de Investigación"><span class="fa fa-plus"></span></a></h2>
+</span>Líneas de Investigación
+            <?php if (in_array("LINE_A",$_smarty_tpl->tpl_vars['verificar']->value) == TRUE) {?>
+             <a class="btn btn-sm btn-outline-primary mimodal" type="button"
+            data-href="lineas_agregar.php" title="Agregar Línea de Investigación"><span class="fa fa-plus"></span></a>
+            <?php }?>
+          </h2>
 
             <div class="collapse" id="collapseExample">
               <div class="jumbotron jumbo_buscar">
@@ -95,7 +99,7 @@ for ($__section_i_0_iteration = 1, $_smarty_tpl->tpl_vars['__smarty_section_i']-
 </td>
 
                     <td class="text-center" style="white-space: nowrap;">
-                    
+                  <?php if (in_array("LINE_M",$_smarty_tpl->tpl_vars['verificar']->value) == TRUE) {?>
                     <a 
                       style="margin-bottom:3px; color:blue;" 
                       class="btn btn-default mimodal" 
@@ -104,6 +108,8 @@ for ($__section_i_0_iteration = 1, $_smarty_tpl->tpl_vars['__smarty_section_i']-
 ">
                       <i class="fa fa-pencil-square-o"></i>
                     </a>
+                    <?php }?>
+                  <?php if (in_array("LINE_E",$_smarty_tpl->tpl_vars['verificar']->value) == TRUE) {?>
                     <a 
                       style="margin-bottom:3px; color:blue;" 
                       class="btn btn-default mimodal"
@@ -112,8 +118,7 @@ for ($__section_i_0_iteration = 1, $_smarty_tpl->tpl_vars['__smarty_section_i']-
 ">
                       <i class="fa fa-trash"></i>
                     </a>
-                    
-
+                    <?php }?>
                     </td>
                   </tr>
                 <?php

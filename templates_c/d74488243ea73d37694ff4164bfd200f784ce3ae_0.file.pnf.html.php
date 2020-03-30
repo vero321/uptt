@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-03-27 20:56:05
+/* Smarty version 3.1.30, created on 2020-03-29 12:35:13
   from "/home/veronica/public_html/uptt/templates/pnf.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5e7ea0a5da1225_12192965',
+  'unifunc' => 'content_5e80ce41ab5479_38002571',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'd74488243ea73d37694ff4164bfd200f784ce3ae' => 
     array (
       0 => '/home/veronica/public_html/uptt/templates/pnf.html',
-      1 => 1585075650,
+      1 => 1585499168,
       2 => 'file',
     ),
   ),
@@ -24,7 +24,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:pie_interno.html' => 1,
   ),
 ),false)) {
-function content_5e7ea0a5da1225_12192965 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5e80ce41ab5479_38002571 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:cabecera_interna.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -43,7 +43,11 @@ $_smarty_tpl->_subTemplateRender("file:cabecera_interna.html", $_smarty_tpl->cac
 
 <!--finaliza-->
             <h2 class="subtitulo" align="center"><span class="badge badge-secondary badge-pill"><?php echo $_smarty_tpl->tpl_vars['n_pnf']->value;?>
-</span>PNF <a class="btn btn-sm btn-outline-primary mimodal" type="button" data-href="pnf_agregar.php" title="Agregar PNF"><span class="fa fa-plus"></span></a></h2>
+</span>PNF
+              <?php if (in_array("PNF_A",$_smarty_tpl->tpl_vars['verificar']->value) == TRUE) {?>
+              <a class="btn btn-sm btn-outline-primary mimodal" type="button" data-href="pnf_agregar.php" title="Agregar PNF"><span class="fa fa-plus"></span></a>
+              <?php }?>
+            </h2>
 
             <div class="collapse" id="collapseExample">
               <div class="jumbotron jumbo_buscar">
@@ -94,7 +98,7 @@ for ($__section_i_0_iteration = 1, $_smarty_tpl->tpl_vars['__smarty_section_i']-
                     <td><?php echo $_smarty_tpl->tpl_vars['pnf']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['nombre_corto'];?>
 </td>
                     <td class="text-center" style="white-space: nowrap;">
-                    
+                    <?php if (in_array("PNF_M",$_smarty_tpl->tpl_vars['verificar']->value) == TRUE) {?>
                     <a 
                       style="margin-bottom:3px; color:blue;" 
                       class="btn btn-default mimodal" 
@@ -103,6 +107,8 @@ for ($__section_i_0_iteration = 1, $_smarty_tpl->tpl_vars['__smarty_section_i']-
 ">
                       <i class="fa fa-pencil-square-o"></i>
                     </a>
+                    <?php }?>
+                    <?php if (in_array("PNF_E",$_smarty_tpl->tpl_vars['verificar']->value) == TRUE) {?>
                     <a 
                       style="margin-bottom:3px; color:blue;" 
                       class="btn btn-default mimodal"
@@ -111,7 +117,7 @@ for ($__section_i_0_iteration = 1, $_smarty_tpl->tpl_vars['__smarty_section_i']-
 ">
                       <i class="fa fa-trash"></i>
                     </a>
-
+                    <?php }?>
                     </td>
                   </tr>
                 <?php

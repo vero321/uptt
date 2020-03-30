@@ -361,7 +361,11 @@ h2.subtitulo
     justify-content: space-around;
 }
 
-
+.img_inicio
+    {
+     padding-top: 10%;
+     padding-left: 6%;  
+    }
 @media (max-width: 768px) {
     #wrapper #sidebar-wrapper {
         width: 55px;
@@ -380,6 +384,12 @@ h2.subtitulo
         position: fixed;
 
     }
+    .img_inicio
+    {
+     padding-top: 30vh;
+     padding-left: 10%;  
+    }
+
 }
 
 @media (min-width: 768px) {

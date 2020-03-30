@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-03-27 20:42:01
+/* Smarty version 3.1.30, created on 2020-03-29 12:32:40
   from "/home/veronica/public_html/uptt/templates/cabecera_interna.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5e7e9d598275a2_19734568',
+  'unifunc' => 'content_5e80cda8194698_41908230',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'bf79da9b1c1914b33bd6e839d11ba0adbe598d2e' => 
     array (
       0 => '/home/veronica/public_html/uptt/templates/cabecera_interna.html',
-      1 => 1584994549,
+      1 => 1585499168,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5e7e9d598275a2_19734568 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5e80cda8194698_41908230 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -57,7 +57,8 @@ if ($__section_i_0_total != 0) {
 for ($__section_i_0_iteration = 1, $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] = 0; $__section_i_0_iteration <= $__section_i_0_total; $__section_i_0_iteration++, $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']++){
 ?>
             <li class="nav-item">
-                <a class="nav-link" href="#"> <?php echo $_SESSION["r"][(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['rol'];?>
+                <a class="nav-link" href="distribuidor.php?rol=<?php echo $_SESSION['r'][(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['id_rol'];?>
+"> <?php echo $_SESSION["r"][(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['rol'];?>
 </a>
             </li>
           <?php
