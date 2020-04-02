@@ -66,12 +66,21 @@ for ($i=0; $i <$n ; $i++) {
 return $a;
 }
 
-function verificar()
-{	if (!isset($_SESSION['u'])) {
-	ir('index.php');
+function verificar(){	
+  if (!isset($_SESSION['u'])) {
+	 ir('index.php');
+  }else{
+    $actual=$_SESSION['actual'];
+    $n=count($_SESSION[$actual]);
+    for ($i=0; $i <$n ; $i++) { 
+      #Buscar privilegios 
+      $a[$i]=$_SESSION[$actual][$i]['codigo'];
+    }
+  }
+return $a;
 }
 
-}
+
 
 function frm_modal_editor($t){
   $salida = '<form 

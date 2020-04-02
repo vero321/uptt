@@ -350,6 +350,7 @@ h2.subtitulo
 .ejem
 {
     margin: 6px 10px 10px 10px;
+    max-width:90px;
 
 }
 .ejem2

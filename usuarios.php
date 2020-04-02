@@ -1,6 +1,7 @@
 <?php 
 include_once "./inicializacion.php";
-verificar();
+$verificar=verificar();
+$smarty->assign('verificar',$verificar);
 
 $nivel="1000";
 
@@ -23,9 +24,6 @@ else {
     $usuarios=bd_usuarios_datos2($i, $datos_por_pagina, $orden='id', $nivel);
 }
 $paginas=paginar($n_datos,$datos_por_pagina,$pagina_actual);
-
-$verificar=privilegios();
-$smarty->assign('verificar',$verificar);
 
 
 $smarty->assign('i',$i);

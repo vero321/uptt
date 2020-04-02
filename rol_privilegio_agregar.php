@@ -1,5 +1,8 @@
 <?php 
 include_once "./inicializacion.php";
+$verificar=verificar();
+$smarty->assign('verificar',$verificar);
+
 
 $id=$_GET['id'];
 $privilegios_actuales=bd_roles__privilegios($id);

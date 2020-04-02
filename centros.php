@@ -1,12 +1,11 @@
 <?php 
 include_once "./inicializacion.php";
-verificar();
+$verificar=verificar();
+$smarty->assign('verificar',$verificar);
 
 
 $n_centros=bd_centros_contar();
 
-$verificar=privilegios();
-$smarty->assign('verificar',$verificar);
 
 $smarty->assign('centros', bd_centros_datos());
 $smarty->assign('n_centros',$n_centros);

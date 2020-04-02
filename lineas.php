@@ -1,12 +1,10 @@
 <?php 
 include_once "./inicializacion.php";
-verificar();
+$verificar=verificar();
+$smarty->assign('verificar',$verificar);
 
 
 $n_lineas=bd_lineas_contar();
-
-$verificar=privilegios();
-$smarty->assign('verificar',$verificar);
 
 
 
