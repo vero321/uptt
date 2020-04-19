@@ -2,8 +2,8 @@
 include_once "./inicializacion.php";
 $verificar=verificar();
 $smarty->assign('verificar',$verificar);
-
-$nivel="1000";
+$nivel=$_SESSION['r'][$_SESSION['numero']]['nivel'];
+#vq($_SESSION);
 
 $n_datos=bd_usuarios_contar();
 $datos_por_pagina = $config['paginacion']['num_items'];
@@ -18,10 +18,14 @@ if( isset( $_REQUEST['pag'] ) ){
 }
 
 if( isset( $_REQUEST['p'] ) ){
-    $usuarios=bd_usuarios_datos3('id,correo',$_REQUEST['p'],$datos_por_pagina);
+	#busqueda
+    $usuarios=bd_usuarios_datos3('USUARIOS.id,correo',$_REQUEST['p'],$datos_por_pagina, $nivel);
+
 } 
 else {
-    $usuarios=bd_usuarios_datos2($i, $datos_por_pagina, $orden='id', $nivel);
+	#todos los usuarios
+    $usuarios=bd_usuarios_datos2($i, $datos_por_pagina, $nivel);
+
 }
 $paginas=paginar($n_datos,$datos_por_pagina,$pagina_actual);
 

@@ -24,9 +24,9 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
-          {section  name=i loop= $smarty.session["r"] }
-            <li class="nav-item">
-                <a class="nav-link" href="distribuidor.php?rol={$smarty.session['r'][i].id_rol}"> {$smarty.session["r"][i].rol}</a>
+          {section  name=i loop= $smarty.session["r"]}
+            <li class="nav-item {if $smarty.session['r'][i].id_rol == $smarty.session['actual']} active {/if} ">
+                <a class="nav-link" href="distribuidor.php?r={$smarty.session['r'][i].id_rol}&n={$smarty.section.i.index}"> {$smarty.session["r"][i].rol}</a>
             </li>
           {/section}
 

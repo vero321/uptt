@@ -2,8 +2,10 @@
 include_once "./inicializacion.php";
 verificar();
 
-$rol=$_GET['rol'];
+$rol=$_GET['r'];
+$n=$_GET['n'];
 $_SESSION['actual']=$rol;
+$_SESSION['numero']=$n;
 #vq($_SESSION);
 
 $nucleos=bd_nucleos_contar();

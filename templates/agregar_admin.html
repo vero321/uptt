@@ -23,7 +23,8 @@
                             class="form-control" 
                             id="id" 
                             name="id" 
-                            placeholder="12345678">
+                            placeholder="12345678"
+                            >
                       	</div>
 
                       <div class="form-group">
@@ -39,19 +40,44 @@
                         </div>
 
                           <h5>Rol del usuario</h5>
-                        <div class="form-group">
                           {section name=i loop=$roles}
-                            <div class="form-check">
+                            <div class="form-row">
+                              <div class="form-group  col-md-4">
+                                <div class="form-check">
+                                  <label class="form-check-label">
+                                    <input type="checkbox"  class="form-check-input"  
+                                    name="rol[]" value="{$roles[i].id}">
+                                    {$roles[i].rol}
+                                  </label>
+                                </div>
+                              </div>
 
-                              <label class="form-check-label">
-                                <input type="checkbox"  class="form-check-input"  
-                                name="rol[]" value="{$roles[i].id}">
-                                {$roles[i].rol}
-                              </label>
-                            </div>
+                              {if $datos['nivel'] == 1000 or $datos['nivel'] == 900}
+                                {if $roles[i].nivel != 1000 and  $roles[i].nivel != 900}
+                                  <div class="form-group  col-md-4">
+                                    <select id="nucleos" name="nucleos['{$roles[i].id}']=>" class="form-control- small">
+                                      <option selected>Selecione Nucleo</option>
+                                      
+                                      {section name=n loop=$nucleos}
+                                      <option value="{$nucleos[n].id}" >{$nucleos[n].nombre_corto}</option>
+                                      {/section}
+                                    </select>
+                                  </div>
+                                  <div class="form-group  col-md-4">
+                                    <select id="pnf" name="pnf['{$roles[i].id}']=>" class="form-control- small">
+                                      <option selected>Selecione PNF</option>
+                                      {section name=p loop=$pnf}
+                                              <option value="{$pnf[p].id}" >{$pnf[p].nombre_corto}</option>
+                                      {/section}
+                                    </select>
+                                  </div>
+                                {/if}
+                              {else}
+                                <input type="hidden" name="nucleo" value="{$datos['id_nucleo']}">
+                                <input type="hidden" name="pnf" value="{$datos['id_pnf']}">
+                                {/if}
+                              </div>
                           {/section}
-                        </div>
-
 
                     	<div class="form-group">
           							<input 

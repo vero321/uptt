@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-04-01 20:07:19
+/* Smarty version 3.1.30, created on 2020-04-16 22:20:36
   from "/home/jose/public_html/proyecto4/uptt/templates/roles.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5e852cb70bce03_27864274',
+  'unifunc' => 'content_5e991274d9d626_29586229',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '6ed6785caccca1520874fc9d14d5c83b104f7600' => 
     array (
       0 => '/home/jose/public_html/proyecto4/uptt/templates/roles.html',
-      1 => 1585762524,
+      1 => 1586969429,
       2 => 'file',
     ),
   ),
@@ -24,7 +24,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:pie_interno.html' => 1,
   ),
 ),false)) {
-function content_5e852cb70bce03_27864274 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5e991274d9d626_29586229 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:cabecera_interna.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -100,10 +100,20 @@ for ($__section_i_0_iteration = 1, $_smarty_tpl->tpl_vars['__smarty_section_i']-
                     <a 
                       style="margin-bottom:3px; color:blue;" 
                       class="btn btn-default"
-                      title="Ver detalles de ROL" 
+                      title="Ver detalles de Rol" 
                       href="roles_datos.php?id=<?php echo $_smarty_tpl->tpl_vars['roles']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['id'];?>
 ">
                       <i class="fa fa-archive"></i>
+                    </a>
+                    <?php }?>
+                    <?php if (in_array("ROLE_M",$_smarty_tpl->tpl_vars['verificar']->value) == TRUE) {?>
+                    <a 
+                      style="margin-bottom:3px; color:blue;" 
+                      class="btn btn-default mimodal" 
+                      title="Modificar Rol" 
+                      data-href="roles_modificar.php?id=<?php echo $_smarty_tpl->tpl_vars['roles']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['id'];?>
+">
+                      <i class="fa fa-pencil-square-o"></i>
                     </a>
                     <?php }?>
                     <?php if (in_array("ROLE_E",$_smarty_tpl->tpl_vars['verificar']->value) == TRUE) {?>

@@ -1,5 +1,6 @@
 <?php
 require_once './inicializacion.php';
+#vq($_POST);
 $roles=$_POST['rol'];
 $n_roles=count($roles);
 $id=$_POST['id'];

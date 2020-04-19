@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-04-01 18:49:40
+/* Smarty version 3.1.30, created on 2020-04-14 14:12:59
   from "/home/jose/public_html/proyecto4/uptt/templates/menu_lateral.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5e851a849a50b8_30964226',
+  'unifunc' => 'content_5e95fd2be4c344_51721442',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'a6785d1cc430941d57313a8086a4b99ddf82d0c2' => 
     array (
       0 => '/home/jose/public_html/proyecto4/uptt/templates/menu_lateral.html',
-      1 => 1585762524,
+      1 => 1586887978,
       2 => 'file',
     ),
   ),
@@ -20,13 +20,15 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5e851a849a50b8_30964226 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5e95fd2be4c344_51721442 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!--inicio menu lateral-->
 <div id="wrapper" style="margin-top: -40px; padding-right: 50px;">
   <div id="sidebar-wrapper">
     <aside id="sidebar">
       <ul id="sidemenu" class="sidebar-nav">
+        <li><a href="#"><span class="sidebar-icon"></span><span class="sidebar-title"><b><?php echo $_SESSION["r"][$_SESSION["numero"]]['rol'];?>
+</b></span></a></li>
         <?php ob_start();
 echo $_SESSION['actual'];
 $_prefixVariable1=ob_get_clean();

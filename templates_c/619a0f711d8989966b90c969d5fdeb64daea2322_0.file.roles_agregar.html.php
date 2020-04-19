@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-04-01 20:08:08
+/* Smarty version 3.1.30, created on 2020-04-14 20:46:34
   from "/home/jose/public_html/proyecto4/uptt/templates/roles_agregar.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5e852ce8e73405_51515863',
+  'unifunc' => 'content_5e96596ab2a315_06365386',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '619a0f711d8989966b90c969d5fdeb64daea2322' => 
     array (
       0 => '/home/jose/public_html/proyecto4/uptt/templates/roles_agregar.html',
-      1 => 1585762524,
+      1 => 1586911580,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5e852ce8e73405_51515863 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5e96596ab2a315_06365386 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <div class="container">
 <div class="row">
@@ -54,25 +54,15 @@ function content_5e852ce8e73405_51515863 (Smarty_Internal_Template $_smarty_tpl)
                      <select class="form-control" id="nivel" name="nivel">
                     <option class="form-control" value="-----" id="-----">----</option>
                     <option class="form-control" value="1000" >1000</option>
-                    <option class="form-control" value="950" >950</option>
                     <option class="form-control" value="900" >900</option>
-                    <option class="form-control" value="850" >850</option>
                     <option class="form-control" value="800" >800</option>
-                    <option class="form-control" value="750" >750</option>
                     <option class="form-control" value="700" >700</option>
-                    <option class="form-control" value="650" >650</option>
                     <option class="form-control" value="600" >600</option>
-                    <option class="form-control" value="550" >550</option>
                     <option class="form-control" value="500" >500</option>
-                    <option class="form-control" value="450" >450</option>
                     <option class="form-control" value="400" >400</option>
-                    <option class="form-control" value="350" >350</option>
                     <option class="form-control" value="300" >300</option>
-                    <option class="form-control" value="250" >250</option>
                     <option class="form-control" value="200" >200</option>
-                    <option class="form-control" value="150" >150</option>
                     <option class="form-control" value="100" >100</option>
-                    <option class="form-control" value="50"  >50</option>
                     <option class="form-control" value="0"   >0</option>
 
                     </select>

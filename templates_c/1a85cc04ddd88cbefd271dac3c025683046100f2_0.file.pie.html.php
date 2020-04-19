@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-04-18 19:01:24
-  from "/home/jose/public_html/proyecto4/uptt/templates/pie_interno.html" */
+/* Smarty version 3.1.30, created on 2020-04-18 10:16:04
+  from "/home/jose/public_html/proyecto4/uptt/templates/pie.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5e9b86c47c0e61_30427846',
+  'unifunc' => 'content_5e9b0ba41dd792_31174160',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    '88c209bc1700b1e7fe40de2c251fea09a0894efc' => 
+    '1a85cc04ddd88cbefd271dac3c025683046100f2' => 
     array (
-      0 => '/home/jose/public_html/proyecto4/uptt/templates/pie_interno.html',
-      1 => 1587250881,
+      0 => '/home/jose/public_html/proyecto4/uptt/templates/pie.html',
+      1 => 1583863538,
       2 => 'file',
     ),
   ),
@@ -20,19 +20,18 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5e9b86c47c0e61_30427846 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5e9b0ba41dd792_31174160 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!--Comienzo del Pie de Página-->
-<div class="espacio">
+<nav class="footerTop" >
     
-</div>    
-    <footer class="pie_interno"  >
+    <footer class="pie" style="position:relative; bottom: 0;" >
     	<div class="container-fluid">
 			  <div class="row">
 	  			<div class="col" >
-        			Realizado por Verónica Osuna, Karla Quintero, José Palencia y Brando Hernández
+                    <p>
+        			Realizado por Verónica Osuna, Karla Quintero, José Palencia y Brando Hernández</p>
         	</div>
-        		
         </div>
       </div>
 
@@ -40,6 +39,7 @@ function content_5e9b86c47c0e61_30427846 (Smarty_Internal_Template $_smarty_tpl)
     </footer>
 
 
+</nav>
 
     <?php echo '<script'; ?>
  src="./vendor/jquery/jquery-3.3.1.min.js"><?php echo '</script'; ?>
@@ -47,6 +47,9 @@ function content_5e9b86c47c0e61_30427846 (Smarty_Internal_Template $_smarty_tpl)
 
     <?php echo '<script'; ?>
  src="./vendor/bootstrap/dist/js/bootstrap.min.js"><?php echo '</script'; ?>
+>
+    <?php echo '<script'; ?>
+ src="js.js"><?php echo '</script'; ?>
 >
 <!--Final del Pie de Página-->
 

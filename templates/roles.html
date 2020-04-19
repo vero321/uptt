@@ -59,9 +59,18 @@
                     <a 
                       style="margin-bottom:3px; color:blue;" 
                       class="btn btn-default"
-                      title="Ver detalles de ROL" 
+                      title="Ver detalles de Rol" 
                       href="roles_datos.php?id={$roles[i].id}">
                       <i class="fa fa-archive"></i>
+                    </a>
+                    {/if}
+                    {if in_array("ROLE_M",$verificar) == TRUE}
+                    <a 
+                      style="margin-bottom:3px; color:blue;" 
+                      class="btn btn-default mimodal" 
+                      title="Modificar Rol" 
+                      data-href="roles_modificar.php?id={$roles[i].id}">
+                      <i class="fa fa-pencil-square-o"></i>
                     </a>
                     {/if}
                     {if in_array("ROLE_E",$verificar) == TRUE}
