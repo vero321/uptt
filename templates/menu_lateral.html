@@ -9,7 +9,7 @@
                 <li>
                     <a href="{$smarty.session[{$smarty.session['actual']}][i].direccion}">
                         <span class="sidebar-icon"><i class="{$smarty.session[{$smarty.session['actual']}][i].icono}"></i></span>
-                        <span class="sidebar-title">{$smarty.session[{$smarty.session['actual']}][i].nombre}</span>
+                        <span class="sidebar-title">{$smarty.session[{$smarty.session['actual']}][i].nombre|capitalize}</span>
                     </a>
                 </li>
         {else}

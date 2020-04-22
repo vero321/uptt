@@ -5,7 +5,7 @@
             {include file="menu_lateral.html"}
     <div class="row" id="central">
         
-        <div class="col-sm-9 offset-3"  >
+        <div class="col-sm-9" style="margin-top: 50px;" >
 
 
 
@@ -35,17 +35,17 @@
     
             
 
-              <table style="margin-top: 30px;" class="table table-responsive-xl">
+              <table class="table table-responsive-xl">
                 <thead class="thead-dark">
                   <tr>
                     <th>Nombre Largo</th>
                     <th>Nombre Corto</th>
                     <th>Funciones</th>
-                    <th><div class="btn-group">
+                    <th> <div class="btn-group">                        
                     <button class="btn btn-sm btn-outline-info" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample" title="Buscar">
                     <samp class="fa fa-search"></samp>
                     </button>
-                    </div></th>
+                </div></th>
                   </tr>
                 </thead>
                 <tbody class="buscar" id="personas">
@@ -55,7 +55,6 @@
                   <tr>
                     <td>{$nucleos[i].nombre_largo}</td>
                     <td>{$nucleos[i].nombre_corto}</td>
-
                     <td class="text-center" style="white-space: nowrap;">
                     {if in_array("NUCL_M",$verificar) == TRUE}
                     <a 

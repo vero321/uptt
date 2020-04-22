@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-04-21 16:53:48
-  from "/home/palencia/public_html/proyecto4/uptt/templates/roles_datos.html" */
+/* Smarty version 3.1.30, created on 2020-04-22 11:39:44
+  from "/home/veronica/public_html/uptt/templates/roles_datos.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5e9f5d5ce9d411_04084456',
+  'unifunc' => 'content_5ea065404b9c34_42532494',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    'b7187c515d85dabe171f629fea65fc0275c9c1fd' => 
+    '2551f759f201f10923020fb360c9ab1c20093249' => 
     array (
-      0 => '/home/palencia/public_html/proyecto4/uptt/templates/roles_datos.html',
-      1 => 1587502427,
+      0 => '/home/veronica/public_html/uptt/templates/roles_datos.html',
+      1 => 1587569976,
       2 => 'file',
     ),
   ),
@@ -24,7 +24,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:pie_interno.html' => 1,
   ),
 ),false)) {
-function content_5e9f5d5ce9d411_04084456 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5ea065404b9c34_42532494 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:cabecera_interna.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -37,7 +37,7 @@ $_smarty_tpl->_subTemplateRender("file:cabecera_interna.html", $_smarty_tpl->cac
 
     <div class="row" id="central">
         
-        <div class="col-sm-9 offset-3"  >
+        <div class="col-sm-9" style="margin-top: 50px;" >
 
 
 

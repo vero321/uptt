@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-04-21 16:40:30
-  from "/home/palencia/public_html/proyecto4/uptt/modal/modal_box.html" */
+/* Smarty version 3.1.30, created on 2020-04-22 11:38:34
+  from "/home/veronica/public_html/uptt/modal/modal_box.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5e9f5a3e1d4788_22993319',
+  'unifunc' => 'content_5ea064faca84e7_00259709',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    '61a74e11c52824d9c4e288ac170d1cf5dbcfd52f' => 
+    '82d78202c77f41413edaa857e2ab133fa70f1d66' => 
     array (
-      0 => '/home/palencia/public_html/proyecto4/uptt/modal/modal_box.html',
-      1 => 1586641863,
+      0 => '/home/veronica/public_html/uptt/modal/modal_box.html',
+      1 => 1544639032,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5e9f5a3e1d4788_22993319 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5ea064faca84e7_00259709 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!-- The Modal -->
 <div class="modal" id="myModal">

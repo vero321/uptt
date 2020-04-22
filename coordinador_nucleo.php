@@ -2,5 +2,5 @@
 include_once "./inicializacion.php";
 
 
-$smarty->display('operador_nucleo.html');
+$smarty->display('coordianador_nucleo.html');
 

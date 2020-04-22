@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-04-21 16:40:30
-  from "/home/palencia/public_html/proyecto4/uptt/templates/pie_interno.html" */
+/* Smarty version 3.1.30, created on 2020-04-22 11:33:54
+  from "/home/veronica/public_html/uptt/templates/pie_interno.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5e9f5a3e1dca19_92081021',
+  'unifunc' => 'content_5ea063e2610149_94610558',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    '07326d89eab46ba07eaeb6e43486f1b8a6146c7c' => 
+    'a1f53bd8dcea31a0dd2b06014d9adb731b149927' => 
     array (
-      0 => '/home/palencia/public_html/proyecto4/uptt/templates/pie_interno.html',
-      1 => 1587263311,
+      0 => '/home/veronica/public_html/uptt/templates/pie_interno.html',
+      1 => 1587305288,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5e9f5a3e1dca19_92081021 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5ea063e2610149_94610558 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!--Comienzo del Pie de Página-->
 <div class="espacio">

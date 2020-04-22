@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-04-21 16:42:16
-  from "/home/palencia/public_html/proyecto4/uptt/templates/lineas.html" */
+/* Smarty version 3.1.30, created on 2020-04-22 11:39:56
+  from "/home/veronica/public_html/uptt/templates/centros.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5e9f5aa87c0732_89553286',
+  'unifunc' => 'content_5ea0654c4d5885_57715389',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    '8eb71caadc643399578e362f9ba7d6a97c5a881f' => 
+    'eb8afac5e704b7181dd88dfada2296180991ad11' => 
     array (
-      0 => '/home/palencia/public_html/proyecto4/uptt/templates/lineas.html',
-      1 => 1586641863,
+      0 => '/home/veronica/public_html/uptt/templates/centros.html',
+      1 => 1587486316,
       2 => 'file',
     ),
   ),
@@ -24,7 +24,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:pie_interno.html' => 1,
   ),
 ),false)) {
-function content_5e9f5aa87c0732_89553286 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5ea0654c4d5885_57715389 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:cabecera_interna.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -36,26 +36,25 @@ $_smarty_tpl->_subTemplateRender("file:cabecera_interna.html", $_smarty_tpl->cac
 
     <div class="row" id="central">
         
-        <div class="col-sm-9 offset-3"  >
-
+        <div class="col-sm-9" style="margin-top: 50px;" >
 
 
 
 <!--finaliza-->
 			
           
-            <h2 class="subtitulo" align="center"><span class="badge badge-secondary badge-pill"><?php echo $_smarty_tpl->tpl_vars['n_lineas']->value;?>
-</span>Líneas de Investigación
-            <?php if (in_array("LINE_A",$_smarty_tpl->tpl_vars['verificar']->value) == TRUE) {?>
+            <h2 class="subtitulo" align="center"><span class="badge badge-secondary badge-pill"><?php echo $_smarty_tpl->tpl_vars['n_centros']->value;?>
+</span>Centros de Investigación
+            <?php if (in_array("CENT_A",$_smarty_tpl->tpl_vars['verificar']->value) == TRUE) {?>
              <a class="btn btn-sm btn-outline-primary mimodal" type="button"
-            data-href="lineas_agregar.php" title="Agregar Línea de Investigación"><span class="fa fa-plus"></span></a>
+            data-href="centros_agregar.php" title="Agregar Centro de Investigación"><span class="fa fa-plus"></span></a>
             <?php }?>
           </h2>
 
             <div class="collapse" id="collapseExample">
               <div class="jumbotron jumbo_buscar">
                 <div class="container">  
-                  <form action="lineas.php" method="POST">
+                  <form action="centros.php" method="POST">
                       <div class="input-group">
                         <input id="p" name="p" type="text" class="form-control" placeholder="Escriba aquí y pulse INTRO" aria-describedby="basic-addon1">
                         <span class="input-group-addon" id="basic-addon1" style="padding:0 12px;"><i class="fa fa-search"></i></span>
@@ -85,7 +84,7 @@ $_smarty_tpl->_subTemplateRender("file:cabecera_interna.html", $_smarty_tpl->cac
 
                 <?php
 $__section_i_0_saved = isset($_smarty_tpl->tpl_vars['__smarty_section_i']) ? $_smarty_tpl->tpl_vars['__smarty_section_i'] : false;
-$__section_i_0_loop = (is_array(@$_loop=$_smarty_tpl->tpl_vars['lineas']->value) ? count($_loop) : max(0, (int) $_loop));
+$__section_i_0_loop = (is_array(@$_loop=$_smarty_tpl->tpl_vars['centros']->value) ? count($_loop) : max(0, (int) $_loop));
 $__section_i_0_total = $__section_i_0_loop;
 $_smarty_tpl->tpl_vars['__smarty_section_i'] = new Smarty_Variable(array());
 if ($__section_i_0_total != 0) {
@@ -93,28 +92,28 @@ for ($__section_i_0_iteration = 1, $_smarty_tpl->tpl_vars['__smarty_section_i']-
 ?>
 
                   <tr>
-                    <td><?php echo $_smarty_tpl->tpl_vars['lineas']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['id'];?>
+                    <td><?php echo $_smarty_tpl->tpl_vars['centros']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['id'];?>
 </td>
-                    <td><?php echo $_smarty_tpl->tpl_vars['lineas']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['nombre'];?>
+                    <td><?php echo $_smarty_tpl->tpl_vars['centros']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['nombre'];?>
 </td>
 
                     <td class="text-center" style="white-space: nowrap;">
-                  <?php if (in_array("LINE_M",$_smarty_tpl->tpl_vars['verificar']->value) == TRUE) {?>
+                    <?php if (in_array("CENT_M",$_smarty_tpl->tpl_vars['verificar']->value) == TRUE) {?>
                     <a 
                       style="margin-bottom:3px; color:blue;" 
                       class="btn btn-default mimodal" 
-                      title="Modificar Línea de Investigación" 
-                      data-href="lineas_modificar.php?id=<?php echo $_smarty_tpl->tpl_vars['lineas']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['id'];?>
+                      title="Modificar Centro de Investigación" 
+                      data-href="centros_modificar.php?id=<?php echo $_smarty_tpl->tpl_vars['centros']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['id'];?>
 ">
                       <i class="fa fa-pencil-square-o"></i>
                     </a>
                     <?php }?>
-                  <?php if (in_array("LINE_E",$_smarty_tpl->tpl_vars['verificar']->value) == TRUE) {?>
+                    <?php if (in_array("CENT_E",$_smarty_tpl->tpl_vars['verificar']->value) == TRUE) {?>
                     <a 
                       style="margin-bottom:3px; color:blue;" 
                       class="btn btn-default mimodal"
-                      title="Eliminar Línea de Investigación" 
-                      data-href="lineas_eliminar.php?id=<?php echo $_smarty_tpl->tpl_vars['lineas']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['id'];?>
+                      title="Eliminar Centro de Investigación" 
+                      data-href="centros_eliminar.php?id=<?php echo $_smarty_tpl->tpl_vars['centros']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['id'];?>
 ">
                       <i class="fa fa-trash"></i>
                     </a>

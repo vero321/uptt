@@ -339,12 +339,13 @@ h2.subtitulo
 #central
 {
     justify-content: space-around;
-    margin-top: 105px;
+    margin-top: 80px;
+    margin-left: 20px;
 }
 
 .card-central
 {
-    margin: 0 10px 10px 10px;
+    margin: 0 5px 5px 5px;
 }
 
 .ejem
@@ -401,9 +402,11 @@ h2.subtitulo
     #wrapper #sidebar-wrapper {
         width: 220px;
     }
-    #central
-    {
-    }
+   #central
+{
+    justify-content: space-around;
+    margin-top: 80px;
+    margin-left: 130px;
 }
 
 /* fin menu latera sidebar*/

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-04-21 16:40:30
-  from "/home/palencia/public_html/proyecto4/uptt/templates/cabecera_interna.html" */
+/* Smarty version 3.1.30, created on 2020-04-22 11:34:09
+  from "/home/veronica/public_html/uptt/templates/cabecera_interna.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5e9f5a3e1a4b70_29956300',
+  'unifunc' => 'content_5ea063f1431187_75468747',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    '210571c39c0b429aedaff03d499f712a57eaac8f' => 
+    'bf79da9b1c1914b33bd6e839d11ba0adbe598d2e' => 
     array (
-      0 => '/home/palencia/public_html/proyecto4/uptt/templates/cabecera_interna.html',
-      1 => 1587263311,
+      0 => '/home/veronica/public_html/uptt/templates/cabecera_interna.html',
+      1 => 1587480369,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,8 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5e9f5a3e1a4b70_29956300 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5ea063f1431187_75468747 (Smarty_Internal_Template $_smarty_tpl) {
+if (!is_callable('smarty_modifier_capitalize')) require_once '/home/veronica/public_html/uptt/vendor/smarty/libs/plugins/modifier.capitalize.php';
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -49,24 +50,24 @@ function content_5e9f5a3e1a4b70_29956300 (Smarty_Internal_Template $_smarty_tpl)
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <?php
-$__section_i_1_saved = isset($_smarty_tpl->tpl_vars['__smarty_section_i']) ? $_smarty_tpl->tpl_vars['__smarty_section_i'] : false;
-$__section_i_1_loop = (is_array(@$_loop=$_SESSION["r"]) ? count($_loop) : max(0, (int) $_loop));
-$__section_i_1_total = $__section_i_1_loop;
+$__section_i_0_saved = isset($_smarty_tpl->tpl_vars['__smarty_section_i']) ? $_smarty_tpl->tpl_vars['__smarty_section_i'] : false;
+$__section_i_0_loop = (is_array(@$_loop=$_SESSION["r"]) ? count($_loop) : max(0, (int) $_loop));
+$__section_i_0_total = $__section_i_0_loop;
 $_smarty_tpl->tpl_vars['__smarty_section_i'] = new Smarty_Variable(array());
-if ($__section_i_1_total != 0) {
-for ($__section_i_1_iteration = 1, $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] = 0; $__section_i_1_iteration <= $__section_i_1_total; $__section_i_1_iteration++, $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']++){
+if ($__section_i_0_total != 0) {
+for ($__section_i_0_iteration = 1, $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] = 0; $__section_i_0_iteration <= $__section_i_0_total; $__section_i_0_iteration++, $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']++){
 ?>
             <li class="nav-item <?php if ($_SESSION['r'][(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['id_rol'] == $_SESSION['actual']) {?> active <?php }?> ">
                 <a class="nav-link" href="distribuidor.php?r=<?php echo $_SESSION['r'][(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['id_rol'];?>
 &n=<?php echo (isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null);?>
-"> <?php echo $_SESSION["r"][(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['rol'];?>
+"> <?php echo smarty_modifier_capitalize($_SESSION["r"][(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['rol']);?>
 </a>
             </li>
           <?php
 }
 }
-if ($__section_i_1_saved) {
-$_smarty_tpl->tpl_vars['__smarty_section_i'] = $__section_i_1_saved;
+if ($__section_i_0_saved) {
+$_smarty_tpl->tpl_vars['__smarty_section_i'] = $__section_i_0_saved;
 }
 ?>
 

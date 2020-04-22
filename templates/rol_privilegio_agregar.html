@@ -21,8 +21,8 @@
 
                               <label class="form-check-label">
                                 <input type="checkbox"  class="form-check-input"  
-                                name="privilegio[]" value="{$privilegios[i].id}">
-                                {$privilegios[i].privilegio}
+                                name="privilegio[]" value="{$privilegios[i].id|capitalize}">
+                                {$privilegios[i].privilegio|capitalize}
                               </label>
                             </div>
                           {/section}

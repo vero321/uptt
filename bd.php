@@ -712,11 +712,12 @@ function bd_eliminar_rol_usuario($id_usuario,$id_rol=NULL){
 
 
 
+
 function bd_privilegios_datos($id=NULL){
     if ($id!=NULL){
         $sql="
         SELECT *
-        FROM PRIVILEGIOS
+        FROM PRIVILEGIOS ORDER BY PRIVILEGIOS . privilegio ASC
         WHERE id LIKE '{$id}'
         ";
        $salida= sql2row($sql);
@@ -724,12 +725,13 @@ function bd_privilegios_datos($id=NULL){
     {
         $sql="
             SELECT *
-            FROM PRIVILEGIOS
+            FROM PRIVILEGIOS ORDER BY PRIVILEGIOS . privilegio ASC
         ";
         $salida= sql2array($sql);
     }
         return $salida;
 }
+
 
 function bd_roles_argregar($rol,$n_privilegios,$privilegios){
     $unico=uniqid();

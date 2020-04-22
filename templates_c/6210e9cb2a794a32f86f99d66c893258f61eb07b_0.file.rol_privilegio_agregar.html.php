@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-04-21 17:25:50
-  from "/home/palencia/public_html/proyecto4/uptt/templates/usuarios_rol_agregar.html" */
+/* Smarty version 3.1.30, created on 2020-04-22 11:38:40
+  from "/home/veronica/public_html/uptt/templates/rol_privilegio_agregar.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5e9f64de7c7800_72830320',
+  'unifunc' => 'content_5ea06500cad8e0_78673575',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    '681f8a72dece1e1ed0192eeb39077f4c4793d298' => 
+    '6210e9cb2a794a32f86f99d66c893258f61eb07b' => 
     array (
-      0 => '/home/palencia/public_html/proyecto4/uptt/templates/usuarios_rol_agregar.html',
-      1 => 1586641863,
+      0 => '/home/veronica/public_html/uptt/templates/rol_privilegio_agregar.html',
+      1 => 1587350635,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,8 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5e9f64de7c7800_72830320 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5ea06500cad8e0_78673575 (Smarty_Internal_Template $_smarty_tpl) {
+if (!is_callable('smarty_modifier_capitalize')) require_once '/home/veronica/public_html/uptt/vendor/smarty/libs/plugins/modifier.capitalize.php';
 ?>
 <div class="container">
 <div class="row">
@@ -30,9 +31,9 @@ function content_5e9f64de7c7800_72830320 (Smarty_Internal_Template $_smarty_tpl)
         <section id="intro">
             <div class="container">
               <div class="centro"> 
-                  <h1>Agregar Rol </h1>
+                  <h1 align="center">Agregar Prilegios </h1>
                     <form 
-                      action="proc_usuarios_rol_agregar.php" 
+                      action="proc_rol_privilegio_agregar.php" 
                       method="POST" 
                       class="px-4 py-3" 
                       id="registro_usuario"
@@ -43,7 +44,7 @@ function content_5e9f64de7c7800_72830320 (Smarty_Internal_Template $_smarty_tpl)
 
                           <?php
 $__section_i_0_saved = isset($_smarty_tpl->tpl_vars['__smarty_section_i']) ? $_smarty_tpl->tpl_vars['__smarty_section_i'] : false;
-$__section_i_0_loop = (is_array(@$_loop=$_smarty_tpl->tpl_vars['roles']->value) ? count($_loop) : max(0, (int) $_loop));
+$__section_i_0_loop = (is_array(@$_loop=$_smarty_tpl->tpl_vars['privilegios']->value) ? count($_loop) : max(0, (int) $_loop));
 $__section_i_0_total = $__section_i_0_loop;
 $_smarty_tpl->tpl_vars['__smarty_section_i'] = new Smarty_Variable(array());
 if ($__section_i_0_total != 0) {
@@ -53,9 +54,9 @@ for ($__section_i_0_iteration = 1, $_smarty_tpl->tpl_vars['__smarty_section_i']-
 
                               <label class="form-check-label">
                                 <input type="checkbox"  class="form-check-input"  
-                                name="rol[]" value="<?php echo $_smarty_tpl->tpl_vars['roles']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['id'];?>
+                                name="privilegio[]" value="<?php echo smarty_modifier_capitalize($_smarty_tpl->tpl_vars['privilegios']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['id']);?>
 ">
-                                <?php echo $_smarty_tpl->tpl_vars['roles']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['rol'];?>
+                                <?php echo smarty_modifier_capitalize($_smarty_tpl->tpl_vars['privilegios']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['privilegio']);?>
 
                               </label>
                             </div>
