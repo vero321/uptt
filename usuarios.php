@@ -3,7 +3,6 @@ include_once "./inicializacion.php";
 $verificar=verificar();
 $smarty->assign('verificar',$verificar);
 $nivel=$_SESSION['r'][$_SESSION['numero']]['nivel'];
-#vq($_SESSION);
 
 $n_datos=bd_usuarios_contar();
 $datos_por_pagina = $config['paginacion']['num_items'];
@@ -24,11 +23,10 @@ if( isset( $_REQUEST['p'] ) ){
 } 
 else {
 	#todos los usuarios
-    $usuarios=bd_usuarios_datos2($i, $datos_por_pagina, $nivel);
+    $usuarios=bd_usuarios_datos2($i, $datos_por_pagina, $verificar);
 
 }
 $paginas=paginar($n_datos,$datos_por_pagina,$pagina_actual);
-
 
 $smarty->assign('i',$i);
 $smarty->assign('b',$datos_por_pagina);

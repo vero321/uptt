@@ -70,14 +70,18 @@ function verificar(){
   if (!isset($_SESSION['u'])) {
 	 ir('index.php');
   }else{
+  if (!isset($_SESSION['actual'])) {
+  }
+  else{
     $actual=$_SESSION['actual'];
     $n=count($_SESSION[$actual]);
     for ($i=0; $i <$n ; $i++) { 
       #Buscar privilegios 
       $a[$i]=$_SESSION[$actual][$i]['codigo'];
     }
+    return $a;
+    }
   }
-return $a;
 }
 
 

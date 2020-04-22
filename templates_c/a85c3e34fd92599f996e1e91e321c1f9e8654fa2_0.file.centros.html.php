@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-03-29 00:04:57
+/* Smarty version 3.1.30, created on 2020-04-21 16:42:15
   from "/home/palencia/public_html/proyecto4/uptt/templates/centros.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5e801e69a45cd1_46200691',
+  'unifunc' => 'content_5e9f5aa77d51e3_65876384',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'a85c3e34fd92599f996e1e91e321c1f9e8654fa2' => 
     array (
       0 => '/home/palencia/public_html/proyecto4/uptt/templates/centros.html',
-      1 => 1585454238,
+      1 => 1586641863,
       2 => 'file',
     ),
   ),
@@ -24,7 +24,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:pie_interno.html' => 1,
   ),
 ),false)) {
-function content_5e801e69a45cd1_46200691 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5e9f5aa77d51e3_65876384 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:cabecera_interna.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-03-28 23:51:04
+/* Smarty version 3.1.30, created on 2020-04-21 16:41:11
   from "/home/palencia/public_html/proyecto4/uptt/templates/usuarios.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5e801b28525890_53482140',
+  'unifunc' => 'content_5e9f5a677a1188_02274517',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '4f20745088feb4b99d548492de5e283b79b01666' => 
     array (
       0 => '/home/palencia/public_html/proyecto4/uptt/templates/usuarios.html',
-      1 => 1585453839,
+      1 => 1587391204,
       2 => 'file',
     ),
   ),
@@ -24,7 +24,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:pie_interno.html' => 1,
   ),
 ),false)) {
-function content_5e801b28525890_53482140 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5e9f5a677a1188_02274517 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:cabecera_interna.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -58,7 +58,7 @@ $_smarty_tpl->_subTemplateRender("file:cabecera_interna.html", $_smarty_tpl->cac
                 <div class="container">  
                   <form action="usuarios.php" method="POST">
                       <div class="input-group">
-                        <input id="p" name="p" type="text" class="form-control" placeholder="Escriba aquí y pulse INTRO" aria-describedby="basic-addon1">
+                        <input id="p" name="p" type="text" class="form-control" placeholder="Escriba aquí y pulse INTRO" aria-describedby="basic-addon1" required >
                         <span class="input-group-addon" id="basic-addon1" style="padding:0 12px;"><i class="fa fa-search"></i></span>
                       </div>
                   </form>

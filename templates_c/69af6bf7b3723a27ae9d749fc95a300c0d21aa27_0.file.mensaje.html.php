@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-03-24 13:46:13
+/* Smarty version 3.1.30, created on 2020-04-21 17:24:12
   from "/home/palencia/public_html/proyecto4/uptt/templates/mensaje.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5e7a4765af9117_33879669',
+  'unifunc' => 'content_5e9f647cb3f0d4_22906276',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '69af6bf7b3723a27ae9d749fc95a300c0d21aa27' => 
     array (
       0 => '/home/palencia/public_html/proyecto4/uptt/templates/mensaje.html',
-      1 => 1585069017,
+      1 => 1586641863,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:pie_interno.html' => 1,
   ),
 ),false)) {
-function content_5e7a4765af9117_33879669 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5e9f647cb3f0d4_22906276 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:cabecera_interna.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 

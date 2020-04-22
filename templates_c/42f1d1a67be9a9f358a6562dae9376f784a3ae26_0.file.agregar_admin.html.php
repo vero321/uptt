@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-03-26 15:27:19
+/* Smarty version 3.1.30, created on 2020-04-21 17:43:41
   from "/home/palencia/public_html/proyecto4/uptt/templates/agregar_admin.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5e7d0217142f91_86536573',
+  'unifunc' => 'content_5e9f690dc70363_32593149',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '42f1d1a67be9a9f358a6562dae9376f784a3ae26' => 
     array (
       0 => '/home/palencia/public_html/proyecto4/uptt/templates/agregar_admin.html',
-      1 => 1584587072,
+      1 => 1587263311,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5e7d0217142f91_86536573 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5e9f690dc70363_32593149 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <div class="container">
 <div class="row">
@@ -47,7 +47,8 @@ function content_5e7d0217142f91_86536573 (Smarty_Internal_Template $_smarty_tpl)
                             class="form-control" 
                             id="id" 
                             name="id" 
-                            placeholder="12345678">
+                            placeholder="12345678"
+                            >
                       	</div>
 
                       <div class="form-group">
@@ -63,7 +64,6 @@ function content_5e7d0217142f91_86536573 (Smarty_Internal_Template $_smarty_tpl)
                         </div>
 
                           <h5>Rol del usuario</h5>
-                        <div class="form-group">
                           <?php
 $__section_i_0_saved = isset($_smarty_tpl->tpl_vars['__smarty_section_i']) ? $_smarty_tpl->tpl_vars['__smarty_section_i'] : false;
 $__section_i_0_loop = (is_array(@$_loop=$_smarty_tpl->tpl_vars['roles']->value) ? count($_loop) : max(0, (int) $_loop));
@@ -72,16 +72,78 @@ $_smarty_tpl->tpl_vars['__smarty_section_i'] = new Smarty_Variable(array());
 if ($__section_i_0_total != 0) {
 for ($__section_i_0_iteration = 1, $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] = 0; $__section_i_0_iteration <= $__section_i_0_total; $__section_i_0_iteration++, $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']++){
 ?>
-                            <div class="form-check">
-
-                              <label class="form-check-label">
-                                <input type="checkbox"  class="form-check-input"  
-                                name="rol[]" value="<?php echo $_smarty_tpl->tpl_vars['roles']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['id'];?>
+                            <div class="form-row">
+                              <div class="form-group  col-md-4">
+                                <div class="form-check">
+                                  <label class="form-check-label">
+                                    <input type="checkbox"  class="form-check-input"  
+                                    name="rol[]" value="<?php echo $_smarty_tpl->tpl_vars['roles']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['id'];?>
 ">
-                                <?php echo $_smarty_tpl->tpl_vars['roles']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['rol'];?>
+                                    <?php echo $_smarty_tpl->tpl_vars['roles']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['rol'];?>
 
-                              </label>
-                            </div>
+                                  </label>
+                                </div>
+                              </div>
+
+                              <?php if ($_smarty_tpl->tpl_vars['datos']->value['nivel'] == 1000 || $_smarty_tpl->tpl_vars['datos']->value['nivel'] == 900) {?>
+                                <?php if ($_smarty_tpl->tpl_vars['roles']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['nivel'] != 1000 && $_smarty_tpl->tpl_vars['roles']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['nivel'] != 900) {?>
+                                  <div class="form-group  col-md-4">
+                                    <select id="nucleos" name="nucleos['<?php echo $_smarty_tpl->tpl_vars['roles']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['id'];?>
+']=>" class="form-control- small">
+                                      <option selected>Selecione Nucleo</option>
+                                      
+                                      <?php
+$__section_n_1_saved = isset($_smarty_tpl->tpl_vars['__smarty_section_n']) ? $_smarty_tpl->tpl_vars['__smarty_section_n'] : false;
+$__section_n_1_loop = (is_array(@$_loop=$_smarty_tpl->tpl_vars['nucleos']->value) ? count($_loop) : max(0, (int) $_loop));
+$__section_n_1_total = $__section_n_1_loop;
+$_smarty_tpl->tpl_vars['__smarty_section_n'] = new Smarty_Variable(array());
+if ($__section_n_1_total != 0) {
+for ($__section_n_1_iteration = 1, $_smarty_tpl->tpl_vars['__smarty_section_n']->value['index'] = 0; $__section_n_1_iteration <= $__section_n_1_total; $__section_n_1_iteration++, $_smarty_tpl->tpl_vars['__smarty_section_n']->value['index']++){
+?>
+                                      <option value="<?php echo $_smarty_tpl->tpl_vars['nucleos']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_n']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_n']->value['index'] : null)]['id'];?>
+" ><?php echo $_smarty_tpl->tpl_vars['nucleos']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_n']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_n']->value['index'] : null)]['nombre_corto'];?>
+</option>
+                                      <?php
+}
+}
+if ($__section_n_1_saved) {
+$_smarty_tpl->tpl_vars['__smarty_section_n'] = $__section_n_1_saved;
+}
+?>
+                                    </select>
+                                  </div>
+                                  <div class="form-group  col-md-4">
+                                    <select id="pnf" name="pnf['<?php echo $_smarty_tpl->tpl_vars['roles']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['id'];?>
+']=>" class="form-control- small">
+                                      <option selected>Selecione PNF</option>
+                                      <?php
+$__section_p_2_saved = isset($_smarty_tpl->tpl_vars['__smarty_section_p']) ? $_smarty_tpl->tpl_vars['__smarty_section_p'] : false;
+$__section_p_2_loop = (is_array(@$_loop=$_smarty_tpl->tpl_vars['pnf']->value) ? count($_loop) : max(0, (int) $_loop));
+$__section_p_2_total = $__section_p_2_loop;
+$_smarty_tpl->tpl_vars['__smarty_section_p'] = new Smarty_Variable(array());
+if ($__section_p_2_total != 0) {
+for ($__section_p_2_iteration = 1, $_smarty_tpl->tpl_vars['__smarty_section_p']->value['index'] = 0; $__section_p_2_iteration <= $__section_p_2_total; $__section_p_2_iteration++, $_smarty_tpl->tpl_vars['__smarty_section_p']->value['index']++){
+?>
+                                              <option value="<?php echo $_smarty_tpl->tpl_vars['pnf']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_p']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_p']->value['index'] : null)]['id'];?>
+" ><?php echo $_smarty_tpl->tpl_vars['pnf']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_p']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_p']->value['index'] : null)]['nombre_corto'];?>
+</option>
+                                      <?php
+}
+}
+if ($__section_p_2_saved) {
+$_smarty_tpl->tpl_vars['__smarty_section_p'] = $__section_p_2_saved;
+}
+?>
+                                    </select>
+                                  </div>
+                                <?php }?>
+                              <?php } else { ?>
+                                <input type="hidden" name="nucleo" value="<?php echo $_smarty_tpl->tpl_vars['datos']->value['id_nucleo'];?>
+">
+                                <input type="hidden" name="pnf" value="<?php echo $_smarty_tpl->tpl_vars['datos']->value['id_pnf'];?>
+">
+                                <?php }?>
+                              </div>
                           <?php
 }
 }
@@ -89,8 +151,6 @@ if ($__section_i_0_saved) {
 $_smarty_tpl->tpl_vars['__smarty_section_i'] = $__section_i_0_saved;
 }
 ?>
-                        </div>
-
 
                     	<div class="form-group">
           							<input 

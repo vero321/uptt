@@ -202,7 +202,26 @@ function paginar($totalpaginas,$rango,$pagina_actual=1)
         return $paginas;
     }
 
-function bd_usuarios_datos2($inicio, $cantidad, $nivel){
+function bd_usuarios_datos2($inicio, $cantidad, $verificar){
+
+    if (in_array("USUA_V1000",$verificar) == TRUE) {
+        # Este es el caso de los usuarios que necesitan ver todos los usuarios
+        $resultado=sql2array("SELECT id, correo
+            FROM USUARIOS
+            ORDER BY USUARIOS.id ASC#
+            LIMIT $inicio,$cantidad
+            ");
+    }elseif (in_array("USUA_V900", $verificar)) {
+        # te es el caso de los usuarios que necesitan ver todos los usuarios execto los de nivel 1000
+            $resultado=sql2array("SELECT DISTINCT USUARIOS.id, correo
+            FROM USUARIOS, ROLES, USUARIOS__ROLES
+            WHERE nivel = 1000 and nivel = 900 and USUARIOS.id = id_usuario and id_rol = ROLES.id
+            ORDER BY USUARIOS.id ASC#
+            LIMIT $inicio,$cantidad
+            ");
+            
+        }
+/*
     switch ($nivel) {
         case 1000:
             # Este es el caso de los usuarios que necesitan ver todos los usuarios
@@ -273,7 +292,7 @@ function bd_usuarios_datos2($inicio, $cantidad, $nivel){
             # code...
             break;
     }
-
+*/
      return $resultado;
 }
 
@@ -289,7 +308,7 @@ function bd_usuarios_datos3($campos, $palabras,$cantidad,$nivel){
         WHERE ($condicion )
             LIMIT $cantidad
         ");
-    switch ($nivel) {
+/*    switch ($nivel) {
         case 1000:
             # Este es el caso de los usuarios que necesitan ver todos los usuarios
              $resultado=sql2array("SELECT id, correo FROM USUARIOS
@@ -351,7 +370,7 @@ function bd_usuarios_datos3($campos, $palabras,$cantidad,$nivel){
             break;
     }
 
-
+*/
  return $resultado;
 }
 

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-03-24 13:10:54
+/* Smarty version 3.1.30, created on 2020-04-21 16:54:09
   from "/home/palencia/public_html/proyecto4/uptt/templates/rol_privilegio_agregar.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5e7a3f1e631d98_54624963',
+  'unifunc' => 'content_5e9f5d710d7091_92311167',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '495c1bdc385c0a116e7227571eacc2bb36a5d843' => 
     array (
       0 => '/home/palencia/public_html/proyecto4/uptt/templates/rol_privilegio_agregar.html',
-      1 => 1585069017,
+      1 => 1586641863,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5e7a3f1e631d98_54624963 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5e9f5d710d7091_92311167 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <div class="container">
 <div class="row">
