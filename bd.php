@@ -202,26 +202,8 @@ function paginar($totalpaginas,$rango,$pagina_actual=1)
         return $paginas;
     }
 
-function bd_usuarios_datos2($inicio, $cantidad, $verificar){
+function bd_usuarios_datos2($inicio, $cantidad, $nivel){
 
-    if (in_array("USUA_V1000",$verificar) == TRUE) {
-        # Este es el caso de los usuarios que necesitan ver todos los usuarios
-        $resultado=sql2array("SELECT id, correo
-            FROM USUARIOS
-            ORDER BY USUARIOS.id ASC#
-            LIMIT $inicio,$cantidad
-            ");
-    }elseif (in_array("USUA_V900", $verificar)) {
-        # te es el caso de los usuarios que necesitan ver todos los usuarios execto los de nivel 1000
-            $resultado=sql2array("SELECT DISTINCT USUARIOS.id, correo
-            FROM USUARIOS, ROLES, USUARIOS__ROLES
-            WHERE nivel = 1000 and nivel = 900 and USUARIOS.id = id_usuario and id_rol = ROLES.id
-            ORDER BY USUARIOS.id ASC#
-            LIMIT $inicio,$cantidad
-            ");
-            
-        }
-/*
     switch ($nivel) {
         case 1000:
             # Este es el caso de los usuarios que necesitan ver todos los usuarios
@@ -230,7 +212,7 @@ function bd_usuarios_datos2($inicio, $cantidad, $verificar){
             ORDER BY USUARIOS.id ASC#
             LIMIT $inicio,$cantidad
             ");
-            break;
+        break;
         case 900:
             # Este es el caso de los usuarios que necesitan ver todos los usuarios execto los de nivel 1000
             $resultado=sql2array("SELECT DISTINCT USUARIOS.id, correo
@@ -239,60 +221,85 @@ function bd_usuarios_datos2($inicio, $cantidad, $verificar){
             ORDER BY USUARIOS.id ASC#
             LIMIT $inicio,$cantidad
             ");
-            break;
+        break;
         case 800:
-            # Este es el caso de los usuarios que necesitan ver los usuarios nivel 700
+            # Este es el caso de los usuarios que necesitan ver los usuarios nivel 800
+            $resultado=sql2array("SELECT DISTINCT USUARIOS.id, correo
+            FROM USUARIOS, ROLES, USUARIOS__ROLES, NUCLEOS, PNF
+            WHERE nivel = 800 and USUARIOS.id = id_usuario and id_rol = ROLES.id and USUARIOS__ROLES.id_nucleo = NUCLEOS.id and USUARIOS__ROLES.id_pnf = PNF.id
+            ORDER BY USUARIOS.id ASC#
+            LIMIT $inicio,$cantidad
+            ");
+        break;
+        case 700:
+            # Este es el caso de los usuarios que necesitan verlos usuarios nivel 600, 500
             $resultado=sql2array("SELECT DISTINCT USUARIOS.id, correo
             FROM USUARIOS, ROLES, USUARIOS__ROLES, NUCLEOS, PNF
             WHERE nivel = 700 and USUARIOS.id = id_usuario and id_rol = ROLES.id and USUARIOS__ROLES.id_nucleo = NUCLEOS.id and USUARIOS__ROLES.id_pnf = PNF.id
             ORDER BY USUARIOS.id ASC#
             LIMIT $inicio,$cantidad
             ");
-            break;
-        case 700:
-            # Este es el caso de los usuarios que necesitan verlos usuarios nivel 600, 500
+        break;
+        case 600:
+            # Este es el caso de los usuarios que necesitan ver los usuarios nivel 00
             $resultado=sql2array("SELECT DISTINCT USUARIOS.id, correo
-            FROM USUARIOS, ROLES, USUARIOS__ROLES
-            WHERE (nivel = 600 or nivel =500) and USUARIOS.id = id_usuario and id_rol = ROLES.id
+            FROM USUARIOS, ROLES, USUARIOS__ROLES, NUCLEOS, PNF
+            WHERE nivel = 600 and USUARIOS.id = id_usuario and id_rol = ROLES.id and USUARIOS__ROLES.id_nucleo = NUCLEOS.id and USUARIOS__ROLES.id_pnf = PNF.id
             ORDER BY USUARIOS.id ASC#
             LIMIT $inicio,$cantidad
             ");
-            break;
-        case 600:
-            # Aun no definido
-            break;
+        break;
         case 500:
-            # Este es el caso de los usuarios que necesitan ver  todos los usuarios de nivel 400, 300 y 200
+            # Este es el caso de los usuarios que necesitan ver  todos los usuarios de nivel 500
             $resultado=sql2array("SELECT DISTINCT USUARIOS.id, correo
-            FROM USUARIOS, ROLES, USUARIOS__ROLES
-            WHERE (nivel = 400 or nivel =300 or nivel = 200 ) and USUARIOS.id = id_usuario and id_rol = ROLES.id
+            FROM USUARIOS, ROLES, USUARIOS__ROLES, NUCLEOS, PNF
+            WHERE nivel = 500 and USUARIOS.id = id_usuario and id_rol = ROLES.id and USUARIOS__ROLES.id_nucleo = NUCLEOS.id and USUARIOS__ROLES.id_pnf = PNF.id
             ORDER BY USUARIOS.id ASC#
             LIMIT $inicio,$cantidad
             ");
             break;
         case 400:
-             # Aun no definido
-        break;
-        case 300:
-            # Este es el caso de los usuarios que necesitan ver los usuarios nivel 700
+             # Ver los usuarios de nivel 400
             $resultado=sql2array("SELECT DISTINCT USUARIOS.id, correo
-            FROM USUARIOS, ROLES, USUARIOS__ROLES
-            WHERE nivel = 200 and USUARIOS.id = id_usuario and id_rol = ROLES.id
+            FROM USUARIOS, ROLES, USUARIOS__ROLES, NUCLEOS, PNF
+            WHERE nivel = 400 and USUARIOS.id = id_usuario and id_rol = ROLES.id and USUARIOS__ROLES.id_nucleo = NUCLEOS.id and USUARIOS__ROLES.id_pnf = PNF.id
             ORDER BY USUARIOS.id ASC#
             LIMIT $inicio,$cantidad
             ");
             break;
+        break;
+        case 300:
+            # Este es el caso de los usuarios que necesitan ver los usuarios nivel 300
+            $resultado=sql2array("SELECT DISTINCT USUARIOS.id, correo
+            FROM USUARIOS, ROLES, USUARIOS__ROLES
+            WHERE nivel = 300 and USUARIOS.id = id_usuario and id_rol = ROLES.id
+            ORDER BY USUARIOS.id ASC#
+            LIMIT $inicio,$cantidad
+            ");
+        break;
         case 200:
-             # Aun no definido
+            # Este es el caso de los usuarios que necesitan ver los usuarios nivel 200
+            $resultado=sql2array("SELECT DISTINCT USUARIOS.id, correo
+            FROM USUARIOS, ROLES, USUARIOS__ROLES, NUCLEOS, PNF
+            WHERE nivel = 200 and USUARIOS.id = id_usuario and id_rol = ROLES.id and USUARIOS__ROLES.id_nucleo = NUCLEOS.id and USUARIOS__ROLES.id_pnf = PNF.id
+            ORDER BY USUARIOS.id ASC#
+            LIMIT $inicio,$cantidad
+            ");
         break;
         case 100:
-             # Aun no definido
+            # Este es el caso de los usuarios que necesitan ver los usuarios nivel 100
+            $resultado=sql2array("SELECT DISTINCT USUARIOS.id, correo
+            FROM USUARIOS, ROLES, USUARIOS__ROLES, NUCLEOS, PNF
+            WHERE nivel = 100 and USUARIOS.id = id_usuario and id_rol = ROLES.id and USUARIOS__ROLES.id_nucleo = NUCLEOS.id and USUARIOS__ROLES.id_pnf = PNF.id
+            ORDER BY USUARIOS.id ASC#
+            LIMIT $inicio,$cantidad
+            ");
         break;
         default:
             # code...
-            break;
+        break;
     }
-*/
+
      return $resultado;
 }
 
@@ -304,11 +311,7 @@ function bd_usuarios_datos3($campos, $palabras,$cantidad,$nivel){
     }
     $condicion = implode(' OR ', $miscampos);
 
-     $resultado=sql2array("SELECT id, correo FROM USUARIOS
-        WHERE ($condicion )
-            LIMIT $cantidad
-        ");
-/*    switch ($nivel) {
+    switch ($nivel) {
         case 1000:
             # Este es el caso de los usuarios que necesitan ver todos los usuarios
              $resultado=sql2array("SELECT id, correo FROM USUARIOS
@@ -327,50 +330,58 @@ function bd_usuarios_datos3($campos, $palabras,$cantidad,$nivel){
         case 800:
             # Este es el caso de los usuarios que necesitan ver los usuarios nivel 700
             $resultado=sql2array("SELECT DISTINCT USUARIOS.id, correo FROM USUARIOS, ROLES, USUARIOS__ROLES
-            WHERE ($condicion ) and (nivel = 700 and USUARIOS.id = id_usuario and id_rol = ROLES.id) 
+            WHERE ($condicion ) and (nivel = 800 and USUARIOS.id = id_usuario and id_rol = ROLES.id) 
             LIMIT $cantidad
             ");
 
             break;
         case 700:
-            # Este es el caso de los usuarios que necesitan verlos usuarios nivel 600, 500
+            # Este es el caso de los usuarios que necesitan verlos usuarios nivel 700
             $resultado=sql2array("SELECT DISTINCT USUARIOS.id, correo FROM USUARIOS, ROLES, USUARIOS__ROLES
-            WHERE ($condicion ) and (nivel = 600 or nivel =500) and (USUARIOS.id = id_usuario and id_rol = ROLES.id) 
+            WHERE ($condicion ) and (nivel = 700 and USUARIOS.id = id_usuario and id_rol = ROLES.id) 
             LIMIT $cantidad
             ");
-            break;
         case 600:
-            # Aun no definido
-            break;
-        case 500:
-            # Este es el caso de los usuarios que necesitan ver  todos los usuarios de nivel 400, 300 y 200
+        # Este es el caso de los usuarios que necesitan verlos usuarios nivel 600
             $resultado=sql2array("SELECT DISTINCT USUARIOS.id, correo FROM USUARIOS, ROLES, USUARIOS__ROLES
-            WHERE ($condicion ) and (nivel = 400 or nivel =300 or nivel = 200) and (USUARIOS.id = id_usuario and id_rol = ROLES.id) 
+            WHERE ($condicion ) and (nivel = 600 and USUARIOS.id = id_usuario and id_rol = ROLES.id) 
             LIMIT $cantidad
             ");
-            break;
+        case 500:
+            # Este es el caso de los usuarios que necesitan verlos usuarios nivel 500
+            $resultado=sql2array("SELECT DISTINCT USUARIOS.id, correo FROM USUARIOS, ROLES, USUARIOS__ROLES
+            WHERE ($condicion ) and (nivel = 500 and USUARIOS.id = id_usuario and id_rol = ROLES.id) 
+            LIMIT $cantidad
+            ");
         case 400:
-             # Aun no definido
-        break;
+        # Este es el caso de los usuarios que necesitan verlos usuarios nivel 400
+            $resultado=sql2array("SELECT DISTINCT USUARIOS.id, correo FROM USUARIOS, ROLES, USUARIOS__ROLES
+            WHERE ($condicion ) and (nivel = 400 and USUARIOS.id = id_usuario and id_rol = ROLES.id) 
+            LIMIT $cantidad
+            ");
         case 300:
-            # Este es el caso de los usuarios que necesitan ver los usuarios nivel 700
+            # Este es el caso de los usuarios que necesitan ver los usuarios nivel 300
+            $resultado=sql2array("SELECT DISTINCT USUARIOS.id, correo FROM USUARIOS, ROLES, USUARIOS__ROLES
+            WHERE ($condicion ) and (nivel = 300 and USUARIOS.id = id_usuario and id_rol = ROLES.id) 
+            LIMIT $cantidad
+            ");
+        case 200:
+            # Este es el caso de los usuarios que necesitan verlos usuarios nivel 200
             $resultado=sql2array("SELECT DISTINCT USUARIOS.id, correo FROM USUARIOS, ROLES, USUARIOS__ROLES
             WHERE ($condicion ) and (nivel = 200 and USUARIOS.id = id_usuario and id_rol = ROLES.id) 
             LIMIT $cantidad
             ");
-            break;
-        case 200:
-             # Aun no definido
-        break;
         case 100:
-             # Aun no definido
-        break;
+             # Este es el caso de los usuarios que necesitan verlos usuarios nivel 100
+            $resultado=sql2array("SELECT DISTINCT USUARIOS.id, correo FROM USUARIOS, ROLES, USUARIOS__ROLES
+            WHERE ($condicion ) and (nivel = 100 and USUARIOS.id = id_usuario and id_rol = ROLES.id) 
+            LIMIT $cantidad
+            ");
         default:
             # code...
             break;
     }
 
-*/
  return $resultado;
 }
 
