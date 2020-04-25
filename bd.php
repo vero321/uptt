@@ -775,12 +775,34 @@ function bd_roles_modificar($id){
     return $d['id'];
 }
 
+/**
+ * Devuelve los privilegios del rol
+ * @param  String $id ID del rol al que se le buscarán los privilegios
+ * @return Array     Array con todos los privilegios del rol dado
+ * @author José <[<email address>]>
+ * 
+ */
 function bd_roles__privilegios($id){
     $sql="
-        SELECT id_rol, direccion, privilegio, nombre, icono, codigo, id_privilegio
-        FROM ROLES__PRIVILEGIOS, PRIVILEGIOS
-        WHERE id_rol LIKE '{$id}' && id_privilegio LIKE PRIVILEGIOS.id
+        SELECT 
+            a.id id_rol, 
+            b.direccion, 
+            b.privilegio, 
+            b.nombre, 
+            b.icono, 
+            b.codigo,
+            b.id id_privilegio 
+        FROM ROLES a, PRIVILEGIOS b 
+        WHERE 
+            b.id IN (
+                SELECT c.id_privilegio 
+                FROM ROLES__PRIVILEGIOS c 
+                WHERE c.id_rol 
+                LIKE '{$id}' 
+                AND a.id = c.id_rol
+            )
     ";
+
     $salida=sql2array($sql);
 
     return $salida;
@@ -858,6 +880,10 @@ function bd_personas_modicar($personas)
 #################Contadores
 
 
+
+
+    
+    
 
 function bd_usuarios_contar(){
     return sql2value("SELECT COUNT(*) FROM USUARIOS");

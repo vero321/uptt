@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-04-23 14:29:48
-  from "/home/palencia/public_html/proyecto4/uptt/templates/agregar_admin.html" */
+/* Smarty version 3.1.30, created on 2020-04-24 23:13:42
+  from "/home/veronica/public_html/uptt/templates/agregar_admin.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5ea1de9c416739_82927288',
+  'unifunc' => 'content_5ea3aae680c3a2_87102166',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    '42f1d1a67be9a9f358a6562dae9376f784a3ae26' => 
+    'b781a90617ba2cda9cd33c2ae34b4c3498c7d9c4' => 
     array (
-      0 => '/home/palencia/public_html/proyecto4/uptt/templates/agregar_admin.html',
-      1 => 1587263311,
+      0 => '/home/veronica/public_html/uptt/templates/agregar_admin.html',
+      1 => 1587305288,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5ea1de9c416739_82927288 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5ea3aae680c3a2_87102166 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <div class="container">
 <div class="row">

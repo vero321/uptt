@@ -25,6 +25,8 @@ else {
     $usuarios=bd_usuarios_datos2($i, $datos_por_pagina, $nivel);
 
 }
+
+
 $paginas=paginar($n_datos,$datos_por_pagina,$pagina_actual);
 
 $smarty->assign('i',$i);

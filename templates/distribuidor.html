@@ -7,14 +7,13 @@
         
 <!--finaliza-->
            
-
         {section  name=i loop= $smarty.session[{$smarty.session['actual']}] }
         {if {$smarty.session[{$smarty.session['actual']}][i].direccion} != NULL }
 
           <div class="card-central card text-white bg-primary mb-3" style="width: 15rem; margin-top: 90px;">
               <div class="card-body">
             <h3 class="card-title"><i class="{$smarty.session[{$smarty.session['actual']}][i].icono}"></i>
-            <small ">{$smarty.session[{$smarty.session['actual']}][i].nombre|capitalize}</small></h3>
+            <small ">{$smarty.session[{$smarty.session['actual']}][i].nombre|capitalize}</small>20</h3>
             <a href="#" class="button-left"><span class="fa fa-fw fa-bars "></span></a>
 
 

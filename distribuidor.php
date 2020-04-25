@@ -5,7 +5,6 @@ verificar();
  	session_start();
 	unset ($SESSION['u']);
 	session_destroy();
-
 	ir('index.php');
   }
 
@@ -13,7 +12,8 @@ $rol=$_GET['r'];
 $n=$_GET['n'];
 $_SESSION['actual']=$rol;
 $_SESSION['numero']=$n;
-#vq($_SESSION);
+//ver($_SESSION);
+
 
 $nucleos=bd_nucleos_contar();
 $pnf=bd_pnf_contar();

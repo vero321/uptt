@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-04-22 11:47:55
+/* Smarty version 3.1.30, created on 2020-04-24 23:09:22
   from "/home/veronica/public_html/uptt/templates/usuarios.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5ea0672b780df6_53121467',
+  'unifunc' => 'content_5ea3a9e27ddec9_75347015',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'deef6b7a8ceb2f8989f0cb978d9e29c8b91422c5' => 
     array (
       0 => '/home/veronica/public_html/uptt/templates/usuarios.html',
-      1 => 1587570348,
+      1 => 1587783428,
       2 => 'file',
     ),
   ),
@@ -24,7 +24,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:pie_interno.html' => 1,
   ),
 ),false)) {
-function content_5ea0672b780df6_53121467 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5ea3a9e27ddec9_75347015 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:cabecera_interna.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -56,7 +56,8 @@ $_smarty_tpl->_subTemplateRender("file:cabecera_interna.html", $_smarty_tpl->cac
             <div class="collapse" id="collapseExample">
               <div class="jumbotron jumbo_buscar">
                 <div class="container">  
-                  <form action="usuarios.php" method="POST">
+                  <form action="usuarios.php?n=<?php echo $_smarty_tpl->tpl_vars['nivel']->value;?>
+" method="POST">
                       <div class="input-group">
                         <input id="p" name="p" type="text" class="form-control" placeholder="Escriba aquí y pulse INTRO" aria-describedby="basic-addon1" required >
                         <span class="input-group-addon" id="basic-addon1" style="padding:0 12px;"><i class="fa fa-search"></i></span>
@@ -102,6 +103,7 @@ for ($__section_i_0_iteration = 1, $_smarty_tpl->tpl_vars['__smarty_section_i']-
                       class="btn btn-default"
                       title="Ver detalles de usuarios" 
                       href="usuarios_datos.php?id=<?php echo $_smarty_tpl->tpl_vars['usuarios']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['id'];?>
+&n=<?php echo $_smarty_tpl->tpl_vars['nivel']->value;?>
 ">
                       <i class="fa fa-archive"></i>
                     </a>
@@ -122,6 +124,7 @@ for ($__section_i_0_iteration = 1, $_smarty_tpl->tpl_vars['__smarty_section_i']-
                       class="btn btn-default mimodal"
                       title="Eliminar Usuario" 
                       data-href="usuarios_eliminar.php?id=<?php echo $_smarty_tpl->tpl_vars['usuarios']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['id'];?>
+&n=<?php echo $_smarty_tpl->tpl_vars['nivel']->value;?>
 ">
                       <i class="fa fa-trash"></i>
                     </a>
@@ -143,6 +146,7 @@ $_smarty_tpl->tpl_vars['__smarty_section_i'] = $__section_i_0_saved;
               <?php if ($_smarty_tpl->tpl_vars['pagina_actual']->value != 1) {?>
               <li class="page-item"><a class="page-link" href="usuarios.php?pag=<?php echo $_smarty_tpl->tpl_vars['pagina_actual']->value-1;?>
 &i=<?php echo $_smarty_tpl->tpl_vars['i']->value-$_smarty_tpl->tpl_vars['b']->value;?>
+&n=<?php echo $_smarty_tpl->tpl_vars['nivel']->value;?>
 " >Anterior</a>
               </li>
               <?php }?>
@@ -156,6 +160,7 @@ for ($_smarty_tpl->tpl_vars['__smarty_section_ii']->value['iteration'] = 1, $_sm
 ?>
               <li class="page-item <?php if ((isset($_smarty_tpl->tpl_vars['__smarty_section_ii']->value['iteration']) ? $_smarty_tpl->tpl_vars['__smarty_section_ii']->value['iteration'] : null) == $_smarty_tpl->tpl_vars['pagina_actual']->value) {?> active <?php }?>"><a class="page-link" href="usuarios.php?pag=<?php echo (isset($_smarty_tpl->tpl_vars['__smarty_section_ii']->value['iteration']) ? $_smarty_tpl->tpl_vars['__smarty_section_ii']->value['iteration'] : null);?>
 &i=<?php echo $_smarty_tpl->tpl_vars['paginas']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_ii']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_ii']->value['index'] : null)];?>
+&n=<?php echo $_smarty_tpl->tpl_vars['nivel']->value;?>
 "><?php echo (isset($_smarty_tpl->tpl_vars['__smarty_section_ii']->value['iteration']) ? $_smarty_tpl->tpl_vars['__smarty_section_ii']->value['iteration'] : null);?>
  <span class="sr-only">(current)</span></a>
               </li>
@@ -169,6 +174,7 @@ $_smarty_tpl->tpl_vars['__smarty_section_ii'] = $__section_ii_1_saved;
               <?php if ($_smarty_tpl->tpl_vars['pagina_actual']->value != $_smarty_tpl->tpl_vars['n_paginas']->value) {?> 
               <li class="page-item"><a class="page-link" href="usuarios.php?pag=<?php echo $_smarty_tpl->tpl_vars['pagina_actual']->value+1;?>
 &i=<?php echo $_smarty_tpl->tpl_vars['i']->value+$_smarty_tpl->tpl_vars['b']->value;?>
+&n=<?php echo $_smarty_tpl->tpl_vars['nivel']->value;?>
 ">Siguiente</a>
               </li>
               <?php }?>

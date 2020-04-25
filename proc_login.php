@@ -27,6 +27,7 @@ if ((password_verify($clave,$hash)) or ( (password_verify($clave,$hash2) ) && ( 
 		# code...
 		$rol=$datos2[$i]['id_rol'];
 		$privilegios=bd_roles__privilegios($rol);
+		#vq($privilegios);
 		$_SESSION[$rol]=$privilegios;
 
 	}
