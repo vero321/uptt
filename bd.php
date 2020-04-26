@@ -805,7 +805,41 @@ function bd_roles__privilegios($id){
 
     $salida=sql2array($sql);
 
+
+    foreach ($salida as &$priv) 
+    {
+        
+    
+        switch ($priv['codigo']) 
+        {
+            case 'NUCL_V':
+                $priv['cant']=bd_nucleos_contar();
+                break;
+            case 'PNF_V':
+                $priv['cant']=bd_pnf_contar($_SESSION['r']['0']['id_nucleo']);
+                break;
+            case 'USUA_V1000':
+                $priv['cant']=bd_usuarios_contar($_SESSION['r']['0']['nivel']);
+                break;
+            case 'CENT_V':
+                $priv['cant']=bd_centros_contar();
+                break;
+            case 'LINE_V':
+                $priv['cant']=bd_lineas_contar();
+                break;
+            case 'ROLE_V':
+                $priv['cant']=bd_roles_contar();
+                break;
+
+            default:
+                $priv['cant']=0;
+                break;
+
+        }
+    }
+   
     return $salida;
+
 }
 
 
@@ -879,16 +913,6 @@ function bd_personas_modicar($personas)
 
 #################Contadores
 
-
-
-
-    
-    
-
-function bd_usuarios_contar(){
-    return sql2value("SELECT COUNT(*) FROM USUARIOS");
-}
-
 function bd_centros_contar(){
     return sql2value("SELECT COUNT(*) FROM CENTROS_DE_INVESTIGACION");
 }
@@ -901,8 +925,28 @@ function bd_nucleos_contar(){
     return sql2value("SELECT COUNT(*) FROM NUCLEOS");
 }
 
-function bd_pnf_contar(){
-    return sql2value("SELECT COUNT(*) FROM PNF");
+function bd_pnf_contar($nucleo_id=NULL){
+    if ($nucleo_id==NULL) 
+    {
+        return sql2value("SELECT COUNT(*) FROM NUCLEOS__PNF");
+    } 
+    else 
+    {
+        return sql2value("SELECT COUNT(*) FROM NUCLEOS__PNF WHERE id_nucleo = $nucleo_id");
+    }
+    
+}
+
+function bd_usuarios_contar($id=NULL){
+    if ($id==NULL) 
+    {
+        return sql2value("SELECT COUNT(*) FROM USUARIOS");
+    } 
+    else 
+    {
+        return sql2value("SELECT COUNT(*) FROM USUARIOS WHERE id = $id");
+    }
+    
 }
 
 function bd_roles_contar(){

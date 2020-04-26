@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-04-25 10:32:50
+/* Smarty version 3.1.30, created on 2020-04-25 20:41:17
   from "/home/veronica/public_html/uptt/templates/distribuidor.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5ea44a12680304_92379368',
+  'unifunc' => 'content_5ea4d8ade16e57_10035428',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '6e0cfd1ad0d29f054e2a9fee888476627f6a3722' => 
     array (
       0 => '/home/veronica/public_html/uptt/templates/distribuidor.html',
-      1 => 1587825149,
+      1 => 1587861676,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:pie_interno.html' => 1,
   ),
 ),false)) {
-function content_5ea44a12680304_92379368 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5ea4d8ade16e57_10035428 (Smarty_Internal_Template $_smarty_tpl) {
 if (!is_callable('smarty_modifier_capitalize')) require_once '/home/veronica/public_html/uptt/vendor/smarty/libs/plugins/modifier.capitalize.php';
 $_smarty_tpl->_subTemplateRender("file:cabecera_interna.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
@@ -63,12 +63,17 @@ echo $_SESSION['actual'];
 $_prefixVariable4=ob_get_clean();
 echo $_SESSION[$_prefixVariable4][(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['icono'];?>
 "></i>
-            <small "><?php ob_start();
+            <small><?php ob_start();
 echo $_SESSION['actual'];
 $_prefixVariable5=ob_get_clean();
 echo smarty_modifier_capitalize($_SESSION[$_prefixVariable5][(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['nombre']);?>
-</small>20</h3>
-            <a href="#" class="button-left"><span class="fa fa-fw fa-bars "></span></a>
+</small>
+            <span class="badge-pill"><?php ob_start();
+echo $_SESSION['actual'];
+$_prefixVariable6=ob_get_clean();
+echo $_SESSION[$_prefixVariable6][(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['cant'];?>
+</span></h3>
+            
 
 
             </div>
