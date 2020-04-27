@@ -386,14 +386,28 @@ function bd_usuarios_datos3($campos, $palabras,$cantidad,$nivel){
 }
 
 
-function bd_usuarios_eliminar($id)
+function bd_usuarios_eliminar($id, $nivel=NULL)
 {
-    $sql = "
+    if ($nivel=1000) 
+    {
+        $sql = "
         DELETE FROM USUARIOS
         WHERE id = '{$id}'
         ";
     sql($sql);
     return $id;
+    } 
+    else 
+    {
+        $sql = "
+        DELETE FROM USUARIOS__ROLES 
+        WHERE USUARIOS__ROLES.id = '{$id}'
+        
+        ";
+    sql($sql);
+    return $id;
+    }
+    
 }
 
 
@@ -821,6 +835,33 @@ function bd_roles__privilegios($id){
             case 'USUA_V1000':
                 $priv['cant']=bd_usuarios_contar($_SESSION['r']['0']['nivel']);
                 break;
+            case 'USUA_V900':
+                $priv['cant']=bd_usuarios_contar($_SESSION['r']['0']['nivel']);
+                break;
+            case 'USUA_V800':
+                $priv['cant']=bd_usuarios_contar($_SESSION['r']['0']['nivel']);
+                break;
+            case 'USUA_V700':
+                $priv['cant']=bd_usuarios_contar($_SESSION['r']['0']['nivel']);
+                break;
+            case 'USUA_V600':
+                $priv['cant']=bd_usuarios_contar($_SESSION['r']['0']['nivel']);
+                break;
+            case 'USUA_V500':
+                $priv['cant']=bd_usuarios_contar($_SESSION['r']['0']['nivel']);
+                break;
+            case 'USUA_V400':
+                $priv['cant']=bd_usuarios_contar($_SESSION['r']['0']['nivel']);
+                break;
+            case 'USUA_V300':
+                $priv['cant']=bd_usuarios_contar($_SESSION['r']['0']['nivel']);
+                break;
+            case 'USUA_V200':
+                $priv['cant']=bd_usuarios_contar($_SESSION['r']['0']['nivel']);
+                break;
+            case 'USUA_V100':
+                $priv['cant']=bd_usuarios_contar($_SESSION['r']['0']['nivel']);
+                break;
             case 'CENT_V':
                 $priv['cant']=bd_centros_contar();
                 break;
@@ -937,15 +978,17 @@ function bd_pnf_contar($nucleo_id=NULL){
     
 }
 
-function bd_usuarios_contar($id=NULL){
-    if ($id==NULL) 
+function bd_usuarios_contar($nivel){
+    if ($nivel==1000) 
     {
         return sql2value("SELECT COUNT(*) FROM USUARIOS");
     } 
     else 
     {
-        return sql2value("SELECT COUNT(*) FROM USUARIOS WHERE id = $id");
+       return sql2value("SELECT COUNT(*) FROM USUARIOS WHERE id = '{$nivel}'"); 
     }
+
+    
     
 }
 
