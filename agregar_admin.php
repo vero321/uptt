@@ -8,8 +8,9 @@ $nucleos=bd_nucleos_datos();
 $pnf=bd_pnf_datos();
 $numero=$_SESSION['numero'];
 $datos=$_SESSION['r'][$numero];
-#vq($datos);
+$nivel=$_GET['5ea6fd8de7329'];
 
+$smarty->assign('nivel',$nivel);
 $smarty->assign('roles',$roles);
 $smarty->assign('nucleos',$nucleos);
 $smarty->assign('pnf',$pnf);

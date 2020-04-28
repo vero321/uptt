@@ -11,6 +11,10 @@
             </div>
             <form method="POST" action="{$si}">
             	<input type="hidden" name="id" value="{$id}">
+              <input type="hidden" name="nivel" value="{$nivel}">
+              {if isset($rol)}
+                <input type="hidden" name="rol" value="{$rol}">
+              {/if}
             	<button  class="btn btn-dark" type="submit" name="enviar" value="Eliminar">SI</button>
             	<a href="{$no}" class="btn btn-dark" >NO</a>
             </form>

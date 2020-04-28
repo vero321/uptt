@@ -5,6 +5,10 @@ $roles=$_POST['rol'];
 $n_roles=count($roles);
 $id=$_POST['id'];
 $correo=$_POST['correo'];
+$nivel=$_POST['nivel'];
+#vq($nivel);
+
+
 
 $sql1="SELECT id, correo FROM USUARIOS WHERE id LIKE '{$id}'";
 
@@ -16,12 +20,12 @@ $verificacion_correo = sql2row($sql2);
 if ($verificacion_id > 0) {
 	#si el usuario estaregistrado
 	$m=" El usuario <strong>$id</strong> ya esta registrado";
-	ir("mensaje.php?m=$m&d=usuarios.php");
+	ir("mensaje.php?m=$m&d=usuarios.php?5ea6fd8de7329=$nivel");
 }
 if ($verificacion_correo > 0) {
 	#si el correo estaregistrado
 	$m=" El usuario <strong>$correo</strong> ya esta registrado";
-	ir("mensaje.php?m=$m&d=usuarios.php");
+	ir("mensaje.php?m=$m&d=usuarios.php?5ea6fd8de7329=$nivel");
 }
 else{
 	
@@ -32,7 +36,7 @@ else{
 	
 
 	$m="Usuario <strong>$id</strong> se agregó correctamente a la lista de usuarios";
-	ir("mensaje.php?m=$m&d=usuarios.php");
+	ir("mensaje.php?m=$m&d=usuarios.php?5ea6fd8de7329=$nivel");
 
 }
 
