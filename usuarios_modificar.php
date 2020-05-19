@@ -1,10 +1,10 @@
 <?php
 include_once "./inicializacion.php";
 verificar();
-
-#$roles=bd_roles_datos();
+$rol_listar=$_GET['5ea6fd8de7329'];
 $id = $_GET['id'];
-$a=bd_usuarios_datos($id);
-#$smarty->assign('roles',$roles);
-$smarty->assign('usuario', bd_usuarios_datos($id));
+$usuario=bd_usuarios_datos($id);
+
+$smarty->assign('usuario', $usuario);
+$smarty->assign('rol_listar', $rol_listar);
 $smarty->display('usuarios_modificar.html');

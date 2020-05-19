@@ -41,6 +41,9 @@
                     <th>Nombre Largo</th>
                     <th>Nombre Corto</th>
                     <th>Funciones</th>
+                    {if in_array("NUCL_R", $verificar) == TRUE }
+                    <th>Responsable</th>
+                    {/if}
                     <th> <div class="btn-group">                        
                     <button class="btn btn-sm btn-outline-info" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample" title="Buscar">
                     <samp class="fa fa-search"></samp>
@@ -76,6 +79,21 @@
                     {/if}
 
                     </td>
+                    {if in_array("NUCL_R", $verificar) == TRUE }
+                      <td>
+                        {if $nucleos[i].responsable ==  NULL}
+                          <a class="btn btn-sm btn-outline-primary mimodal" type="button"href="nucleo_responsable.php?id={$nucleos[i].id}" title="Asignar responsable Nucleo o Extensión"><span class="fa fa-plus"></span></a>
+                        {else}
+                        {$persona=bd_personas_datos($nucleos[i].responsable)}
+                        <span><b>Nombre:</b></span>
+                        {$persona[0].nombre}
+                        <br>
+                        {$usuario=bd_usuarios_datos($nucleos[i].responsable)}
+                        <span><b>Usuario:</b></span>
+                        {$usuario.correo}
+                        {/if}
+                      </td>
+                    {/if}
                   </tr>
                 {/section}
                 </tbody>

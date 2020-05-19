@@ -1,42 +1,33 @@
 <?php
 require_once './inicializacion.php';
-#vq($_POST);
-$roles=$_POST['rol'];
-$n_roles=count($roles);
+$verificar=verificar();
+
 $id=$_POST['id'];
 $correo=$_POST['correo'];
-$nivel=$_POST['nivel'];
-#vq($nivel);
+$rol_listar=$_POST['rol_listar'];
+
+
+#vq($_POST);
+
+
+$sql0="SELECT id, correo FROM USUARIOS WHERE id LIKE '{$id}' and  correo LIKE '{$correo}'";
 
 
 
-$sql1="SELECT id, correo FROM USUARIOS WHERE id LIKE '{$id}'";
+$consulta = sql2row($sql0);
 
-$sql2="SELECT id, correo FROM USUARIOS WHERE correo LIKE '{$correo}' ";
 
-$verificacion_id = sql2row($sql1);
-$verificacion_correo = sql2row($sql2);
-
-if ($verificacion_id > 0) {
-	#si el usuario estaregistrado
-	$m=" El usuario <strong>$id</strong> ya esta registrado";
-	ir("mensaje.php?m=$m&d=usuarios.php?5ea6fd8de7329=$nivel");
-}
-if ($verificacion_correo > 0) {
-	#si el correo estaregistrado
+if ($consulta > 0) {
 	$m=" El usuario <strong>$correo</strong> ya esta registrado";
-	ir("mensaje.php?m=$m&d=usuarios.php?5ea6fd8de7329=$nivel");
-}
-else{
+	ir("mensaje.php?m=$m&d=usuarios.php?5ea6fd8de7329=$rol_listar");
+	
+}else{
 	
 	$a=$_POST['hash']=password_hash($_POST['id'], PASSWORD_DEFAULT);
-	$id = bd_usuarios_registrar($_POST,$n_roles,$roles);
-
-
-	
+	$id = bd_usuarios_registrar($_POST);
 
 	$m="Usuario <strong>$id</strong> se agregó correctamente a la lista de usuarios";
-	ir("mensaje.php?m=$m&d=usuarios.php?5ea6fd8de7329=$nivel");
+	ir("mensaje.php?m=$m&d=usuarios.php?5ea6fd8de7329=$rol_listar");
 
 }
 

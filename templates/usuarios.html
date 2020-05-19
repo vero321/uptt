@@ -17,14 +17,14 @@
             {if in_array("USUA_A",$verificar) == TRUE}
 
               <a class="btn btn-sm btn-outline-primary mimodal" type="button"
-            data-href="agregar_admin.php?5ea6fd8de7329={$nivel}" title="Agregar Usuario"><span class="fa fa-plus"></span></a>
+            data-href="agregar_admin.php?5ea6fd8de7329={$rol}" title="Agregar Usuario"><span class="fa fa-plus"></span></a>
             {/if}
             </h2>
 
             <div class="collapse" id="collapseExample">
               <div class="jumbotron jumbo_buscar">
                 <div class="container">  
-                  <form action="usuarios.php?5ea6fd8de7329={$nivel}" method="POST">
+                  <form action="usuarios.php?5ea6fd8de7329={$rol}" method="POST">
                       <div class="input-group">
                         <input id="p" name="p" type="text" class="form-control" placeholder="Escriba aquí y pulse INTRO" aria-describedby="basic-addon1" required >
                         <span class="input-group-addon" id="basic-addon1" style="padding:0 12px;"><i class="fa fa-search"></i></span>
@@ -59,8 +59,8 @@
                     <a 
                       style="margin-bottom:3px; color:blue;" 
                       class="btn btn-default"
-                      title="Ver detalles de usuarios" 
-                      href="usuarios_datos.php?id={$usuarios[i].id}">
+                      title="Gestionar rol del usuario" 
+                      href="usuarios_roles.php?id={$usuarios[i].id}{if isset($asignar)}&r={$asignar}{/if}">
                       <i class="fa fa-archive"></i>
                     </a>
                     {/if}
@@ -69,7 +69,7 @@
                       style="margin-bottom:3px; color:blue;" 
                       class="btn btn-default mimodal" 
                       title="Modificar Usuario" 
-                      data-href="usuarios_modificar.php?id={$usuarios[i].id}&5ea6fd8de7329={$nivel}">
+                      data-href="usuarios_modificar.php?id={$usuarios[i].id}&5ea6fd8de7329={$rol}">
                       <i class="fa fa-pencil-square-o"></i>
                     </a>
                     {/if}
@@ -78,7 +78,7 @@
                       style="margin-bottom:3px; color:blue;" 
                       class="btn btn-default mimodal"
                       title="Eliminar Usuario" 
-                      data-href="usuarios_eliminar.php?id={$usuarios[i].id}&5ea6fd8de7329={$nivel}{if array_key_exists('id_rol', $usuarios[i])}&r={$usuarios[i].id_rol}{/if}">
+                      data-href="usuarios_eliminar.php?id={$usuarios[i].id}&5ea6fd8de7329={$nivel}&rol_a={$rol}{if array_key_exists('id_rol', $usuarios[i])}&r={$usuarios[i].id_rol}{/if}">
                       <!-- en el if anterior verificamos si existe la key id_rol dentro del array para elminar este rol en espesifico se debe enviar el valor de esta variable como parametro -->
                       <i class="fa fa-trash"></i>
                     </a>

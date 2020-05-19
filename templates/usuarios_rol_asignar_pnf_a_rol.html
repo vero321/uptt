@@ -1,28 +1,32 @@
+{include file="cabecera_interna.html"}
+<br>
+<br>
+<br>
+<br>
 <div class="container">
 <div class="row">
-  <div class="col-2"></div>
-  <div class="col-8">   
+  <div class="col-4"></div>
+  <div class="col-6">    
     <section id="home" class="text-center"></section>
         <section id="intro">
             <div class="container">
               <div class="centro"> 
-                  <h1>Agregar Rol </h1>
+                  <h1>Asignar un PNF </h1>
                     <form 
-                      action="proc_usuarios_rol_agregar.php" 
+                      action="proc_usuarios_rol_asignar_pnf_a_rol.php" 
                       method="POST" 
                       class="px-4 py-3" 
-                      id="registro_usuario"
-                      name="registro_usuario">
+                      id="registro_pnf_a_rol"
+                      name="registro_pnf_a_rol">
                         <div class="form-group">
                         <input type="hidden" name="id" value="{$id}">
+                        <input type="hidden" name="id_usuario" value="{$id_usuario}">
+                          {section name=i loop=$pnf}
 
-                          {section name=i loop=$roles}
                             <div class="form-check">
-
                               <label class="form-check-label">
-                                <input type="checkbox"  class="form-check-input"  
-                                name="rol[]" value="{$roles[i].id}">
-                                {$roles[i].rol}
+                                <input class="form-check-input" type="radio" name="pnf" id="pnf" value="{$pnf[i].id_pnf}">
+                                {$pnf[i].nombre_corto}
                               </label>
                             </div>
                           {/section}
@@ -42,3 +46,5 @@
   </div>
 </div>
 
+
+{include file="pie_interno.html"}

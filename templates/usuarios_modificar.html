@@ -12,8 +12,7 @@
                       method="POST" 
                       class="px-4 py-3" 
                       id="registro_usuario"
-                      name="registro_usuario"           >
-                    
+                      name="registro_usuario">
                       <div class="form-group">
                           <label for="id">Cedula</label>
                            <input 
@@ -24,8 +23,8 @@
                             disabled="disabled"
                             placeholder=""
                             value="{$usuario.id}">
-                            <input type="hidden" name="id" value="{$usuario.id}">
                         </div>
+                        <input type="hidden" name="id" value="{$usuario.id}">
 
                       <div class="form-group">
                           <label for="correo">Correo Electrónico</label>
@@ -54,6 +53,7 @@
                         </div-->
 
 
+                      <input type="hidden" name="rol_listar" value="{$rol_listar}">
                       <div class="form-group">
                         <input 
                           class="btn-enviar btn btn-sm btn-primary" 

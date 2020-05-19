@@ -1,0 +1,104 @@
+{include file="cabecera_interna.html"}
+
+<!-- incluye menu y agrega el espasio de trbajo-->
+<div class="container" >
+            {include file="menu_lateral.html"}
+    <div class="row" id="central">
+        
+        <div class="col-sm-9" style="margin-top: 50px;" >
+
+
+
+<!--finaliza-->
+			<h2>Asinar responsable de {$nucleos['nombre_corto']}</h2>
+
+			              <div class="jumbotron jumbo_buscar">
+                <div class="container">  
+                  <form action="nucleo_responsable.php?id={$nucleos['id']}" method="POST">
+                      <div class="input-group">
+                        <input id="p" name="p" type="text" class="form-control" placeholder="Escriba aquí y pulse INTRO" aria-describedby="basic-addon1" required >
+                        <span class="input-group-addon" id="basic-addon1" style="padding:0 12px;"><i class="fa fa-search"></i></span>
+                      </div>
+                  </form>
+                </div>
+              </div>
+
+            {if isset($usuarios)}
+			    <section id="home" class="text-center"></section>
+			        <section id="intro">
+			            <div class="container">
+			              <div class="centro"> 
+			              	<h3>Selecione un Usuario</h3>
+			                    <form 
+			                      action="nucleo_responsable.php?id={$nucleos['id']}" 
+			                      method="POST" 
+			                      class="px-4 py-3" 
+			                      id="Asignar_responsable_de_nucleo"
+			                      name="Asignar_responsable_de_nucleo">
+			                    <div class="form-group">
+			                        <input type="hidden" name="id_nucleo" value="{$nucleos['id']}">
+
+			                    	{section name=i loop=$usuarios}
+			                        <div class="form-check">
+			                              <label class="form-check-label">
+			                                <input type="radio"  class="form-check-input"  
+			                                name="id_usuario" value="{$usuarios[i].id}">
+			                                {$usuarios[i].correo}
+			                            </label>
+			              	        </div>
+			                    {/section}
+		                        </div>
+	                    		<div class="form-group">
+			                        <input 
+		                          class="btn-enviar btn btn-sm btn-primary" 
+			                          type="submit" 
+			                          name="enviar" 
+			                          value="Siguiente">
+		                      </div>
+			                </form>
+			            </div>
+			        </div>
+			    </section>
+            {/if}
+            {if isset($roles)}
+            	 <section id="home" class="text-center"></section>
+				    <section id="intro">
+				        <div class="container">
+				            <div class="centro"> 
+				            	<h3>Selecione un Rol</h3>
+				                <form 
+				                    action="nucleo_responsable.php?id={$nucleos['id']}" 
+				                    method="POST" 
+				                    class="px-4 py-3" 
+				                    id="Asignar_responsable_de_nucleo"
+				                    name="Asignar_responsable_de_nucleo">
+				                    <div class="form-group">
+				                        <input type="hidden" name="id_usuario" value="{$id_usuario}">
+				                        <input type="hidden" name="id_nucleo" value="{$nucleos['id']}">
+			                          	{section name=i loop=$roles}
+				                            <div class="form-check">
+				                	            <label class="form-check-label">
+				                                <input type="radio"  class="form-check-input"  
+				                                name="id_rol" value="{$roles[i].id}">
+				                                {$roles[i].rol}
+				                              </label>
+				            	            </div>
+				        	            {/section}
+				                    </div>
+				                    <div class="form-group">
+				                       <input 
+				                          class="btn-enviar btn btn-sm btn-primary" 
+				                          type="submit" 
+				                          name="enviar" 
+				                          value="Registra">
+				                    </div>
+				                </form>
+				    	    </div>
+				        </div>
+				    </section>
+            {/if}
+        </div>
+    </div>
+</div>
+
+{include file="pie_interno.html"}

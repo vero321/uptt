@@ -26,7 +26,7 @@ for ($i=0; $i < $n; $i++) {
 		}
 	}
 }
-$privilegios=array_reverse($privilegios);
+#$privilegios=array_reverse($privilegios);
 
 $smarty->assign('id',$id);
 $smarty->assign('privilegios',$privilegios);

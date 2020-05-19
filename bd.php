@@ -202,10 +202,20 @@ function paginar($totalpaginas,$rango,$pagina_actual=1)
         return $paginas;
     }
 
-function bd_usuarios_datos2($inicio, $cantidad, $nivel, $nucleo, $pnf){
+function bd_usuarios_datos2($inicio, $cantidad, $rol, $nucleo, $pnf, $nivel){
     # Esta Funcion es la funcion para mostrar la lista de usuarios segun el nivel correspondiente al usuario  
+    
     switch ($nivel) {
-        case "5ea6fd8de7370":
+        default:
+            # code...
+            $resultado=sql2array("SELECT DISTINCT USUARIOS.id, correo, id_rol
+            FROM USUARIOS, ROLES, USUARIOS__ROLES
+            WHERE ROLES.id = '$rol' and USUARIOS.id = id_usuario and id_rol = ROLES.id and id_nucleo = '$nucleo' and id_pnf = '$pnf'
+            ORDER BY USUARIOS.id ASC#
+            LIMIT $inicio,$cantidad
+            ");
+        break;
+        case 1000:
             # Este es el caso de los usuarios que necesitan ver todos los usuarios
             $resultado=sql2array("SELECT id, correo
             FROM USUARIOS
@@ -213,24 +223,26 @@ function bd_usuarios_datos2($inicio, $cantidad, $nivel, $nucleo, $pnf){
             LIMIT $inicio,$cantidad
             ");
         break;
-        case "5ea6fd8de73af":
-            # Este es el caso de los usuarios que necesitan ver todos los usuarios execto los de nivel 1000 y nivel 900
-            $resultado=sql2array("SELECT DISTINCT USUARIOS.id, correo
+        case 900:
+            # Aca se muestran todos los usuarios con el rol que estemos resiviendo de un mismo nucleo
+            $resultado=sql2array("SELECT DISTINCT USUARIOS.id, correo, id_rol
             FROM USUARIOS, ROLES, USUARIOS__ROLES
-            WHERE nivel != 1000 and nivel != 900 and USUARIOS.id = id_usuario and id_rol = ROLES.id
+            WHERE ROLES.id = '$rol' and USUARIOS.id = id_usuario and id_rol = ROLES.id and id_nucleo = '$nucleo'
             ORDER BY USUARIOS.id ASC#
             LIMIT $inicio,$cantidad
             ");
         break;
-        case "5ea6fd8de75be":
+        /*
+        case "800":
             # Este es el caso de los usuarios que necesitan ver los usuarios nivel 800
             $resultado=sql2array("SELECT DISTINCT USUARIOS.id, correo, id_rol
             FROM USUARIOS, ROLES, USUARIOS__ROLES
-            WHERE nivel = 800 and USUARIOS.id = id_usuario and id_rol = ROLES.id and id_nucleo = '$nucleo'
+            WHERE ROLES.id = '$rol' and USUARIOS.id = id_usuario and id_rol = ROLES.id and id_nucleo = '$nucleo'
             ORDER BY USUARIOS.id ASC#
             LIMIT $inicio,$cantidad
             ");
         break;
+        
         case "5ea6fd8de76d1":
             # Este es el caso de los usuarios que necesitan verlos usuarios nivel 700
             $resultado=sql2array("SELECT DISTINCT USUARIOS.id, correo, id_rol
@@ -294,17 +306,17 @@ function bd_usuarios_datos2($inicio, $cantidad, $nivel, $nucleo, $pnf){
             ORDER BY USUARIOS.id ASC#
             LIMIT $inicio,$cantidad
             ");
-        break;
-        default:
-            # code...
-        break;
+        break;*/
+
 
     }
+    
+
 
      return $resultado;
 }
 
-function bd_usuarios_datos3($campos, $palabras,$cantidad,$nivel){
+function    bd_usuarios_datos3($campos, $palabras,$cantidad,$rol,$nucleo,$pnf,$nivel){
     # Esta Funcion es la funcion de buscar usuarios 
 
     $miscampos = explode(',', $campos);
@@ -315,6 +327,13 @@ function bd_usuarios_datos3($campos, $palabras,$cantidad,$nivel){
     $condicion = implode(' OR ', $miscampos);
 
     switch ($nivel) {
+        default:
+             $resultado=sql2array("SELECT DISTINCT USUARIOS.id, correo FROM USUARIOS, ROLES, USUARIOS__ROLES
+            WHERE ($condicion ) and (ROLES.id = '$rol' and USUARIOS.id = id_usuario and id_rol = ROLES.id and id_nucleo = '$nucleo' and id_pnf = '$pnf') 
+            LIMIT $cantidad
+            ");
+        break;
+
         case 1000:
             # Este es el caso de los usuarios que necesitan ver todos los usuarios
              $resultado=sql2array("SELECT id, correo FROM USUARIOS
@@ -325,11 +344,12 @@ function bd_usuarios_datos3($campos, $palabras,$cantidad,$nivel){
         case 900:
             # Este es el caso de los usuarios que necesitan ver todos los usuarios execto los de nivel 1000
             $resultado=sql2array("SELECT DISTINCT USUARIOS.id, correo FROM USUARIOS, ROLES, USUARIOS__ROLES
-            WHERE ($condicion ) and (nivel != 1000 and nivel != 900 and USUARIOS.id = id_usuario and id_rol = ROLES.id) 
+            WHERE ($condicion ) and (ROLES.id = '$rol' and USUARIOS.id = id_usuario and id_rol = ROLES.id and id_nucleo = '$nucleo') 
             LIMIT $cantidad
             ");
 
             break;
+        /*
         case 800:
             # Este es el caso de los usuarios que necesitan ver los usuarios nivel 700
             $resultado=sql2array("SELECT DISTINCT USUARIOS.id, correo, id_rol FROM USUARIOS, ROLES, USUARIOS__ROLES, id_rol
@@ -338,6 +358,15 @@ function bd_usuarios_datos3($campos, $palabras,$cantidad,$nivel){
             ");
 
             break;
+        case 800:
+            # Este es el caso de los usuarios que necesitan ver los usuarios nivel 800
+            $resultado=sql2array("SELECT DISTINCT USUARIOS.id, correo, id_rol
+            FROM USUARIOS, ROLES, USUARIOS__ROLES
+            WHERE ($condicion ) and (ROLES.id = '$rol' and USUARIOS.id = id_usuario and id_rol = ROLES.id and id_nucleo = '$nucleo')
+            ORDER BY USUARIOS.id ASC#
+            LIMIT $inicio,$cantidad
+            ");
+        break;
         case 700:
             # Este es el caso de los usuarios que necesitan verlos usuarios nivel 700
             $resultado=sql2array("SELECT DISTINCT USUARIOS.id, correo, id_rol FROM USUARIOS, ROLES, USUARIOS__ROLES
@@ -380,9 +409,7 @@ function bd_usuarios_datos3($campos, $palabras,$cantidad,$nivel){
             WHERE ($condicion ) and (nivel = 100 and USUARIOS.id = id_usuario and id_rol = ROLES.id) 
             LIMIT $cantidad
             ");
-        default:
-            # code...
-            break;
+            */
     }
 
  return $resultado;
@@ -442,7 +469,8 @@ function bd_usuarios_modificar_clave($d)
 
 
 
-function bd_usuarios_registrar($usuario,$n_roles,$roles){   
+function bd_usuarios_registrar($usuario,$n_roles,$roles,$nucleos,$caso){ 
+
     $sql1="
         INSERT INTO USUARIOS(id, clave, correo)
         VALUES ('{$usuario['id']}','{$usuario['hash']}','{$usuario['correo']}')
@@ -459,16 +487,7 @@ function bd_usuarios_registrar($usuario,$n_roles,$roles){
              ";
     sql($sql2);
     }
-
-    for ($i=0; $i <$n_roles ; $i++) { 
-        # code...
-        $rol=$roles[$i];
-        $sql="
-            INSERT INTO USUARIOS__ROLES(id_usuario, id_rol)
-            VALUES ('{$usuario['id']}','{$rol}')
-        ";
-        sql($sql);
-    }
+    
     return "{$usuario['id']}";
 
 }
@@ -477,7 +496,7 @@ function bd_usuarios_registrar($usuario,$n_roles,$roles){
 function bd_usuarios_roles_datos($id){
 
     $sql="
-            SELECT id_rol, id_nucleo, id_pnf, rol, nivel
+            SELECT USUARIOS__ROLES.id, id_rol, id_nucleo, id_pnf, rol, nivel
             FROM USUARIOS__ROLES, ROLES 
             WHERE id_usuario LIKE '{$id}' && id_rol LIKE ROLES.id  ";
         $salida = sql2array($sql);
@@ -565,6 +584,22 @@ function bd_nucleos_eliminar($id)
     sql($sql);
     return $nucleos['id'];
 }
+function bd_nucleo_responsable($id_nucleo,$id_rol,$id_usuario){
+    $sql0="
+        UPDATE USUARIOS__ROLES SET
+        id_nucleo = '{$id_nucleo}'
+        WHERE id ='{$id_rol}'
+        ";
+    sql($sql0);
+    $sql1="
+        UPDATE NUCLEOS SET
+        responsable = '{$id_usuario}'
+        WHERE id = $id_nucleo
+    ";
+    sql($sql1);
+    $m="Nucleo asignado con exito";
+    ir("mensaje.php?m=$m&d=nucleos.php");
+}
 
 ###########################Funciones PNF
 
@@ -583,6 +618,16 @@ function bd_pnf_datos($id=NULL)
             ";
         $salida = sql2array($sql);
     }
+    return $salida;
+}
+
+function bd_nucleos_pnf_datos($id){
+    $sql="
+    SELECT *
+    FROM NUCLEOS__PNF, PNF
+    WHERE id_nucleo = '{$id}' and id_pnf = PNF.id
+    ";
+    $salida = sql2array($sql);
     return $salida;
 }
 
@@ -624,86 +669,20 @@ function bd_pnf_modicar($pnf)
 ############################## Funciones Roles
 
 function bd_roles_datos($id=NULL){
-    $nivel=$_SESSION['r'][$_SESSION['numero']]['nivel'];
     if ($id!=NULL) {
         $sql="
             SELECT *
             FROM ROLES
             WHERE id LIKE '{$id}'
-
             ";
         $salida = sql2row($sql);
     } else {
-        switch ($nivel) {
-            default:
-                # por defecto
-                 $sql="
-                SELECT *
-                FROM ROLES
-                ";
-                $salida = sql2array($sql);
-                break;
-            case 900:
-                # ve todos los roles exepto el 1000 y el 900
-                $sql="
-                SELECT *
-                FROM ROLES
-                WHERE nivel != 1000 and nivel != 900
-                ";
-                $salida = sql2array($sql);
-                break;
-            case 800:
-                # solo ve los roles de nivel 700
-                $sql="
-                SELECT *
-                FROM ROLES
-                WHERE nivel = 700
-                ";
-                $salida = sql2array($sql);
-                break;
-            case 700:
-                # ve los roles de nivel 600 y 500
-                $sql="
-                SELECT *
-                FROM ROLES
-                WHERE nivel = 600 or nivel = 500
-                ";
-                $salida = sql2array($sql);
-                break;
-            case 600:
-                # Aun no definido
-                break;
-            case 500:
-                # ve los roles de nivel 400, 300 y 00
-                $sql="
-                SELECT *
-                FROM ROLES
-                WHERE nivel = 400 or nivel = 300 or nivel = 200
-                ";
-                $salida = sql2array($sql);
-                break;
-            case 400:
-                # Aun no definido
-                break;
-            case 300:
-                # ve los roles de nivel 400, 300 y 00
-                $sql="
-                SELECT *
-                FROM ROLES
-                WHERE nivel = 200
-                ";
-                $salida = sql2array($sql);
-                break;
-        case 200:
-                # Aun no definido
-                break;
-        case 100:
-                # Aun no definido
-                break;
-            
-        }
-       
-    }
+            $sql="
+            SELECT *
+            FROM ROLES
+            ";
+            $salida = sql2array($sql);
+       }
     return $salida;
 }
 
@@ -762,21 +741,29 @@ function bd_privilegios_datos($id=NULL){
 
 
 function bd_roles_argregar($rol,$n_privilegios,$privilegios){
-    $unico=uniqid();
-    $sql1="
+    $unico=uniqid();# Codigo unico para id del rol 
+    # Crea el rol en la tabla ROLES
+    $sql0="
         INSERT INTO ROLES(id, rol, nivel)
         VALUES ('{$unico}','{$rol['rol']}','{$rol['nivel']}')
         ";
+    sql($sql0);
+    # Crea un privilegio para poder ver la lista de todos los usuarios con ese rol
+    $sql1="
+        INSERT INTO PRIVILEGIOS(codigo, privilegio, direccion, nombre, icono)
+        VALUES ('{$unico}','Ver lista de {$rol['rol']}','usuarios.php?5ea6fd8de7329={$unico}','{$rol['rol']}','fa fa-users')
+    ";
     sql($sql1);
-
+    
+    # Guarda los privilegios pertenecientes a cada rol
     for ($i=0; $i <$n_privilegios ; $i++) { 
         # code...
         $privilegio=$privilegios[$i];
-        $sql="
+        $sql2="
             INSERT INTO ROLES__PRIVILEGIOS(id_rol, id_privilegio)
             VALUES ('{$unico}','{$privilegio}')
         ";
-        sql($sql);
+        sql($sql2);
     }
     return "{$usuario['id']}";
 }
@@ -907,11 +894,24 @@ function bd_eliminar_privilegios_rol($id_rol,$id_privilegio=NULL){
 }
 
 function bd_roles_eliminar($id){
-    $sql = "
+    $sql0 = "
         DELETE FROM ROLES
         WHERE id = '{$id}'
         ";
-    sql($sql);
+    sql($sql0);
+
+    $sql1 = "
+        DELETE FROM PRIVILEGIOS
+        WHERE codigo = '{$id}'
+    ";
+    sql($sql1);
+
+    $sql2 = "
+        DELETE FROM USUARIOS__ROLES
+        WHERE id_rol = '{$id}'
+    ";
+    sql($sql2);
+
     return $id;
 }
 

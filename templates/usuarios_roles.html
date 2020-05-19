@@ -1,0 +1,100 @@
+{include file="cabecera_interna.html"}
+
+
+<!-- incluye menu y agrega el espasio de trbajo-->
+<div class="container" >
+            {include file="menu_lateral.html"}
+    <div class="row" id="central">
+        
+        <div class="col-sm-9" style="margin-top: 50px;" >
+
+
+<!--finaliza-->
+
+              <h2 class="subtitulo" align="center"><span class="badge badge-secondary badge-pill"></span>Roles del usuario</h2>
+           
+              <table style="margin-top: 30px;" class="table table-responsive-xl">
+                <thead class="thead-dark">
+                  <tr>
+                    <th>Cedula</th>
+                    <th>Correo</th>
+                    <th>Roles
+                    {if in_array("USUA_AR",$verificar) == TRUE} 
+						          <a class="btn btn-sm btn-outline-primary mimodal" type="button" href="usuarios_rol_asignar.php?id={$usuario['id']}" title="Asignar un Rol a el Usuario"><span class="fa fa-plus"></span></a>
+                    {/if}
+                  </th>
+                  <th>Nucleo</th>
+                  <th>PNF</th>
+                  </tr>
+
+                </thead>
+                <tbody class="buscar" id="usuarios">
+                  <tr>
+                    <td>{$usuario['id']}</td>
+                    <td>{$usuario['correo']}</td>
+                    <td>
+                    	{section name=i loop=$roles}
+                    	<div class="list-group">
+                        {if isset($rol)}
+                          {if $roles[i].id_rol == $rol}
+                    		    <li class="list-group-item d-flex justify-content-between align-items-center">{$roles[i].rol}
+                          {/if}
+                        {else}
+                         <li class="list-group-item d-flex justify-content-between align-items-center">{$roles[i].rol}
+                        {/if}
+                          {if in_array("USUA_ER",$verificar) == TRUE}
+  			                    <a 
+  			                      style="margin-bottom:3px; color:blue;" 
+  			                      class="btn btn-default"
+  			                      title="Eliminar Rol a el Usuario" 
+  			                      href="proc_usuarios_rol_eliminar.php?id={$usuario['id']}&rol={$roles[i].id_rol}">
+  			                      <i class="fa fa-trash"></i>
+  			                    </a>
+                          {/if}
+                    		 </li>
+                    	</div>
+
+                    	{/section}
+                    </td>
+                    <td>
+                      {section name=i loop=$roles}
+                        <div class="list-group">
+                           <li class="list-group-item d-flex justify-content-between align-items-center">
+                          {if $roles[i].id_nucleo != NULL}
+                            {$nucleos=bd_nucleos_datos($roles[i].id_nucleo)}
+                            {$nucleos['nombre_corto']}
+                          {else}
+                            <a class="btn btn-sm btn-outline-primary mimodal" type="button" href="usuarios_rol_asignar_nucleo.php?id={$roles[i].id}&id_usuario={$usuario['id']}" title="Asignar un Nucleo a el Rol"><span class="fa fa-plus"></span></a>
+                            </a>
+                          {/if}
+                           </li>
+                        </div>
+                      {/section}
+                  <td>
+                      {section name=i loop=$roles}
+                        <div class="list-group">
+                           <li class="list-group-item d-flex justify-content-between align-items-center">
+                          {if $roles[i].id_pnf != NULL}
+                            {$nucleos=bd_pnf_datos($roles[i].id_pnf)}
+                            {$nucleos['nombre_corto']}
+                          {else}
+                            <a class="btn btn-sm btn-outline-primary mimodal" type="button" href="usuarios_rol_asignar_pnf_a_rol.php?id={$roles[i].id}&id_usuario={$usuario['id']}&nucleo={$roles[i].id_nucleo}" title="Asignar un PNF a el Rol"><span class="fa fa-plus"></span></a>
+                            </a>
+                          {/if}
+                           </li>
+                        </div>
+                      {/section}
+                    </td>
+                    
+                  </tr>
+                </tbody>
+              </table>
+          
+           
+		</div>
+	</div>
+</div>
+
+{include "modal/modal_box.html" prueba="Usuario"} 
+
+{include file="pie_interno.html"}
