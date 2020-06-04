@@ -1,5 +1,5 @@
 <?php
-require_once './inicializacion.php';
+require_once APP."/modulos/config/inicializacion.php";
 
 $_POST['id']=bd_roles_modificar($_POST);
 $rol = $_POST['rol'];

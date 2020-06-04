@@ -1,5 +1,6 @@
 <?php
-require_once './inicializacion.php';
+require_once APP."/modulos/config/inicializacion.php";
+
 $id=$_POST['id'];
 $nivel=$_POST['nivel'];
 $rol_listar=$_POST['rol_listar'];

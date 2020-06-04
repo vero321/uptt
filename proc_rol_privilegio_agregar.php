@@ -1,5 +1,6 @@
 <?php 
-include_once "./inicializacion.php";
+require_once APP."/modulos/config/inicializacion.php";
+
 $privilegios=$_POST['privilegio'];
 $n_privilegios=count($privilegios);
 $id=$_POST['id'];

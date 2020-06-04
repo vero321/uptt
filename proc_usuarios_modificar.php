@@ -1,5 +1,5 @@
 <?php
-require_once './inicializacion.php';
+require_once APP."/modulos/config/inicializacion.php";
 
 $_POST['id']=bd_usuarios_modificar($_POST);
 $id = $_POST['id'];

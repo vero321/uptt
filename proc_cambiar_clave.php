@@ -1,5 +1,5 @@
 <?php
-require_once './inicializacion.php';
+require_once APP."/modulos/config/inicializacion.php";
 
 $id = $_SESSION['u']['id'];
 $clave0 = $_POST['clave0'];

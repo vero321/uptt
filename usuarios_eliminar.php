@@ -1,5 +1,5 @@
 <?php 
-include_once "./inicializacion.php";
+include_once APP.'/modulos/config/inicializacion.php';
 verificar();
 $id = $_GET['id'];
 $nivel=$_GET['5ea6fd8de7329'];

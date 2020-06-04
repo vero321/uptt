@@ -1,5 +1,5 @@
 <?php
-require_once './inicializacion.php';
+require_once APP."/modulos/config/inicializacion.php";
 
 	$centros = $_POST['nombre'];
 

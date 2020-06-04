@@ -1,5 +1,6 @@
 <?php 
-include_once "./inicializacion.php";
+require_once APP."/modulos/config/inicializacion.php";
+
 $pnf=$_POST['pnf'];
 
 $id=$_POST['id'];

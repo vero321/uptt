@@ -1,5 +1,5 @@
 <?php
-require_once './inicializacion.php';
+require_once APP."/modulos/config/inicializacion.php";
 
 $personas = $_POST;
 $nombre=bd_personas_modicar($personas);

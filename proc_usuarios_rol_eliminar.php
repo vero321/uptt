@@ -1,5 +1,6 @@
 <?php 
-include_once "./inicializacion.php";
+require_once APP."/modulos/config/inicializacion.php";
+
 $id = $_GET['id'];
 $rol = $_GET['rol'];
 

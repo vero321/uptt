@@ -1,5 +1,8 @@
 <?php
-require_once './inicializacion.php';
+
+define('MOD', ''); 
+require_once './app.php';
+require_once APP. '/modulos/config/inicializacion.php';
 
 
 #$login=limpiar_texto($_POST['login'],'email');
@@ -35,7 +38,7 @@ if ((password_verify($clave,$hash)) or ( (password_verify($clave,$hash2) ) && ( 
 	#vq($_SESSION);
 
 
-	ir('inicio_interno.php');
+	ir('./modulos/inicio/inicio_interno.php');
 
 
 }

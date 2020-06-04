@@ -1,5 +1,5 @@
 <?php
-include_once "./inicializacion.php";
+require_once APP."/modulos/config/inicializacion.php";
 
 $correo=$_POST['correo'];
 $sql="SELECT correo FROM USUARIOS WHERE correo LIKE '{$correo}' ";

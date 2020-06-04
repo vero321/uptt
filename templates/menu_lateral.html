@@ -7,7 +7,7 @@
         {section  name=i loop= $smarty.session[{$smarty.session['actual']}] }
         {if {$smarty.session[{$smarty.session['actual']}][i].direccion} != NULL}
                 <li>
-                    <a href="{$smarty.session[{$smarty.session['actual']}][i].direccion}">
+                    <a href="../{$smarty.session[{$smarty.session['actual']}][i].direccion}">
                         <span class="sidebar-icon"><i class="{$smarty.session[{$smarty.session['actual']}][i].icono}"></i></span>
                         <span class="sidebar-title">{$smarty.session[{$smarty.session['actual']}][i].nombre|capitalize}</span>
                     </a>
