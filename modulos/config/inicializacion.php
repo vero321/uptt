@@ -16,4 +16,5 @@ require_once APP.'/vendor/dBug/dBug.php';
 
 
 $smarty= new smarty;
+$smarty->assign('app',APP);
 $smarty->compile_dir = APP.'/templates_c/';

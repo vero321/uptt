@@ -38,7 +38,7 @@ if ((password_verify($clave,$hash)) or ( (password_verify($clave,$hash2) ) && ( 
 	#vq($_SESSION);
 
 
-	ir('./modulos/inicio/inicio_interno.php');
+	ir('inicio_interno.php');
 
 
 }
