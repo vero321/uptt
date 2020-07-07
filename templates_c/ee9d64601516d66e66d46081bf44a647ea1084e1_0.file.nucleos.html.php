@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-07-04 11:45:07
+/* Smarty version 3.1.30, created on 2020-07-07 10:16:48
   from "/home/palencia/public_html/proyecto4/uptt/modulos/nucleo/templates/nucleos.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5f00a40305cc96_22098847',
+  'unifunc' => 'content_5f0483d0eec7a0_52902261',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'ee9d64601516d66e66d46081bf44a647ea1084e1' => 
     array (
       0 => '/home/palencia/public_html/proyecto4/uptt/modulos/nucleo/templates/nucleos.html',
-      1 => 1593877505,
+      1 => 1594131406,
       2 => 'file',
     ),
   ),
@@ -24,7 +24,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:../../pie/pie_interno.html' => 1,
   ),
 ),false)) {
-function content_5f00a40305cc96_22098847 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f0483d0eec7a0_52902261 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:../../cabecera/cabecera_interna.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -51,23 +51,11 @@ $_smarty_tpl->_subTemplateRender("file:../../cabecera/cabecera_interna.html", $_
             <?php }?>
           </h2>
 
-            <div class="collapse" id="collapseExample">
-              <div class="jumbotron jumbo_buscar">
-                <div class="container">  
-                  <form action="nucleos.php" method="POST">
-                      <div class="input-group">
-                        <input id="p" name="p" type="text" class="form-control" placeholder="Escriba aquí y pulse INTRO" aria-describedby="basic-addon1">
-                        <span class="input-group-addon" id="basic-addon1" style="padding:0 12px;"><i class="fa fa-search"></i></span>
-                      </div>
-                  </form>
-                </div>
-              </div>
-            </div>
            
     
             
 
-              <table class="table table-responsive-xl">
+              <table class="table table-responsive-xl" id="tabla_repo" style="width:100%">
                 <thead class="thead-dark">
                   <tr>
                     <th>Nombre Largo</th>
@@ -76,14 +64,9 @@ $_smarty_tpl->_subTemplateRender("file:../../cabecera/cabecera_interna.html", $_
                     <?php if (in_array("NUCL_R",$_smarty_tpl->tpl_vars['verificar']->value) == TRUE) {?>
                     <th>Responsable</th>
                     <?php }?>
-                    <th> <div class="btn-group">                        
-                    <button class="btn btn-sm btn-outline-info" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample" title="Buscar">
-                    <samp class="fa fa-search"></samp>
-                    </button>
-                </div></th>
                   </tr>
                 </thead>
-                <tbody class="buscar" id="personas">
+                <tbody>
 
                 <?php
 $__section_i_0_saved = isset($_smarty_tpl->tpl_vars['__smarty_section_i']) ? $_smarty_tpl->tpl_vars['__smarty_section_i'] : false;

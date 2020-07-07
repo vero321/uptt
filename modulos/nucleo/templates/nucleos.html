@@ -19,23 +19,11 @@
             {/if}
           </h2>
 
-            <div class="collapse" id="collapseExample">
-              <div class="jumbotron jumbo_buscar">
-                <div class="container">  
-                  <form action="nucleos.php" method="POST">
-                      <div class="input-group">
-                        <input id="p" name="p" type="text" class="form-control" placeholder="Escriba aquí y pulse INTRO" aria-describedby="basic-addon1">
-                        <span class="input-group-addon" id="basic-addon1" style="padding:0 12px;"><i class="fa fa-search"></i></span>
-                      </div>
-                  </form>
-                </div>
-              </div>
-            </div>
            
     
             
 
-              <table class="table table-responsive-xl">
+              <table class="table table-responsive-xl" id="tabla_repo" style="width:100%">
                 <thead class="thead-dark">
                   <tr>
                     <th>Nombre Largo</th>
@@ -44,14 +32,9 @@
                     {if in_array("NUCL_R", $verificar) == TRUE }
                     <th>Responsable</th>
                     {/if}
-                    <th> <div class="btn-group">                        
-                    <button class="btn btn-sm btn-outline-info" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample" title="Buscar">
-                    <samp class="fa fa-search"></samp>
-                    </button>
-                </div></th>
                   </tr>
                 </thead>
-                <tbody class="buscar" id="personas">
+                <tbody>
 
                 {section name=i loop=$nucleos}
 

@@ -68,7 +68,7 @@ return $a;
 
 function verificar(){	
   if (!isset($_SESSION['u'])) {
-	 ir('index.php');
+	 ir('../inicio/inicio.php');
   }
   elseif (isset($_SESSION['actual'])) {
     # code...

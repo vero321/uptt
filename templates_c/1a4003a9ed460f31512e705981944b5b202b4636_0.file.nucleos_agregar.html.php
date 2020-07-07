@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-07-04 11:45:11
+/* Smarty version 3.1.30, created on 2020-07-07 10:15:31
   from "/home/palencia/public_html/proyecto4/uptt/modulos/nucleo/templates/nucleos_agregar.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5f00a407677df2_97211454',
+  'unifunc' => 'content_5f048383ec14f2_41607089',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5f00a407677df2_97211454 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f048383ec14f2_41607089 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 
 <div class="container">
