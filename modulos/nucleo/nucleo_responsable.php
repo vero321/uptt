@@ -28,7 +28,7 @@ if (isset($_POST['id_rol'])){
 	$id_usuario=$_POST['id_usuario'];
 	bd_nucleo_responsable($id_nucleo,$id_rol,$id_usuario);
 	$m="Nucleo asignado con exito";
-    ir("../mensaje/mensaje.php?m=$m&d=../nucleo/nucleos.php");
+    ir("../../mensaje.php?m=$m&d=modulos/nucleo/nucleos.php");
 }
 
 $smarty->assign('nucleos', bd_nucleos_datos($id_nucleo));

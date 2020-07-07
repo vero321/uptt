@@ -11,38 +11,19 @@
 
 
 <!--finaliza-->
+
             <h2 class="subtitulo" align="center"><span class="badge badge-secondary badge-pill">{$n_pnf}</span>PNF
               {if in_array("PNF_A",$verificar) == TRUE}
               <a class="btn btn-sm btn-outline-primary mimodal" type="button" data-href="pnf_agregar.php" title="Agregar PNF"><span class="fa fa-plus"></span></a>
               {/if}
             </h2>
 
-            <div class="collapse" id="collapseExample">
-              <div class="jumbotron jumbo_buscar">
-                <div class="container">  
-                  <form action="pnf.php" method="POST">
-                      <div class="input-group">
-                        <input id="p" name="p" type="text" class="form-control" placeholder="Escriba aquí y pulse INTRO" aria-describedby="basic-addon1">
-                        <span class="input-group-addon" id="basic-addon1" style="padding:0 12px;"><i class="fa fa-search"></i></span>
-                      </div>
-                  </form>
-                </div>
-              </div>
-            </div>
-            
-            
-
-              <table class="table table-responsive-xl">
+              <table class="table table-responsive-xl" id="tabla_repo" style="width:100%">
                 <thead class="thead-dark">
                   <tr>
                     <th>Nombre Largo</th>
                     <th>Nombre Corto</th>
                     <th>Funciones</th>
-                    <th> <div class="btn-group">                        
-                    <button class="btn btn-sm btn-outline-info" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample" title="Buscar">
-                    <samp class="fa fa-search"></samp>
-                    </button>
-                </div></th>
                   </tr>
                 </thead>
                 <tbody class="buscar" id="personas">

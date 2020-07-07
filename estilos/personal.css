@@ -12,6 +12,7 @@ html
       
 }
 
+
 a.enlace-claro
 {
     color: #fff;
@@ -110,7 +111,7 @@ h5.nucleo
     padding-top:30px;
     padding-bottom:10px;
     width:100%;
-    z-index: 1100;
+    z-index: 900;
 }
 
 .espacio
@@ -231,6 +232,10 @@ h2.subtitulo
     padding-bottom: 20px;
 }
 
+.alerta
+{
+    text-align: center;
+}
 
 /* inicio menu latera sidebar */
 
@@ -341,6 +346,7 @@ h2.subtitulo
     justify-content: space-around;
     margin-top: 80px;
     margin-left: 20px;
+    margin-bottom: 100px;
 }
 
 .card-central
@@ -383,7 +389,7 @@ h2.subtitulo
     .pie_interno
     {
         font-size: small;
-        position: fixed;
+        position: absolute;
 
     }
     .img_inicio
@@ -407,6 +413,13 @@ h2.subtitulo
     justify-content: space-around;
     margin-top: 80px;
     margin-left: 160px;
+    margin-bottom: 100px;
+}
+   #central_datos
+{
+    justify-content: space-around;
+    margin-top: 80px;
+    margin-bottom: 100px;
 }
 
 /* fin menu latera sidebar*/

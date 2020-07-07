@@ -12,17 +12,17 @@ require_once APP."/modulos/config/inicializacion.php";
 	        $verificacion = sql2row($sql);
 	if ($verificacion > 0){
 		$m="Nucleo <strong>$nucleos</strong> El nucleo ya esta Registrado con exito.";
-		ir("../mensaje/mensaje.php?m=$m&d=./modulos/nucleo/nucleos.php");
+		ir("../../mensaje.php?m=$m&d=modulos/nucleo/nucleos.php");
 	}
 	else{
 		bd_nucleos_agregar($_POST);
 		$m="Nucleo <strong>$nucleos</strong> se agregó correctamente a la lista de nucleos.";
-		ir((APP."/modulos/mensaje/mensaje.php?m=$m&d=./modulos/nucleo/nucleos.php");
+		ir("../../mensaje.php?m=$m&d=modulos/nucleo/nucleos.php");
 	}
 
+$m="El Nucleo <strong>$id</strong> se agregó correctamente a la lista de Nucleos.";
+ir("../../mensaje.php?m=$m&d=modulos/nucleo/nucleos.php");
 
-$m="El nucleo <strong>$id</strong> se agregó correctamente a la lista de nucleos.";
-ir((APP."/modulos/mensaje/mensaje.php?m=$m&d=./modulos/nucleo/nucleos.php");
 #vq($id);
 
 

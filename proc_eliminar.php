@@ -1,5 +1,7 @@
 <?php
-require_once APP."/modulos/config/inicializacion.php";
+define('MOD', ''); 
+require_once './app.php';
+include_once APP.'/modulos/config/inicializacion.php';
 
 $id=$_POST['id'];
 $nivel=$_POST['nivel'];
@@ -10,13 +12,13 @@ if ($nivel == 1000) {
 	bd_usuarios_eliminar($id);
 	bd_eliminar_rol_usuario($id);
 	$m="Usuario eliminado con exito";
-	ir("mensaje.php?m=$m&d=usuarios.php?5ea6fd8de7329=5ea6fd8de75be");
+	ir("mensaje.php?m=$m&d=modulos/usuario/usuarios.php?5ea6fd8de7329=5ea6fd8de75be");
 }elseif (isset($_POST['rol'])) {
 	# code...
 	$id_rol=$_POST['rol'];
 	bd_eliminar_rol_usuario($id,$id_rol);
 	$m="Usuario eliminado con exito";
-	ir("mensaje.php?m=$m&d=usuarios.php?5ea6fd8de7329=$rol_listar");
+	ir("mensaje.php?m=$m&d=modulos/usuario/usuarios.php?5ea6fd8de7329=$rol_listar");
 }
 
 

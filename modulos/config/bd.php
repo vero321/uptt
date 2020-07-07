@@ -1097,4 +1097,16 @@ function bd_lineas_eliminar($id)
     return $lineas['id'];
 }
 
+function bd_lineas_modicar($lineas)
+{
+    $sql = "
+        UPDATE LINEAS_DE_INVESTIGACION SET
+            id = '{$lineas['id']}',
+            nombre = '{$lineas['nombre']}'
+        WHERE
+            id = '{$lineas['id']}'
+    ";
+    sql($sql);
+    return $nombre;
+}
 
