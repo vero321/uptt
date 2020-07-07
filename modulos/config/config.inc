@@ -12,8 +12,8 @@ num_items = 20
 
 [bd]
 host  = localhost
-login = root
-clave = vero
+login = jose
+clave = 1234
 bd    = uptt_r
 
 

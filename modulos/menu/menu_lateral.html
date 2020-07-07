@@ -1,0 +1,39 @@
+<!--inicio menu lateral-->
+<div id="wrapper" style="margin-top: -40px; padding-right: 50px;">
+  <div id="sidebar-wrapper">
+    <aside id="sidebar">
+      <ul id="sidemenu" class="sidebar-nav">
+        <li><a href="#"><span class="sidebar-icon"></span><span class="sidebar-title"><b>{$smarty.session["r"][$smarty.session["numero"]].rol}</b></span></a></li>
+        {section  name=i loop= $smarty.session[{$smarty.session['actual']}] }
+        {if {$smarty.session[{$smarty.session['actual']}][i].direccion} != NULL}
+                <li>
+                    <a href="../{$smarty.session[{$smarty.session['actual']}][i].direccion}">
+                        <span class="sidebar-icon"><i class="{$smarty.session[{$smarty.session['actual']}][i].icono}"></i></span>
+                        <span class="sidebar-title">{$smarty.session[{$smarty.session['actual']}][i].nombre|capitalize}</span>
+                    </a>
+                </li>
+        {else}
+        {/if}
+            {/section}
+
+
+        <!--<li>
+
+            <a class="accordion-toggle collapsed toggle-switch" data-toggle="collapse" href="#submenu-2">
+                <span class="sidebar-icon"><i class="fa fa-folder-open"></i></span>
+                <span class="sidebar-title">Submenu</span>
+                <b class="caret"></b>
+            </a>
+            <ul id="submenu-2" class="panel-collapse collapse panel-switch" role="menu">
+                <li><a href="#"><i class="fa fa-caret-right"></i>Users</a></li>
+                <li><a href="#"><i class="fa fa-caret-right"></i>Roles</a></li>
+            </ul>
+        </li>-->
+      </ul>
+    </aside>            
+  </div>
+  <main id="page-content-wrapper" role="main">
+  </main>
+</div>
+
+<!--fin menu lateral-->

@@ -1,6 +1,6 @@
 <?php 
 define('MOD', 'nucleo'); 
-require_once '../../app.php';
+require_once '../config/app.php';
 include_once APP.'/modulos/config/inicializacion.php';
 $verificar=verificar();
 
@@ -27,9 +27,11 @@ if (isset($_POST['id_rol'])){
 	$id_rol=$_POST['id_rol'];
 	$id_usuario=$_POST['id_usuario'];
 	bd_nucleo_responsable($id_nucleo,$id_rol,$id_usuario);
+	$m="Nucleo asignado con exito";
+    ir("../mensaje/mensaje.php?m=$m&d=../nucleo/nucleos.php");
 }
 
 $smarty->assign('nucleos', bd_nucleos_datos($id_nucleo));
-$smarty->assign('pie', file_get_contents('../../pie/usuarios.html'));
+$smarty->assign('pie', file_get_contents(APP.'/modulos/pie/usuarios.html'));
 
 $smarty->display('nucleo_responsable.html');

@@ -1,6 +1,6 @@
 <?php
 define('MOD', 'lineas_de_investigacion'); 
-require_once '../../app.php';
+require_once '../config/app.php';
 require_once APP."/modulos/config/inicializacion.php";
 
 	$lineas = $_POST['nombre'];

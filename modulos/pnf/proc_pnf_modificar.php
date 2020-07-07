@@ -1,6 +1,6 @@
 <?php
 define('MOD', 'pnf'); 
-require_once '../../app.php';
+require_once '../config/app.php';
 require_once APP."/modulos/config/inicializacion.php";
 
 $pnf = $_POST;

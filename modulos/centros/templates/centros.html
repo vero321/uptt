@@ -1,0 +1,90 @@
+{include file="../../cabecera/cabecera_interna.html"}
+
+<!-- incluye menu y agrega el espasio de trbajo-->
+<div class="container" >
+            {include file="../../menu/menu_lateral.html"}
+    <div class="row" id="central">
+        
+        <div class="col-sm-9" style="margin-top: 50px;" >
+
+
+
+<!--finaliza-->
+			
+          
+            <h2 class="subtitulo" align="center"><span class="badge badge-secondary badge-pill">{$n_centros}</span>Centros de Investigación
+            {if in_array("CENT_A",$verificar) == TRUE}
+             <a class="btn btn-sm btn-outline-primary mimodal" type="button"
+            data-href="centros_agregar.php" title="Agregar Centro de Investigación"><span class="fa fa-plus"></span></a>
+            {/if}
+          </h2>
+
+            <div class="collapse" id="collapseExample">
+              <div class="jumbotron jumbo_buscar">
+                <div class="container">  
+                  <form action="centros.php" method="POST">
+                      <div class="input-group">
+                        <input id="p" name="p" type="text" class="form-control" placeholder="Escriba aquí y pulse INTRO" aria-describedby="basic-addon1">
+                        <span class="input-group-addon" id="basic-addon1" style="padding:0 12px;"><i class="fa fa-search"></i></span>
+                      </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+           
+    
+            
+
+              <table style="margin-top: 30px;" class="table table-responsive-xl">
+                <thead class="thead-dark">
+                  <tr>
+                    <th>N°</th>
+                    <th>Nombre</th>
+                    <th>Funciones</th>
+                    <th><div class="btn-group">
+                    <button class="btn btn-sm btn-outline-info" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample" title="Buscar">
+                    <samp class="fa fa-search"></samp>
+                    </button>
+                    </div></th>
+                  </tr>
+                </thead>
+                <tbody class="buscar" id="personas">
+
+                {section name=i loop=$centros}
+
+                  <tr>
+                    <td>{$centros[i].id}</td>
+                    <td>{$centros[i].nombre}</td>
+
+                    <td class="text-center" style="white-space: nowrap;">
+                    {if in_array("CENT_M",$verificar) == TRUE}
+                    <a 
+                      style="margin-bottom:3px; color:blue;" 
+                      class="btn btn-default mimodal" 
+                      title="Modificar Centro de Investigación" 
+                      data-href="centros_modificar.php?id={$centros[i].id}">
+                      <i class="fa fa-pencil-square-o"></i>
+                    </a>
+                    {/if}
+                    {if in_array("CENT_E",$verificar) == TRUE}
+                    <a 
+                      style="margin-bottom:3px; color:blue;" 
+                      class="btn btn-default mimodal"
+                      title="Eliminar Centro de Investigación" 
+                      data-href="centros_eliminar.php?id={$centros[i].id}">
+                      <i class="fa fa-trash"></i>
+                    </a>
+                    {/if}
+                    </td>
+                  </tr>
+                {/section}
+                </tbody>
+              </table>
+              
+          </div>
+        </div>
+      </div>
+
+{include "../../modal/modal_box.html" prueba="Usuario"} 
+
+{include file="../../pie/pie_interno.html"}

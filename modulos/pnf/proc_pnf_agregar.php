@@ -1,6 +1,6 @@
 <?php
 define('MOD', 'pnf'); 
-require_once '../../app.php';
+require_once '../config/app.php';
 require_once APP."/modulos/config/inicializacion.php";
 
 	$pnf = $_POST['nombre_corto'];
@@ -11,7 +11,7 @@ require_once APP."/modulos/config/inicializacion.php";
 	        $verificacion = sql2row($sql);
 	if ($verificacion > 0){
 		$m="PNF <strong>$pnf</strong> registrado con exito.";
-		ir("../../mensaje.php?m=$m&d=./modulos/pnf/pnf.php");
+		ir(APP."mensaje.php?m=$m&d=./modulos/pnf/pnf.php");
 	}
 	else{
 		bd_pnf_agregar($_POST);

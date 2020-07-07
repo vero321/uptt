@@ -597,8 +597,6 @@ function bd_nucleo_responsable($id_nucleo,$id_rol,$id_usuario){
         WHERE id = $id_nucleo
     ";
     sql($sql1);
-    $m="Nucleo asignado con exito";
-    ir("mensaje.php?m=$m&d=nucleos.php");
 }
 
 ###########################Funciones PNF
