@@ -10,5 +10,5 @@ $n_mod=bd_lineas_modicar($lineas);
 
 
 $m="Linea <strong>$nombre</strong> modificada con exito";
-ir("../../mensaje.php?m=$m&d=modulos/linea_de_investigacion/lineas.php");
+ir("../mensaje/mensaje.php?m=$m&d=../linea_de_investigacion/lineas.php");
 

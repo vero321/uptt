@@ -9,6 +9,6 @@ bd_pnf_eliminar($id);
 
 
 $m="PNF eliminado con exito";
-ir("../../mensaje.php?m=$m&d=modulos/pnf/pnf.php");
+ir("../mensaje/mensaje.php?m=$m&d=../pnf/pnf.php");
 
 

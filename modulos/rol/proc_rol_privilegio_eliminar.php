@@ -9,6 +9,6 @@ $privilegio = $_GET['privilegio'];
 bd_eliminar_privilegios_rol($id,$privilegio);
 
 $m="Privilegio eliminado con exito";
-ir("../../mensaje.php?m=$m&d=modulos/rol/roles_datos.php?id=$id");
+ir("../mensaje/mensaje.php?m=$m&d=../rol/roles_datos.php?id=$id");
 
 

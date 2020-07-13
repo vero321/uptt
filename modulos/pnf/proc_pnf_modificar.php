@@ -10,5 +10,5 @@ $n_mod=bd_pnf_modicar($pnf);
 
 
 $m="PNF <strong>$id</strong> modificado con exito";
-ir("../../mensaje.php?m=$m&d=modulos/pnf/pnf.php");
+ir("../mensaje/mensaje.php?m=$m&d=../pnf/pnf.php");
 

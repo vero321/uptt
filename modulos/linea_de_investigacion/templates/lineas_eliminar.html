@@ -7,15 +7,15 @@
 
   <form   
 
-      action="../../mensaje_eliminar4.php"
+      action="../mensaje/mensaje_eliminar4.php"
       method="POST" 
       class="px-4 py-3" 
       id="lineas_eliminar"
       name="lineas_eliminar">
           <input type="hidden" name="nombre" 
           value="{$lineas.nombre}">
-          <input type="hidden" name="si" value="modulos/linea_de_investigacion/proc_lineas_eliminar.php">
-          <input type="hidden" name="no" value="modulos/linea_de_investigacion/lineas.php">
+          <input type="hidden" name="si" value="../linea_de_investigacion/proc_lineas_eliminar.php">
+          <input type="hidden" name="no" value="../linea_de_investigacion/lineas.php">
           <input type="hidden" name="id" value="{$lineas.id}">
       
           <div class="form-group">

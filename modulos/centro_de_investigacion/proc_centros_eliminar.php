@@ -9,6 +9,6 @@ bd_centros_eliminar($id);
 
 
 $m="Centro de Investigación eliminado con exito";
-ir("../../mensaje.php?m=$m&d=modulos/centro_de_investigacion/centros.php");
+ir("../mensaje/mensaje.php?m=$m&d=../centro_de_investigacion/centros.php");
 
 

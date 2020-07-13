@@ -9,6 +9,6 @@ bd_nucleos_eliminar($id);
 
 
 $m="Nucleo eliminado con exito";
-ir("../../mensaje.php?m=$m&d=modulos/nucleo/nucleos.php");
+ir("../mensaje/mensaje.php?m=$m&d=../nucleo/nucleos.php");
 
 

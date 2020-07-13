@@ -10,5 +10,5 @@ $n_mod=bd_nucleos_modicar($nucleos);
 
 
 $m="Nucleo <strong>$id</strong> modificado con exito";
-ir("../../mensaje.php?m=$m&d=modulos/nucleo/nucleos.php");
+ir("../mensaje/mensaje.php?m=$m&d=../nucleo/nucleos.php");
 

@@ -5,14 +5,14 @@
         <h1>Eliminar Rol</h1>
 
         <form 
-          action="../../mensaje_eliminar3.php" 
+          action="../mensaje/mensaje_eliminar3.php" 
           method="POST" 
           class="px-4 py-3" 
           id="eliminar_usuario"
           name="eliminar_usuario">
           <input type="hidden" name="privilegio" value="<b>{$datos.rol}</b> Si elimina este rol se eliminara de todos los usuarios que tengan este rol">
-          <input type="hidden" name="si" value="modulos/rol/proc_roloes_eliminar.php">
-          <input type="hidden" name="no" value="roles.php">
+          <input type="hidden" name="si" value="../rol/proc_roloes_eliminar.php">
+          <input type="hidden" name="no" value="../rol/roles.php">
           <input type="hidden" name="id" value="{$datos.id}">
            
           <div class="form-group">

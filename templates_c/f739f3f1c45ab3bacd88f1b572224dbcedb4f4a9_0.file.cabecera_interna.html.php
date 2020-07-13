@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-07-07 13:35:05
+/* Smarty version 3.1.30, created on 2020-07-13 14:46:23
   from "/home/veronica/public_html/uptt/modulos/cabecera/cabecera_interna.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5f04b2490d81c1_68482336',
+  'unifunc' => 'content_5f0cabffecf3b7_56388989',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'f739f3f1c45ab3bacd88f1b572224dbcedb4f4a9' => 
     array (
       0 => '/home/veronica/public_html/uptt/modulos/cabecera/cabecera_interna.html',
-      1 => 1594137294,
+      1 => 1594665542,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5f04b2490d81c1_68482336 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f0cabffecf3b7_56388989 (Smarty_Internal_Template $_smarty_tpl) {
 if (!is_callable('smarty_modifier_capitalize')) require_once '/home/veronica/public_html/uptt/vendor/smarty/libs/plugins/modifier.capitalize.php';
 ?>
 <!DOCTYPE html>
@@ -74,10 +74,19 @@ $_smarty_tpl->tpl_vars['__smarty_section_i'] = $__section_i_1_saved;
 ?>
 
     </ul>
-    <a href="../personas/personas_datos.php?id=<?php echo $_SESSION['u']['id'];?>
-" class="btn btn-link usuario"><i class="fa fa-user fa-fw"></i><?php echo $_SESSION["u"]["correo"];?>
+    <ul class="navbar-nav ml-auto ml-md-0">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="userDropdown" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user fa-fw"></i><?php echo $_SESSION["u"]["correo"];?>
 </a>
-    <a href="../login/proc_exit.php" class="btn btn-outline-danger"><i class="fa fa-sign-out-alt"></i>Salir</a>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
+                        <a class="dropdown-item" href="../personas/personas_datos.php?id=<?php echo $_SESSION['u']['id'];?>
+"><i class="fa fa-user fa-fw"></i>Perfil</a>
+                        <a class="dropdown-item" href="../personas/usuarios_cambiar_clave.php"><i class="fa fa-unlock-alt fa-lg fa-fw"></i>Cambiar</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="../login/proc_exit.php"><i class="a fa-sign-out-alt fa-fw"></i>Salir</a>
+                    </div>
+                </li>
+            </ul>
   </div>
 </nav>
 <?php }

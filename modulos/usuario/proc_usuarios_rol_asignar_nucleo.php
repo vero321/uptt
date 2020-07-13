@@ -17,4 +17,4 @@ $sql="
 sql($sql);
 
 $m="Nucleo asignado con exito";
-ir("../../mensaje.php?m=$m&d=modulos/usuario/usuarios_roles.php?id=$id_usuario");
+ir("../mensaje/mensaje.php?m=$m&d=../usuario/usuarios_roles.php?id=$id_usuario");

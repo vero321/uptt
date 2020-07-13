@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-07-07 13:42:50
+/* Smarty version 3.1.30, created on 2020-07-13 14:39:24
   from "/home/veronica/public_html/uptt/modulos/modal/modal_box.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5f04b41a1c2a88_43151126',
+  'unifunc' => 'content_5f0caa5c5485e3_82021066',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '4f3d39c2c83f8de28ccee19b107e4497a6ef6636' => 
     array (
       0 => '/home/veronica/public_html/uptt/modulos/modal/modal_box.html',
-      1 => 1594137294,
+      1 => 1594665177,
       2 => 'file',
     ),
   ),
@@ -20,9 +20,9 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5f04b41a1c2a88_43151126 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f0caa5c5485e3_82021066 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
-<!-- The Modal -->
+<!-- The Modal -->z
 <div class="modal" id="myModal">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">

@@ -11,17 +11,17 @@ include_once APP.'/modulos/config/inicializacion.php';
 	        $verificacion = sql2row($sql);
 	if ($verificacion > 0){
 		$m="Centro <strong>$centros</strong> El centro de investigación ya esta Registrado con exito.";
-		ir("../../mensaje.php?m=$m&d=modulos/centro_de_investigacion/centros.php");
+		ir("../mensaje/mensaje.php?m=$m&d=../centro_de_investigacion/centros.php");
 	}
 	else{
 		bd_centros_agregar($_POST);
 		$m="Centro <strong>$centros</strong> se agregó correctamente a la lista de centros de investigación.";
-		ir("../../mensaje.php?m=$m&d=modulos/centro_de_investigacion/centros.php");
+		ir("../mensaje/mensaje.php?m=$m&d=../centro_de_investigacion/centros.php");
 	}
 
 
 $m="El centro <strong>$id</strong> se agregó correctamente a la lista de centros.";
-ir("../../mensaje.php?m=$m&d=modulos/centro_de_investigacion/centros.php");
+ir("../mensaje/mensaje.php?m=$m&d=../centro_de_investigacion/centros.php");
 #vq($id);
 
 

@@ -17,4 +17,4 @@ sql($sql);
 
 
 $m="PNF asignado con exito";
-ir("../../mensaje.php?m=$m&d=modulos/usuariso/usuarios_roles.php?id=$id_usuario");
+ir("../mensaje/mensaje.php?m=$m&d=../usuariso/usuarios_roles.php?id=$id_usuario");

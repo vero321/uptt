@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-07-07 16:07:28
+/* Smarty version 3.1.30, created on 2020-07-13 14:36:54
   from "/home/veronica/public_html/uptt/modulos/personas/templates/personas_datos.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5f04d6007c9954_20652736',
+  'unifunc' => 'content_5f0ca9c67561d1_32818119',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '7d9eb5c99089ecbb130d0262669a6152368c8a6a' => 
     array (
       0 => '/home/veronica/public_html/uptt/modulos/personas/templates/personas_datos.html',
-      1 => 1594140907,
+      1 => 1594665177,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:../../pie/pie_interno.html' => 1,
   ),
 ),false)) {
-function content_5f04d6007c9954_20652736 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f0ca9c67561d1_32818119 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:../../cabecera/cabecera_interna.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -98,8 +98,6 @@ for ($__section_i_0_iteration = 1, $_smarty_tpl->tpl_vars['__smarty_section_i']-
         </div>
 
 
-          <a style="margin-bottom: 20px;" class="link float-left btn btn-light" href="usuarios_cambiar_clave.php" value="Cambiar Clave">
-          <i class="fa fa-unlock-alt fa-lg"></i>Cambiar Clave</a>
 
           <a style="margin-bottom: 20px;" class="link float-left btn btn-light mimodal" data-href="personas_modificar.php?id=<?php echo $_smarty_tpl->tpl_vars['personas']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['id'];?>
 " value="Modificar Datos">

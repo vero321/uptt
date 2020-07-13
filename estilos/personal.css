@@ -352,22 +352,27 @@ h2.subtitulo
 .card-central
 {
     margin: 0 5px 5px 5px;
+    border: solid 2px #0747a6;
+    border-radius: 15px;
+   
 }
 
-.ejem
-{
-    margin: 6px 10px 10px 10px;
-    max-width:90px;
+.body{
+    padding: 10px;
+    stop-color: red;
+    background-color: #f1f1f1;
+    border-radius: 15px;
 
 }
-.ejem2
-{
-    margin-left: -40px;
-    margin-right: -40px;
-    margin-bottom: 5px;
-    border: solid 1px #D3D7CF;
-    justify-content: space-around;
+
+#ejm{
+    background-color: #cbcaca;
+    border: solid 1px #212529;
+    border-radius: 10px;
+    
 }
+
+
 
 .img_inicio
     {
@@ -389,7 +394,10 @@ h2.subtitulo
     .pie_interno
     {
         font-size: small;
-        position: absolute;
+        position: fixed;
+        padding-left: 80px;
+        padding-bottom: 40px;
+        padding-top: 10px;
 
     }
     .img_inicio
@@ -429,3 +437,26 @@ h2.subtitulo
     margin-top: 10px;
     margin-bottom: 25%;
 }
+
+/* el estilo para agregar roles */
+
+.f_roles
+{
+    border: solid 1px #cbcaca;
+    border-radius: 15px;
+    padding: 10px;
+    margin-bottom: 10px;
+    margin-left: 8px;
+}
+
+.f_roles ul{
+    margin-bottom: 0;
+    padding-left: 1.2em;
+}
+
+.priv
+{
+    color:#007bff;
+    margin-left: 8px;
+}
+

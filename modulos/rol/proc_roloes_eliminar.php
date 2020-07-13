@@ -10,6 +10,6 @@ bd_roles_eliminar($id);
 bd_eliminar_privilegios_rol($id);
 
 $m="Rol eliminado con exito";
-ir("../../mensaje.php?m=$m&d=modulos/rol/roles.php");
+ir("../mensaje/mensaje.php?m=$m&d=../rol/roles.php");
 
 

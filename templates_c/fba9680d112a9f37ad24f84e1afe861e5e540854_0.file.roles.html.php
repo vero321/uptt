@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-07-07 14:24:01
+/* Smarty version 3.1.30, created on 2020-07-13 14:39:24
   from "/home/veronica/public_html/uptt/modulos/rol/templates/roles.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5f04bdc132e440_28899613',
+  'unifunc' => 'content_5f0caa5c52a638_41966594',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'fba9680d112a9f37ad24f84e1afe861e5e540854' => 
     array (
       0 => '/home/veronica/public_html/uptt/modulos/rol/templates/roles.html',
-      1 => 1594146238,
+      1 => 1594665177,
       2 => 'file',
     ),
   ),
@@ -24,7 +24,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:../../pie/pie_interno.html' => 1,
   ),
 ),false)) {
-function content_5f04bdc132e440_28899613 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f0caa5c52a638_41966594 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:../../cabecera/cabecera_interna.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -42,15 +42,13 @@ $_smarty_tpl->_subTemplateRender("file:../../cabecera/cabecera_interna.html", $_
 
 
 <!--finaliza-->
-
-
-            <h2 class="subtitulo" align="center"><span class="badge badge-secondary badge-pill"><?php echo $_smarty_tpl->tpl_vars['n_roles']->value;?>
+          <h2 class="subtitulo" align="center"><span class="badge badge-secondary badge-pill"><?php echo $_smarty_tpl->tpl_vars['n_roles']->value;?>
 </span>Roles
             <?php if (in_array("ROLE_A",$_smarty_tpl->tpl_vars['verificar']->value) == TRUE) {?>
               <a class="btn btn-sm btn-outline-primary mimodal" type="button"
             data-href="roles_agregar.php" title="Agregar Rol"><span class="fa fa-plus"></span></a>
             <?php }?>
-            </h2>
+          </h2>
 
            
               <table style="margin-top: 30px;" class="table table-responsive-xl" id="tabla_repo">

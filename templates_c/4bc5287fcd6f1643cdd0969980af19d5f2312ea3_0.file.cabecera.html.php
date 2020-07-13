@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-07-07 13:34:56
+/* Smarty version 3.1.30, created on 2020-07-13 14:34:10
   from "/home/veronica/public_html/uptt/modulos/cabecera/cabecera.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5f04b240e17098_69776142',
+  'unifunc' => 'content_5f0ca9221cd949_10093782',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '4bc5287fcd6f1643cdd0969980af19d5f2312ea3' => 
     array (
       0 => '/home/veronica/public_html/uptt/modulos/cabecera/cabecera.html',
-      1 => 1594137294,
+      1 => 1594665177,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5f04b240e17098_69776142 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f0ca9221cd949_10093782 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -36,9 +36,10 @@ function content_5f04b240e17098_69776142 (Smarty_Internal_Template $_smarty_tpl)
    <!--Estilo de los iconos-->
   <link href="../../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
   <title>Repositorio</title>
+   <link rel="shortcut icon" href="../../imagenes/logo2.png">
 
 
-  <nav  class="navbar navbar-expand-lg navbar-dark cab">
+  <nav  class="navbar navbar-expand-lg navbar-dark cab p-0 shadwon">
   <a class="navbar-brand" href="../inicio/inicio.php"><img src="../../imagenes/logo_cab.png"></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>

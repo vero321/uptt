@@ -11,17 +11,17 @@ require_once APP."/modulos/config/inicializacion.php";
 	        $verificacion = sql2row($sql);
 	if ($verificacion > 0){
 		$m="Linea <strong>$lineas</strong> La linea de investigación ya esta Registrada con exito.";
-		ir("../../mensaje.php?m=$m&d=modulos/linea_de_investigacion/lineas.php");
+		ir("../mensaje/mensaje.php?m=$m&d=../linea_de_investigacion/lineas.php");
 	}
 	else{
 		bd_lineas_agregar($_POST);
 		$m="Linea <strong>$lineas</strong> se agregó correctamente a la lista de lineas de investigación.";
-		ir("../../mensaje.php?m=$m&d=modulos/linea_de_investigacion/lineas.php");
+		ir("../mensaje/mensaje.php?m=$m&d=../linea_de_investigacion/lineas.php");
 	}
 
 
 $m="La linea <strong>$id</strong> se agregó correctamente a la lista de lineas.";
-ir("../../mensaje.php?m=$m&d=modulos/linea_de_investigacion/lineas.php");
+ir("../mensaje/mensaje.php?m=$m&d=../linea_de_investigacion/lineas.php");
 #vq($id);
 
 

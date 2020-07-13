@@ -16,4 +16,4 @@ sql($sql);
 
 
 $m="Rol asignado con exito";
-ir("../../mensaje.php?m=$m&d=modulos/usuario/usuarios_roles.php?id=$id");
+ir("../mensaje/mensaje.php?m=$m&d=../usuario/usuarios_roles.php?id=$id");

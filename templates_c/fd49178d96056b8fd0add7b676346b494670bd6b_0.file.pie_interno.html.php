@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-07-07 13:35:05
+/* Smarty version 3.1.30, created on 2020-07-11 21:46:18
   from "/home/veronica/public_html/uptt/modulos/pie/pie_interno.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5f04b24914e558_40990254',
+  'unifunc' => 'content_5f0a6b6ab4b106_07594547',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'fd49178d96056b8fd0add7b676346b494670bd6b' => 
     array (
       0 => '/home/veronica/public_html/uptt/modulos/pie/pie_interno.html',
-      1 => 1594137294,
+      1 => 1594518359,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5f04b24914e558_40990254 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f0a6b6ab4b106_07594547 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!--Comienzo del Pie de Página-->
 <div class="espacio">
@@ -29,7 +29,7 @@ function content_5f04b24914e558_40990254 (Smarty_Internal_Template $_smarty_tpl)
     <footer class="pie_interno"  >
     	<div class="container-fluid">
 			  <div class="row">
-	  			<div class="col" >
+	  			<div class="col pie_txt" >
         			Realizado por Verónica Osuna, Karla Quintero, José Palencia y Brando Hernández
         	</div>
         		

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-07-07 13:55:09
+/* Smarty version 3.1.30, created on 2020-07-08 14:53:21
   from "/home/veronica/public_html/uptt/modulos/cabecera/cabecera_interna.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5f04b6fd150a62_39261369',
+  'unifunc' => 'content_5f06162173bb60_10861364',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '2e00e47c7de4da28d9d79c11763b625b1d89f2c9' => 
     array (
       0 => '/home/veronica/public_html/uptt/modulos/cabecera/cabecera_interna.html',
-      1 => 1594137294,
+      1 => 1594224727,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5f04b6fd150a62_39261369 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f06162173bb60_10861364 (Smarty_Internal_Template $_smarty_tpl) {
 if (!is_callable('smarty_modifier_capitalize')) require_once '/home/veronica/public_html/uptt/vendor/smarty/libs/plugins/modifier.capitalize.php';
 ?>
 <!DOCTYPE html>
@@ -72,6 +72,7 @@ if ($__section_i_0_saved) {
 $_smarty_tpl->tpl_vars['__smarty_section_i'] = $__section_i_0_saved;
 }
 ?>
+          
 
     </ul>
     <a href="../personas/personas_datos.php?id=<?php echo $_SESSION['u']['id'];?>

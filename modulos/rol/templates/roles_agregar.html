@@ -26,7 +26,7 @@
                       placeholder="profesor de proyecto">
                 	</div>
                   <div class="form-group">
-                    <label for="exampleFormControlSelect1">Nive</label>
+                    <label for="exampleFormControlSelect1">Nivel</label>
                      <select class="form-control" id="nivel" name="nivel">
                     <option class="form-control" value="-----" id="-----">----</option>
                     <option class="form-control" value="1000" >1000</option>
@@ -44,28 +44,37 @@
                     </select>
                   </div>
 
-                  <div class="form-row">
                     <h5>Privilegios del Rol</h5>
-                      <div class="ejem2">
+                  <div class="form-row">
+
                       <div class="form-group">
+                      
+                      
 
-                      {section name=i loop=$privilegios}
+                        {section name=i loop=$privilegios}
+                        <a class="priv" data-toggle="collapse" href='#{$privilegios[i].cod}'>{$privilegios[i].nombre}</a><br>
+                        <fieldset class="f_roles collapse" id="{$privilegios[i].cod}" >
+                          <ul>   
+                        {section name=j loop=$privilegios[i].p}
+                          <li><label class="form-check-label">
+                            <input  type="checkbox"  class="form-check-input"  
+                            name="privilegio[]" value="{$privilegios[i]["p"][j].id}">
+                            {$privilegios[i]["p"][j].privilegio}
+                          </label></li>
+                        {/section}  
+                          </ul>
+                        </fieldset>
 
-                      <div class="form-check form-check-inline ejem ">
-                        <label class="form-check-label">
-                          <input  type="checkbox"  class="form-check-input"  
-                          name="privilegio[]" value="{$privilegios[i].id}">
-                          {$privilegios[i].privilegio}
-                        </label>
-                     
+
+                        {/section}
+                      
+                      
                       </div>
-                      {/section}
-                      </div>
-                    </div>
                   </div>
 
 
               	<div class="form-group">
+                  <input type="reset" class="btn btn-outline-secondary btn-sm"></input>
     							<input 
     								class="btn-enviar btn btn-sm btn-primary" 
     								type="submit" 

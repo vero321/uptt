@@ -9,5 +9,5 @@ $n_mod=bd_centros_modicar($centros);
 
 
 $m="Centro <strong>$nombre</strong> modificado con exito";
-ir("../../mensaje.php?m=$m&d=modulos/centro_de_investigacion/centros.php");
+ir("../mensaje/mensaje.php?m=$m&d=../centro_de_investigacion/centros.php");
 

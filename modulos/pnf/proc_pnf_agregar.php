@@ -11,17 +11,17 @@ require_once APP."/modulos/config/inicializacion.php";
 	        $verificacion = sql2row($sql);
 	if ($verificacion > 0){
 		$m="PNF <strong>$pnf</strong> registrado con exito.";
-		ir(APP."../../mensaje.php?m=$m&d=modulos/pnf/pnf.php");
+		ir(APP."../mensaje/mensaje.php?m=$m&d=../pnf/pnf.php");
 	}
 	else{
 		bd_pnf_agregar($_POST);
 		$m="PNF <strong>$pnf</strong> se agregó correctamente a la lista de PNF.";
-		ir("../../mensaje.php?m=$m&d=modulos/pnf/pnf.php");
+		ir("../mensaje/mensaje.php?m=$m&d=../pnf/pnf.php");
 	}
 
 
 $m="El PNF <strong>$id</strong> se agregó correctamente a la lista de PNF.";
-ir("../../mensaje.php?m=$m&d=modulos/pnf/pnf.php");
+ir("../mensaje/mensaje.php?m=$m&d=../pnf/pnf.php");
 #vq($id);
 
 
