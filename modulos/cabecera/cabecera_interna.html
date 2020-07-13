@@ -17,7 +17,7 @@
 </head>
 
 <body>
-    <nav class="navbar fixed-top  navbar-expand-lg navbar-dark cab">
+    <nav class="navbar fixed-top  navbar-expand-lg navbar-dark cab p-0">
       <a class="navbar-brand" href="../inicio/inicio_interno.php"><img src="../../imagenes/logo_interno.png"></a>
         <!--<a class="navbar-brand" href="inicio_interno.php">Repositorio</a>-->
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -33,7 +33,16 @@
           {/section}
 
     </ul>
-    <a href="../personas/personas_datos.php?id={$smarty.session['u']['id']}" class="btn btn-link usuario"><i class="fa fa-user fa-fw"></i>{$smarty.session["u"]["correo"]}</a>
-    <a href="../login/proc_exit.php" class="btn btn-outline-danger"><i class="fa fa-sign-out-alt"></i>Salir</a>
+    <ul class="navbar-nav ml-auto ml-md-0">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="userDropdown" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user fa-fw"></i>{$smarty.session["u"]["correo"]}</a>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
+                        <a class="dropdown-item" href="../personas/personas_datos.php?id={$smarty.session['u']['id']}"><i class="fa fa-user fa-fw"></i>Perfil</a>
+                        <a class="dropdown-item" href="../personas/usuarios_cambiar_clave.php"><i class="fa fa-unlock-alt fa-lg fa-fw"></i>Cambiar</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="../login/proc_exit.php"><i class="a fa-sign-out-alt fa-fw"></i>Salir</a>
+                    </div>
+                </li>
+            </ul>
   </div>
 </nav>

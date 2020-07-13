@@ -8,5 +8,6 @@ verificar();
 
 
 
+
 $smarty->display('inicio_interno.html');
 
