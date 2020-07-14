@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-07-13 13:31:14
+/* Smarty version 3.1.30, created on 2020-07-13 20:40:56
   from "/home/palencia/public_html/proyecto4/uptt/modulos/cabecera/cabecera_interna.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5f0c9a6253c0d1_61656110',
+  'unifunc' => 'content_5f0cff186a3e96_33753302',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'fe14ada188edfa3eaf46d5383b27d7887d5f332b' => 
     array (
       0 => '/home/palencia/public_html/proyecto4/uptt/modulos/cabecera/cabecera_interna.html',
-      1 => 1594661172,
+      1 => 1594686966,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5f0c9a6253c0d1_61656110 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f0cff186a3e96_33753302 (Smarty_Internal_Template $_smarty_tpl) {
 if (!is_callable('smarty_modifier_capitalize')) require_once '/home/palencia/public_html/proyecto4/uptt/vendor/smarty/libs/plugins/modifier.capitalize.php';
 ?>
 <!DOCTYPE html>
@@ -33,7 +33,7 @@ if (!is_callable('smarty_modifier_capitalize')) require_once '/home/palencia/pub
    <!-- llama los estilos de DataTablet -->
   <link href="../../vendor/DataTables/datatables.min.css" rel="stylesheet" type="text/css">
   <link href="../../vendor/DataTables/css/dataTables.bootstrap4.css" rel="stylesheet"  type="text/css">
-  <link href="../../vendor/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="../../estilos/personal.css" rel="stylesheet" type="text/css">
   <link href="../../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
    <!--Estilo de los iconos-->
@@ -42,7 +42,7 @@ if (!is_callable('smarty_modifier_capitalize')) require_once '/home/palencia/pub
 </head>
 
 <body>
-    <nav class="navbar fixed-top  navbar-expand-lg navbar-dark cab p-0">
+    <nav class="navbar fixed-top  navbar-expand-lg navbar-dark cab">
       <a class="navbar-brand" href="../inicio/inicio_interno.php"><img src="../../imagenes/logo_interno.png"></a>
         <!--<a class="navbar-brand" href="inicio_interno.php">Repositorio</a>-->
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -87,6 +87,7 @@ $_smarty_tpl->tpl_vars['__smarty_section_i'] = $__section_i_0_saved;
                     </div>
                 </li>
             </ul>
+            
   </div>
 </nav>
 <?php }

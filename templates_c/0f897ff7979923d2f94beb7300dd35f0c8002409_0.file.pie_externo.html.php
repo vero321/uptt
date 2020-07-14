@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-07-07 22:07:41
+/* Smarty version 3.1.30, created on 2020-07-13 22:04:27
   from "/home/palencia/public_html/proyecto4/uptt/modulos/pie/pie_externo.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5f052a6d9f5383_46859186',
+  'unifunc' => 'content_5f0d12ab958566_02669347',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '0f897ff7979923d2f94beb7300dd35f0c8002409' => 
     array (
       0 => '/home/palencia/public_html/proyecto4/uptt/modulos/pie/pie_externo.html',
-      1 => 1593875455,
+      1 => 1594687068,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5f052a6d9f5383_46859186 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f0d12ab958566_02669347 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!--Comienzo del Pie de Página-->
 <div class="espacio">
@@ -46,7 +46,7 @@ function content_5f052a6d9f5383_46859186 (Smarty_Internal_Template $_smarty_tpl)
 >
 
     <?php echo '<script'; ?>
- src="../../vendor/bootstrap/dist/js/bootstrap.min.js"><?php echo '</script'; ?>
+ src="../../vendor/bootstrap/js/bootstrap.min.js"><?php echo '</script'; ?>
 >
 <!--Final del Pie de Página-->
 

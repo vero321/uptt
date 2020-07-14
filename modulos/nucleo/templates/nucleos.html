@@ -15,7 +15,7 @@
           
             <h2 class="subtitulo" align="center"><span class="badge badge-secondary badge-pill">{$n_nucleos}</span>Nucleos y Extensiones
             {if in_array("NUCL_A",$verificar) == TRUE}
-             <a class="btn btn-sm btn-outline-primary mimodal" type="button"
+             <a class="btn btn-sm btn-outline-primary mimodal" type="button" 
             data-href="nucleos_agregar.php" title="Agregar nucleo o extensión"><span class="fa fa-plus"></span></a>
             {/if}
           </h2>
@@ -66,10 +66,10 @@
                     {if in_array("NUCL_R", $verificar) == TRUE }
                       <td>
                         {if $nucleos[i].responsable ==  NULL}
-                          <a class="btn btn-sm btn-outline-primary mimodal" type="button"href="nucleo_responsable.php?id={$nucleos[i].id}" title="Asignar responsable Nucleo o Extensión"><span class="fa fa-plus"></span></a>
+                          <a class="btn btn-sm btn-outline-primary mimodal" type="button" href="nucleo_responsable.php?id={$nucleos[i].id}" title="Asignar responsable Nucleo o Extensión"><span class="fa fa-plus"></span></a>
                         {else}
                         {$persona=bd_personas_datos($nucleos[i].responsable)}
-                        <span><b>Nombre:</b></span>
+                          <span><b>Nombre:</b></span>
                         {$persona[0].nombre}
                         <br>
                         {$usuario=bd_usuarios_datos($nucleos[i].responsable)}

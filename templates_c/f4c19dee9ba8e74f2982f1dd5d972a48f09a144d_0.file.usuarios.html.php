@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-07-10 12:42:45
+/* Smarty version 3.1.30, created on 2020-07-13 21:36:38
   from "/home/palencia/public_html/proyecto4/uptt/modulos/usuario/templates/usuarios.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5f089a8586bf51_13434417',
+  'unifunc' => 'content_5f0d0c262ac7a1_62531500',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'f4c19dee9ba8e74f2982f1dd5d972a48f09a144d' => 
     array (
       0 => '/home/palencia/public_html/proyecto4/uptt/modulos/usuario/templates/usuarios.html',
-      1 => 1594399191,
+      1 => 1594690592,
       2 => 'file',
     ),
   ),
@@ -24,7 +24,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:../../pie/pie_interno.html' => 1,
   ),
 ),false)) {
-function content_5f089a8586bf51_13434417 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f0d0c262ac7a1_62531500 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:../../cabecera/cabecera_interna.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -37,7 +37,7 @@ $_smarty_tpl->_subTemplateRender("file:../../cabecera/cabecera_interna.html", $_
 
     <div class="row" id="central">
         
-        <div class="col-sm-9" style="margin-top: 50px;">
+        <div class="col-sm-10" style="margin-top: 50px;">
 
 
 
@@ -57,7 +57,7 @@ $_smarty_tpl->_subTemplateRender("file:../../cabecera/cabecera_interna.html", $_
             
           
            
-              <table style="margin-top: 30px;" class="table table-responsive-xl" id="tabla_repo">
+              <table style="margin-top: 30px;" class="table table-responsive-xl" id="tabla_repo" style="width: 100%;">
                 <thead class="thead-dark">
                   <tr>
                     <th>Cedula</th>

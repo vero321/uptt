@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-07-10 17:29:09
+/* Smarty version 3.1.30, created on 2020-07-13 21:38:34
   from "/home/palencia/public_html/proyecto4/uptt/modulos/cabecera/cabecera_interna.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5f08dda58d35e1_73060915',
+  'unifunc' => 'content_5f0d0c9ac32bf2_90321351',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '365f94ff9887b4114a2abfcc6cb57d191d611e0c' => 
     array (
       0 => '/home/palencia/public_html/proyecto4/uptt/modulos/cabecera/cabecera_interna.html',
-      1 => 1594416324,
+      1 => 1594690461,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5f08dda58d35e1_73060915 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f0d0c9ac32bf2_90321351 (Smarty_Internal_Template $_smarty_tpl) {
 if (!is_callable('smarty_modifier_capitalize')) require_once '/home/palencia/public_html/proyecto4/uptt/vendor/smarty/libs/plugins/modifier.capitalize.php';
 ?>
 <!DOCTYPE html>
@@ -33,17 +33,16 @@ if (!is_callable('smarty_modifier_capitalize')) require_once '/home/palencia/pub
    <!-- llama los estilos de DataTablet -->
   <link href="../../vendor/DataTables/datatables.min.css" rel="stylesheet" type="text/css">
   <link href="../../vendor/DataTables/css/dataTables.bootstrap4.css" rel="stylesheet"  type="text/css">
-  <link href="../../vendor/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="../../estilos/personal.css" rel="stylesheet" type="text/css">
   <link href="../../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
    <!--Estilo de los iconos-->
   <link href="../../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
   <title>Repositorio</title>
-  <meta name="theme-color" content="#0747A6">
 </head>
 
 <body>
-    <nav class="navbar fixed-top  navbar-expand-lg navbar-dark cab">
+    <nav class="navbar fixed-top  navbar-expand-lg navbar-dark cab p-1 shadow-sm">
       <a class="navbar-brand" href="../inicio/inicio_interno.php"><img src="../../imagenes/logo_interno.png"></a>
         <!--<a class="navbar-brand" href="inicio_interno.php">Repositorio</a>-->
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -75,10 +74,20 @@ $_smarty_tpl->tpl_vars['__smarty_section_i'] = $__section_i_0_saved;
 ?>
 
     </ul>
-    <a href="../personas/personas_datos.php?id=<?php echo $_SESSION['u']['id'];?>
-" class="btn btn-link usuario"><i class="fa fa-user fa-fw"></i><?php echo $_SESSION["u"]["correo"];?>
+    <ul class="navbar-nav ml-auto ml-md-0">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="userDropdown" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user fa-fw"></i><?php echo $_SESSION["u"]["correo"];?>
 </a>
-    <a href="../login/proc_exit.php" class="btn btn-outline-danger"><i class="fa fa-sign-out-alt"></i>Salir</a>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
+                        <a class="dropdown-item" href="../personas/personas_datos.php?id=<?php echo $_SESSION['u']['id'];?>
+"><i class="fa fa-user fa-fw"></i>Perfil</a>
+                        <a class="dropdown-item" href="../personas/usuarios_cambiar_clave.php"><i class="fa fa-unlock-alt fa-lg fa-fw"></i>Cambiar</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="../login/proc_exit.php"><i class="a fa-sign-out-alt fa-fw"></i>Salir</a>
+                    </div>
+                </li>
+            </ul>
+            
   </div>
 </nav>
 <?php }

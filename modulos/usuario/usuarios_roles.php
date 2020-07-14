@@ -15,7 +15,6 @@ if (isset($_GET['r'])) {
 
 $usuario=bd_usuarios_datos($id);
 $roles=bd_usuarios_roles_datos($id);
-
 $smarty->assign('roles', $roles);
 $smarty->assign('usuario', $usuario);
 $smarty->assign('pie', file_get_contents(APP.'/modulos/pie/usuarios.html'));

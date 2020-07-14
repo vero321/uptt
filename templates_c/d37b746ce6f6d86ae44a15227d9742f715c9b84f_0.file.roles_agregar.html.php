@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-07-09 21:48:15
+/* Smarty version 3.1.30, created on 2020-07-13 19:24:26
   from "/home/palencia/public_html/proyecto4/uptt/modulos/rol/templates/roles_agregar.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5f07c8dff109e2_96783040',
+  'unifunc' => 'content_5f0ced2a974317_10772473',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'd37b746ce6f6d86ae44a15227d9742f715c9b84f' => 
     array (
       0 => '/home/palencia/public_html/proyecto4/uptt/modulos/rol/templates/roles_agregar.html',
-      1 => 1594172266,
+      1 => 1594682663,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5f07c8dff109e2_96783040 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f0ced2a974317_10772473 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <div class="container">
 <div class="row">
@@ -50,7 +50,7 @@ function content_5f07c8dff109e2_96783040 (Smarty_Internal_Template $_smarty_tpl)
                       placeholder="profesor de proyecto">
                 	</div>
                   <div class="form-group">
-                    <label for="exampleFormControlSelect1">Nive</label>
+                    <label for="exampleFormControlSelect1">Nivel</label>
                      <select class="form-control" id="nivel" name="nivel">
                     <option class="form-control" value="-----" id="-----">----</option>
                     <option class="form-control" value="1000" >1000</option>
@@ -68,12 +68,14 @@ function content_5f07c8dff109e2_96783040 (Smarty_Internal_Template $_smarty_tpl)
                     </select>
                   </div>
 
-                  <div class="form-row">
                     <h5>Privilegios del Rol</h5>
-                      <div class="ejem2">
-                      <div class="form-group">
+                  <div class="form-row">
 
-                      <?php
+                      <div class="form-group">
+                      
+                      
+
+                        <?php
 $__section_i_0_saved = isset($_smarty_tpl->tpl_vars['__smarty_section_i']) ? $_smarty_tpl->tpl_vars['__smarty_section_i'] : false;
 $__section_i_0_loop = (is_array(@$_loop=$_smarty_tpl->tpl_vars['privilegios']->value) ? count($_loop) : max(0, (int) $_loop));
 $__section_i_0_total = $__section_i_0_loop;
@@ -81,30 +83,53 @@ $_smarty_tpl->tpl_vars['__smarty_section_i'] = new Smarty_Variable(array());
 if ($__section_i_0_total != 0) {
 for ($__section_i_0_iteration = 1, $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] = 0; $__section_i_0_iteration <= $__section_i_0_total; $__section_i_0_iteration++, $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']++){
 ?>
-
-                      <div class="form-check form-check-inline ejem ">
-                        <label class="form-check-label">
-                          <input  type="checkbox"  class="form-check-input"  
-                          name="privilegio[]" value="<?php echo $_smarty_tpl->tpl_vars['privilegios']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['id'];?>
+                        <a class="nav-link dropdown-toggle p-0" data-toggle="collapse" href='#<?php echo $_smarty_tpl->tpl_vars['privilegios']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['cod'];?>
+'><?php echo $_smarty_tpl->tpl_vars['privilegios']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['nombre'];?>
+</a><br>
+                        <fieldset class="f_roles collapse" id="<?php echo $_smarty_tpl->tpl_vars['privilegios']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['cod'];?>
+" >
+                          <ul>   
+                        <?php
+$__section_j_1_saved = isset($_smarty_tpl->tpl_vars['__smarty_section_j']) ? $_smarty_tpl->tpl_vars['__smarty_section_j'] : false;
+$__section_j_1_loop = (is_array(@$_loop=$_smarty_tpl->tpl_vars['privilegios']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['p']) ? count($_loop) : max(0, (int) $_loop));
+$__section_j_1_total = $__section_j_1_loop;
+$_smarty_tpl->tpl_vars['__smarty_section_j'] = new Smarty_Variable(array());
+if ($__section_j_1_total != 0) {
+for ($__section_j_1_iteration = 1, $_smarty_tpl->tpl_vars['__smarty_section_j']->value['index'] = 0; $__section_j_1_iteration <= $__section_j_1_total; $__section_j_1_iteration++, $_smarty_tpl->tpl_vars['__smarty_section_j']->value['index']++){
+?>
+                          <li><label class="form-check-label">
+                            <input  type="checkbox"  class="form-check-input"  
+                            name="privilegio[]" value="<?php echo $_smarty_tpl->tpl_vars['privilegios']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]["p"][(isset($_smarty_tpl->tpl_vars['__smarty_section_j']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_j']->value['index'] : null)]['id'];?>
 ">
-                          <?php echo $_smarty_tpl->tpl_vars['privilegios']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['privilegio'];?>
+                            <?php echo $_smarty_tpl->tpl_vars['privilegios']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]["p"][(isset($_smarty_tpl->tpl_vars['__smarty_section_j']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_j']->value['index'] : null)]['privilegio'];?>
 
-                        </label>
-                     
-                      </div>
-                      <?php
+                          </label></li>
+                        <?php
+}
+}
+if ($__section_j_1_saved) {
+$_smarty_tpl->tpl_vars['__smarty_section_j'] = $__section_j_1_saved;
+}
+?>  
+                          </ul>
+                        </fieldset>
+
+
+                        <?php
 }
 }
 if ($__section_i_0_saved) {
 $_smarty_tpl->tpl_vars['__smarty_section_i'] = $__section_i_0_saved;
 }
 ?>
+                      
+                      
                       </div>
-                    </div>
                   </div>
 
 
               	<div class="form-group">
+                  <input type="reset" class="btn btn-outline-secondary btn-sm"></input>
     							<input 
     								class="btn-enviar btn btn-sm btn-primary" 
     								type="submit" 

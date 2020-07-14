@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-07-10 17:33:53
+/* Smarty version 3.1.30, created on 2020-07-13 22:04:33
   from "/home/palencia/public_html/proyecto4/uptt/modulos/cabecera/cabecera.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5f08dec11d44d5_48917331',
+  'unifunc' => 'content_5f0d12b1af6f96_63157772',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '60d4425317831938d44685d2d50135e646d1ce47' => 
     array (
       0 => '/home/palencia/public_html/proyecto4/uptt/modulos/cabecera/cabecera.html',
-      1 => 1594396450,
+      1 => 1594686948,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5f08dec11d44d5_48917331 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f0d12b1af6f96_63157772 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -30,7 +30,7 @@ function content_5f08dec11d44d5_48917331 (Smarty_Internal_Template $_smarty_tpl)
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <link href="../../vendor/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="../../estilos/personal.css" rel="stylesheet" type="text/css" >
   <link href="../../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
    <!--Estilo de los iconos-->
@@ -39,7 +39,7 @@ function content_5f08dec11d44d5_48917331 (Smarty_Internal_Template $_smarty_tpl)
    <link rel="shortcut icon" href="../../imagenes/logo2.png">
 
 
-  <nav  class="navbar navbar-expand-lg navbar-dark cab">
+  <nav  class="navbar navbar-expand-lg navbar-dark cab p-0 shadwon">
   <a class="navbar-brand" href="../inicio/inicio.php"><img src="../../imagenes/logo_cab.png"></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>

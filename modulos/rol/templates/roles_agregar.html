@@ -52,7 +52,7 @@
                       
 
                         {section name=i loop=$privilegios}
-                        <a class="priv" data-toggle="collapse" href='#{$privilegios[i].cod}'>{$privilegios[i].nombre}</a><br>
+                        <a class="nav-link dropdown-toggle p-0" data-toggle="collapse" href='#{$privilegios[i].cod}'>{$privilegios[i].nombre}</a><br>
                         <fieldset class="f_roles collapse" id="{$privilegios[i].cod}" >
                           <ul>   
                         {section name=j loop=$privilegios[i].p}
