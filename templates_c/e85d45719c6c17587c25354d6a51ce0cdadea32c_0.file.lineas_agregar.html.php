@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-07-07 14:05:54
+/* Smarty version 3.1.30, created on 2020-07-20 14:33:37
   from "/home/veronica/public_html/uptt/modulos/linea_de_investigacion/templates/lineas_agregar.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5f04b9829d4969_18624285',
+  'unifunc' => 'content_5f15e381a8ef99_61028726',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5f04b9829d4969_18624285 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f15e381a8ef99_61028726 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 
 <div class="container">

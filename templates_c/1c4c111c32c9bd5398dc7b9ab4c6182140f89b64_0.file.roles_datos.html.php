@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-07-11 13:50:37
+/* Smarty version 3.1.30, created on 2020-07-20 12:39:30
   from "/home/veronica/public_html/uptt/modulos/rol/templates/roles_datos.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5f09fbeda3e059_49020973',
+  'unifunc' => 'content_5f15c8c2c667a2_75050608',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '1c4c111c32c9bd5398dc7b9ab4c6182140f89b64' => 
     array (
       0 => '/home/veronica/public_html/uptt/modulos/rol/templates/roles_datos.html',
-      1 => 1594137294,
+      1 => 1595263110,
       2 => 'file',
     ),
   ),
@@ -24,7 +24,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:../../pie/pie_interno.html' => 1,
   ),
 ),false)) {
-function content_5f09fbeda3e059_49020973 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f15c8c2c667a2_75050608 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:../../cabecera/cabecera_interna.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 

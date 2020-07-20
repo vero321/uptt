@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-07-07 13:43:09
+/* Smarty version 3.1.30, created on 2020-07-20 12:58:00
   from "/home/veronica/public_html/uptt/modal/modal_box.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5f04b42dd17743_76579236',
+  'unifunc' => 'content_5f15cd18c74b68_35324250',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'ce499dc4cf1625fd7c62ce9df55ce1502e471734' => 
     array (
       0 => '/home/veronica/public_html/uptt/modal/modal_box.html',
-      1 => 1544639032,
+      1 => 1594667343,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5f04b42dd17743_76579236 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f15cd18c74b68_35324250 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!-- The Modal -->
 <div class="modal" id="myModal">
@@ -34,6 +34,7 @@ function content_5f04b42dd17743_76579236 (Smarty_Internal_Template $_smarty_tpl)
 </h4>
 
         <div class="btn-group">
+          
           <button type="button" class="btn btn-primary btn-sm " data-dismiss="modal">Cerrar</button>
         </div>
       </div>

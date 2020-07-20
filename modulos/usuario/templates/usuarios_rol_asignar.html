@@ -6,7 +6,7 @@
         <section id="intro">
             <div class="container">
               <div class="centro"> 
-                  <h1>Asignar Rol</h1>
+                  <h3>Asignar Rol</h3>
                     <form 
                       action="proc_usuarios_rol_asignar.php" 
                       method="POST" 
@@ -17,16 +17,18 @@
                         <input type="hidden" name="id" value="{$id}">
 
                           {section name=i loop=$roles}
-                            <div class="form-check">
-
-                              <label class="form-check-label">
-                                <input type="radio"  class="form-check-input"  
-                                name="rol" value="{$roles[i].id}">
-                                {$roles[i].rol}
+                            <div class="form-group">
+                              <label class="switch ">
+                                <input type="checkbox"  class="form-check-input"  
+                                name="rol[]" value="{$roles[i].id}">
+                                <span class="slider round"></span>
                               </label>
+                              <div class="text_switch">{$roles[i].rol}</div> 
                             </div>
+
                           {/section}
                         </div>
+
                       <div class="form-group">
                         <input 
                           class="btn-enviar btn btn-sm btn-primary" 

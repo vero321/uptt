@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-07-11 22:12:44
+/* Smarty version 3.1.30, created on 2020-07-20 12:58:00
   from "/home/veronica/public_html/uptt/modulos/pie/pie_interno.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5f0a719cd9a0a3_16105498',
+  'unifunc' => 'content_5f15cd18c79b58_62803243',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'cf1e9776464926a118befedc65f6be9b8870bbc8' => 
     array (
       0 => '/home/veronica/public_html/uptt/modulos/pie/pie_interno.html',
-      1 => 1594518359,
+      1 => 1594919249,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5f0a719cd9a0a3_16105498 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f15cd18c79b58_62803243 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!--Comienzo del Pie de Página-->
 <div class="espacio">
@@ -48,7 +48,7 @@ function content_5f0a719cd9a0a3_16105498 (Smarty_Internal_Template $_smarty_tpl)
  src="../../vendor/DataTables/datatables.min.js" type="text/javascript"><?php echo '</script'; ?>
 >
     <?php echo '<script'; ?>
- src="../../vendor/bootstrap/dist/js/bootstrap.min.js"><?php echo '</script'; ?>
+ src="../../vendor/bootstrap/js/bootstrap.min.js"><?php echo '</script'; ?>
 >
     <?php echo '<script'; ?>
  src="../config/main.js"><?php echo '</script'; ?>

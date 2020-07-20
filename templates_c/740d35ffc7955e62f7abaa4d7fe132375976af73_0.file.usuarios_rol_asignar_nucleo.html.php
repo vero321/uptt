@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-07-08 11:32:19
+/* Smarty version 3.1.30, created on 2020-07-20 11:21:37
   from "/home/veronica/public_html/uptt/modulos/usuario/templates/usuarios_rol_asignar_nucleo.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5f05e703a7d552_06638178',
+  'unifunc' => 'content_5f15b681efd900_19570241',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5f05e703a7d552_06638178 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f15b681efd900_19570241 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 
 <div class="container">

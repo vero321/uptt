@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-07-13 14:39:24
+/* Smarty version 3.1.30, created on 2020-07-20 13:30:51
   from "/home/veronica/public_html/uptt/modulos/modal/modal_box.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5f0caa5c5485e3_82021066',
+  'unifunc' => 'content_5f15d4cb36bf92_72992875',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '4f3d39c2c83f8de28ccee19b107e4497a6ef6636' => 
     array (
       0 => '/home/veronica/public_html/uptt/modulos/modal/modal_box.html',
-      1 => 1594665177,
+      1 => 1595266143,
       2 => 'file',
     ),
   ),
@@ -20,9 +20,9 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5f0caa5c5485e3_82021066 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f15d4cb36bf92_72992875 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
-<!-- The Modal -->z
+<!-- The Modal -->
 <div class="modal" id="myModal">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
@@ -34,7 +34,7 @@ function content_5f0caa5c5485e3_82021066 (Smarty_Internal_Template $_smarty_tpl)
 </h4>
 
         <div class="btn-group">
-          <button type="button" class="btn btn-primary btn-sm " data-dismiss="modal">Cerrar</button>
+          <button type="button" class="close btn btn-outline-danger" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
         </div>
       </div>
 
@@ -50,5 +50,13 @@ function content_5f0caa5c5485e3_82021066 (Smarty_Internal_Template $_smarty_tpl)
     </div>
   </div>
 </div>
-    <?php }
+
+<!-- Spinner 
+
+<div class="text-center" style="position: absolute; top: 50%; left: 50%;">
+  <div class="spinner-border text-primary" role="status" id="mi_spinner">
+    <span class="sr-only">Loading...</span>
+  </div>
+</div>
+--><?php }
 }

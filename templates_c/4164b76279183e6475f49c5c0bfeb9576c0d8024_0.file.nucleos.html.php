@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-07-13 14:46:23
+/* Smarty version 3.1.30, created on 2020-07-20 11:08:44
   from "/home/veronica/public_html/uptt/modulos/nucleo/templates/nucleos.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5f0cabffeb8845_32597738',
+  'unifunc' => 'content_5f15b37c191004_39563187',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '4164b76279183e6475f49c5c0bfeb9576c0d8024' => 
     array (
       0 => '/home/veronica/public_html/uptt/modulos/nucleo/templates/nucleos.html',
-      1 => 1594665177,
+      1 => 1595255867,
       2 => 'file',
     ),
   ),
@@ -24,7 +24,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:../../pie/pie_interno.html' => 1,
   ),
 ),false)) {
-function content_5f0cabffeb8845_32597738 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f15b37c191004_39563187 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:../../cabecera/cabecera_interna.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -44,10 +44,10 @@ $_smarty_tpl->_subTemplateRender("file:../../cabecera/cabecera_interna.html", $_
 
 			
           
-            <h2 class="subtitulo" align="center"><span class="badge badge-secondary badge-pill"><?php echo $_smarty_tpl->tpl_vars['n_nucleos']->value;?>
+          <h2 class="subtitulo" align="center"><span class="badge badge-secondary badge-pill"><?php echo $_smarty_tpl->tpl_vars['n_nucleos']->value;?>
 </span>Nucleos y Extensiones
             <?php if (in_array("NUCL_A",$_smarty_tpl->tpl_vars['verificar']->value) == TRUE) {?>
-             <a class="btn btn-sm btn-outline-primary mimodal" type="button"
+             <a class="btn btn-sm btn-outline-primary mimodal" type="button" 
             data-href="nucleos_agregar.php" title="Agregar nucleo o extensión"><span class="fa fa-plus"></span></a>
             <?php }?>
           </h2>
@@ -109,12 +109,12 @@ for ($__section_i_0_iteration = 1, $_smarty_tpl->tpl_vars['__smarty_section_i']-
                     <?php if (in_array("NUCL_R",$_smarty_tpl->tpl_vars['verificar']->value) == TRUE) {?>
                       <td>
                         <?php if ($_smarty_tpl->tpl_vars['nucleos']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['responsable'] == NULL) {?>
-                          <a class="btn btn-sm btn-outline-primary mimodal" type="button"href="nucleo_responsable.php?id=<?php echo $_smarty_tpl->tpl_vars['nucleos']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['id'];?>
+                          <a class="btn btn-sm btn-outline-primary mimodal" type="button" href="nucleo_responsable.php?id=<?php echo $_smarty_tpl->tpl_vars['nucleos']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['id'];?>
 " title="Asignar responsable Nucleo o Extensión"><span class="fa fa-plus"></span></a>
                         <?php } else { ?>
                         <?php $_smarty_tpl->_assignInScope('persona', bd_personas_datos($_smarty_tpl->tpl_vars['nucleos']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['responsable']));
 ?>
-                        <span><b>Nombre:</b></span>
+                          <span><b>Nombre:</b></span>
                         <?php echo $_smarty_tpl->tpl_vars['persona']->value[0]['nombre'];?>
 
                         <br>
@@ -123,6 +123,9 @@ for ($__section_i_0_iteration = 1, $_smarty_tpl->tpl_vars['__smarty_section_i']-
                         <span><b>Usuario:</b></span>
                         <?php echo $_smarty_tpl->tpl_vars['usuario']->value['correo'];?>
 
+                        <a href="nucleo_responsable.php?id=<?php echo $_smarty_tpl->tpl_vars['nucleos']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['id'];?>
+&cambiar=<?php echo $_smarty_tpl->tpl_vars['nucleos']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['responsable'];?>
+">Cambiar</a>
                         <?php }?>
                       </td>
                     <?php }?>

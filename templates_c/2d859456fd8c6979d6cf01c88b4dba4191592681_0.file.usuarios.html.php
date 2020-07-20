@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-07-07 13:43:06
+/* Smarty version 3.1.30, created on 2020-07-20 10:39:03
   from "/home/veronica/public_html/uptt/modulos/usuario/templates/usuarios.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5f04b42a2b6799_64602632',
+  'unifunc' => 'content_5f15ac871e09a3_37795025',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '2d859456fd8c6979d6cf01c88b4dba4191592681' => 
     array (
       0 => '/home/veronica/public_html/uptt/modulos/usuario/templates/usuarios.html',
-      1 => 1594140146,
+      1 => 1594740143,
       2 => 'file',
     ),
   ),
@@ -24,7 +24,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:../../pie/pie_interno.html' => 1,
   ),
 ),false)) {
-function content_5f04b42a2b6799_64602632 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f15ac871e09a3_37795025 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:../../cabecera/cabecera_interna.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -37,7 +37,7 @@ $_smarty_tpl->_subTemplateRender("file:../../cabecera/cabecera_interna.html", $_
 
     <div class="row" id="central">
         
-        <div class="col-sm-9" style="margin-top: 50px;" >
+        <div class="col-sm-10" style="margin-top: 50px;">
 
 
 
@@ -57,7 +57,7 @@ $_smarty_tpl->_subTemplateRender("file:../../cabecera/cabecera_interna.html", $_
             
           
            
-              <table style="margin-top: 30px;" class="table table-responsive-xl" id="tabla_repo">
+              <table style="margin-top: 30px;" class="table table-responsive-xl" id="tabla_repo" style="width: 100%;">
                 <thead class="thead-dark">
                   <tr>
                     <th>Cedula</th>
@@ -128,45 +128,6 @@ $_smarty_tpl->tpl_vars['__smarty_section_i'] = $__section_i_0_saved;
 ?>
                 </tbody>
               </table>
-          <nav aria-label="Page navigation example">
-            <ul class="pagination">
-              <?php if ($_smarty_tpl->tpl_vars['pagina_actual']->value != 1) {?>
-              <li class="page-item"><a class="page-link" href="usuarios.php?pag=<?php echo $_smarty_tpl->tpl_vars['pagina_actual']->value-1;?>
-&i=<?php echo $_smarty_tpl->tpl_vars['i']->value-$_smarty_tpl->tpl_vars['b']->value;?>
-&5ea6fd8de7329=<?php echo $_smarty_tpl->tpl_vars['nivel']->value;?>
-" >Anterior</a>
-              </li>
-              <?php }?>
-              <?php
-$__section_ii_1_saved = isset($_smarty_tpl->tpl_vars['__smarty_section_ii']) ? $_smarty_tpl->tpl_vars['__smarty_section_ii'] : false;
-$__section_ii_1_loop = (is_array(@$_loop=$_smarty_tpl->tpl_vars['paginas']->value) ? count($_loop) : max(0, (int) $_loop));
-$__section_ii_1_total = $__section_ii_1_loop;
-$_smarty_tpl->tpl_vars['__smarty_section_ii'] = new Smarty_Variable(array());
-if ($__section_ii_1_total != 0) {
-for ($_smarty_tpl->tpl_vars['__smarty_section_ii']->value['iteration'] = 1, $_smarty_tpl->tpl_vars['__smarty_section_ii']->value['index'] = 0; $_smarty_tpl->tpl_vars['__smarty_section_ii']->value['iteration'] <= $__section_ii_1_total; $_smarty_tpl->tpl_vars['__smarty_section_ii']->value['iteration']++, $_smarty_tpl->tpl_vars['__smarty_section_ii']->value['index']++){
-?>
-              <li class="page-item <?php if ((isset($_smarty_tpl->tpl_vars['__smarty_section_ii']->value['iteration']) ? $_smarty_tpl->tpl_vars['__smarty_section_ii']->value['iteration'] : null) == $_smarty_tpl->tpl_vars['pagina_actual']->value) {?> active <?php }?>"><a class="page-link" href="usuarios.php?pag=<?php echo (isset($_smarty_tpl->tpl_vars['__smarty_section_ii']->value['iteration']) ? $_smarty_tpl->tpl_vars['__smarty_section_ii']->value['iteration'] : null);?>
-&i=<?php echo $_smarty_tpl->tpl_vars['paginas']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_ii']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_ii']->value['index'] : null)];?>
-&5ea6fd8de7329=<?php echo $_smarty_tpl->tpl_vars['nivel']->value;?>
-"><?php echo (isset($_smarty_tpl->tpl_vars['__smarty_section_ii']->value['iteration']) ? $_smarty_tpl->tpl_vars['__smarty_section_ii']->value['iteration'] : null);?>
- <span class="sr-only">(current)</span></a>
-              </li>
-              <?php
-}
-}
-if ($__section_ii_1_saved) {
-$_smarty_tpl->tpl_vars['__smarty_section_ii'] = $__section_ii_1_saved;
-}
-?>
-              <?php if ($_smarty_tpl->tpl_vars['pagina_actual']->value != $_smarty_tpl->tpl_vars['n_paginas']->value) {?> 
-              <li class="page-item"><a class="page-link" href="usuarios.php?pag=<?php echo $_smarty_tpl->tpl_vars['pagina_actual']->value+1;?>
-&i=<?php echo $_smarty_tpl->tpl_vars['i']->value+$_smarty_tpl->tpl_vars['b']->value;?>
-&5ea6fd8de7329=<?php echo $_smarty_tpl->tpl_vars['nivel']->value;?>
-">Siguiente</a>
-              </li>
-              <?php }?>
-            </ul>
-          </nav>
 
        </div>
    </div>

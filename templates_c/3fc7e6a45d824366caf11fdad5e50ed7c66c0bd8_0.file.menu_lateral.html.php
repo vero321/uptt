@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-07-07 13:43:01
+/* Smarty version 3.1.30, created on 2020-07-20 10:39:06
   from "/home/veronica/public_html/uptt/modulos/menu/menu_lateral.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5f04b4254959f2_66792857',
+  'unifunc' => 'content_5f15ac8a1eaa29_06091996',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '3fc7e6a45d824366caf11fdad5e50ed7c66c0bd8' => 
     array (
       0 => '/home/veronica/public_html/uptt/modulos/menu/menu_lateral.html',
-      1 => 1594137294,
+      1 => 1594740143,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5f04b4254959f2_66792857 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f15ac8a1eaa29_06091996 (Smarty_Internal_Template $_smarty_tpl) {
 if (!is_callable('smarty_modifier_capitalize')) require_once '/home/veronica/public_html/uptt/vendor/smarty/libs/plugins/modifier.capitalize.php';
 ?>
 <!--inicio menu lateral-->
@@ -28,7 +28,9 @@ if (!is_callable('smarty_modifier_capitalize')) require_once '/home/veronica/pub
   <div id="sidebar-wrapper">
     <aside id="sidebar">
       <ul id="sidemenu" class="sidebar-nav">
-        <li><a href="#"><span class="sidebar-icon"></span><span class="sidebar-title"><b><?php echo $_SESSION["r"][$_SESSION["numero"]]['rol'];?>
+        <li><a href="../distribuidor/distribuidor.php?r=<?php echo $_SESSION['r'][$_SESSION['numero']]['id_rol'];?>
+&n=<?php echo $_SESSION['numero'];?>
+"><span class="sidebar-icon"></span><span class="sidebar-title"><b><?php echo $_SESSION["r"][$_SESSION["numero"]]['rol'];?>
 </b></span></a></li>
         <?php ob_start();
 echo $_SESSION['actual'];
@@ -53,7 +55,7 @@ echo $_SESSION['actual'];
 $_prefixVariable4=ob_get_clean();
 echo $_SESSION[$_prefixVariable4][(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['direccion'];?>
 ">
-                        <span class="sidebar-icon"><i class="<?php ob_start();
+                        <span class="sidebar-icon"><i style="color:#f1f1f1;" class="<?php ob_start();
 echo $_SESSION['actual'];
 $_prefixVariable5=ob_get_clean();
 echo $_SESSION[$_prefixVariable5][(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['icono'];?>

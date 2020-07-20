@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-07-07 13:35:02
+/* Smarty version 3.1.30, created on 2020-07-20 10:50:30
   from "/home/veronica/public_html/uptt/modulos/inicio/templates/inicio_interno.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5f04b24650c709_72098599',
+  'unifunc' => 'content_5f15af36872cd4_58629717',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '0097e900a6928ce92b43ddf96d2a3e57d6d34087' => 
     array (
       0 => '/home/veronica/public_html/uptt/modulos/inicio/templates/inicio_interno.html',
-      1 => 1594137294,
+      1 => 1594667001,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:../../pie/pie_interno.html' => 1,
   ),
 ),false)) {
-function content_5f04b24650c709_72098599 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f15af36872cd4_58629717 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:../../cabecera/cabecera_interna.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 

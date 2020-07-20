@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-07-11 22:12:38
+/* Smarty version 3.1.30, created on 2020-07-20 10:50:43
   from "/home/veronica/public_html/uptt/modulos/usuario/templates/usuarios_roles.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5f0a719673b5c5_13653922',
+  'unifunc' => 'content_5f15af436455e6_99655116',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '9fc7c63437c7d711f5a3777ea8e4d46ca1453d77' => 
     array (
       0 => '/home/veronica/public_html/uptt/modulos/usuario/templates/usuarios_roles.html',
-      1 => 1594519956,
+      1 => 1595255868,
       2 => 'file',
     ),
   ),
@@ -24,7 +24,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:../../pie/pie_interno.html' => 1,
   ),
 ),false)) {
-function content_5f0a719673b5c5_13653922 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f15af436455e6_99655116 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:../../cabecera/cabecera_interna.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -37,21 +37,21 @@ $_smarty_tpl->_subTemplateRender("file:../../cabecera/cabecera_interna.html", $_
 
     <div class="row" id="central">
         
-        <div class="col-sm-9" style="margin-top: 50px;" >
+        <div class="col-sm-12" style="margin-top: 50px;" >
 
 
 <!--finaliza-->
 
-              <h2 class="subtitulo" align="center"><span class="badge badge-secondary badge-pill"></span>Roles del usuario</h2>
+              <h2 align="center"><span class="badge badge-secondary badge-pill"></span>Roles del usuario</h2>
            
-              <table style="margin-top: 30px;" class="table table-striped table-responsive-xl" id="tabla_repo">
-                <thead class="thead-dark">
+              <table style="margin-top: 30px;" class="display table table-striped table-bordered table-condensed" >
+                <thead class="thead-lith">
                   <tr>
                     <th>Cedula</th>
                     <th>Correo</th>
                     <th>Roles
                     <?php if (in_array("USUA_AR",$_smarty_tpl->tpl_vars['verificar']->value) == TRUE) {?> 
-						          <a class="btn btn-sm btn-outline-primary mimodal" type="button"data-href="usuarios_rol_asignar.php?id=<?php echo $_smarty_tpl->tpl_vars['usuario']->value['id'];?>
+						          <a class="btn btn-sm btn-outline-primary mimodal" type="button" data-href="usuarios_rol_asignar.php?id=<?php echo $_smarty_tpl->tpl_vars['usuario']->value['id'];?>
 " title="Asignar un Rol a el Usuario"><span class="fa fa-plus"></span></a>
                     <?php }?>
                   </th>
@@ -77,7 +77,13 @@ for ($__section_i_0_iteration = 1, $_smarty_tpl->tpl_vars['__smarty_section_i']-
 ?>
                     	<div class="list-group">
                         <?php if (isset($_smarty_tpl->tpl_vars['rol']->value)) {?>
-                          <?php if ($_smarty_tpl->tpl_vars['roles']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['id_rol'] == $_smarty_tpl->tpl_vars['rol']->value) {?>
+                          <?php $_tmp_array = isset($_smarty_tpl->tpl_vars['roles']) ? $_smarty_tpl->tpl_vars['roles']->value : array();
+if (!is_array($_tmp_array) || $_tmp_array instanceof ArrayAccess) {
+settype($_tmp_array, 'array');
+}
+$_tmp_array[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['id_rol'] = $_smarty_tpl->tpl_vars['rol']->value;
+$_smarty_tpl->_assignInScope('roles', $_tmp_array);
+if ($_smarty_tpl->tpl_vars['rol']->value) {?>
                     		    <li class="list-group-item d-flex justify-content-between align-items-center"><?php echo $_smarty_tpl->tpl_vars['roles']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['rol'];?>
 
                           <?php }?>
@@ -87,7 +93,7 @@ for ($__section_i_0_iteration = 1, $_smarty_tpl->tpl_vars['__smarty_section_i']-
                         <?php }?>
                           <?php if (in_array("USUA_ER",$_smarty_tpl->tpl_vars['verificar']->value) == TRUE) {?>
   			                    <a 
-  			                      style="margin-bottom:3px; color:blue;" 
+  			                      style="margin-bottom:2px; color:blue;" 
   			                      class="btn btn-default"
   			                      title="Eliminar Rol a el Usuario" 
   			                      href="proc_usuarios_rol_eliminar.php?id=<?php echo $_smarty_tpl->tpl_vars['usuario']->value['id'];?>
@@ -116,14 +122,14 @@ $_smarty_tpl->tpl_vars['__smarty_section_i'] = new Smarty_Variable(array());
 if ($__section_i_1_total != 0) {
 for ($__section_i_1_iteration = 1, $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] = 0; $__section_i_1_iteration <= $__section_i_1_total; $__section_i_1_iteration++, $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']++){
 ?>
-                        <div class="list-group">
+                        <div class="list-group ">
                            <li style="font-size: smaller;" class="list-group-item d-flex justify-content-between align-items-center">
                           <?php if ($_smarty_tpl->tpl_vars['roles']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['id_nucleo'] != NULL) {?>
                             <?php $_smarty_tpl->_assignInScope('nucleos', bd_nucleos_datos($_smarty_tpl->tpl_vars['roles']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['id_nucleo']));
 ?>
                             <?php echo $_smarty_tpl->tpl_vars['nucleos']->value['nombre_corto'];?>
 
-                          <?php } else { ?>
+                          <?php } elseif ($_smarty_tpl->tpl_vars['roles']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['id_rol'] != "5e7ec3342d4ee") {?>
                             <a class="btn btn-sm btn-outline-primary mimodal" type="button" data-href="usuarios_rol_asignar_nucleo.php?id=<?php echo $_smarty_tpl->tpl_vars['roles']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['id'];?>
 &id_usuario=<?php echo $_smarty_tpl->tpl_vars['usuario']->value['id'];?>
 " title="Asignar un Nucleo a el Rol"><span class="fa fa-plus"></span></a>
@@ -154,7 +160,7 @@ for ($__section_i_2_iteration = 1, $_smarty_tpl->tpl_vars['__smarty_section_i']-
 ?>
                             <?php echo $_smarty_tpl->tpl_vars['nucleos']->value['nombre_corto'];?>
 
-                          <?php } else { ?>
+                          <?php } elseif ($_smarty_tpl->tpl_vars['roles']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['id_rol'] != "5e7ec3342d4ee") {?>
                             <a class="btn btn-sm btn-outline-primary mimodal" type="button" data-href="usuarios_rol_asignar_pnf_a_rol.php?id=<?php echo $_smarty_tpl->tpl_vars['roles']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['id'];?>
 &id_usuario=<?php echo $_smarty_tpl->tpl_vars['usuario']->value['id'];?>
 &nucleo=<?php echo $_smarty_tpl->tpl_vars['roles']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['id_nucleo'];?>
@@ -170,7 +176,7 @@ if ($__section_i_2_saved) {
 $_smarty_tpl->tpl_vars['__smarty_section_i'] = $__section_i_2_saved;
 }
 ?>
-                    </td>
+                  </td>
                     
                   </tr>
                 </tbody>

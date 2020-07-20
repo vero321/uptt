@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-07-08 11:25:30
+/* Smarty version 3.1.30, created on 2020-07-20 14:29:37
   from "/home/veronica/public_html/uptt/modulos/usuario/templates/usuarios_rol_asignar.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5f05e56af409e4_57533229',
+  'unifunc' => 'content_5f15e29190b821_87553450',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'e0ba2d4234a4d230d6caa0c3d31bf59b9a2f54ef' => 
     array (
       0 => '/home/veronica/public_html/uptt/modulos/usuario/templates/usuarios_rol_asignar.html',
-      1 => 1594221928,
+      1 => 1595269764,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5f05e56af409e4_57533229 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f15e29190b821_87553450 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <div class="container">
 <div class="row">
@@ -30,7 +30,7 @@ function content_5f05e56af409e4_57533229 (Smarty_Internal_Template $_smarty_tpl)
         <section id="intro">
             <div class="container">
               <div class="centro"> 
-                  <h1>Asignar Rol</h1>
+                  <h3>Asignar Rol</h3>
                     <form 
                       action="proc_usuarios_rol_asignar.php" 
                       method="POST" 
@@ -49,16 +49,17 @@ $_smarty_tpl->tpl_vars['__smarty_section_i'] = new Smarty_Variable(array());
 if ($__section_i_0_total != 0) {
 for ($__section_i_0_iteration = 1, $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] = 0; $__section_i_0_iteration <= $__section_i_0_total; $__section_i_0_iteration++, $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']++){
 ?>
-                            <div class="form-check">
-
-                              <label class="form-check-label">
-                                <input type="radio"  class="form-check-input"  
-                                name="rol" value="<?php echo $_smarty_tpl->tpl_vars['roles']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['id'];?>
+                            <div class="form-group">
+                              <label class="switch ">
+                                <input type="checkbox"  class="form-check-input"  
+                                name="rol[]" value="<?php echo $_smarty_tpl->tpl_vars['roles']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['id'];?>
 ">
-                                <?php echo $_smarty_tpl->tpl_vars['roles']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['rol'];?>
-
+                                <span class="slider round"></span>
                               </label>
+                              <div class="text_switch"><?php echo $_smarty_tpl->tpl_vars['roles']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['rol'];?>
+</div> 
                             </div>
+
                           <?php
 }
 }
@@ -67,6 +68,7 @@ $_smarty_tpl->tpl_vars['__smarty_section_i'] = $__section_i_0_saved;
 }
 ?>
                         </div>
+
                       <div class="form-group">
                         <input 
                           class="btn-enviar btn btn-sm btn-primary" 

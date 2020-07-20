@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-07-08 11:34:41
+/* Smarty version 3.1.30, created on 2020-07-20 11:21:42
   from "/home/veronica/public_html/uptt/modulos/usuario/templates/usuarios_rol_asignar_pnf_a_rol.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5f05e791729c54_24351355',
+  'unifunc' => 'content_5f15b686864591_98177766',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5f05e791729c54_24351355 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f15b686864591_98177766 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <div class="container">
 <div class="row">

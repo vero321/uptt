@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-07-11 20:58:36
+/* Smarty version 3.1.30, created on 2020-07-20 10:38:58
   from "/home/veronica/public_html/uptt/modulos/distribuidor/templates/distribuidor.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5f0a603c40bc26_57836631',
+  'unifunc' => 'content_5f15ac82b44c43_68335423',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '6aeccccc91e570d1378c18b13cc207195b25682d' => 
     array (
       0 => '/home/veronica/public_html/uptt/modulos/distribuidor/templates/distribuidor.html',
-      1 => 1594515513,
+      1 => 1594740143,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:../../pie/pie_interno.html' => 1,
   ),
 ),false)) {
-function content_5f0a603c40bc26_57836631 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f15ac82b44c43_68335423 (Smarty_Internal_Template $_smarty_tpl) {
 if (!is_callable('smarty_modifier_capitalize')) require_once '/home/veronica/public_html/uptt/vendor/smarty/libs/plugins/modifier.capitalize.php';
 $_smarty_tpl->_subTemplateRender("file:../../cabecera/cabecera_interna.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
@@ -38,6 +38,7 @@ $_smarty_tpl->_subTemplateRender("file:../../cabecera/cabecera_interna.html", $_
     <div class="row" id="central">
         
 <!--finaliza-->
+
            
         <?php ob_start();
 echo $_SESSION['actual'];
@@ -57,7 +58,7 @@ echo $_SESSION[$_prefixVariable2][(isset($_smarty_tpl->tpl_vars['__smarty_sectio
 $_prefixVariable3=ob_get_clean();
 if ($_prefixVariable3 != NULL) {?>
 
-          <div class="card card-central mb-3" style="width: 17rem; margin-top: 80px;">
+          <div class="card card-central mb-3 shadow" style="width: 17rem; margin-top: 80px;">
             <div class="body">
             <h3 class="card-title"><i class="<?php ob_start();
 echo $_SESSION['actual'];

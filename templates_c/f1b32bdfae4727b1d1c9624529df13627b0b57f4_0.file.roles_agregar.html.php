@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-07-11 21:36:31
+/* Smarty version 3.1.30, created on 2020-07-20 13:00:21
   from "/home/veronica/public_html/uptt/modulos/rol/templates/roles_agregar.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5f0a691f602028_05951944',
+  'unifunc' => 'content_5f15cda5cc3604_78637643',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'f1b32bdfae4727b1d1c9624529df13627b0b57f4' => 
     array (
       0 => '/home/veronica/public_html/uptt/modulos/rol/templates/roles_agregar.html',
-      1 => 1594517788,
+      1 => 1595259375,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5f0a691f602028_05951944 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f15cda5cc3604_78637643 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <div class="container">
 <div class="row">
@@ -72,8 +72,7 @@ function content_5f0a691f602028_05951944 (Smarty_Internal_Template $_smarty_tpl)
                   <div class="form-row">
 
                       <div class="form-group">
-                      
-                      
+    
 
                         <?php
 $__section_i_0_saved = isset($_smarty_tpl->tpl_vars['__smarty_section_i']) ? $_smarty_tpl->tpl_vars['__smarty_section_i'] : false;
@@ -83,7 +82,7 @@ $_smarty_tpl->tpl_vars['__smarty_section_i'] = new Smarty_Variable(array());
 if ($__section_i_0_total != 0) {
 for ($__section_i_0_iteration = 1, $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] = 0; $__section_i_0_iteration <= $__section_i_0_total; $__section_i_0_iteration++, $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']++){
 ?>
-                        <a class="priv" data-toggle="collapse" href='#<?php echo $_smarty_tpl->tpl_vars['privilegios']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['cod'];?>
+                        <a class="nav-link dropdown-toggle p-0" data-toggle="collapse" href='#<?php echo $_smarty_tpl->tpl_vars['privilegios']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['cod'];?>
 '><?php echo $_smarty_tpl->tpl_vars['privilegios']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['nombre'];?>
 </a><br>
                         <fieldset class="f_roles collapse" id="<?php echo $_smarty_tpl->tpl_vars['privilegios']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['cod'];?>

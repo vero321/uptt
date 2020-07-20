@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-07-08 11:57:43
+/* Smarty version 3.1.30, created on 2020-07-20 12:42:10
   from "/home/veronica/public_html/uptt/modulos/nucleo/templates/nucleo_responsable.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5f05ecf70e9787_78701937',
+  'unifunc' => 'content_5f15c96285b006_56398131',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'fdec367dbef5024ebb76a44f1195a68856ad2816' => 
     array (
       0 => '/home/veronica/public_html/uptt/modulos/nucleo/templates/nucleo_responsable.html',
-      1 => 1594137294,
+      1 => 1595255867,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:../../pie/pie_interno.html' => 1,
   ),
 ),false)) {
-function content_5f05ecf70e9787_78701937 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f15c96285b006_56398131 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:../../cabecera/cabecera_interna.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -42,18 +42,23 @@ $_smarty_tpl->_subTemplateRender("file:../../cabecera/cabecera_interna.html", $_
 <!--finaliza-->
 			<h2>Asinar responsable de <?php echo $_smarty_tpl->tpl_vars['nucleos']->value['nombre_corto'];?>
 </h2>
-
-			              <div class="jumbotron jumbo_buscar">
+          <?php if (isset($_smarty_tpl->tpl_vars['respuesta']->value)) {?>
+          	<div class="alert alert-danger" role="alert">
+            No se encuentra un rol con los permisos para ser Responsable de un Núcleo comuniquese con el administrador para que asigne un rol con los privilegios necesarios
+          </div>
+          	<?php } else { ?>
+				<div class="jumbotron jumbo_buscar">
                 <div class="container">  
                   <form action="nucleo_responsable.php?id=<?php echo $_smarty_tpl->tpl_vars['nucleos']->value['id'];?>
 " method="POST">
                       <div class="input-group">
-                        <input id="p" name="p" type="text" class="form-control" placeholder="Escriba aquí y pulse INTRO" aria-describedby="basic-addon1" required >
+                        <input id="p" name="p" type="text" class="form-control" placeholder="12345678 o coreo@correo.com" aria-describedby="basic-addon1" required >
                         <span class="input-group-addon" id="basic-addon1" style="padding:0 12px;"><i class="fa fa-search"></i></span>
                       </div>
                   </form>
                 </div>
               </div>
+          <?php }?>
 
             <?php if (isset($_smarty_tpl->tpl_vars['usuarios']->value)) {?>
 			    <section id="home" class="text-center"></section>
@@ -61,7 +66,7 @@ $_smarty_tpl->_subTemplateRender("file:../../cabecera/cabecera_interna.html", $_
 			            <div class="container">
 			              <div class="centro"> 
 			              	<h3>Selecione un Usuario</h3>
-			                    <form 
+							<form 
 			                      action="nucleo_responsable.php?id=<?php echo $_smarty_tpl->tpl_vars['nucleos']->value['id'];?>
 " 
 			                      method="POST" 
@@ -108,61 +113,6 @@ $_smarty_tpl->tpl_vars['__smarty_section_i'] = $__section_i_0_saved;
 			            </div>
 			        </div>
 			    </section>
-            <?php }?>
-            <?php if (isset($_smarty_tpl->tpl_vars['roles']->value)) {?>
-            	 <section id="home" class="text-center"></section>
-				    <section id="intro">
-				        <div class="container">
-				            <div class="centro"> 
-				            	<h3>Selecione un Rol</h3>
-				                <form 
-				                    action="nucleo_responsable.php?id=<?php echo $_smarty_tpl->tpl_vars['nucleos']->value['id'];?>
-" 
-				                    method="POST" 
-				                    class="px-4 py-3" 
-				                    id="Asignar_responsable_de_nucleo"
-				                    name="Asignar_responsable_de_nucleo">
-				                    <div class="form-group">
-				                        <input type="hidden" name="id_usuario" value="<?php echo $_smarty_tpl->tpl_vars['id_usuario']->value;?>
-">
-				                        <input type="hidden" name="id_nucleo" value="<?php echo $_smarty_tpl->tpl_vars['nucleos']->value['id'];?>
-">
-			                          	<?php
-$__section_i_1_saved = isset($_smarty_tpl->tpl_vars['__smarty_section_i']) ? $_smarty_tpl->tpl_vars['__smarty_section_i'] : false;
-$__section_i_1_loop = (is_array(@$_loop=$_smarty_tpl->tpl_vars['roles']->value) ? count($_loop) : max(0, (int) $_loop));
-$__section_i_1_total = $__section_i_1_loop;
-$_smarty_tpl->tpl_vars['__smarty_section_i'] = new Smarty_Variable(array());
-if ($__section_i_1_total != 0) {
-for ($__section_i_1_iteration = 1, $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] = 0; $__section_i_1_iteration <= $__section_i_1_total; $__section_i_1_iteration++, $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']++){
-?>
-				                            <div class="form-check">
-				                	            <label class="form-check-label">
-				                                <input type="radio"  class="form-check-input"  
-				                                name="id_rol" value="<?php echo $_smarty_tpl->tpl_vars['roles']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['id'];?>
-">
-				                                <?php echo $_smarty_tpl->tpl_vars['roles']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['rol'];?>
-
-				                              </label>
-				            	            </div>
-				        	            <?php
-}
-}
-if ($__section_i_1_saved) {
-$_smarty_tpl->tpl_vars['__smarty_section_i'] = $__section_i_1_saved;
-}
-?>
-				                    </div>
-				                    <div class="form-group">
-				                       <input 
-				                          class="btn-enviar btn btn-sm btn-primary" 
-				                          type="submit" 
-				                          name="enviar" 
-				                          value="Registra">
-				                    </div>
-				                </form>
-				    	    </div>
-				        </div>
-				    </section>
             <?php }?>
         </div>
     </div>

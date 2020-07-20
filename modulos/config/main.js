@@ -27,9 +27,21 @@ $(document).ready(function() {
                     "buttons": {
                         "copy": "Copiar",
                         "colvis": "Visibilidad"
+                    
                     }
+
+
              }
         }); //fin
+
 });
 
+$(document).ready(function() {
+    $('#tabla_repo').DataTable( {
+        dom: 'Bfrtip',
+        buttons: [
+            'copy', 'csv', 'excel', 'pdf', 'print'
+        ]
+    } );
+} );
 
