@@ -20,5 +20,5 @@ for ($i=0; $i <$n_privilegios ; $i++) {
 }
 
 $m="privilegios agragados con exito";
-ir("../mensaje/mensaje.php?m=$m&d=mensaje/rol/roles_datos.php?id=$id");
+ir("../mensaje/mensaje.php?m=$m&d=../rol/roles_datos.php?id=$id");
 

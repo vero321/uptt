@@ -18,6 +18,7 @@ $(document).ready(function() {
 
     $('body').on('click', '.mimodal', function(){
         var dataURL = $(this).attr('data-href');
+        //$('.spinner').toast('show');
         
         $('.modal-body').load(dataURL,function(){
             var etiqueta = dataURL.split('.php')[0];

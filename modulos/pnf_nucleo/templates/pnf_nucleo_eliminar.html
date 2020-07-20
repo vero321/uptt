@@ -1,0 +1,32 @@
+<div class="container">
+<div class="row">
+  <div class="col-2"></div>
+  <div class="col-8">   
+    <section id="home" class="text-center"></section>
+      <section id="intro">
+        <div class="container">
+          <div class="centro"> 
+            <h3 align="center">Eliminar PNF</h3>
+            <form 
+             	action="proc_pnf_nucleo_eliminar.php" 
+             	method="POST" 
+             	class="px-4 py-3" 
+             	id="registro_usuario"
+             	name="registro_usuario">
+              <input type="hidden" name="id" value="{$id}">
+              <div class="form-group">
+                <input type="tect" name="pnf" value="{$pnf.nombre_corto}" disabled="">
+              </div>
+
+              <input 
+                class="btn-enviar btn btn-sm btn-primary m-2" 
+                type="submit" 
+                name="enviar" 
+                value="Eliminar">
+            </form>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>

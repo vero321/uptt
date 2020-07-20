@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-07-13 20:03:02
+/* Smarty version 3.1.30, created on 2020-07-16 23:33:34
   from "/home/palencia/public_html/proyecto4/uptt/modulos/usuario/templates/usuarios_roles.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5f0cf6364ea827_41536827',
+  'unifunc' => 'content_5f111c0e7509f5_89620039',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'e5009ba5f200323cef445129ce5da447b0c47b19' => 
     array (
       0 => '/home/palencia/public_html/proyecto4/uptt/modulos/usuario/templates/usuarios_roles.html',
-      1 => 1594684981,
+      1 => 1594956313,
       2 => 'file',
     ),
   ),
@@ -24,7 +24,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:../../pie/pie_interno.html' => 1,
   ),
 ),false)) {
-function content_5f0cf6364ea827_41536827 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f111c0e7509f5_89620039 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:../../cabecera/cabecera_interna.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -44,7 +44,7 @@ $_smarty_tpl->_subTemplateRender("file:../../cabecera/cabecera_interna.html", $_
 
               <h2 align="center"><span class="badge badge-secondary badge-pill"></span>Roles del usuario</h2>
            
-              <table style="margin-top: 30px;" class="table table-striped table-responsive-xl" >
+              <table style="margin-top: 30px;" class="display table table-striped table-bordered table-condensed" >
                 <thead class="thead-lith">
                   <tr>
                     <th>Cedula</th>

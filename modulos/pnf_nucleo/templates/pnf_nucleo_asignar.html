@@ -1,0 +1,39 @@
+<div class="container">
+<div class="row">
+  <div class="col-2"></div>
+  <div class="col-8">   
+    <section id="home" class="text-center"></section>
+      <section id="intro">
+        <div class="container">
+          <div class="centro"> 
+            <h3 align="center">Asignar PNF</h3>
+            <form 
+             	action="proc_pnf_nucleo_asignar.php" 
+             	method="POST" 
+             	class="px-4 py-3" 
+             	id="registro_usuario"
+             	name="registro_usuario">
+              <input type="hidden" name="id_nucleo" value="{$id_nucleo}">
+
+              {section name=i loop=$pnf}
+                <div class="form-check">
+
+                  <label class="form-check-label">
+                    <input type="checkbox"  class="form-check-input"  
+                    name="pnf[]" value="{$pnf[i].id|capitalize}">
+                    {$pnf[i].nombre_corto|capitalize}
+                  </label>
+                </div>
+              {/section}
+              <input 
+                class="btn-enviar btn btn-sm btn-primary m-2" 
+                type="submit" 
+                name="enviar" 
+                value="Registrar">
+            </form>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>

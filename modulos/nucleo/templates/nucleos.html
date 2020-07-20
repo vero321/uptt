@@ -13,7 +13,7 @@
 
 			
           
-            <h2 class="subtitulo" align="center"><span class="badge badge-secondary badge-pill">{$n_nucleos}</span>Nucleos y Extensiones
+          <h2 class="subtitulo" align="center"><span class="badge badge-secondary badge-pill">{$n_nucleos}</span>Nucleos y Extensiones
             {if in_array("NUCL_A",$verificar) == TRUE}
              <a class="btn btn-sm btn-outline-primary mimodal" type="button" 
             data-href="nucleos_agregar.php" title="Agregar nucleo o extensión"><span class="fa fa-plus"></span></a>
@@ -75,6 +75,7 @@
                         {$usuario=bd_usuarios_datos($nucleos[i].responsable)}
                         <span><b>Usuario:</b></span>
                         {$usuario.correo}
+                        <a href="nucleo_responsable.php?id={$nucleos[i].id}&cambiar={$nucleos[i].responsable}">Cambiar</a>
                         {/if}
                       </td>
                     {/if}

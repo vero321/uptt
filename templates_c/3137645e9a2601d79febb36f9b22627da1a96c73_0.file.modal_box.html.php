@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-07-13 21:59:38
+/* Smarty version 3.1.30, created on 2020-07-20 10:04:58
   from "/home/palencia/public_html/proyecto4/uptt/modulos/modal/modal_box.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5f0d118acc59f5_43075342',
+  'unifunc' => 'content_5f15a48ac8eb26_64414195',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '3137645e9a2601d79febb36f9b22627da1a96c73' => 
     array (
       0 => '/home/palencia/public_html/proyecto4/uptt/modulos/modal/modal_box.html',
-      1 => 1594691975,
+      1 => 1595253896,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5f0d118acc59f5_43075342 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f15a48ac8eb26_64414195 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!-- The Modal -->z
 <div class="modal" id="myModal">
@@ -34,7 +34,7 @@ function content_5f0d118acc59f5_43075342 (Smarty_Internal_Template $_smarty_tpl)
 </h4>
 
         <div class="btn-group">
-          <button type="button" class="btn btn-primary btn-sm " data-dismiss="modal">Cerrar</button>
+          <button type="button" class="close btn btn-outline-danger" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
         </div>
       </div>
 
@@ -48,6 +48,14 @@ function content_5f0d118acc59f5_43075342 (Smarty_Internal_Template $_smarty_tpl)
       
       </div>
     </div>
+  </div>
+</div>
+
+<!-- Spinner -->
+
+<div class="text-center" style="position: absolute; top: 50%; left: 50%;">
+  <div class="spinner-border text-primary" role="status" id="mi_spinner">
+    <span class="sr-only">Loading...</span>
   </div>
 </div>
 <?php }

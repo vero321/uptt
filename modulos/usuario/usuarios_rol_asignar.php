@@ -7,7 +7,7 @@ verificar();
 $id = $_GET['id'];
 $roles_actuales=bd_usuarios_roles_datos($id);
 $roles=bd_roles_datos();
-$n=count($roles_actuales);
+/*$n=count($roles_actuales);
 $n2=count($roles);
 #Eate for elimina los roles que el usuario ya posee de la lista de roles
 for ($i=0; $i < $n; $i++) { 
@@ -25,7 +25,7 @@ for ($i=0; $i < $n; $i++) {
 		}
 	}
 	
-}
+}*/
 $roles=array_reverse($roles);
 
 $smarty->assign('id',$id);

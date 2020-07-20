@@ -1,0 +1,72 @@
+{include file="../../cabecera/cabecera_interna.html"}
+<!-- incluye menu y agrega el espasio de trbajo-->
+
+<div class="container" >
+            {include file="../../menu/menu_lateral.html"}
+    <div class="row" id="central">
+        
+        <div class="col-sm-9" style="margin-top: 50px;" >
+
+
+
+<!--finaliza-->
+			<h2>Asinar responsable de {$pnf['nombre_corto']}</h2>
+      {if isset($respuesta)}
+          <div class="alert alert-danger" role="alert">
+            No se encuentra un rol con los permisos para ser Responsable de un PNF comuniquese con el <b>administrador</b> para que <b>Agregue un rol con los privilegios necesarios</b>
+          </div>
+          {else}
+			       <div class="jumbotron jumbo_buscar">
+                <div class="container">  
+                  <form action="pnf_nucleo_responsable.php?id_pnf={$pnf['id']}&id_relacion={$id_relacion}&id_nucleo={$id_nucleo}" method="POST">
+                      <div class="input-group">
+                        <input id="p" name="buscar" type="text" class="form-control" placeholder="12345678 o coreo@correo.com" aria-describedby="basic-addon1" required >
+                        <span class="input-group-addon" id="basic-addon1" style="padding:0 12px;"><i class="fa fa-search"></i></span>
+                      </div>
+                  </form>
+                </div>
+              </div>
+          {/if}
+          
+                          {if isset($usuarios)}
+          <section id="home" class="text-center"></section>
+              <section id="intro">
+                  <div class="container">
+                    <div class="centro"> 
+                      <h3>Selecione un Usuario</h3>
+              <form 
+                            action="pnf_nucleo_responsable.php?id_pnf={$pnf['id']}&id_relacion={$id_relacion}&id_nucleo={$id_nucleo}"
+                            method="POST" 
+                            class="px-4 py-3" 
+                            id="Asignar_responsable_de_pnf"
+                            name="Asignar_responsable_de_pnf">
+                          <div class="form-group">
+                            
+
+                            {section name=i loop=$usuarios}
+                              <div class="form-check">
+                                    <label class="form-check-label">
+                                      <input type="radio"  class="form-check-input"  
+                                      name="id_usuario" value="{$usuarios[i].id}">
+                                      {$usuarios[i].correo}
+                                  </label>
+                              </div>
+                          {/section}
+                            </div>
+                          <div class="form-group">
+                              <input 
+                              class="btn-enviar btn btn-sm btn-primary" 
+                                type="submit" 
+                                name="enviar" 
+                                value="Siguiente">
+                          </div>
+                      </form>
+                  </div>
+              </div>
+          </section>
+            {/if}
+
+        </div>
+    </div>
+</div>
+{include file="../../pie/pie_interno.html"}
