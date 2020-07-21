@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-07-20 10:39:06
+/* Smarty version 3.1.30, created on 2020-07-21 13:41:40
   from "/home/veronica/public_html/uptt/modulos/centro_de_investigacion/templates/centros.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5f15ac8a1ba292_85408467',
+  'unifunc' => 'content_5f1728d4e6c577_20938449',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'a9a9a11fdc422cedb7e6a9e901f615f7b21d9bd1' => 
     array (
       0 => '/home/veronica/public_html/uptt/modulos/centro_de_investigacion/templates/centros.html',
-      1 => 1594140025,
+      1 => 1595349604,
       2 => 'file',
     ),
   ),
@@ -24,7 +24,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:../../pie/pie_interno.html' => 1,
   ),
 ),false)) {
-function content_5f15ac8a1ba292_85408467 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f1728d4e6c577_20938449 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:../../cabecera/cabecera_interna.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -54,7 +54,7 @@ $_smarty_tpl->_subTemplateRender("file:../../cabecera/cabecera_interna.html", $_
             
 
               <table style="margin-top: 30px;" class="table table-responsive-xl" id="tabla_repo">
-                <thead class="thead-dark">
+                <thead>
                   <tr>
                     <th>N°</th>
                     <th>Nombre</th>

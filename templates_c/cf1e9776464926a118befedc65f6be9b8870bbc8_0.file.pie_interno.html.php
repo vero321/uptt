@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-07-20 12:58:00
+/* Smarty version 3.1.30, created on 2020-07-21 13:41:50
   from "/home/veronica/public_html/uptt/modulos/pie/pie_interno.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5f15cd18c79b58_62803243',
+  'unifunc' => 'content_5f1728de192bd4_75422688',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'cf1e9776464926a118befedc65f6be9b8870bbc8' => 
     array (
       0 => '/home/veronica/public_html/uptt/modulos/pie/pie_interno.html',
-      1 => 1594919249,
+      1 => 1595352254,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5f15cd18c79b58_62803243 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f1728de192bd4_75422688 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!--Comienzo del Pie de Página-->
 <div class="espacio">
@@ -53,6 +53,28 @@ function content_5f15cd18c79b58_62803243 (Smarty_Internal_Template $_smarty_tpl)
     <?php echo '<script'; ?>
  src="../config/main.js"><?php echo '</script'; ?>
 >
+
+    <!--para que funcionen los de exportar data table-->
+    
+    <?php echo '<script'; ?>
+ src="../../vendor/DataTables/jquery/dataTables.buttons.min.js" type="text/javascript"><?php echo '</script'; ?>
+>
+    <?php echo '<script'; ?>
+ src="../../vendor/DataTables/jquery/jszip.min.js" type="text/javascript"><?php echo '</script'; ?>
+>
+    <?php echo '<script'; ?>
+ src="../../vendor/DataTables/jquery/pdfmake.min.js" type="text/javascript"><?php echo '</script'; ?>
+>
+    <?php echo '<script'; ?>
+ src="../../vendor/DataTables/jquery/vfs_fonts.js" type="text/javascript"><?php echo '</script'; ?>
+>
+    <?php echo '<script'; ?>
+ src="../../vendor/DataTables/jquery/buttons.html5.min.js" type="text/javascript"><?php echo '</script'; ?>
+>
+    <?php echo '<script'; ?>
+ src="../../vendor/DataTables/jquery/buttons.print.min.js" type="text/javascript"><?php echo '</script'; ?>
+>
+
 <!--Final del Pie de Página-->
 
         

@@ -28,14 +28,7 @@ $(document).ready(function() {
                         "copy": "Copiar",
                         "colvis": "Visibilidad"
 
-                    },
-                    "export":{
-                    "dom": "Bfrtip",
-                    "buttons": [
-                        'copy', 'csv', 'excel', "pdf", 'print'
-                              ]
-                    }
-
+                    }               
 
              },
         dom: 'Bfrtip',

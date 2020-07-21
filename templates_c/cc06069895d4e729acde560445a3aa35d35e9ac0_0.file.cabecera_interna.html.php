@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-07-20 10:39:06
+/* Smarty version 3.1.30, created on 2020-07-21 13:41:40
   from "/home/veronica/public_html/uptt/modulos/cabecera/cabecera_interna.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5f15ac8a1ce747_98250601',
+  'unifunc' => 'content_5f1728d4e83d13_50132329',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'cc06069895d4e729acde560445a3aa35d35e9ac0' => 
     array (
       0 => '/home/veronica/public_html/uptt/modulos/cabecera/cabecera_interna.html',
-      1 => 1595255867,
+      1 => 1595352404,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5f15ac8a1ce747_98250601 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f1728d4e83d13_50132329 (Smarty_Internal_Template $_smarty_tpl) {
 if (!is_callable('smarty_modifier_capitalize')) require_once '/home/veronica/public_html/uptt/vendor/smarty/libs/plugins/modifier.capitalize.php';
 ?>
 <!DOCTYPE html>
@@ -38,6 +38,11 @@ if (!is_callable('smarty_modifier_capitalize')) require_once '/home/veronica/pub
   <link href="../../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
    <!--Estilo de los iconos-->
   <link href="../../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  
+  <!-- llama los estilos de DataTablet de los botones de exportar -->
+  <link href="../../vendor/DataTables/buttons/buttons.dataTables.min.css" rel="stylesheet" type="text/css">
+  
+
   <title>Repositorio</title>
 </head>
 
@@ -74,8 +79,9 @@ $_smarty_tpl->tpl_vars['__smarty_section_i'] = $__section_i_1_saved;
 ?>
 
     </ul>
+
     <ul class="navbar-nav ml-auto ml-md-0">
-                <li class="nav-item dropdown">
+                <li class="nav-item dropdown ">
                     <a class="nav-link dropdown-toggle" id="userDropdown" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user fa-fw"></i><?php echo $_SESSION["u"]["correo"];?>
 </a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
@@ -83,7 +89,7 @@ $_smarty_tpl->tpl_vars['__smarty_section_i'] = $__section_i_1_saved;
 "><i class="fa fa-user fa-fw"></i>Perfil</a>
                         <a class="dropdown-item" href="../personas/usuarios_cambiar_clave.php"><i class="fa fa-unlock-alt fa-lg fa-fw"></i>Cambiar</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="../login/proc_exit.php"><i class="a fa-sign-out-alt fa-fw"></i>Salir</a>
+                        <a class="dropdown-item" href="../login/proc_exit.php"><i class="fa fa-sign-out fa-fw"></i>Salir</a>
                     </div>
                 </li>
             </ul>

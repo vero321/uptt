@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-07-20 12:58:00
+/* Smarty version 3.1.30, created on 2020-07-21 13:41:50
   from "/home/veronica/public_html/uptt/modulos/pnf/templates/pnf.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5f15cd18c1c938_33901993',
+  'unifunc' => 'content_5f1728de11c451_44138590',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'c5431c524c85e75346dc9c0f74a8b32ff9e2841f' => 
     array (
       0 => '/home/veronica/public_html/uptt/modulos/pnf/templates/pnf.html',
-      1 => 1594139518,
+      1 => 1595349604,
       2 => 'file',
     ),
   ),
@@ -24,7 +24,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:../../pie/pie_interno.html' => 1,
   ),
 ),false)) {
-function content_5f15cd18c1c938_33901993 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f1728de11c451_44138590 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:../../cabecera/cabecera_interna.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -51,7 +51,7 @@ $_smarty_tpl->_subTemplateRender("file:../../cabecera/cabecera_interna.html", $_
             </h2>
 
               <table class="table table-responsive-xl" id="tabla_repo" style="width:100%">
-                <thead class="thead-dark">
+                <thead>
                   <tr>
                     <th>Nombre Largo</th>
                     <th>Nombre Corto</th>

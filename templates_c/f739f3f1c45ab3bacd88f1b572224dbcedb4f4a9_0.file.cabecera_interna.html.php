@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-07-21 11:09:55
+/* Smarty version 3.1.30, created on 2020-07-21 13:26:45
   from "/home/veronica/public_html/uptt/modulos/cabecera/cabecera_interna.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5f170543488434_82557242',
+  'unifunc' => 'content_5f17255593faf6_23106688',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'f739f3f1c45ab3bacd88f1b572224dbcedb4f4a9' => 
     array (
       0 => '/home/veronica/public_html/uptt/modulos/cabecera/cabecera_interna.html',
-      1 => 1595344140,
+      1 => 1595352404,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5f170543488434_82557242 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f17255593faf6_23106688 (Smarty_Internal_Template $_smarty_tpl) {
 if (!is_callable('smarty_modifier_capitalize')) require_once '/home/veronica/public_html/uptt/vendor/smarty/libs/plugins/modifier.capitalize.php';
 ?>
 <!DOCTYPE html>
@@ -38,16 +38,10 @@ if (!is_callable('smarty_modifier_capitalize')) require_once '/home/veronica/pub
   <link href="../../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
    <!--Estilo de los iconos-->
   <link href="../../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-
-
-
-
-
-
+  
+  <!-- llama los estilos de DataTablet de los botones de exportar -->
   <link href="../../vendor/DataTables/buttons/buttons.dataTables.min.css" rel="stylesheet" type="text/css">
-  <link href="../../vendor/DataTables/buttons/jquery.dataTables.min.css" rel="stylesheet" type="text/css">
-
-
+  
 
   <title>Repositorio</title>
 </head>
@@ -95,7 +89,7 @@ $_smarty_tpl->tpl_vars['__smarty_section_i'] = $__section_i_0_saved;
 "><i class="fa fa-user fa-fw"></i>Perfil</a>
                         <a class="dropdown-item" href="../personas/usuarios_cambiar_clave.php"><i class="fa fa-unlock-alt fa-lg fa-fw"></i>Cambiar</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="../login/proc_exit.php"><i class="a fa-sign-out-alt fa-fw"></i>Salir</a>
+                        <a class="dropdown-item" href="../login/proc_exit.php"><i class="fa fa-sign-out fa-fw"></i>Salir</a>
                     </div>
                 </li>
             </ul>
