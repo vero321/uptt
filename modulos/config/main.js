@@ -27,21 +27,46 @@ $(document).ready(function() {
                     "buttons": {
                         "copy": "Copiar",
                         "colvis": "Visibilidad"
-                    
+
+                    },
+                    "export":{
+                    "dom": "Bfrtip",
+                    "buttons": [
+                        'copy', 'csv', 'excel', "pdf", 'print'
+                              ]
                     }
 
 
              }
+
         }); //fin
 
 });
 
-$(document).ready(function() {
-    $('#tabla_repo').DataTable( {
-        dom: 'Bfrtip',
-        buttons: [
-            'copy', 'csv', 'excel', 'pdf', 'print'
-        ]
-    } );
-} );
 
+function clave() {
+  var x = document.getElementById("clave");
+  if (x.type === "password") {
+    x.type = "text";
+  } else {
+    x.type = "password";
+  }
+}
+
+function clave1() {
+  var x = document.getElementById("clave1");
+  if (x.type === "password") {
+    x.type = "text";
+  } else {
+    x.type = "password";
+  }
+}
+
+function clave2() {
+  var x = document.getElementById("clave2");
+  if (x.type === "password") {
+    x.type = "text";
+  } else {
+    x.type = "password";
+  }
+}

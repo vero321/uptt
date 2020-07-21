@@ -1,4 +1,31 @@
-{include file="../../cabecera/cabecera_interna.html"}
+<?php
+/* Smarty version 3.1.30, created on 2020-07-21 08:14:51
+  from "/home/veronica/public_html/uptt/modulos/personas/templates/usuarios_cambiar_clave.html" */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.30',
+  'unifunc' => 'content_5f16dc3ba2b319_86372858',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    '34a5d435c847eac0e837dd0b65203be040c860c5' => 
+    array (
+      0 => '/home/veronica/public_html/uptt/modulos/personas/templates/usuarios_cambiar_clave.html',
+      1 => 1595333687,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+    'file:../../cabecera/cabecera_interna.html' => 1,
+    'file:../../pie/pie_interno.html' => 1,
+  ),
+),false)) {
+function content_5f16dc3ba2b319_86372858 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->_subTemplateRender("file:../../cabecera/cabecera_interna.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>
+
 
 
 <!-- incluye menu y agrega el espasio de trbajo-->
@@ -66,12 +93,16 @@
                     </form>
 
 
-<script>
+<?php echo '<script'; ?>
+>
 
-</script>
+<?php echo '</script'; ?>
+>
       </div>
     </div>
 </div>
 
 
-{include file="../../pie/pie_interno.html"}
+<?php $_smarty_tpl->_subTemplateRender("file:../../pie/pie_interno.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+}
+}

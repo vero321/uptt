@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-07-20 10:50:30
+/* Smarty version 3.1.30, created on 2020-07-20 15:31:54
   from "/home/veronica/public_html/uptt/modulos/cabecera/cabecera_interna.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5f15af36890810_10949455',
+  'unifunc' => 'content_5f15f12a14d8d9_71160605',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '3a790529d5eff1dd89f7f182536bafef78290d17' => 
     array (
       0 => '/home/veronica/public_html/uptt/modulos/cabecera/cabecera_interna.html',
-      1 => 1595255867,
+      1 => 1595273504,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5f15af36890810_10949455 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f15f12a14d8d9_71160605 (Smarty_Internal_Template $_smarty_tpl) {
 if (!is_callable('smarty_modifier_capitalize')) require_once '/home/veronica/public_html/uptt/vendor/smarty/libs/plugins/modifier.capitalize.php';
 ?>
 <!DOCTYPE html>
@@ -74,8 +74,9 @@ $_smarty_tpl->tpl_vars['__smarty_section_i'] = $__section_i_0_saved;
 ?>
 
     </ul>
+
     <ul class="navbar-nav ml-auto ml-md-0">
-                <li class="nav-item dropdown">
+                <li class="nav-item dropdown ">
                     <a class="nav-link dropdown-toggle" id="userDropdown" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user fa-fw"></i><?php echo $_SESSION["u"]["correo"];?>
 </a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">

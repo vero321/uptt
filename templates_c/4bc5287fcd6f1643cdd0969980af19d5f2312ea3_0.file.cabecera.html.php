@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-07-20 11:30:47
+/* Smarty version 3.1.30, created on 2020-07-20 15:54:37
   from "/home/veronica/public_html/uptt/modulos/cabecera/cabecera.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5f15b8a7399e15_58816500',
+  'unifunc' => 'content_5f15f67d895b21_70498385',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '4bc5287fcd6f1643cdd0969980af19d5f2312ea3' => 
     array (
       0 => '/home/veronica/public_html/uptt/modulos/cabecera/cabecera.html',
-      1 => 1595259044,
+      1 => 1595274766,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5f15b8a7399e15_58816500 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f15f67d895b21_70498385 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -80,6 +80,7 @@ function content_5f15b8a7399e15_58816500 (Smarty_Internal_Template $_smarty_tpl)
             type="submit" 
             class="btn btn-primary separador">Continuar</button>
         </div>
+
       </div>
     </form>
     <a class="icon enlace-claro separador"  data-toggle="collapse" href="#login""
