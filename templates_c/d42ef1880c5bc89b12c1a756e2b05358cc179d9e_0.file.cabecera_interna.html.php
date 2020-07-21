@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-07-20 15:33:40
+/* Smarty version 3.1.30, created on 2020-07-21 10:55:52
   from "/home/veronica/public_html/uptt/modulos/cabecera/cabecera_interna.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5f15f1941a4690_55437953',
+  'unifunc' => 'content_5f1701f858a390_24816332',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'd42ef1880c5bc89b12c1a756e2b05358cc179d9e' => 
     array (
       0 => '/home/veronica/public_html/uptt/modulos/cabecera/cabecera_interna.html',
-      1 => 1595273504,
+      1 => 1595343349,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5f15f1941a4690_55437953 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f1701f858a390_24816332 (Smarty_Internal_Template $_smarty_tpl) {
 if (!is_callable('smarty_modifier_capitalize')) require_once '/home/veronica/public_html/uptt/vendor/smarty/libs/plugins/modifier.capitalize.php';
 ?>
 <!DOCTYPE html>
@@ -38,6 +38,17 @@ if (!is_callable('smarty_modifier_capitalize')) require_once '/home/veronica/pub
   <link href="../../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
    <!--Estilo de los iconos-->
   <link href="../../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+
+
+
+
+
+
+  <link href="../../vendor/DataTables/buttons/buttons.dataTables.min.css" rel="stylesheet" type="text/css">
+  <link href="../../vendor/DataTables/buttons/jquery.dataTables.min.css" rel="stylesheet" type="text/css">
+
+
+
   <title>Repositorio</title>
 </head>
 

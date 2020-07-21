@@ -27,22 +27,22 @@ $(document).ready(function() {
                     "buttons": {
                         "copy": "Copiar",
                         "colvis": "Visibilidad"
-
                     },
-                    "export":{
-                    "dom": "Bfrtip",
-                    "buttons": [
-                        'copy', 'csv', 'excel', "pdf", 'print'
-                              ]
-                    }
-
-
+                                      
              }
 
         }); //fin
 
 });
 
+/*$(document).ready(function() {
+    $('#tabla_repo').DataTable( {
+        dom: 'Bfrtip',
+        buttons: [
+             'pdf', 'print'
+        ]
+    } );
+} );*/
 
 function clave() {
   var x = document.getElementById("clave");

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-07-21 08:41:18
+/* Smarty version 3.1.30, created on 2020-07-21 11:09:55
   from "/home/veronica/public_html/uptt/modulos/cabecera/cabecera_interna.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5f16e26e012dc2_48255615',
+  'unifunc' => 'content_5f170543488434_82557242',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'f739f3f1c45ab3bacd88f1b572224dbcedb4f4a9' => 
     array (
       0 => '/home/veronica/public_html/uptt/modulos/cabecera/cabecera_interna.html',
-      1 => 1595335275,
+      1 => 1595344140,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5f16e26e012dc2_48255615 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f170543488434_82557242 (Smarty_Internal_Template $_smarty_tpl) {
 if (!is_callable('smarty_modifier_capitalize')) require_once '/home/veronica/public_html/uptt/vendor/smarty/libs/plugins/modifier.capitalize.php';
 ?>
 <!DOCTYPE html>
@@ -32,16 +32,23 @@ if (!is_callable('smarty_modifier_capitalize')) require_once '/home/veronica/pub
    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
    <!-- llama los estilos de DataTablet -->
   <link href="../../vendor/DataTables/datatables.min.css" rel="stylesheet" type="text/css">
-
-  <!--<link href="../../vendor/DataTables/buttons/buttons.dataTables.min.css" rel="stylesheet" type="text/css">
-  <link href="../../vendor/DataTables/buttons/jquery.dataTables.min.css" rel="stylesheet" type="text/css"-->
-
   <link href="../../vendor/DataTables/css/dataTables.bootstrap4.css" rel="stylesheet"  type="text/css">
   <link href="../../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="../../estilos/personal.css" rel="stylesheet" type="text/css">
   <link href="../../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
    <!--Estilo de los iconos-->
   <link href="../../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+
+
+
+
+
+
+  <link href="../../vendor/DataTables/buttons/buttons.dataTables.min.css" rel="stylesheet" type="text/css">
+  <link href="../../vendor/DataTables/buttons/jquery.dataTables.min.css" rel="stylesheet" type="text/css">
+
+
+
   <title>Repositorio</title>
 </head>
 
