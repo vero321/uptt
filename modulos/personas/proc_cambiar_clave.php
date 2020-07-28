@@ -8,7 +8,6 @@ $id = $_POST['id'];
 $clave1 = $_POST['clave1'];
 $clave2 = $_POST['clave2'];
 
-
 if ( $clave1 == $clave2 and $clave1!='') 
 {
     $claven = password_hash($clave1, PASSWORD_DEFAULT);

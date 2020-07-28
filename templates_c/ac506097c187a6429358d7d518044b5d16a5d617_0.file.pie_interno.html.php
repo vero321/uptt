@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-07-20 19:56:57
+/* Smarty version 3.1.30, created on 2020-07-26 00:36:53
   from "/home/palencia/public_html/proyecto4/uptt/modulos/pie/pie_interno.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5f162f49de2a88_36668100',
+  'unifunc' => 'content_5f1d086503ff78_29228316',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'ac506097c187a6429358d7d518044b5d16a5d617' => 
     array (
       0 => '/home/palencia/public_html/proyecto4/uptt/modulos/pie/pie_interno.html',
-      1 => 1594687073,
+      1 => 1595708801,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5f162f49de2a88_36668100 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f1d086503ff78_29228316 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!--Comienzo del Pie de Página-->
 <div class="espacio">
@@ -41,9 +41,8 @@ function content_5f162f49de2a88_36668100 (Smarty_Internal_Template $_smarty_tpl)
 
 
 
-    <?php echo '<script'; ?>
- src="../../vendor/jquery/jquery-3.3.1.min.js"><?php echo '</script'; ?>
->
+    <!--script src="../../vendor/jquery/jquery-3.3.1.min.js"><?php echo '</script'; ?>
+-->
     <?php echo '<script'; ?>
  src="../../vendor/DataTables/datatables.min.js" type="text/javascript"><?php echo '</script'; ?>
 >
@@ -53,6 +52,41 @@ function content_5f162f49de2a88_36668100 (Smarty_Internal_Template $_smarty_tpl)
     <?php echo '<script'; ?>
  src="../config/main.js"><?php echo '</script'; ?>
 >
+
+
+
+
+    <!--script src="../../vendor/DataTables2/jquery/jquery-3.5.1.min.js" type="text/javascript"><?php echo '</script'; ?>
+-->
+    <?php echo '<script'; ?>
+ src="../../vendor/DataTables2/jquery/jquery.dataTables.min.js" type="text/javascript"><?php echo '</script'; ?>
+>
+    <?php echo '<script'; ?>
+ src="../../vendor/DataTables2/jquery/dataTables.buttons.min.js" type="text/javascript"><?php echo '</script'; ?>
+>
+    <?php echo '<script'; ?>
+ src="../../vendor/DataTables2/jquery/buttons.flash.min.js" type="text/javascript"><?php echo '</script'; ?>
+>
+    <?php echo '<script'; ?>
+ src="../../vendor/DataTables2/jquery/jszip.min.js" type="text/javascript"><?php echo '</script'; ?>
+>
+    <?php echo '<script'; ?>
+ src="../../vendor/DataTables2/jquery/pdfmake.min.js" type="text/javascript"><?php echo '</script'; ?>
+>
+    <?php echo '<script'; ?>
+ src="../../vendor/DataTables2/jquery/vfs_fonts.js" type="text/javascript"><?php echo '</script'; ?>
+>
+    <?php echo '<script'; ?>
+ src="../../vendor/DataTables2/jquery/buttons.html5.min.js" type="text/javascript"><?php echo '</script'; ?>
+>
+    <?php echo '<script'; ?>
+ src="../../vendor/DataTables2/jquery/buttons.print.min.js" type="text/javascript"><?php echo '</script'; ?>
+>
+    
+
+ 
+
+
 <!--Final del Pie de Página-->
 
         

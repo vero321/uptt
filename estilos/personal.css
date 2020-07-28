@@ -289,10 +289,10 @@ h2.subtitulo
 #sidebar-wrapper .sidebar-nav li a {
     display: block;
     text-decoration: none;
-    color: #fff;
+    color: #BFDEFF;
 }
 #sidebar-wrapper .sidebar-nav li a:hover {
-    color: #000;
+    color: #fff;
 }
 
 .sidebar-nav li:first-child a {
@@ -301,7 +301,7 @@ h2.subtitulo
 }
 .sidebar-nav li:first-child a:hover {
         
-    color: #000 !important;
+    color: #fff !important;
 }
 
 #sidebar-wrapper .sidebar-nav li a .sidebar-icon {
@@ -312,7 +312,7 @@ h2.subtitulo
     display: inline-block;
     text-indent: 7px;
     margin-right: 10px;
-    color: #fff;
+    color: #BFDEFF;
     float: left;
 }
 

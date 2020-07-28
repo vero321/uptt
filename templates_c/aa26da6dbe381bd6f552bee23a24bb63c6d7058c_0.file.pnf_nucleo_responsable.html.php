@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-07-20 20:37:13
+/* Smarty version 3.1.30, created on 2020-07-26 00:35:09
   from "/home/palencia/public_html/proyecto4/uptt/modulos/pnf_nucleo/templates/pnf_nucleo_responsable.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5f1638b96be9e0_01061306',
+  'unifunc' => 'content_5f1d07fd224811_09748830',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'aa26da6dbe381bd6f552bee23a24bb63c6d7058c' => 
     array (
       0 => '/home/palencia/public_html/proyecto4/uptt/modulos/pnf_nucleo/templates/pnf_nucleo_responsable.html',
-      1 => 1595017826,
+      1 => 1595738107,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:../../pie/pie_interno.html' => 1,
   ),
 ),false)) {
-function content_5f1638b96be9e0_01061306 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f1d07fd224811_09748830 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:../../cabecera/cabecera_interna.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -33,21 +33,21 @@ $_smarty_tpl->_subTemplateRender("file:../../cabecera/cabecera_interna.html", $_
             <?php $_smarty_tpl->_subTemplateRender("file:../../menu/menu_lateral.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
-    <div class="row" id="central">
+    <div class="row " id="central">
         
         <div class="col-sm-9" style="margin-top: 50px;" >
 
 
 
 <!--finaliza-->
-			<h2>Asinar responsable de <?php echo $_smarty_tpl->tpl_vars['pnf']->value['nombre_corto'];?>
+			<h2 class="text-center">Asinar responsable de <?php echo $_smarty_tpl->tpl_vars['pnf']->value['nombre_corto'];?>
 </h2>
       <?php if (isset($_smarty_tpl->tpl_vars['respuesta']->value)) {?>
           <div class="alert alert-danger" role="alert">
             No se encuentra un rol con los permisos para ser Responsable de un PNF comuniquese con el <b>administrador</b> para que <b>Agregue un rol con los privilegios necesarios</b>
           </div>
           <?php } else { ?>
-			       <div class="jumbotron jumbo_buscar">
+			       <div class="car shadow m-3 p-4">
                 <div class="container">  
                   <form action="pnf_nucleo_responsable.php?id_pnf=<?php echo $_smarty_tpl->tpl_vars['pnf']->value['id'];?>
 &id_relacion=<?php echo $_smarty_tpl->tpl_vars['id_relacion']->value;?>
@@ -55,7 +55,7 @@ $_smarty_tpl->_subTemplateRender("file:../../cabecera/cabecera_interna.html", $_
 " method="POST">
                       <div class="input-group">
                         <input id="p" name="buscar" type="text" class="form-control" placeholder="12345678 o coreo@correo.com" aria-describedby="basic-addon1" required >
-                        <span class="input-group-addon" id="basic-addon1" style="padding:0 12px;"><i class="fa fa-search"></i></span>
+                        <span class="input-group-addon bg-primary" id="basic-addon1" style="padding:0 12px;"><i class="fa fa-search  pt-2"></i></span>
                       </div>
                   </form>
                 </div>

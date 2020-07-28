@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-07-20 20:32:54
+/* Smarty version 3.1.30, created on 2020-07-26 00:35:34
   from "/home/palencia/public_html/proyecto4/uptt/modulos/nucleo/templates/nucleo_responsable.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5f1637b6329937_87197324',
+  'unifunc' => 'content_5f1d08163ff8d9_59789780',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'b13fa552d8fb9e9e24dff9dff901aec9ddd6fbd7' => 
     array (
       0 => '/home/palencia/public_html/proyecto4/uptt/modulos/nucleo/templates/nucleo_responsable.html',
-      1 => 1595016174,
+      1 => 1595738132,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:../../pie/pie_interno.html' => 1,
   ),
 ),false)) {
-function content_5f1637b6329937_87197324 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f1d08163ff8d9_59789780 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:../../cabecera/cabecera_interna.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -40,20 +40,20 @@ $_smarty_tpl->_subTemplateRender("file:../../cabecera/cabecera_interna.html", $_
 
 
 <!--finaliza-->
-			<h2>Asinar responsable de <?php echo $_smarty_tpl->tpl_vars['nucleos']->value['nombre_corto'];?>
+			<h2 class="text-center">Asinar responsable de <?php echo $_smarty_tpl->tpl_vars['nucleos']->value['nombre_corto'];?>
 </h2>
           <?php if (isset($_smarty_tpl->tpl_vars['respuesta']->value)) {?>
           	<div class="alert alert-danger" role="alert">
             No se encuentra un rol con los permisos para ser Responsable de un Núcleo comuniquese con el administrador para que asigne un rol con los privilegios necesarios
           </div>
           	<?php } else { ?>
-				<div class="jumbotron jumbo_buscar">
+				<div class="car shadow m-3 p-4">
                 <div class="container">  
                   <form action="nucleo_responsable.php?id=<?php echo $_smarty_tpl->tpl_vars['nucleos']->value['id'];?>
 " method="POST">
                       <div class="input-group">
                         <input id="p" name="p" type="text" class="form-control" placeholder="12345678 o coreo@correo.com" aria-describedby="basic-addon1" required >
-                        <span class="input-group-addon" id="basic-addon1" style="padding:0 12px;"><i class="fa fa-search"></i></span>
+                        <span class="input-group-addon bg-primary" id="basic-addon1" style="padding:0 12px;"><i class="fa fa-search  pt-2"></i></span>
                       </div>
                   </form>
                 </div>

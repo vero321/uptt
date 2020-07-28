@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-07-21 12:06:05
+/* Smarty version 3.1.30, created on 2020-07-25 21:02:28
   from "/home/palencia/public_html/proyecto4/uptt/modulos/pie/pie_interno.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5f17126d152d60_93479484',
+  'unifunc' => 'content_5f1cd6245b9ce4_52558703',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '4f17409ac231e6c97fb2ba170b82b16f1af88d78' => 
     array (
       0 => '/home/palencia/public_html/proyecto4/uptt/modulos/pie/pie_interno.html',
-      1 => 1595347146,
+      1 => 1595708801,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5f17126d152d60_93479484 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f1cd6245b9ce4_52558703 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!--Comienzo del Pie de Página-->
 <div class="espacio">
@@ -56,9 +56,8 @@ function content_5f17126d152d60_93479484 (Smarty_Internal_Template $_smarty_tpl)
 
 
 
-    <?php echo '<script'; ?>
- src="../../vendor/DataTables2/jquery/jquery-3.5.1.min.js" type="text/javascript"><?php echo '</script'; ?>
->
+    <!--script src="../../vendor/DataTables2/jquery/jquery-3.5.1.min.js" type="text/javascript"><?php echo '</script'; ?>
+-->
     <?php echo '<script'; ?>
  src="../../vendor/DataTables2/jquery/jquery.dataTables.min.js" type="text/javascript"><?php echo '</script'; ?>
 >

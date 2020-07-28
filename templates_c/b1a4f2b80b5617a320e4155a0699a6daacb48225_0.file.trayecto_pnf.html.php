@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-07-20 20:34:34
+/* Smarty version 3.1.30, created on 2020-07-21 12:56:24
   from "/home/palencia/public_html/proyecto4/uptt/modulos/trayecto_pnf/templates/trayecto_pnf.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5f16381ae9f045_85088355',
+  'unifunc' => 'content_5f171e38bffab5_97747825',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'b1a4f2b80b5617a320e4155a0699a6daacb48225' => 
     array (
       0 => '/home/palencia/public_html/proyecto4/uptt/modulos/trayecto_pnf/templates/trayecto_pnf.html',
-      1 => 1595032195,
+      1 => 1595337288,
       2 => 'file',
     ),
   ),
@@ -24,7 +24,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:../../pie/pie_interno.html' => 1,
   ),
 ),false)) {
-function content_5f16381ae9f045_85088355 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f171e38bffab5_97747825 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:../../cabecera/cabecera_interna.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -46,7 +46,7 @@ $_smarty_tpl->_subTemplateRender("file:../../cabecera/cabecera_interna.html", $_
 	            <?php }?>
 	          </h2>
 	                        <table class="display table" id="tabla_repo" style="width:100%">
-                <thead class="thead">
+                <thead>
                   <tr>
                     <th>Trayecto</th>
                     <?php if (in_array("PNNU_RP",$_smarty_tpl->tpl_vars['verificar']->value) == TRUE) {?>

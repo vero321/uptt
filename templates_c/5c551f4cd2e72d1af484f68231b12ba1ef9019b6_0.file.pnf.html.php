@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-07-21 09:15:43
+/* Smarty version 3.1.30, created on 2020-07-25 21:02:34
   from "/home/palencia/public_html/proyecto4/uptt/modulos/pnf/templates/pnf.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5f16ea7f66d278_85123798',
+  'unifunc' => 'content_5f1cd62aac7765_11704335',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '5c551f4cd2e72d1af484f68231b12ba1ef9019b6' => 
     array (
       0 => '/home/palencia/public_html/proyecto4/uptt/modulos/pnf/templates/pnf.html',
-      1 => 1595337184,
+      1 => 1595725126,
       2 => 'file',
     ),
   ),
@@ -24,10 +24,9 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:../../pie/pie_interno.html' => 1,
   ),
 ),false)) {
-function content_5f16ea7f66d278_85123798 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f1cd62aac7765_11704335 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:../../cabecera/cabecera_interna.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
-
 
 
 <!-- incluye menu y agrega el espasio de trbajo-->
@@ -36,20 +35,14 @@ $_smarty_tpl->_subTemplateRender("file:../../cabecera/cabecera_interna.html", $_
 ?>
 
     <div class="row" id="central">
-        
         <div class="col-sm-9" style="margin-top: 50px;" >
-
-
-
 <!--finaliza-->
-
             <h2 class="subtitulo" align="center"><span class="badge badge-secondary badge-pill"><?php echo $_smarty_tpl->tpl_vars['n_pnf']->value;?>
 </span>PNF
               <?php if (in_array("PNF_A",$_smarty_tpl->tpl_vars['verificar']->value) == TRUE) {?>
               <a class="btn btn-sm btn-outline-primary mimodal" type="button" data-href="pnf_agregar.php" title="Agregar PNF"><span class="fa fa-plus"></span></a>
               <?php }?>
             </h2>
-
               <table class="table table-responsive-xl" id="tabla_repo" style="width:100%">
                 <thead>
                   <tr>

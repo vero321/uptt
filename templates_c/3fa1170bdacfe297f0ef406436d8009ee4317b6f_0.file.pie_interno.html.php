@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-07-21 12:17:31
+/* Smarty version 3.1.30, created on 2020-07-26 00:12:04
   from "/home/palencia/public_html/proyecto4/uptt/modulos/pie/pie_interno.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5f17151b1e4dd2_82739869',
+  'unifunc' => 'content_5f1d0294c4f2a1_46569283',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '3fa1170bdacfe297f0ef406436d8009ee4317b6f' => 
     array (
       0 => '/home/palencia/public_html/proyecto4/uptt/modulos/pie/pie_interno.html',
-      1 => 1595348249,
+      1 => 1595708801,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5f17151b1e4dd2_82739869 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f1d0294c4f2a1_46569283 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!--Comienzo del Pie de Página-->
 <div class="espacio">

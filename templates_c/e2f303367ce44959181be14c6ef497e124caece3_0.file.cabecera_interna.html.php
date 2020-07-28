@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-07-20 20:34:34
+/* Smarty version 3.1.30, created on 2020-07-21 12:56:24
   from "/home/palencia/public_html/proyecto4/uptt/modulos/cabecera/cabecera_interna.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5f16381aec3cc1_18086109',
+  'unifunc' => 'content_5f171e38c1f765_72978586',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'e2f303367ce44959181be14c6ef497e124caece3' => 
     array (
       0 => '/home/palencia/public_html/proyecto4/uptt/modulos/cabecera/cabecera_interna.html',
-      1 => 1594865167,
+      1 => 1595348529,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5f16381aec3cc1_18086109 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f171e38c1f765_72978586 (Smarty_Internal_Template $_smarty_tpl) {
 if (!is_callable('smarty_modifier_capitalize')) require_once '/home/palencia/public_html/proyecto4/uptt/vendor/smarty/libs/plugins/modifier.capitalize.php';
 ?>
 <!DOCTYPE html>
@@ -38,6 +38,17 @@ if (!is_callable('smarty_modifier_capitalize')) require_once '/home/palencia/pub
   <link href="../../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
    <!--Estilo de los iconos-->
   <link href="../../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+
+
+
+
+
+
+  <link href="../../vendor/DataTables/buttons/buttons.dataTables.min.css" rel="stylesheet" type="text/css">
+  <link href="../../vendor/DataTables/buttons/jquery.dataTables.min.css" rel="stylesheet" type="text/css">
+
+
+
   <title>Repositorio</title>
 </head>
 
@@ -74,8 +85,9 @@ $_smarty_tpl->tpl_vars['__smarty_section_i'] = $__section_i_1_saved;
 ?>
 
     </ul>
+
     <ul class="navbar-nav ml-auto ml-md-0">
-                <li class="nav-item dropdown">
+                <li class="nav-item dropdown ">
                     <a class="nav-link dropdown-toggle" id="userDropdown" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user fa-fw"></i><?php echo $_SESSION["u"]["correo"];?>
 </a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
