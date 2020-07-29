@@ -10,18 +10,18 @@
 
 
 <!--finaliza-->
-			<h2>Asinar responsable de {$nucleos['nombre_corto']}</h2>
+			<h2 class="text-center">Asinar responsable de {$nucleos['nombre_corto']}</h2>
           {if isset($respuesta)}
           	<div class="alert alert-danger" role="alert">
             No se encuentra un rol con los permisos para ser Responsable de un Núcleo comuniquese con el administrador para que asigne un rol con los privilegios necesarios
           </div>
           	{else}
-				<div class="jumbotron jumbo_buscar">
+				<div class="car shadow m-3 p-4">
                 <div class="container">  
                   <form action="nucleo_responsable.php?id={$nucleos['id']}" method="POST">
                       <div class="input-group">
                         <input id="p" name="p" type="text" class="form-control" placeholder="12345678 o coreo@correo.com" aria-describedby="basic-addon1" required >
-                        <span class="input-group-addon" id="basic-addon1" style="padding:0 12px;"><i class="fa fa-search"></i></span>
+                        <span class="input-group-addon bg-primary" id="basic-addon1" style="padding:0 12px;"><i class="fa fa-search  pt-2"></i></span>
                       </div>
                   </form>
                 </div>

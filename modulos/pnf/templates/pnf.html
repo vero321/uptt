@@ -1,23 +1,16 @@
 {include file="../../cabecera/cabecera_interna.html"}
 
-
 <!-- incluye menu y agrega el espasio de trbajo-->
 <div class="container" >
             {include file="../../menu/menu_lateral.html"}
     <div class="row" id="central">
-        
         <div class="col-sm-9" style="margin-top: 50px;" >
-
-
-
 <!--finaliza-->
-
             <h2 class="subtitulo" align="center"><span class="badge badge-secondary badge-pill">{$n_pnf}</span>PNF
               {if in_array("PNF_A",$verificar) == TRUE}
               <a class="btn btn-sm btn-outline-primary mimodal" type="button" data-href="pnf_agregar.php" title="Agregar PNF"><span class="fa fa-plus"></span></a>
               {/if}
             </h2>
-
               <table class="table table-responsive-xl" id="tabla_repo" style="width:100%">
                 <thead>
                   <tr>

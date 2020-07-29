@@ -1,4 +1,31 @@
-{include file="../../cabecera/cabecera_interna.html"}
+<?php
+/* Smarty version 3.1.30, created on 2020-07-23 19:21:55
+  from "/home/palencia/public_html/proyecto4/uptt/modulos/personas/templates/usuarios_cambiar_clave.html" */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.30',
+  'unifunc' => 'content_5f1a1b937c7e31_91866723',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    'ea28f6610814d972f9555f0e01ded68ebd72bd2e' => 
+    array (
+      0 => '/home/palencia/public_html/proyecto4/uptt/modulos/personas/templates/usuarios_cambiar_clave.html',
+      1 => 1595546511,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+    'file:../../cabecera/cabecera_interna.html' => 1,
+    'file:../../pie/pie_interno.html' => 1,
+  ),
+),false)) {
+function content_5f1a1b937c7e31_91866723 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->_subTemplateRender("file:../../cabecera/cabecera_interna.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>
+
 
 
 <!-- incluye menu y agrega el espasio de trbajo-->
@@ -16,7 +43,8 @@
                       name="cambiar_clave" 
                       action="proc_cambiar_clave.php">
 
-                        <input type="hidden" name="id" value="{$d.id}">
+                        <input type="hidden" name="id" value="<?php echo $_smarty_tpl->tpl_vars['d']->value['id'];?>
+">
                         <div class="form-group">
                           <label for="clave0">Clave Actual</label>
                           <i onclick="clave()" class="fa fa-eye"></i>
@@ -66,12 +94,16 @@
                     </form>
 
 
-<script>
+<?php echo '<script'; ?>
+>
 
-</script>
+<?php echo '</script'; ?>
+>
       </div>
     </div>
 </div>
 
 
-{include file="../../pie/pie_interno.html"}
+<?php $_smarty_tpl->_subTemplateRender("file:../../pie/pie_interno.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+}
+}

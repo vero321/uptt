@@ -1,3 +1,27 @@
+<?php
+/* Smarty version 3.1.30, created on 2020-07-26 00:00:44
+  from "/home/palencia/public_html/proyecto4/uptt/modulos/cabecera/cabecera.html" */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.30',
+  'unifunc' => 'content_5f1cffec19ff08_37188394',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    '13ae7d6871cd0555997dd1b3a46c775b225001c8' => 
+    array (
+      0 => '/home/palencia/public_html/proyecto4/uptt/modulos/cabecera/cabecera.html',
+      1 => 1595733234,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_5f1cffec19ff08_37188394 (Smarty_Internal_Template $_smarty_tpl) {
+?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -15,7 +39,7 @@
    <link rel="shortcut icon" href="../../imagenes/logo2.png">
 
 
-  <nav  class="navbar navbar-expand-lg navbar-dark cab p-0">
+  <nav  class="navbar navbar-expand-lg navbar-dark cab p-0 shadwon">
   <a class="navbar-brand" href="../inicio/inicio.php"><img src="../../imagenes/logo_cab.png"></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -68,7 +92,9 @@
 <!--Final del Formulario de Ingreso -->
  
 </nav>
-{$cab|default:''}
+<?php echo (($tmp = @$_smarty_tpl->tpl_vars['cab']->value)===null||$tmp==='' ? '' : $tmp);?>
+
 </head>
 <body>
-<!--Final de la Cabecera -->
+<!--Final de la Cabecera --><?php }
+}
