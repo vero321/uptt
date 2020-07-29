@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-07-21 12:56:27
+/* Smarty version 3.1.30, created on 2020-07-29 13:36:28
   from "/home/palencia/public_html/proyecto4/uptt/modulos/cabecera/cabecera_interna.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5f171e3b82eac6_28960543',
+  'unifunc' => 'content_5f21b39cdbd155_95250518',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '841fd1dce3e81c46bd9c60317272eda134c527da' => 
     array (
       0 => '/home/palencia/public_html/proyecto4/uptt/modulos/cabecera/cabecera_interna.html',
-      1 => 1595348529,
+      1 => 1595988404,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5f171e3b82eac6_28960543 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f21b39cdbd155_95250518 (Smarty_Internal_Template $_smarty_tpl) {
 if (!is_callable('smarty_modifier_capitalize')) require_once '/home/palencia/public_html/proyecto4/uptt/vendor/smarty/libs/plugins/modifier.capitalize.php';
 ?>
 <!DOCTYPE html>
@@ -53,7 +53,7 @@ if (!is_callable('smarty_modifier_capitalize')) require_once '/home/palencia/pub
 </head>
 
 <body>
-    <nav class="navbar fixed-top  navbar-expand-lg navbar-dark cab p-1 shadow-sm">
+    <nav class="navbar fixed-top  navbar-expand-lg navbar-dark cab p-1 shadow">
       <a class="navbar-brand" href="../inicio/inicio_interno.php"><img src="../../imagenes/logo_interno.png"></a>
         <!--<a class="navbar-brand" href="inicio_interno.php">Repositorio</a>-->
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

@@ -1,48 +1,44 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-07-21 09:15:59
+/* Smarty version 3.1.30, created on 2020-07-29 16:16:22
   from "/home/palencia/public_html/proyecto4/uptt/modulos/centro_de_investigacion/templates/centros.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5f16ea8f84a722_91142359',
+  'unifunc' => 'content_5f21d916643907_81749248',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'a5a701eb5ae650dbd1a060f666564bdeda169bb9' => 
     array (
       0 => '/home/palencia/public_html/proyecto4/uptt/modulos/centro_de_investigacion/templates/centros.html',
-      1 => 1595337089,
+      1 => 1596053710,
       2 => 'file',
     ),
   ),
   'includes' => 
   array (
-    'file:../../cabecera/cabecera_interna.html' => 1,
-    'file:../../menu/menu_lateral.html' => 1,
+    'file:../../navegacion/cab2.html' => 1,
+    'file:../../navegacion/sidebar2.html' => 1,
+    'file:../../navegacion/cabecera2.html' => 1,
     'file:../../modal/modal_box.html' => 1,
     'file:../../pie/pie_interno.html' => 1,
   ),
 ),false)) {
-function content_5f16ea8f84a722_91142359 (Smarty_Internal_Template $_smarty_tpl) {
-$_smarty_tpl->_subTemplateRender("file:../../cabecera/cabecera_interna.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+function content_5f21d916643907_81749248 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->_subTemplateRender("file:../../navegacion/cab2.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
-
-<!-- incluye menu y agrega el espasio de trbajo-->
-<div class="container" >
-            <?php $_smarty_tpl->_subTemplateRender("file:../../menu/menu_lateral.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+<?php $_smarty_tpl->_subTemplateRender("file:../../navegacion/sidebar2.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
-    <div class="row" id="central">
-        
-        <div class="col-sm-9" style="margin-top: 50px;" >
+<?php $_smarty_tpl->_subTemplateRender("file:../../navegacion/cabecera2.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>
 
 
 
 <!--finaliza-->
-			
-          
+			   <div class="container-fluid">
             <h2 class="subtitulo" align="center"><span class="badge badge-secondary badge-pill"><?php echo $_smarty_tpl->tpl_vars['n_centros']->value;?>
 </span>Centros de Investigación
             <?php if (in_array("CENT_A",$_smarty_tpl->tpl_vars['verificar']->value) == TRUE) {?>
@@ -113,7 +109,6 @@ $_smarty_tpl->tpl_vars['__smarty_section_i'] = $__section_i_0_saved;
               
           </div>
         </div>
-      </div>
 
 <?php $_smarty_tpl->_subTemplateRender("file:../../modal/modal_box.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('prueba'=>"Usuario"), 0, false);
 ?>

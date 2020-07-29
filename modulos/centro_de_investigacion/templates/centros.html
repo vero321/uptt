@@ -1,17 +1,10 @@
-{include file="../../cabecera/cabecera_interna.html"}
-
-<!-- incluye menu y agrega el espasio de trbajo-->
-<div class="container" >
-            {include file="../../menu/menu_lateral.html"}
-    <div class="row" id="central">
-        
-        <div class="col-sm-9" style="margin-top: 50px;" >
-
+{include file="../../navegacion/cab2.html"}
+{include file="../../navegacion/sidebar2.html"}
+{include file="../../navegacion/cabecera2.html"}
 
 
 <!--finaliza-->
-			
-          
+			   <div class="container-fluid">
             <h2 class="subtitulo" align="center"><span class="badge badge-secondary badge-pill">{$n_centros}</span>Centros de Investigación
             {if in_array("CENT_A",$verificar) == TRUE}
              <a class="btn btn-sm btn-outline-primary mimodal" type="button"
@@ -64,7 +57,6 @@
               
           </div>
         </div>
-      </div>
 
 {include "../../modal/modal_box.html" prueba="Usuario"} 
 

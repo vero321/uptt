@@ -1,59 +1,66 @@
-{include file="../../cabecera/cabecera_interna.html"}
-
-<!-- incluye menu y agrega el espasio de trbajo-->
-<div class="container" >
-            {include file="../../menu/menu_lateral.html"}
-    <div class="row" id="central">
-        <div class="col-sm-9" style="margin-top: 50px;" >
+{include file="../../navegacion/cab.html"}
+{include file="../../navegacion/sidebar.html"}
+{include file="../../navegacion/cabecera.html"}
 <!--finaliza-->
-            <h2 class="subtitulo" align="center"><span class="badge badge-secondary badge-pill">{$n_pnf}</span>PNF
+        <div class="container-fluid">
+          
+            <h2 class="subtitulo"><span class="badge badge-secondary badge-pill">{$n_pnf}</span>PNF
               {if in_array("PNF_A",$verificar) == TRUE}
               <a class="btn btn-sm btn-outline-primary mimodal" type="button" data-href="pnf_agregar.php" title="Agregar PNF"><span class="fa fa-plus"></span></a>
               {/if}
             </h2>
-              <table class="table table-responsive-xl" id="tabla_repo" style="width:100%">
-                <thead>
-                  <tr>
-                    <th>Nombre Largo</th>
-                    <th>Nombre Corto</th>
-                    <th>Funciones</th>
-                  </tr>
-                </thead>
-                <tbody class="buscar" id="personas">
+            <div class="card shadow">
+                <div class="card-header ">
+                  <p class="text-primary">PNF</p>
+                </div>
+              <div class="card-body">
+                <div class="table-responsive">
+                  
+                  <table class="table" id="tabla_repo" style="width:100%">
+                    <thead>
+                      <tr>
+                        <th>Nombre Largo</th>
+                        <th>Nombre Corto</th>
+                        <th>Funciones</th>
+                      </tr>
+                    </thead>
+                    <tbody class="buscar" id="personas">
 
-                {section name=i loop=$pnf}
+                    {section name=i loop=$pnf}
 
-                  <tr>
-                    <td>{$pnf[i].nombre_largo}</td>
-                    <td>{$pnf[i].nombre_corto}</td>
-                    <td class="text-center" style="white-space: nowrap;">
-                    {if in_array("PNF_M",$verificar) == TRUE}
-                    <a 
-                      style="margin-bottom:3px; color:blue;" 
-                      class="btn btn-default mimodal" 
-                      title="Modificar PNF" 
-                      data-href="pnf_modificar.php?id={$pnf[i].id}">
-                      <i class="fa fa-pencil-square-o"></i>
-                    </a>
-                    {/if}
-                    {if in_array("PNF_E",$verificar) == TRUE}
-                    <a 
-                      style="margin-bottom:3px; color:blue;" 
-                      class="btn btn-default mimodal"
-                      title="Eliminar PNF" 
-                      data-href="pnf_eliminar.php?id={$pnf[i].id}">
-                      <i class="fa fa-trash"></i>
-                    </a>
-                    {/if}
-                    </td>
-                  </tr>
-                {/section}
+                      <tr>
+                        <td>{$pnf[i].nombre_largo}</td>
+                        <td>{$pnf[i].nombre_corto}</td>
+                        <td class="text-center" style="white-space: nowrap;">
+                        {if in_array("PNF_M",$verificar) == TRUE}
+                        <a 
+                          style="margin-bottom:3px; color:blue;" 
+                          class="btn btn-default mimodal" 
+                          title="Modificar PNF" 
+                          data-href="pnf_modificar.php?id={$pnf[i].id}">
+                          <i class="fa fa-pencil-square-o"></i>
+                        </a>
+                        {/if}
+                        {if in_array("PNF_E",$verificar) == TRUE}
+                        <a 
+                          style="margin-bottom:3px; color:blue;" 
+                          class="btn btn-default mimodal"
+                          title="Eliminar PNF" 
+                          data-href="pnf_eliminar.php?id={$pnf[i].id}">
+                          <i class="fa fa-trash"></i>
+                        </a>
+                        {/if}
+                        </td>
+                      </tr>
+                    {/section}
 
-                </tbody>
-              </table>
+                    </tbody>
+                  </table>
+                </div> 
+              </div>
+            </div>
           </div>
         </div>
-      </div>
 {include "../../../modal/modal_box.html" prueba="Usuario"} 
 
 {include file="../../pie/pie_interno.html"}

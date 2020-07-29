@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-07-20 20:33:07
+/* Smarty version 3.1.30, created on 2020-07-28 17:59:18
   from "/home/palencia/public_html/proyecto4/uptt/modulos/menu/menu_lateral.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5f1637c315d8b0_16300541',
+  'unifunc' => 'content_5f209fb66e9b62_26190833',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'cd71b86ebed81e116c17e17cdcdd3334e549e373' => 
     array (
       0 => '/home/palencia/public_html/proyecto4/uptt/modulos/menu/menu_lateral.html',
-      1 => 1594831828,
+      1 => 1595963124,
       2 => 'file',
     ),
   ),
@@ -20,10 +20,12 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5f1637c315d8b0_16300541 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f209fb66e9b62_26190833 (Smarty_Internal_Template $_smarty_tpl) {
 if (!is_callable('smarty_modifier_capitalize')) require_once '/home/palencia/public_html/proyecto4/uptt/vendor/smarty/libs/plugins/modifier.capitalize.php';
 ?>
-<!--inicio menu lateral-->
+
+<!--fin menu lateral-->
+
 <div id="wrapper" style="margin-top: -40px; padding-right: 50px;">
   <div id="sidebar-wrapper">
     <aside id="sidebar">
@@ -35,12 +37,12 @@ if (!is_callable('smarty_modifier_capitalize')) require_once '/home/palencia/pub
         <?php ob_start();
 echo $_SESSION['actual'];
 $_prefixVariable1=ob_get_clean();
-$__section_i_2_saved = isset($_smarty_tpl->tpl_vars['__smarty_section_i']) ? $_smarty_tpl->tpl_vars['__smarty_section_i'] : false;
-$__section_i_2_loop = (is_array(@$_loop=$_SESSION[$_prefixVariable1]) ? count($_loop) : max(0, (int) $_loop));
-$__section_i_2_total = $__section_i_2_loop;
+$__section_i_1_saved = isset($_smarty_tpl->tpl_vars['__smarty_section_i']) ? $_smarty_tpl->tpl_vars['__smarty_section_i'] : false;
+$__section_i_1_loop = (is_array(@$_loop=$_SESSION[$_prefixVariable1]) ? count($_loop) : max(0, (int) $_loop));
+$__section_i_1_total = $__section_i_1_loop;
 $_smarty_tpl->tpl_vars['__smarty_section_i'] = new Smarty_Variable(array());
-if ($__section_i_2_total != 0) {
-for ($__section_i_2_iteration = 1, $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] = 0; $__section_i_2_iteration <= $__section_i_2_total; $__section_i_2_iteration++, $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']++){
+if ($__section_i_1_total != 0) {
+for ($__section_i_1_iteration = 1, $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] = 0; $__section_i_1_iteration <= $__section_i_1_total; $__section_i_1_iteration++, $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']++){
 ?>
         <?php ob_start();
 echo $_SESSION['actual'];
@@ -72,8 +74,8 @@ echo smarty_modifier_capitalize($_SESSION[$_prefixVariable6][(isset($_smarty_tpl
             <?php
 }
 }
-if ($__section_i_2_saved) {
-$_smarty_tpl->tpl_vars['__smarty_section_i'] = $__section_i_2_saved;
+if ($__section_i_1_saved) {
+$_smarty_tpl->tpl_vars['__smarty_section_i'] = $__section_i_1_saved;
 }
 ?>
 
@@ -89,7 +91,7 @@ $_smarty_tpl->tpl_vars['__smarty_section_i'] = $__section_i_2_saved;
                 <li><a href="#"><i class="fa fa-caret-right"></i>Users</a></li>
                 <li><a href="#"><i class="fa fa-caret-right"></i>Roles</a></li>
             </ul>
-        </li>-->
+        </li-->
       </ul>
     </aside>            
   </div>
