@@ -1,58 +1,58 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-07-21 13:41:40
+/* Smarty version 3.1.30, created on 2020-07-30 11:22:27
   from "/home/veronica/public_html/uptt/modulos/centro_de_investigacion/templates/centros.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5f1728d4e6c577_20938449',
+  'unifunc' => 'content_5f22e5b3268910_68620195',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'a9a9a11fdc422cedb7e6a9e901f615f7b21d9bd1' => 
     array (
       0 => '/home/veronica/public_html/uptt/modulos/centro_de_investigacion/templates/centros.html',
-      1 => 1595349604,
+      1 => 1596122303,
       2 => 'file',
     ),
   ),
   'includes' => 
   array (
-    'file:../../cabecera/cabecera_interna.html' => 1,
-    'file:../../menu/menu_lateral.html' => 1,
+    'file:../../navegacion/cab2.html' => 1,
+    'file:../../navegacion/sidebar2.html' => 1,
+    'file:../../navegacion/cabecera2.html' => 1,
     'file:../../modal/modal_box.html' => 1,
     'file:../../pie/pie_interno.html' => 1,
   ),
 ),false)) {
-function content_5f1728d4e6c577_20938449 (Smarty_Internal_Template $_smarty_tpl) {
-$_smarty_tpl->_subTemplateRender("file:../../cabecera/cabecera_interna.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+function content_5f22e5b3268910_68620195 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->_subTemplateRender("file:../../navegacion/cab2.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
-
-<!-- incluye menu y agrega el espasio de trbajo-->
-<div class="container" >
-            <?php $_smarty_tpl->_subTemplateRender("file:../../menu/menu_lateral.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+<?php $_smarty_tpl->_subTemplateRender("file:../../navegacion/sidebar2.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
-    <div class="row" id="central">
-        
-        <div class="col-sm-9" style="margin-top: 50px;" >
+<?php $_smarty_tpl->_subTemplateRender("file:../../navegacion/cabecera2.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>
 
 
 
 <!--finaliza-->
-			
-          
-            <h2 class="subtitulo" align="center"><span class="badge badge-secondary badge-pill"><?php echo $_smarty_tpl->tpl_vars['n_centros']->value;?>
+			   <div class="container-fluid">
+          <div class="card">
+            
+          <div class="card-header">
+            <p class="text-primary" ><span class="badge badge-secondary badge-pill"><?php echo $_smarty_tpl->tpl_vars['n_centros']->value;?>
 </span>Centros de Investigación
             <?php if (in_array("CENT_A",$_smarty_tpl->tpl_vars['verificar']->value) == TRUE) {?>
              <a class="btn btn-sm btn-outline-primary mimodal" type="button"
             data-href="centros_agregar.php" title="Agregar Centro de Investigación"><span class="fa fa-plus"></span></a>
             <?php }?>
-          </h2>
-
+            </p>
+          </div>
             
-
+            
+            <div class="card-body">
               <table style="margin-top: 30px;" class="table table-responsive-xl" id="tabla_repo">
                 <thead>
                   <tr>

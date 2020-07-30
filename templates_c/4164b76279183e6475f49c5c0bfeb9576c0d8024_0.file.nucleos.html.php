@@ -1,63 +1,53 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-07-21 13:21:48
+/* Smarty version 3.1.30, created on 2020-07-30 11:21:50
   from "/home/veronica/public_html/uptt/modulos/nucleo/templates/nucleos.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5f17242c1cbac6_77018812',
+  'unifunc' => 'content_5f22e58e4e5d03_90202257',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '4164b76279183e6475f49c5c0bfeb9576c0d8024' => 
     array (
       0 => '/home/veronica/public_html/uptt/modulos/nucleo/templates/nucleos.html',
-      1 => 1595349604,
+      1 => 1596122303,
       2 => 'file',
     ),
   ),
   'includes' => 
   array (
-    'file:../../cabecera/cabecera_interna.html' => 1,
-    'file:../../menu/menu_lateral.html' => 1,
+    'file:../../navegacion/cab.html' => 1,
+    'file:../../navegacion/sidebar.html' => 1,
+    'file:../../navegacion/cabecera.html' => 1,
     'file:../../modal/modal_box.html' => 1,
     'file:../../pie/pie_interno.html' => 1,
   ),
 ),false)) {
-function content_5f17242c1cbac6_77018812 (Smarty_Internal_Template $_smarty_tpl) {
-$_smarty_tpl->_subTemplateRender("file:../../cabecera/cabecera_interna.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+function content_5f22e58e4e5d03_90202257 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->_subTemplateRender("file:../../navegacion/cab.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>
+
+<?php $_smarty_tpl->_subTemplateRender("file:../../navegacion/sidebar.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>
+
+  <?php $_smarty_tpl->_subTemplateRender("file:../../navegacion/cabecera.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
 
-<!-- incluye menu y agrega el espasio de trbajo-->
-<div class="container" >
-            <?php $_smarty_tpl->_subTemplateRender("file:../../menu/menu_lateral.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
-?>
 
-    <div class="row" id="central">
-        
-        <div class="col-sm-10" style="margin-top: 50px;" >
-
-
-
-<!--finaliza-->
-
-			
-          
+        <div class="container-fluid claro">
           <h2 class="subtitulo" align="center"><span class="badge badge-secondary badge-pill"><?php echo $_smarty_tpl->tpl_vars['n_nucleos']->value;?>
 </span>Nucleos y Extensiones
             <?php if (in_array("NUCL_A",$_smarty_tpl->tpl_vars['verificar']->value) == TRUE) {?>
-             <a class="btn btn-sm btn-outline-primary mimodal" type="button" 
+             <a class="btn btn-sm btn-outline-primary mimodal mimodal" type="button" 
             data-href="nucleos_agregar.php" title="Agregar nucleo o extensión"><span class="fa fa-plus"></span></a>
             <?php }?>
           </h2>
-
-           
-    
-            
-
-              <table class="table table-responsive-xl" id="tabla_repo" style="width:100%">
-                <thead>
+            <div class="table-responsive">
+              <table class="table " id="tabla_repo" style="width:100%">
+                <thead class="text-dark">
                   <tr>
                     <th>Nombre Largo</th>
                     <th>Nombre Corto</th>
@@ -67,7 +57,7 @@ $_smarty_tpl->_subTemplateRender("file:../../cabecera/cabecera_interna.html", $_
                     <?php }?>
                   </tr>
                 </thead>
-                <tbody>
+                <tbody class="text-dark">
 
                 <?php
 $__section_i_0_saved = isset($_smarty_tpl->tpl_vars['__smarty_section_i']) ? $_smarty_tpl->tpl_vars['__smarty_section_i'] : false;
@@ -78,7 +68,7 @@ if ($__section_i_0_total != 0) {
 for ($__section_i_0_iteration = 1, $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] = 0; $__section_i_0_iteration <= $__section_i_0_total; $__section_i_0_iteration++, $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']++){
 ?>
 
-                  <tr>
+                  <tr class="text-dark">
                     <td><?php echo $_smarty_tpl->tpl_vars['nucleos']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['nombre_largo'];?>
 </td>
                     <td><?php echo $_smarty_tpl->tpl_vars['nucleos']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['nombre_corto'];?>
@@ -139,10 +129,10 @@ $_smarty_tpl->tpl_vars['__smarty_section_i'] = $__section_i_0_saved;
 ?>
                 </tbody>
               </table>
+            </div>
               
           </div>
-        </div>
-      </div>
+  
 
 <?php $_smarty_tpl->_subTemplateRender("file:../../modal/modal_box.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('prueba'=>"Usuario"), 0, false);
 ?>

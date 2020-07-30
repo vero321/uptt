@@ -1,18 +1,38 @@
-{include file="../../cabecera/cabecera_interna.html"}
+{include file="../../navegacion/cab.html"}
+{include file="../../navegacion/sidebar.html"}
+{include file="../../navegacion/cabecera.html"}
+        <div class="container-fluid">
 
-
-<!-- incluye menu y agrega el espacio de trabajo -->
-<div class="container">
-            {include file="../../menu/menu_lateral.html"}
-    <div class="row" id="central">
-        
-<!--finaliza-->
-
+          <!-- Page Heading -->
+          <div class="d-sm-flex align-items-center justify-content-between mb-4">
+            <h1 class="h3 mb-0 text-gray-800">Resumen</h1>
+            <!-- a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fa fa-download fa-sm text-white-50"></i> Generate Report</a-->
+          </div>
            
+          <div class="row">
         {section  name=i loop= $smarty.session[{$smarty.session['actual']}] }
         {if {$smarty.session[{$smarty.session['actual']}][i].direccion} != NULL }
 
-<!--prueba del nuevo card-->
+          <!-- Content Row -->
+
+            <!-- Earnings (Monthly) Card Example -->
+            <div class="col-xl-3 col-md-6 mb-4">
+              <div class="card border-left-primary shadow h-100 py-2">
+                <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">{$smarty.session[{$smarty.session['actual']}][i].nombre|capitalize}</div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800">{$smarty.session[{$smarty.session['actual']}][i].cant}</div>
+                    </div>
+                    <div class="col-auto">
+                      <i class="{$smarty.session[{$smarty.session['actual']}][i].icono} fa-2x text-gray-300"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+<!--prueba del nuevo card>
       <div class="flip-card">
         <div class="flip-card-inner">
           <div class="flip-card-front body">
@@ -28,9 +48,9 @@
           </div>
         </div>
       </div>
-<!--finaliza el nuevo card-->
+<finaliza el nuevo card>
 
-<!--comienzo del card viejo-->
+<comienzo del card viejo>
 
     <div class="card card-central mb-3 shadow"
      style="width: 17rem; margin-top: 80px;">
@@ -52,8 +72,7 @@
         {/if}
         {/section}
    
-    </div>
-</div>
+
 
 
 {include file="../../pie/pie_interno.html"}

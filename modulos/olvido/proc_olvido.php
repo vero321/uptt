@@ -2,6 +2,7 @@
 define('MOD', 'olvido');
 require_once '../config/app.php';
 require_once APP."/modulos/config/inicializacion.php";
+
 $correo=$_POST['correo'];
 $sql="SELECT correo FROM USUARIOS WHERE correo LIKE '{$correo}' ";
 $verificacion_correo = sql2row($sql);

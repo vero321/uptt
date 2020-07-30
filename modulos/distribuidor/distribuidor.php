@@ -15,6 +15,8 @@ $n=$_GET['n'];
 $_SESSION['actual']=$rol;
 $_SESSION['numero']=$n;
 
+#vq($_SESSION);
+
 $privilegios=bd_roles__privilegios($rol);
 
 $smarty->display('distribuidor.html');

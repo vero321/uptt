@@ -1,31 +1,18 @@
-{include file="../../cabecera/cabecera_interna.html"}
-
-<!-- incluye menu y agrega el espasio de trbajo-->
-<div class="container" >
-            {include file="../../menu/menu_lateral.html"}
-    <div class="row" id="central">
-        
-        <div class="col-sm-10" style="margin-top: 50px;" >
+{include file="../../navegacion/cab.html"}
+{include file="../../navegacion/sidebar.html"}
+  {include file="../../navegacion/cabecera.html"}
 
 
-
-<!--finaliza-->
-
-			
-          
+        <div class="container-fluid claro">
           <h2 class="subtitulo" align="center"><span class="badge badge-secondary badge-pill">{$n_nucleos}</span>Nucleos y Extensiones
             {if in_array("NUCL_A",$verificar) == TRUE}
-             <a class="btn btn-sm btn-outline-primary mimodal" type="button" 
+             <a class="btn btn-sm btn-outline-primary mimodal mimodal" type="button" 
             data-href="nucleos_agregar.php" title="Agregar nucleo o extensión"><span class="fa fa-plus"></span></a>
             {/if}
           </h2>
-
-           
-    
-            
-
-              <table class="table table-responsive-xl" id="tabla_repo" style="width:100%">
-                <thead>
+            <div class="table-responsive">
+              <table class="table " id="tabla_repo" style="width:100%">
+                <thead class="text-dark">
                   <tr>
                     <th>Nombre Largo</th>
                     <th>Nombre Corto</th>
@@ -35,11 +22,11 @@
                     {/if}
                   </tr>
                 </thead>
-                <tbody>
+                <tbody class="text-dark">
 
                 {section name=i loop=$nucleos}
 
-                  <tr>
+                  <tr class="text-dark">
                     <td>{$nucleos[i].nombre_largo}</td>
                     <td>{$nucleos[i].nombre_corto}</td>
                     <td class="text-center" style="white-space: nowrap;">
@@ -83,10 +70,10 @@
                 {/section}
                 </tbody>
               </table>
+            </div>
               
           </div>
-        </div>
-      </div>
+  
 
 {include "../../modal/modal_box.html" prueba="Usuario"} 
 
