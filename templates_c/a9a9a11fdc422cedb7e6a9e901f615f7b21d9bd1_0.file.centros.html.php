@@ -1,59 +1,61 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-07-30 11:22:27
+/* Smarty version 3.1.30, created on 2020-07-30 16:59:02
   from "/home/veronica/public_html/uptt/modulos/centro_de_investigacion/templates/centros.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5f22e5b3268910_68620195',
+  'unifunc' => 'content_5f2334969ce390_64114417',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'a9a9a11fdc422cedb7e6a9e901f615f7b21d9bd1' => 
     array (
       0 => '/home/veronica/public_html/uptt/modulos/centro_de_investigacion/templates/centros.html',
-      1 => 1596122303,
+      1 => 1596142226,
       2 => 'file',
     ),
   ),
   'includes' => 
   array (
-    'file:../../navegacion/cab2.html' => 1,
-    'file:../../navegacion/sidebar2.html' => 1,
-    'file:../../navegacion/cabecera2.html' => 1,
+    'file:../../navegacion/cab.html' => 1,
+    'file:../../navegacion/sidebar.html' => 1,
+    'file:../../navegacion/cabecera.html' => 1,
     'file:../../modal/modal_box.html' => 1,
     'file:../../pie/pie_interno.html' => 1,
   ),
 ),false)) {
-function content_5f22e5b3268910_68620195 (Smarty_Internal_Template $_smarty_tpl) {
-$_smarty_tpl->_subTemplateRender("file:../../navegacion/cab2.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+function content_5f2334969ce390_64114417 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->_subTemplateRender("file:../../navegacion/cab.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
-<?php $_smarty_tpl->_subTemplateRender("file:../../navegacion/sidebar2.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+<?php $_smarty_tpl->_subTemplateRender("file:../../navegacion/sidebar.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
-<?php $_smarty_tpl->_subTemplateRender("file:../../navegacion/cabecera2.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+<?php $_smarty_tpl->_subTemplateRender("file:../../navegacion/cabecera.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
+   
 
 
 <!--finaliza-->
-			   <div class="container-fluid">
-          <div class="card">
+			 <div class="container-fluid">
+        <div class="card">
             
           <div class="card-header">
-            <p class="text-primary" ><span class="badge badge-secondary badge-pill"><?php echo $_smarty_tpl->tpl_vars['n_centros']->value;?>
-</span>Centros de Investigación
+            <h2 class="text-primary" ><span class="badge badge-secondary badge-pill"><?php echo $_smarty_tpl->tpl_vars['n_centros']->value;?>
+</span> Centros de Investigación
             <?php if (in_array("CENT_A",$_smarty_tpl->tpl_vars['verificar']->value) == TRUE) {?>
              <a class="btn btn-sm btn-outline-primary mimodal" type="button"
             data-href="centros_agregar.php" title="Agregar Centro de Investigación"><span class="fa fa-plus"></span></a>
             <?php }?>
-            </p>
+            </h2>
           </div>
             
             
-            <div class="card-body">
-              <table style="margin-top: 30px;" class="table table-responsive-xl" id="tabla_repo">
+          <div class="card-body">
+            <div class="table-responsibe">
+              <table  class="table" id="tabla_repo">
                 <thead>
                   <tr>
                     <th>N°</th>
@@ -114,6 +116,7 @@ $_smarty_tpl->tpl_vars['__smarty_section_i'] = $__section_i_0_saved;
           </div>
         </div>
       </div>
+    </div>
 
 <?php $_smarty_tpl->_subTemplateRender("file:../../modal/modal_box.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('prueba'=>"Usuario"), 0, false);
 ?>

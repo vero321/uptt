@@ -1,24 +1,26 @@
-{include file="../../navegacion/cab2.html"}
-{include file="../../navegacion/sidebar2.html"}
-{include file="../../navegacion/cabecera2.html"}
+{include file="../../navegacion/cab.html"}
+{include file="../../navegacion/sidebar.html"}
+{include file="../../navegacion/cabecera.html"}
+   
 
 
 <!--finaliza-->
-			   <div class="container-fluid">
-          <div class="card">
+			 <div class="container-fluid">
+        <div class="card">
             
           <div class="card-header">
-            <p class="text-primary" ><span class="badge badge-secondary badge-pill">{$n_centros}</span>Centros de Investigación
+            <h2 class="text-primary" ><span class="badge badge-secondary badge-pill">{$n_centros}</span> Centros de Investigación
             {if in_array("CENT_A",$verificar) == TRUE}
              <a class="btn btn-sm btn-outline-primary mimodal" type="button"
             data-href="centros_agregar.php" title="Agregar Centro de Investigación"><span class="fa fa-plus"></span></a>
             {/if}
-            </p>
+            </h2>
           </div>
             
             
-            <div class="card-body">
-              <table style="margin-top: 30px;" class="table table-responsive-xl" id="tabla_repo">
+          <div class="card-body">
+            <div class="table-responsibe">
+              <table  class="table" id="tabla_repo">
                 <thead>
                   <tr>
                     <th>N°</th>
@@ -62,6 +64,7 @@
           </div>
         </div>
       </div>
+    </div>
 
 {include "../../modal/modal_box.html" prueba="Usuario"} 
 

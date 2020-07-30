@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-07-30 11:22:27
-  from "/home/veronica/public_html/uptt/modulos/navegacion/cab2.html" */
+/* Smarty version 3.1.30, created on 2020-07-30 16:59:02
+  from "/home/veronica/public_html/uptt/modulos/navegacion/cab.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5f22e5b326ca70_10132309',
+  'unifunc' => 'content_5f2334969d2f33_16797330',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    'ffb35681b1906aa33929aa3319b08ed2eef49bd5' => 
+    'f9f039f68e7f4bd5144223794722375abfaf486a' => 
     array (
-      0 => '/home/veronica/public_html/uptt/modulos/navegacion/cab2.html',
+      0 => '/home/veronica/public_html/uptt/modulos/navegacion/cab.html',
       1 => 1596122303,
       2 => 'file',
     ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5f22e5b326ca70_10132309 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f2334969d2f33_16797330 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -50,5 +50,5 @@ function content_5f22e5b326ca70_10132309 (Smarty_Internal_Template $_smarty_tpl)
 
   <title>Repositorio</title>
 </head>
-<body id="page-top" style=" background-color: #fff !important;"><?php }
+<body id="page-top"><?php }
 }

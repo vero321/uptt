@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-07-30 11:22:27
+/* Smarty version 3.1.30, created on 2020-07-30 16:59:02
   from "/home/veronica/public_html/uptt/modulos/pie/pie_interno.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5f22e5b32b36f4_87991356',
+  'unifunc' => 'content_5f233496a0c3e3_06693275',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '4d8bc6712b834cadcd364634660eec47bba86b01' => 
     array (
       0 => '/home/veronica/public_html/uptt/modulos/pie/pie_interno.html',
-      1 => 1596122303,
+      1 => 1596142226,
       2 => 'file',
     ),
   ),
@@ -20,12 +20,12 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5f22e5b32b36f4_87991356 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f233496a0c3e3_06693275 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
-    <!-- Scroll to Top Button-->
+    <!-- Scroll to Top Button
   <a class="scroll-to-top rounded" href="#page-top">
     <i class="fas fa-angle-up"></i>
-  </a>
+  </a>-->
   
   <!-- Logout Modal-->
   <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -48,7 +48,7 @@ function content_5f22e5b32b36f4_87991356 (Smarty_Internal_Template $_smarty_tpl)
 <!--Comienzo del Pie de Página-->
 
       <!-- Footer -->
-      <footer class="sticky-footer bg-white">
+      <footer class="sticky-footer bg-white mt-4">
         <div class="container my-auto">
           <div class="copyright text-center my-auto">
             <span>Realizado por Verónica Osuna, Karla Quintero, José Palencia y Brando Hernández</span>
@@ -64,15 +64,15 @@ function content_5f22e5b32b36f4_87991356 (Smarty_Internal_Template $_smarty_tpl)
 
 
 
-<<<<<<< HEAD
+
     <!--script src="../../vendor/jquery/jquery-3.3.1.min.js"><?php echo '</script'; ?>
 -->
 
-=======
+
     <?php echo '<script'; ?>
  src="../../vendor/jquery/jquery-3.3.1.min.js"><?php echo '</script'; ?>
 >
->>>>>>> 8f8489723f1a4a68d3cce37b506d4facfadd5a29
+
     <?php echo '<script'; ?>
  src="../../vendor/DataTables/datatables.min.js" type="text/javascript"><?php echo '</script'; ?>
 >

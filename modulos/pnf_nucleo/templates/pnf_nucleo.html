@@ -1,17 +1,19 @@
-{include file="../../cabecera/cabecera_interna.html"}
-
-<!-- incluye menu y agrega el espasio de trbajo-->
-<div class="container" >
-            {include file="../../menu/menu_lateral.html"}
-    <div class="row" id="central">
-        
-        <div class="col-md-10" style="margin-top: 50px;" >
-        <h2 class="subtitulo" align="center"><span class="badge badge-secondary badge-pill">{$n_nucleos_pnf}</span>{$nucleo['nombre_corto']}
+{include file="../../navegacion/cab.html"}
+{include file="../../navegacion/sidebar.html"}
+{include file="../../navegacion/cabecera.html"}
+   
+<div class="container-fluid">
+  <div class="card shadow">
+      <div class="card-header ">
+        <h2 class="text-primary"><span class="badge badge-secondary badge-pill">{$n_nucleos_pnf}</span> {$nucleo['nombre_corto']}
             {if in_array("PNNU_A",$verificar) == TRUE}
              <a class="btn btn-sm btn-outline-primary mimodal" type="button" 
             data-href="pnf_nucleo_asignar.php" title="Agregar PNF a {$nucleo['nombre_corto']}"><span class="fa fa-plus"></span></a>
             {/if}
           </h2>
+      </div>
+      <div class="card-body">
+        <div class="table-responsive">
 
               <table class="display table" id="tabla_repo" style="width:100%">
                 <thead>

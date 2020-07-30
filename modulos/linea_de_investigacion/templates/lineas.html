@@ -1,29 +1,21 @@
-{include file="../../cabecera/cabecera_interna.html"}
+{include file="../../navegacion/cab.html"}
+{include file="../../navegacion/sidebar.html"}
+{include file="../../navegacion/cabecera.html"}
 
-<!-- incluye menu y agrega el espasio de trbajo-->
-<div class="container" >
-            {include file="../../menu/menu_lateral.html"}
-    <div class="row" id="central">
-        
-        <div class="col-sm-9" style="margin-top: 50px;" >
+    <div class="container-fluid">
+      <div class="card shadow">
+          <div class="card-header ">
 
-
-
-
-<!--finaliza-->
-			
-          
-            <h2 class="subtitulo" align="center"><span class="badge badge-secondary badge-pill">{$n_lineas}</span>Líneas de Investigación
+            <h2 class="text-primary"><span class="badge badge-secondary badge-pill">{$n_lineas}</span> Líneas de Investigación
             {if in_array("LINE_A",$verificar) == TRUE}
              <a class="btn btn-sm btn-outline-primary mimodal" type="button"
             data-href="lineas_agregar.php" title="Agregar Línea de Investigación"><span class="fa fa-plus"></span></a>
             {/if}
           </h2>
-
-          
-            
-
-              <table style="margin-top: 30px;" class="table table-responsive-xl" id="tabla_repo">
+        </div>
+        <div class="card-body">
+          <div class="table-responsive">
+              <table style="margin-top: 30px;" class="table" id="tabla_repo">
                 <thead >
                   <tr>
                     <th>N°</th>
@@ -63,7 +55,7 @@
                 {/section}
                 </tbody>
               </table>
-              
+            </div>
           </div>
         </div>
       </div>

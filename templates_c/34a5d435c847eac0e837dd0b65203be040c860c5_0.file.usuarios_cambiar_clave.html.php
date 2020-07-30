@@ -1,3 +1,27 @@
+<?php
+/* Smarty version 3.1.30, created on 2020-07-30 16:51:48
+  from "/home/veronica/public_html/uptt/modulos/personas/templates/usuarios_cambiar_clave.html" */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.30',
+  'unifunc' => 'content_5f2332e4b5fe26_27002764',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    '34a5d435c847eac0e837dd0b65203be040c860c5' => 
+    array (
+      0 => '/home/veronica/public_html/uptt/modulos/personas/templates/usuarios_cambiar_clave.html',
+      1 => 1596142226,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_5f2332e4b5fe26_27002764 (Smarty_Internal_Template $_smarty_tpl) {
+?>
 
 <div class="container" >
     <div class="row" id="central_datos">
@@ -13,7 +37,8 @@
                       name="cambiar_clave" 
                       action="proc_cambiar_clave.php">
 
-                        <input type="hidden" name="id" value="{$d.id}">
+                        <input type="hidden" name="id" value="<?php echo $_smarty_tpl->tpl_vars['d']->value['id'];?>
+">
                         <div class="form-group">
                           <label for="clave0">Clave Actual</label>
                           <i onclick="clave()" class="fa fa-eye"></i>
@@ -63,7 +88,11 @@
                     </form>
 
 
-<script>
+<?php echo '<script'; ?>
+>
 
-</script>
+<?php echo '</script'; ?>
+>
 
+<?php }
+}

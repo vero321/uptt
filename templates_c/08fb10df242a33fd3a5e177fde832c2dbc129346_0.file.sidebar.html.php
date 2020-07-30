@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-07-30 11:22:20
+/* Smarty version 3.1.30, created on 2020-07-30 16:52:49
   from "/home/veronica/public_html/uptt/modulos/navegacion/sidebar.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5f22e5ac012cc5_59943813',
+  'unifunc' => 'content_5f233321475b87_07127168',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '08fb10df242a33fd3a5e177fde832c2dbc129346' => 
     array (
       0 => '/home/veronica/public_html/uptt/modulos/navegacion/sidebar.html',
-      1 => 1596122303,
+      1 => 1596142226,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5f22e5ac012cc5_59943813 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f233321475b87_07127168 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 
   <!-- Page Wrapper -->
@@ -30,19 +30,9 @@ function content_5f22e5ac012cc5_59943813 (Smarty_Internal_Template $_smarty_tpl)
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
       <!-- Sidebar - Brand -->
-      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="../inicio/inicio_interno.php">
         <img src="../../imagenes/logo_interno.png">
       </a>
-
-      <!-- Divider -->
-      <hr class="sidebar-divider my-0">
-
-      <!-- Nav Item - Dashboard -->
-      <li class="nav-item active">
-        <a class="nav-link" href="">
-          <i class="fa fa-fw fa-code"></i>
-          <span>Repo</span></a>
-      </li>
 
       <!-- Divider -->
       <hr class="sidebar-divider">

@@ -1,15 +1,15 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-07-30 16:52:21
+/* Smarty version 3.1.30, created on 2020-07-30 16:59:02
   from "/home/veronica/public_html/uptt/modulos/navegacion/sidebar.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5f233305a71e40_15685959',
+  'unifunc' => 'content_5f2334969fb2a1_26344789',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    '81687bf534f27a2f84564a762b8494a83f14d0ab' => 
+    'a2de99c8c73fff45054d80b886a9bc2987e20b17' => 
     array (
       0 => '/home/veronica/public_html/uptt/modulos/navegacion/sidebar.html',
       1 => 1596142226,
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5f233305a71e40_15685959 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f2334969fb2a1_26344789 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 
   <!-- Page Wrapper -->

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-07-30 11:22:03
+/* Smarty version 3.1.30, created on 2020-07-30 16:52:34
   from "/home/veronica/public_html/uptt/modulos/pnf/templates/pnf.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5f22e59b6fa601_92621079',
+  'unifunc' => 'content_5f233312ef72b8_57576006',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'c5431c524c85e75346dc9c0f74a8b32ff9e2841f' => 
     array (
       0 => '/home/veronica/public_html/uptt/modulos/pnf/templates/pnf.html',
-      1 => 1596122303,
+      1 => 1596142226,
       2 => 'file',
     ),
   ),
@@ -25,7 +25,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:../../pie/pie_interno.html' => 1,
   ),
 ),false)) {
-function content_5f22e59b6fa601_92621079 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f233312ef72b8_57576006 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:../../navegacion/cab.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -35,19 +35,17 @@ $_smarty_tpl->_subTemplateRender("file:../../navegacion/cab.html", $_smarty_tpl-
 <?php $_smarty_tpl->_subTemplateRender("file:../../navegacion/cabecera.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
-<!--finaliza-->
+   
         <div class="container-fluid">
-          
-            <h2 class="subtitulo"><span class="badge badge-secondary badge-pill"><?php echo $_smarty_tpl->tpl_vars['n_pnf']->value;?>
-</span>PNF
-              <?php if (in_array("PNF_A",$_smarty_tpl->tpl_vars['verificar']->value) == TRUE) {?>
-              <a class="btn btn-sm btn-outline-primary mimodal" type="button" data-href="pnf_agregar.php" title="Agregar PNF"><span class="fa fa-plus"></span></a>
-              <?php }?>
-            </h2>
-            <div class="card shadow">
-                <div class="card-header ">
-                  <p class="text-primary">PNF</p>
-                </div>
+          <div class="card shadow">
+              <div class="card-header ">
+                <h2 class="text-primary"><span class="badge badge-secondary badge-pill"><?php echo $_smarty_tpl->tpl_vars['n_pnf']->value;?>
+</span> PNF
+                  <?php if (in_array("PNF_A",$_smarty_tpl->tpl_vars['verificar']->value) == TRUE) {?>
+                  <a class="btn btn-sm btn-outline-primary mimodal" type="button" data-href="pnf_agregar.php" title="Agregar PNF"><span class="fa fa-plus"></span></a>
+                  <?php }?>
+                </h2>
+               </div>
               <div class="card-body">
                 <div class="table-responsive">
                   
@@ -112,7 +110,7 @@ $_smarty_tpl->tpl_vars['__smarty_section_i'] = $__section_i_0_saved;
               </div>
             </div>
           </div>
-        </div>
+
 <?php $_smarty_tpl->_subTemplateRender("file:../../../modal/modal_box.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('prueba'=>"Usuario"), 0, false);
 ?>
  

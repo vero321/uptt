@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-07-30 11:22:27
-  from "/home/veronica/public_html/uptt/modulos/navegacion/cabecera2.html" */
+/* Smarty version 3.1.30, created on 2020-07-30 16:51:35
+  from "/home/veronica/public_html/uptt/modulos/navegacion/cabecera.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5f22e5b32a5b29_18758787',
+  'unifunc' => 'content_5f2332d73938e3_48778951',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    '5d5abcb26ac10394b784b58dc08b8c19fbb29214' => 
+    '9c5eb7e23967f5d655bc4bcd0aa4a066c2094dc7' => 
     array (
-      0 => '/home/veronica/public_html/uptt/modulos/navegacion/cabecera2.html',
-      1 => 1596122303,
+      0 => '/home/veronica/public_html/uptt/modulos/navegacion/cabecera.html',
+      1 => 1596142226,
       2 => 'file',
     ),
   ),
@@ -20,8 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5f22e5b32a5b29_18758787 (Smarty_Internal_Template $_smarty_tpl) {
-if (!is_callable('smarty_modifier_capitalize')) require_once '/home/veronica/public_html/uptt/vendor/smarty/libs/plugins/modifier.capitalize.php';
+function content_5f2332d73938e3_48778951 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 
     <!-- Content Wrapper -->
@@ -73,51 +72,56 @@ if (!is_callable('smarty_modifier_capitalize')) require_once '/home/veronica/pub
               </div>
             </li>
 
-            <!-- Nav Item - Alerts -->
+            <!-- Nav Item - Alerts >
             <li class="nav-item dropdown no-arrow mx-1">
               <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <i class="fa fa-desktop fa-fw"></i>
-                <!--Counter - Alerts -->
+                <i class="fa fa-bell fa-fw"></i>
+                < Counter - Alerts >
                 <span class="badge badge-danger badge-counter">3+</span>
               </a>
-              <!-- Dropdown - Alerts -->
+              < Dropdown - Alerts >
               <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="alertsDropdown">
                 <h6 class="dropdown-header">
-                  Entornos
+                  Alerts Center
                 </h6>
-                <?php
-$__section_i_2_saved = isset($_smarty_tpl->tpl_vars['__smarty_section_i']) ? $_smarty_tpl->tpl_vars['__smarty_section_i'] : false;
-$__section_i_2_loop = (is_array(@$_loop=$_SESSION["r"]) ? count($_loop) : max(0, (int) $_loop));
-$__section_i_2_total = $__section_i_2_loop;
-$_smarty_tpl->tpl_vars['__smarty_section_i'] = new Smarty_Variable(array());
-if ($__section_i_2_total != 0) {
-for ($__section_i_2_iteration = 1, $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] = 0; $__section_i_2_iteration <= $__section_i_2_total; $__section_i_2_iteration++, $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']++){
-?>
-                <a class="dropdown-item d-flex align-items-center" href="../distribuidor/distribuidor.php?r=<?php echo $_SESSION['r'][(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['id_rol'];?>
-&n=<?php echo (isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null);?>
-">
+                <a class="dropdown-item d-flex align-items-center" href="#">
                   <div class="mr-3">
                     <div class="icon-circle bg-primary">
-                      <i class="fa fa-desktop fa-fw text-white"></i>
+                      <i class="fa fa-file-alt text-white"></i>
                     </div>
                   </div>
                   <div>
-                    <span class="font-weight-bold"><?php echo smarty_modifier_capitalize($_SESSION["r"][(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['rol']);?>
-</span>
+                    <div class="small text-gray-500">December 12, 2019</div>
+                    <span class="font-weight-bold">A new monthly report is ready to download!</span>
                   </div>
                 </a>
-                <?php
-}
-}
-if ($__section_i_2_saved) {
-$_smarty_tpl->tpl_vars['__smarty_section_i'] = $__section_i_2_saved;
-}
-?>
-                
+                <a class="dropdown-item d-flex align-items-center" href="#">
+                  <div class="mr-3">
+                    <div class="icon-circle bg-success">
+                      <i class="fa fa-donate text-white"></i>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="small text-gray-500">December 7, 2019</div>
+                    $290.29 has been deposited into your account!
+                  </div>
+                </a>
+                <a class="dropdown-item d-flex align-items-center" href="#">
+                  <div class="mr-3">
+                    <div class="icon-circle bg-warning">
+                      <i class="fa fa-exclamation-triangle text-white"></i>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="small text-gray-500">December 2, 2019</div>
+                    Spending Alert: We've noticed unusually high spending for your account.
+                  </div>
+                </a>
+                <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
               </div>
             </li>
 
-            <!-- Nav Item - Messages >
+            < Nav Item - Messages >
             <li class="nav-item dropdown no-arrow mx-1">
               <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <i class="fa fa-envelope fa-fw"></i>
@@ -188,10 +192,6 @@ $_smarty_tpl->tpl_vars['__smarty_section_i'] = $__section_i_2_saved;
 ">
                   <i class="fa fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                   Perfil
-                </a>
-                <a class="dropdown-item" href="../personas/usuarios_cambiar_clave.php">
-                  <i class="fa fa-unlock-alt fa-sm fa-fw text-gray-400"></i>
-                  Cambiar
                 </a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">

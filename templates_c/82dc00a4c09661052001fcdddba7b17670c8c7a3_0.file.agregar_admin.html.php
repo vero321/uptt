@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-07-30 11:31:23
+/* Smarty version 3.1.30, created on 2020-07-30 16:58:02
   from "/home/veronica/public_html/uptt/modulos/usuario/templates/agregar_admin.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5f22e7cbe1b830_44025427',
+  'unifunc' => 'content_5f23345a828d70_99821892',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5f22e7cbe1b830_44025427 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f23345a828d70_99821892 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <div class="container">
 <div class="row">
