@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-07-21 13:21:35
+/* Smarty version 3.1.30, created on 2020-07-30 10:42:26
   from "/home/veronica/public_html/uptt/modulos/distribuidor/templates/distribuidor.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5f17241f5a6b62_76668510',
+  'unifunc' => 'content_5f22dc52b9a916_74700678',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '6aeccccc91e570d1378c18b13cc207195b25682d' => 
     array (
       0 => '/home/veronica/public_html/uptt/modulos/distribuidor/templates/distribuidor.html',
-      1 => 1595295879,
+      1 => 1595956720,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:../../pie/pie_interno.html' => 1,
   ),
 ),false)) {
-function content_5f17241f5a6b62_76668510 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f22dc52b9a916_74700678 (Smarty_Internal_Template $_smarty_tpl) {
 if (!is_callable('smarty_modifier_capitalize')) require_once '/home/veronica/public_html/uptt/vendor/smarty/libs/plugins/modifier.capitalize.php';
 $_smarty_tpl->_subTemplateRender("file:../../cabecera/cabecera_interna.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
@@ -31,7 +31,7 @@ $_smarty_tpl->_subTemplateRender("file:../../cabecera/cabecera_interna.html", $_
 
 
 <!-- incluye menu y agrega el espacio de trabajo -->
-<div class="container" >
+<div class="container">
             <?php $_smarty_tpl->_subTemplateRender("file:../../menu/menu_lateral.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 

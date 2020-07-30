@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-07-21 14:11:17
+/* Smarty version 3.1.30, created on 2020-07-28 23:44:46
   from "/home/veronica/public_html/uptt/modulos/cabecera/cabecera.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5f172fc5d31df9_86863756',
+  'unifunc' => 'content_5f20f0aed01d56_82177456',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '4bc5287fcd6f1643cdd0969980af19d5f2312ea3' => 
     array (
       0 => '/home/veronica/public_html/uptt/modulos/cabecera/cabecera.html',
-      1 => 1595274766,
+      1 => 1595956720,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5f172fc5d31df9_86863756 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f20f0aed01d56_82177456 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -39,7 +39,7 @@ function content_5f172fc5d31df9_86863756 (Smarty_Internal_Template $_smarty_tpl)
    <link rel="shortcut icon" href="../../imagenes/logo2.png">
 
 
-  <nav  class="navbar navbar-expand-lg navbar-dark cab p-0 shadwon">
+  <nav  class="navbar navbar-expand-lg navbar-dark cab p-0">
   <a class="navbar-brand" href="../inicio/inicio.php"><img src="../../imagenes/logo_cab.png"></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -83,7 +83,7 @@ function content_5f172fc5d31df9_86863756 (Smarty_Internal_Template $_smarty_tpl)
 
       </div>
     </form>
-    <a class="icon enlace-claro separador"  data-toggle="collapse" href="#login""
+    <a class="icon enlace-claro separador"  data-toggle="collapse" href="#login"
     title="Ingresar"><i class="fa fa-user fa-fw" aria-hidden="true"></i></a>
     <a class="icon enlace-claro separador" href="../olvido/olvido.php"
     title="Olvide mi clave" style="color: #fff;"><i class="fa fa-lock" aria-hidden="true"></i>
