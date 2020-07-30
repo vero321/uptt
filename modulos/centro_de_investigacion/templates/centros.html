@@ -5,15 +5,19 @@
 
 <!--finaliza-->
 			   <div class="container-fluid">
-            <h2 class="subtitulo" align="center"><span class="badge badge-secondary badge-pill">{$n_centros}</span>Centros de Investigación
+          <div class="card">
+            
+          <div class="card-header">
+            <p class="text-primary" ><span class="badge badge-secondary badge-pill">{$n_centros}</span>Centros de Investigación
             {if in_array("CENT_A",$verificar) == TRUE}
              <a class="btn btn-sm btn-outline-primary mimodal" type="button"
             data-href="centros_agregar.php" title="Agregar Centro de Investigación"><span class="fa fa-plus"></span></a>
             {/if}
-          </h2>
-
+            </p>
+          </div>
             
-
+            
+            <div class="card-body">
               <table style="margin-top: 30px;" class="table table-responsive-xl" id="tabla_repo">
                 <thead>
                   <tr>
@@ -57,6 +61,7 @@
               
           </div>
         </div>
+      </div>
 
 {include "../../modal/modal_box.html" prueba="Usuario"} 
 
