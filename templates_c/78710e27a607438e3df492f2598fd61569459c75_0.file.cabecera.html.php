@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-07-30 10:47:47
+/* Smarty version 3.1.30, created on 2020-07-30 15:04:02
   from "/home/palencia/public_html/proyecto4/uptt/modulos/navegacion/cabecera.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5f22dd93bb17d7_57711708',
+  'unifunc' => 'content_5f2319a2d24495_89273304',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '78710e27a607438e3df492f2598fd61569459c75' => 
     array (
       0 => '/home/palencia/public_html/proyecto4/uptt/modulos/navegacion/cabecera.html',
-      1 => 1596040972,
+      1 => 1596135836,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5f22dd93bb17d7_57711708 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f2319a2d24495_89273304 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 
     <!-- Content Wrapper -->
@@ -30,7 +30,7 @@ function content_5f22dd93bb17d7_57711708 (Smarty_Internal_Template $_smarty_tpl)
       <div id="content">
 
         <!-- Topbar -->
-        <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top <!--cab--> shadow">
+        <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top cab shadow">
 
           <!-- Sidebar Toggle (Topbar) -->
           <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
@@ -192,10 +192,6 @@ function content_5f22dd93bb17d7_57711708 (Smarty_Internal_Template $_smarty_tpl)
 ">
                   <i class="fa fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                   Perfil
-                </a>
-                <a class="dropdown-item" href="../personas/usuarios_cambiar_clave.php">
-                  <i class="fa fa-unlock-alt fa-sm fa-fw text-gray-400"></i>
-                  Cambiar
                 </a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">

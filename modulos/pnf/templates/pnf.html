@@ -1,18 +1,16 @@
 {include file="../../navegacion/cab.html"}
 {include file="../../navegacion/sidebar.html"}
 {include file="../../navegacion/cabecera.html"}
-<!--finaliza-->
+   
         <div class="container-fluid">
-          
-            <h2 class="subtitulo"><span class="badge badge-secondary badge-pill">{$n_pnf}</span>PNF
-              {if in_array("PNF_A",$verificar) == TRUE}
-              <a class="btn btn-sm btn-outline-primary mimodal" type="button" data-href="pnf_agregar.php" title="Agregar PNF"><span class="fa fa-plus"></span></a>
-              {/if}
-            </h2>
-            <div class="card shadow">
-                <div class="card-header ">
-                  <p class="text-primary">PNF</p>
-                </div>
+          <div class="card shadow">
+              <div class="card-header ">
+                <h2 class="text-primary"><span class="badge badge-secondary badge-pill">{$n_pnf}</span> PNF
+                  {if in_array("PNF_A",$verificar) == TRUE}
+                  <a class="btn btn-sm btn-outline-primary mimodal" type="button" data-href="pnf_agregar.php" title="Agregar PNF"><span class="fa fa-plus"></span></a>
+                  {/if}
+                </h2>
+               </div>
               <div class="card-body">
                 <div class="table-responsive">
                   
@@ -60,7 +58,7 @@
               </div>
             </div>
           </div>
-        </div>
+
 {include "../../../modal/modal_box.html" prueba="Usuario"} 
 
 {include file="../../pie/pie_interno.html"}

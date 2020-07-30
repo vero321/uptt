@@ -1,15 +1,20 @@
 {include file="../../navegacion/cab.html"}
 {include file="../../navegacion/sidebar.html"}
-  {include file="../../navegacion/cabecera.html"}
+{include file="../../navegacion/cabecera.html"}
 
 
-        <div class="container-fluid claro">
-          <h2 class="subtitulo" align="center"><span class="badge badge-secondary badge-pill">{$n_nucleos}</span>Nucleos y Extensiones
+    <div class="container-fluid">
+      <div class="card shadow">
+        
+      <div class="card-header">
+          <h2 class="text-primary"><span class="badge badge-secondary badge-pill">{$n_nucleos}</span> Nucleos y Extensiones
             {if in_array("NUCL_A",$verificar) == TRUE}
              <a class="btn btn-sm btn-outline-primary mimodal mimodal" type="button" 
             data-href="nucleos_agregar.php" title="Agregar nucleo o extensión"><span class="fa fa-plus"></span></a>
             {/if}
           </h2>
+      </div>
+          <div class="card-body">
             <div class="table-responsive">
               <table class="table " id="tabla_repo" style="width:100%">
                 <thead class="text-dark">
@@ -71,8 +76,9 @@
                 </tbody>
               </table>
             </div>
-              
           </div>
+        </div>
+      </div>
   
 
 {include "../../modal/modal_box.html" prueba="Usuario"} 

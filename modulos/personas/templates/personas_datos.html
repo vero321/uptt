@@ -1,70 +1,37 @@
-{include file="../../cabecera/cabecera_interna.html"}
+{include file="../../navegacion/cab.html"}
+{include file="../../navegacion/sidebar.html"}
+{include file="../../navegacion/cabecera.html"}
 
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-4">
+              <div class="card card-primary card-outline center shadow" >
+                <div class="card-body">
+                  <div class="text-center">
+                    <img class="img-profile img-fluid rounded-circle p-5"
+                         src="../../imagenes/user.png"
+                         alt="User profile picture">
+                  </div>
 
-<!-- incluye menu y agrega el espasio de trbajo-->
-<div class="container">
-    <div class="row" id="central_datos">
-       
-                <div class="col-md-8">
+                  <h3 class="profile-username text-center">{$personas[0].nombre} {$personas[0].apellido}</h3>
 
+                  <p class="text-muted text-center">{$usuarios.correo}</p>
+                  <p class="text-muted text-center">{$usuarios.id}</p>
 
-        <h2 class="subtitulo" align="center">Datos </h2>
-        <form 
-          action="peronas_datos.php" 
-          method="POST" 
-          class="px-4 py-3" 
-          id="datos_usuario"
-          name="datos_usuario">
+                  <a class="btn btn-outline-primary  btn-block mimodal" data-href="personas_modificar.php?id={$personas[0].id}" value="Modificar Datos">
+                    <i class="fa fa-pencil-square-o fa-fw fa-lg"></i>Modificar Datos
+                  </a>
+                  <a class="btn btn-outline-primary  btn-block mimodal" data-href="../personas/usuarios_cambiar_clave.php">
+                  <i class="fa fa-unlock-alt fa-sm fa-fw text-gray-400"></i>
+                  Cambiar
+                </a>
 
-        <input type="hidden" name="id" value="{$usuarios['id']}">
-          <div class="form-group ">
-            <label for="id0">Cedula</label>
-            <input 
-              class="form-control"
-              value="{$usuarios['id']}"
-              disabled="disabled">
+                </div>
+              </div>
+            </div>
           </div>
-
-        <input type="hidden" name="id"  value="{$usuarios.correo}">
-          <div class="form-group">
-            <label for="id0">Correo</label>
-            <input 
-              class="form-control"
-              value="{$usuarios.correo}"
-              disabled="disabled">
-          </div>
-
-{section name=i loop=$personas}
-
-        <input type="hidden" name="id"  value="{$personas[i].nombre}">
-          <div class="form-group">
-            <label for="id0">Nombre</label>
-            <input 
-              class="form-control"
-              value="{$personas[i].nombre}"
-              disabled="disabled">
-          </div>
-
-        <input type="hidden" name="id"  value="{$personas[i].apellido}">
-          <div class="form-group">
-            <label for="id0">Apellido</label>
-            <input 
-              class="form-control"
-              value="{$personas[i].apellido}"
-              disabled="disabled">
         </div>
 
-
-
-          <a style="margin-bottom: 20px;" class="link float-left btn btn-light mimodal" data-href="personas_modificar.php?id={$personas[i].id}" value="Modificar Datos">
-          <i class="fa fa-pencil-square-o fa-lg"></i>Modificar Datos</a>
-
-          </form>
-{/section}
-
-    </div>
-  </div>
-</div>
 
 
 {include "../../modal/modal_box.html" prueba="Usuario"} 

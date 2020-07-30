@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-07-30 10:47:47
+/* Smarty version 3.1.30, created on 2020-07-30 14:59:27
   from "/home/palencia/public_html/proyecto4/uptt/modulos/navegacion/sidebar.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5f22dd93b9fd86_78240326',
+  'unifunc' => 'content_5f23188f5bcd96_16459163',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '1810f7f9008cab3a013f27835f7566785a4dda8a' => 
     array (
       0 => '/home/palencia/public_html/proyecto4/uptt/modulos/navegacion/sidebar.html',
-      1 => 1596052296,
+      1 => 1596135565,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5f22dd93b9fd86_78240326 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f23188f5bcd96_16459163 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 
   <!-- Page Wrapper -->
@@ -30,19 +30,9 @@ function content_5f22dd93b9fd86_78240326 (Smarty_Internal_Template $_smarty_tpl)
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
       <!-- Sidebar - Brand -->
-      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="../inicio/inicio_interno.php">
         <img src="../../imagenes/logo_interno.png">
       </a>
-
-      <!-- Divider -->
-      <hr class="sidebar-divider my-0">
-
-      <!-- Nav Item - Dashboard -->
-      <li class="nav-item active">
-        <a class="nav-link" href="">
-          <i class="fa fa-fw fa-code"></i>
-          <span>Repo</span></a>
-      </li>
 
       <!-- Divider -->
       <hr class="sidebar-divider">
@@ -54,12 +44,12 @@ function content_5f22dd93b9fd86_78240326 (Smarty_Internal_Template $_smarty_tpl)
 
       <!-- Nav Item - Pages Collapse Menu -->
       <?php
-$__section_rol_1_saved = isset($_smarty_tpl->tpl_vars['__smarty_section_rol']) ? $_smarty_tpl->tpl_vars['__smarty_section_rol'] : false;
-$__section_rol_1_loop = (is_array(@$_loop=$_SESSION["r"]) ? count($_loop) : max(0, (int) $_loop));
-$__section_rol_1_total = $__section_rol_1_loop;
+$__section_rol_0_saved = isset($_smarty_tpl->tpl_vars['__smarty_section_rol']) ? $_smarty_tpl->tpl_vars['__smarty_section_rol'] : false;
+$__section_rol_0_loop = (is_array(@$_loop=$_SESSION["r"]) ? count($_loop) : max(0, (int) $_loop));
+$__section_rol_0_total = $__section_rol_0_loop;
 $_smarty_tpl->tpl_vars['__smarty_section_rol'] = new Smarty_Variable(array());
-if ($__section_rol_1_total != 0) {
-for ($__section_rol_1_iteration = 1, $_smarty_tpl->tpl_vars['__smarty_section_rol']->value['index'] = 0; $__section_rol_1_iteration <= $__section_rol_1_total; $__section_rol_1_iteration++, $_smarty_tpl->tpl_vars['__smarty_section_rol']->value['index']++){
+if ($__section_rol_0_total != 0) {
+for ($__section_rol_0_iteration = 1, $_smarty_tpl->tpl_vars['__smarty_section_rol']->value['index'] = 0; $__section_rol_0_iteration <= $__section_rol_0_total; $__section_rol_0_iteration++, $_smarty_tpl->tpl_vars['__smarty_section_rol']->value['index']++){
 ?>
         <li class="nav-item">
           <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapse<?php echo (isset($_smarty_tpl->tpl_vars['__smarty_section_rol']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_rol']->value['index'] : null);?>
@@ -78,17 +68,17 @@ for ($__section_rol_1_iteration = 1, $_smarty_tpl->tpl_vars['__smarty_section_ro
 &n=<?php echo (isset($_smarty_tpl->tpl_vars['__smarty_section_rol']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_rol']->value['index'] : null);?>
 ">Resumen</a>
               <?php
-$__section_p_2_saved = isset($_smarty_tpl->tpl_vars['__smarty_section_p']) ? $_smarty_tpl->tpl_vars['__smarty_section_p'] : false;
-$__section_p_2_loop = (is_array(@$_loop=$_SESSION[$_SESSION["r"][(isset($_smarty_tpl->tpl_vars['__smarty_section_rol']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_rol']->value['index'] : null)]['id_rol']]) ? count($_loop) : max(0, (int) $_loop));
-$__section_p_2_total = $__section_p_2_loop;
+$__section_p_1_saved = isset($_smarty_tpl->tpl_vars['__smarty_section_p']) ? $_smarty_tpl->tpl_vars['__smarty_section_p'] : false;
+$__section_p_1_loop = (is_array(@$_loop=$_SESSION[$_SESSION["r"][(isset($_smarty_tpl->tpl_vars['__smarty_section_rol']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_rol']->value['index'] : null)]['id_rol']]) ? count($_loop) : max(0, (int) $_loop));
+$__section_p_1_total = $__section_p_1_loop;
 $_smarty_tpl->tpl_vars['__smarty_section_p'] = new Smarty_Variable(array());
-if ($__section_p_2_total != 0) {
-for ($__section_p_2_iteration = 1, $_smarty_tpl->tpl_vars['__smarty_section_p']->value['index'] = 0; $__section_p_2_iteration <= $__section_p_2_total; $__section_p_2_iteration++, $_smarty_tpl->tpl_vars['__smarty_section_p']->value['index']++){
+if ($__section_p_1_total != 0) {
+for ($__section_p_1_iteration = 1, $_smarty_tpl->tpl_vars['__smarty_section_p']->value['index'] = 0; $__section_p_1_iteration <= $__section_p_1_total; $__section_p_1_iteration++, $_smarty_tpl->tpl_vars['__smarty_section_p']->value['index']++){
 ?>
                 <?php ob_start();
 echo $_SESSION[$_SESSION["r"][(isset($_smarty_tpl->tpl_vars['__smarty_section_rol']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_rol']->value['index'] : null)]['id_rol']][(isset($_smarty_tpl->tpl_vars['__smarty_section_p']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_p']->value['index'] : null)]['direccion'] != NULL;
-$_prefixVariable13=ob_get_clean();
-if ($_prefixVariable13) {?>
+$_prefixVariable1=ob_get_clean();
+if ($_prefixVariable1) {?>
                   <a class="collapse-item" href="../<?php echo $_SESSION[$_SESSION['r'][(isset($_smarty_tpl->tpl_vars['__smarty_section_rol']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_rol']->value['index'] : null)]['id_rol']][(isset($_smarty_tpl->tpl_vars['__smarty_section_p']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_p']->value['index'] : null)]['direccion'];?>
 "><i class="<?php echo $_SESSION[$_SESSION['r'][(isset($_smarty_tpl->tpl_vars['__smarty_section_rol']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_rol']->value['index'] : null)]['id_rol']][(isset($_smarty_tpl->tpl_vars['__smarty_section_p']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_p']->value['index'] : null)]['icono'];?>
  fa-fw"></i> <?php echo $_SESSION[$_SESSION["r"][(isset($_smarty_tpl->tpl_vars['__smarty_section_rol']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_rol']->value['index'] : null)]['id_rol']][(isset($_smarty_tpl->tpl_vars['__smarty_section_p']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_p']->value['index'] : null)]['nombre'];?>
@@ -98,8 +88,8 @@ if ($_prefixVariable13) {?>
               <?php
 }
 }
-if ($__section_p_2_saved) {
-$_smarty_tpl->tpl_vars['__smarty_section_p'] = $__section_p_2_saved;
+if ($__section_p_1_saved) {
+$_smarty_tpl->tpl_vars['__smarty_section_p'] = $__section_p_1_saved;
 }
 ?>
             </div>
@@ -108,8 +98,8 @@ $_smarty_tpl->tpl_vars['__smarty_section_p'] = $__section_p_2_saved;
       <?php
 }
 }
-if ($__section_rol_1_saved) {
-$_smarty_tpl->tpl_vars['__smarty_section_rol'] = $__section_rol_1_saved;
+if ($__section_rol_0_saved) {
+$_smarty_tpl->tpl_vars['__smarty_section_rol'] = $__section_rol_0_saved;
 }
 ?>
 

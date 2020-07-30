@@ -1,22 +1,20 @@
-{include file="../../cabecera/cabecera_interna.html"}
-<!-- incluye menu y agrega el espasio de trbajo-->
+{include file="../../navegacion/cab.html"}
+{include file="../../navegacion/sidebar.html"}
+{include file="../../navegacion/cabecera.html"}
 
-<div class="container" >
-            {include file="../../menu/menu_lateral.html"}
-    <div class="row" id="central">
-        
-        <div class="col-sm-9" style="margin-top: 50px;" >
+	<div class="container-fluid">
+	  <div class="card shadow">
+	    <div class="card-header ">
+			<h2 class="text-center">Asinar responsable de {$nucleos['nombre_corto']}
+			</h2>
+		</div>
 
-
-
-<!--finaliza-->
-			<h2 class="text-center">Asinar responsable de {$nucleos['nombre_corto']}</h2>
-          {if isset($respuesta)}
-          	<div class="alert alert-danger" role="alert">
-            No se encuentra un rol con los permisos para ser Responsable de un Núcleo comuniquese con el administrador para que asigne un rol con los privilegios necesarios
-          </div>
-          	{else}
-				<div class="car shadow m-3 p-4">
+	          {if isset($respuesta)}
+	          	<div class="alert alert-danger" role="alert">
+	            No se encuentra un rol con los permisos para ser Responsable de un Núcleo comuniquese con el administrador para que asigne un rol con los privilegios necesarios
+	          </div>
+	          	{else}
+				<div class="car m-3 p-4">
                 <div class="container">  
                   <form action="nucleo_responsable.php?id={$nucleos['id']}" method="POST">
                       <div class="input-group">

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-07-30 10:47:51
+/* Smarty version 3.1.30, created on 2020-07-30 12:02:45
   from "/home/palencia/public_html/proyecto4/uptt/modulos/nucleo/templates/nucleos.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5f22dd97db82d7_26488237',
+  'unifunc' => 'content_5f22ef256b2d94_84243077',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'ee9d64601516d66e66d46081bf44a647ea1084e1' => 
     array (
       0 => '/home/palencia/public_html/proyecto4/uptt/modulos/nucleo/templates/nucleos.html',
-      1 => 1596041690,
+      1 => 1596124963,
       2 => 'file',
     ),
   ),
@@ -25,26 +25,31 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:../../pie/pie_interno.html' => 1,
   ),
 ),false)) {
-function content_5f22dd97db82d7_26488237 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f22ef256b2d94_84243077 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:../../navegacion/cab.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
 <?php $_smarty_tpl->_subTemplateRender("file:../../navegacion/sidebar.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
-  <?php $_smarty_tpl->_subTemplateRender("file:../../navegacion/cabecera.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+<?php $_smarty_tpl->_subTemplateRender("file:../../navegacion/cabecera.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
 
 
-        <div class="container-fluid claro">
-          <h2 class="subtitulo" align="center"><span class="badge badge-secondary badge-pill"><?php echo $_smarty_tpl->tpl_vars['n_nucleos']->value;?>
-</span>Nucleos y Extensiones
+    <div class="container-fluid">
+      <div class="card shadow">
+        
+      <div class="card-header">
+          <h2 class="text-primary"><span class="badge badge-secondary badge-pill"><?php echo $_smarty_tpl->tpl_vars['n_nucleos']->value;?>
+</span> Nucleos y Extensiones
             <?php if (in_array("NUCL_A",$_smarty_tpl->tpl_vars['verificar']->value) == TRUE) {?>
              <a class="btn btn-sm btn-outline-primary mimodal mimodal" type="button" 
             data-href="nucleos_agregar.php" title="Agregar nucleo o extensión"><span class="fa fa-plus"></span></a>
             <?php }?>
           </h2>
+      </div>
+          <div class="card-body">
             <div class="table-responsive">
               <table class="table " id="tabla_repo" style="width:100%">
                 <thead class="text-dark">
@@ -130,8 +135,9 @@ $_smarty_tpl->tpl_vars['__smarty_section_i'] = $__section_i_0_saved;
                 </tbody>
               </table>
             </div>
-              
           </div>
+        </div>
+      </div>
   
 
 <?php $_smarty_tpl->_subTemplateRender("file:../../modal/modal_box.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('prueba'=>"Usuario"), 0, false);
