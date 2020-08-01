@@ -1,21 +1,17 @@
-{include file="../../cabecera/cabecera_interna.html"}
-<!-- incluye menu y agrega el espasio de trbajo-->
-
-<div class="container" >
-            {include file="../../menu/menu_lateral.html"}
-    <div class="row " id="central">
-        
-        <div class="col-sm-9" style="margin-top: 50px;" >
-
-
-
+{include file="../../navegacion/cab.html"}
+{include file="../../navegacion/sidebar2.html"}
+{include file="../../navegacion/cabecera2.html"}
 <!--finaliza-->
-			<h2 class="text-center">Asinar responsable de {$pnf['nombre_corto']}</h2>
-      {if isset($respuesta)}
-          <div class="alert alert-danger" role="alert">
-            No se encuentra un rol con los permisos para ser Responsable de un PNF comuniquese con el <b>administrador</b> para que <b>Agregue un rol con los privilegios necesarios</b>
-          </div>
+  <div class="container-fluid">
+      <div class="card shadow">
+        <div class="card-header">
+			   <h2 class="text-center">Asinar responsable de {$pnf['nombre_corto']}</h2>
+          {if isset($respuesta)}
+            <div class="alert alert-danger" role="alert">
+              No se encuentra un rol con los permisos para ser Responsable de un PNF comuniquese con el <b>administrador</b> para que <b>Agregue un rol con los privilegios necesarios</b>
+            </div>
           {else}
+        </div>
 			       <div class="car shadow m-3 p-4">
                 <div class="container">  
                   <form action="pnf_nucleo_responsable.php?id_pnf={$pnf['id']}&id_relacion={$id_relacion}&id_nucleo={$id_nucleo}" method="POST">

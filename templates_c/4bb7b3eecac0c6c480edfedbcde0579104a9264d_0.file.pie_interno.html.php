@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-07-30 12:27:39
+/* Smarty version 3.1.30, created on 2020-07-31 19:25:10
   from "/home/palencia/public_html/proyecto4/uptt/modulos/pie/pie_interno.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5f22f4fbb9a315_57418416',
+  'unifunc' => 'content_5f24a856873a02_54020938',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '4bb7b3eecac0c6c480edfedbcde0579104a9264d' => 
     array (
       0 => '/home/palencia/public_html/proyecto4/uptt/modulos/pie/pie_interno.html',
-      1 => 1596125661,
+      1 => 1596223637,
       2 => 'file',
     ),
   ),
@@ -20,12 +20,12 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5f22f4fbb9a315_57418416 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f24a856873a02_54020938 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
-    <!-- Scroll to Top Button
+    <!-- Scroll to Top Button-->
   <a class="scroll-to-top rounded" href="#page-top">
     <i class="fas fa-angle-up"></i>
-  </a>-->
+  </a>
   
   <!-- Logout Modal-->
   <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -48,7 +48,7 @@ function content_5f22f4fbb9a315_57418416 (Smarty_Internal_Template $_smarty_tpl)
 <!--Comienzo del Pie de Página-->
 
       <!-- Footer -->
-      <footer class="sticky-footer bg-white mt-4">
+      <footer class="sticky-footer bg-gray-300 mt-4">
         <div class="container my-auto">
           <div class="copyright text-center my-auto">
             <span>Realizado por Verónica Osuna, Karla Quintero, José Palencia y Brando Hernández</span>
@@ -83,7 +83,7 @@ function content_5f22f4fbb9a315_57418416 (Smarty_Internal_Template $_smarty_tpl)
  src="../config/main.js"><?php echo '</script'; ?>
 >
     <?php echo '<script'; ?>
- src="vendor/jquery-easing/jquery.easing.min.js"><?php echo '</script'; ?>
+ src="../../vendor/jquery-easing/jquery.easing.min.js"><?php echo '</script'; ?>
 >
 
     <!--para que funcionen los de exportar data table-->

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-07-30 14:38:55
+/* Smarty version 3.1.30, created on 2020-07-31 13:37:39
   from "/home/palencia/public_html/proyecto4/uptt/modulos/navegacion/cab.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5f2313bfe75fe3_69673817',
+  'unifunc' => 'content_5f2456e3806f16_94888986',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '5007abf68561e360cc1e8bd8c5d8eb1e09c8b738' => 
     array (
       0 => '/home/palencia/public_html/proyecto4/uptt/modulos/navegacion/cab.html',
-      1 => 1596052310,
+      1 => 1596214866,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5f2313bfe75fe3_69673817 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f2456e3806f16_94888986 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -32,11 +32,9 @@ function content_5f2313bfe75fe3_69673817 (Smarty_Internal_Template $_smarty_tpl)
    <!-- llama los estilos de DataTablet -->
   <link href="../../vendor/DataTables/datatables.min.css" rel="stylesheet" type="text/css">
   <link href="../../vendor/DataTables/css/dataTables.bootstrap4.css" rel="stylesheet"  type="text/css">
+  <link href="../../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
   <link href="../../estilos/sb-admin-2.css" rel="stylesheet">
   <link href="../../estilos/personal2.css" rel="stylesheet">
-  <link href="../../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-   <!--Estilo de los iconos-->
-  <link href="../../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
 
 
 

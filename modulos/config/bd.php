@@ -685,12 +685,12 @@ function bd_roles_argregar($rol,$n_privilegios,$privilegios){
         ";
     sql($sql0);
     # Crea un privilegio para poder ver la lista de todos los usuarios con ese rol
-    $sql1="
+    /*$sql1="
         INSERT INTO PRIVILEGIOS(codigo, privilegio, direccion, nombre, icono)
         VALUES ('{$unico}','Ver lista de {$rol['rol']}','usuario/usuarios.php?5ea6fd8de7329={$unico}','{$rol['rol']}','fa fa-users')
     ";
     sql($sql1);
-    
+    */
     # Guarda los privilegios pertenecientes a cada rol
     for ($i=0; $i <$n_privilegios ; $i++) { 
         # code...

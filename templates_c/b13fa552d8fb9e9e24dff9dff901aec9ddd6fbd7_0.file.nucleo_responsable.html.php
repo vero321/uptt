@@ -1,37 +1,37 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-07-30 14:37:59
+/* Smarty version 3.1.30, created on 2020-07-31 16:19:16
   from "/home/palencia/public_html/proyecto4/uptt/modulos/nucleo/templates/nucleo_responsable.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5f231387ebcd87_94293620',
+  'unifunc' => 'content_5f247cc42fcc83_85440554',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'b13fa552d8fb9e9e24dff9dff901aec9ddd6fbd7' => 
     array (
       0 => '/home/palencia/public_html/proyecto4/uptt/modulos/nucleo/templates/nucleo_responsable.html',
-      1 => 1596134278,
+      1 => 1596220684,
       2 => 'file',
     ),
   ),
   'includes' => 
   array (
     'file:../../navegacion/cab.html' => 1,
-    'file:../../navegacion/sidebar.html' => 1,
-    'file:../../navegacion/cabecera.html' => 1,
+    'file:../../navegacion/sidebar2.html' => 1,
+    'file:../../navegacion/cabecera2.html' => 1,
     'file:../../pie/pie_interno.html' => 1,
   ),
 ),false)) {
-function content_5f231387ebcd87_94293620 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f247cc42fcc83_85440554 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:../../navegacion/cab.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
-<?php $_smarty_tpl->_subTemplateRender("file:../../navegacion/sidebar.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+<?php $_smarty_tpl->_subTemplateRender("file:../../navegacion/sidebar2.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
-<?php $_smarty_tpl->_subTemplateRender("file:../../navegacion/cabecera.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+<?php $_smarty_tpl->_subTemplateRender("file:../../navegacion/cabecera2.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
 
@@ -54,7 +54,7 @@ $_smarty_tpl->_subTemplateRender("file:../../navegacion/cab.html", $_smarty_tpl-
 " method="POST">
                       <div class="input-group">
                         <input id="p" name="p" type="text" class="form-control" placeholder="12345678 o coreo@correo.com" aria-describedby="basic-addon1" required >
-                        <span class="input-group-addon bg-primary" id="basic-addon1" style="padding:0 12px;"><i class="fa fa-search  pt-2"></i></span>
+                        <span class="input-group-addon bg-primary text-gray-100" id="basic-addon1" style="padding:0 12px;"><i class="fa fa-search  pt-2"></i></span>
                       </div>
                   </form>
                 </div>

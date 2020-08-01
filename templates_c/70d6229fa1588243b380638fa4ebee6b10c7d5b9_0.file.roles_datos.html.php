@@ -1,38 +1,38 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-07-30 14:11:50
+/* Smarty version 3.1.30, created on 2020-07-31 15:24:53
   from "/home/palencia/public_html/proyecto4/uptt/modulos/rol/templates/roles_datos.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5f230d66435e28_20057182',
+  'unifunc' => 'content_5f2470053cd1c7_73847967',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '70d6229fa1588243b380638fa4ebee6b10c7d5b9' => 
     array (
       0 => '/home/palencia/public_html/proyecto4/uptt/modulos/rol/templates/roles_datos.html',
-      1 => 1596132708,
+      1 => 1596220820,
       2 => 'file',
     ),
   ),
   'includes' => 
   array (
     'file:../../navegacion/cab.html' => 1,
-    'file:../../navegacion/sidebar.html' => 1,
-    'file:../../navegacion/cabecera.html' => 1,
+    'file:../../navegacion/sidebar2.html' => 1,
+    'file:../../navegacion/cabecera2.html' => 1,
     'file:../../modal/modal_box.html' => 1,
     'file:../../pie/pie_interno.html' => 1,
   ),
 ),false)) {
-function content_5f230d66435e28_20057182 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f2470053cd1c7_73847967 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:../../navegacion/cab.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
-<?php $_smarty_tpl->_subTemplateRender("file:../../navegacion/sidebar.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+<?php $_smarty_tpl->_subTemplateRender("file:../../navegacion/sidebar2.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
-<?php $_smarty_tpl->_subTemplateRender("file:../../navegacion/cabecera.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+<?php $_smarty_tpl->_subTemplateRender("file:../../navegacion/cabecera2.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
 

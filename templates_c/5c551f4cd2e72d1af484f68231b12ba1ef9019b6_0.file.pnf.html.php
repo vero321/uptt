@@ -1,41 +1,41 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-07-30 12:25:59
+/* Smarty version 3.1.30, created on 2020-07-31 14:41:44
   from "/home/palencia/public_html/proyecto4/uptt/modulos/pnf/templates/pnf.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5f22f497677930_81483466',
+  'unifunc' => 'content_5f2465e8d21a50_33864994',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '5c551f4cd2e72d1af484f68231b12ba1ef9019b6' => 
     array (
       0 => '/home/palencia/public_html/proyecto4/uptt/modulos/pnf/templates/pnf.html',
-      1 => 1596125581,
+      1 => 1596220733,
       2 => 'file',
     ),
   ),
   'includes' => 
   array (
     'file:../../navegacion/cab.html' => 1,
-    'file:../../navegacion/sidebar.html' => 1,
-    'file:../../navegacion/cabecera.html' => 1,
+    'file:../../navegacion/sidebar2.html' => 1,
+    'file:../../navegacion/cabecera2.html' => 1,
     'file:../../../modal/modal_box.html' => 1,
     'file:../../pie/pie_interno.html' => 1,
   ),
 ),false)) {
-function content_5f22f497677930_81483466 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f2465e8d21a50_33864994 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:../../navegacion/cab.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
-<?php $_smarty_tpl->_subTemplateRender("file:../../navegacion/sidebar.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+<?php $_smarty_tpl->_subTemplateRender("file:../../navegacion/sidebar2.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
-<?php $_smarty_tpl->_subTemplateRender("file:../../navegacion/cabecera.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+<?php $_smarty_tpl->_subTemplateRender("file:../../navegacion/cabecera2.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
-<!--finaliza-->
+   
         <div class="container-fluid">
           <div class="card shadow">
               <div class="card-header ">

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-07-30 14:42:17
+/* Smarty version 3.1.30, created on 2020-07-31 14:15:45
   from "/home/palencia/public_html/proyecto4/uptt/modulos/navegacion/sidebar.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5f231489d2ed66_23101547',
+  'unifunc' => 'content_5f245fd1eb88d0_24365311',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '6be03c56dcbe1799d8ef3527048a2c83b5a29101' => 
     array (
       0 => '/home/palencia/public_html/proyecto4/uptt/modulos/navegacion/sidebar.html',
-      1 => 1596052296,
+      1 => 1596214449,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5f231489d2ed66_23101547 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f245fd1eb88d0_24365311 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 
   <!-- Page Wrapper -->
@@ -30,19 +30,9 @@ function content_5f231489d2ed66_23101547 (Smarty_Internal_Template $_smarty_tpl)
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
       <!-- Sidebar - Brand -->
-      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="../inicio/inicio_interno.php">
         <img src="../../imagenes/logo_interno.png">
       </a>
-
-      <!-- Divider -->
-      <hr class="sidebar-divider my-0">
-
-      <!-- Nav Item - Dashboard -->
-      <li class="nav-item active">
-        <a class="nav-link" href="">
-          <i class="fa fa-fw fa-code"></i>
-          <span>Repo</span></a>
-      </li>
 
       <!-- Divider -->
       <hr class="sidebar-divider">
@@ -112,6 +102,7 @@ if ($__section_rol_1_saved) {
 $_smarty_tpl->tpl_vars['__smarty_section_rol'] = $__section_rol_1_saved;
 }
 ?>
+      
 
       <!-- Divider -->
       <hr class="sidebar-divider d-none d-md-block">

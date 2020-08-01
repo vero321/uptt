@@ -1,45 +1,46 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-07-30 10:47:47
+/* Smarty version 3.1.30, created on 2020-07-31 14:51:10
   from "/home/palencia/public_html/proyecto4/uptt/modulos/distribuidor/templates/distribuidor.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5f22dd93ad7d89_86051505',
+  'unifunc' => 'content_5f24681e119e36_52239809',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'aed0832aa1a3acd2fd861172575caeb9ae8a4fcf' => 
     array (
       0 => '/home/palencia/public_html/proyecto4/uptt/modulos/distribuidor/templates/distribuidor.html',
-      1 => 1596037572,
+      1 => 1596221468,
       2 => 'file',
     ),
   ),
   'includes' => 
   array (
     'file:../../navegacion/cab.html' => 1,
-    'file:../../navegacion/sidebar.html' => 1,
-    'file:../../navegacion/cabecera.html' => 1,
+    'file:../../navegacion/sidebar2.html' => 1,
+    'file:../../navegacion/cabecera2.html' => 1,
     'file:../../pie/pie_interno.html' => 1,
   ),
 ),false)) {
-function content_5f22dd93ad7d89_86051505 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f24681e119e36_52239809 (Smarty_Internal_Template $_smarty_tpl) {
 if (!is_callable('smarty_modifier_capitalize')) require_once '/home/palencia/public_html/proyecto4/uptt/vendor/smarty/libs/plugins/modifier.capitalize.php';
 $_smarty_tpl->_subTemplateRender("file:../../navegacion/cab.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
-<?php $_smarty_tpl->_subTemplateRender("file:../../navegacion/sidebar.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+<?php $_smarty_tpl->_subTemplateRender("file:../../navegacion/sidebar2.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
-<?php $_smarty_tpl->_subTemplateRender("file:../../navegacion/cabecera.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+<?php $_smarty_tpl->_subTemplateRender("file:../../navegacion/cabecera2.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
         <div class="container-fluid">
 
           <!-- Page Heading -->
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Resumen</h1>
+            <h1 class="h3 mb-0 text-gray-800">Tablero <?php echo $_SESSION["r"][$_SESSION["numero"]]['rol'];?>
+</h1>
             <!-- a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fa fa-download fa-sm text-white-50"></i> Generate Report</a-->
           </div>
            
@@ -93,65 +94,6 @@ echo $_SESSION[$_prefixVariable6][(isset($_smarty_tpl->tpl_vars['__smarty_sectio
               </div>
             </div>
 
-<!--prueba del nuevo card>
-      <div class="flip-card">
-        <div class="flip-card-inner">
-          <div class="flip-card-front body">
-            <h3 class="card-title">
-            <i class="<?php ob_start();
-echo $_SESSION['actual'];
-$_prefixVariable7=ob_get_clean();
-echo $_SESSION[$_prefixVariable7][(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['icono'];?>
- fa-2x" >
-            </i>
-            <small><?php ob_start();
-echo $_SESSION['actual'];
-$_prefixVariable8=ob_get_clean();
-echo smarty_modifier_capitalize($_SESSION[$_prefixVariable8][(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['nombre']);?>
-</small></h3>
-          </div>
-          <div class="flip-card-back body ">
-            <div id="ejm2">
-            <h4 style="margin-bottom: 0px;"><span class="badge_pill"><?php ob_start();
-echo $_SESSION['actual'];
-$_prefixVariable9=ob_get_clean();
-echo $_SESSION[$_prefixVariable9][(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['cant'];?>
-</span></h4>
-            </div>
-          </div>
-        </div>
-      </div>
-<finaliza el nuevo card>
-
-<comienzo del card viejo>
-
-    <div class="card card-central mb-3 shadow"
-     style="width: 17rem; margin-top: 80px;">
-      <div class="body">
-      	<h3 class="card-title">
-      	<i class="<?php ob_start();
-echo $_SESSION['actual'];
-$_prefixVariable10=ob_get_clean();
-echo $_SESSION[$_prefixVariable10][(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['icono'];?>
-"></i>
-      	<small><?php ob_start();
-echo $_SESSION['actual'];
-$_prefixVariable11=ob_get_clean();
-echo smarty_modifier_capitalize($_SESSION[$_prefixVariable11][(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['nombre']);?>
-
-      	</small></h3>
-      <h4>
-      <div id="ejm">
-      	<span class="badge-pill"><?php ob_start();
-echo $_SESSION['actual'];
-$_prefixVariable12=ob_get_clean();
-echo $_SESSION[$_prefixVariable12][(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['cant'];?>
-</span>
-  	  </div></h4>
-      </div>
-    </div>
-
-<!--finaliza el card viejo-->
 
           <?php } else { ?>
         <?php }?>
@@ -162,7 +104,8 @@ if ($__section_i_0_saved) {
 $_smarty_tpl->tpl_vars['__smarty_section_i'] = $__section_i_0_saved;
 }
 ?>
-   
+   </div>
+ </div>
 
 
 

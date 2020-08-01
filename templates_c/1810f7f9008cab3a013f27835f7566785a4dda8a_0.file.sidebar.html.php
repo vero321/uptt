@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-07-30 14:59:27
+/* Smarty version 3.1.30, created on 2020-07-31 13:34:04
   from "/home/palencia/public_html/proyecto4/uptt/modulos/navegacion/sidebar.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5f23188f5bcd96_16459163',
+  'unifunc' => 'content_5f24560cde0d16_36520204',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '1810f7f9008cab3a013f27835f7566785a4dda8a' => 
     array (
       0 => '/home/palencia/public_html/proyecto4/uptt/modulos/navegacion/sidebar.html',
-      1 => 1596135565,
+      1 => 1596214449,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5f23188f5bcd96_16459163 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f24560cde0d16_36520204 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 
   <!-- Page Wrapper -->
@@ -102,6 +102,7 @@ if ($__section_rol_0_saved) {
 $_smarty_tpl->tpl_vars['__smarty_section_rol'] = $__section_rol_0_saved;
 }
 ?>
+      
 
       <!-- Divider -->
       <hr class="sidebar-divider d-none d-md-block">

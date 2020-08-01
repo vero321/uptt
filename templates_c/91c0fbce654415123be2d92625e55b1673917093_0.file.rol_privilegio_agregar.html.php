@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-07-30 14:12:22
+/* Smarty version 3.1.30, created on 2020-07-31 15:58:10
   from "/home/palencia/public_html/proyecto4/uptt/modulos/rol/templates/rol_privilegio_agregar.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5f230d8698f279_35134267',
+  'unifunc' => 'content_5f2477d206bf51_12378544',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5f230d8698f279_35134267 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f2477d206bf51_12378544 (Smarty_Internal_Template $_smarty_tpl) {
 if (!is_callable('smarty_modifier_capitalize')) require_once '/home/palencia/public_html/proyecto4/uptt/vendor/smarty/libs/plugins/modifier.capitalize.php';
 ?>
 <div class="container">

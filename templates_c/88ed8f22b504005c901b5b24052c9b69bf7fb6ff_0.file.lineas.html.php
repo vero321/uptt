@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-07-30 14:02:12
+/* Smarty version 3.1.30, created on 2020-07-31 13:38:19
   from "/home/palencia/public_html/proyecto4/uptt/modulos/linea_de_investigacion/templates/lineas.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5f230b2442c657_26697311',
+  'unifunc' => 'content_5f24570b9e54c3_67852993',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -25,7 +25,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:../../pie/pie_interno.html' => 1,
   ),
 ),false)) {
-function content_5f230b2442c657_26697311 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f24570b9e54c3_67852993 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:../../navegacion/cab.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
