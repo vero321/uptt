@@ -1,10 +1,32 @@
 /* cabecera, pie de página y enlaces de la página princial*/
+html
+{
+    position: relative;
+    min-height: 100%;
+}
+
 .cab
 {
     background-color:#00005C;
     
 }
 
+
+.pie_interno 
+{
+    margin-top: 60px;
+    position: absolute;
+    border-top: solid 1px #C0C0C0;
+    bottom:0;
+    height:80px; /*Alto del Pie de Página vero*/ 
+    text-align: right;
+    background: #F0F0F0;
+    color:#0747a6;
+    padding-top:30px;
+    padding-bottom:10px;
+    width:100%;
+    z-index: 900;
+}
 
 a.enlace-claro
 {
