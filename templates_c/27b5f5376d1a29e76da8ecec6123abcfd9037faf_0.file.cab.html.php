@@ -1,3 +1,27 @@
+<?php
+/* Smarty version 3.1.30, created on 2020-08-03 08:07:39
+  from "/home/veronica/public_html/uptt/modulos/navegacion/cab.html" */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.30',
+  'unifunc' => 'content_5f27fe0b55edf0_53066898',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    '27b5f5376d1a29e76da8ecec6123abcfd9037faf' => 
+    array (
+      0 => '/home/veronica/public_html/uptt/modulos/navegacion/cab.html',
+      1 => 1596456106,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_5f27fe0b55edf0_53066898 (Smarty_Internal_Template $_smarty_tpl) {
+?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -24,50 +48,5 @@
 
   <title>Repositorio</title>
 </head>
-<style type="text/css">
-
-/*Estilo del pie de página con la pantalla pequeña o en modo celular, 
-es decir menor a 768px*/
-@media (max-width: 768px)
-  {
-      html 
-      {
-        min-height: 100%;
-        position: relative;
-      }
-    body 
-      {
-        margin: 0;
-       
-      }
-    footer.pie 
-      {
-        position: static;
-        bottom: 0;
-        width: -moz-available;
-      }
-  }
-
-/*Estilo del pie de página con la pantalla grande, 
-es decir mayor a 768px*/
-@media (min-width: 768px)
-  {
-      html 
-      {
-        min-height: 100%;
-        position: relative;
-      }
-    body 
-      {
-        margin: 0;
-       
-      }
-    footer.pie 
-      {
-        position: fixed;
-        bottom: 0;
-        width: -moz-available;
-      }
-  }
-</style>
-<body id="page-top">
+<body id="page-top"><?php }
+}

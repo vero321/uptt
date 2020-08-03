@@ -1,3 +1,27 @@
+<?php
+/* Smarty version 3.1.30, created on 2020-08-03 10:23:21
+  from "/home/veronica/public_html/uptt/modulos/navegacion/cab.html" */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.30',
+  'unifunc' => 'content_5f281dd92414c9_77737631',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    '58e4d265604cc10ce04884894eb1e3bbc6849a88' => 
+    array (
+      0 => '/home/veronica/public_html/uptt/modulos/navegacion/cab.html',
+      1 => 1596464598,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_5f281dd92414c9_77737631 (Smarty_Internal_Template $_smarty_tpl) {
+?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -70,4 +94,5 @@ es decir mayor a 768px*/
       }
   }
 </style>
-<body id="page-top">
+<body id="page-top"><?php }
+}
