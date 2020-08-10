@@ -60,14 +60,18 @@
                         {if $nucleos[i].responsable ==  NULL}
                           <a class="btn btn-sm btn-outline-primary mimodal" type="button" href="nucleo_responsable.php?id={$nucleos[i].id}" title="Asignar responsable Nucleo o Extensión"><span class="fa fa-plus"></span></a>
                         {else}
-                        {$persona=bd_personas_datos($nucleos[i].responsable)}
-                          <span><b>Nombre:</b></span>
-                        {$persona[0].nombre}
-                        <br>
-                        {$usuario=bd_usuarios_datos($nucleos[i].responsable)}
-                        <span><b>Usuario:</b></span>
-                        {$usuario.correo}
-                        <a href="nucleo_responsable.php?id={$nucleos[i].id}&cambiar={$nucleos[i].responsable}">Cambiar</a>
+                          {$persona=bd_personas_datos($nucleos[i].responsable)}
+                            <span><b>Nombre:</b></span>
+                          {if isset($persona[0].nombre)}
+                            {$persona[0].nombre}
+                          {else}
+                          El usuarip aun no actualiza sus datos
+                          {/if}
+                          <br>
+                          {$usuario=bd_usuarios_datos($nucleos[i].responsable)}
+                          <span><b>Usuario:</b></span>
+                          {$usuario.correo}
+                          <a href="nucleo_responsable.php?id={$nucleos[i].id}&cambiar={$nucleos[i].responsable}">Cambiar</a>
                         {/if}
                       </td>
                     {/if}

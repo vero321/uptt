@@ -1,0 +1,61 @@
+{include file="../../navegacion/cab.html"}
+{include file="../../navegacion/sidebar2.html"}
+{include file="../../navegacion/cabecera2.html"}
+   
+  <div class="container-fluid">
+   <h2>{$pnf['nombre_corto']}</h2>
+    <div class="card shadow">
+        <div class="card-header">
+	        <h3 class="text-primary"><span class="badge badge-secondary badge-pill"></span>Trayectos
+	            {if in_array("TRPN_A",$verificar) == TRUE}
+	             <a class="btn btn-sm btn-outline-primary mimodal" type="button" 
+	            data-href="trayecto_pnf_asignar.php?id={$pnf['id']}" title="Agregar PNF a {$pnf['nombre_corto']}"><span class="fa fa-plus"></span></a>
+	            {/if}
+	          </h3>
+        </div>
+        <div class="card-body">
+          <div class="table-responsive">
+	           <table class="table" id="tabla_repo">
+                <thead>
+                  <tr>
+                    <th>Trayecto</th>
+                    <th>Funciones</th>
+                  </tr>
+                </thead>
+                <tbody>
+
+                {section name=i loop=$trayecto_pnf}
+                  <tr>
+                    <td>{$trayecto_pnf[i].trayecto}</td>
+                    {if in_array("PNNU_M",$verificar) == TRUE}
+                    <td>
+                      <a 
+                        style="margin-bottom:3px; color:blue;" 
+                        class="btn btn-default mimodal"
+                        title="Modificar trayecto" 
+                        data-href="trayecto_pnf_modificar.php?id={$trayecto_pnf[i].id}&id_trayecto={$trayecto_pnf[i].id_trayecto}">
+                        <i class="fa fa-edit"></i>
+                      </a>
+                      {/if}
+                      {if in_array("PNNU_E",$verificar) == TRUE}
+                      <a 
+                        style="margin-bottom:3px; color:blue;" 
+                        class="btn btn-default mimodal"
+                        title="Eliminar trayecto" 
+                        data-href="trayecto_pnf_eliminar.php?id={$trayecto_pnf[i].id}&id_trayecto={$trayecto_pnf[i].id_trayecto}">
+                        <i class="fa fa-trash"></i>
+                      </a>
+                      {/if}
+                    <td>
+                  </tr>
+                {/section}
+                </tbody>
+              </table>
+
+      </div>
+    </div>
+	</div>
+</div>
+{include "../../modal/modal_box.html" prueba="Usuario"} 
+
+{include file="../../pie/pie_interno.html"}

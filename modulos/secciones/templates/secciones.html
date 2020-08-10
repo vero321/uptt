@@ -1,0 +1,112 @@
+{include file="../../navegacion/cab.html"}
+{include file="../../navegacion/sidebar2.html"}
+{include file="../../navegacion/cabecera2.html"}
+
+{if isset($secciones)}
+<div class="container-fluid">
+  <h2>{$pnf['nombre_corto']}</h2>
+  <div class="card shadow">
+      <div class="card-header ">
+        <h3 class="text-primary"><span class="badge badge-secondary badge-pill">{$n_secciones}</span> {$trayecto['trayecto']}
+            {if in_array("SECC_A",$verificar) == TRUE}
+             <a class="btn btn-sm btn-outline-primary mimodal" type="button" 
+            data-href="seccion_agregar.php?t={$trayecto['id']}" title="Agregar seccion a {$trayecto['trayecto']}"><span class="fa fa-plus"></span></a>
+          </h3>
+        {/if}
+      </div>
+      <div class="card-body">
+        <div class="table-responsive">
+
+              <table class="display table" id="tabla_repo" style="width:100%">
+                <thead>
+                  <tr>
+                    <th>Nombre</th>
+                    <th>Funciones</th>
+                    {if in_array("SECC_AP", $verificar) == TRUE }
+                    <th>Profesor de proyecto</th>
+                    {/if}
+                  </tr>
+                </thead>
+                <tbody class="buscar" id="personas">
+
+                {section name=i loop=$secciones}
+
+                  <tr>
+                    <td>{$secciones[i].nombre}</td>
+                    {if in_array("SECC_M",$verificar) == TRUE}
+                    <td class="text-center" style="white-space: nowrap;">
+                    <a 
+                      style="margin-bottom:3px; color:blue;" 
+                      class="btn btn-default mimodal"
+                      title="Modificar seccion" 
+                      data-href="seccion_modificar.php?id={$secciones[i].id}&t={$trayecto['id']}">
+                      <i class="fa fa-edit"></i>
+                    </a>
+                    {/if}
+                    {if in_array("SECC_E",$verificar) == TRUE}
+                    <a 
+                      style="margin-bottom:3px; color:blue;" 
+                      class="btn btn-default mimodal"
+                      title="Eliminar seccion" 
+                      data-href="seccion_eliminar.php?id={$secciones[i].id}&t={$trayecto['id']}">
+                      <i class="fa fa-trash"></i>
+                    </a>
+                    {/if}
+                  </td>
+                  <td>
+                    {if in_array("SECC_AP", $verificar) == TRUE }
+                        {if $secciones[i].profesor_proyecto ==  NULL}
+                          <a class="btn btn-sm btn-outline-primary mimodal" type="button" href="seccion_profesor.php?id={$secciones[i].id}&t={$trayecto['id']}" title="Asignar profesor de proyecto {$secciones[i].nombre}"><span class="fa fa-plus"></span></a>
+                        {else}
+                        {$persona=bd_personas_datos($secciones[i].profesor_proyecto)}
+                          <span><b>Nombre:</b></span>
+                          {if isset($persona[0].nombre)}
+                            {$persona[0].nombre}
+                          {else}
+                          El usuarip aun no actualiza sus datos
+                          {/if}
+                        <br>
+                        {$usuario=bd_usuarios_datos($secciones[i].profesor_proyecto)}
+                        <span><b>Usuario:</b></span>
+                        {$usuario.correo}
+                        <a href="seccion_profesor.php?id={$secciones[i].id}&t={$trayecto['id']}&cambiar={$secciones[i].profesor_proyecto}">Cambiar</a>
+                        {/if}
+                    {/if}
+                      </td>
+                  </tr>
+                {/section}
+
+                </tbody>
+              </table>
+
+
+	  </div>
+	</div>
+</div>
+</div>
+{else}
+	<div class="container-fluid">
+		<div class="col-md-4">
+		  <div class="card shadow">
+		  	<div class="card-header">
+		  		<h4>{$pnf['nombre_corto']}</h4>
+		  	</div>
+		  	<div class="card-body">
+			  	<div class="list-group">
+				        {section name=i loop=$trayecto_pnf}
+							<a href="secciones.php?t={$trayecto_pnf[i].id_trayecto}" class="list-group-item list-group-item">
+							{$trayecto_pnf[i].trayecto}
+							</a>
+						{/Section}
+			  	</div>
+			</div>
+		</div>
+	  </div>
+	</div>
+{/if}
+
+
+
+{include "../../modal/modal_box.html" prueba="Usuario"} 
+
+{include file="../../pie/pie_interno.html"}

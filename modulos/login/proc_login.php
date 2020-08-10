@@ -23,8 +23,22 @@ if ((password_verify($clave,$hash)) or ( (password_verify($clave,$hash2) ) && ( 
 	$datos=bd_usuarios_datos($login);
 	$id=$datos['id'];
 	$datos2=bd_usuarios_roles_datos($id);
+	
+	foreach ($datos2 as $rol) {
+		# agreamos nucleo y pnf a cada rol
+		if (isset($rol['id_nucleo']) == true) {
+			# code...
+			$nucleo=bd_nucleos_datos($rol['id_nucleo']);
+			$rol['nucleo']=$nucleo['nombre_corto'];
+		}if (isset($rol['id_pnf'])){
+			# code...
+			$pnf= bd_pnf_datos($rol['id_pnf']);
+			$rol['pnf']=$pnf['nombre_corto'];
+		}
+		$datos_roles[]=$rol;
+	}
 	$_SESSION['u']=$datos;
-	$_SESSION['r']=$datos2;
+	$_SESSION['r']=$datos_roles;
 	$n=count($datos2);
 	for ($i=0; $i < $n; $i++) { 
 		# code...

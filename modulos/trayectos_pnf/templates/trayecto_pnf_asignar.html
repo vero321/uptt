@@ -1,0 +1,49 @@
+<div class="container">
+<div class="row">
+  <div class="col-md-12">   
+    <section id="home"></section>
+        <section id="intro">
+            <div class="container modal_col">
+              <div class="centro"> 
+                  <h3 align="center">Asignar Trayecto</h3>
+                    <form 
+                      action="proc_trayecto_pnf_asignar.php" 
+                      method="POST" 
+                      class="px-4 py-3" 
+                      id="trayecto_asignar"
+                      name="trayecto_asignar">
+                      
+                      <div class="form-check-label" >
+
+                        {if count($trayectos) >0}
+                          {section name=i loop=$trayectos}
+                            <div class="form-group-sm " style="padding: 4px;">
+                              <label class="switch ">
+                                <input type="checkbox"  class="form-check-input"  
+                                name="trayecto[]" value="{$trayectos[i].id|capitalize}">
+                                <span class="slider round"></span>
+                              </label>
+                              <div class="text_switch">{$trayectos[i].trayecto|capitalize}</div> 
+                            </div>
+                          {/section}
+                      </div>
+                      <div class="form-group">
+                        <input 
+                          class="btn-enviar btn btn-sm btn-primary" 
+                          type="submit" 
+                          name="enviar" 
+                          value="Registrar">
+                      </div>
+                        {else}
+                          <div class="alert alert-info" role="alert">
+                            <i class="fa fa-info-circle"></i>
+                            NO hay mas trayectos disponibles para Asignar a su PNF
+                          </div>
+                        {/if}
+                    </form>
+                </div>
+              </div>
+            </section>
+        </div>
+  </div>
+</div>

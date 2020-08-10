@@ -602,6 +602,25 @@ function bd_pnf_nucleo_responsable($id_usuario, $id_rol, $id_nucleo, $id_pnf, $i
 
 }
 
+function bd_pnf_nucleo_responsable_cambiar($id_usuario, $id_rol,$id_nucleo, $id_pnf, $id_relacion){
+      $sql = "
+        SELECT * FROM USUARIOS__ROLES
+        WHERE id_usuario = '{$id_usuario}' AND id_rol = '{$id_rol}' AND id_nucleo = '{$id_nucleo}' AND id_pnf = '{$id_pnf}'
+        ";
+    $rol=sql2row($sql);
+    $sql1 = "
+        DELETE FROM USUARIOS__ROLES
+        WHERE id = '{$rol['id']}'
+        ";
+    sql($sql1);
+    $sql2="
+        UPDATE NUCLEOS__PNF SET
+        responsable = NULL
+        WHERE id = '{$id_relacion}'
+    ";
+    sql($sql2);
+}
+
 ############################## Funciones Roles
 
 function bd_roles_datos($id=NULL){
@@ -1067,20 +1086,162 @@ function bd_trayectos_datos($id=NULL){
     return $salida;
 }
 
-function bd_trayectos_pnf_datos($id){
+function bd_trayectos_agregar($trayecto){
+    $sql = "INSERT INTO TRAYECTOS (trayecto)
+    VALUES ('{$trayecto}')
+    ";
+    sql($sql);    
+}
+
+function bd_trayectos_modificar($id, $trayecto){
+    $sql = "
+        UPDATE TRAYECTOS SET
+            trayecto = '{$trayecto}'
+        WHERE
+            id = '{$id}'
+    ";
+    sql($sql);
+
+}
+
+function bd_trayecto_eliminar($id){
+    $sql = "
+        DELETE FROM TRAYECTOS
+        WHERE id = '{$id}'
+        ";
+    sql($sql);
+}
+
+#Funciones trayectos PNF
+function bd_trayectos_pnf_datos($id_pnf, $id_nucleo){
     $sql="
-    SELECT DISTINCT *
+    SELECT DISTINCT TRAYECTOS__PNF.id, id_pnf, id_trayecto, id_nucleo, trayecto
     FROM TRAYECTOS__PNF, TRAYECTOS
-    WHERE id_trayecto = TRAYECTOS.id
+    WHERE id_pnf = '{$id_pnf}' and TRAYECTOS.id = id_trayecto and id_nucleo = '{$id_nucleo}'
     ";
     $salida = sql2array($sql);
     return $salida;
 }
 
-function bd_pnf_nucleo_responsable_cambiar($id_usuario, $id_rol,$id_nucleo, $id_pnf, $id_relacion){
-      $sql = "
+function bd_trayecto_pnf_asignar($trayectos){
+    #optenemos los identificadores de nucleo y pnf de cada SESIION
+    $id_pnf = $_SESSION['r'][$_SESSION['numero']]['id_pnf'];
+    $id_nucleo=$_SESSION['r'][$_SESSION['numero']]['id_nucleo'];
+    $i = 0;
+    if (isset($id_pnf) == true and isset($id_nucleo) == true) {
+        # code...
+        foreach ($trayectos as $trayecto) {
+            $sql = "INSERT INTO TRAYECTOS__PNF (id_pnf, id_trayecto, id_nucleo)
+            VALUES ('{$id_pnf}', '{$trayecto[$i]}', '{$id_nucleo}')
+            ";
+            sql($sql);
+            $i = $i + 1;
+        }
+        return TRUE;
+    }else{
+        return FALSE;
+    }
+    
+}
+
+function bd_trayecto_pnf_eliminar($id){
+    $sql = "
+        DELETE FROM TRAYECTOS__PNF
+        WHERE id = '{$id}'
+        ";
+    sql($sql);
+}
+
+function bd_trayecto_pnf_modificar($id, $id_trayecto){
+    $sql = "
+        UPDATE TRAYECTOS__PNF SET
+            id_trayecto = '{$id_trayecto}'
+        WHERE
+            id = '{$id}'
+    ";
+    sql($sql);
+
+}
+
+# Funciones secciones
+
+function bd_secciones_datos($id=NULL){
+    if ($id!=NULL) {
+        $sql="
+            SELECT *
+            FROM SECCIONES
+            WHERE id LIKE '{$id}'
+            ";
+        $salida = sql2row($sql);
+    } else {
+        $sql="
+            SELECT *
+            FROM SECCIONES
+            ";
+        $salida = sql2array($sql);
+    }
+    return $salida;
+}
+
+function bd_secciones_trayectos_pnf_nucleo($trayecto, $id_pnf, $id_nucleo){
+    $sql="
+        SELECT *
+        FROM SECCIONES
+         WHERE id_trayecto = '{$trayecto}' and id_pnf = '{$id_pnf}' and id_nucleo = '{$id_nucleo}'
+         ";
+        $salida = sql2array($sql);
+    return $salida;
+}
+
+function bd_secciones_agregar($nombre, $id_trayecto, $id_pnf, $id_nucleo){
+    $sql = "INSERT INTO SECCIONES (nombre, id_trayecto, id_pnf, id_nucleo)
+    VALUES ('{$nombre}', '{$id_trayecto}', '{$id_pnf}', '{$id_nucleo}')
+    ";
+    sql($sql);    
+}
+
+function bd_secciones_eliminar($id){
+    $sql = "
+        DELETE FROM SECCIONES
+        WHERE id = '{$id}'
+        ";
+    sql($sql);
+}
+
+function bd_secciones_modificar($id, $nombre){
+    $sql = "
+        UPDATE SECCIONES SET
+            nombre = '{$nombre}'
+        WHERE
+            id = '{$id}'
+    ";
+    sql($sql);
+}
+
+function bd_asignar_profesor_proyecto($id_seccion,$id_rol,$id_usuario){
+    $id_pnf = $_SESSION['r'][$_SESSION['numero']]['id_pnf'];
+    $id_nucleo=$_SESSION['r'][$_SESSION['numero']]['id_nucleo'];
+    $sql0="
+        INSERT INTO USUARIOS__ROLES (id_usuario, id_rol, id_nucleo, id_pnf)
+        VALUES ('{$id_usuario}','{$id_rol}', '{$id_nucleo}', '{$id_pnf}')
+        ";
+    sql($sql0);
+
+    $sql1 = " 
+        UPDATE SECCIONES SET
+            profesor_proyecto = '{$id_usuario}'
+        WHERE
+            id = '{$id_seccion}'
+    ";
+    sql($sql1);
+}
+
+function bd_profesor_proyecto_cambiar($id_seccion, $id_rol, $id_usuario){
+    $id_pnf = $_SESSION['r'][$_SESSION['numero']]['id_pnf'];
+    $id_nucleo=$_SESSION['r'][$_SESSION['numero']]['id_nucleo'];
+    $sql = "
         SELECT * FROM USUARIOS__ROLES
-        WHERE id_usuario = '{$id_usuario}' AND id_rol = '{$id_rol}' AND id_nucleo = '{$id_nucleo}' AND id_pnf = '{$id_pnf}'
+        WHERE id_usuario = '{$id_usuario}' AND id_rol = '{$id_rol}' AND id_nucleo = '{$id_nucleo}' and id_pnf = '{$id_pnf}'
         ";
     $rol=sql2row($sql);
     $sql1 = "
@@ -1089,9 +1250,9 @@ function bd_pnf_nucleo_responsable_cambiar($id_usuario, $id_rol,$id_nucleo, $id_
         ";
     sql($sql1);
     $sql2="
-        UPDATE NUCLEOS__PNF SET
-        responsable = NULL
-        WHERE id = '{$id_relacion}'
+        UPDATE SECCIONES SET
+        profesor_proyecto = NULL
+        WHERE id = $id_seccion
     ";
     sql($sql2);
 }

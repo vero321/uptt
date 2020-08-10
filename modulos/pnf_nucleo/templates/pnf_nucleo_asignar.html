@@ -7,30 +7,36 @@
         <div class="container">
           <div class="centro"> 
             <h3 align="center">Asignar PNF</h3>
+          {if count($pnf) > 0}
             <form 
              	action="proc_pnf_nucleo_asignar.php" 
              	method="POST" 
              	class="px-4 py-3" 
-             	id="registro_usuario"
-             	name="registro_usuario">
+             	id="asignar_pnf_nucleo"
+             	name="asignar_pnf_nucleo">
               <input type="hidden" name="id_nucleo" value="{$id_nucleo}">
+                {section name=i loop=$pnf}
+                  <div class="form-check">
 
-              {section name=i loop=$pnf}
-                <div class="form-check">
-
-                  <label class="form-check-label">
-                    <input type="checkbox"  class="form-check-input"  
-                    name="pnf[]" value="{$pnf[i].id|capitalize}">
-                    {$pnf[i].nombre_corto|capitalize}
-                  </label>
-                </div>
-              {/section}
-              <input 
-                class="btn-enviar btn btn-sm btn-primary m-2" 
-                type="submit" 
-                name="enviar" 
-                value="Registrar">
+                    <label class="form-check-label">
+                      <input type="checkbox"  class="form-check-input"  
+                      name="pnf[]" value="{$pnf[i].id|capitalize}">
+                      {$pnf[i].nombre_corto|capitalize}
+                    </label>
+                  </div>
+                {/section}
+                <input 
+                  class="btn-enviar btn btn-sm btn-primary m-2" 
+                  type="submit" 
+                  name="enviar" 
+                  value="Registrar">
             </form>
+          {else}
+            <div class="alert alert-info" role="alert">
+              <i class="fa fa-info-circle"></i>
+              NO hay mas PNF disponibles para Asignar a su Núcleo
+            </div>
+          {/if}
           </div>
         </div>
       </section>

@@ -51,7 +51,11 @@
                         {else}
                         {$persona=bd_personas_datos($pnf_nucleo[i].responsable)}
                           <span><b>Nombre:</b></span>
-                        {$persona[0].nombre}
+                          {if isset($persona[0].nombre)}
+                            {$persona[0].nombre}
+                          {else}
+                          El usuarip aun no actualiza sus datos
+                          {/if}
                         <br>
                         {$usuario=bd_usuarios_datos($pnf_nucleo[i].responsable)}
                         <span><b>Usuario:</b></span>

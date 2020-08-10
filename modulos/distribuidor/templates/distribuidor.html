@@ -5,7 +5,15 @@
 
           <!-- Page Heading -->
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Tablero {$smarty.session["r"][$smarty.session["numero"]].rol}</h1>
+            <h2 class="h3 mb-0 text-gray-800">Tablero 
+            {$smarty.session["r"][$smarty.session["numero"]].rol}
+            {if $smarty.session["r"][$smarty.session["numero"]].id_nucleo != NULL }
+              {$smarty.session["r"][$smarty.session["numero"]].nucleo}
+            {/if}
+            {if $smarty.session["r"][$smarty.session["numero"]].id_pnf != NULL }
+              {$smarty.session["r"][$smarty.session["numero"]].pnf}
+            {/if}
+          </h2>
             <!-- a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fa fa-download fa-sm text-white-50"></i> Generate Report</a-->
           </div>
            

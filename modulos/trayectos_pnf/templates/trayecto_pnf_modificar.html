@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">  
+    	<div align="center">
+          <h3>Modificar Trayecto</h3>
+    			<form action="proc_trayecto_pnf_modificar.php" method="POST">
+            <input type="hidden" name="id" value="{$id}">
+             <div class="form-group">
+                <label for="exampleFormControlSelect1">Trayecto</label>
+                 <select class="form-control" id="trayecto" name="trayecto">
+                  <option class="form-control" value="{$trayecto['id']}">{$trayecto['trayecto']}</option>
+                  {section name=i loop = $trayectos}
+                    <option value="{$trayectos[i].id}" >{$trayectos[i].trayecto}</option>
+                  {/section}
+                </select>
+              </div>
+            <input 
+              class="btn-enviar btn btn btn-primary" 
+              type="submit" 
+              name="enviar" 
+              value="Modificar">
+            <a  href="#" data-dismiss="modal" class="btn btn-secondary">Cancelar</a>
+    	</div>
+    </div>
+  </div>
+</div>
