@@ -4,7 +4,7 @@ require_once '../config/app.php';
 include_once APP.'/modulos/config/inicializacion.php';
 $verificar=verificar();
 
-$trayectos = $_POST;
+$trayectos = $_POST['trayecto'];
 
 $resultado = bd_trayecto_pnf_asignar($trayectos);
 
