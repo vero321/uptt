@@ -36,7 +36,7 @@
                       class="btn btn-default"
                       title="Ver detalles de Rol" 
                       href="roles_datos.php?id={$roles[i].id}">
-                      <i class="fa fa-archive"></i>
+                      <i class="fa fa-share"></i>
                     </a>
                     {/if}
                     {if in_array("ROLE_M",$verificar) == TRUE}
@@ -45,7 +45,7 @@
                       class="btn btn-default mimodal" 
                       title="Modificar Rol" 
                       data-href="roles_modificar.php?id={$roles[i].id}">
-                      <i class="fa fa-pencil-square-o"></i>
+                      <i class="fa fa-edit"></i>
                     </a>
                     {/if}
                     {if in_array("ROLE_E",$verificar) == TRUE}
