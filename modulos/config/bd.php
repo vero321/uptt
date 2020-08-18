@@ -882,7 +882,7 @@ function bd_personas_datos($login=NULL)
                 SELECT *
                 FROM  PERSONAS 
                 WHERE id LIKE '{$login}'";
-            $salida = sql2array($sql);
+            $salida = sql2row($sql);
     }else
     {
         $sql="

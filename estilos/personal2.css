@@ -73,3 +73,8 @@ input:checked + .slider:before {
     margin-left: 35px; 
     margin-top: -30px; 
 }
+
+.img-perfil{
+  height: 8rem;
+  width: 8rem;
+}

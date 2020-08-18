@@ -10,8 +10,7 @@
       class="px-4 py-3" 
       id="registro_usuario"
       name="registro_usuario">
-{section name=i loop=$personas}
-      <input type="hidden" name="id" value="{$personas[i].id}">
+      <input type="hidden" name="id" value="{$personas.id}">
       <div class="form-group">
           <label for="id0">Cedula</label>
           <input 
@@ -21,7 +20,7 @@
             id="id0" 
             name="id0" 
             placeholder="1234567"
-            value="{$personas[i].id}"
+            value="{$personas.id}"
             disabled="disable">
         </div>
     
@@ -35,7 +34,7 @@
             id="nombre" 
             name="nombre"
             placeholder="Jhon Doe"
-            value="{$personas[i].nombre}">
+            value="{$personas.nombre}">
         </div> 
 
         <div class="form-group">
@@ -48,7 +47,7 @@
             id="apellido" 
             name="apellido"
             placeholder="Jhon Doe"
-            value="{$personas[i].apellido}">
+            value="{$personas.apellido}">
         </div> 
 
            
@@ -60,8 +59,6 @@
         name="enviar" 
         value="Modificar">
       </div>
-
-{/section}
     </form>
 
 

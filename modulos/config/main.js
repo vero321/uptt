@@ -125,3 +125,27 @@ function clave2() {
 
 })(jQuery); // End of use strict
 
+//agregar un nuevo usuario usuando ajax
+
+//abre el modal con el fomuñario y limpia el mormulario
+$("#btn-agregar-usuario").click(function(){
+    $("#from_registrar_usuario").trigger("reset");
+    $('#modal_agregar_usuario').modal('show');      
+});
+
+$('#from_registrar_usuario').submit(function(e){
+    //Esta funcion maneja el formulario y su modal                        
+    e.preventDefault(); //evita el comportambiento normal del submit, es decir, recarga total de la página
+    id = $.trim($('#id').val()); 
+    correo  = $.trim($('#correo').val());
+    $.ajax({
+          url: "../usuario/usuario_registrar_ajax.php",
+          type: "POST",
+          datatype:"json",    
+          data:  {id:id, correo:correo},    
+          success: function(data) {
+            alert(correo+'Se registro exitosamete. Para continuar vuelva a buscar los datos del usuario');
+           }
+        });                 
+    $('#modal_agregar_usuario').modal('hide');//oculta el modal                                                          
+});

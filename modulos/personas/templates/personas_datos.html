@@ -1,29 +1,34 @@
 {include file="../../navegacion/cab.html"}
-{include file="../../navegacion/sidebar2.html"}
 {include file="../../navegacion/cabecera2.html"}
 
         <div class="container-fluid">
           <div class="row">
             <div class="col-md-4">
-              <div class="card card-primary card-outline border-bottom-primary shadow" >
+              <div class="card card-primary card-outline border-left-primary shadow" >
                 <div class="card-body">
                   <div class="text-center">
-                    <img class="img-profile img-fluid rounded-circle p-5"
+                    <img class="img-perfil img-thumbnail rounded-circle"
                          src="../../imagenes/user.png"
-                         alt="User profile picture">
+                         alt="User profile picture"
+                         >
+                  </div>
+                  <div class="text-muted text-center">
+                    <a class="btn btn-link mimodal" data-href="../personas/usuarios_cambiar_foto.php">
+                        <i class="fa fa-user fa-sm fa-fw text-gray-400"></i>
+                        <small>Cambiar Foto de perfl</small>
+                      </a>
                   </div>
 
-                  <h3 class="profile-username text-center">{$personas[0].nombre} {$personas[0].apellido}</h3>
+                  <h3 class="profile-username text-center">{$personas.nombre} {$personas.apellido}</h3>
 
                   <p class="text-muted text-center">{$usuarios.correo}</p>
                   <p class="text-muted text-center">{$usuarios.id}</p>
-
-                  <a class="btn btn-outline-primary  btn-block mimodal" data-href="personas_modificar.php?id={$personas[0].id}" value="Modificar Datos">
-                    <i class="fa fa-pencil-square-o fa-fw fa-lg"></i>Modificar Datos
+                  <a class="btn btn-outline-primary  btn-block mimodal" data-href="personas_modificar.php?id={$personas.id}" value="Modificar Datos">
+                    <i class="fa fa-edit fa-fw"></i>Modificar Datos
                   </a>
                   <a class="btn btn-outline-primary  btn-block mimodal" data-href="../personas/usuarios_cambiar_clave.php">
                   <i class="fa fa-unlock-alt fa-sm fa-fw text-gray-400"></i>
-                  Cambiar
+                  Cambiar clave
                 </a>
 
                 </div>

@@ -20,8 +20,9 @@ $actual=date('Y-m-d-H-i');
 
 if ((password_verify($clave,$hash)) or ( (password_verify($clave,$hash2) ) && ( $actual<= $plazo ))){
 	# code...
-	$datos=bd_usuarios_datos($login);
-	$id=$datos['id'];
+	$datos0=bd_usuarios_datos($login);
+	$id=$datos0['id'];
+	$datos1=bd_personas_datos($id);
 	$datos2=bd_usuarios_roles_datos($id);
 	
 	foreach ($datos2 as $rol) {
@@ -37,7 +38,7 @@ if ((password_verify($clave,$hash)) or ( (password_verify($clave,$hash2) ) && ( 
 		}
 		$datos_roles[]=$rol;
 	}
-	$_SESSION['u']=$datos;
+	$_SESSION['u']=$datos0;
 	$_SESSION['r']=$datos_roles;
 	$n=count($datos2);
 	for ($i=0; $i < $n; $i++) { 

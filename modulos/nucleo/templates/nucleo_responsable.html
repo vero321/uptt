@@ -14,7 +14,7 @@
 	            No se encuentra un rol con los permisos para ser Responsable de un Núcleo comuniquese con el administrador para que asigne un rol con los privilegios necesarios
 	          </div>
 	          	{else}
-				<div class="car m-3 p-4">
+				<div class="card-body">
                 <div class="container">  
                   <form action="nucleo_responsable.php?id={$nucleos['id']}" method="POST">
                       <div class="input-group">
@@ -25,8 +25,22 @@
                 </div>
               </div>
           {/if}
-
-            {if isset($usuarios)}
+		{if isset($usuarios) and count($usuarios) < 1}
+			<div class="m-3 p-4">
+                <div class="container">
+                	<div class="alert alert-info" role="alert">
+			            No se encontro ningun usuario
+			            que coincida con la busqueda.<br/> Para continuar registre el usuario [+]
+			          </div>
+			           <a class="btn btn-sm btn-outline-primary" type="button"
+                		href="#" title="Agregar Usuario"
+                		id="btn-agregar-usuario">
+                		<span class="fa fa-plus"></span>
+                	</a>
+                </div>
+            </div>
+            {include file="../../usuario/templates/modal_agregar_ajax.html"}
+            {elseif  isset($usuarios)}
 			    <section id="home" class="text-center"></section>
 			        <section id="intro">
 			            <div class="container">
