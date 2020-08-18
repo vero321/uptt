@@ -924,7 +924,19 @@ function bd_nucleos_contar(){
     return sql2value("SELECT COUNT(*) FROM NUCLEOS");
 }
 
-function bd_pnf_contar($nucleo_id=NULL){
+function bd_areas_contar(){
+    return sql2value("SELECT COUNT(*) FROM AREAS");
+}
+
+function bd_pnf_contar(){
+    return sql2value("SELECT COUNT(*) FROM PNF");
+}
+
+function bd_trayectos_contar(){
+    return sql2value("SELECT COUNT(*) FROM TRAYECTOS");
+}
+
+/*function bd_pnf_nucleo_contar($nucleo_id=NULL){
     if ($nucleo_id==NULL) 
     {
         return sql2value("SELECT COUNT(*) FROM NUCLEOS__PNF");
@@ -934,7 +946,7 @@ function bd_pnf_contar($nucleo_id=NULL){
         return sql2value("SELECT COUNT(*) FROM NUCLEOS__PNF WHERE id_nucleo = $nucleo_id");
     }
     
-}
+}*/
 
 function bd_usuarios_contar($nivel){
     if ($nivel==1000) 
@@ -1256,3 +1268,92 @@ function bd_profesor_proyecto_cambiar($id_seccion, $id_rol, $id_usuario){
     ";
     sql($sql2);
 }
+
+#####Funciones para las Areas de Trabajo
+
+function bd_areas_datos($id=NULL)
+{
+    if ($id!=NULL) {
+        $sql="
+            SELECT *
+            FROM AREAS
+            WHERE id LIKE '{$id}'";
+        $salida = sql2row($sql);
+    } else {
+        $sql="
+            SELECT *
+            FROM AREAS
+            ";
+        $salida = sql2array($sql);
+    }
+    return $salida;
+}
+
+
+
+function bd_areas_agregar($areas)
+{
+    $sql="
+        INSERT INTO AREAS (nombre)
+        VALUES ('{$areas['nombre']}')";
+    sql($sql);
+    return "{$areas['id']}";
+
+}
+
+
+function bd_areas_modicar($areas)
+{
+    $sql = "
+        UPDATE AREAS SET
+            id = '{$areas['id']}',
+            nombre = '{$areas['nombre']}'
+        WHERE
+            id = '{$areas['id']}'
+    ";
+    sql($sql);
+    return $nombre;
+}
+
+function bd_areas_eliminar($id)
+{
+    $sql = "
+        DELETE FROM AREAS
+        WHERE id = '{$id['id']}'
+        ";
+    sql($sql);
+    return $areas['id'];
+}
+
+function bd_area_responsable($id_area,$id_rol,$id_usuario){
+    $sql0="
+        INSERT INTO USUARIOS__ROLES (id_usuario, id_rol, id_area)
+        VALUES ('{$id_usuario}','{$id_rol}', '{$id_area}')
+        ";
+    sql($sql0);
+    $sql1="
+        UPDATE AREAS SET
+        responsable_area = '{$id_usuario}'
+        WHERE id = '{$id_area}'
+    ";
+    sql($sql1);
+}
+function bd_area_responsable_cambiar($id_area, $id_rol, $id_usuario){
+    $sql = "
+        SELECT * FROM USUARIOS__ROLES
+        WHERE id_usuario = '{$id_usuario}' AND id_rol = '{$id_rol}' AND id_area = '{$id_area}'
+        ";
+    $rol=sql2row($sql);
+    $sql1 = "
+        DELETE FROM USUARIOS__ROLES
+        WHERE id = '{$rol['id']}'
+        ";
+    sql($sql1);
+    $sql2="
+        UPDATE AREAS SET
+        responsable_area = NULL
+        WHERE id = $id_area
+    ";
+    sql($sql2);
+}
+

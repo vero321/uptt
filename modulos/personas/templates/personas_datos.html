@@ -2,8 +2,8 @@
 {include file="../../navegacion/sidebar2.html"}
 {include file="../../navegacion/cabecera2.html"}
 
-        <div class="container-fluid">
-          <div class="row">
+        <div  class="container-fluid">
+          <div  class="row">
             <div class="col-md-4">
               <div class="card card-primary card-outline border-bottom-primary shadow" >
                 <div class="card-body">
@@ -19,11 +19,11 @@
                   <p class="text-muted text-center">{$usuarios.id}</p>
 
                   <a class="btn btn-outline-primary  btn-block mimodal" data-href="personas_modificar.php?id={$personas[0].id}" value="Modificar Datos">
-                    <i class="fa fa-pencil-square-o fa-fw fa-lg"></i>Modificar Datos
+                    <i class="fa fa-edit "></i>Modificar Datos
                   </a>
                   <a class="btn btn-outline-primary  btn-block mimodal" data-href="../personas/usuarios_cambiar_clave.php">
-                  <i class="fa fa-unlock-alt fa-sm fa-fw text-gray-400"></i>
-                  Cambiar
+                  <i class="fa fa-lock"></i>
+                  Contraseña
                 </a>
 
                 </div>
