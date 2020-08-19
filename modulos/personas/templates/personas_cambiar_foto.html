@@ -1,36 +1,42 @@
 
 <div class="container">
   <div class="row">
-    <div class="col">
+      <div class="col-md-4">
+      {if $smarty.session['u']['foto_perfil'] != 'NULL'}
+        <img class="img-thumbnail rounded "
+         src="../../imagenes/perfil/{$smarty.session['u']['foto_perfil']}"
+         alt="User profile picture">
+      {/if}
+      </div>
+      <div class="col-md-8">
       <h2>Cambiar foto de perfil</h2>
+        <form 
+          action="personas_Cambiar_foto.php" 
+          method="POST" 
+          class="px-4 py-3" 
+          id="cambiar_foto_perfil"
+          name="cambiar_foto_perfil"
+          enctype="multipart/form-data">
+           <div class="alert alert-info" role="alert">
+            Por favor seleccione una fotoagrafia acorde a un perfil universitario
+          </div>
+            <div class="form-group">
+              <label for="exampleFormControlFile1">Buscar fotografia</label>
+              <input type="file" class="form-control-file" name="imagen" required="">
+            </div>
 
-      <form 
-      action="proc_personas_modificar.php" 
-      method="POST" 
-      class="px-4 py-3" 
-      id="registro_usuario"
-      name="registro_usuario">
-       <div class="alert alert-info" role="alert">
-        Repo es una plataforma educativa por favor seleccione una fotoagrafia acorde a un perfil universitario
+          <div class="form-group">
+          <input 
+            class="btn btn-primary boton" 
+            type="submit" 
+            name="enviar" 
+            value="Actualizar">
+          </div>
+
+        </form>
       </div>
-      <input type="hidden" name="id" value="{$persona[id]}">
-        <div class="form-group">
-          <label for="exampleFormControlFile1">Buscar fotografia</label>
-          <input type="file" class="form-control-file" id="exampleFormControlFile1">
-        </div>
-
-      <div class="form-group">
-      <input 
-        class="btn btn-primary boton" 
-        type="submit" 
-        name="enviar" 
-        value="Modificar">
-      </div>
-
-    </form>
 
 
-    </div>
     
   </div>
 </div>

@@ -50,11 +50,22 @@
                           <a class="btn btn-sm btn-outline-primary mimodal" type="button" href="pnf_nucleo_responsable.php?id_relacion={$pnf_nucleo[i].id}&id_pnf={$pnf_nucleo[i].id_pnf}&id_nucleo={$nucleo['id']}" title="Asignar responsable {$pnf_nucleo[i].nombre_corto}"><span class="fa fa-plus"></span></a>
                         {else}
                         {$persona=bd_personas_datos($pnf_nucleo[i].responsable)}
-                          <span><b>Nombre:</b></span>
-                          {if isset($persona[0].nombre)}
-                            {$persona[0].nombre}
+                      <div>
+                          
+                         {if $persona.foto_perfil == NULL}
+                            <img class="img-thumbnail img-user rounded-circle" src="../../imagenes/perfil/user.png">
                           {else}
-                          El usuarip aun no actualiza sus datos
+                              <img class="img-thumbnail img-user rounded-circle"
+                                   src="../../imagenes/perfil/{$persona.foto_perfil}"
+                                   alt="User profile picture"
+                                   >
+                                </a>
+                        {/if}
+                          <span><b>Nombre:</b></span>
+                          {if isset($persona.nombre)}
+                            {$persona.nombre}
+                          {else}
+                          El usuario aun no actualiza sus datos
                           {/if}
                         <br>
                         {$usuario=bd_usuarios_datos($pnf_nucleo[i].responsable)}
@@ -65,6 +76,7 @@
                       </td>
                     {/if}
                   </tr>
+                </div>
                 {/section}
 
                 </tbody>

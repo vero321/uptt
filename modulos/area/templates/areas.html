@@ -68,7 +68,7 @@
                         {else}
                         {$persona=bd_personas_datos($areas[i].responsable_area)}
                           <span><b>Nombre:</b></span>
-                        {$persona[0].nombre}
+                        {$persona.nombre}
                         <br>
                         {$usuario=bd_usuarios_datos($areas[i].responsable_area)}
                         <span><b>Usuario:</b></span>

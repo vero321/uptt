@@ -344,6 +344,26 @@ function bd_usuarios_modificar_clave($d)
     return $id;
 }
 
+function bd_usuarios_cambiar_foto_perfil($imagen) {
+    $id=$id = $_SESSION['u']['id'];
+    $sql0 = "
+        UPDATE USUARIOS SET
+            foto_perfil = '{$imagen}'
+        WHERE
+            id = '{$id}'
+        ";
+    sql($sql0);
+    $sql1 = "
+        UPDATE PERSONAS SET
+            foto_perfil = '{$imagen}'
+        WHERE
+            id = '{$id}'
+        ";
+    sql($sql1);
+
+    return $id;
+}
+
 
 
 function bd_usuarios_registrar($usuario,$n_roles,$roles,$nucleos,$caso){ 
@@ -1270,7 +1290,6 @@ function bd_profesor_proyecto_cambiar($id_seccion, $id_rol, $id_usuario){
 }
 
 #####Funciones para las Areas de Trabajo
-
 function bd_areas_datos($id=NULL)
 {
     if ($id!=NULL) {

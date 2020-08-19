@@ -58,14 +58,25 @@
                     {if in_array("NUCL_R", $verificar) == TRUE }
                       <td>
                         {if $nucleos[i].responsable ==  NULL}
-                          <a class="btn btn-sm btn-outline-primary mimodal" type="button" href="nucleo_responsable.php?id={$nucleos[i].id}" title="Asignar responsable Nucleo o Extensión"><span class="fa fa-plus"></span></a>
+                          <a class="btn btn-sm btn-outline-primary" type="button" href="nucleo_responsable.php?id={$nucleos[i].id}" title="Asignar responsable Nucleo o Extensión"><span class="fa fa-plus"></span></a>
                         {else}
                           {$persona=bd_personas_datos($nucleos[i].responsable)}
+                          <div class="row">
+                            <div class="col-md-6">
+                           {if $persona.foto_perfil == NULL}
+                              <img class="img-thumbnail img-user rounded-circle" src="../../imagenes/perfil/user.png">
+                            {else}
+                            <a class=" mimodal" type="button" href="#">
+                              <img class="img-thumbnail img-user rounded-circle" src="../../imagenes/perfil/{$persona.foto_perfil}" alt="User profile picture">
+                              </a>
+                          {/if}
+                            </div>
+                          <div class="col-md-6">
                             <span><b>Nombre:</b></span>
-                          {if isset($persona[0].nombre)}
-                            {$persona[0].nombre}
+                          {if isset($persona.nombre)}
+                            {$persona.nombre}
                           {else}
-                          El usuarip aun no actualiza sus datos
+                          El usuario aun no actualiza sus datos
                           {/if}
                           <br>
                           {$usuario=bd_usuarios_datos($nucleos[i].responsable)}
@@ -73,6 +84,8 @@
                           {$usuario.correo}
                           <a href="nucleo_responsable.php?id={$nucleos[i].id}&cambiar={$nucleos[i].responsable}">Cambiar</a>
                         {/if}
+                          </div>
+                      </div>
                       </td>
                     {/if}
                   </tr>
