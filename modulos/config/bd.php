@@ -1295,72 +1295,64 @@ function bd_areas_datos($id=NULL)
     if ($id!=NULL) {
         $sql="
             SELECT *
-            FROM AREAS
+            FROM AREAS_PNF
             WHERE id LIKE '{$id}'";
         $salida = sql2row($sql);
     } else {
         $sql="
             SELECT *
-            FROM AREAS
+            FROM AREAS_PNF
             ";
         $salida = sql2array($sql);
     }
     return $salida;
 }
 
-
-
-function bd_areas_agregar($areas)
-{
+function bd_areas_pnf_datos($id_pnf, $id_nucleo){
     $sql="
-        INSERT INTO AREAS (nombre)
-        VALUES ('{$areas['nombre']}')";
-    sql($sql);
-    return "{$areas['id']}";
-
+    SELECT DISTINCT AREAS_PNF.id, id_pnf, id, id_nucleo, nombre
+    FROM AREAS_PNF
+    WHERE id_pnf = '{$id_pnf}' and AREAS_PNF.id = id and id_nucleo = '{$id_nucleo}'
+    ";
+    $salida = sql2array($sql);
+    return $salida;
 }
 
 
-function bd_areas_modicar($areas)
-{
+function bd_areas_pnf_agregar($nombre, $id, $id_pnf, $id_nucleo){
+    $sql = "INSERT INTO AREAS_PNF (nombre, id, id_pnf, id_nucleo)
+    VALUES ('{$nombre}', '{$id}', '{$id_pnf}', '{$id_nucleo}')
+    ";
+    sql($sql);    
+}
+
+
+function bd_areas_pnf_modificar($id, $nombre){
     $sql = "
-        UPDATE AREAS SET
-            id = '{$areas['id']}',
-            nombre = '{$areas['nombre']}'
+        UPDATE AREAS_PNF SET
+            nombre = '{$nombre}'
         WHERE
-            id = '{$areas['id']}'
+            id = '{$id}'
     ";
     sql($sql);
-    return $nombre;
 }
 
-function bd_areas_eliminar($id)
-{
+
+function bd_areas_pnf_eliminar($id){
     $sql = "
-        DELETE FROM AREAS
-        WHERE id = '{$id['id']}'
+        DELETE FROM AREAS_PNF
+        WHERE id = '{$id}'
         ";
     sql($sql);
-    return $areas['id'];
 }
 
-function bd_area_responsable($id_area,$id_rol,$id_usuario){
-    $sql0="
-        INSERT INTO USUARIOS__ROLES (id_usuario, id_rol, id_area)
-        VALUES ('{$id_usuario}','{$id_rol}', '{$id_area}')
-        ";
-    sql($sql0);
-    $sql1="
-        UPDATE AREAS SET
-        responsable_area = '{$id_usuario}'
-        WHERE id = '{$id_area}'
-    ";
-    sql($sql1);
-}
-function bd_area_responsable_cambiar($id_area, $id_rol, $id_usuario){
+
+function bd_comite_tecnico_cambiar($id_area, $id_rol, $id_usuario){
+    $id_pnf = $_SESSION['r'][$_SESSION['numero']]['id_pnf'];
+    $id_nucleo=$_SESSION['r'][$_SESSION['numero']]['id_nucleo'];
     $sql = "
         SELECT * FROM USUARIOS__ROLES
-        WHERE id_usuario = '{$id_usuario}' AND id_rol = '{$id_rol}' AND id_area = '{$id_area}'
+        WHERE id_usuario = '{$id_usuario}' AND id_rol = '{$id_rol}' AND id_nucleo = '{$id_nucleo}' and id_pnf = '{$id_pnf}'
         ";
     $rol=sql2row($sql);
     $sql1 = "
@@ -1369,10 +1361,29 @@ function bd_area_responsable_cambiar($id_area, $id_rol, $id_usuario){
         ";
     sql($sql1);
     $sql2="
-        UPDATE AREAS SET
-        responsable_area = NULL
-        WHERE id = $id_area
+        UPDATE AREAS_PNF SET
+        comite_tecnico = NULL
+        WHERE id = $id_seccion
     ";
     sql($sql2);
+}
+
+
+function bd_asignar_comite_tecnico($id_area,$id_rol,$id_usuario){
+    $id_pnf = $_SESSION['r'][$_SESSION['numero']]['id_pnf'];
+    $id_nucleo=$_SESSION['r'][$_SESSION['numero']]['id_nucleo'];
+    $sql0="
+        INSERT INTO USUARIOS__ROLES (id_usuario, id_rol, id_nucleo, id_pnf)
+        VALUES ('{$id_usuario}','{$id_rol}', '{$id_nucleo}', '{$id_pnf}')
+        ";
+    sql($sql0);
+
+    $sql1 = " 
+        UPDATE AREAS_PNF SET
+            comite_tecnico = '{$id_usuario}'
+        WHERE
+            id = '{$id_seccion}'
+    ";
+    sql($sql1);
 }
 

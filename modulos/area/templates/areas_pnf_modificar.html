@@ -1,4 +1,3 @@
-
 <div class="container">
 <div class="row">
   <div class="col-2"></div>
@@ -7,31 +6,29 @@
         <section id="intro">
             <div class="container">
               <div class="centro"> 
-                  <h2>Agreagar Area de Trabajo</h2>
+                  <h1 align="center">Modificar Area de Trabajo</h1>
                     <form 
-                      action="proc_areas_agregar.php" 
+                      action="proc_areas_pnf_modificar.php" 
                       method="POST" 
                       class="px-4 py-3" 
-                      id="areas_agregar"
-                      name="areas_agregar">
+                      id="registro_seccion"
+                      name="registro_seccion">
                     
-                                          
-                        <div class="form-group">
-                          <label for="nombre">Nombre Completo</label>
-                          <input 
+                      <div class="form-group">
+                          <label>Nombre</label>
+                           <input 
                             type="text" 
-                            title="Escriba el Nombre Completo del Area de Trabajo" 
+                            title="Escriba la ci del Usuario" 
                             required="required" 
                             class="form-control" 
                             id="nombre" 
-                            name="nombre"
-                            placeholder="Univerisdad Politecnica Mario.....">
-                        </div>
-                    
-                    
+                            name="nombre" 
+                            value="{$area.nombre}"
+                            >
+                        </div>                        
                       <div class="form-group">
                         <input 
-                          class="btn-enviar boton" 
+                          class="btn-enviar btn btn-sm btn-primary" 
                           type="submit" 
                           name="enviar" 
                           value="Registrar">
@@ -45,11 +42,3 @@
 
 </div>  
 </div>
-
-
-
-
-
-
-
-

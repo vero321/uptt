@@ -1,0 +1,100 @@
+{include file="../../navegacion/cab.html"}
+{include file="../../navegacion/sidebar2.html"}
+{include file="../../navegacion/cabecera2.html"}
+   
+  <div class="container-fluid">
+   <h2>{$pnf['nombre_corto']}</h2>
+    <div class="card shadow">
+        <div class="card-header">
+          <h3 class="text-primary"><span class="badge badge-secondary badge-pill"></span>AREAS
+              {if in_array("AREA_A",$verificar) == TRUE}
+               <a class="btn btn-sm btn-outline-primary mimodal" type="button" 
+              data-href="areas_pnf_agregar.php?id={$pnf['id']}" title="Agregar PNF a {$pnf['nombre_corto']}"><span class="fa fa-plus"></span></a>
+              {/if}
+            </h3>
+        </div>
+        <div class="card-body">
+          <div class="table-responsive">
+             <table class="table" id="<tabla_repo></tabla_repo>">
+                <thead>
+                  <tr>
+                    <th>Areas</th>
+                    <th>Funciones</th>
+                    {if in_array("AREA_CT", $verificar) == TRUE }
+                    <th>Comite Técnico</th>
+                    {/if}
+                  </tr>
+                  
+                </thead>
+                <tbody>
+
+                {section name=i loop=$areas_pnf}
+                  <tr>
+                    <td>{$areas_pnf[i].nombre}</td>
+                    {if in_array("AREA_M",$verificar) == TRUE}
+                    <td>
+                      <a 
+                        style="margin-bottom:3px; color:blue;" 
+                        class="btn btn-default mimodal"
+                        title="Modificar Area" 
+                        data-href="areas_pnf_modificar.php?id={$areas_pnf[i].id}&id={$areas_pnf[i].id}">
+                        <i class="fa fa-edit"></i>
+                      </a>
+                      {/if}
+                      {if in_array("AREA_E",$verificar) == TRUE}
+                      <a 
+                        style="margin-bottom:3px; color:blue;" 
+                        class="btn btn-default mimodal"
+                        title="Eliminar Area" 
+                        data-href="areas_pnf_eliminar.php?id={$areas_pnf[i].id}&id={$areas_pnf[i].id}">
+                        <i class="fa fa-trash"></i>
+                      </a>
+                      {/if}
+                  </td>
+                  <td>
+
+                    {if in_array("AREA_CT", $verificar) == TRUE }
+                        {if $areas_pnf[i].comite_tecnico ==  NULL}
+                          <a class="btn btn-sm btn-outline-primary mimodal" type="button" href="areas_pnf_comite.php?id={$areas_pnf[i].id}" title="Asignar profesor de proyecto {$areas_pnf[i].nombre}"><span class="fa fa-plus"></span></a>
+                        {else}
+                        {$persona=bd_personas_datos($areas_pnf[i].comite_tecnico)}
+                        <div class="row">
+                            <div class="col-md-6">
+                           {if $persona.foto_perfil == NULL}
+                              <img class="img-thumbnail img-user rounded-circle" src="../../imagenes/perfil/user.png">
+                            {else}
+                            <a class=" mimodal" type="button" href="#">
+                              <img class="img-thumbnail img-user rounded-circle" src="../../imagenes/perfil/{$persona.foto_perfil}" alt="User profile picture">
+                              </a>
+                          {/if}
+                            </div>
+                          <div class="col-md-6">
+                          <span><b>Nombre:</b></span>
+                          {if isset($persona.nombre)}
+                            {$persona.nombre}
+                          {else}
+                          El usuario aun no actualiza sus datos
+                          {/if}
+                        <br>
+                        {$usuario=bd_usuarios_datos($areas_pnf[i].comite_tecnico)}
+                        <span><b>Usuario:</b></span>
+                        {$usuario.correo}
+                        <a href="areas_pnf_comite.php?id={$areas_pnf[i].id}&cambiar={$areas_pnf[i].comite_tecnico}">Cambiar</a>
+                        {/if}
+                        </div>
+                    {/if}
+                  </div>
+                      </td>
+                  </tr>
+                {/section}
+
+                </tbody>
+              </table>
+
+      </div>
+    </div>
+  </div>
+</div>
+{include "../../modal/modal_box.html" prueba="Usuario"} 
+
+{include file="../../pie/pie_interno.html"}
