@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-08-17 12:36:05
+/* Smarty version 3.1.30, created on 2020-08-20 19:40:14
   from "/home/veronica/public_html/uptt/modulos/usuario/templates/usuarios_roles.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5f3ab1f59c06a6_14474678',
+  'unifunc' => 'content_5f3f09de59c159_64265323',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -25,7 +25,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:../../pie/pie_interno.html' => 1,
   ),
 ),false)) {
-function content_5f3ab1f59c06a6_14474678 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f3f09de59c159_64265323 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:../../navegacion/cab.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 

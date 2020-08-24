@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-08-17 12:37:16
+/* Smarty version 3.1.30, created on 2020-08-20 19:42:53
   from "/home/veronica/public_html/uptt/modulos/rol/templates/rol_privilegio_agregar.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5f3ab23c345bc4_34558841',
+  'unifunc' => 'content_5f3f0a7d4b1fa2_09434547',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5f3ab23c345bc4_34558841 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f3f0a7d4b1fa2_09434547 (Smarty_Internal_Template $_smarty_tpl) {
 if (!is_callable('smarty_modifier_capitalize')) require_once '/home/veronica/public_html/uptt/vendor/smarty/libs/plugins/modifier.capitalize.php';
 ?>
 <div class="container">

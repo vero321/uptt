@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-08-17 12:38:12
+/* Smarty version 3.1.30, created on 2020-08-20 19:42:55
   from "/home/veronica/public_html/uptt/modulos/navegacion/cabecera2.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5f3ab274a19586_54317544',
+  'unifunc' => 'content_5f3f0a7fc3d212_80565317',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '547703e039f14ab912a6f1839411d588a5746e57' => 
     array (
       0 => '/home/veronica/public_html/uptt/modulos/navegacion/cabecera2.html',
-      1 => 1597320289,
+      1 => 1597928602,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5f3ab274a19586_54317544 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f3f0a7fc3d212_80565317 (Smarty_Internal_Template $_smarty_tpl) {
 if (!is_callable('smarty_modifier_capitalize')) require_once '/home/veronica/public_html/uptt/vendor/smarty/libs/plugins/modifier.capitalize.php';
 ?>
 
@@ -31,14 +31,14 @@ if (!is_callable('smarty_modifier_capitalize')) require_once '/home/veronica/pub
       <div id="content">
 
         <!-- Topbar -->
-        <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top cab shadow">
+        <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
 
           <!-- Sidebar Toggle (Topbar) -->
           <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
             <i class="fa fa-bars"></i>
           </button>
 
-          <!-- Topbar Search -->
+          <!-- Topbar Search 
           <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
             <div class="input-group">
               <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
@@ -48,7 +48,7 @@ if (!is_callable('smarty_modifier_capitalize')) require_once '/home/veronica/pub
                 </button>
               </div>
             </div>
-          </form>
+          </form>-->
 
           <!-- Topbar Navbar -->
           <ul class="navbar-nav ml-auto">
@@ -134,7 +134,16 @@ $_smarty_tpl->tpl_vars['__smarty_section_i'] = $__section_i_2_saved;
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?php echo $_SESSION["u"]["correo"];?>
 </span>
-                <img class="img-profile rounded-circle" src="../../imagenes/user.png">
+                <?php if ($_SESSION['u']['foto_perfil'] == NULL) {?>
+                  <img class="img-profile rounded-circle" src="../../imagenes/perfil/user.png">
+                 <?php } else { ?>
+                    <img class="img-profile rounded-circle"
+                         src="../../imagenes/perfil/<?php echo $_SESSION['u']['foto_perfil'];?>
+"
+                         alt="User profile picture"
+                         >
+                      </a>
+                <?php }?>
               </a>
               <!-- Dropdown - User Information -->
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">

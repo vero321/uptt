@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-08-17 12:35:52
+/* Smarty version 3.1.30, created on 2020-08-20 09:14:11
   from "/home/veronica/public_html/uptt/modulos/nucleo/templates/nucleos.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5f3ab1e84b8500_00478136',
+  'unifunc' => 'content_5f3e7723646891_22507379',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '4164b76279183e6475f49c5c0bfeb9576c0d8024' => 
     array (
       0 => '/home/veronica/public_html/uptt/modulos/nucleo/templates/nucleos.html',
-      1 => 1597682111,
+      1 => 1597928602,
       2 => 'file',
     ),
   ),
@@ -25,7 +25,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:../../pie/pie_interno.html' => 1,
   ),
 ),false)) {
-function content_5f3ab1e84b8500_00478136 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f3e7723646891_22507379 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:../../navegacion/cab.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -104,17 +104,29 @@ for ($__section_i_0_iteration = 1, $_smarty_tpl->tpl_vars['__smarty_section_i']-
                     <?php if (in_array("NUCL_R",$_smarty_tpl->tpl_vars['verificar']->value) == TRUE) {?>
                       <td>
                         <?php if ($_smarty_tpl->tpl_vars['nucleos']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['responsable'] == NULL) {?>
-                          <a class="btn btn-sm btn-outline-primary mimodal" type="button" href="nucleo_responsable.php?id=<?php echo $_smarty_tpl->tpl_vars['nucleos']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['id'];?>
+                          <a class="btn btn-sm btn-outline-primary" type="button" href="nucleo_responsable.php?id=<?php echo $_smarty_tpl->tpl_vars['nucleos']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['id'];?>
 " title="Asignar responsable Nucleo o Extensión"><span class="fa fa-plus"></span></a>
                         <?php } else { ?>
                           <?php $_smarty_tpl->_assignInScope('persona', bd_personas_datos($_smarty_tpl->tpl_vars['nucleos']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['responsable']));
 ?>
+                          <div class="row">
+                            <div class="col-md-6">
+                           <?php if ($_smarty_tpl->tpl_vars['persona']->value['foto_perfil'] == NULL) {?>
+                              <img class="img-thumbnail img-user rounded-circle" src="../../imagenes/perfil/user.png">
+                            <?php } else { ?>
+                            <a class=" mimodal" type="button" href="#">
+                              <img class="img-thumbnail img-user rounded-circle" src="../../imagenes/perfil/<?php echo $_smarty_tpl->tpl_vars['persona']->value['foto_perfil'];?>
+" alt="User profile picture">
+                              </a>
+                          <?php }?>
+                            </div>
+                          <div class="col-md-6">
                             <span><b>Nombre:</b></span>
-                          <?php if (isset($_smarty_tpl->tpl_vars['persona']->value[0]['nombre'])) {?>
-                            <?php echo $_smarty_tpl->tpl_vars['persona']->value[0]['nombre'];?>
+                          <?php if (isset($_smarty_tpl->tpl_vars['persona']->value['nombre'])) {?>
+                            <?php echo $_smarty_tpl->tpl_vars['persona']->value['nombre'];?>
 
                           <?php } else { ?>
-                          El usuarip aun no actualiza sus datos
+                          El usuario aun no actualiza sus datos
                           <?php }?>
                           <br>
                           <?php $_smarty_tpl->_assignInScope('usuario', bd_usuarios_datos($_smarty_tpl->tpl_vars['nucleos']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['responsable']));
@@ -126,6 +138,8 @@ for ($__section_i_0_iteration = 1, $_smarty_tpl->tpl_vars['__smarty_section_i']-
 &cambiar=<?php echo $_smarty_tpl->tpl_vars['nucleos']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['responsable'];?>
 ">Cambiar</a>
                         <?php }?>
+                          </div>
+                      </div>
                       </td>
                     <?php }?>
                   </tr>

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-08-17 12:36:47
+/* Smarty version 3.1.30, created on 2020-08-20 09:20:38
   from "/home/veronica/public_html/uptt/modulos/area/templates/areas.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5f3ab21f7b6f84_96351047',
+  'unifunc' => 'content_5f3e78a6e743b7_44597229',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '1e960674b83774c14aa7d44966c9d3aac877dc24' => 
     array (
       0 => '/home/veronica/public_html/uptt/modulos/area/templates/areas.html',
-      1 => 1596500877,
+      1 => 1597928602,
       2 => 'file',
     ),
   ),
@@ -25,7 +25,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:../../pie/pie_interno.html' => 1,
   ),
 ),false)) {
-function content_5f3ab21f7b6f84_96351047 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f3e78a6e743b7_44597229 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:../../navegacion/cab.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -117,7 +117,7 @@ for ($__section_i_0_iteration = 1, $_smarty_tpl->tpl_vars['__smarty_section_i']-
                         <?php $_smarty_tpl->_assignInScope('persona', bd_personas_datos($_smarty_tpl->tpl_vars['areas']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['responsable_area']));
 ?>
                           <span><b>Nombre:</b></span>
-                        <?php echo $_smarty_tpl->tpl_vars['persona']->value[0]['nombre'];?>
+                        <?php echo $_smarty_tpl->tpl_vars['persona']->value['nombre'];?>
 
                         <br>
                         <?php $_smarty_tpl->_assignInScope('usuario', bd_usuarios_datos($_smarty_tpl->tpl_vars['areas']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['responsable_area']));
