@@ -945,7 +945,7 @@ function bd_nucleos_contar(){
 }
 
 function bd_areas_contar(){
-    return sql2value("SELECT COUNT(*) FROM AREAS");
+    return sql2value("SELECT COUNT(*) FROM AREAS_PNF");
 }
 
 function bd_pnf_contar(){
@@ -1289,7 +1289,7 @@ function bd_profesor_proyecto_cambiar($id_seccion, $id_rol, $id_usuario){
     sql($sql2);
 }
 
-#####Funciones para las Areas de Trabajo
+#####Funciones para las AREAS_PNF de Trabajo
 function bd_areas_datos($id=NULL)
 {
     if ($id!=NULL) {
@@ -1310,7 +1310,7 @@ function bd_areas_datos($id=NULL)
 
 function bd_areas_pnf_datos($id_pnf, $id_nucleo){
     $sql="
-    SELECT DISTINCT AREAS_PNF.id, id_pnf, id, id_nucleo, nombre
+    SELECT DISTINCT AREAS_PNF.id, id_pnf, id, id_nucleo, nombre, comite_tecnico
     FROM AREAS_PNF
     WHERE id_pnf = '{$id_pnf}' and AREAS_PNF.id = id and id_nucleo = '{$id_nucleo}'
     ";
@@ -1327,25 +1327,29 @@ function bd_areas_pnf_agregar($nombre, $id, $id_pnf, $id_nucleo){
 }
 
 
-function bd_areas_pnf_modificar($id, $nombre){
+function bd_areas_pnf_modificar($areas)
+{
     $sql = "
         UPDATE AREAS_PNF SET
-            nombre = '{$nombre}'
+            id = '{$areas['id']}',
+            nombre = '{$areas['nombre']}'
         WHERE
-            id = '{$id}'
+            id = '{$areas['id']}'
     ";
     sql($sql);
+    return $nombre;
 }
 
 
-function bd_areas_pnf_eliminar($id){
+function bd_areas_pnf_eliminar($id)
+{
     $sql = "
         DELETE FROM AREAS_PNF
-        WHERE id = '{$id}'
+        WHERE id = '{$id['id']}'
         ";
     sql($sql);
+    return $areas['id'];
 }
-
 
 function bd_comite_tecnico_cambiar($id_area, $id_rol, $id_usuario){
     $id_pnf = $_SESSION['r'][$_SESSION['numero']]['id_pnf'];
@@ -1363,7 +1367,7 @@ function bd_comite_tecnico_cambiar($id_area, $id_rol, $id_usuario){
     $sql2="
         UPDATE AREAS_PNF SET
         comite_tecnico = NULL
-        WHERE id = $id_seccion
+        WHERE id = $id_area
     ";
     sql($sql2);
 }
@@ -1382,7 +1386,7 @@ function bd_asignar_comite_tecnico($id_area,$id_rol,$id_usuario){
         UPDATE AREAS_PNF SET
             comite_tecnico = '{$id_usuario}'
         WHERE
-            id = '{$id_seccion}'
+            id = '{$id_area}'
     ";
     sql($sql1);
 }

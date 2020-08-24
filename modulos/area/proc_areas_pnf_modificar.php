@@ -1,15 +1,14 @@
-<?php 
+<?php
 define('MOD', 'area'); 
 require_once '../config/app.php';
-include_once APP.'/modulos/config/inicializacion.php';
-$verificar=verificar();
+require_once APP."/modulos/config/inicializacion.php";
+
+$areas = $_POST;
+
+$a_mod=bd_areas_pnf_modificar($areas);
 
 
-$id=$_POST['id_area'];
-$nombre=$_POST['nombre'];
-$id_pnf=$_POST['id_pnf'];
 
-bd_areas_pnf_modificar($id, $nombre);
-
-$m="El Area se modifico correctamente";
+$m="Area <strong>$id</strong> modificada con exito";
 ir("../mensaje/mensaje.php?m=$m&d=../area/areas_pnf.php");
+

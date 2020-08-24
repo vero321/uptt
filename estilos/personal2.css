@@ -80,6 +80,6 @@ input:checked + .slider:before {
 }
 
 .img-user{
-    height: 5rem;
+  height: 5rem;
   width: 5rem;
 }

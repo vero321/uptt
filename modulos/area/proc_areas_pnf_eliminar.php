@@ -1,10 +1,14 @@
-<?php 
+<?php
 define('MOD', 'area'); 
 require_once '../config/app.php';
-include_once APP.'/modulos/config/inicializacion.php';
-$verificar=verificar();
+require_once APP."/modulos/config/inicializacion.php";
 
-$id = $_GET['id'];
+$id=$_POST;
 bd_areas_pnf_eliminar($id);
-$m="El Area de Trabajo se elimino correctamente";
-	ir("../mensaje/mensaje.php?m=$m&d=../area/areas_pnf.php");
+
+
+
+$m="Línea de Investigación eliminada con exito";
+ir("../mensaje/mensaje.php?m=$m&d=../area/areas_pnf.php");
+
+
