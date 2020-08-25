@@ -18,7 +18,7 @@ $areas=bd_areas_datos();
 
 $areas_pnf=bd_areas_pnf_datos($id_pnf, $id_nucleo);
 
-#vq($trayecto_pnf);
+#vq($areas_pnf);
 
 $smarty->assign('pnf',$pnf);
 $smarty->assign('areas',$areas);
