@@ -395,7 +395,9 @@ function bd_usuarios_roles_datos($id){
     $sql="
             SELECT USUARIOS__ROLES.id, id_rol, id_nucleo, id_pnf, rol, nivel
             FROM USUARIOS__ROLES, ROLES 
-            WHERE id_usuario LIKE '{$id}' && id_rol LIKE ROLES.id  ";
+            WHERE id_usuario LIKE '{$id}' && id_rol LIKE ROLES.id  
+            ORDER BY rol ASC#
+            ";
         $salida = sql2array($sql);
     return $salida;
 }
@@ -780,6 +782,7 @@ function bd_roles__privilegios($id){
                 LIKE '{$id}' 
                 AND a.id = c.id_rol
             )
+        ORDER BY b.nombre ASC#
     ";
 
     $salida=sql2array($sql);
