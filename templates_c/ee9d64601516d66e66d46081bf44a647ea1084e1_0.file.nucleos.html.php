@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-08-26 20:32:50
+/* Smarty version 3.1.30, created on 2020-09-02 11:16:12
   from "/home/palencia/public_html/proyecto4/uptt/modulos/nucleo/templates/nucleos.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5f46ff32987f45_78045376',
+  'unifunc' => 'content_5f4fb73c3e1c96_95134476',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'ee9d64601516d66e66d46081bf44a647ea1084e1' => 
     array (
       0 => '/home/palencia/public_html/proyecto4/uptt/modulos/nucleo/templates/nucleos.html',
-      1 => 1598312971,
+      1 => 1599059689,
       2 => 'file',
     ),
   ),
@@ -21,11 +21,12 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:../../navegacion/cab.html' => 1,
     'file:../../navegacion/sidebar2.html' => 1,
     'file:../../navegacion/cabecera2.html' => 1,
+    'file:../../modal/modal_galeria.html' => 1,
     'file:../../modal/modal_box.html' => 1,
     'file:../../pie/pie_interno.html' => 1,
   ),
 ),false)) {
-function content_5f46ff32987f45_78045376 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f4fb73c3e1c96_95134476 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:../../navegacion/cab.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -114,7 +115,10 @@ for ($__section_i_0_iteration = 1, $_smarty_tpl->tpl_vars['__smarty_section_i']-
                            <?php if ($_smarty_tpl->tpl_vars['persona']->value['foto_perfil'] == NULL) {?>
                               <img class="img-thumbnail img-user rounded-circle" src="../../imagenes/perfil/user.png">
                             <?php } else { ?>
-                            <a class=" mimodal" type="button" href="#">
+                            <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title=""
+                           data-image="../../imagenes/perfil/<?php echo $_smarty_tpl->tpl_vars['persona']->value['foto_perfil'];?>
+"
+                           data-target="#image-gallery">
                               <img class="img-thumbnail img-user rounded-circle" src="../../imagenes/perfil/<?php echo $_smarty_tpl->tpl_vars['persona']->value['foto_perfil'];?>
 " alt="User profile picture">
                               </a>
@@ -158,6 +162,9 @@ $_smarty_tpl->tpl_vars['__smarty_section_i'] = $__section_i_0_saved;
       </div>
   
 
+<?php $_smarty_tpl->_subTemplateRender("file:../../modal/modal_galeria.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('prueba'=>"Usuario"), 0, false);
+?>
+ 
 <?php $_smarty_tpl->_subTemplateRender("file:../../modal/modal_box.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('prueba'=>"Usuario"), 0, false);
 ?>
  
