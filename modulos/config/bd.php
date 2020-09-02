@@ -994,6 +994,10 @@ function bd_personas_contar($criterio='1')
 
 }
 
+function bd_lider_contar()
+{
+    
+}
 ######################## Funciones Centros de Investigación
 
 function bd_centros_datos($id=NULL)
@@ -1394,3 +1398,55 @@ function bd_asignar_comite_tecnico($id_area,$id_rol,$id_usuario){
     sql($sql1);
 }
 
+#### Funciones Líder de Equipo
+
+
+function bd_asignar_lider_equipo($id_seccion,$id_rol,$id_usuario){
+    $id_pnf = $_SESSION['r'][$_SESSION['numero']]['id_pnf'];
+    $id_nucleo=$_SESSION['r'][$_SESSION['numero']]['id_nucleo'];
+    $sql0="
+        INSERT INTO USUARIOS__ROLES (id_usuario, id_rol, id_nucleo, id_pnf)
+        VALUES ('{$id_usuario}','{$id_rol}', '{$id_nucleo}', '{$id_pnf}')
+        ";
+    sql($sql0);
+
+    $sql1 = " 
+        UPDATE SECCIONES__LIDER SET
+            lider_equipo = '{$id_usuario}'
+        WHERE
+            id = '{$id_seccion}'
+    ";
+    sql($sql1);
+}
+
+function bd_lider_equipo_cambiar($id_seccion, $id_rol, $id_usuario){
+    $id_pnf = $_SESSION['r'][$_SESSION['numero']]['id_pnf'];
+    $id_nucleo=$_SESSION['r'][$_SESSION['numero']]['id_nucleo'];
+    $sql = "
+        SELECT * FROM USUARIOS__ROLES
+        WHERE id_usuario = '{$id_usuario}' AND id_rol = '{$id_rol}' AND id_nucleo = '{$id_nucleo}' and id_pnf = '{$id_pnf}'
+        ";
+    $rol=sql2row($sql);
+    $sql1 = "
+        DELETE FROM USUARIOS__ROLES
+        WHERE id = '{$rol['id']}'
+        ";
+    sql($sql1);
+    $sql2="
+        UPDATE SECCIONES__LIDER SET
+        lider_equipo = NULL
+        WHERE id = $id_seccion
+    ";
+    sql($sql2);
+}
+
+
+function bd_lider_seccion_datos($id_seccion){
+    $sql="
+    SELECT DISTINCT SECCIONES__LIDER.id, id, id_seccion, lider_equipo
+    FROM SECCIONES__LIDER
+    WHERE id_seccion = '{$id_seccion}' and SECCIONES__LIDER.id = id
+    ";
+    $salida = sql2array($sql);
+    return $salida;
+}
