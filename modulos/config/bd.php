@@ -366,7 +366,7 @@ function bd_usuarios_cambiar_foto_perfil($imagen) {
 
 
 
-function bd_usuarios_registrar($usuario,$n_roles,$roles,$nucleos,$caso){ 
+function bd_usuarios_registrar($usuario){ 
 
     $sql1="
         INSERT INTO USUARIOS(id, clave, correo)
