@@ -53,13 +53,17 @@
                       <div>
                           
                          {if $persona.foto_perfil == NULL}
+
                             <img class="img-thumbnail img-user rounded-circle" src="../../imagenes/perfil/user.png">
                           {else}
+                            <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title=""
+                             data-image="../../imagenes/perfil/{$persona.foto_perfil}"
+                             data-target="#image-gallery">
                               <img class="img-thumbnail img-user rounded-circle"
                                    src="../../imagenes/perfil/{$persona.foto_perfil}"
                                    alt="User profile picture"
                                    >
-                                </a>
+                              </a>
                         {/if}
                           <span><b>Nombre:</b></span>
                           {if isset($persona.nombre)}
@@ -87,6 +91,7 @@
 	</div>
 </div>
 </div>
+{include "../../modal/modal_galeria.html" prueba="Usuario"} 
 {include "../../modal/modal_box.html" prueba="Usuario"} 
 
 {include file="../../pie/pie_interno.html"}
