@@ -1,3 +1,27 @@
+<?php
+/* Smarty version 3.1.30, created on 2020-09-01 10:45:43
+  from "/home/palencia/public_html/proyecto4/uptt/modulos/navegacion/cab.html" */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.30',
+  'unifunc' => 'content_5f4e5e97404d02_20413772',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    '47a210fbcaad85e2f2c0a8c00cb8a2a3ce152abd' => 
+    array (
+      0 => '/home/palencia/public_html/proyecto4/uptt/modulos/navegacion/cab.html',
+      1 => 1598488474,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_5f4e5e97404d02_20413772 (Smarty_Internal_Template $_smarty_tpl) {
+?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -65,4 +89,5 @@ es decir mayor a 768px*/
       }
   }
 </style>
-<body id="page-top">
+<body id="page-top"><?php }
+}
