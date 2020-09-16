@@ -1450,3 +1450,15 @@ function bd_lider_seccion_datos($id_seccion){
     $salida = sql2array($sql);
     return $salida;
 }
+
+### Fnciones equipo
+
+function bd_equipo_lider(){
+    $sql="
+        SELECT * 
+        FROM LIDERES_DE_EQUIPO
+        WHERE id_persona = '{$_SESSION['u']['id']}'
+    ";
+    $salida = sql2array($sql);
+    vq($salida);
+}
