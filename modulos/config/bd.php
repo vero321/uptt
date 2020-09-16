@@ -1226,8 +1226,20 @@ function bd_secciones_trayectos_pnf_nucleo($trayecto, $id_pnf, $id_nucleo){
     $sql="
         SELECT *
         FROM SECCIONES
-         WHERE id_trayecto = '{$trayecto}' and id_pnf = '{$id_pnf}' and id_nucleo = '{$id_nucleo}'
+         WHERE id_trayecto = '{$trayecto}' and id_pnf = '{$id_pnf}' and id_nucleo = '{$id_nucleo}' 
          ";
+        $salida = sql2array($sql);
+    return $salida;
+}
+
+
+
+function bd_secciones_profesor($id_profesor, $id_pnf, $id_nucleo){
+    $sql="
+        SELECT * 
+        FROM SECCIONES
+        WHERE profesor_proyecto = '{$id_profesor}' AND id_nucleo = '{$id_nucleo}' AND id_pnf = '{$id_pnf}' 
+        ";
         $salida = sql2array($sql);
     return $salida;
 }
@@ -1401,6 +1413,9 @@ function bd_asignar_comite_tecnico($id_area,$id_rol,$id_usuario){
 #### Funciones Líder de Equipo
 
 
+
+
+
 function bd_asignar_lider_equipo($id_seccion,$id_rol,$id_usuario){
     $id_pnf = $_SESSION['r'][$_SESSION['numero']]['id_pnf'];
     $id_nucleo=$_SESSION['r'][$_SESSION['numero']]['id_nucleo'];
@@ -1411,8 +1426,8 @@ function bd_asignar_lider_equipo($id_seccion,$id_rol,$id_usuario){
     sql($sql0);
 
     $sql1 = " 
-        UPDATE SECCIONES__LIDER SET
-            lider_equipo = '{$id_usuario}'
+        UPDATE LIDERES_DE_EQUIPO SET
+            id_persona = '{$id_usuario}'
         WHERE
             id = '{$id_seccion}'
     ";
@@ -1433,21 +1448,38 @@ function bd_lider_equipo_cambiar($id_seccion, $id_rol, $id_usuario){
         ";
     sql($sql1);
     $sql2="
-        UPDATE SECCIONES__LIDER SET
-        lider_equipo = NULL
+        UPDATE LIDERES_DE_EQUIPO SET
+        id_persona = NULL
         WHERE id = $id_seccion
     ";
     sql($sql2);
 }
 
 
-function bd_lider_seccion_datos($id_seccion){
+function bd_lider_datos($id=NULL)
+{
+    if ($id!=NULL) {
+        $sql="
+            SELECT *
+            FROM LIDERES_DE_EQUIPO
+            WHERE id LIKE '{$id}'";
+        $salida = sql2row($sql);
+    } else {
+        $sql="
+            SELECT *
+            FROM LIDERES_DE_EQUIPO
+            ";
+        $salida = sql2array($sql);
+    }
+    return $salida;
+}
+
+function  bd_lider_seccion($id_seccion){
     $sql="
-    SELECT DISTINCT SECCIONES__LIDER.id, id, id_seccion, lider_equipo
-    FROM SECCIONES__LIDER
-    WHERE id_seccion = '{$id_seccion}' and SECCIONES__LIDER.id = id
-    ";
-    $salida = sql2array($sql);
+        SELECT * 
+        FROM LIDERES_DE_EQUIPO WHERE id_seccion= '{$id_seccion}'  
+        ";
+        $salida = sql2array($sql);
     return $salida;
 }
 

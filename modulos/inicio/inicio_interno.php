@@ -1,5 +1,4 @@
 <?php
-
 define('MOD', 'inicio');
 require_once '../config/app.php';
 include_once APP."/modulos/config/inicializacion.php";
