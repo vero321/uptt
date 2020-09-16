@@ -5,18 +5,18 @@
 	<div class="container-fluid">
 	  <div class="card shadow">
 	    <div class="card-header ">
-			<h2 class="text-center">Asinar Responsable al {$areas_pnf['nombre']}
+			<h2 class="text-center">Asinar un Líder de Equipo
 			</h2>
 		</div>
 
 	          {if isset($respuesta)}
 	          	<div class="alert alert-danger" role="alert">
-	            No se encuentra un rol con los permisos para ser Responsable de un Núcleo comuniquese con el administrador para que asigne un rol con los privilegios necesarios
+	            No se encuentra un rol con los permisos para ser Líder de Equipo comuniquese con el administrador para que asigne un rol con los privilegios necesarios
 	          </div>
 	          	{else}
 				<div class="car m-3 p-4">
                 <div class="container">  
-                  <form action="areas_pnf_comite.php?id={$areas_pnf['id']}" method="POST">
+                  <form action="lider_asignar.php?id={$lider['id']}" method="POST">
                       <div class="input-group">
                         <input id="p" name="p" type="text" class="form-control" placeholder="12345678 o coreo@correo.com" aria-describedby="basic-addon1" required >
                         <span class="input-group-addon bg-primary text-gray-100" id="basic-addon1" style="padding:0 12px;"><i class="fa fa-search  pt-2"></i></span>
@@ -48,11 +48,11 @@
 			              <div class="centro"> 
 			              	<h3>Selecione un Usuario</h3>
 							<form 
-			                      action="areas_pnf_comite.php?id={$areas_pnf['id']}" 
+			                      action="lider_asignar.php?id={$lider['id']}" 
 			                      method="POST" 
 			                      class="px-4 py-3" 
-			                      id="Asignar_profesor de proyecto"
-			                      name="Asignar_profesor de proyecto">
+			                      id="Asignar lider de equipo"
+			                      name="Asignar lider de equipo">
 			                    <div class="form-group">
 			                        
 			                    	{section name=i loop=$usuarios}

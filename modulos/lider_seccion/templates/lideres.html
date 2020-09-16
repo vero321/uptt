@@ -1,0 +1,80 @@
+{include file="../../navegacion/cab.html"}
+{include file="../../navegacion/sidebar2.html"}
+{include file="../../navegacion/cabecera2.html"}
+
+<div class="container-fluid">
+ 
+  <div class="card shadow">
+    <div class="card-header ">
+      <h2 class="text-primary"> Líderes
+          {if in_array("PROF_AL",$verificar) == TRUE}
+            {if $lider_seccion[i].id_persona ==  NULL}
+             <a class="btn btn-sm btn-outline-primary mimodal mimodal" type="button" 
+            href="lider_asignar.php?id={$lider_seccion[i].id}" title="Agregar nucleo o extensión"><span class="fa fa-plus"></span></a>
+            {/if}
+          {/if}
+          </h2>
+
+      <table class="table " id="tabla_repo" style="width:100%">
+        <thead class="text-dark">
+            {if in_array("PROF_AL", $verificar) == TRUE }
+            <th>Responsable</th>
+            {/if}
+          </tr>
+        </thead>
+        <tbody class="text-dark">
+
+        {section name=i loop=$lider_seccion}
+
+            {if in_array("PROF_AL", $verificar) == TRUE }
+              <td>
+                {if $lider_seccion[i].id_persona ==  NULL}
+                  <a class="btn btn-sm btn-outline-primary" type="button" href="lider_asignar.php?id={$lider_seccion[i].id}" title="Asignar Líder de Equipo"><span class="fa fa-plus"></span></a>
+                {else}
+                  {$persona=bd_personas_datos($lider_seccion[i].id_persona)}
+                  <div class="row">
+                    <div class="col-md-4">
+                   {if $persona.foto_perfil == NULL}
+                      <img class="img-thumbnail img-user rounded-circle" src="../../imagenes/perfil/user.png">
+                    {else}
+                    <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title=""
+                   data-image="../../imagenes/perfil/{$persona.foto_perfil}"
+                   data-target="#image-gallery">
+                      <img class="img-thumbnail img-user rounded-circle" src="../../imagenes/perfil/{$persona.foto_perfil}" alt="User profile picture">
+                      </a>
+                  {/if}
+                    </div>
+                  <div class="col-md-6">
+                    <span><b>Nombre:</b></span>
+                  {if isset($persona.nombre)}
+                    {$persona.nombre}
+                  {else}
+                  El usuario aun no actualiza sus datos
+                  {/if}
+                  <br>
+                  {$usuario=bd_usuarios_datos($lider_seccion[i].id_persona)}
+                  <span><b>Usuario:</b></span>
+                  {$usuario.correo}
+                  <a href="lider_asignar.php?id={$lider_seccion[i].id}&cambiar={$lider_seccion[i].id_persona}">Cambiar</a>
+                {/if}
+                  </div>
+              </div>
+              </td>
+            {/if}
+          </tr>
+        {/section}
+        </tbody>
+    
+      </table>
+      
+      
+  
+  </div>
+  </div>
+</div>
+    
+
+{include "../../modal/modal_galeria.html" prueba="Usuario"} 
+{include "../../modal/modal_box.html" prueba="Usuario"} 
+
+{include file="../../pie/pie_interno.html"}

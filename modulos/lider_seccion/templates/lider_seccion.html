@@ -1,86 +1,26 @@
 {include file="../../navegacion/cab.html"}
 {include file="../../navegacion/sidebar2.html"}
 {include file="../../navegacion/cabecera2.html"}
-   
-  <div class="container-fluid">
-   <!--h2>{$seccion['nombre']}</h2-->
-    <div class="card shadow">
-        <div class="card-header">
-          <h3 class="text-primary"><span class="badge badge-secondary badge-pill"></span>Líderes de Equipo
-              
-            </h3>
-        </div>
-        <div class="card-body">
-          <div class="table-responsive">
-             <table class="table" id="<tabla_repo></tabla_repo>">
-                <thead>
-                  <tr>
-                    {if in_array("PROF_AL", $verificar) == TRUE }
-                    <th>Líder de Equipo</th>
-                    {/if}
-                    <th>Funciones</th>
-                    <th>Equipo</th>
-                  </tr>
-                  
-                </thead>
-                <tbody>
 
-                {section name=i loop=$lider}
-                  <td>
 
-                    {if in_array("PROF_AL", $verificar) == TRUE }
-                        {if $lider[i].lider_equipo ==  NULL}
-                          <a class="btn btn-sm btn-outline-primary mimodal" type="button" href="lider_seccion.php?id={$lider[i].id}" title="Asignar Liíder de Equipo {$lider[i].nombre}"><span class="fa fa-plus"></span></a>
-                        {else}
-                        {$persona=bd_personas_datos($lider[i].lider_equipo)}
-                        <div class="row">
-                            <div class="col-md-4">
-                           {if $persona.foto_perfil == NULL}
-                              <img class="img-thumbnail img-user rounded-circle" src="../../imagenes/perfil/user.png">
-                            {else}
-                            <a class=" mimodal" type="button" href="#">
-                              <img class="img-thumbnail img-user rounded-circle" src="../../imagenes/perfil/{$persona.foto_perfil}" alt="User profile picture">
-                              </a>
-                          {/if}
-                            </div>
-                          <div class="col-md-6">
-                          <span><b>Nombre:</b></span>
-                          {if isset($persona.nombre)}
-                            {$persona.nombre}
-                          {else}
-                          El usuario aun no actualiza sus datos
-                          {/if}
-                        <br>
-                        {$usuario=bd_usuarios_datos($lider[i].comite_tecnico)}
-                        <span><b>Usuario:</b></span>
-                        {$usuario.correo}
-                        <a href="lider_seccion.php?id={$lider[i].id}&cambiar={$lider[i].lider_equipo}">Cambiar</a>
-                        {/if}
-                        </div>
-                    {/if}
-                  </div>
-                      </td>
-                  <tr>
-                  <td> {if in_array("LIDE_E",$verificar) == TRUE}
-                      <a 
-                        style="margin-bottom:3px; color:blue;" 
-                        class="btn btn-default mimodal"
-                        title="Eliminar Líder de Equipo" 
-                        data-href="lider_equipo_eliminar.php">
-                        <i class="fa fa-trash"></i>
-                      </a>
-                      {/if}
-                  </td>
-                  </tr>
-                {/section}
+<div class="container-fluid">
+  <h2>{$pnf['nombre_corto']}</h2>
+  <div class="card shadow">
+		<div class="card-header ">
+			<h3>Secciones</h3>
+			{section name=i loop=$seccion_profesor}
+			<h4 class="text-primary"><a href="lideres.php?id={$seccion_profesor[i].id}"><span class="badge badge-secondary badge-pill"></span> {$seccion_profesor[i].nombre}</a></h4>
+      
+        
+       {/section}
+	   
 
-                </tbody>
-              </table>
-
-      </div>
-    </div>
+  </div>
   </div>
 </div>
+
+
+{include "../../modal/modal_galeria.html" prueba="Usuario"} 
 {include "../../modal/modal_box.html" prueba="Usuario"} 
 
 {include file="../../pie/pie_interno.html"}

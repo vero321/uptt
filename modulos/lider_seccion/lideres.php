@@ -5,7 +5,7 @@ include_once APP.'/modulos/config/inicializacion.php';
 $verificar=verificar();
 $smarty->assign('verificar',$verificar);
 
-#este archivo muestra la lista de secciones que corresponden al Profesor de Proyecto 
+$id_seccion= $_GET['id'];
 
 $id_nucleo=$_SESSION['r'][$_SESSION['numero']]['id_nucleo'];#Guarda la id del núcleo 
 $id_pnf=$_SESSION['r'][$_SESSION['numero']]['id_pnf'];#Guarda la id del PNF
@@ -13,13 +13,9 @@ $pnf=bd_pnf_datos($id_pnf);#Guarda los Datos del pnf
 
 $id_profesor=$_SESSION['u']['id'];#Guarda el id de la persona
 
-$secciones=bd_secciones_datos();
 $seccion_profesor=bd_secciones_profesor($id_profesor, $id_pnf, $id_nucleo);
 
-
-
-$smarty->assign('secciones', bd_secciones_datos());
 $smarty->assign('seccion_profesor', bd_secciones_profesor($id_profesor, $id_pnf, $id_nucleo));
-$smarty->assign('pnf',$pnf);
-$smarty->assign('pie', file_get_contents(APP.'/modulos/pie/usuarios.html'));
-$smarty->display('lider_seccion.html');
+$smarty->assign('lider_seccion', bd_lider_seccion($id_seccion));
+$smarty->assign('lider', bd_lider_datos());
+$smarty->display('lideres.html');
