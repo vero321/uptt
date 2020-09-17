@@ -1426,7 +1426,7 @@ function bd_asignar_lider_equipo($id_seccion,$id_rol,$id_usuario){
     sql($sql0);
 
     $sql1 = " 
-        UPDATE LIDERES_DE_EQUIPO SET
+        UPDATE EQUIPOS SET
             id_persona = '{$id_usuario}'
         WHERE
             id = '{$id_seccion}'
@@ -1448,7 +1448,7 @@ function bd_lider_equipo_cambiar($id_seccion, $id_rol, $id_usuario){
         ";
     sql($sql1);
     $sql2="
-        UPDATE LIDERES_DE_EQUIPO SET
+        UPDATE EQUIPOS SET
         id_persona = NULL
         WHERE id = $id_seccion
     ";
@@ -1482,6 +1482,16 @@ function  bd_lider_seccion($id_seccion){
         $salida = sql2array($sql);
     return $salida;
 }
+
+function bd_lider_eliminar($id){
+    $sql = "
+        DELETE FROM EQUIPOS
+        WHERE id = '{$id['id']}'
+        ";
+    sql($sql);
+    return $lider['id'];
+}
+
 
 ### Fnciones equipo
 

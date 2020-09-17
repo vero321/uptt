@@ -14,7 +14,7 @@ $smarty->assign('verificar',$verificar);
 
 #Esta estructura busca el rol que tenga el privilegio de asignar Líder (PROF_AL)
 #para ello usa dos foreach el primero para roles buscar los datos de los Roles
-#el segundo busca entre los privilegios este privilegio (LIDE_E) lo cual indica que puede ser Líder de Equipo
+#el segundo busca entre los privilegios este privilegio (LIDE_EQ) lo cual indica que puede ser Líder de Equipo
 $id_seccion = $_GET['id'];
 
 
@@ -25,7 +25,7 @@ foreach ($roles as $rol) {
 	# code...
 	$privilegios=bd_roles__privilegios($rol['id']);
 	foreach ($privilegios as $privilegio) {
-		if ($privilegio['codigo'] == "LIDE_E") {
+		if ($privilegio['codigo'] == "LIDE_EQ") {
 			$id_rol=$privilegio['id_rol'];
 		}
 	}
