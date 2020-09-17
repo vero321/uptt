@@ -182,18 +182,6 @@ $(document)
         selector,
         counter = 0;
 
-      $('#show-next-image, #show-previous-image')
-        .click(function () {
-          if ($(this)
-            .attr('id') === 'show-previous-image') {
-            current_image--;
-          } else {
-            current_image++;
-          }
-
-          selector = $('[data-image-id="' + current_image + '"]');
-          updateGallery(selector);
-        });
 
       function updateGallery(selector) {
         let $sel = selector;
@@ -243,3 +231,13 @@ $(document)
     }
     e.preventDefault(); // prevent the default action (scroll / move caret)
   });
+
+$('.mimodal').click(function(){
+  var dataURL = $(this).attr('data-href');
+
+  $('.modal-body_repo').load(dataURL,function(){
+      var etiqueta = dataURL.split('.php')[0];
+      $('#myModal').modal({show:true});
+
+  });
+});

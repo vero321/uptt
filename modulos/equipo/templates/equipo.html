@@ -2,7 +2,97 @@
 {include file="../../navegacion/sidebar2.html"}
 {include file="../../navegacion/cabecera2.html"}
 
+<div class="container-fluid">
+	<div class="m-3">
+		
+	<h4> Equipo: <a class="btn btn-link mimodal text-primary" data-href="cambiar_nombre.php?id={$lider.id}" title="Cambiar nombre">
+		{if isset($lider.nombre_equipo)}
+			{$lider.nombre_equipo}
+		{else}
+			El equipo aun no tiene nombre
+		{/if}
+		<i class="fa fa-edit fa-sm"></i>
+		</a>
+	</h4>
+	</div>
+	<div class="card">
+		<div class="card-header">
+		<h5>Integrantes 
+			{if in_array('EQUI_A',$verificar) == TRUE}
+			<a class="btn btn-sm btn-outline-primary mimodal" type="button" 
+            href="agregar_integrante.php?id={$lider.id}" title="Agregar un nuevo integrante"><span class="fa fa-plus"></span></a>
+            {/if}
+		</h5>
+
+		</div>
+		<div class="card-body">
+			<div class="table-responsive">
+				<table class="table" id="tabla_repo" style="width:100%">
+                <thead>
+                  <tr>
+                    <th>CI</th>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Foto de perfl</th>
+                    <th>Funcones</th>
+                  </tr>
+                </thead>
+                <tbody>
+                <tr>
+                {if isset($integrantes) == true}
+                {section name=i loop=$integrantes}
+                	<td>{$integrantes[i].id}</td>
+                	<td>
+                		{if isset($integrantes[i].nombre)}
+                		{$integrantes[i].nombre}
+                		{else}
+                		La persona aun no a actualizado su nombre
+                		{/if}
+                	</td>
+                	<td>
+                		{if isset($integrantes[i].nombre)}
+                		{$integrantes[i].apellido}
+                		{else}
+                		La persona aun no a actualizado su apellido
+                		{/if}
+                	</td>
+                	<td>
+                	{if $integrantes[i].foto_perfil == NULL}
+                		<img class="img-thumbnail img-user rounded-circle" src="../../imagenes/perfil/user.png">
+                    {else}
+                    <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title=""
+                   data-image="../../imagenes/perfil/{$integrantes[i].foto_perfil}"
+                   data-target="#image-gallery">
+                      <img class="img-thumbnail img-user rounded-circle myimage" src="../../imagenes/perfil/{$integrantes[i].foto_perfil}" alt="User profile picture">
+                    </a>
+                  {/if}
+              </td>
+              <td>
+                  {if in_array('EQUI_E',$verificar) == TRUE}
+                  	<a 
+                      style="margin-bottom:3px; color:blue;" 
+                      class="btn btn-default mimodal"
+                      title="Eliminar integrante del equipo" 
+                      data-href="equipo_eliminar_integrante.php?id={$integrantes[i].id_equipo_persona}&id_equipo={$lider.id}">
+                      <i class="fa fa-trash"></i>
+                    </a>
+                  {/if}
+                  </td>
+                </tr>
+                {/section}
+                {/if}
+                </tbody>
+				</table>
+			
+			</div>
+		</div>
+		
+	</div>
+	
+</div>
 
 {include "../../modal/modal_box.html" prueba="Usuario"} 
+{include "../../modal/modal_galeria.html" prueba="Usuario"} 
+
 
 {include file="../../pie/pie_interno.html"}

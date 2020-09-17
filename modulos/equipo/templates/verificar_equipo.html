@@ -1,0 +1,30 @@
+{include file="../../navegacion/cab.html"}
+{include file="../../navegacion/sidebar2.html"}
+{include file="../../navegacion/cabecera2.html"}
+
+	<div class="container-fluid">
+		<div class="col-md-4">
+		  <div class="card shadow">
+		  	<div class="card-header">
+		  		<h4>Lider de equipo</h4>
+		  	</div>
+		  	<div class="card-body">
+			  	<div class="list-group">
+			        {section name=i loop=$lider}
+						<a href="equipo.php?id={$lider[i].id}" class="list-group-item list-group-item">
+						{if isset($lider[i].nombre_equipo)}
+							{$lider[i].nombre_equipo}
+						{else}
+							El equipo aun no tiene nombre
+						{/if}
+						</a>
+					{/Section}
+			  	</div>
+			</div>
+		</div>
+	  </div>
+	</div>
+
+{include "../../modal/modal_box.html" prueba="Usuario"} 
+
+{include file="../../pie/pie_interno.html"}

@@ -1461,13 +1461,13 @@ function bd_lider_datos($id=NULL)
     if ($id!=NULL) {
         $sql="
             SELECT *
-            FROM LIDERES_DE_EQUIPO
+            FROM EQUIPOS
             WHERE id LIKE '{$id}'";
         $salida = sql2row($sql);
     } else {
         $sql="
             SELECT *
-            FROM LIDERES_DE_EQUIPO
+            FROM EQUIPOS
             ";
         $salida = sql2array($sql);
     }
@@ -1477,7 +1477,7 @@ function bd_lider_datos($id=NULL)
 function  bd_lider_seccion($id_seccion){
     $sql="
         SELECT * 
-        FROM LIDERES_DE_EQUIPO WHERE id_seccion= '{$id_seccion}'  
+        FROM EQUIPOS WHERE id_seccion= '{$id_seccion}'  
         ";
         $salida = sql2array($sql);
     return $salida;
@@ -1485,12 +1485,64 @@ function  bd_lider_seccion($id_seccion){
 
 ### Fnciones equipo
 
-function bd_equipo_lider(){
+function bd_equipo_lider($id=NULL){
+    if ($id==NULL) {
     $sql="
         SELECT * 
-        FROM LIDERES_DE_EQUIPO
+        FROM EQUIPOS
         WHERE id_persona = '{$_SESSION['u']['id']}'
     ";
     $salida = sql2array($sql);
-    vq($salida);
+    }else{
+        $sql="
+            SELECT * 
+            FROM EQUIPOS
+            WHERE id = '{$id}'
+        ";
+        $salida = sql2row($sql);
+    }
+    return $salida;
+}
+
+function bd_equipo_personas_datos($id){
+    $sql="
+        SELECT * 
+        FROM EQUIPOS__PERSONAS
+        WHERE id_equipo = '{$id}'
+    ";
+    $salida  = sql2array($sql);
+    return $salida;
+}
+
+function bd_cambiar_nombre($id, $nombre){
+    $sql="
+        UPDATE EQUIPOS SET
+        nombre_equipo = '{$nombre}'
+        WHERE id = $id
+    ";
+    sql($sql);
+}
+
+function bd_agregar_integrante($id,$id_rol,$id_usuario){
+    $id_pnf = $_SESSION['r'][$_SESSION['numero']]['id_pnf'];
+    $id_nucleo=$_SESSION['r'][$_SESSION['numero']]['id_nucleo'];
+
+    $sql0="
+        INSERT INTO USUARIOS__ROLES (id_usuario, id_rol, id_nucleo, id_pnf)
+        VALUES ('{$id_usuario}','{$id_rol}', '{$id_nucleo}', '{$id_pnf}')
+        ";
+    sql($sql0);
+    $sql1 = " 
+        INSERT INTO EQUIPOS__PERSONAS (id_equipo, id_persona)
+        VALUES ('{$id}', '{$id_usuario}' )
+        ";
+    sql($sql1);
+}
+
+function bd_equipo_eliminar_integrante($id){
+    $sql1 = "
+        DELETE FROM EQUIPOS__PERSONAS
+        WHERE id = '{$id}'
+        ";
+    sql($sql1);
 }
