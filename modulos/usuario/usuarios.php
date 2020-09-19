@@ -28,6 +28,7 @@ foreach ($verificar as $clave => $codigo) {
 }
 
 $smarty->assign('rol',$rol);
+$smarty->assign('nivel',$nivel);
 $smarty->assign('n_usuarios',$n_datos);
 $smarty->assign('usuarios',$usuarios);
 

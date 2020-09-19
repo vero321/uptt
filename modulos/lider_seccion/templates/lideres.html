@@ -9,7 +9,7 @@
       <h2 class="text-primary"> Líderes
         {if in_array('LIDE_A',$verificar) == TRUE}
           <a class="btn btn-sm btn-outline-primary mimodal" type="button" 
-            href="lider_asignar.php?id={$lider_seccion.id}" title="Agregar un nuevo Líder de equipo"><span class="fa fa-plus"></span></a>
+            href="lider_asignar.php?seccion={$seccion.id}" title="Agregar un nuevo Líder de equipo"><span class="fa fa-plus"></span></a>
             {/if}
           </h2>
 
@@ -26,13 +26,19 @@
 
         {section name=i loop=$lider_seccion}
 
-            <td>{$lider_seccion[i].nombre_equipo}</td>
+            <td>
+              {if $lider_seccion[i].nombre_equipo == NULL}
+              El equipo aun no tiene nombre
+              {else}
+              {$lider_seccion[i].nombre_equipo}
+              {/if}
+            </td>
 
 
             {if in_array("PROF_AL", $verificar) == TRUE }
               <td>
                 {if $lider_seccion[i].id_persona ==  NULL}
-                  <a class="btn btn-sm btn-outline-primary" type="button" href="lider_asignar.php?id={$lider_seccion[i].id}" title="Asignar Líder de Equipo"><span class="fa fa-plus"></span></a>
+                  <a class="btn btn-sm btn-outline-primary" type="button" href="lider_asignar.php?id={$seccion.id}" title="Asignar Líder de Equipo"><span class="fa fa-plus"></span></a>
                 {else}
                   {$persona=bd_personas_datos($lider_seccion[i].id_persona)}
                   <div class="row">
@@ -58,7 +64,7 @@
                   {$usuario=bd_usuarios_datos($lider_seccion[i].id_persona)}
                   <span><b>Usuario:</b></span>
                   {$usuario.correo}
-                  <a href="lider_asignar.php?id={$lider_seccion[i].id}&cambiar={$lider_seccion[i].id_persona}">Cambiar</a>
+                  <a href="lider_asignar.php?id={$lider_seccion[i].id}&cambiar={$lider_seccion[i].id_persona}&seccion={$seccion.id}">Cambiar</a>
                 {/if}
                   </div>
               </div>

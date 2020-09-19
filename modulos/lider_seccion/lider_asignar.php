@@ -15,8 +15,8 @@ $smarty->assign('verificar',$verificar);
 #Esta estructura busca el rol que tenga el privilegio de asignar Líder (PROF_AL)
 #para ello usa dos foreach el primero para roles buscar los datos de los Roles
 #el segundo busca entre los privilegios este privilegio (LIDE_EQ) lo cual indica que puede ser Líder de Equipo
-$id_seccion = $_GET['id'];
-
+$seccion = $_GET['seccion'];
+$smarty->assign('seccion',$seccion);
 
 
 $roles=bd_roles_datos();
@@ -40,8 +40,9 @@ if (!isset($id_rol)) {
 
 if (isset($_GET['cambiar']) ) {
 	# code...
+	$id_equipo = $_GET['id'];
 	$id_usuario = $_GET['cambiar'];
-	bd_lider_equipo_cambiar($id_seccion, $id_rol, $id_usuario);
+	bd_lider_equipo_cambiar($id_equipo, $id_rol, $id_usuario);
 }
 
 # Busqueda
@@ -57,10 +58,9 @@ if( isset( $_REQUEST['p'] ) ){
 if (isset($_POST['id_usuario']) and !isset($_POST['id_rol']) ){
 	#Este paso Asigna el rol a la persona		
 	$id_usuario=$_POST['id_usuario'];
-	bd_asignar_lider_equipo($id_seccion,$id_rol,$id_usuario);
+	bd_asignar_lider_equipo($id_usuario,$id_rol,$seccion);
 	$m="Usuario asignado con exito";
-    ir("../mensaje/mensaje.php?m=$m&d=../lider_seccion/lider_seccion.php");
+    ir("../mensaje/mensaje.php?m=$m&d=../lider_seccion/lideres.php?id=".$seccion);
 }
 
-$smarty->assign('lider', bd_lider_datos($id_seccion));
 $smarty->display('lider_asignar.html');

@@ -675,12 +675,12 @@ function contar_valores($a,$buscado)
 
 
 
-function bd_eliminar_rol_usuario($id_usuario,$id_rol=NULL){ 
-    if ($id_rol != NULL) {
+function bd_eliminar_rol_usuario($id=NULL){ 
+    if ($id != NULL) {
         #un solo rol
         $sql = "
             DELETE FROM USUARIOS__ROLES
-            WHERE id_usuario = '{$id_usuario}' && id_rol = '{$id_rol}'
+            WHERE id = '{$id}'
             ";
         sql($sql);
      }else{
@@ -1416,7 +1416,7 @@ function bd_asignar_comite_tecnico($id_area,$id_rol,$id_usuario){
 
 
 
-function bd_asignar_lider_equipo($id_seccion,$id_rol,$id_usuario){
+function bd_asignar_lider_equipo($id_usuario,$id_rol,$seccion){
     $id_pnf = $_SESSION['r'][$_SESSION['numero']]['id_pnf'];
     $id_nucleo=$_SESSION['r'][$_SESSION['numero']]['id_nucleo'];
     $sql0="
@@ -1424,17 +1424,14 @@ function bd_asignar_lider_equipo($id_seccion,$id_rol,$id_usuario){
         VALUES ('{$id_usuario}','{$id_rol}', '{$id_nucleo}', '{$id_pnf}')
         ";
     sql($sql0);
-
     $sql1 = " 
-        UPDATE EQUIPOS SET
-            id_persona = '{$id_usuario}'
-        WHERE
-            id = '{$id_seccion}'
+        INSERT INTO EQUIPOS (id_persona, id_seccion)
+        VALUES ('{$id_usuario}', '{$seccion}')
     ";
     sql($sql1);
 }
 
-function bd_lider_equipo_cambiar($id_seccion, $id_rol, $id_usuario){
+function bd_lider_equipo_cambiar($id_equipo, $id_rol, $id_usuario){
     $id_pnf = $_SESSION['r'][$_SESSION['numero']]['id_pnf'];
     $id_nucleo=$_SESSION['r'][$_SESSION['numero']]['id_nucleo'];
     $sql = "
@@ -1450,7 +1447,7 @@ function bd_lider_equipo_cambiar($id_seccion, $id_rol, $id_usuario){
     $sql2="
         UPDATE EQUIPOS SET
         id_persona = NULL
-        WHERE id = $id_seccion
+        WHERE id = $id_equipo
     ";
     sql($sql2);
 }

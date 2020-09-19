@@ -3,12 +3,12 @@ define('MOD', 'mensaje');
 require_once '../config/app.php';
 include_once APP.'/modulos/config/inicializacion.php';
 
-
 	$smarty->assign('no',$_POST['no']);
 	$smarty->assign('si',$_POST['si']);
 	$smarty->assign('e',$_POST['correo']);
 	$smarty->assign('id',$_POST['id']);
 	$smarty->assign('nivel',$_POST['nivel']);
+	$smarty->assign('rol_listar',$_POST['rol_listar']);
 	if (isset($_POST['rol'])) {
 		# verificamos si resive algun rol para eliminar ese rol en espesifico
 		$rol=$_POST['rol'];

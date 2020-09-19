@@ -16,7 +16,7 @@
 	          	{else}
 				<div class="car m-3 p-4">
                 <div class="container">  
-                  <form action="lider_asignar.php?id={$lider['id']}" method="POST">
+                  <form action="lider_asignar.php?seccion={$seccion}" method="POST">
                       <div class="input-group">
                         <input id="p" name="p" type="text" class="form-control" placeholder="12345678 o coreo@correo.com" aria-describedby="basic-addon1" required >
                         <span class="input-group-addon bg-primary text-gray-100" id="basic-addon1" style="padding:0 12px;"><i class="fa fa-search  pt-2"></i></span>
@@ -48,7 +48,7 @@
 			              <div class="centro"> 
 			              	<h3>Selecione un Usuario</h3>
 							<form 
-			                      action="lider_asignar.php?id={$lider['id']}" 
+			                      action="lider_asignar.php?seccion={$seccion}" 
 			                      method="POST" 
 			                      class="px-4 py-3" 
 			                      id="Asignar lider de equipo"

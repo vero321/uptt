@@ -3,10 +3,10 @@ define('MOD', 'usuario');
 require_once '../config/app.php';
 include_once APP.'/modulos/config/inicializacion.php';
 
-$id = $_GET['id'];
-$rol = $_GET['rol'];
+$id_rol = $_GET['id'];
+$id = $_GET['usuario'];
 
-bd_eliminar_rol_usuario($id,$rol);
+bd_eliminar_rol_usuario($id_rol);
 
 $m="Rol eliminado con exito";
 ir("../mensaje/mensaje.php?m=$m&d=../usuario/usuarios_roles.php?id=$id");
