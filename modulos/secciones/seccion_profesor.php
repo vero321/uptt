@@ -30,6 +30,7 @@ foreach ($roles as $rol) {
 	foreach ($privilegios as $privilegio) {
 		if ($privilegio['codigo'] == "PROF_P") {
 			$id_rol=$privilegio['id_rol'];
+
 		}
 	}
 }
@@ -63,6 +64,11 @@ if (isset($_POST['id_usuario']) and !isset($_POST['id_rol']) ){
 	#Este paso Asigna el rol a la persona
 	$id_usuario=$_POST['id_usuario'];
 	bd_asignar_profesor_proyecto($id_seccion,$id_rol,$id_usuario);
+	$m="seccion asignada con exito";
+    ir("../mensaje/mensaje.php?m=$m&d=../secciones/secciones.php?t=$id_trayecto");
+} elseif (isset($_POST['id_usuario']) and !isset($_POST['id_rol']) ) {
+	# Este paso Asigna la seccion al Profesor de Proyecto sin 
+	# asignarle nuevamente el rol a la persona
 	$m="seccion asignada con exito";
     ir("../mensaje/mensaje.php?m=$m&d=../secciones/secciones.php?t=$id_trayecto");
 }

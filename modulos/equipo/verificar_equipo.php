@@ -9,6 +9,7 @@ $smarty->assign('verificar',$verificar);
 
 $lider=bd_equipo_lider();
 $confmar_lider=count($lider);
+
 if ($confmar_lider >1){
 	$smarty->assign('lider',$lider);
 	$smarty->display('verificar_equipo.html');
