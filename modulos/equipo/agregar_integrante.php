@@ -48,7 +48,9 @@ if( isset( $_REQUEST['p'] ) ){
 if (isset($_POST['id_usuario']) and !isset($_POST['id_rol']) ){
 	#Este paso Asigna el rol a la persona
 	$id_usuario=$_POST['id_usuario'];
-	bd_agregar_integrante($id,$id_rol,$id_usuario);
+	$equipo=bd_equipo_lider($id);
+	$numero_integrantes=$equipo['numero_integrantes']+1;
+	bd_agregar_integrante($id,$id_rol,$id_usuario,$numero_integrantes);
 	$m="seccion asignada con exito";
     ir("equipo.php?id=".$id);
 }

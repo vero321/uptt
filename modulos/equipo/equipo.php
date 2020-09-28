@@ -23,5 +23,6 @@ if (isset($integrantes) == true) {
 	# code...
 	$smarty->assign('integrantes',$integrantes);
 }
+
 $smarty->assign('lider',$lider);
 $smarty->display('equipo.html');

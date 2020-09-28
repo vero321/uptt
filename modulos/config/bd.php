@@ -1530,7 +1530,7 @@ function bd_cambiar_nombre($id, $nombre){
     sql($sql);
 }
 
-function bd_agregar_integrante($id,$id_rol,$id_usuario){
+function bd_agregar_integrante($id,$id_rol,$id_usuario,$numero_integrantes){
     $id_pnf = $_SESSION['r'][$_SESSION['numero']]['id_pnf'];
     $id_nucleo=$_SESSION['r'][$_SESSION['numero']]['id_nucleo'];
 
@@ -1544,12 +1544,24 @@ function bd_agregar_integrante($id,$id_rol,$id_usuario){
         VALUES ('{$id}', '{$id_usuario}' )
         ";
     sql($sql1);
+    $sql2="
+        UPDATE EQUIPOS SET
+        numero_integrantes = '{$numero_integrantes}'
+        WHERE id = $id
+    ";
+    sql($sql2);
 }
 
-function bd_equipo_eliminar_integrante($id){
-    $sql1 = "
+function bd_equipo_eliminar_integrante($id,$numero_integrantes,$id_equipo){
+    $sql = "
         DELETE FROM EQUIPOS__PERSONAS
         WHERE id = '{$id}'
         ";
+    sql($sql);
+    $sql1="
+        UPDATE EQUIPOS SET
+        numero_integrantes = '{$numero_integrantes}'
+        WHERE id = $id_equipo
+    ";
     sql($sql1);
 }
