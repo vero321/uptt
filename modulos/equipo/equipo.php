@@ -20,7 +20,6 @@ foreach ($personas as $persona ) {
 }
 
 if (isset($integrantes) == true) {
-	# code...
 	$smarty->assign('integrantes',$integrantes);
 }
 

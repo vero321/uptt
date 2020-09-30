@@ -6,25 +6,36 @@
  
   <div class="card shadow">
     <div class="card-header ">
-      <h2 class="text-primary"> Líderes
+      <h2 class="text-primary"> Equipos
         {if in_array('LIDE_A',$verificar) == TRUE}
           <a class="btn btn-sm btn-outline-primary mimodal" type="button" 
             href="lider_asignar.php?seccion={$seccion.id}" title="Agregar un nuevo Líder de equipo"><span class="fa fa-plus"></span></a>
             {/if}
           </h2>
-
+    
+    <div class="card-body">
+     <div class="table-responsive">
       <table class="table " id="tabla_repo" style="width:100%">
         <thead class="text-dark">
-            <th>Nombre de Equipo</th>
+            <th width="2%">Nombre de Equipo</th>
             {if in_array("PROF_AL", $verificar) == TRUE }
-            <th>Responsable</th>
+            <th>Líder</th>
             {/if}
-            <th>Funciones</th>
+
+            {if in_array("TUTO_AAC", $verificar) == TRUE }
+            <th>Tutor Académico</th>
+            {/if}
+
+            {if in_array("TUTO_ACO", $verificar) == TRUE }
+            <th>Tutor Comunitario</th>
+            {/if}
+            <th width="2%"></th>
           </tr>
         </thead>
         <tbody class="text-dark">
 
         {section name=i loop=$lider_seccion}
+
 
             <td>
               {if $lider_seccion[i].nombre_equipo == NULL}
@@ -38,7 +49,7 @@
             {if in_array("PROF_AL", $verificar) == TRUE }
               <td>
                 {if $lider_seccion[i].id_persona ==  NULL}
-                  <a class="btn btn-sm btn-outline-primary" type="button" href="lider_asignar.php?id={$seccion.id}" title="Asignar Líder de Equipo"><span class="fa fa-plus"></span></a>
+                  <a class="btn btn-sm btn-outline-primary" type="button" href="lider_asignar.php?seccion={$lider_seccion[i].id}"title="Asignar Líder de Equipo"><span class="fa fa-plus"></span></a>
                 {else}
                   {$persona=bd_personas_datos($lider_seccion[i].id_persona)}
                   <div class="row">
@@ -70,8 +81,83 @@
               </div>
               </td>
             {/if}
-            <td>
+
+             {if in_array("TUTO_AAC", $verificar) == TRUE }
+              <td>
+                {if $lider_seccion[i].tutor_academico ==  NULL}
+                  <a class="btn btn-sm btn-outline-primary" type="button" href="tutor_academico_asignar.php?id={$seccion.id}" title="Asignar Tutor Académico"><span class="fa fa-plus"></span></a>
+                {else}
+                  {$persona=bd_personas_datos($lider_seccion[i].tutor_academico)}
+                  <div class="row">
+                    <div class="col-md-4">
+                   {if $persona.foto_perfil == NULL}
+                      <img class="img-thumbnail img-user rounded-circle" src="../../imagenes/perfil/user.png">
+                    {else}
+                    <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title=""
+                   data-image="../../imagenes/perfil/{$persona.foto_perfil}"
+                   data-target="#image-gallery">
+                      <img class="img-thumbnail img-user rounded-circle" src="../../imagenes/perfil/{$persona.foto_perfil}" alt="User profile picture">
+                      </a>
+                  {/if}
+                    </div>
+                  <div class="col-md-6">
+                    <span><b>Nombre:</b></span>
+                  {if isset($persona.nombre)}
+                    {$persona.nombre}
+                  {else}
+                  El usuario aun no actualiza sus datos
+                  {/if}
+                  <br>
+                  {$usuario=bd_usuarios_datos($lider_seccion[i].tutor_academico)}
+                  <span><b>Usuario:</b></span>
+                  {$usuario.correo}
+                  <a href="tutor_academico_asignar.php?id={$lider_seccion[i].id}&cambiar={$lider_seccion[i].tutor_academico}&seccion={$seccion.id}">Cambiar</a>
+                {/if}
+                  </div>
+              </div>
+              </td>
+            {/if}
+
+<!--FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF-->
+
+            {if in_array("TUTO_ACO", $verificar) == TRUE }
+              <td>
+                {if $lider_seccion[i].tutor_comunitario ==  NULL}
+                  <a class="btn btn-sm btn-outline-primary" type="button" href="tutor_comunitario_asignar.php?id={$seccion.id}" title="Asignar Líder de Equipo"><span class="fa fa-plus"></span></a>
+                {else}
+                  {$persona=bd_personas_datos($lider_seccion[i].tutor_comunitario)}
+                  <div class="row">
+                    <div class="col-md-4">
+                   {if $persona.foto_perfil == NULL}
+                      <img class="img-thumbnail img-user rounded-circle" src="../../imagenes/perfil/user.png">
+                    {else}
+                    <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title=""
+                   data-image="../../imagenes/perfil/{$persona.foto_perfil}"
+                   data-target="#image-gallery">
+                      <img class="img-thumbnail img-user rounded-circle" src="../../imagenes/perfil/{$persona.foto_perfil}" alt="User profile picture">
+                      </a>
+                  {/if}
+                    </div>
+                  <div class="col-md-6">
+                    <span><b>Nombre:</b></span>
+                  {if isset($persona.nombre)}
+                    {$persona.nombre}
+                  {else}
+                  El usuario aun no actualiza sus datos
+                  {/if}
+                  <br>
+                  {$usuario=bd_usuarios_datos($lider_seccion[i].tutor_comunitario)}
+                  <span><b>Usuario:</b></span>
+                  {$usuario.correo}
+                  <a href="lider_asignar.php?id={$lider_seccion[i].id}&cambiar={$lider_seccion[i].tutor_comunitario}&seccion={$seccion.id}">Cambiar</a>
+                {/if}
+                  </div>
+              </div>
+              </td>
+            {/if}
             
+
+            <td>
               {if in_array("LIDE_E",$verificar) == TRUE}
               <a 
                 style="margin-bottom:3px; color:blue;" 
@@ -84,9 +170,12 @@
               </td>
           </tr>
         {/section}
+
         </tbody>
     
       </table>
+    </div>
+  </div>
       
       
   
