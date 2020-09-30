@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-09-19 12:59:06
+/* Smarty version 3.1.30, created on 2020-09-28 12:10:22
   from "/home/veronica/public_html/uptt/modulos/navegacion/cabecera2.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5f6638daf213d7_43549671',
+  'unifunc' => 'content_5f720aee1ab123_83540957',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5f6638daf213d7_43549671 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f720aee1ab123_83540957 (Smarty_Internal_Template $_smarty_tpl) {
 if (!is_callable('smarty_modifier_capitalize')) require_once '/home/veronica/public_html/uptt/vendor/smarty/libs/plugins/modifier.capitalize.php';
 ?>
 

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-09-19 13:00:22
+/* Smarty version 3.1.30, created on 2020-09-29 20:14:42
   from "/home/veronica/public_html/uptt/modulos/equipo/templates/equipo.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5f663926dc3970_95440542',
+  'unifunc' => 'content_5f73cdf2babab5_74824564',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '3dd5f2c39ef938ef42edbbf50677dfc084e35d6e' => 
     array (
       0 => '/home/veronica/public_html/uptt/modulos/equipo/templates/equipo.html',
-      1 => 1600356298,
+      1 => 1601300786,
       2 => 'file',
     ),
   ),
@@ -26,7 +26,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:../../pie/pie_interno.html' => 1,
   ),
 ),false)) {
-function content_5f663926dc3970_95440542 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f73cdf2babab5_74824564 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:../../navegacion/cab.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -72,7 +72,8 @@ $_smarty_tpl->_subTemplateRender("file:../../navegacion/cab.html", $_smarty_tpl-
                     <th>Nombre</th>
                     <th>Apellido</th>
                     <th>Foto de perfl</th>
-                    <th>Funcones</th>
+                    <th>Funciones</th>
+                    
                   </tr>
                 </thead>
                 <tbody>
@@ -130,6 +131,7 @@ for ($__section_i_0_iteration = 1, $_smarty_tpl->tpl_vars['__smarty_section_i']-
                     </a>
                   <?php }?>
                   </td>
+              
                 </tr>
                 <?php
 }

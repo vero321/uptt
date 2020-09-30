@@ -904,7 +904,8 @@ function bd_personas_datos($login=NULL)
         $sql="
                 SELECT *
                 FROM  PERSONAS 
-                WHERE id LIKE '{$login}'";
+                WHERE id LIKE '{$login}'
+                ";
             $salida = sql2row($sql);
     }else
     {
@@ -1553,3 +1554,74 @@ function bd_equipo_eliminar_integrante($id){
         ";
     sql($sql1);
 }
+
+
+###Funciones de tutores
+
+
+function bd_asignar_tutor_academico($id_seccion,$id_rol,$id_usuario){
+    $id_pnf = $_SESSION['r'][$_SESSION['numero']]['id_pnf'];
+    $id_nucleo=$_SESSION['r'][$_SESSION['numero']]['id_nucleo'];
+    $sql0="
+        INSERT INTO USUARIOS__ROLES (id_usuario, id_rol, id_nucleo, id_pnf)
+        VALUES ('{$id_usuario}','{$id_rol}', '{$id_nucleo}', '{$id_pnf}')
+        ";
+    sql($sql0);
+
+    $sql1 = " 
+        UPDATE EQUIPOS SET
+            tutor_academico = '{$id_usuario}'
+        WHERE
+            id = '{$id_seccion}'
+    ";
+    sql($sql1);
+}
+
+function bd_tutor_academico_cambiar($id_seccion, $id_rol, $id_usuario){
+    $id_pnf = $_SESSION['r'][$_SESSION['numero']]['id_pnf'];
+    $id_nucleo=$_SESSION['r'][$_SESSION['numero']]['id_nucleo'];
+    $sql = "
+        SELECT * FROM USUARIOS__ROLES
+        WHERE id_usuario = '{$id_usuario}' AND id_rol = '{$id_rol}' AND id_nucleo = '{$id_nucleo}' and id_pnf = '{$id_pnf}'
+        ";
+    $rol=sql2row($sql);
+    $sql1 = "
+        DELETE FROM USUARIOS__ROLES
+        WHERE id = '{$rol['id']}'
+        ";
+    sql($sql1);
+    $sql2="
+        UPDATE EQUIPOS SET
+        tutor_academico = NULL
+        WHERE id = $id_seccion
+    ";
+    sql($sql2);
+}
+
+function bd_tutor_datos($id=NULL)
+{
+    if ($id!=NULL) {
+        $sql="
+            SELECT *
+            FROM EQUIPOS
+            WHERE id LIKE '{$id}'";
+        $salida = sql2row($sql);
+    } else {
+        $sql="
+            SELECT *
+            FROM EQUIPOS
+            ";
+        $salida = sql2array($sql);
+    }
+    return $salida;
+}
+
+function  bd_tutor_seccion($id_seccion){
+    $sql="
+        SELECT * 
+        FROM EQUIPOS WHERE id_seccion= '{$id_seccion}'  
+        ";
+        $salida = sql2array($sql);
+    return $salida;
+}
+

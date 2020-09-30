@@ -16,6 +16,7 @@ $smarty->assign('verificar',$verificar);
 #para ello usa dos foreach el primero para roles buscar los datos de los Roles
 #el segundo busca entre los privilegios este privilegio (LIDE_EQ) lo cual indica que puede ser Líder de Equipo
 $seccion = $_GET['seccion'];
+#vq($seccion);
 $smarty->assign('seccion',$seccion);
 
 
