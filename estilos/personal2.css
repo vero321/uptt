@@ -1,5 +1,5 @@
-.cab{
-    background-color: #00005C !important;
+.text-claro{
+  color: #0747A6 !important;
 }
 .claro{
     background-color: #fff !important;
@@ -83,3 +83,4 @@ input:checked + .slider:before {
   height: 5rem;
   width: 5rem;
 }
+

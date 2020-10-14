@@ -5,7 +5,7 @@ include_once APP.'/modulos/config/inicializacion.php';
 $verificar=verificar();
 $smarty->assign('verificar',$verificar);
 
-#Esta pagina busca Un usuario para Asignarlo como Tutor Académico
+#Esta pagina busca Un usuario para Asignarlo como Tutor Comunitario
 #Recibe Tres parametros 
 #El primero es la ID del la seccion, este se utiliza para retornar al usuario en la seccion correspondiente
 #el segundo es la ID del equipo 
@@ -24,14 +24,14 @@ $smarty->assign('equipo', $equipo);
 
 $roles=bd_roles_datos();
 
-#Esta estructura busca el rol que tenga el privilegio de asignar nucleo (TUTO_AAC)
+#Esta estructura busca el rol que tenga el privilegio de asignar nucleo (TUTO_ACO)
 #para ello usa dos foreach el primero para roles buscar los datos de los Roles
-#el segundo busca entre los privilegios este privilegio (TUTO_AC) lo cual indica que puede ser Tutor Académico
+#el segundo busca entre los privilegios este privilegio (TUTO_ACO) lo cual indica que puede ser Tutor Académico
 foreach ($roles as $rol) {
 	# code...
 	$privilegios=bd_roles__privilegios($rol['id']);
 	foreach ($privilegios as $privilegio) {
-		if ($privilegio['codigo'] == "TUTO_AC") {
+		if ($privilegio['codigo'] == "TUTO_ACO") {
 			$id_rol=$privilegio['id_rol'];
 
 		}
@@ -48,7 +48,7 @@ if (!isset($id_rol)) {
 if (isset($_GET['cambiar']) ) {
 	# code...
 	$id_usuario = $_GET['cambiar'];
-	bd_tutor_academico_cambiar($equipo,$id_rol,$id_usuario);
+	bd_tutor_comnitario_cambiar($equipo,$id_rol,$id_usuario);
 }
 
 
@@ -66,7 +66,7 @@ if( isset( $_REQUEST['p'] ) ){
 if (isset($_POST['id_usuario']) and !isset($_POST['id_rol']) ){
 	#Este paso Asigna el rol a la persona
 	$id_usuario=$_POST['id_usuario'];
-	bd_asignar_tutor_academico($equipo,$id_rol,$id_usuario);
+	bd_asignar_tutor_comunitario($equipo,$id_rol,$id_usuario);
 	$m="Tutor Académico asignado con exito";
     ir("../mensaje/mensaje.php?m=$m&d=../lider_seccion/lideres.php?id=$seccion");
 } elseif (isset($_POST['id_usuario']) and !isset($_POST['id_rol']) ) {
@@ -77,4 +77,4 @@ if (isset($_POST['id_usuario']) and !isset($_POST['id_rol']) ){
 }
 
 
-$smarty->display('tutor_academico_asignar.html');
+$smarty->display('tutor_comunitario_asignar.html');

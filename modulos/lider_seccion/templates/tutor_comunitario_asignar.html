@@ -3,9 +3,8 @@
 {include file="../../navegacion/cabecera2.html"}
 
 	<div class="container-fluid">
-
 		<div class="alert alert-info alert-dismissible fade show" role="alert">
-			<strong>Para asignar un lider</strong> Escriba el numero de CI o correo electronico si la persona esta registrada agreguela.
+			<strong>Para asignar un comuntario</strong> Escriba el numero de CI o correo electronico si la persona esta registrada agreguela.
 			<button type="button" class="close" data-dismiss="alert" aria-label="Close">
 			<span aria-hidden="true">&times;</span>
 			</button>
@@ -13,17 +12,18 @@
 
 	  <div class="card shadow">
 	    <div class="card-header ">
-			<h2 class="text-center">Asinar un Líder de Equipo</h2>
+			<h2 class="text-center">Asinar un Tutor Comunitario
+			</h2>
 		</div>
 
 	          {if isset($respuesta)}
 	          	<div class="alert alert-danger" role="alert">
-	            No se encuentra un rol con los permisos para ser Lider de equipo comuniquese con el administrador para que asigne un rol con los privilegios necesarios
+	            No se encuentra un rol con los permisos para ser Tutor Comunitario, comuniquese con el administrador para que asigne un rol con los privilegios necesarios.
 	          </div>
 	          	{else}
-				<div class="card-body">
+				<div class="car m-3 p-4">
                 <div class="container">  
-                  <form action="lider_asignar.php?seccion={$seccion}&equipo={$equipo}" method="POST">
+                  <form action="tutor_comunitario_asignar.php?seccion={$seccion}&equipo={$equipo}&equipo={$equipo}" method="POST">
                       <div class="input-group">
                         <input id="p" name="p" type="text" class="form-control" placeholder="12345678 o coreo@correo.com" aria-describedby="basic-addon1" required >
                         <span class="input-group-addon bg-primary text-gray-100" id="basic-addon1" style="padding:0 12px;"><i class="fa fa-search  pt-2"></i></span>
@@ -32,7 +32,8 @@
                 </div>
               </div>
           {/if}
-		{if isset($usuarios) and count($usuarios) < 1}
+
+          {if isset($usuarios) and count($usuarios) < 1}
 			<div class="m-3 p-4">
                 <div class="container">
                 	<div class="alert alert-info" role="alert">
@@ -54,14 +55,13 @@
 			              <div class="centro"> 
 			              	<h3>Selecione un Usuario</h3>
 							<form 
-			                      action="lider_asignar.php?seccion={$seccion}&equipo={$equipo}" 
+			                      action="tutor_comunitario_asignar.php?seccion={$seccion}&equipo={$equipo}" 
 			                      method="POST" 
 			                      class="px-4 py-3" 
-			                      id="Asignar_responsable_de_nucleo"
-			                      name="Asignar_responsable_de_nucleo">
+			                      id="Asignar lider de equipo"
+			                      name="Asignar lider de equipo">
 			                    <div class="form-group">
-			                        <input type="hidden" name="id_nucleo" value="{$nucleos['id']}">
-
+			                        
 			                    	{section name=i loop=$usuarios}
 			                        <div class="form-check">
 			                              <label class="form-check-label">

@@ -9,9 +9,11 @@
       <h2 class="text-primary"> Equipos
         {if in_array('LIDE_A',$verificar) == TRUE}
           <a class="btn btn-sm btn-outline-primary mimodal" type="button" 
-            href="lider_asignar.php?seccion={$seccion.id}" title="Agregar un nuevo Líder de equipo"><span class="fa fa-plus"></span></a>
+            data-href="agregar_equipo.php?seccion={$seccion.id}" title="Agregar un nuevo equipo"><span class="fa fa-plus"></span>
+          </a>
             {/if}
-          </h2>
+      </h2>
+    </div>
     
     <div class="card-body">
      <div class="table-responsive">
@@ -49,11 +51,10 @@
             {if in_array("PROF_AL", $verificar) == TRUE }
               <td>
                 {if $lider_seccion[i].id_persona ==  NULL}
-                  <a class="btn btn-sm btn-outline-primary" type="button" href="lider_asignar.php?seccion={$lider_seccion[i].id}"title="Asignar Líder de Equipo"><span class="fa fa-plus"></span></a>
+                  <a class="btn btn-sm btn-outline-primary" type="button" href="lider_asignar.php?seccion={$seccion.id}&equipo={$lider_seccion[i].id}"title="Agregar equipo"><span class="fa fa-plus"></span></a>
                 {else}
                   {$persona=bd_personas_datos($lider_seccion[i].id_persona)}
-                  <div class="row">
-                    <div class="col-md-4">
+                    
                    {if $persona.foto_perfil == NULL}
                       <img class="img-thumbnail img-user rounded-circle" src="../../imagenes/perfil/user.png">
                     {else}
@@ -63,8 +64,7 @@
                       <img class="img-thumbnail img-user rounded-circle" src="../../imagenes/perfil/{$persona.foto_perfil}" alt="User profile picture">
                       </a>
                   {/if}
-                    </div>
-                  <div class="col-md-6">
+                    
                     <span><b>Nombre:</b></span>
                   {if isset($persona.nombre)}
                     {$persona.nombre}
@@ -75,21 +75,20 @@
                   {$usuario=bd_usuarios_datos($lider_seccion[i].id_persona)}
                   <span><b>Usuario:</b></span>
                   {$usuario.correo}
-                  <a href="lider_asignar.php?id={$lider_seccion[i].id}&cambiar={$lider_seccion[i].id_persona}&seccion={$seccion.id}">Cambiar</a>
+                  <br>
+                  <a href="lider_asignar.php?equipo={$lider_seccion[i].id}&cambiar={$lider_seccion[i].id_persona}&seccion={$seccion.id}">Cambiar</a>
                 {/if}
-                  </div>
-              </div>
+
               </td>
             {/if}
 
              {if in_array("TUTO_AAC", $verificar) == TRUE }
               <td>
                 {if $lider_seccion[i].tutor_academico ==  NULL}
-                  <a class="btn btn-sm btn-outline-primary" type="button" href="tutor_academico_asignar.php?id={$seccion.id}" title="Asignar Tutor Académico"><span class="fa fa-plus"></span></a>
+                  <a class="btn btn-sm btn-outline-primary" type="button" href="tutor_academico_asignar.php?seccion={$seccion.id}&equipo={$lider_seccion[i].id}" title="Asignar Tutor Académico"><span class="fa fa-plus"></span></a>
                 {else}
                   {$persona=bd_personas_datos($lider_seccion[i].tutor_academico)}
-                  <div class="row">
-                    <div class="col-md-4">
+                 
                    {if $persona.foto_perfil == NULL}
                       <img class="img-thumbnail img-user rounded-circle" src="../../imagenes/perfil/user.png">
                     {else}
@@ -99,8 +98,7 @@
                       <img class="img-thumbnail img-user rounded-circle" src="../../imagenes/perfil/{$persona.foto_perfil}" alt="User profile picture">
                       </a>
                   {/if}
-                    </div>
-                  <div class="col-md-6">
+                    
                     <span><b>Nombre:</b></span>
                   {if isset($persona.nombre)}
                     {$persona.nombre}
@@ -113,21 +111,19 @@
                   {$usuario.correo}
                   <a href="tutor_academico_asignar.php?id={$lider_seccion[i].id}&cambiar={$lider_seccion[i].tutor_academico}&seccion={$seccion.id}">Cambiar</a>
                 {/if}
-                  </div>
-              </div>
+                  
+              
               </td>
             {/if}
 
-<!--FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF-->
 
             {if in_array("TUTO_ACO", $verificar) == TRUE }
               <td>
                 {if $lider_seccion[i].tutor_comunitario ==  NULL}
-                  <a class="btn btn-sm btn-outline-primary" type="button" href="tutor_comunitario_asignar.php?id={$seccion.id}" title="Asignar Líder de Equipo"><span class="fa fa-plus"></span></a>
+                  <a class="btn btn-sm btn-outline-primary" type="button" href="tutor_comunitario_asignar.php?seccion={$seccion.id}&equipo={$lider_seccion[i].id}" title="Asignar Tutor Comunitario"><span class="fa fa-plus"></span></a>
                 {else}
                   {$persona=bd_personas_datos($lider_seccion[i].tutor_comunitario)}
-                  <div class="row">
-                    <div class="col-md-4">
+                  
                    {if $persona.foto_perfil == NULL}
                       <img class="img-thumbnail img-user rounded-circle" src="../../imagenes/perfil/user.png">
                     {else}
@@ -137,8 +133,6 @@
                       <img class="img-thumbnail img-user rounded-circle" src="../../imagenes/perfil/{$persona.foto_perfil}" alt="User profile picture">
                       </a>
                   {/if}
-                    </div>
-                  <div class="col-md-6">
                     <span><b>Nombre:</b></span>
                   {if isset($persona.nombre)}
                     {$persona.nombre}
@@ -149,10 +143,9 @@
                   {$usuario=bd_usuarios_datos($lider_seccion[i].tutor_comunitario)}
                   <span><b>Usuario:</b></span>
                   {$usuario.correo}
-                  <a href="lider_asignar.php?id={$lider_seccion[i].id}&cambiar={$lider_seccion[i].tutor_comunitario}&seccion={$seccion.id}">Cambiar</a>
+                  <a href="tutor_comunitario_asignar.php?id={$lider_seccion[i].id}&cambiar={$lider_seccion[i].tutor_comunitario}&seccion={$seccion.id}&equipo={$lider_seccion[i].id}">Cambiar</a>
                 {/if}
-                  </div>
-              </div>
+  
               </td>
             {/if}
             
@@ -163,7 +156,7 @@
                 style="margin-bottom:3px; color:blue;" 
                 class="btn btn-default mimodal"
                 title="Eliminar Equipo" 
-                data-href="lider_eliminar.php?id={$lider_seccion[i].id}">
+                data-href="lider_eliminar.php?id={$lider_seccion[i].id}&seccion={$seccion.id}">
                 <i class="fa fa-trash"></i>
               </a>
               {/if}

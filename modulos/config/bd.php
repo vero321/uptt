@@ -1414,10 +1414,16 @@ function bd_asignar_comite_tecnico($id_area,$id_rol,$id_usuario){
 #### Funciones Líder de Equipo
 
 
+function bd_agregar_equipo($nombre, $id_seccion){
+    $sql = " 
+        INSERT INTO EQUIPOS (nombre_equipo, id_seccion)
+        VALUES ('{$nombre}', '{$id_seccion}')
+    ";
+    sql($sql);
+}
 
 
-
-function bd_asignar_lider_equipo($id_usuario,$id_rol,$seccion){
+function bd_asignar_lider_equipo($id_usuario,$id_rol,$seccion,$equipo){
     $id_pnf = $_SESSION['r'][$_SESSION['numero']]['id_pnf'];
     $id_nucleo=$_SESSION['r'][$_SESSION['numero']]['id_nucleo'];
     $sql0="
@@ -1426,8 +1432,9 @@ function bd_asignar_lider_equipo($id_usuario,$id_rol,$seccion){
         ";
     sql($sql0);
     $sql1 = " 
-        INSERT INTO EQUIPOS (id_persona, id_seccion)
-        VALUES ('{$id_usuario}', '{$seccion}')
+        UPDATE EQUIPOS SET
+        id_persona = '{$id_usuario}'
+        WHERE id = '{$equipo}'
     ";
     sql($sql1);
 }
@@ -1571,7 +1578,7 @@ function bd_equipo_eliminar_integrante($id,$numero_integrantes,$id_equipo){
 ###Funciones de tutores
 
 
-function bd_asignar_tutor_academico($id_seccion,$id_rol,$id_usuario){
+function bd_asignar_tutor_academico($equipo,$id_rol,$id_usuario){
     $id_pnf = $_SESSION['r'][$_SESSION['numero']]['id_pnf'];
     $id_nucleo=$_SESSION['r'][$_SESSION['numero']]['id_nucleo'];
     $sql0="
@@ -1584,12 +1591,12 @@ function bd_asignar_tutor_academico($id_seccion,$id_rol,$id_usuario){
         UPDATE EQUIPOS SET
             tutor_academico = '{$id_usuario}'
         WHERE
-            id = '{$id_seccion}'
+            id = '{$equipo}'
     ";
     sql($sql1);
 }
 
-function bd_tutor_academico_cambiar($id_seccion, $id_rol, $id_usuario){
+function bd_tutor_academico_cambiar($equipo, $id_rol, $id_usuario){
     $id_pnf = $_SESSION['r'][$_SESSION['numero']]['id_pnf'];
     $id_nucleo=$_SESSION['r'][$_SESSION['numero']]['id_nucleo'];
     $sql = "
@@ -1605,7 +1612,45 @@ function bd_tutor_academico_cambiar($id_seccion, $id_rol, $id_usuario){
     $sql2="
         UPDATE EQUIPOS SET
         tutor_academico = NULL
-        WHERE id = $id_seccion
+        WHERE id = $equipo
+    ";
+    sql($sql2);
+}
+function bd_asignar_tutor_comunitario($equipo,$id_rol,$id_usuario){
+    $id_pnf = $_SESSION['r'][$_SESSION['numero']]['id_pnf'];
+    $id_nucleo=$_SESSION['r'][$_SESSION['numero']]['id_nucleo'];
+    $sql0="
+        INSERT INTO USUARIOS__ROLES (id_usuario, id_rol, id_nucleo, id_pnf)
+        VALUES ('{$id_usuario}','{$id_rol}', '{$id_nucleo}', '{$id_pnf}')
+        ";
+    sql($sql0);
+
+    $sql1 = " 
+        UPDATE EQUIPOS SET
+            tutor_comunitario = '{$id_usuario}'
+        WHERE
+            id = '{$equipo}'
+    ";
+    sql($sql1);
+}
+
+function bd_tutor_comnitario_cambiar($equipo,$id_rol,$id_usuario){
+    $id_pnf = $_SESSION['r'][$_SESSION['numero']]['id_pnf'];
+    $id_nucleo=$_SESSION['r'][$_SESSION['numero']]['id_nucleo'];
+    $sql = "
+        SELECT * FROM USUARIOS__ROLES
+        WHERE id_usuario = '{$id_usuario}' AND id_rol = '{$id_rol}' AND id_nucleo = '{$id_nucleo}' and id_pnf = '{$id_pnf}'
+        ";
+    $rol=sql2row($sql);
+    $sql1 = "
+        DELETE FROM USUARIOS__ROLES
+        WHERE id = '{$rol['id']}'
+        ";
+    sql($sql1);
+    $sql2="
+        UPDATE EQUIPOS SET
+        tutor_comunitario = NULL
+        WHERE id = $equipo
     ";
     sql($sql2);
 }

@@ -22,4 +22,4 @@ $smarty->assign('seccion_profesor', bd_secciones_profesor($id_profesor, $id_pnf,
 $smarty->assign('lider_seccion', bd_lider_seccion($id_seccion));
 $smarty->assign('lider', bd_lider_datos());
 $smarty->display('lideres.html');
-#vq();
+#vq(bd_lider_seccion($id_seccion));

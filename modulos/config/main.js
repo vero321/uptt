@@ -241,3 +241,67 @@ $('.mimodal').click(function(){
 
   });
 });
+
+//busqueda en vivo
+$('#busqueda_asignar').on("keyup", function(){
+  var buscar= $('#busqueda_asignar').val();
+  $.ajax({
+    url: "../buscar/busqueda_usuario_ajax.php",
+    type: "POST",
+    datatype:"json",    
+    data:  {buscar:buscar},    
+    success: function(data) {
+      $("#agregar").empty();
+      $("#usuarios").empty();
+      if (data == 0){
+        $("#agregar").empty();
+        $("#btn_asignar").empty();
+        var agregar = `
+          <div class="alert alert-info" role="alert">
+            No se encontro ningun usuario
+            que coincida con la busqueda.
+            <br/> Para continuar registre el usuario [+]
+          </div>
+        `;
+        $("#agregar").append(agregar);
+        }else{
+          $("#agregar").empty();
+          $("#usuarios").empty();
+          datos=JSON.parse(data)
+          var lista
+          for (const i in datos) {
+            var usuario = `
+            <div class="form-check">
+              <label class="form-check-label">
+                <input class="form-check-input" type="radio" id="radio_usuario" value="${datos[i].id}" data-id_usuario="${datos[i].id}" data-estado="0">
+                ${datos[i].id} ${datos[i].correo}
+              </label>
+            </div>
+            <br>
+          `;
+           lista = lista + usuario
+          }
+          $("#usuarios").append(lista);
+        }
+      }
+  });
+});
+
+//enviar datos en asignar
+$('body').on('click', '#radio_usuario', function(){
+  var btn = `
+    <div class="form-group">
+      <input 
+        class="btn-enviar btn btn-sm btn-primary" 
+        type="submit" 
+        name="enviar" 
+      value="Siguiente">
+    </div>
+    `;
+    $("#btn_asignar").html(btn);
+    var id_usuario = $(this).attr('data-id_usuario');
+    var id_rol = $('#id_rol').val();
+    console.log(id_rol);
+    console.log(id_usuario);
+
+});
