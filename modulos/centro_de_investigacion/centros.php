@@ -12,5 +12,4 @@ $n_centros=bd_centros_contar();
 
 $smarty->assign('centros', bd_centros_datos());
 $smarty->assign('n_centros',$n_centros);
-$smarty->assign('pie', file_get_contents(APP.'/modulos/pie/usuarios.html'));
 $smarty->display('centros.html');

@@ -20,7 +20,7 @@
 
 <!--Formulario de Busqueda -->
 					
-				<img src="../../imagenes/logo_ini.png" style="padding-top: 50px;" class="rounded float-left" alt="logo">
+				<!--img src="../../imagenes/logo_ini.png" style="padding-top: 50px;" class="rounded float-left" alt="logo"-->
 				<img src="../../imagenes/uptt.png" class="rounded float-right" alt="uptt">
 				<br><br><br>
 				<form class="form-group form-portada" action="buscar.php" method="get">
@@ -63,31 +63,13 @@
 	<div class="row">
 		<div class="col-md-10 offset-2">
 			<div class="row">
+			{section name=i loop=$nucleos}
 				<div class="col-md-2">
 					<div class="card border-0" align="center">
-						<a class="nucleo" href="NUES_beatriz.php"><i class="fa fa-university fa-5x nucleo"></i><h5 class="nucleo">beatriz</h5></a>
+						<a class="nucleo" href="../buscar/buscar_nucleo.php?id={$nucleos[i].id}"><i class="fa fa-university fa-5x nucleo"></i><h5 class="nucleo">{$nucleos[i].nombre_corto}</h5></a>
 					</div>
 				</div>
-				<div class="col-md-2">
-					<div class="card border-0" align="center">
-						<a class="nucleo" href="NUES_san_luis.php"><i class="fa fa-university fa-5x nucleo"></i><h5 class="nucleo">san luis</h5></a>
-					</div></a>
-				</div>
-				<div class="col-md-2">
-					<div class="card border-0" align="center">
-						<a class="nucleo" href="NUES_bocono.php"><i class="fa fa-university fa-5x nucleo"></i><h5 class="nucleo">bocono</h5></a>
-					</div>
-				</div>
-				<div class="col-md-2">
-					<div class="card border-0" align="center">
-						<a class="nucleo" href="NUES_trujillo.php"><i class="fa fa-university fa-5x nucleo"></i><h5 class="nucleo">trujillo</h5></a>
-					</div>
-				</div>
-				<div class="col-md-2">
-					<div class="card border-0" align="center">
-						<a class="nucleo" href="NUES_dividive.php"><i class="fa fa-university fa-5x nucleo"></i><h5 class="nucleo">dividive</h5></a>
-					</div>
-				</div>
+			{/section}
 			</div>
 		</div>
 	</div>

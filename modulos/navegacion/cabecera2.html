@@ -50,7 +50,7 @@
             <!-- Nav Item - Alerts -->
             
             <li class="nav-item dropdown no-arrow mx-1">
-              <a class="nav-link dropdown-toggle text-claro" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <a class="nav-link dropdown-toggle text-primary" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <span>Roles </span> 
                 <i class="fa fa-desktop fa-fw"></i>
                 <!--Counter - Alerts -->
@@ -89,7 +89,7 @@
             <!-- Nav Item - User Information -->
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="mr-2 d-none d-lg-inline small text-claro">{$smarty.session["u"]["correo"]}</span>
+                <span class="mr-2 d-none d-lg-inline small text-primary">{$smarty.session["u"]["correo"]}</span>
                 {if $smarty.session['u']['foto_perfil'] == NULL}
                   <img class="img-profile rounded-circle" src="../../imagenes/perfil/user.png">
                  {else}

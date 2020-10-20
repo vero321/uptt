@@ -22,7 +22,6 @@ if ($id_trayecto == 'NULL') {
 	$trayecto_pnf=bd_trayectos_pnf_datos($id_pnf, $id_nucleo);
 
 	$smarty->assign('trayecto_pnf',$trayecto_pnf);
-	$smarty->assign('pie', file_get_contents(APP.'/modulos/pie/usuarios.html'));
 	$smarty->display('secciones.html');
 
 }else{
@@ -34,6 +33,5 @@ if ($id_trayecto == 'NULL') {
 	$smarty->assign('trayecto', $trayecto);
 	$smarty->assign('n_secciones', $n_secciones);
 	$smarty->assign('secciones', $secciones);
-	$smarty->assign('pie', file_get_contents(APP.'/modulos/pie/usuarios.html'));
 	$smarty->display('secciones.html');
 }

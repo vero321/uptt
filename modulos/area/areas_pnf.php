@@ -25,5 +25,4 @@ $smarty->assign('areas',$areas);
 
 $smarty->assign('areas_pnf',$areas_pnf);
 
-$smarty->assign('pie', file_get_contents(APP.'/modulos/pie/usuarios.html'));
 $smarty->display('areas_pnf.html');

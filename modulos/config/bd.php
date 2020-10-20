@@ -461,6 +461,14 @@ function bd_nucleos_agregar($nucleos)
 
 }
 
+function bd_nucleos_agregar_dependencia($nucleos){
+    $sql="
+        INSERT INTO NUCLEOS (nombre_largo, nombre_corto, id_nucleo)
+        VALUES ('{$nucleos['nombre_largo']}','{$nucleos['nombre_corto']}', '{$nucleos['extension']}')";
+    sql($sql);
+    return "{$nucleos['id']}";
+}
+
 function bd_nucleos_modicar($nucleos)
 {
     $sql = "
