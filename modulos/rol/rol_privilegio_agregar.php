@@ -10,6 +10,8 @@ $smarty->assign('verificar',$verificar);
 $id=$_GET['id'];
 $privilegios_actuales=bd_roles__privilegios($id);
 $privilegios=bd_privilegios_datos();
+$salida=array();
+$salida2=array();
 
 $n=count($privilegios_actuales);
 $n2=count($privilegios);
@@ -31,8 +33,28 @@ for ($i=0; $i < $n; $i++) {
 }
 
 
+
+
+foreach ($privilegios as $priv) 
+{
+	$salida[$priv['nombre']][]=$priv;
+}
+foreach ($salida as $nombre => $priv) 
+{
+	if ($nombre!="") 
+	{
+		$salida2[]=[
+			'nombre'=>$nombre,
+			'cod'=>explode('_', $priv[0]['codigo'])[0], 
+			'p'=>$priv
+		];
+	}
+}
+
+$smarty->assign('privilegios',$salida2);
+
 #$privilegios=array_reverse($privilegios);
 
 $smarty->assign('id',$id);
-$smarty->assign('privilegios',$privilegios);
+
 $smarty->display('rol_privilegio_agregar.html');

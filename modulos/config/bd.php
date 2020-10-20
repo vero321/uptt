@@ -964,6 +964,10 @@ function bd_pnf_contar(){
     return sql2value("SELECT COUNT(*) FROM PNF");
 }
 
+function bd_propuesta_contar_lider(){
+    return sql2value("SELECT COUNT(*) FROM PROPUESTAS WHERE status = 'CORRECCIONES'");
+}
+
 function bd_trayectos_contar(){
     return sql2value("SELECT COUNT(*) FROM TRAYECTOS");
 }
@@ -1281,7 +1285,22 @@ function bd_secciones_modificar($id, $nombre){
 function bd_asignar_profesor_proyecto($id_seccion,$id_rol,$id_usuario){
     $id_pnf = $_SESSION['r'][$_SESSION['numero']]['id_pnf'];
     $id_nucleo=$_SESSION['r'][$_SESSION['numero']]['id_nucleo'];
-    $sql0="
+
+
+    $sql0= "SELECT COUNT(*)
+            FROM USUARIOS__ROLES 
+            WHERE
+                id_usuario = {$id_usuario} AND 
+                id_rol LIKE '{$id_rol}' AND 
+                id_nucleo = {$id_nucleo} AND 
+                id_pnf = {$id_pnf}
+                ";
+    $n=sql($sql0);
+
+
+if ($n==0) 
+{
+     $sql0="
         INSERT INTO USUARIOS__ROLES (id_usuario, id_rol, id_nucleo, id_pnf)
         VALUES ('{$id_usuario}','{$id_rol}', '{$id_nucleo}', '{$id_pnf}')
         ";
@@ -1294,6 +1313,8 @@ function bd_asignar_profesor_proyecto($id_seccion,$id_rol,$id_usuario){
             id = '{$id_seccion}'
     ";
     sql($sql1);
+}
+   
 }
 
 function bd_profesor_proyecto_cambiar($id_seccion, $id_rol, $id_usuario){
@@ -1690,3 +1711,25 @@ function  bd_tutor_seccion($id_seccion){
     return $salida;
 }
 
+
+####    Funciones Propuestas ######
+
+function bd_propuestas_datos_lider($id=NULL)
+{
+    if ($id!=NULL) {
+        $sql="
+            SELECT *
+            FROM PROPUESTAS
+            WHERE id LIKE '{$id}' and status = 'CORRECCIONES'
+            ";
+        $salida = sql2row($sql);
+    } else {
+        $sql="
+            SELECT *
+            FROM PROPUESTAS
+            WHERE status = 'CORRECCIONES'
+            ";
+        $salida = sql2array($sql);
+    }
+    return $salida;
+}
