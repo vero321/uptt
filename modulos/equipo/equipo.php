@@ -22,6 +22,5 @@ foreach ($personas as $persona ) {
 if (isset($integrantes) == true) {
 	$smarty->assign('integrantes',$integrantes);
 }
-
 $smarty->assign('lider',$lider);
 $smarty->display('equipo.html');
