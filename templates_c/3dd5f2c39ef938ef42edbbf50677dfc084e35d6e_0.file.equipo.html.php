@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-09-29 20:14:42
+/* Smarty version 3.1.30, created on 2020-10-13 13:07:34
   from "/home/veronica/public_html/uptt/modulos/equipo/templates/equipo.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5f73cdf2babab5_74824564',
+  'unifunc' => 'content_5f85ded6ca8384_09918076',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '3dd5f2c39ef938ef42edbbf50677dfc084e35d6e' => 
     array (
       0 => '/home/veronica/public_html/uptt/modulos/equipo/templates/equipo.html',
-      1 => 1601300786,
+      1 => 1601554050,
       2 => 'file',
     ),
   ),
@@ -26,7 +26,8 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:../../pie/pie_interno.html' => 1,
   ),
 ),false)) {
-function content_5f73cdf2babab5_74824564 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f85ded6ca8384_09918076 (Smarty_Internal_Template $_smarty_tpl) {
+if (!is_callable('smarty_modifier_capitalize')) require_once '/home/veronica/public_html/uptt/vendor/smarty/libs/plugins/modifier.capitalize.php';
 $_smarty_tpl->_subTemplateRender("file:../../navegacion/cab.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -40,7 +41,7 @@ $_smarty_tpl->_subTemplateRender("file:../../navegacion/cab.html", $_smarty_tpl-
 <div class="container-fluid">
 	<div class="m-3">
 		
-	<h4> Equipo: <a class="btn btn-link mimodal text-primary" data-href="cambiar_nombre.php?id=<?php echo $_smarty_tpl->tpl_vars['lider']->value['id'];?>
+	<h4>  Equipo: <a class="btn btn-link mimodal text-primary" data-href="cambiar_nombre.php?id=<?php echo $_smarty_tpl->tpl_vars['lider']->value['id'];?>
 " title="Cambiar nombre">
 		<?php if (isset($_smarty_tpl->tpl_vars['lider']->value['nombre_equipo'])) {?>
 			<?php echo $_smarty_tpl->tpl_vars['lider']->value['nombre_equipo'];?>
@@ -54,13 +55,29 @@ $_smarty_tpl->_subTemplateRender("file:../../navegacion/cab.html", $_smarty_tpl-
 	</div>
 	<div class="card">
 		<div class="card-header">
-		<h5>Integrantes 
-			<?php if (in_array('EQUI_A',$_smarty_tpl->tpl_vars['verificar']->value) == TRUE) {?>
-			<a class="btn btn-sm btn-outline-primary mimodal" type="button" 
-            href="agregar_integrante.php?id=<?php echo $_smarty_tpl->tpl_vars['lider']->value['id'];?>
-" title="Agregar un nuevo integrante"><span class="fa fa-plus"></span></a>
-            <?php }?>
-		</h5>
+    <div class="row">
+      <div class="col-md-6">
+        
+  		<h5><span class="badge badge-secondary badge-pill"><?php echo $_smarty_tpl->tpl_vars['lider']->value['numero_integrantes'];?>
+</span> Integrantes 
+  			<?php if (in_array('EQUI_A',$_smarty_tpl->tpl_vars['verificar']->value) == TRUE) {?>
+    			<a class="btn btn-sm btn-outline-primary mimodal 
+          <?php if ($_smarty_tpl->tpl_vars['lider']->value['numero_integrantes'] >= $_smarty_tpl->tpl_vars['lider']->value['limite_integrantes']) {?>
+          disabled
+          <?php }?>
+          " type="button" 
+                href="agregar_integrante.php?id=<?php echo $_smarty_tpl->tpl_vars['lider']->value['id'];?>
+" title="Agregar un nuevo integrante"><span class="fa fa-plus"></span>
+          </a>
+       <?php }?>
+  		</h5>
+      </div>
+      <div class="col-md-6 text-right">
+      Limite de integrantes:
+      <span class="badge badge-info badge-pill"><?php echo $_smarty_tpl->tpl_vars['lider']->value['limite_integrantes'];?>
+</div>
+      </div>
+    </div>
 
 		</div>
 		<div class="card-body">
@@ -90,19 +107,19 @@ for ($__section_i_0_iteration = 1, $_smarty_tpl->tpl_vars['__smarty_section_i']-
                 	<td><?php echo $_smarty_tpl->tpl_vars['integrantes']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['id'];?>
 </td>
                 	<td>
-                		<?php if (isset($_smarty_tpl->tpl_vars['integrantes']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['nombre'])) {?>
-                		<?php echo $_smarty_tpl->tpl_vars['integrantes']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['nombre'];?>
-
+                		<?php if ($_smarty_tpl->tpl_vars['integrantes']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['nombre'] == NULL) {?>
+                		La persona aun no ha actualizado su nombre
                 		<?php } else { ?>
-                		La persona aun no a actualizado su nombre
+                		<?php echo smarty_modifier_capitalize($_smarty_tpl->tpl_vars['integrantes']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['nombre']);?>
+
                 		<?php }?>
                 	</td>
                 	<td>
-                		<?php if (isset($_smarty_tpl->tpl_vars['integrantes']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['nombre'])) {?>
-                		<?php echo $_smarty_tpl->tpl_vars['integrantes']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['apellido'];?>
-
+                		<?php if ($_smarty_tpl->tpl_vars['integrantes']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['nombre'] == NULL) {?>
+                		La persona aun no ha actualizado su apellido
                 		<?php } else { ?>
-                		La persona aun no a actualizado su apellido
+                		<?php echo smarty_modifier_capitalize($_smarty_tpl->tpl_vars['integrantes']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['apellido']);?>
+
                 		<?php }?>
                 	</td>
                 	<td>

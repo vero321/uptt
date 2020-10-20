@@ -8,9 +8,10 @@ verificar();
 
 $id = $_SESSION['u']['id'];
 
+#vq($id);
+
 $personas= bd_personas_datos($id);
 
-#vq($personas);
 
 $smarty->assign ('personas', $personas);
 

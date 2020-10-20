@@ -1,0 +1,81 @@
+{include file="../../navegacion/cab.html"}
+{include file="../../navegacion/sidebar2.html"}
+{include file="../../navegacion/cabecera2.html"}
+<div class="container">
+<div class="row">
+  <div class="col-2"></div>
+  <div class="col-8">   
+    <section id="home" class="text-center"></section>
+        <section id="intro">
+            <div class="container">
+              <div class="centro"> 
+                  <h2>Agregar Una Propuesta</h2>
+                    <form 
+                    	action="proc_pnf_agregar.php" 
+                    	method="POST" 
+                    	class="px-4 py-3" 
+                    	id="propuesta_agregar"
+                    	name="propuesta_agregar">
+                  
+                      	<div class="form-group">
+                          <label for="nombre_pnf">Nombre Del PNF</label>
+                          <input 
+                            type="text" 
+                            title="Escriba el Nombre Completo del PNF" 
+                            required="required" 
+                            class="form-control" 
+                            id="nombre_largo" 
+                            name="nombre_largo"
+                            value="{$pnf.nombre_largo}">
+                        </div>
+
+
+
+                        <div class="form-group">
+                          <label for="trayecto">Trayecto</label>
+                          <select 
+                            title="Seleccione el Trayecto Correspondiente" 
+                            required="required" 
+                            id="trayecto" 
+                            name="trayecto" 
+                            class="form-control">
+                            {section name=i loop=$trayectos}<option value="{$trayectos[i].id}">{$trayectos[i].trayecto}</option>
+                            {/section}
+                          </select>
+                        </div>
+
+                      <div class="form-group">
+                          <label for="fecha">Fecha</label>
+                          <input 
+                            width="20px" 
+                            type="date" 
+                            title="Coloque la Fecha Correspondiente" 
+                            required="required" 
+                            class="form-control" 
+                            id="fecha" 
+                            name="fecha" 
+                            >
+                        </div>
+                    
+                    
+                    	<div class="form-group">
+          							<input 
+          								class="btn-enviar boton" 
+          								type="submit" 
+          								name="enviar" 
+          								value="Registrar">
+                    	</div>
+                    </form>
+              </div> 
+            </div>
+        </section>
+  </div>
+  <div class="col-2"></div>
+
+</div>  
+</div>
+{include "../../../modal/modal_box.html" prueba="Usuario"} 
+
+{include file="../../pie/pie_interno.html"}
+
+

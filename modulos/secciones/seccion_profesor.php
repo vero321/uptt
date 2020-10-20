@@ -66,12 +66,8 @@ if (isset($_POST['id_usuario']) and !isset($_POST['id_rol']) ){
 	bd_asignar_profesor_proyecto($id_seccion,$id_rol,$id_usuario);
 	$m="seccion asignada con exito";
     ir("../mensaje/mensaje.php?m=$m&d=../secciones/secciones.php?t=$id_trayecto");
-} elseif (isset($_POST['id_usuario']) and !isset($_POST['id_rol']) ) {
-	# Este paso Asigna la seccion al Profesor de Proyecto sin 
-	# asignarle nuevamente el rol a la persona
-	$m="seccion asignada con exito";
-    ir("../mensaje/mensaje.php?m=$m&d=../secciones/secciones.php?t=$id_trayecto");
-}
+} 	
+
 
 $smarty->assign('seccion', bd_secciones_datos($id_seccion));
 $smarty->assign('id_trayecto', $id_trayecto);

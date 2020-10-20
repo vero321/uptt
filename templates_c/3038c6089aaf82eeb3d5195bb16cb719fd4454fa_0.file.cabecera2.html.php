@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-09-28 17:50:58
+/* Smarty version 3.1.30, created on 2020-10-13 13:26:37
   from "/home/veronica/public_html/uptt/modulos/navegacion/cabecera2.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5f725ac2d59e38_75305094',
+  'unifunc' => 'content_5f85e34d5cd3f0_64257783',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '3038c6089aaf82eeb3d5195bb16cb719fd4454fa' => 
     array (
       0 => '/home/veronica/public_html/uptt/modulos/navegacion/cabecera2.html',
-      1 => 1600356298,
+      1 => 1602361455,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5f725ac2d59e38_75305094 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f85e34d5cd3f0_64257783 (Smarty_Internal_Template $_smarty_tpl) {
 if (!is_callable('smarty_modifier_capitalize')) require_once '/home/veronica/public_html/uptt/vendor/smarty/libs/plugins/modifier.capitalize.php';
 ?>
 
@@ -155,7 +155,7 @@ $_smarty_tpl->tpl_vars['__smarty_section_i'] = $__section_i_0_saved;
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
                   <i class="fa fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Cerrar secion
+                  Cerrar Sesión
                 </a>
               </div>
             </li>
