@@ -1,8 +1,9 @@
 <?php
-define('MOD', 'pnf'); 
+define('MOD', 'propuesta'); 
 require_once '../config/app.php';
 require_once APP."/modulos/config/inicializacion.php";
-
+	
+	#vq($_POST);
 	$pnf = $_POST['nombre_corto'];
 
 	$sql="SELECT nombre_largo

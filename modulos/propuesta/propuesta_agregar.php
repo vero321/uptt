@@ -12,12 +12,13 @@ $pnf=bd_pnf_datos($id_pnf);#Guarda los Datos del pnf
 # Muestra los trayectos pertecientes al nucleo y pnf correspondientes
 $trayectos=bd_trayectos_pnf_datos($id_pnf, $id_nucleo);
 
-
+$fecha=date('Y-m-d');
 
 
 #vq($_SESSION);
 
 
+$smarty->assign('fecha',$fecha);
 $smarty->assign('pnf',$pnf);
 $smarty->assign('trayectos',$trayectos);
 $smarty->display('propuesta_agregar.html');

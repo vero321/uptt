@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-10-17 21:20:39
+/* Smarty version 3.1.30, created on 2020-10-20 15:40:58
   from "/home/palencia/public_html/proyecto4/uptt/modulos/navegacion/cabecera2.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5f8b9867c31df6_25705784',
+  'unifunc' => 'content_5f8f3d4a1aa2a2_77264077',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'eea2af7adace11608d14fcee091406f468d1ef20' => 
     array (
       0 => '/home/palencia/public_html/proyecto4/uptt/modulos/navegacion/cabecera2.html',
-      1 => 1602869125,
+      1 => 1603203407,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5f8b9867c31df6_25705784 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f8f3d4a1aa2a2_77264077 (Smarty_Internal_Template $_smarty_tpl) {
 if (!is_callable('smarty_modifier_capitalize')) require_once '/home/palencia/public_html/proyecto4/uptt/vendor/smarty/libs/plugins/modifier.capitalize.php';
 ?>
 
