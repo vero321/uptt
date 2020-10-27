@@ -1,6 +1,42 @@
-{include file="../../navegacion/cab.html"}
-{include file="../../navegacion/sidebar2.html"}
-{include file="../../navegacion/cabecera2.html"}
+<?php
+/* Smarty version 3.1.30, created on 2020-10-27 08:23:45
+  from "/home/veronica/public_html/uptt/modulos/propuesta/templates/propuesta_agregar.html" */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.30',
+  'unifunc' => 'content_5f981151a398c8_64061462',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    'e539bf609b43d32e336d7e065d9f819d0ab86fb4' => 
+    array (
+      0 => '/home/veronica/public_html/uptt/modulos/propuesta/templates/propuesta_agregar.html',
+      1 => 1603801424,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+    'file:../../navegacion/cab.html' => 1,
+    'file:../../navegacion/sidebar2.html' => 1,
+    'file:../../navegacion/cabecera2.html' => 1,
+    'file:../../../modal/modal_box.html' => 1,
+    'file:../../pie/pie_interno.html' => 1,
+  ),
+),false)) {
+function content_5f981151a398c8_64061462 (Smarty_Internal_Template $_smarty_tpl) {
+if (!is_callable('smarty_modifier_capitalize')) require_once '/home/veronica/public_html/uptt/vendor/smarty/libs/plugins/modifier.capitalize.php';
+if (!is_callable('smarty_modifier_date_format')) require_once '/home/veronica/public_html/uptt/vendor/smarty/libs/plugins/modifier.date_format.php';
+$_smarty_tpl->_subTemplateRender("file:../../navegacion/cab.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>
+
+<?php $_smarty_tpl->_subTemplateRender("file:../../navegacion/sidebar2.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>
+
+<?php $_smarty_tpl->_subTemplateRender("file:../../navegacion/cabecera2.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>
+
 <div class="container">
 <div class="row">
   <div class="col-2"></div>
@@ -26,52 +62,77 @@
                             class="form-control" 
                             id="nombre_largo" 
                             name="nombre_largo"
-                            value="{$pnf.nombre_largo}" disabled="">
+                            value="<?php echo $_smarty_tpl->tpl_vars['pnf']->value['nombre_largo'];?>
+" disabled="">
                         </div>
 
 
 
-                      <input type="hidden" name="equipo_id" value="{$equipo_id}">
+                      <input type="hidden" name="equipo_id" value="<?php echo $_smarty_tpl->tpl_vars['equipo_id']->value;?>
+">
                       
                       <div class="form-group"> 
                         PNF
-                        <div class="form_datos">{$pnf.nombre_largo}</div>
+                        <div class="form_datos"><?php echo $_smarty_tpl->tpl_vars['pnf']->value['nombre_largo'];?>
+</div>
                         <input 
                             type="hidden" 
                             id="pnf_id" 
                             name="pnf_id"
-                            value="{$pnf.id}">
+                            value="<?php echo $_smarty_tpl->tpl_vars['pnf']->value['id'];?>
+">
                         </div>
  
                         <div class="form-group">
                           Docente Asesor Responsable
-                          <div class="form_datos">{$docente.nombre|capitalize} {$docente.apellido|capitalize}</div>
+                          <div class="form_datos"><?php echo smarty_modifier_capitalize($_smarty_tpl->tpl_vars['docente']->value['nombre']);?>
+ <?php echo smarty_modifier_capitalize($_smarty_tpl->tpl_vars['docente']->value['apellido']);?>
+</div>
                         <input 
                             type="hidden" 
                             name="docente" 
-                            value="{$docente.id}">
+                            value="<?php echo $_smarty_tpl->tpl_vars['docente']->value['id'];?>
+">
                         </div>
 
                         <div class="form-group">
                         <label for="autores">Autores</label>
-                        {section loop=$equipo name=i}
+                        <?php
+$__section_i_0_saved = isset($_smarty_tpl->tpl_vars['__smarty_section_i']) ? $_smarty_tpl->tpl_vars['__smarty_section_i'] : false;
+$__section_i_0_loop = (is_array(@$_loop=$_smarty_tpl->tpl_vars['equipo']->value) ? count($_loop) : max(0, (int) $_loop));
+$__section_i_0_total = $__section_i_0_loop;
+$_smarty_tpl->tpl_vars['__smarty_section_i'] = new Smarty_Variable(array());
+if ($__section_i_0_total != 0) {
+for ($__section_i_0_iteration = 1, $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] = 0; $__section_i_0_iteration <= $__section_i_0_total; $__section_i_0_iteration++, $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']++){
+?>
                         <input 
                             type="hidden" 
                             name="autores[]" 
-                            value="{$equipo[i].id}">
-                        <div class="form_datos">{$equipo[i].nombre|capitalize} {$equipo[i].apellido|capitalize}</div>
+                            value="<?php echo $_smarty_tpl->tpl_vars['equipo']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['id'];?>
+">
+                        <div class="form_datos"><?php echo smarty_modifier_capitalize($_smarty_tpl->tpl_vars['equipo']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['nombre']);?>
+ <?php echo smarty_modifier_capitalize($_smarty_tpl->tpl_vars['equipo']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['apellido']);?>
+</div>
                         
-                        {/section}
+                        <?php
+}
+}
+if ($__section_i_0_saved) {
+$_smarty_tpl->tpl_vars['__smarty_section_i'] = $__section_i_0_saved;
+}
+?>
                         </div>
 
                       <div class="form-group">
                         Trayecto
-                        <div class="form_datos">{$trayecto.trayecto|capitalize}</div>
+                        <div class="form_datos"><?php echo smarty_modifier_capitalize($_smarty_tpl->tpl_vars['trayecto']->value['trayecto']);?>
+</div>
                         <input 
                             type="hidden" 
                             id="trayecto_id" 
                             name="trayecto_id"
-                            value="{$trayecto.id}">
+                            value="<?php echo $_smarty_tpl->tpl_vars['trayecto']->value['id'];?>
+">
                       </div>
                       <div class="form-group">
                           <label for="fecha">Fecha</label>
@@ -83,10 +144,13 @@
                             class="form-control" 
                             id="fecha" 
                             name="fecha"  
-                            placeholder='{$smarty.now|date_format:"%d/%m/%Y"}'
-                            value='{$smarty.now|date_format:"%d/%m/%Y"}' 
+                            placeholder='<?php echo smarty_modifier_date_format(time(),"%d/%m/%Y");?>
+'
+                            value='<?php echo smarty_modifier_date_format(time(),"%d/%m/%Y");?>
+' 
                             name="fecha" 
-                            value="{$fecha}" 
+                            value="<?php echo $_smarty_tpl->tpl_vars['fecha']->value;?>
+" 
 
                             >
                         </div>
@@ -120,18 +184,48 @@
                         <label for="estado">Estado</label>
                         <select id="estado" name="estado" class="form-control">
                           <option selected></option>
-                          {section name=j loop=$estados}
-                          <option value="{$estados[j].id}">{$estados[j].nombre}</option>
-                          {/section}
+                          <?php
+$__section_j_1_saved = isset($_smarty_tpl->tpl_vars['__smarty_section_j']) ? $_smarty_tpl->tpl_vars['__smarty_section_j'] : false;
+$__section_j_1_loop = (is_array(@$_loop=$_smarty_tpl->tpl_vars['estados']->value) ? count($_loop) : max(0, (int) $_loop));
+$__section_j_1_total = $__section_j_1_loop;
+$_smarty_tpl->tpl_vars['__smarty_section_j'] = new Smarty_Variable(array());
+if ($__section_j_1_total != 0) {
+for ($__section_j_1_iteration = 1, $_smarty_tpl->tpl_vars['__smarty_section_j']->value['index'] = 0; $__section_j_1_iteration <= $__section_j_1_total; $__section_j_1_iteration++, $_smarty_tpl->tpl_vars['__smarty_section_j']->value['index']++){
+?>
+                          <option value="<?php echo $_smarty_tpl->tpl_vars['estados']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_j']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_j']->value['index'] : null)]['id'];?>
+"><?php echo $_smarty_tpl->tpl_vars['estados']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_j']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_j']->value['index'] : null)]['nombre'];?>
+</option>
+                          <?php
+}
+}
+if ($__section_j_1_saved) {
+$_smarty_tpl->tpl_vars['__smarty_section_j'] = $__section_j_1_saved;
+}
+?>
                         </select>
                       </div>
                       <div class="form-group col">
                         <label for="municipio">Municipio</label>
                         <select id="municipio" name="municipio" class="form-control">
                           <option selected></option>
-                          {section name=k loop=$municipios}
-                          <option value="{$municipios[k].id}">{$municipios[k].nombre}</option>
-                          {/section}
+                          <?php
+$__section_k_2_saved = isset($_smarty_tpl->tpl_vars['__smarty_section_k']) ? $_smarty_tpl->tpl_vars['__smarty_section_k'] : false;
+$__section_k_2_loop = (is_array(@$_loop=$_smarty_tpl->tpl_vars['municipios']->value) ? count($_loop) : max(0, (int) $_loop));
+$__section_k_2_total = $__section_k_2_loop;
+$_smarty_tpl->tpl_vars['__smarty_section_k'] = new Smarty_Variable(array());
+if ($__section_k_2_total != 0) {
+for ($__section_k_2_iteration = 1, $_smarty_tpl->tpl_vars['__smarty_section_k']->value['index'] = 0; $__section_k_2_iteration <= $__section_k_2_total; $__section_k_2_iteration++, $_smarty_tpl->tpl_vars['__smarty_section_k']->value['index']++){
+?>
+                          <option value="<?php echo $_smarty_tpl->tpl_vars['municipios']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_k']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_k']->value['index'] : null)]['id'];?>
+"><?php echo $_smarty_tpl->tpl_vars['municipios']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_k']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_k']->value['index'] : null)]['nombre'];?>
+</option>
+                          <?php
+}
+}
+if ($__section_k_2_saved) {
+$_smarty_tpl->tpl_vars['__smarty_section_k'] = $__section_k_2_saved;
+}
+?>
                           
                         </select>
                       </div>
@@ -139,9 +233,24 @@
                         <label for="parroquia">Parroquia</label>
                         <select id="parroquia" name="parroquia" class="form-control">
                           <option selected></option>
-                          {section name=l loop=$parroquias}
-                          <option value="{$parroquias[l].id}">{$parroquias[l].nombre}</option>
-                          {/section}
+                          <?php
+$__section_l_3_saved = isset($_smarty_tpl->tpl_vars['__smarty_section_l']) ? $_smarty_tpl->tpl_vars['__smarty_section_l'] : false;
+$__section_l_3_loop = (is_array(@$_loop=$_smarty_tpl->tpl_vars['parroquias']->value) ? count($_loop) : max(0, (int) $_loop));
+$__section_l_3_total = $__section_l_3_loop;
+$_smarty_tpl->tpl_vars['__smarty_section_l'] = new Smarty_Variable(array());
+if ($__section_l_3_total != 0) {
+for ($__section_l_3_iteration = 1, $_smarty_tpl->tpl_vars['__smarty_section_l']->value['index'] = 0; $__section_l_3_iteration <= $__section_l_3_total; $__section_l_3_iteration++, $_smarty_tpl->tpl_vars['__smarty_section_l']->value['index']++){
+?>
+                          <option value="<?php echo $_smarty_tpl->tpl_vars['parroquias']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_l']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_l']->value['index'] : null)]['id'];?>
+"><?php echo $_smarty_tpl->tpl_vars['parroquias']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_l']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_l']->value['index'] : null)]['nombre'];?>
+</option>
+                          <?php
+}
+}
+if ($__section_l_3_saved) {
+$_smarty_tpl->tpl_vars['__smarty_section_l'] = $__section_l_3_saved;
+}
+?>
                           
                         </select>
                       </div>
@@ -276,8 +385,14 @@
 
 </div>  
 </div>
-{include "../../../modal/modal_box.html" prueba="Usuario"} 
+<?php $_smarty_tpl->_subTemplateRender("file:../../../modal/modal_box.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('prueba'=>"Usuario"), 0, false);
+?>
+ 
 
-{include file="../../pie/pie_interno.html"}
+<?php $_smarty_tpl->_subTemplateRender("file:../../pie/pie_interno.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>
 
 
+
+<?php }
+}
