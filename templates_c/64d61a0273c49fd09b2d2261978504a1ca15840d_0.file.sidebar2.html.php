@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-10-13 13:06:46
+/* Smarty version 3.1.30, created on 2020-10-26 15:23:13
   from "/home/veronica/public_html/uptt/modulos/navegacion/sidebar2.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5f85dea6435c08_40987436',
+  'unifunc' => 'content_5f972221371145_96770592',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '64d61a0273c49fd09b2d2261978504a1ca15840d' => 
     array (
       0 => '/home/veronica/public_html/uptt/modulos/navegacion/sidebar2.html',
-      1 => 1596456106,
+      1 => 1603201353,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5f85dea6435c08_40987436 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f972221371145_96770592 (Smarty_Internal_Template $_smarty_tpl) {
 if (!is_callable('smarty_modifier_capitalize')) require_once '/home/veronica/public_html/uptt/vendor/smarty/libs/plugins/modifier.capitalize.php';
 ?>
 
@@ -41,7 +41,7 @@ if (!is_callable('smarty_modifier_capitalize')) require_once '/home/veronica/pub
 
       <!-- Nav Item - Dashboard -->
       <li class="nav-item active">
-        <a class="nav-link" href="../distribuidor/distribuidor.php?r=<?php echo $_SESSION['r'][$_SESSION['numero']]['id_rol'];?>
+        <a class="nav-link active" href="../distribuidor/distribuidor.php?r=<?php echo $_SESSION['r'][$_SESSION['numero']]['id_rol'];?>
 &n=<?php echo $_SESSION['numero'];?>
 ">
           <i class="fa fa-fw fa-desktop"></i>

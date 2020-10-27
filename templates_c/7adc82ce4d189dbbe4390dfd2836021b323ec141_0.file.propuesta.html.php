@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-10-13 13:07:41
+/* Smarty version 3.1.30, created on 2020-10-26 17:39:04
   from "/home/veronica/public_html/uptt/modulos/propuesta/templates/propuesta.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5f85dedda34ee2_19444811',
+  'unifunc' => 'content_5f9741f8515b56_42718031',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '7adc82ce4d189dbbe4390dfd2836021b323ec141' => 
     array (
       0 => '/home/veronica/public_html/uptt/modulos/propuesta/templates/propuesta.html',
-      1 => 1602607170,
+      1 => 1603748343,
       2 => 'file',
     ),
   ),
@@ -25,7 +25,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:../../pie/pie_interno.html' => 1,
   ),
 ),false)) {
-function content_5f85dedda34ee2_19444811 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f9741f8515b56_42718031 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:../../navegacion/cab.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -42,7 +42,11 @@ $_smarty_tpl->_subTemplateRender("file:../../navegacion/cab.html", $_smarty_tpl-
                 <h2 class="text-primary"><span class="badge badge-secondary badge-pill"><?php echo $_smarty_tpl->tpl_vars['n_propuesta']->value;?>
 </span> Propuestas
                   <?php if (in_array("PROP_A",$_smarty_tpl->tpl_vars['verificar']->value) == TRUE) {?>
-                  <a class="btn btn-sm btn-outline-primary mimodal" type="button" href="propuesta_agregar.php" title="Agregar una Propuesta"><span class="fa fa-plus"></span></a>
+                  <a class="btn btn-sm btn-outline-primary mimodal" type="button" href="propuesta_agregar.php?equipo_id=<?php echo $_smarty_tpl->tpl_vars['equipo_id']->value;?>
+" title="Agregar una Propuesta"><span class="fa fa-plus"></span></a> 
+                  | Equipo: <?php echo $_smarty_tpl->tpl_vars['lider']->value['nombre_equipo'];?>
+
+                  
                   <?php }?>
                 </h2>
                </div>

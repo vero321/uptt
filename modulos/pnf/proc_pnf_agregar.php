@@ -25,3 +25,4 @@ ir("../mensaje/mensaje.php?m=$m&d=../pnf/pnf.php");
 #vq($id);
 
 
+

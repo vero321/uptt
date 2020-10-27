@@ -9,41 +9,56 @@
         <section id="intro">
             <div class="container">
               <div class="centro"> 
-                  <h2>Agregar Una Propuesta</h2>
+                  <h3 style="text-align: center;">Agregar Una Propuesta</h3>
                     <form 
-                    	action="proc_pnf_agregar.php" 
+                    	action="proc_propuesta_agregar.php" 
                     	method="POST" 
                     	class="px-4 py-3" 
                     	id="propuesta_agregar"
                     	name="propuesta_agregar">
-                  
-                      	<div class="form-group">
-                          <label for="nombre_pnf">Nombre Del PNF</label>
-                          <input 
-                            type="text" 
-                            title="Escriba el Nombre Completo del PNF" 
-                            required="required" 
-                            class="form-control" 
-                            id="nombre_largo" 
-                            name="nombre_largo"
-                            value="{$pnf.nombre_largo}">
+
+                      <input type="hidden" name="equipo_id" value="{$equipo_id}">
+                      
+                      <div class="form-group"> 
+                        PNF
+                        <div class="form_datos">{$pnf.nombre_largo}</div>
+                        <input 
+                            type="hidden" 
+                            id="pnf_id" 
+                            name="pnf_id"
+                            value="{$pnf.id}">
                         </div>
-
-
+ 
+                        <div class="form-group">
+                          Docente Asesor Responsable
+                          <div class="form_datos">{$docente.nombre|capitalize} {$docente.apellido|capitalize}</div>
+                        <input 
+                            type="hidden" 
+                            name="docente" 
+                            value="{$docente.id}">
+                        </div>
 
                         <div class="form-group">
-                          <label for="trayecto">Trayecto</label>
-                          <select 
-                            title="Seleccione el Trayecto Correspondiente" 
-                            required="required" 
-                            id="trayecto" 
-                            name="trayecto" 
-                            class="form-control">
-                            {section name=i loop=$trayectos}<option value="{$trayectos[i].id}">{$trayectos[i].trayecto}</option>
-                            {/section}
-                          </select>
+                        <label for="autores">Autores</label>
+                        {section loop=$equipo name=i}
+                        <input 
+                            type="hidden" 
+                            name="autores[]" 
+                            value="{$equipo[i].id}">
+                        <div class="form_datos">{$equipo[i].nombre|capitalize} {$equipo[i].apellido|capitalize}</div>
+                        
+                        {/section}
                         </div>
 
+                      <div class="form-group">
+                        Trayecto
+                        <div class="form_datos">{$trayecto.trayecto|capitalize}</div>
+                        <input 
+                            type="hidden" 
+                            id="trayecto_id" 
+                            name="trayecto_id"
+                            value="{$trayecto.id}">
+                      </div>
                       <div class="form-group">
                           <label for="fecha">Fecha</label>
                           <input 
@@ -53,10 +68,180 @@
                             required="required" 
                             class="form-control" 
                             id="fecha" 
-                            name="fecha" 
+                            name="fecha"  
+                            placeholder='{$smarty.now|date_format:"%d/%m/%Y"}'
+                            value='{$smarty.now|date_format:"%d/%m/%Y"}' 
                             >
                         </div>
+
+                    <div class="form-group">
+                          <label for="comunidad">Organismo, Institución o Comunidad a quien va dirigido el Proyecto</label>
+                          <input 
+                            type="text" 
+                            title="Escriba el Nombre de la Comunidad o Institución" 
+                            required="required" 
+                            class="form-control" 
+                            id="comunidad" 
+                            name="comunidad"
+                            value="">
+                    </div>
+
+                    <div class="form-group">
+                          <label for="direccion">Dirección</label>
+                          <input 
+                            type="text" 
+                            title="Escriba la Dirección exacta" 
+                            required="required" 
+                            class="form-control direccion" 
+                            id="direccion" 
+                            name="direccion"
+                            value="">
+                          
+                    </div>
+                    <div class="form-row">
+                      <div class="form-group col">
+                        <label for="estado">Estado</label>
+                        <select id="estado" name="estado" class="form-control">
+                          <option selected></option>
+                          {section name=j loop=$estados}
+                          <option value="{$estados[j].id}">{$estados[j].nombre}</option>
+                          {/section}
+                        </select>
+                      </div>
+                      <div class="form-group col">
+                        <label for="municipio">Municipio</label>
+                        <select id="municipio" name="municipio" class="form-control">
+                          <option selected></option>
+                          {section name=k loop=$municipios}
+                          <option value="{$municipios[k].id}">{$municipios[k].nombre}</option>
+                          {/section}
+                          
+                        </select>
+                      </div>
+                      <div class="form-group col">
+                        <label for="parroquia">Parroquia</label>
+                        <select id="parroquia" name="parroquia" class="form-control">
+                          <option selected></option>
+                          {section name=l loop=$parroquias}
+                          <option value="{$parroquias[l].id}">{$parroquias[l].nombre}</option>
+                          {/section}
+                          
+                        </select>
+                      </div>
+
+                    </div>
+
+                    <div class="form-group">
+                      <label for="linea_investigacion">Línea de Investigación</label>
+                      <input 
+                        type="text" 
+                        title="Escriba la Línea de Investigación correspondiente" 
                     
+                        class="form-control " 
+                        id="linea_investigacion" 
+                        name="linea_investigacion"
+                        value="">
+                          
+                    </div>
+
+                    <div class="card mb-4">
+                      <div class="card-header">
+                        <a class="link" data-toggle="collapse" href="#propuesta1" aria-expanded="false" aria-controls="propuesta1">
+                        Propuesta 1</a>
+                      </div>
+                    <div class="collapse" id="propuesta1">
+                      <div class="card-body">
+                        <div class="form-group">
+                          <label for="propuesta1">Descripción de la Propuesta</label>
+                          <input 
+                            type="text" 
+                            title="Descripción de la Propuesta" 
+                            required="required" 
+                            class="form-control " 
+                            id="propuesta1" 
+                            name="propuesta1"
+                            value="">
+                        </div>
+                        <div class="form-group">
+                          <label for="objetivo1">Objetivo</label>
+                          <input 
+                            type="text" 
+                            title="Objetivo General" 
+                            required="required" 
+                            class="form-control " 
+                            id="objetivo1" 
+                            name="objetivo1"
+                            value="">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                    <div class="card mb-4">
+                      <div class="card-header">
+                       <a class="link" data-toggle="collapse" href="#propuesta2" aria-expanded="false" aria-controls="propuesta2">
+                        Propuesta 2</a>
+                      </div>
+                    <div class="collapse" id="propuesta2">
+                      <div class="card-body">
+                        <div class="form-group">
+                          <label for="propuesta2">Descripción de la Propuesta</label>
+                          <input 
+                            type="text" 
+                            title="Descripción de la Propuesta" 
+                            required="required" 
+                            class="form-control " 
+                            id="propuesta2" 
+                            name="propuesta2"
+                            value="">
+                        </div>
+                        <div class="form-group">
+                          <label for="objetivo2">Objetivo</label>
+                          <input 
+                            type="text" 
+                            title="Objetivo General" 
+                            required="required" 
+                            class="form-control " 
+                            id="objetivo2" 
+                            name="objetivo2"
+                            value="">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                    <div class="card mb-4">
+                      <div class="card-header">
+                        <a class="link" data-toggle="collapse" href="#propuesta3" aria-expanded="false" aria-controls="propuesta3">
+                        Propuesta 3</a>
+                      </div>
+                     <div class="collapse" id="propuesta3">  
+                      <div class="card-body">
+                        <div class="form-group">
+                          <label for="propuesta3">Descripción de la Propuesta</label>
+                          <input 
+                            type="text" 
+                            title="Descripción de la Propuesta" 
+                            required="required" 
+                            class="form-control " 
+                            id="propuesta3" 
+                            name="propuesta3"
+                            value="">
+                        </div>
+                        <div class="form-group">
+                          <label for="objetivo3">Objetivo</label>
+                          <input 
+                            type="text" 
+                            title="Objetivo General" 
+                            required="required" 
+                            class="form-control " 
+                            id="objetivo3" 
+                            name="objetivo3"
+                            value="">
+                        </div>
+                      </div>
+                    </div>
+                  </div>                
                     
                     	<div class="form-group">
           							<input 

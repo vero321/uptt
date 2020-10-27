@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-10-13 13:06:58
+/* Smarty version 3.1.30, created on 2020-10-26 17:52:39
   from "/home/veronica/public_html/uptt/modulos/modal/modal_galeria.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5f85deb2c72cd5_48387199',
+  'unifunc' => 'content_5f974527be21b5_45031630',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5f85deb2c72cd5_48387199 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f974527be21b5_45031630 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <div class="modal fade" id="image-gallery" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-sm">

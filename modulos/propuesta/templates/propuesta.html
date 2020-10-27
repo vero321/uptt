@@ -7,7 +7,9 @@
               <div class="card-header ">
                 <h2 class="text-primary"><span class="badge badge-secondary badge-pill">{$n_propuesta}</span> Propuestas
                   {if in_array("PROP_A",$verificar) == TRUE}
-                  <a class="btn btn-sm btn-outline-primary mimodal" type="button" href="propuesta_agregar.php" title="Agregar una Propuesta"><span class="fa fa-plus"></span></a>
+                  <a class="btn btn-sm btn-outline-primary mimodal" type="button" href="propuesta_agregar.php?equipo_id={$equipo_id}" title="Agregar una Propuesta"><span class="fa fa-plus"></span></a> 
+                  | Equipo: {$lider.nombre_equipo}
+                  
                   {/if}
                 </h2>
                </div>

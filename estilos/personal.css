@@ -655,7 +655,11 @@ input:checked + .slider:before {
     margin-top: -30px; 
 }
 
-
+.datos_form
+{
+  border-radius: 14px;
+  border: solid 1px #cbcaca;
+}
 /* esto es solo pruebas*/
 
 

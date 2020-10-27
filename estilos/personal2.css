@@ -84,3 +84,12 @@ input:checked + .slider:before {
   width: 5rem;
 }
 
+.form_datos
+{
+  border: solid 1.5px #DFDFDF;
+  border-radius: 8px;
+  background-color: #EAECF4;
+  color: #6E707E;
+  padding: 6px;
+  margin-bottom: 6px;
+}

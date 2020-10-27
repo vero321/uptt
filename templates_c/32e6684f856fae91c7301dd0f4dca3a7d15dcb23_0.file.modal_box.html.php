@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-10-13 13:07:41
+/* Smarty version 3.1.30, created on 2020-10-26 15:17:25
   from "/home/veronica/public_html/uptt/modal/modal_box.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5f85dedda7c4d1_77018519',
+  'unifunc' => 'content_5f9720c5344a51_53320532',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5f85dedda7c4d1_77018519 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f9720c5344a51_53320532 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!-- The Modal -->
 <div class="modal" id="myModal">

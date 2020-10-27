@@ -7,13 +7,18 @@ $verificar=verificar();
 $smarty->assign('verificar',$verificar);
 
 $id=$_GET['id'];
+
 $lider=bd_equipo_lider($id);
 
+
+$seccion=bd_equipo_seccion_profesor($id);
+
 $personas=bd_equipo_personas_datos($id);
+#vq($personas);
 $i=0;
 foreach ($personas as $persona ) {
 	#Buscamos lo nombres de las personas pertenecientes al equipo
-	$datos_persona= bd_personas_datos($persona['id_persona']);
+	$datos_persona= bd_personas_datos($persona['id']);
 	$integrantes[$i]= $datos_persona;
 	$integrantes[$i]['id_equipo_persona']=$persona['id'];
 	$i=$i+1;

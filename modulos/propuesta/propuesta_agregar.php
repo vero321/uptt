@@ -9,15 +9,26 @@ $id_nucleo=$_SESSION['r'][$_SESSION['numero']]['id_nucleo'];#Guarda la id del nÃ
 $id_pnf=$_SESSION['r'][$_SESSION['numero']]['id_pnf'];#Guarda la id del PNF
 $pnf=bd_pnf_datos($id_pnf);#Guarda los Datos del pnf
 
-# Muestra los trayectos pertecientes al nucleo y pnf correspondientes
-$trayectos=bd_trayectos_pnf_datos($id_pnf, $id_nucleo);
+
+$docente=bd_equipo_seccion_profesor($_GET['equipo_id']);#Guarda el docente asesor encargado de la seccion
+
+$equipo=bd_equipo_personas_datos($_GET['equipo_id']);#Guarada el los datos del equipo asignados por el lider
+
+$trayecto=bd_equipo_seccion_trayecto($_GET['equipo_id']);#Guarda el trayecto perteneciente al equipo
+
+#vq($trayecto);
 
 
 
 
-#vq($_SESSION);
 
+$smarty->assign('estados',bd_ubicaciones('estado'));
+$smarty->assign('municipios',bd_ubicaciones('municipio',20));
+$smarty->assign('parroquias',bd_ubicaciones('parroquia',300));
 
 $smarty->assign('pnf',$pnf);
-$smarty->assign('trayectos',$trayectos);
+$smarty->assign('docente',$docente);
+$smarty->assign('equipo',$equipo);
+$smarty->assign('equipo_id',$_GET['equipo_id']);
+$smarty->assign('trayecto',$trayecto);
 $smarty->display('propuesta_agregar.html');

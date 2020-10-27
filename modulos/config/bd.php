@@ -151,7 +151,54 @@ function sql2ids($sql) {
 }
 
 
+
 ########################################### Funciones de la base de datos
+
+
+######Funcion para buscar los datos de la localidades
+
+function bd_datos_ubicacion($parroquia_id){
+    $salida=[];
+    $sql="SELECT tabla, nombre, localidad_id FROM UBICACIONES 
+            WHERE id = {$parroquia_id} 
+            AND tabla 
+            LIKE 'parroquia'
+            "; 
+    $salida['parroquia'] = sql2row($sql);
+
+    $sql="SELECT tabla, nombre, localidad_id 
+            FROM UBICACIONES 
+            WHERE id = {$salida['parroquia']['localidad_id']} 
+            AND tabla 
+            LIKE 'municipio' 
+            ";
+    $salida['municipio'] = sql2row($sql);
+
+    $sql="SELECT tabla, nombre, localidad_id 
+            FROM UBICACIONES 
+            WHERE id = {$salida['municipio']['localidad_id']} 
+            AND tabla 
+            LIKE 'estado' 
+            ";
+    $salida['estado'] = sql2row($sql);
+
+    return $salida;
+}
+
+#funcion para separar las parroquias segun el municipio y el estado
+function bd_ubicaciones($tabla, $id=1) 
+{
+    
+    return sql2array("SELECT id, nombre FROM UBICACIONES WHERE tabla LIKE '{$tabla}' AND localidad_id = '{$id}' ORDER BY nombre ASC");
+}
+
+
+
+
+
+#####################################
+
+
 function bd_usuarios_hash($login){
     $sql= "
         SELECT clave
@@ -1290,7 +1337,7 @@ function bd_asignar_profesor_proyecto($id_seccion,$id_rol,$id_usuario){
     $n=sql($sql0);
 
 
-if ($n==0) 
+if ($n!=0) 
 {
      $sql0="
         INSERT INTO USUARIOS__ROLES (id_usuario, id_rol, id_nucleo, id_pnf)
@@ -1540,11 +1587,30 @@ function bd_equipo_lider($id=NULL){
     return $salida;
 }
 
+
+ function bd_equipo_seccion_profesor($id)
+{
+   $sql="SELECT id, nombre, apellido 
+        FROM PERSONAS WHERE id = (SELECT profesor_proyecto FROM SECCIONES WHERE id =( SELECT id_seccion FROM EQUIPOS WHERE id = '{$id}' ))";
+
+        return sql2row($sql);
+} 
+
+function bd_equipo_seccion_trayecto($id)
+{
+   $sql="SELECT id, trayecto 
+        FROM TRAYECTOS WHERE id = (SELECT id_trayecto FROM SECCIONES WHERE id =( SELECT id_seccion FROM EQUIPOS WHERE id = '{$id}' ))";
+
+        return sql2row($sql);
+}
+
+
 function bd_equipo_personas_datos($id){
     $sql="
-        SELECT * 
+        SELECT id, nombre, apellido FROM PERSONAS where id IN ( 
+        SELECT id_persona
         FROM EQUIPOS__PERSONAS
-        WHERE id_equipo = '{$id}'
+        WHERE id_equipo = '{$id}')
     ";
     $salida  = sql2array($sql);
     return $salida;
@@ -1724,4 +1790,44 @@ function bd_propuestas_datos_lider($id=NULL)
         $salida = sql2array($sql);
     }
     return $salida;
+}
+
+
+
+function bd_propuestas_datos_agregar($d)
+{
+   $sql="  INSERT INTO PROPUESTAS_DATOS (
+            id, 
+            id_pnf_nucleo, 
+            id_trayceto_pnf, 
+            fecha, 
+            id_docente, 
+            id_equipo, 
+            comunidad_objeto, 
+            id_parroquia, 
+            direccion, 
+            linea_investigacion
+            ) 
+        VALUES (
+            NULL, 
+            {$d['pnf_id']}, 
+            {$d['trayecto_id']}, 
+            {$d['fecha']}, 
+            '{$d['docente']}', 
+            '{$d['equipo_id']}', 
+            '{$d['comunidad']}', 
+            '{$d['parroquia']}', 
+            '{$d['direccion']}', 
+            '{$d['linea_investigacion']}'
+            );";
+        
+    $propuesta_id= sql($sql);
+
+    $sql= "INSERT INTO PROPUESTAS  (id, propuesta, objetivo, id_datos_propuestas, status) 
+            VALUES 
+            (NULL, '{$d['propuesta1']}','{$d['objetivo1']}', $propuesta_id, 'NUEVA'),
+            (NULL, '{$d['propuesta2']}','{$d['objetivo2']}', $propuesta_id, 'NUEVA'),
+            (NULL, '{$d['propuesta3']}','{$d['objetivo3']}', $propuesta_id, 'NUEVA');
+            ";
+    sql($sql);
 }

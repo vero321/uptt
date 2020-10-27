@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-10-13 13:06:58
+/* Smarty version 3.1.30, created on 2020-10-26 17:52:39
   from "/home/veronica/public_html/uptt/modulos/navegacion/cabecera2.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5f85deb2c6d1a3_73433579',
+  'unifunc' => 'content_5f974527b9b4d3_54460071',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '6bedd9dfd209c06c7046bf2de96c20389ed7e588' => 
     array (
       0 => '/home/veronica/public_html/uptt/modulos/navegacion/cabecera2.html',
-      1 => 1602361455,
+      1 => 1603201353,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5f85deb2c6d1a3_73433579 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f974527b9b4d3_54460071 (Smarty_Internal_Template $_smarty_tpl) {
 if (!is_callable('smarty_modifier_capitalize')) require_once '/home/veronica/public_html/uptt/vendor/smarty/libs/plugins/modifier.capitalize.php';
 ?>
 
@@ -31,8 +31,7 @@ if (!is_callable('smarty_modifier_capitalize')) require_once '/home/veronica/pub
       <div id="content">
 
         <!-- Topbar -->
-        <nav class="navbar navbar-expand navbar-light topbar mb-4 static-top shadow  border-bottom-primary ">
-
+        <nav class="navbar navbar-expand navbar-light topbar mb-4 static-top shadow  border-bottom-primary">
           <!-- Sidebar Toggle (Topbar) -->
           <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
             <i class="fa fa-bars"></i>
@@ -53,12 +52,12 @@ if (!is_callable('smarty_modifier_capitalize')) require_once '/home/veronica/pub
           <!-- Topbar Navbar -->
           <ul class="navbar-nav ml-auto">
 
-            <!-- Nav Item - Search Dropdown (Visible Only XS) -->
+            <!-- Nav Item - Search Dropdown (Visible Only XS)
             <li class="nav-item dropdown no-arrow d-sm-none">
               <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <i class="fa fa-search fa-fw"></i>
               </a>
-              <!-- Dropdown - Messages -->
+              <!-- Dropdown - Messages
               <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in" aria-labelledby="searchDropdown">
                 <form class="form-inline mr-auto w-100 navbar-search">
                   <div class="input-group">
@@ -71,11 +70,13 @@ if (!is_callable('smarty_modifier_capitalize')) require_once '/home/veronica/pub
                   </div>
                 </form>
               </div>
-            </li>
+            </li>-->
 
             <!-- Nav Item - Alerts -->
+            
             <li class="nav-item dropdown no-arrow mx-1">
-              <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <a class="nav-link dropdown-toggle text-claro" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span>Roles </span> 
                 <i class="fa fa-desktop fa-fw"></i>
                 <!--Counter - Alerts -->
                 <span class="badge badge-danger badge-counter"><?php echo count($_SESSION["r"]);?>
@@ -132,7 +133,7 @@ $_smarty_tpl->tpl_vars['__smarty_section_i'] = $__section_i_2_saved;
             <!-- Nav Item - User Information -->
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?php echo $_SESSION["u"]["correo"];?>
+                <span class="mr-2 d-none d-lg-inline small text-claro"><?php echo $_SESSION["u"]["correo"];?>
 </span>
                 <?php if ($_SESSION['u']['foto_perfil'] == NULL) {?>
                   <img class="img-profile rounded-circle" src="../../imagenes/perfil/user.png">
@@ -149,13 +150,18 @@ $_smarty_tpl->tpl_vars['__smarty_section_i'] = $__section_i_2_saved;
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
                 <a class="dropdown-item" href="../personas/personas_datos.php?id=<?php echo $_SESSION['u']['id'];?>
 ">
-                  <i class="fa fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                  <i class="fa fa-user fa-sm fa-fw mr-2  text-claro"></i>
                   Perfil
                 </a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+<<<<<<< HEAD
                   <i class="fa fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                   Cerrar Sesión
+=======
+                  <i class="fa fa-sign-out-alt fa-sm fa-fw mr-2 text-claro"></i>
+                  Cerrar secion
+>>>>>>> 98073bc98991537319cad38f91c3be50c05f9302
                 </a>
               </div>
             </li>

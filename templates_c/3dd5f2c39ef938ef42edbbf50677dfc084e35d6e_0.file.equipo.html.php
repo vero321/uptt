@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-10-13 13:07:34
+/* Smarty version 3.1.30, created on 2020-10-26 17:38:25
   from "/home/veronica/public_html/uptt/modulos/equipo/templates/equipo.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5f85ded6ca8384_09918076',
+  'unifunc' => 'content_5f9741d1d3e417_21297997',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '3dd5f2c39ef938ef42edbbf50677dfc084e35d6e' => 
     array (
       0 => '/home/veronica/public_html/uptt/modulos/equipo/templates/equipo.html',
-      1 => 1601554050,
+      1 => 1603748162,
       2 => 'file',
     ),
   ),
@@ -26,7 +26,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:../../pie/pie_interno.html' => 1,
   ),
 ),false)) {
-function content_5f85ded6ca8384_09918076 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f9741d1d3e417_21297997 (Smarty_Internal_Template $_smarty_tpl) {
 if (!is_callable('smarty_modifier_capitalize')) require_once '/home/veronica/public_html/uptt/vendor/smarty/libs/plugins/modifier.capitalize.php';
 $_smarty_tpl->_subTemplateRender("file:../../navegacion/cab.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
@@ -51,6 +51,9 @@ $_smarty_tpl->_subTemplateRender("file:../../navegacion/cab.html", $_smarty_tpl-
 		<?php }?>
 		<i class="fa fa-edit fa-sm"></i>
 		</a>
+
+  <h5 align="right" style="margin-top: 10px;"><a href="../propuesta/propuesta.php?equipo_id=<?php echo $_smarty_tpl->tpl_vars['lider']->value['id'];?>
+"><span class="badge lg badge-pill badge-secondary" title="Propuesta"><i class="fa fa-list-alt">&nbsp;&nbsp;</i>Propuesta</span></a></h5>
 	</h4>
 	</div>
 	<div class="card">
