@@ -50,7 +50,7 @@
             <!-- Nav Item - Alerts -->
             
             <li class="nav-item dropdown no-arrow mx-1">
-              <a class="nav-link dropdown-toggle text-claro" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <a class="nav-link dropdown-toggle text-primary" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <span>Roles </span> 
                 <i class="fa fa-desktop fa-fw"></i>
                 <!--Counter - Alerts -->
@@ -89,7 +89,7 @@
             <!-- Nav Item - User Information -->
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="mr-2 d-none d-lg-inline small text-claro">{$smarty.session["u"]["correo"]}</span>
+                <span class="mr-2 d-none d-lg-inline small text-primary">{$smarty.session["u"]["correo"]}</span>
                 {if $smarty.session['u']['foto_perfil'] == NULL}
                   <img class="img-profile rounded-circle" src="../../imagenes/perfil/user.png">
                  {else}
@@ -108,13 +108,8 @@
                 </a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
-<<<<<<< HEAD
-                  <i class="fa fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Cerrar Sesión
-=======
                   <i class="fa fa-sign-out-alt fa-sm fa-fw mr-2 text-claro"></i>
-                  Cerrar secion
->>>>>>> 98073bc98991537319cad38f91c3be50c05f9302
+                  Cerrar sesión
                 </a>
               </div>
             </li>

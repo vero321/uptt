@@ -32,5 +32,4 @@ $smarty->assign('nivel',$nivel);
 $smarty->assign('n_usuarios',$n_datos);
 $smarty->assign('usuarios',$usuarios);
 
-$smarty->assign('pie', file_get_contents(APP.'/modulos/pie/usuarios.html'));
 $smarty->display('usuarios.html');

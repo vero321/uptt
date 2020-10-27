@@ -2,8 +2,8 @@
 define('MOD', 'nucleo'); 
 require_once '../config/app.php';
 require_once APP."/modulos/config/inicializacion.php";
-
 	$nucleos = $_POST['nombre_corto'];
+	$extension = $_POST['extension'];
 
 	$sql="SELECT nombre_largo
 	            FROM NUCLEOS
@@ -15,9 +15,16 @@ require_once APP."/modulos/config/inicializacion.php";
 		ir("../mensaje/mensaje.php?m=$m&d=../nucleo/nucleos.php");
 	}
 	else{
-		bd_nucleos_agregar($_POST);
-		$m="Nucleo <strong>$nucleos</strong> se agregó correctamente a la lista de nucleos.";
-		ir("../mensaje/mensaje.php?m=$m&d=../nucleo/nucleos.php");
+		if ($extension != 'NULL') {
+		# agregar dependencia 
+			bd_nucleos_agregar_dependencia($_POST);
+			$m="Dependencia <strong>$nucleos</strong> se agregó correctamente a la lista de nucleos.";
+			ir("../mensaje/mensaje.php?m=$m&d=../nucleo/nucleos.php");
+		}else{
+			bd_nucleos_agregar($_POST);
+			$m="Nucleo <strong>$nucleos</strong> se agregó correctamente a la lista de nucleos.";
+			ir("../mensaje/mensaje.php?m=$m&d=../nucleo/nucleos.php");
+		}
 	}
 
 $m="El Nucleo <strong>$id</strong> se agregó correctamente a la lista de Nucleos.";

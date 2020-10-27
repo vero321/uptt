@@ -21,5 +21,4 @@ $seccion_profesor=bd_secciones_profesor($id_profesor, $id_pnf, $id_nucleo);
 $smarty->assign('secciones', bd_secciones_datos());
 $smarty->assign('seccion_profesor', bd_secciones_profesor($id_profesor, $id_pnf, $id_nucleo));
 $smarty->assign('pnf',$pnf);
-$smarty->assign('pie', file_get_contents(APP.'/modulos/pie/usuarios.html'));
 $smarty->display('lider_seccion.html');

@@ -16,5 +16,4 @@ $n_nucleos_pnf=count($pnf_nucleo);
 $smarty->assign('n_nucleos_pnf',$n_nucleos_pnf);
 $smarty->assign('nucleo',$nucleo);
 $smarty->assign('pnf_nucleo',$pnf_nucleo);
-$smarty->assign('pie', file_get_contents(APP.'/modulos/pie/usuarios.html'));
 $smarty->display('pnf_nucleo.html');
