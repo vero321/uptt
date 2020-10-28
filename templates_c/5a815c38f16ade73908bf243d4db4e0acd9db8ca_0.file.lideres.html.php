@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-10-28 12:00:56
+/* Smarty version 3.1.30, created on 2020-10-28 15:34:10
   from "/home/palencia/public_html/proyecto4/uptt/modulos/lider_seccion/templates/lideres.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5f9995b8aed348_25143571',
+  'unifunc' => 'content_5f99c7b2d3af59_28456337',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '5a815c38f16ade73908bf243d4db4e0acd9db8ca' => 
     array (
       0 => '/home/palencia/public_html/proyecto4/uptt/modulos/lider_seccion/templates/lideres.html',
-      1 => 1602527849,
+      1 => 1603913610,
       2 => 'file',
     ),
   ),
@@ -21,12 +21,13 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:../../navegacion/cab.html' => 1,
     'file:../../navegacion/sidebar2.html' => 1,
     'file:../../navegacion/cabecera2.html' => 1,
+    'file:../../navegacion/barra_nucleo_pnf.html' => 1,
     'file:../../modal/modal_galeria.html' => 1,
     'file:../../modal/modal_box.html' => 1,
     'file:../../pie/pie_interno.html' => 1,
   ),
 ),false)) {
-function content_5f9995b8aed348_25143571 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f99c7b2d3af59_28456337 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:../../navegacion/cab.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -36,9 +37,24 @@ $_smarty_tpl->_subTemplateRender("file:../../navegacion/cab.html", $_smarty_tpl-
 <?php $_smarty_tpl->_subTemplateRender("file:../../navegacion/cabecera2.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
+<?php $_smarty_tpl->_subTemplateRender("file:../../navegacion/barra_nucleo_pnf.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>
+
 
 <div class="container-fluid">
- 
+
+ <nav aria-label="breadcrumb" role="navigation">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="../inicio/inicio_interno.php">Repo</a></li>
+    <li class="breadcrumb-item"><a href="../distribuidor/distribuidor.php?r=<?php echo $_SESSION['r'][$_SESSION['numero']]['id_rol'];?>
+&n=<?php echo $_SESSION['numero'];?>
+">Panel profesor</a></li>
+    <li class="breadcrumb-item"><a href="lider_seccion.php">Secciones</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Sección <?php echo $_smarty_tpl->tpl_vars['seccion']->value['nombre'];?>
+</li>
+  </ol>
+</nav>
+
   <div class="card shadow">
     <div class="card-header ">
       <h2 class="text-primary"> Equipos

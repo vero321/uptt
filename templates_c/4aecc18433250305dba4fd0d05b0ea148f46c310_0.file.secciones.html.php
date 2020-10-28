@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-10-28 11:59:59
+/* Smarty version 3.1.30, created on 2020-10-28 16:45:43
   from "/home/palencia/public_html/proyecto4/uptt/modulos/secciones/templates/secciones.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5f99957f517090_41686185',
+  'unifunc' => 'content_5f99d8772a3d78_85532380',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '4aecc18433250305dba4fd0d05b0ea148f46c310' => 
     array (
       0 => '/home/palencia/public_html/proyecto4/uptt/modulos/secciones/templates/secciones.html',
-      1 => 1600362871,
+      1 => 1603917939,
       2 => 'file',
     ),
   ),
@@ -21,12 +21,13 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:../../navegacion/cab.html' => 1,
     'file:../../navegacion/sidebar2.html' => 1,
     'file:../../navegacion/cabecera2.html' => 1,
+    'file:../../navegacion/barra_nucleo_pnf.html' => 1,
     'file:../../modal/modal_galeria.html' => 1,
     'file:../../modal/modal_box.html' => 1,
     'file:../../pie/pie_interno.html' => 1,
   ),
 ),false)) {
-function content_5f99957f517090_41686185 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f99d8772a3d78_85532380 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:../../navegacion/cab.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -36,16 +37,26 @@ $_smarty_tpl->_subTemplateRender("file:../../navegacion/cab.html", $_smarty_tpl-
 <?php $_smarty_tpl->_subTemplateRender("file:../../navegacion/cabecera2.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
+<?php $_smarty_tpl->_subTemplateRender("file:../../navegacion/barra_nucleo_pnf.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>
+
 
 <?php if (isset($_smarty_tpl->tpl_vars['secciones']->value)) {?>
 <div class="container-fluid">
-  <h2><?php echo $_smarty_tpl->tpl_vars['pnf']->value['nombre_corto'];?>
-</h2>
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="../inicio/inicio_interno.php">Repo</a></li>
+    <li class="breadcrumb-item"><a href="../distribuidor/distribuidor.php?r=<?php echo $_SESSION['r'][$_SESSION['numero']]['id_rol'];?>
+&n=<?php echo $_SESSION['numero'];?>
+">Panel <?php echo $_SESSION["r"][$_SESSION["numero"]]['rol'];?>
+</a></li>
+    <li class="breadcrumb-item"><a href="secciones.php?t=NULL">Trayectos</a></li>
+    <li class="breadcrumb-item active" aria-current="page"><?php echo $_smarty_tpl->tpl_vars['trayecto']->value['trayecto'];?>
+</li>
+  </ol>
   <div class="card shadow">
       <div class="card-header ">
         <h3 class="text-primary"><span class="badge badge-secondary badge-pill"><?php echo $_smarty_tpl->tpl_vars['n_secciones']->value;?>
-</span> <?php echo $_smarty_tpl->tpl_vars['trayecto']->value['trayecto'];?>
-
+</span> Seciones
             <?php if (in_array("SECC_A",$_smarty_tpl->tpl_vars['verificar']->value) == TRUE) {?>
              <a class="btn btn-sm btn-outline-primary mimodal" type="button" 
             data-href="seccion_agregar.php?t=<?php echo $_smarty_tpl->tpl_vars['trayecto']->value['id'];?>
@@ -171,11 +182,18 @@ $_smarty_tpl->tpl_vars['__smarty_section_i'] = $__section_i_0_saved;
 </div>
 <?php } else { ?>
 	<div class="container-fluid">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="../inicio/inicio_interno.php">Repo</a></li>
+    <li class="breadcrumb-item"><a href="../distribuidor/distribuidor.php?r=<?php echo $_SESSION['r'][$_SESSION['numero']]['id_rol'];?>
+&n=<?php echo $_SESSION['numero'];?>
+">Panel <?php echo $_SESSION["r"][$_SESSION["numero"]]['rol'];?>
+</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Trayectos</li>
+  </ol>
 		<div class="col-md-4">
 		  <div class="card shadow">
 		  	<div class="card-header">
-		  		<h4><?php echo $_smarty_tpl->tpl_vars['pnf']->value['nombre_corto'];?>
-</h4>
+		  		<h4 class="text-primary">Seciones</h4>
 		  	</div>
 		  	<div class="card-body">
 			  	<div class="list-group">

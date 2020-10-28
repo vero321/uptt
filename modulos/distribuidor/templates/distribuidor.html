@@ -1,23 +1,20 @@
 {include file="../../navegacion/cab.html"}
 {include file="../../navegacion/sidebar2.html"}
 {include file="../../navegacion/cabecera2.html"}
-        <div class="container-fluid">
+{include file="../../navegacion/barra_nucleo_pnf.html"}
 
-          <!-- Page Heading -->
-          <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h2 class="h3 mb-0 text-gray-800">Tablero 
-            {$smarty.session["r"][$smarty.session["numero"]].rol}
-            {if $smarty.session["r"][$smarty.session["numero"]].id_nucleo != NULL }
-              {$smarty.session["r"][$smarty.session["numero"]].nucleo}
-            {/if}
-            {if $smarty.session["r"][$smarty.session["numero"]].id_pnf != NULL }
-              {$smarty.session["r"][$smarty.session["numero"]].pnf}
-            {/if}
-          </h2>
+        <div class="container-fluid">
+        
+          <nav aria-label="breadcrumb" role="navigation">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="../inicio/inicio_interno.php">Repo</a></li>
+              <li class="breadcrumb-item">Panel {$smarty.session["r"][$smarty.session["numero"]].rol}</li>
+            </ol>
+          </nav>
+         
             <!-- a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fa fa-download fa-sm text-white-50"></i> Generate Report</a-->
-          </div>
            
-          <div class="row">
+      <div class="row mb-5 pb-4">
         {section  name=i loop= $smarty.session[{$smarty.session['actual']}] }
         {if {$smarty.session[{$smarty.session['actual']}][i].direccion} != NULL }
 

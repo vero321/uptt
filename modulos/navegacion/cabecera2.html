@@ -51,7 +51,11 @@
             
             <li class="nav-item dropdown no-arrow mx-1">
               <a class="nav-link dropdown-toggle text-primary" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span>Roles </span> 
+              {if isset($smarty.session["numero"]) == true }
+                <span>{$smarty.session["r"][$smarty.session["numero"]].rol}</span>
+              {else}
+              <span>Roles</span>
+              {/if}
                 <i class="fa fa-desktop fa-fw"></i>
                 <!--Counter - Alerts -->
                 <span class="badge badge-danger badge-counter">{count($smarty.session["r"])}+</span>
@@ -117,4 +121,6 @@
           </ul>
 
         </nav>
+
         <!-- End of Topbar -->
+

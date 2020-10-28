@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-10-27 20:13:13
+/* Smarty version 3.1.30, created on 2020-10-28 16:14:48
   from "/home/palencia/public_html/proyecto4/uptt/modulos/distribuidor/templates/distribuidor.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5f98b79918b3b0_77473180',
+  'unifunc' => 'content_5f99d1381f8d42_50050510',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'aed0832aa1a3acd2fd861172575caeb9ae8a4fcf' => 
     array (
       0 => '/home/palencia/public_html/proyecto4/uptt/modulos/distribuidor/templates/distribuidor.html',
-      1 => 1597094992,
+      1 => 1603916085,
       2 => 'file',
     ),
   ),
@@ -21,10 +21,11 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:../../navegacion/cab.html' => 1,
     'file:../../navegacion/sidebar2.html' => 1,
     'file:../../navegacion/cabecera2.html' => 1,
+    'file:../../navegacion/barra_nucleo_pnf.html' => 1,
     'file:../../pie/pie_interno2.html' => 1,
   ),
 ),false)) {
-function content_5f98b79918b3b0_77473180 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f99d1381f8d42_50050510 (Smarty_Internal_Template $_smarty_tpl) {
 if (!is_callable('smarty_modifier_capitalize')) require_once '/home/palencia/public_html/proyecto4/uptt/vendor/smarty/libs/plugins/modifier.capitalize.php';
 $_smarty_tpl->_subTemplateRender("file:../../navegacion/cab.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
@@ -35,26 +36,23 @@ $_smarty_tpl->_subTemplateRender("file:../../navegacion/cab.html", $_smarty_tpl-
 <?php $_smarty_tpl->_subTemplateRender("file:../../navegacion/cabecera2.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
+<?php $_smarty_tpl->_subTemplateRender("file:../../navegacion/barra_nucleo_pnf.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>
+
+
         <div class="container-fluid">
-
-          <!-- Page Heading -->
-          <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h2 class="h3 mb-0 text-gray-800">Tablero 
-            <?php echo $_SESSION["r"][$_SESSION["numero"]]['rol'];?>
-
-            <?php if ($_SESSION["r"][$_SESSION["numero"]]['id_nucleo'] != NULL) {?>
-              <?php echo $_SESSION["r"][$_SESSION["numero"]]['nucleo'];?>
-
-            <?php }?>
-            <?php if ($_SESSION["r"][$_SESSION["numero"]]['id_pnf'] != NULL) {?>
-              <?php echo $_SESSION["r"][$_SESSION["numero"]]['pnf'];?>
-
-            <?php }?>
-          </h2>
+        
+          <nav aria-label="breadcrumb" role="navigation">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="../inicio/inicio_interno.php">Repo</a></li>
+              <li class="breadcrumb-item">Panel <?php echo $_SESSION["r"][$_SESSION["numero"]]['rol'];?>
+</li>
+            </ol>
+          </nav>
+         
             <!-- a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fa fa-download fa-sm text-white-50"></i> Generate Report</a-->
-          </div>
            
-          <div class="row">
+      <div class="row mb-5 pb-4">
         <?php ob_start();
 echo $_SESSION['actual'];
 $_prefixVariable1=ob_get_clean();

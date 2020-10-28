@@ -1499,11 +1499,20 @@ function bd_asignar_comite_tecnico($id_area,$id_rol,$id_usuario){
 
 
 function bd_agregar_equipo($nombre, $id_seccion){
+    if ($nombre== '' or $nombre == ' ' or $nombre == '  ' or $nombre ==  '    ') {
+        # code...
+        $sql = " 
+        INSERT INTO EQUIPOS (nombre_equipo, id_seccion)
+        VALUES ( NULL, '{$id_seccion}')
+    ";
+    sql($sql);
+    }else{   
     $sql = " 
         INSERT INTO EQUIPOS (nombre_equipo, id_seccion)
         VALUES ('{$nombre}', '{$id_seccion}')
     ";
     sql($sql);
+    }
 }
 
 

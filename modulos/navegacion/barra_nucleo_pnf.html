@@ -1,0 +1,18 @@
+        <div class="container-fluid">
+        {if isset($smarty.session["numero"]) == true }
+          <div class="bg-gray-100 p-2 m-2">
+            {if $smarty.session["r"][$smarty.session["numero"]].id_nucleo != NULL }
+              <strong class="text-info">Nucleo: </strong>
+              <strong>
+                  {$smarty.session["r"][$smarty.session["numero"]].nucleo}
+             </strong>
+            {/if}
+            {if $smarty.session["r"][$smarty.session["numero"]].id_pnf != NULL }
+              <strong class="text-info">PNF: </strong>
+              <strong>
+                {$smarty.session["r"][$smarty.session["numero"]].pnf}
+              </strong>
+            {/if}
+          </div>
+        {/if}
+        </div>

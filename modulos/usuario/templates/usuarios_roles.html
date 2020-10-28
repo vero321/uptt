@@ -24,6 +24,7 @@
 						          <a class="btn btn-sm btn-outline-primary mimodal" type="button" data-href="usuarios_rol_asignar.php?id={$usuario['id']}" title="Asignar un Rol a el Usuario"><span class="fa fa-plus"></span></a>
                     {/if}
                   </th>
+                  <th></th>
                   <th>Nucleo</th>
                   <th>PNF</th>
                   </tr>
@@ -41,14 +42,16 @@
                         {else}
                         {$roles[i].rol}
                         {/if}
-                          {if in_array("USUA_ER",$verificar) == TRUE}
-  			                    <a 
-  			                      style="margin-bottom:2px; color:blue;" 
-  			                      class="btn btn-default"
-  			                      title="Eliminar Rol a el Usuario" 
-  			                      href="proc_usuarios_rol_eliminar.php?id={$roles[i].id}&usuario={$usuario.id}">
-  			                      <i class="fa fa-trash"></i>
-  			                    </a>
+                    </td>
+                    <td>
+                      {if in_array("USUA_ER",$verificar) == TRUE}
+                            <a 
+                              style="margin-bottom:2px; color:blue;" 
+                              class="btn btn-default"
+                              title="Eliminar Rol a el Usuario" 
+                              href="proc_usuarios_rol_eliminar.php?id={$roles[i].id}&usuario={$usuario.id}">
+                              <i class="fa fa-trash"></i>
+                            </a>
                           {/if}
                     </td>
                     <td >

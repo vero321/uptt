@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-10-27 20:13:13
+/* Smarty version 3.1.30, created on 2020-10-28 15:32:28
   from "/home/palencia/public_html/proyecto4/uptt/modulos/navegacion/sidebar2.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5f98b7991f5741_33623346',
+  'unifunc' => 'content_5f99c74cb685b4_30466627',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '76f1caf7edc5b22413a9028f7aeb4637954eaa7f' => 
     array (
       0 => '/home/palencia/public_html/proyecto4/uptt/modulos/navegacion/sidebar2.html',
-      1 => 1602276152,
+      1 => 1603911234,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5f98b7991f5741_33623346 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f99c74cb685b4_30466627 (Smarty_Internal_Template $_smarty_tpl) {
 if (!is_callable('smarty_modifier_capitalize')) require_once '/home/palencia/public_html/proyecto4/uptt/vendor/smarty/libs/plugins/modifier.capitalize.php';
 ?>
 
@@ -40,14 +40,14 @@ if (!is_callable('smarty_modifier_capitalize')) require_once '/home/palencia/pub
       <hr class="sidebar-divider my-0">
 
       <!-- Nav Item - Dashboard -->
-      <li class="nav-item active">
+      <!--li class="nav-item active">
         <a class="nav-link active" href="../distribuidor/distribuidor.php?r=<?php echo $_SESSION['r'][$_SESSION['numero']]['id_rol'];?>
 &n=<?php echo $_SESSION['numero'];?>
 ">
           <i class="fa fa-fw fa-desktop"></i>
           <span><?php echo $_SESSION["r"][$_SESSION["numero"]]['rol'];?>
 </span></a>
-      </li>
+      </li-->
 
       <!-- Divider -->
       <hr class="sidebar-divider">

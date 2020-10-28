@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-10-27 20:12:49
+/* Smarty version 3.1.30, created on 2020-10-28 15:45:20
   from "/home/palencia/public_html/proyecto4/uptt/modulos/pie/pie_externo.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5f98b781083d03_68879382',
+  'unifunc' => 'content_5f99ca50d2b914_83559588',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5f98b781083d03_68879382 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f99ca50d2b914_83559588 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!--Comienzo del Pie de Página-->
 <div class="espacio">

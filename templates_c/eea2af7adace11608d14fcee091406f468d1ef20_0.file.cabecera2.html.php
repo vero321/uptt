@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-10-28 11:59:30
+/* Smarty version 3.1.30, created on 2020-10-28 15:34:06
   from "/home/palencia/public_html/proyecto4/uptt/modulos/navegacion/cabecera2.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5f999562688266_44242860',
+  'unifunc' => 'content_5f99c7aecc2a46_85412842',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'eea2af7adace11608d14fcee091406f468d1ef20' => 
     array (
       0 => '/home/palencia/public_html/proyecto4/uptt/modulos/navegacion/cabecera2.html',
-      1 => 1603731098,
+      1 => 1603913355,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5f999562688266_44242860 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f99c7aecc2a46_85412842 (Smarty_Internal_Template $_smarty_tpl) {
 if (!is_callable('smarty_modifier_capitalize')) require_once '/home/palencia/public_html/proyecto4/uptt/vendor/smarty/libs/plugins/modifier.capitalize.php';
 ?>
 
@@ -76,7 +76,12 @@ if (!is_callable('smarty_modifier_capitalize')) require_once '/home/palencia/pub
             
             <li class="nav-item dropdown no-arrow mx-1">
               <a class="nav-link dropdown-toggle text-primary" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span>Roles </span> 
+              <?php if (isset($_SESSION["numero"]) == true) {?>
+                <span><?php echo $_SESSION["r"][$_SESSION["numero"]]['rol'];?>
+</span>
+              <?php } else { ?>
+              <span>Roles</span>
+              <?php }?>
                 <i class="fa fa-desktop fa-fw"></i>
                 <!--Counter - Alerts -->
                 <span class="badge badge-danger badge-counter"><?php echo count($_SESSION["r"]);?>
@@ -164,6 +169,8 @@ $_smarty_tpl->tpl_vars['__smarty_section_i'] = $__section_i_2_saved;
           </ul>
 
         </nav>
+
         <!-- End of Topbar -->
+
 <?php }
 }

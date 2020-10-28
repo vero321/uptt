@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-10-27 20:19:43
+/* Smarty version 3.1.30, created on 2020-10-28 15:46:55
   from "/home/palencia/public_html/proyecto4/uptt/modulos/propuesta/templates/propuesta_agregar.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5f98b91fefdd91_32101132',
+  'unifunc' => 'content_5f99caafe79302_13059637',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -25,7 +25,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:../../pie/pie_interno.html' => 1,
   ),
 ),false)) {
-function content_5f98b91fefdd91_32101132 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f99caafe79302_13059637 (Smarty_Internal_Template $_smarty_tpl) {
 if (!is_callable('smarty_modifier_capitalize')) require_once '/home/palencia/public_html/proyecto4/uptt/vendor/smarty/libs/plugins/modifier.capitalize.php';
 if (!is_callable('smarty_modifier_date_format')) require_once '/home/palencia/public_html/proyecto4/uptt/vendor/smarty/libs/plugins/modifier.date_format.php';
 $_smarty_tpl->_subTemplateRender("file:../../navegacion/cab.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);

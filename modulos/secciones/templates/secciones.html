@@ -1,13 +1,19 @@
 {include file="../../navegacion/cab.html"}
 {include file="../../navegacion/sidebar2.html"}
 {include file="../../navegacion/cabecera2.html"}
+{include file="../../navegacion/barra_nucleo_pnf.html"}
 
 {if isset($secciones)}
 <div class="container-fluid">
-  <h2>{$pnf['nombre_corto']}</h2>
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="../inicio/inicio_interno.php">Repo</a></li>
+    <li class="breadcrumb-item"><a href="../distribuidor/distribuidor.php?r={$smarty.session['r'][$smarty.session['numero']].id_rol}&n={$smarty.session['numero']}">Panel {$smarty.session["r"][$smarty.session["numero"]].rol}</a></li>
+    <li class="breadcrumb-item"><a href="secciones.php?t=NULL">Trayectos</a></li>
+    <li class="breadcrumb-item active" aria-current="page">{$trayecto['trayecto']}</li>
+  </ol>
   <div class="card shadow">
       <div class="card-header ">
-        <h3 class="text-primary"><span class="badge badge-secondary badge-pill">{$n_secciones}</span> {$trayecto['trayecto']}
+        <h3 class="text-primary"><span class="badge badge-secondary badge-pill">{$n_secciones}</span> Seciones
             {if in_array("SECC_A",$verificar) == TRUE}
              <a class="btn btn-sm btn-outline-primary mimodal" type="button" 
             data-href="seccion_agregar.php?t={$trayecto['id']}" title="Agregar seccion a {$trayecto['trayecto']}"><span class="fa fa-plus"></span></a>
@@ -101,10 +107,15 @@
 </div>
 {else}
 	<div class="container-fluid">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="../inicio/inicio_interno.php">Repo</a></li>
+    <li class="breadcrumb-item"><a href="../distribuidor/distribuidor.php?r={$smarty.session['r'][$smarty.session['numero']].id_rol}&n={$smarty.session['numero']}">Panel {$smarty.session["r"][$smarty.session["numero"]].rol}</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Trayectos</li>
+  </ol>
 		<div class="col-md-4">
 		  <div class="card shadow">
 		  	<div class="card-header">
-		  		<h4>{$pnf['nombre_corto']}</h4>
+		  		<h4 class="text-primary">Seciones</h4>
 		  	</div>
 		  	<div class="card-body">
 			  	<div class="list-group">

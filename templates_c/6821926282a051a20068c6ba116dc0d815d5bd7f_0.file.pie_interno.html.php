@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-10-27 20:18:56
+/* Smarty version 3.1.30, created on 2020-10-28 15:33:46
   from "/home/palencia/public_html/proyecto4/uptt/modulos/pie/pie_interno.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5f98b8f019f374_47848966',
+  'unifunc' => 'content_5f99c79ac3f730_98244102',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5f98b8f019f374_47848966 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f99c79ac3f730_98244102 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
     <!-- Scroll to Top Button-->
   <a class="scroll-to-top rounded" href="#page-top">

@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-10-28 12:01:04
+/* Smarty version 3.1.30, created on 2020-10-28 16:23:33
   from "/home/palencia/public_html/proyecto4/uptt/modulos/lider_seccion/templates/agregar_equipo.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5f9995c0145cf8_01708739',
+  'unifunc' => 'content_5f99d345413376_73514669',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5f9995c0145cf8_01708739 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f99d345413376_73514669 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <div class="container">
 <div class="row">

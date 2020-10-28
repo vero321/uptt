@@ -1,8 +1,14 @@
 {include file="../../navegacion/cab.html"}
 {include file="../../navegacion/sidebar2.html"}
 {include file="../../navegacion/cabecera2.html"}
+{include file="../../navegacion/barra_nucleo_pnf.html"}
    
 <div class="container-fluid">
+   <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="../inicio/inicio_interno.php">Repo</a></li>
+    <li class="breadcrumb-item"><a href="../distribuidor/distribuidor.php?r={$smarty.session['r'][$smarty.session['numero']].id_rol}&n={$smarty.session['numero']}">Panel {$smarty.session["r"][$smarty.session["numero"]].rol}</a></li>
+    <li class="breadcrumb-item active" aria-current="page">PNF Nucleo</li>
+  </ol>
   <div class="card shadow">
       <div class="card-header ">
         <h2 class="text-primary"><span class="badge badge-secondary badge-pill">{$n_nucleos_pnf}</span> {$nucleo['nombre_corto']}

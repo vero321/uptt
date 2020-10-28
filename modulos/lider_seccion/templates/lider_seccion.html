@@ -1,21 +1,34 @@
 {include file="../../navegacion/cab.html"}
 {include file="../../navegacion/sidebar2.html"}
 {include file="../../navegacion/cabecera2.html"}
+{include file="../../navegacion/barra_nucleo_pnf.html"}
 
 
 <div class="container-fluid">
+<nav aria-label="breadcrumb" role="navigation">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="../inicio/inicio_interno.php">Repo</a></li>
+    <li class="breadcrumb-item"><a href="../distribuidor/distribuidor.php?r={$smarty.session['r'][$smarty.session['numero']].id_rol}&n={$smarty.session['numero']}">Panel {$smarty.session["r"][$smarty.session["numero"]].rol}</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Secciones</li>
+  </ol>
+</nav>
   <h2>{$pnf['nombre_corto']}</h2>
-  <div class="card shadow">
-		<div class="card-header ">
-			<h3>Secciones</h3>
-			{section name=i loop=$seccion_profesor}
-			<h4 class="text-primary"><a href="lideres.php?id={$seccion_profesor[i].id}"><span class="badge badge-secondary badge-pill"></span> {$seccion_profesor[i].nombre}</a></h4>
-      
-        
-       {/section}
-	   
-
-  </div>
+  <div class="row">
+  	<div class="col-md-6 col-sm-4">
+  	
+	  <div class="card shadow">
+			<div class="card-header ">
+				<h3 class="text-primary">Secciones</h3>
+			</div>
+			<div class="card-body ">
+				{section name=i loop=$seccion_profesor}
+				<h4 class="text-secondary"><a class="btn btn-link" href="lideres.php?id={$seccion_profesor[i].id}"><span class="badge badge-secondary badge-pill"></span> {$seccion_profesor[i].nombre}</a></h4>
+	      
+	        
+	       {/section}
+	  		</div>
+	  	</div>
+  	</div>
   </div>
 </div>
 
