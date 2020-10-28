@@ -124,8 +124,8 @@
                   <tr class="text-dark">
                     <td>{$nucleos[i].nombre_largo}</td>
                     <td>{$nucleos[i].nombre_corto}</td>
-
-                    <td>{$nucleos[$nucleos[i].id_nucleo].nombre_corto}</td>
+                    {$extesion=bd_nucleos_datos($nucleos[i].id_nucleo)}
+                    <td>{$extesion.nombre_corto}</td>
                     <td class="text-center" style="white-space: nowrap;">
                     {if in_array("NUCL_M",$verificar) == TRUE}
                     <a 

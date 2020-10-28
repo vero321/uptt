@@ -1334,26 +1334,34 @@ function bd_asignar_profesor_proyecto($id_seccion,$id_rol,$id_usuario){
     $id_nucleo=$_SESSION['r'][$_SESSION['numero']]['id_nucleo'];
 
 
-    $sql0= "SELECT COUNT(*)
+    $sql0= "SELECT *
             FROM USUARIOS__ROLES 
             WHERE
                 id_usuario = {$id_usuario} AND 
-                id_rol LIKE '{$id_rol}' AND 
+                id_rol = '{$id_rol}' AND 
                 id_nucleo = {$id_nucleo} AND 
                 id_pnf = {$id_pnf}
                 ";
-    $n=sql($sql0);
-
-
-if ($n!=0) 
+    $n = sql2array($sql0);
+    $numero = count($n);
+    
+if ($numero == 0) 
 {
-     $sql0="
+     $sql0 = "
         INSERT INTO USUARIOS__ROLES (id_usuario, id_rol, id_nucleo, id_pnf)
         VALUES ('{$id_usuario}','{$id_rol}', '{$id_nucleo}', '{$id_pnf}')
         ";
     sql($sql0);
 
     $sql1 = " 
+        UPDATE SECCIONES SET
+            profesor_proyecto = '{$id_usuario}'
+        WHERE
+            id = '{$id_seccion}'
+    ";
+    sql($sql1);
+}else{
+     $sql1 = " 
         UPDATE SECCIONES SET
             profesor_proyecto = '{$id_usuario}'
         WHERE
