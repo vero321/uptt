@@ -1,0 +1,71 @@
+{include file="../../navegacion/cab.html"}
+{include file="../../navegacion/sidebar2.html"}
+{include file="../../navegacion/cabecera2.html"}
+{include file="../../navegacion/barra_nucleo_pnf.html"}
+
+<div class="container-fluid">
+  <div class="card">
+    <div class="card-header">
+      <div class="card-title text-p">
+        Equipo
+      </div>
+    </div>
+      <div class="card-body">
+        <table class="table">
+                <thead>
+                  <tr>
+                    <th>Autor</th>
+                    <th>Rol</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody>
+
+                  <tr>
+                    <td>
+                    {if $lider.foto_perfil == NULL}
+                      <img class="img-thumbnail img-user4 rounded-circle" src="../../imagenes/perfil/user.png">
+                    {else}
+                    <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title=""
+                   data-image="../../imagenes/perfil/{$lider.foto_perfil}"
+                   data-target="#image-gallery">
+                      <img class="img-thumbnail img-user4 rounded-circle" src="../../imagenes/perfil/{$lider.foto_perfil}" alt="User profile picture">
+                      </a>
+                    {/if}
+                    {$lider.nombre} {$lider.apellido}
+                    </td>
+                    <td>LIDER</td>
+                    <td class="text-right py-0 align-middle">
+                      <div class="btn-group btn-group-sm">
+                        <a href="#" class="btn btn-info"><i class="fas fa-eye"></i></a>
+                      </div>
+                    </td>
+                  {section name=i loop=$equipo}
+                  <tr>
+                    <td>
+                   {if $equipo[i].foto_perfil == NULL}
+                      <img class="img-thumbnail img-user4 rounded-circle" src="../../imagenes/perfil/user.png">
+                    {else}
+                    <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title=""
+                   data-image="../../imagenes/perfil/{$equipo[i].foto_perfil}"
+                   data-target="#image-gallery">
+                      <img class="img-thumbnail img-user4 rounded-circle" src="../../imagenes/perfil/{$equipo[i].foto_perfil}" alt="User profile picture">
+                      </a>
+                    {/if}
+                    {$equipo[i].nombre} {$equipo[i].apellido}
+                  </td>
+                    <td>ESTUDIANTE</td>
+                    <td class="text-right py-0 align-middle">
+                      <div class="btn-group btn-group-sm">
+                        <a href="#" class="btn btn-info" title="Ver detalles"><i class="fas fa-eye"></i></a>
+                      </div>
+                    </td>
+                  </tr>
+                  {/section}
+                </tbody>
+              </table>
+            
+      </div>
+    </div>
+</div>
+{include file="../../pie/pie_interno.html"}            

@@ -81,6 +81,14 @@ input:checked + .slider:before {
   width: 5rem;
 }
 
+.img-user3{
+  height: 3rem;
+  width: 3rem;
+}
+.img-user4{
+  height: 4rem;
+  width: 4rem;
+}
 .form_datos
 {
   border: solid 1.5px #DFDFDF;

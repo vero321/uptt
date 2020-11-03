@@ -10,7 +10,6 @@ $privilegios=bd_roles__privilegios($id);
 
 
 
-
 $smarty->assign('rol', $rol);
-$smarty->assign('pie', file_get_contents('../pie/usuarios.html'));
+$smarty->assign('privilegios', $privilegios);
 $smarty->display('roles_datos.html');

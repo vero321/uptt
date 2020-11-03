@@ -1632,7 +1632,7 @@ function bd_equipo_seccion_trayecto($id)
 
 function bd_equipo_personas_datos($id){
     $sql="
-        SELECT id, nombre, apellido FROM PERSONAS where id IN ( 
+        SELECT * FROM PERSONAS WHERE id IN ( 
         SELECT id_persona
         FROM EQUIPOS__PERSONAS
         WHERE id_equipo = '{$id}')
@@ -1797,20 +1797,35 @@ function  bd_tutor_seccion($id_seccion){
 
 ####    Funciones Propuestas ######
 
-function bd_propuestas_datos_lider($id=NULL)
+function bd_propuestas_datos_lider($id=NULL, $status)
 {
+    /*
+    la funcion utiliza dos paramatros para filtrar la id del usuario y status la cual hace referencia al estado de la propuesta los valores de esta DEBEN ser:
+    NUEVA
+    ENVIAR
+    EVALUAR
+    APROVADA
+    RECHAZADA
+    DECLINADA
+    
+    se utiliza de la siguiente manera:
+
+    bd_propuestas_datos_lider($id=NULL,'NUEVA')
+
+    De esta manera una sola funcion cirve para todos los estados de la propuesta
+    */
     if ($id!=NULL) {
         $sql="
             SELECT *
             FROM PROPUESTAS
-            WHERE id LIKE '{$id}' and status = 'CORRECCIONES'
+            WHERE id LIKE '{$id}' and status = '{$status}'
             ";
         $salida = sql2row($sql);
     } else {
         $sql="
             SELECT *
             FROM PROPUESTAS
-            WHERE status = 'CORRECCIONES'
+            WHERE status = '{$status}'
             ";
         $salida = sql2array($sql);
     }
@@ -1835,9 +1850,9 @@ function bd_propuestas_datos_agregar($d)
             ) 
         VALUES (
             NULL, 
-            {$d['pnf_id']}, 
-            {$d['trayecto_id']}, 
-            {$d['fecha']}, 
+            '{$d['pnf_id']}', 
+            '{$d['trayecto_id']}', 
+            '{$d['fecha']}', 
             '{$d['docente']}', 
             '{$d['equipo_id']}', 
             '{$d['comunidad']}', 
@@ -1855,4 +1870,57 @@ function bd_propuestas_datos_agregar($d)
             (NULL, '{$d['propuesta3']}','{$d['objetivo3']}', $propuesta_id, 'NUEVA');
             ";
     sql($sql);
+}
+
+function bd_propuestas_datos_equipo($id){
+    if ($id!=NULL) {
+        $sql="
+            SELECT *
+            FROM PROPUESTAS_DATOS
+            WHERE id_equipo LIKE '{$id}'
+            ";
+        $salida = sql2row($sql);
+    } else {
+        $sql="
+            SELECT *
+            FROM PROPUESTAS
+            WHERE status = '{$status}'
+            ";
+        $salida = sql2array($sql);
+    }
+    return $salida;
+}
+function bd_propuestas_datos_id_datos_propuestas($id=NULL, $status)
+{
+    /*
+    la funcion utiliza dos paramatros para filtrar la id del usuario y status la cual hace referencia al estado de la propuesta los valores de esta DEBEN ser:
+    NUEVA
+    ENVIAR
+    EVALUAR
+    APROVADA
+    RECHAZADA
+    DECLINADA
+    
+    se utiliza de la siguiente manera:
+
+    bd_propuestas_datos_lider($id=NULL,'NUEVA')
+
+    De esta manera una sola funcion cirve para todos los estados de la propuesta
+    */
+    if ($id!=NULL) {
+        $sql="
+            SELECT *
+            FROM PROPUESTAS
+            WHERE id_datos_propuestas LIKE '{$id}' and status = '{$status}'
+            ";
+        $salida = sql2array($sql);
+    } else {
+        $sql="
+            SELECT *
+            FROM PROPUESTAS
+            WHERE status = '{$status}'
+            ";
+        $salida = sql2array($sql);
+    }
+    return $salida;
 }

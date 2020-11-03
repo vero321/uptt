@@ -1,9 +1,15 @@
 {include file="../../navegacion/cab.html"}
 {include file="../../navegacion/sidebar2.html"}
 {include file="../../navegacion/cabecera2.html"}
+{include file="../../navegacion/barra_nucleo_pnf.html"}
 
 
     <div class="container-fluid">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="../inicio/inicio_interno.php">Repo</a></li>
+      <li class="breadcrumb-item"><a href="../distribuidor/distribuidor.php?r={$smarty.session['r'][$smarty.session['numero']].id_rol}&n={$smarty.session['numero']}">Panel {$smarty.session["r"][$smarty.session["numero"]].rol}</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Nucleos y Extenciones</li>
+    </ol>
         <h2 class="text-primary my-2"><span class="badge badge-secondary badge-pill">{$n_nucleos}</span> Nucleos y Extensiones
         {if in_array("NUCL_A",$verificar) == TRUE}
              <a class="btn btn-sm btn-outline-primary mimodal mimodal" type="button" 
@@ -12,8 +18,11 @@
         </h2>
       <div class="card shadow">
       <div class="card-header">
-          <h3 class="text-primary"> Nucleos</h3>
+        <a href="#collapse_nucleos" class="d-block card-header py-3" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="collapse_nucleos">
+          <h6 class="m-0 font-weight-bold text-primary">Nucleos</h6>
+        </a>
       </div>
+         <div class="collapse" id="collapse_nucleos">
           <div class="card-body">
             <div class="table-responsive">
               <table class="table " id="tabla_repo" style="width:100%">
@@ -98,14 +107,18 @@
             </div>
           </div>
         </div>
+      </div>
 
     <div class="card shadow my-3">
       <div class="card-header">
-          <h3 class="text-primary">Extenciones</h3>
+        <a href="#collapse_extenciones" class="d-block card-header py-3" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="collapse_extenciones">
+          <h6 class="m-0 font-weight-bold text-primary">Extenciones</h6>
+        </a>
       </div>
+         <div class="collapse" id="collapse_extenciones">
           <div class="card-body">
             <div class="table-responsive">
-              <table class="table " id="tabla_repo" style="width:100%">
+              <table class="table " id="tabla_repo1" style="width:100%">
                 <thead class="text-dark">
                   <tr>
                     <th>Nombre Largo</th>
@@ -190,8 +203,9 @@
             </div>
           </div>
         </div>
-
       </div>
+
+    </div>
   
 
 {include "../../modal/modal_galeria.html" prueba="Usuario"} 
