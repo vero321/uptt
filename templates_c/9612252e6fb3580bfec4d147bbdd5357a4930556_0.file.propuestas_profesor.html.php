@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-11-02 20:09:01
+/* Smarty version 3.1.30, created on 2020-11-02 21:10:40
   from "/home/palencia/public_html/proyecto4/uptt/modulos/propuesta/templates/propuestas_profesor.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5fa09f9df0ad80_25753965',
+  'unifunc' => 'content_5fa0ae10443f29_09228920',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '9612252e6fb3580bfec4d147bbdd5357a4930556' => 
     array (
       0 => '/home/palencia/public_html/proyecto4/uptt/modulos/propuesta/templates/propuestas_profesor.html',
-      1 => 1604362125,
+      1 => 1604365814,
       2 => 'file',
     ),
   ),
@@ -26,7 +26,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:../../pie/pie_interno.html' => 1,
   ),
 ),false)) {
-function content_5fa09f9df0ad80_25753965 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5fa0ae10443f29_09228920 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:../../navegacion/cab.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -255,13 +255,31 @@ $_smarty_tpl->tpl_vars['__smarty_section_i'] = $__section_i_2_saved;
         <!-- Card Content - Collapse -->
         <div class="collapse" id="collapseCard_observaciones">
           <div class="card-body">
-            <form id="observaciones" name="observaciones" method="POST" action="proc_propuesta_enviar.php">
-              <input type="text" name="a">
-               <div class="form-group">
+            <form  method="POST" action="proc_propuesta_enviar.php">
               <div class="form-group">
-            <label for="observaciones">Example textarea</label>
-            <textarea class="form-control" id="observacio" form="observaciones" rows="3"></textarea>
-          </div>
+                <?php
+$__section_i_3_saved = isset($_smarty_tpl->tpl_vars['__smarty_section_i']) ? $_smarty_tpl->tpl_vars['__smarty_section_i'] : false;
+$__section_i_3_loop = (is_array(@$_loop=$_smarty_tpl->tpl_vars['propuestas']->value) ? count($_loop) : max(0, (int) $_loop));
+$__section_i_3_total = $__section_i_3_loop;
+$_smarty_tpl->tpl_vars['__smarty_section_i'] = new Smarty_Variable(array());
+if ($__section_i_3_total != 0) {
+for ($__section_i_3_iteration = 1, $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] = 0; $__section_i_3_iteration <= $__section_i_3_total; $__section_i_3_iteration++, $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']++){
+$_smarty_tpl->tpl_vars['__smarty_section_i']->value['index_next'] = $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] + 1;
+?>
+                <input type="hidden" name="id_propuestas[]" value="<?php echo $_smarty_tpl->tpl_vars['propuestas']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['id'];?>
+">
+                <?php
+}
+}
+if ($__section_i_3_saved) {
+$_smarty_tpl->tpl_vars['__smarty_section_i'] = $__section_i_3_saved;
+}
+?>
+                <input type="hidden" name="status" value="EVALUAR">
+
+                <label>Example textarea</label>
+                <textarea class="form-control" name="observacion" rows="3"></textarea>
+              </div>
               <input type="submit" value="Save Changes" class="btn btn-success float-right">
 
             </form>

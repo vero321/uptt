@@ -492,6 +492,7 @@ function bd_nucleos_datos($id=NULL)
         $sql="
             SELECT *
             FROM NUCLEOS
+            ORDER BY NUCLEOS . nombre_corto ASC
             ";
         $salida = sql2array($sql);
     }
@@ -1746,7 +1747,7 @@ function bd_asignar_tutor_comunitario($equipo,$id_rol,$id_usuario){
     sql($sql1);
 }
 
-function bd_tutor_comnitario_cambiar($equipo,$id_rol,$id_usuario){
+function bd_tutor_comunitario_cambiar($equipo,$id_rol,$id_usuario){
     $id_pnf = $_SESSION['r'][$_SESSION['numero']]['id_pnf'];
     $id_nucleo=$_SESSION['r'][$_SESSION['numero']]['id_nucleo'];
     $sql = "
@@ -1923,4 +1924,13 @@ function bd_propuestas_datos_id_datos_propuestas($id=NULL, $status)
         $salida = sql2array($sql);
     }
     return $salida;
+}
+
+function bd_propuesta_cambiar_estatus($propuesta, $observacion, $status){
+    $sql="
+        UPDATE PROPUESTAS SET
+        status = '{$status}'
+        WHERE id = $propuesta
+    ";
+    sql($sql);
 }

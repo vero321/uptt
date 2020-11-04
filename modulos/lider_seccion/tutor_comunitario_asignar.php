@@ -48,7 +48,7 @@ if (!isset($id_rol)) {
 if (isset($_GET['cambiar']) ) {
 	# code...
 	$id_usuario = $_GET['cambiar'];
-	bd_tutor_comnitario_cambiar($equipo,$id_rol,$id_usuario);
+	bd_tutor_comunitario_cambiar($equipo,$id_rol,$id_usuario);
 }
 
 
