@@ -15,6 +15,7 @@ $docente=bd_equipo_seccion_profesor($_GET['equipo_id']);#Guarda el docente aseso
 $equipo=bd_equipo_personas_datos($_GET['equipo_id']);#Guarada el los datos del equipo asignados por el lider
 
 $fecha=date('Y-m-d');
+#vq($fecha);
 
 $trayecto=bd_equipo_seccion_trayecto($_GET['equipo_id']);#Guarda el trayecto perteneciente al equipo
 

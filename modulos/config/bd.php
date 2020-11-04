@@ -1797,6 +1797,25 @@ function  bd_tutor_seccion($id_seccion){
 
 ####    Funciones Propuestas ######
 
+function bd_propuestas_datos($id=NULL){
+    if ($id!=NULL) {
+        $sql="
+            SELECT *
+            FROM PROPUESTAS_DATOS
+            WHERE id LIKE '{$id}'
+            ";
+        $salida = sql2row($sql);
+    } else {
+            $sql="
+            SELECT *
+            FROM PROPUESTAS_DATOS
+            ";
+            $salida = sql2array($sql);
+       }
+    return $salida;
+}
+
+
 function bd_propuestas_datos_lider($id=NULL)
 {
     if ($id!=NULL) {
@@ -1835,9 +1854,9 @@ function bd_propuestas_datos_agregar($d)
             ) 
         VALUES (
             NULL, 
-            {$d['pnf_id']}, 
-            {$d['trayecto_id']}, 
-            {$d['fecha']}, 
+            '{$d['pnf_id']}', 
+            '{$d['trayecto_id']}', 
+            '{$d['fecha']}', 
             '{$d['docente']}', 
             '{$d['equipo_id']}', 
             '{$d['comunidad']}', 
@@ -1856,3 +1875,4 @@ function bd_propuestas_datos_agregar($d)
             ";
     sql($sql);
 }
+
