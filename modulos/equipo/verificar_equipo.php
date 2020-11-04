@@ -19,7 +19,7 @@ if ($confmar_lider >1){
 	$i=0;
 	foreach ($personas as $persona ) {
 		#Buscamos lo nombres de las personas pertenecientes al equipo
-		$datos_persona= bd_personas_datos($persona['id_persona']);
+		$datos_persona= bd_personas_datos($persona['id']);
 		$integrantes[$i]= $datos_persona;
 		$i=$i+1;
 	}

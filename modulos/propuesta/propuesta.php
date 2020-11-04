@@ -18,8 +18,7 @@ $lider=bd_equipo_lider($equipo_id);
 $n_propuesta=bd_propuesta_contar_lider();
 $smarty->assign('equipo_id',$equipo_id);
 $smarty->assign('lider',$lider);
-$smarty->assign('propuestas', bd_propuestas_datos_lider());
+$smarty->assign('propuestas', bd_propuestas_datos_lider($id=NULL,'CORRECCIONES'));
 $smarty->assign('n_propuesta',$n_propuesta);
-$smarty->assign('pie', file_get_contents(APP.'/modulos/pie/usuarios.html'));
 $smarty->display('propuesta.html');
 

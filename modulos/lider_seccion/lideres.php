@@ -17,6 +17,9 @@ $seccion= bd_secciones_datos($id_seccion);
 
 $seccion_profesor=bd_secciones_profesor($id_profesor, $id_pnf, $id_nucleo);
 
+$trayecto = bd_trayectos_datos($seccion['id_trayecto']);
+
+$smarty->assign('trayecto', $trayecto);
 $smarty->assign('seccion', $seccion);
 $smarty->assign('seccion_profesor', bd_secciones_profesor($id_profesor, $id_pnf, $id_nucleo));
 $smarty->assign('lider_seccion', bd_lider_seccion($id_seccion));

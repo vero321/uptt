@@ -26,6 +26,7 @@
     </div>
     
     <div class="card-body">
+      <div class="card-title">{$trayecto.trayecto}</div>
      <div class="table-responsive">
       <table class="table " id="tabla_repo" style="width:100%">
         <thead class="text-dark">
@@ -41,7 +42,7 @@
             {if in_array("TUTO_ACO", $verificar) == TRUE }
             <th>Tutor Comunitario</th>
             {/if}
-            <th width="2%"></th>
+            <th>Funciones</th>
           </tr>
         </thead>
         <tbody class="text-dark">
@@ -161,10 +162,13 @@
             
 
             <td>
+              <a href="../equipo/equipo_profesor.php?id_l={if $lider_seccion[i].id_persona !=  NULL}{$lider_seccion[i].id_persona}{/if}&id_e={if $lider_seccion[i].id !=  NULL}{$lider_seccion[i].id}{/if}" class="p-1" title="Ver detalles integrantes del equipo"><i class="fa fa-info-circle"></i></a>
+              <a href="../propuesta/propuestas_profesor.php?id_s={$seccion_profesor[i].id}&id_l={if $lider_seccion[i].id_persona !=  NULL}{$lider_seccion[i].id_persona}{/if}&id_e={if $lider_seccion[i].id !=  NULL}{$lider_seccion[i].id}{/if}
+              " class="-1" title="Ver Propuestas del equipo"><i class="fas fa-clipboard-list"></i></a>
               {if in_array("LIDE_E",$verificar) == TRUE}
               <a 
-                style="margin-bottom:3px; color:blue;" 
-                class="btn btn-default mimodal"
+                style="color:blue;" 
+                class="btn btn-default mimodal p-1"
                 title="Eliminar Equipo" 
                 data-href="lider_eliminar.php?id={$lider_seccion[i].id}&seccion={$seccion.id}">
                 <i class="fa fa-trash"></i>

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-10-28 15:39:37
+/* Smarty version 3.1.30, created on 2020-10-30 20:30:57
   from "/home/palencia/public_html/proyecto4/uptt/modulos/usuario/templates/usuarios.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5f99c8f9725256_07099870',
+  'unifunc' => 'content_5f9cb041a8dc24_77953880',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'f4c19dee9ba8e74f2982f1dd5d972a48f09a144d' => 
     array (
       0 => '/home/palencia/public_html/proyecto4/uptt/modulos/usuario/templates/usuarios.html',
-      1 => 1600446640,
+      1 => 1603985770,
       2 => 'file',
     ),
   ),
@@ -21,11 +21,12 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:../../navegacion/cab.html' => 1,
     'file:../../navegacion/sidebar2.html' => 1,
     'file:../../navegacion/cabecera2.html' => 1,
+    'file:../../navegacion/barra_nucleo_pnf.html' => 1,
     'file:../../modal/modal_box.html' => 1,
     'file:../../pie/pie_interno.html' => 1,
   ),
 ),false)) {
-function content_5f99c8f9725256_07099870 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f9cb041a8dc24_77953880 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:../../navegacion/cab.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -35,8 +36,19 @@ $_smarty_tpl->_subTemplateRender("file:../../navegacion/cab.html", $_smarty_tpl-
 <?php $_smarty_tpl->_subTemplateRender("file:../../navegacion/cabecera2.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
+<?php $_smarty_tpl->_subTemplateRender("file:../../navegacion/barra_nucleo_pnf.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>
+
 <!--finaliza-->
         <div class="container-fluid">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="../inicio/inicio_interno.php">Repo</a></li>
+            <li class="breadcrumb-item"><a href="../distribuidor/distribuidor.php?r=<?php echo $_SESSION['r'][$_SESSION['numero']]['id_rol'];?>
+&n=<?php echo $_SESSION['numero'];?>
+">Panel <?php echo $_SESSION["r"][$_SESSION["numero"]]['rol'];?>
+</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Usuarios</li>
+          </ol>
             <div class="card shadow">
               <div class="card-header">
                 <h2 class="text-primary"><span class="badge badge-secondary badge-pill"><?php echo $_smarty_tpl->tpl_vars['n_usuarios']->value;?>

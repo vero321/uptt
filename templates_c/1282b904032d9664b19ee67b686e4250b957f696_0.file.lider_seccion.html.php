@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-10-28 15:44:44
+/* Smarty version 3.1.30, created on 2020-10-29 09:45:58
   from "/home/palencia/public_html/proyecto4/uptt/modulos/lider_seccion/templates/lider_seccion.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5f99ca2ce88844_22728842',
+  'unifunc' => 'content_5f9ac7962a81f5_81517009',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '1282b904032d9664b19ee67b686e4250b957f696' => 
     array (
       0 => '/home/palencia/public_html/proyecto4/uptt/modulos/lider_seccion/templates/lider_seccion.html',
-      1 => 1603913681,
+      1 => 1603917454,
       2 => 'file',
     ),
   ),
@@ -27,7 +27,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:../../pie/pie_interno.html' => 1,
   ),
 ),false)) {
-function content_5f99ca2ce88844_22728842 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f9ac7962a81f5_81517009 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:../../navegacion/cab.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -48,7 +48,8 @@ $_smarty_tpl->_subTemplateRender("file:../../navegacion/cab.html", $_smarty_tpl-
     <li class="breadcrumb-item"><a href="../inicio/inicio_interno.php">Repo</a></li>
     <li class="breadcrumb-item"><a href="../distribuidor/distribuidor.php?r=<?php echo $_SESSION['r'][$_SESSION['numero']]['id_rol'];?>
 &n=<?php echo $_SESSION['numero'];?>
-">Panel profesor</a></li>
+">Panel <?php echo $_SESSION["r"][$_SESSION["numero"]]['rol'];?>
+</a></li>
     <li class="breadcrumb-item active" aria-current="page">Secciones</li>
   </ol>
 </nav>

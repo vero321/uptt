@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-10-28 15:34:10
+/* Smarty version 3.1.30, created on 2020-11-01 15:55:55
   from "/home/palencia/public_html/proyecto4/uptt/modulos/lider_seccion/templates/lideres.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5f99c7b2d3af59_28456337',
+  'unifunc' => 'content_5f9f12cb8b70c0_56696736',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '5a815c38f16ade73908bf243d4db4e0acd9db8ca' => 
     array (
       0 => '/home/palencia/public_html/proyecto4/uptt/modulos/lider_seccion/templates/lideres.html',
-      1 => 1603913610,
+      1 => 1604260541,
       2 => 'file',
     ),
   ),
@@ -27,7 +27,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:../../pie/pie_interno.html' => 1,
   ),
 ),false)) {
-function content_5f99c7b2d3af59_28456337 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f9f12cb8b70c0_56696736 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:../../navegacion/cab.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -48,7 +48,8 @@ $_smarty_tpl->_subTemplateRender("file:../../navegacion/cab.html", $_smarty_tpl-
     <li class="breadcrumb-item"><a href="../inicio/inicio_interno.php">Repo</a></li>
     <li class="breadcrumb-item"><a href="../distribuidor/distribuidor.php?r=<?php echo $_SESSION['r'][$_SESSION['numero']]['id_rol'];?>
 &n=<?php echo $_SESSION['numero'];?>
-">Panel profesor</a></li>
+">Panel <?php echo $_SESSION["r"][$_SESSION["numero"]]['rol'];?>
+</a></li>
     <li class="breadcrumb-item"><a href="lider_seccion.php">Secciones</a></li>
     <li class="breadcrumb-item active" aria-current="page">Sección <?php echo $_smarty_tpl->tpl_vars['seccion']->value['nombre'];?>
 </li>
@@ -68,6 +69,8 @@ $_smarty_tpl->_subTemplateRender("file:../../navegacion/cab.html", $_smarty_tpl-
     </div>
     
     <div class="card-body">
+      <div class="card-title"><?php echo $_smarty_tpl->tpl_vars['trayecto']->value['trayecto'];?>
+</div>
      <div class="table-responsive">
       <table class="table " id="tabla_repo" style="width:100%">
         <thead class="text-dark">
@@ -83,7 +86,7 @@ $_smarty_tpl->_subTemplateRender("file:../../navegacion/cab.html", $_smarty_tpl-
             <?php if (in_array("TUTO_ACO",$_smarty_tpl->tpl_vars['verificar']->value) == TRUE) {?>
             <th>Tutor Comunitario</th>
             <?php }?>
-            <th width="2%"></th>
+            <th>Funciones</th>
           </tr>
         </thead>
         <tbody class="text-dark">
@@ -245,10 +248,22 @@ for ($__section_i_0_iteration = 1, $_smarty_tpl->tpl_vars['__smarty_section_i']-
             
 
             <td>
+              <a href="../equipo/equipo_profesor.php?id_l=<?php if ($_smarty_tpl->tpl_vars['lider_seccion']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['id_persona'] != NULL) {
+echo $_smarty_tpl->tpl_vars['lider_seccion']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['id_persona'];
+}?>&id_e=<?php if ($_smarty_tpl->tpl_vars['lider_seccion']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['id'] != NULL) {
+echo $_smarty_tpl->tpl_vars['lider_seccion']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['id'];
+}?>" class="p-1" title="Ver detalles integrantes del equipo"><i class="fa fa-info-circle"></i></a>
+              <a href="../propuesta/propuestas_profesor.php?id_s=<?php echo $_smarty_tpl->tpl_vars['seccion_profesor']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['id'];?>
+&id_l=<?php if ($_smarty_tpl->tpl_vars['lider_seccion']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['id_persona'] != NULL) {
+echo $_smarty_tpl->tpl_vars['lider_seccion']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['id_persona'];
+}?>&id_e=<?php if ($_smarty_tpl->tpl_vars['lider_seccion']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['id'] != NULL) {
+echo $_smarty_tpl->tpl_vars['lider_seccion']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['id'];
+}?>
+              " class="-1" title="Ver Propuestas del equipo"><i class="fas fa-clipboard-list"></i></a>
               <?php if (in_array("LIDE_E",$_smarty_tpl->tpl_vars['verificar']->value) == TRUE) {?>
               <a 
-                style="margin-bottom:3px; color:blue;" 
-                class="btn btn-default mimodal"
+                style="color:blue;" 
+                class="btn btn-default mimodal p-1"
                 title="Eliminar Equipo" 
                 data-href="lider_eliminar.php?id=<?php echo $_smarty_tpl->tpl_vars['lider_seccion']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['id'];?>
 &seccion=<?php echo $_smarty_tpl->tpl_vars['seccion']->value['id'];?>

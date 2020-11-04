@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-10-28 16:33:59
+/* Smarty version 3.1.30, created on 2020-10-29 10:46:18
   from "/home/palencia/public_html/proyecto4/uptt/modulos/centro_de_investigacion/templates/centros.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5f99d5b73aedd6_83935408',
+  'unifunc' => 'content_5f9ad5ba362049_81812232',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'a5a701eb5ae650dbd1a060f666564bdeda169bb9' => 
     array (
       0 => '/home/palencia/public_html/proyecto4/uptt/modulos/centro_de_investigacion/templates/centros.html',
-      1 => 1597770909,
+      1 => 1603982655,
       2 => 'file',
     ),
   ),
@@ -21,11 +21,12 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:../../navegacion/cab.html' => 1,
     'file:../../navegacion/sidebar2.html' => 1,
     'file:../../navegacion/cabecera2.html' => 1,
+    'file:../../navegacion/barra_nucleo_pnf.html' => 1,
     'file:../../modal/modal_box.html' => 1,
     'file:../../pie/pie_interno.html' => 1,
   ),
 ),false)) {
-function content_5f99d5b73aedd6_83935408 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f9ad5ba362049_81812232 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:../../navegacion/cab.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -35,11 +36,22 @@ $_smarty_tpl->_subTemplateRender("file:../../navegacion/cab.html", $_smarty_tpl-
 <?php $_smarty_tpl->_subTemplateRender("file:../../navegacion/cabecera2.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
+<?php $_smarty_tpl->_subTemplateRender("file:../../navegacion/barra_nucleo_pnf.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>
+
    
 
 
 <!--finaliza-->
 			 <div class="container-fluid">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="../inicio/inicio_interno.php">Repo</a></li>
+    <li class="breadcrumb-item"><a href="../distribuidor/distribuidor.php?r=<?php echo $_SESSION['r'][$_SESSION['numero']]['id_rol'];?>
+&n=<?php echo $_SESSION['numero'];?>
+">Panel <?php echo $_SESSION["r"][$_SESSION["numero"]]['rol'];?>
+</a></li>
+    <li class="breadcrumb-item active" aria-current="page"> Centros de Investigación</li>
+  </ol>
         <div class="card">
             
           <div class="card-header">
