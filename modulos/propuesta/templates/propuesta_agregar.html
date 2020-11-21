@@ -17,19 +17,6 @@
                     	id="propuesta_agregar"
                     	name="propuesta_agregar">
                   
-                      	<div class="form-group">
-                          <label for="nombre_pnf">Nombre Del PNF</label>
-                          <input 
-                            type="text" 
-                            title="Escriba el Nombre Completo del PNF" 
-                            required="required" 
-                            class="form-control" 
-                            id="nombre_largo" 
-                            name="nombre_largo"
-                            value="{$pnf.nombre_largo}" disabled="">
-                        </div>
-
-
 
                       <input type="hidden" name="equipo_id" value="{$equipo_id}">
                       
@@ -54,6 +41,12 @@
 
                         <div class="form-group">
                         <label for="autores">Autores</label>
+                        <div class="form_datos">{$lider.nombre|capitalize} {$lider.apellido|capitalize}</div>
+                        <input 
+                            type="hidden" 
+                            name="lider" 
+                            value="{$lider.id}">
+                        
                         {section loop=$equipo name=i}
                         <input 
                             type="hidden" 

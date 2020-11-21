@@ -1424,9 +1424,9 @@ function bd_areas_pnf_datos($id_pnf, $id_nucleo){
 }
 
 
-function bd_areas_pnf_agregar($nombre, $id, $id_pnf, $id_nucleo){
-    $sql = "INSERT INTO AREAS_PNF (nombre, id, id_pnf, id_nucleo)
-    VALUES ('{$nombre}', '{$id}', '{$id_pnf}', '{$id_nucleo}')
+function bd_areas_pnf_agregar($nombre, $id_pnf, $id_nucleo){
+    $sql = "INSERT INTO AREAS_PNF (nombre, id_pnf, id_nucleo)
+    VALUES ('{$nombre}', '{$id_pnf}', '{$id_nucleo}')
     ";
     sql($sql);    
 }
@@ -1622,6 +1622,14 @@ function bd_equipo_lider($id=NULL){
         return sql2row($sql);
 } 
 
+ function bd_equipo_seccion_lider($id)
+{
+   $sql="SELECT id, nombre, apellido 
+        FROM PERSONAS WHERE id = ( SELECT id_persona FROM EQUIPOS WHERE id = '{$id}' )";
+
+        return sql2row($sql);
+} 
+
 function bd_equipo_seccion_trayecto($id)
 {
    $sql="SELECT id, trayecto 
@@ -1798,7 +1806,7 @@ function  bd_tutor_seccion($id_seccion){
 
 ####    Funciones Propuestas ######
 
-<<<<<<< HEAD
+
 function bd_propuestas_datos($id=NULL){
     if ($id!=NULL) {
         $sql="
@@ -1818,10 +1826,8 @@ function bd_propuestas_datos($id=NULL){
 }
 
 
-function bd_propuestas_datos_lider($id=NULL)
-=======
 function bd_propuestas_datos_lider($id=NULL, $status)
->>>>>>> aa57384a18759a9d3a2f509cc37a09e017efffc8
+
 {
     /*
     la funcion utiliza dos paramatros para filtrar la id del usuario y status la cual hace referencia al estado de la propuesta los valores de esta DEBEN ser:
@@ -1842,7 +1848,7 @@ function bd_propuestas_datos_lider($id=NULL, $status)
         $sql="
             SELECT *
             FROM PROPUESTAS
-            WHERE id LIKE '{$id}' and status = '{$status}'
+            WHERE id_datos_propuestas LIKE '{$id}' and status = '{$status}'
             ";
         $salida = sql2row($sql);
     } else {
@@ -1896,8 +1902,6 @@ function bd_propuestas_datos_agregar($d)
     sql($sql);
 }
 
-<<<<<<< HEAD
-=======
 function bd_propuestas_datos_equipo($id){
     if ($id!=NULL) {
         $sql="
@@ -1959,4 +1963,5 @@ function bd_propuesta_cambiar_estatus($propuesta, $observacion, $status){
     ";
     sql($sql);
 }
->>>>>>> aa57384a18759a9d3a2f509cc37a09e017efffc8
+
+############################

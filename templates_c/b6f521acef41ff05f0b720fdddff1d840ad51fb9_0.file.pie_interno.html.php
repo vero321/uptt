@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-10-29 07:39:09
+/* Smarty version 3.1.30, created on 2020-11-04 11:27:30
   from "/home/veronica/public_html/uptt/modulos/pie/pie_interno.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5f9aa9ddb931b6_63952966',
+  'unifunc' => 'content_5fa2c862396e46_66089242',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'b6f521acef41ff05f0b720fdddff1d840ad51fb9' => 
     array (
       0 => '/home/veronica/public_html/uptt/modulos/pie/pie_interno.html',
-      1 => 1603201353,
+      1 => 1604498231,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5f9aa9ddb931b6_63952966 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5fa2c862396e46_66089242 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
     <!-- Scroll to Top Button-->
   <a class="scroll-to-top rounded" href="#page-top">
@@ -60,8 +60,6 @@ function content_5f9aa9ddb931b6_63952966 (Smarty_Internal_Template $_smarty_tpl)
  
 
 
-
-    </footer>
 
 
 

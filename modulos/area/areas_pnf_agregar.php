@@ -29,6 +29,7 @@ $area_actual=bd_areas_pnf_datos($id_pnf, $id_nucleo);
  	}
  	$i=$i+1;
  }
+ 
 $smarty->assign('id_pnf',$id_pnf);
 $smarty->assign('areas',$areas);
 $smarty->display('areas_pnf_agregar.html');

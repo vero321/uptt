@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-10-29 10:29:16
+/* Smarty version 3.1.30, created on 2020-11-11 10:42:20
   from "/home/veronica/public_html/uptt/modulos/navegacion/cabecera2.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5f9ad1bc505429_66075304',
+  'unifunc' => 'content_5fabf84cb80f02_21939398',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '3038c6089aaf82eeb3d5195bb16cb719fd4454fa' => 
     array (
       0 => '/home/veronica/public_html/uptt/modulos/navegacion/cabecera2.html',
-      1 => 1603971271,
+      1 => 1605105064,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5f9ad1bc505429_66075304 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5fabf84cb80f02_21939398 (Smarty_Internal_Template $_smarty_tpl) {
 if (!is_callable('smarty_modifier_capitalize')) require_once '/home/veronica/public_html/uptt/vendor/smarty/libs/plugins/modifier.capitalize.php';
 ?>
 
@@ -57,7 +57,7 @@ if (!is_callable('smarty_modifier_capitalize')) require_once '/home/veronica/pub
               <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <i class="fa fa-search fa-fw"></i>
               </a>
-              <!-- Dropdown - Messages
+              Dropdown - Messages
               <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in" aria-labelledby="searchDropdown">
                 <form class="form-inline mr-auto w-100 navbar-search">
                   <div class="input-group">
@@ -104,7 +104,7 @@ for ($__section_i_0_iteration = 1, $_smarty_tpl->tpl_vars['__smarty_section_i']-
 &n=<?php echo (isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null);?>
 ">
                   <div class="mr-3">
-                    <div class="icon-circle bg-primary">
+                    <div class="icon-circle bg-primary"> 
                       <i class="fa fa-desktop fa-fw text-white"></i>
                     </div>
                   </div>

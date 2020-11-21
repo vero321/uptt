@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-10-29 10:28:31
+/* Smarty version 3.1.30, created on 2020-11-10 10:42:37
   from "/home/veronica/public_html/uptt/modulos/propuesta/templates/propuesta_agregar.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5f9ad18f5c4623_51002320',
+  'unifunc' => 'content_5faaa6dd2cd2b5_25723116',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'e539bf609b43d32e336d7e065d9f819d0ab86fb4' => 
     array (
       0 => '/home/veronica/public_html/uptt/modulos/propuesta/templates/propuesta_agregar.html',
-      1 => 1603981702,
+      1 => 1605019356,
       2 => 'file',
     ),
   ),
@@ -25,7 +25,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:../../pie/pie_interno.html' => 1,
   ),
 ),false)) {
-function content_5f9ad18f5c4623_51002320 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5faaa6dd2cd2b5_25723116 (Smarty_Internal_Template $_smarty_tpl) {
 if (!is_callable('smarty_modifier_capitalize')) require_once '/home/veronica/public_html/uptt/vendor/smarty/libs/plugins/modifier.capitalize.php';
 if (!is_callable('smarty_modifier_date_format')) require_once '/home/veronica/public_html/uptt/vendor/smarty/libs/plugins/modifier.date_format.php';
 $_smarty_tpl->_subTemplateRender("file:../../navegacion/cab.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
@@ -53,20 +53,6 @@ $_smarty_tpl->_subTemplateRender("file:../../navegacion/cab.html", $_smarty_tpl-
                     	id="propuesta_agregar"
                     	name="propuesta_agregar">
                   
-                      	<div class="form-group">
-                          <label for="nombre_pnf">Nombre Del PNF</label>
-                          <input 
-                            type="text" 
-                            title="Escriba el Nombre Completo del PNF" 
-                            required="required" 
-                            class="form-control" 
-                            id="nombre_largo" 
-                            name="nombre_largo"
-                            value="<?php echo $_smarty_tpl->tpl_vars['pnf']->value['nombre_largo'];?>
-" disabled="">
-                        </div>
-
-
 
                       <input type="hidden" name="equipo_id" value="<?php echo $_smarty_tpl->tpl_vars['equipo_id']->value;?>
 ">
@@ -97,6 +83,15 @@ $_smarty_tpl->_subTemplateRender("file:../../navegacion/cab.html", $_smarty_tpl-
 
                         <div class="form-group">
                         <label for="autores">Autores</label>
+                        <div class="form_datos"><?php echo smarty_modifier_capitalize($_smarty_tpl->tpl_vars['lider']->value['nombre']);?>
+ <?php echo smarty_modifier_capitalize($_smarty_tpl->tpl_vars['lider']->value['apellido']);?>
+</div>
+                        <input 
+                            type="hidden" 
+                            name="lider" 
+                            value="<?php echo $_smarty_tpl->tpl_vars['lider']->value['id'];?>
+">
+                        
                         <?php
 $__section_i_0_saved = isset($_smarty_tpl->tpl_vars['__smarty_section_i']) ? $_smarty_tpl->tpl_vars['__smarty_section_i'] : false;
 $__section_i_0_loop = (is_array(@$_loop=$_smarty_tpl->tpl_vars['equipo']->value) ? count($_loop) : max(0, (int) $_loop));

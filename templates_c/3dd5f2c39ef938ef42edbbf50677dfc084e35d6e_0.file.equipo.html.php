@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-10-29 13:15:08
+/* Smarty version 3.1.30, created on 2020-11-04 11:27:33
   from "/home/veronica/public_html/uptt/modulos/equipo/templates/equipo.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5f9af89c5e3719_50673959',
+  'unifunc' => 'content_5fa2c865f15db5_74031573',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '3dd5f2c39ef938ef42edbbf50677dfc084e35d6e' => 
     array (
       0 => '/home/veronica/public_html/uptt/modulos/equipo/templates/equipo.html',
-      1 => 1603991706,
+      1 => 1603991782,
       2 => 'file',
     ),
   ),
@@ -26,7 +26,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:../../pie/pie_interno.html' => 1,
   ),
 ),false)) {
-function content_5f9af89c5e3719_50673959 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5fa2c865f15db5_74031573 (Smarty_Internal_Template $_smarty_tpl) {
 if (!is_callable('smarty_modifier_capitalize')) require_once '/home/veronica/public_html/uptt/vendor/smarty/libs/plugins/modifier.capitalize.php';
 $_smarty_tpl->_subTemplateRender("file:../../navegacion/cab.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
@@ -52,8 +52,7 @@ $_smarty_tpl->_subTemplateRender("file:../../navegacion/cab.html", $_smarty_tpl-
 		<i class="fa fa-edit fa-sm"></i>
 		</a>
 
-  <h5 align="right" style="margin-top: 10px;"><a class="<?php if ($_smarty_tpl->tpl_vars['propuesta']->value['id_equipo'] > '0') {?>
-          disabled <?php }?>" href="../propuesta/propuesta.php?equipo_id=<?php echo $_smarty_tpl->tpl_vars['lider']->value['id'];?>
+  <h5 align="right" style="margin-top: 10px;"><a href="../propuesta/propuesta.php?equipo_id=<?php echo $_smarty_tpl->tpl_vars['lider']->value['id'];?>
 "><span class="badge lg badge-pill badge-secondary" title="Propuesta"><i class="fa fa-list-alt">&nbsp;&nbsp;</i>Propuesta</span></a></h5>
 	</h4>
 	</div>

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-10-29 07:39:19
+/* Smarty version 3.1.30, created on 2020-11-11 10:31:12
   from "/home/veronica/public_html/uptt/modulos/navegacion/cab.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5f9aa9e72f6281_53075006',
+  'unifunc' => 'content_5fabf5b0ac3603_39309554',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '4b5ab7558216a8611b302098dfd79fe88eb8b6b0' => 
     array (
       0 => '/home/veronica/public_html/uptt/modulos/navegacion/cab.html',
-      1 => 1599067016,
+      1 => 1604498231,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5f9aa9e72f6281_53075006 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5fabf5b0ac3603_39309554 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -31,13 +31,13 @@ function content_5f9aa9e72f6281_53075006 (Smarty_Internal_Template $_smarty_tpl)
    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
    <!-- llama los estilos de DataTablet -->
   <link href="../../vendor/DataTables/datatables.min.css" rel="stylesheet" type="text/css">
+  <!--link href="../../vendor/DataTables/buttons/buttons.dataTables.min.css" rel="stylesheet" type="text/css">
+  <link href="../../vendor/DataTables/buttons/jquery.dataTables.min.css" rel="stylesheet" type="text/css"-->
   <link href="../../vendor/DataTables/css/dataTables.bootstrap4.css" rel="stylesheet"  type="text/css">
   <link href="../../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
   <link href="../../estilos/sb-admin-2.css" rel="stylesheet">
   <link href="../../estilos/personal2.css" rel="stylesheet">
 
-  <link href="../../vendor/DataTables/buttons/buttons.dataTables.min.css" rel="stylesheet" type="text/css">
-  <link href="../../vendor/DataTables/buttons/jquery.dataTables.min.css" rel="stylesheet" type="text/css">
 
   <title>Repositorio</title>
   <link  rel="shortcut icon" href="../../imagenes/logoejem.png">
