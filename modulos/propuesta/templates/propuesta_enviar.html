@@ -36,7 +36,7 @@
                   <tr>
                     <td>
                     {if $lider.foto_perfil == NULL}
-                      <img class="img-thumbnail img-user4 rounded-circle" src="../../imagenes/perfil/user.png">
+                      <i class="fas fa-user fa-4x img-profile rounded-circle p-2 bg-gray-200"></i>
                     {else}
                     <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title=""
                    data-image="../../imagenes/perfil/{$lider.foto_perfil}"
@@ -56,7 +56,7 @@
                   <tr>
                     <td>
                    {if $equipo[i].foto_perfil == NULL}
-                      <img class="img-thumbnail img-user4 rounded-circle" src="../../imagenes/perfil/user.png">
+                      <i class="fas fa-user fa-4x img-profile rounded-circle p-2 bg-gray-200"></i>
                     {else}
                     <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title=""
                    data-image="../../imagenes/perfil/{$equipo[i].foto_perfil}"
@@ -110,7 +110,7 @@
     </div>
 
   <!--card localidad -->
-  <div class="col-md-7">
+  <div class="col-md-6">
     <div class="card shadow mb-4">
       <!-- Card Header - Accordion -->
       <a href="#collapseCard_propuestas" class="d-block card-header py-3" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="collapseCard_propuestas">
@@ -144,7 +144,7 @@
   </div>
   <!--card -->
 
-    <div class="col-md-5">
+    <div class="col-md-6">
         <!-- Card Header - Obserbaciones -->
         <div class="card shadow mb-4">
         <a href="#collapseCard_observaciones" class="d-block card-header py-3" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="collapseCard_observaciones">
@@ -163,7 +163,7 @@
                 <label>Example textarea</label>
                 <textarea class="form-control" name="observacion" rows="3"></textarea>
               </div>
-              <input type="submit" value="Save Changes" class="btn btn-success float-right">
+              <input type="submit" value="Enviar propuesta al comite" class="btn btn-success float-right">
 
             </form>
           </div>

@@ -6,7 +6,7 @@
       <div id="content">
 
         <!-- Topbar -->
-        <nav class="navbar navbar-expand navbar-light topbar mb-4 static-top shadow  border-bottom-primary">
+        <nav class="navbar navbar-expand navbar-light topbar mb-4 static-top shadow  border-bottom-gray">
           <!-- Sidebar Toggle (Topbar) -->
           <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
             <i class="fa fa-bars"></i>
@@ -50,11 +50,11 @@
             <!-- Nav Item - Alerts -->
             
             <li class="nav-item dropdown no-arrow mx-1">
-              <a class="nav-link dropdown-toggle text-primary" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <a class="nav-link dropdown-toggle text-gray-600" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               {if isset($smarty.session["numero"]) == true }
                 <span>{$smarty.session["r"][$smarty.session["numero"]].rol}</span>
               {else}
-              <span>Roles</span>
+              <span class="mr-2">Roles</span>
               {/if}
                 <i class="fa fa-desktop fa-fw"></i>
                 <!--Counter - Alerts -->
@@ -68,12 +68,12 @@
                 {section  name=i loop= $smarty.session["r"]}
                 <a class="dropdown-item d-flex align-items-center" href="../distribuidor/distribuidor.php?r={$smarty.session['r'][i].id_rol}&n={$smarty.section.i.index}">
                   <div class="mr-3">
-                    <div class="icon-circle bg-primary">
+                    <div class="icon-circle bg-gray-500">
                       <i class="fa fa-desktop fa-fw text-white"></i>
                     </div>
                   </div>
                   <div>
-                    <span class="font-weight-bold">{$smarty.session["r"][i].rol|capitalize}
+                    <span class="font-weight-bold text-gray-800">{$smarty.session["r"][i].rol|capitalize}
                     {if $smarty.session["r"][i].id_nucleo != NULL }
                       {$smarty.session["r"][i].nucleo}
                     {/if}
@@ -93,9 +93,10 @@
             <!-- Nav Item - User Information -->
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="mr-2 d-none d-lg-inline small text-primary">{$smarty.session["u"]["correo"]}</span>
+                <span class="mr-2 d-none d-lg-inline small text-gray-600">{$smarty.session["u"]["correo"]}</span>
                 {if $smarty.session['u']['foto_perfil'] == NULL}
-                  <img class="img-profile rounded-circle" src="../../imagenes/perfil/user.png">
+                <i class="fas fa-user fa-2x img-profile rounded-circle p-2 bg-gray-200"></i>
+
                  {else}
                     <img class="img-profile rounded-circle"
                          src="../../imagenes/perfil/{$smarty.session['u']['foto_perfil']}"
@@ -107,12 +108,12 @@
               <!-- Dropdown - User Information -->
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
                 <a class="dropdown-item" href="../personas/personas_datos.php?id={$smarty.session['u']['id']}">
-                  <i class="fa fa-user fa-sm fa-fw mr-2  text-claro"></i>
+                  <i class="fa fa-user fa-sm fa-fw mr-2  text-gray-600"></i>
                   Perfil
                 </a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
-                  <i class="fa fa-sign-out-alt fa-sm fa-fw mr-2 text-claro"></i>
+                  <i class="fa fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-600"></i>
                   Cerrar sesión
                 </a>
               </div>

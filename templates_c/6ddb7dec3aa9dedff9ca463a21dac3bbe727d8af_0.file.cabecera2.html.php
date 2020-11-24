@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-10-29 10:48:41
+/* Smarty version 3.1.30, created on 2020-11-18 16:39:14
   from "/home/palencia/public_html/proyecto4/uptt/modulos/navegacion/cabecera2.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5f9ad649c9bf28_09285004',
+  'unifunc' => 'content_5fb58672cb0db7_96421717',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '6ddb7dec3aa9dedff9ca463a21dac3bbe727d8af' => 
     array (
       0 => '/home/palencia/public_html/proyecto4/uptt/modulos/navegacion/cabecera2.html',
-      1 => 1603913355,
+      1 => 1605731744,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5f9ad649c9bf28_09285004 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5fb58672cb0db7_96421717 (Smarty_Internal_Template $_smarty_tpl) {
 if (!is_callable('smarty_modifier_capitalize')) require_once '/home/palencia/public_html/proyecto4/uptt/vendor/smarty/libs/plugins/modifier.capitalize.php';
 ?>
 
@@ -93,12 +93,12 @@ if (!is_callable('smarty_modifier_capitalize')) require_once '/home/palencia/pub
                   roles
                 </h6>
                 <?php
-$__section_i_2_saved = isset($_smarty_tpl->tpl_vars['__smarty_section_i']) ? $_smarty_tpl->tpl_vars['__smarty_section_i'] : false;
-$__section_i_2_loop = (is_array(@$_loop=$_SESSION["r"]) ? count($_loop) : max(0, (int) $_loop));
-$__section_i_2_total = $__section_i_2_loop;
+$__section_i_1_saved = isset($_smarty_tpl->tpl_vars['__smarty_section_i']) ? $_smarty_tpl->tpl_vars['__smarty_section_i'] : false;
+$__section_i_1_loop = (is_array(@$_loop=$_SESSION["r"]) ? count($_loop) : max(0, (int) $_loop));
+$__section_i_1_total = $__section_i_1_loop;
 $_smarty_tpl->tpl_vars['__smarty_section_i'] = new Smarty_Variable(array());
-if ($__section_i_2_total != 0) {
-for ($__section_i_2_iteration = 1, $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] = 0; $__section_i_2_iteration <= $__section_i_2_total; $__section_i_2_iteration++, $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']++){
+if ($__section_i_1_total != 0) {
+for ($__section_i_1_iteration = 1, $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] = 0; $__section_i_1_iteration <= $__section_i_1_total; $__section_i_1_iteration++, $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']++){
 ?>
                 <a class="dropdown-item d-flex align-items-center" href="../distribuidor/distribuidor.php?r=<?php echo $_SESSION['r'][(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['id_rol'];?>
 &n=<?php echo (isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null);?>
@@ -125,8 +125,8 @@ for ($__section_i_2_iteration = 1, $_smarty_tpl->tpl_vars['__smarty_section_i']-
                 <?php
 }
 }
-if ($__section_i_2_saved) {
-$_smarty_tpl->tpl_vars['__smarty_section_i'] = $__section_i_2_saved;
+if ($__section_i_1_saved) {
+$_smarty_tpl->tpl_vars['__smarty_section_i'] = $__section_i_1_saved;
 }
 ?>
                 
@@ -141,7 +141,8 @@ $_smarty_tpl->tpl_vars['__smarty_section_i'] = $__section_i_2_saved;
                 <span class="mr-2 d-none d-lg-inline small text-primary"><?php echo $_SESSION["u"]["correo"];?>
 </span>
                 <?php if ($_SESSION['u']['foto_perfil'] == NULL) {?>
-                  <img class="img-profile rounded-circle" src="../../imagenes/perfil/user.png">
+                <i class="fas fa-user fa-2x img-profile rounded-circle p-1"></i>
+
                  <?php } else { ?>
                     <img class="img-profile rounded-circle"
                          src="../../imagenes/perfil/<?php echo $_SESSION['u']['foto_perfil'];?>

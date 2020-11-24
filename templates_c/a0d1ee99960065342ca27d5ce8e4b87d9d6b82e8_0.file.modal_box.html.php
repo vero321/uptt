@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-10-28 16:37:43
+/* Smarty version 3.1.30, created on 2020-11-18 16:59:29
   from "/home/palencia/public_html/proyecto4/uptt/modulos/modal/modal_box.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5f99d697514f47_19162148',
+  'unifunc' => 'content_5fb58b31cc2040_90322425',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'a0d1ee99960065342ca27d5ce8e4b87d9d6b82e8' => 
     array (
       0 => '/home/palencia/public_html/proyecto4/uptt/modulos/modal/modal_box.html',
-      1 => 1600304398,
+      1 => 1605382874,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5f99d697514f47_19162148 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5fb58b31cc2040_90322425 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!-- The Modal -->
 <div class="modal" id="myModal">
@@ -51,12 +51,7 @@ function content_5f99d697514f47_19162148 (Smarty_Internal_Template $_smarty_tpl)
   </div>
 </div>
 
-<!-- Spinner 
+ 
 
-<div class="text-center" style="position: absolute; top: 50%; left: 50%;">
-  <div class="spinner-border text-primary" role="status" id="mi_spinner">
-    <span class="sr-only">Loading...</span>
-  </div>
-</div>
---><?php }
+<?php }
 }

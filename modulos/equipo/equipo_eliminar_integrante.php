@@ -6,7 +6,6 @@ include_once APP.'/modulos/config/inicializacion.php';
 $verificar=verificar();
 $id=$_GET['id'];
 $id_equipo=$_GET['id_equipo'];
-
 $persona=bd_personas_datos($id);
 
 $smarty->assign('id',$id);

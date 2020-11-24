@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-11-01 16:59:47
+/* Smarty version 3.1.30, created on 2020-11-18 17:04:34
   from "/home/palencia/public_html/proyecto4/uptt/modulos/equipo/templates/equipo_profesor.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5f9f21c3e7afd3_82859786',
+  'unifunc' => 'content_5fb58c630041e5_10976701',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '9857f41c03b589bdf0f44c952f790e498cac259a' => 
     array (
       0 => '/home/palencia/public_html/proyecto4/uptt/modulos/equipo/templates/equipo_profesor.html',
-      1 => 1604264385,
+      1 => 1605733391,
       2 => 'file',
     ),
   ),
@@ -25,7 +25,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:../../pie/pie_interno.html' => 1,
   ),
 ),false)) {
-function content_5f9f21c3e7afd3_82859786 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5fb58c630041e5_10976701 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:../../navegacion/cab.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -60,7 +60,7 @@ $_smarty_tpl->_subTemplateRender("file:../../navegacion/cab.html", $_smarty_tpl-
                   <tr>
                     <td>
                     <?php if ($_smarty_tpl->tpl_vars['lider']->value['foto_perfil'] == NULL) {?>
-                      <img class="img-thumbnail img-user4 rounded-circle" src="../../imagenes/perfil/user.png">
+                      <i class="fas fa-user fa-2x img-profile rounded-circle p-2 bg-gray-200"></i>
                     <?php } else { ?>
                     <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title=""
                    data-image="../../imagenes/perfil/<?php echo $_smarty_tpl->tpl_vars['lider']->value['foto_perfil'];?>
@@ -91,7 +91,7 @@ for ($__section_i_0_iteration = 1, $_smarty_tpl->tpl_vars['__smarty_section_i']-
                   <tr>
                     <td>
                    <?php if ($_smarty_tpl->tpl_vars['equipo']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['foto_perfil'] == NULL) {?>
-                      <img class="img-thumbnail img-user4 rounded-circle" src="../../imagenes/perfil/user.png">
+                      <i class="fas fa-user fa-2x img-profile rounded-circle p-2 bg-gray-200"></i>
                     <?php } else { ?>
                     <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title=""
                    data-image="../../imagenes/perfil/<?php echo $_smarty_tpl->tpl_vars['equipo']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['foto_perfil'];?>

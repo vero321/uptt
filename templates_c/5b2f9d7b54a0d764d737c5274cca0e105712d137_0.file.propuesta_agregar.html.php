@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-10-28 15:46:55
+/* Smarty version 3.1.30, created on 2020-11-24 11:28:45
   from "/home/palencia/public_html/proyecto4/uptt/modulos/propuesta/templates/propuesta_agregar.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5f99caafe79302_13059637',
+  'unifunc' => 'content_5fbd26ad85c2a1_33912458',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '5b2f9d7b54a0d764d737c5274cca0e105712d137' => 
     array (
       0 => '/home/palencia/public_html/proyecto4/uptt/modulos/propuesta/templates/propuesta_agregar.html',
-      1 => 1603843821,
+      1 => 1606231694,
       2 => 'file',
     ),
   ),
@@ -25,7 +25,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:../../pie/pie_interno.html' => 1,
   ),
 ),false)) {
-function content_5f99caafe79302_13059637 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5fbd26ad85c2a1_33912458 (Smarty_Internal_Template $_smarty_tpl) {
 if (!is_callable('smarty_modifier_capitalize')) require_once '/home/palencia/public_html/proyecto4/uptt/vendor/smarty/libs/plugins/modifier.capitalize.php';
 if (!is_callable('smarty_modifier_date_format')) require_once '/home/palencia/public_html/proyecto4/uptt/vendor/smarty/libs/plugins/modifier.date_format.php';
 $_smarty_tpl->_subTemplateRender("file:../../navegacion/cab.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
@@ -146,7 +146,7 @@ $_smarty_tpl->tpl_vars['__smarty_section_i'] = $__section_i_0_saved;
                             name="fecha"  
                             placeholder='<?php echo smarty_modifier_date_format(time(),"%d/%m/%Y");?>
 '
-                            value='<?php echo smarty_modifier_date_format(time(),"%d/%m/%Y");?>
+                            value='<?php echo $_smarty_tpl->tpl_vars['fecha']->value;?>
 ' 
                             name="fecha" 
                             value="<?php echo $_smarty_tpl->tpl_vars['fecha']->value;?>

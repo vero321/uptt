@@ -25,4 +25,4 @@ $smarty->assign('datos_propuesta',$datos_propuesta);
 $smarty->assign('propuestas',$propuestas);
 
 #$smarty->assign('propuestas',$propuestas);
-$smarty->display('propuestas_profesor.html');
+$smarty->display('propuesta_enviar.html');

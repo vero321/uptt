@@ -279,10 +279,15 @@ $(document)
 
 $('.mimodal').click(function(){
   var dataURL = $(this).attr('data-href');
-
+  
   $('.modal-body_repo').load(dataURL,function(){
       var etiqueta = dataURL.split('.php')[0];
       $('#myModal').modal({show:true});
 
   });
+});
+
+$(document).ready(function(){
+  //bloquea el SELECT
+  $("#")
 });

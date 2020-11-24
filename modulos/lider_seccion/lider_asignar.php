@@ -68,4 +68,4 @@ if (isset($_POST['id_usuario']) and !isset($_POST['id_rol']) ){
 }
 
 $smarty->assign('id_rol',$id_rol);
-$smarty->display('lider_asignar.html');
+$smarty->display('lider_asignar1.html');

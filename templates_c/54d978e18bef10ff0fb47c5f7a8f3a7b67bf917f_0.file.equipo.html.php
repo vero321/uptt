@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-10-28 15:33:50
+/* Smarty version 3.1.30, created on 2020-11-24 11:16:58
   from "/home/palencia/public_html/proyecto4/uptt/modulos/equipo/templates/equipo.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5f99c79ed5d4d3_97722822',
+  'unifunc' => 'content_5fbd23ea88cf88_95341523',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '54d978e18bef10ff0fb47c5f7a8f3a7b67bf917f' => 
     array (
       0 => '/home/palencia/public_html/proyecto4/uptt/modulos/equipo/templates/equipo.html',
-      1 => 1603843821,
+      1 => 1605735008,
       2 => 'file',
     ),
   ),
@@ -26,7 +26,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:../../pie/pie_interno.html' => 1,
   ),
 ),false)) {
-function content_5f99c79ed5d4d3_97722822 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5fbd23ea88cf88_95341523 (Smarty_Internal_Template $_smarty_tpl) {
 if (!is_callable('smarty_modifier_capitalize')) require_once '/home/palencia/public_html/proyecto4/uptt/vendor/smarty/libs/plugins/modifier.capitalize.php';
 $_smarty_tpl->_subTemplateRender("file:../../navegacion/cab.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
@@ -127,7 +127,7 @@ for ($__section_i_0_iteration = 1, $_smarty_tpl->tpl_vars['__smarty_section_i']-
                 	</td>
                 	<td>
                 	<?php if ($_smarty_tpl->tpl_vars['integrantes']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['foto_perfil'] == NULL) {?>
-                		<img class="img-thumbnail img-user rounded-circle" src="../../imagenes/perfil/user.png">
+                		<i class="fas fa-user fa-4x img-profile rounded-circle p-2 bg-gray-200"></i>
                     <?php } else { ?>
                     <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title=""
                    data-image="../../imagenes/perfil/<?php echo $_smarty_tpl->tpl_vars['integrantes']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['foto_perfil'];?>
@@ -144,7 +144,7 @@ for ($__section_i_0_iteration = 1, $_smarty_tpl->tpl_vars['__smarty_section_i']-
                       style="margin-bottom:3px; color:blue;" 
                       class="btn btn-default mimodal"
                       title="Eliminar integrante del equipo" 
-                      data-href="equipo_eliminar_integrante.php?id=<?php echo $_smarty_tpl->tpl_vars['integrantes']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['id_equipo_persona'];?>
+                      data-href="equipo_eliminar_integrante.php?id=<?php echo $_smarty_tpl->tpl_vars['integrantes']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['id'];?>
 &id_equipo=<?php echo $_smarty_tpl->tpl_vars['lider']->value['id'];?>
 ">
                       <i class="fa fa-trash"></i>

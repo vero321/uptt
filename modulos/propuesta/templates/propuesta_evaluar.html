@@ -1,0 +1,14 @@
+{include file="../../navegacion/cab.html"}
+{include file="../../navegacion/sidebar2.html"}
+{include file="../../navegacion/cabecera2.html"}
+
+<div class="container-fluid">
+	<ol class="breadcrumb">
+	    <li class="breadcrumb-item"><a href="../inicio/inicio_interno.php">Repo</a></li>
+	    <li class="breadcrumb-item"><a href="../distribuidor/distribuidor.php?r={$smarty.session['r'][$smarty.session['numero']].id_rol}&n={$smarty.session['numero']}">Panel {$smarty.session["r"][$smarty.session["numero"]].rol}</a></li>
+	    <li class="breadcrumb-item"><a href="propuesta_evaluar.php?id=NULL">Seciones</a></li>
+	    <li class="breadcrumb-item active" aria-current="page">Propuestas evaluar</li>
+	</ol>	
+</div>
+   
+{include file="../../pie/pie_interno.html"}

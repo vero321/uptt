@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-11-01 15:55:55
+/* Smarty version 3.1.30, created on 2020-11-18 17:04:38
   from "/home/palencia/public_html/proyecto4/uptt/modulos/lider_seccion/templates/lideres.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5f9f12cb8b70c0_56696736',
+  'unifunc' => 'content_5fb58c6685d839_77782415',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '5a815c38f16ade73908bf243d4db4e0acd9db8ca' => 
     array (
       0 => '/home/palencia/public_html/proyecto4/uptt/modulos/lider_seccion/templates/lideres.html',
-      1 => 1604260541,
+      1 => 1605733335,
       2 => 'file',
     ),
   ),
@@ -27,7 +27,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:../../pie/pie_interno.html' => 1,
   ),
 ),false)) {
-function content_5f9f12cb8b70c0_56696736 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5fb58c6685d839_77782415 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:../../navegacion/cab.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -122,7 +122,7 @@ for ($__section_i_0_iteration = 1, $_smarty_tpl->tpl_vars['__smarty_section_i']-
 ?>
                     
                    <?php if ($_smarty_tpl->tpl_vars['persona']->value['foto_perfil'] == NULL) {?>
-                      <img class="img-thumbnail img-user rounded-circle" src="../../imagenes/perfil/user.png">
+                      <i class="fas fa-user fa-2x img-profile rounded-circle p-2 bg-gray-200"></i>
                     <?php } else { ?>
                     <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title=""
                    data-image="../../imagenes/perfil/<?php echo $_smarty_tpl->tpl_vars['persona']->value['foto_perfil'];?>
@@ -167,7 +167,7 @@ for ($__section_i_0_iteration = 1, $_smarty_tpl->tpl_vars['__smarty_section_i']-
 ?>
                  
                    <?php if ($_smarty_tpl->tpl_vars['persona']->value['foto_perfil'] == NULL) {?>
-                      <img class="img-thumbnail img-user rounded-circle" src="../../imagenes/perfil/user.png">
+                      <i class="fas fa-user fa-2x img-profile rounded-circle p-2 bg-gray-200"></i>
                     <?php } else { ?>
                     <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title=""
                    data-image="../../imagenes/perfil/<?php echo $_smarty_tpl->tpl_vars['persona']->value['foto_perfil'];?>
@@ -213,7 +213,7 @@ for ($__section_i_0_iteration = 1, $_smarty_tpl->tpl_vars['__smarty_section_i']-
 ?>
                   
                    <?php if ($_smarty_tpl->tpl_vars['persona']->value['foto_perfil'] == NULL) {?>
-                      <img class="img-thumbnail img-user rounded-circle" src="../../imagenes/perfil/user.png">
+                      <i class="fas fa-user fa-2x img-profile rounded-circle p-2 bg-gray-200"></i>
                     <?php } else { ?>
                     <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title=""
                    data-image="../../imagenes/perfil/<?php echo $_smarty_tpl->tpl_vars['persona']->value['foto_perfil'];?>
@@ -253,7 +253,7 @@ echo $_smarty_tpl->tpl_vars['lider_seccion']->value[(isset($_smarty_tpl->tpl_var
 }?>&id_e=<?php if ($_smarty_tpl->tpl_vars['lider_seccion']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['id'] != NULL) {
 echo $_smarty_tpl->tpl_vars['lider_seccion']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['id'];
 }?>" class="p-1" title="Ver detalles integrantes del equipo"><i class="fa fa-info-circle"></i></a>
-              <a href="../propuesta/propuestas_profesor.php?id_s=<?php echo $_smarty_tpl->tpl_vars['seccion_profesor']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['id'];?>
+              <a href="../propuesta/propuesta_enviar.php?id_s=<?php echo $_smarty_tpl->tpl_vars['seccion_profesor']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['id'];?>
 &id_l=<?php if ($_smarty_tpl->tpl_vars['lider_seccion']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['id_persona'] != NULL) {
 echo $_smarty_tpl->tpl_vars['lider_seccion']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['id_persona'];
 }?>&id_e=<?php if ($_smarty_tpl->tpl_vars['lider_seccion']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['id'] != NULL) {

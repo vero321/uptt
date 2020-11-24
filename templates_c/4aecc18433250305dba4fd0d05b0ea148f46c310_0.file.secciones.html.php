@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-10-28 16:45:43
+/* Smarty version 3.1.30, created on 2020-11-18 17:27:04
   from "/home/palencia/public_html/proyecto4/uptt/modulos/secciones/templates/secciones.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5f99d8772a3d78_85532380',
+  'unifunc' => 'content_5fb591a83a7905_83862660',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '4aecc18433250305dba4fd0d05b0ea148f46c310' => 
     array (
       0 => '/home/palencia/public_html/proyecto4/uptt/modulos/secciones/templates/secciones.html',
-      1 => 1603917939,
+      1 => 1605734822,
       2 => 'file',
     ),
   ),
@@ -27,7 +27,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:../../pie/pie_interno.html' => 1,
   ),
 ),false)) {
-function content_5f99d8772a3d78_85532380 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5fb591a83a7905_83862660 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:../../navegacion/cab.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -129,7 +129,7 @@ for ($__section_i_0_iteration = 1, $_smarty_tpl->tpl_vars['__smarty_section_i']-
                         <div class="row">
                             <div class="col-md-4">
                            <?php if ($_smarty_tpl->tpl_vars['persona']->value['foto_perfil'] == NULL) {?>
-                              <img class="img-thumbnail img-user rounded-circle" src="../../imagenes/perfil/user.png">
+                              <i class="fas fa-user fa-4x img-profile rounded-circle p-2 bg-gray-200"></i>
                             <?php } else { ?>
                             <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title=""
                            data-image="../../imagenes/perfil/<?php echo $_smarty_tpl->tpl_vars['persona']->value['foto_perfil'];?>

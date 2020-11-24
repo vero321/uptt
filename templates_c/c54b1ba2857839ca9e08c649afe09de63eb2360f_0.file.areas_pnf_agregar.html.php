@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-11-03 17:38:52
+/* Smarty version 3.1.30, created on 2020-11-04 10:55:35
   from "/home/palencia/public_html/proyecto4/uptt/modulos/area/templates/areas_pnf_agregar.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5fa1cdec2efb74_50731681',
+  'unifunc' => 'content_5fa2c0e76a68f4_47491859',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'c54b1ba2857839ca9e08c649afe09de63eb2360f' => 
     array (
       0 => '/home/palencia/public_html/proyecto4/uptt/modulos/area/templates/areas_pnf_agregar.html',
-      1 => 1604439529,
+      1 => 1604439599,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5fa1cdec2efb74_50731681 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5fa2c0e76a68f4_47491859 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 
 <div class="container">
@@ -39,8 +39,7 @@ function content_5fa1cdec2efb74_50731681 (Smarty_Internal_Template $_smarty_tpl)
                       id="areas_agregar"
                       name="areas_agregar">
                     
-                        <input type="hidden" name="id" value="<?php echo $_smarty_tpl->tpl_vars['id_pnf']->value;?>
-">             
+                                          
                         <div class="form-group">
                           <label for="nombre">Nombre Completo</label>
                           <input 

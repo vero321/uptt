@@ -75,7 +75,7 @@
                 	</td>
                 	<td>
                 	{if $integrantes[i].foto_perfil == NULL}
-                		<img class="img-thumbnail img-user rounded-circle" src="../../imagenes/perfil/user.png">
+                		<i class="fas fa-user fa-4x img-profile rounded-circle p-2 bg-gray-200"></i>
                     {else}
                     <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title=""
                    data-image="../../imagenes/perfil/{$integrantes[i].foto_perfil}"
@@ -90,7 +90,7 @@
                       style="margin-bottom:3px; color:blue;" 
                       class="btn btn-default mimodal"
                       title="Eliminar integrante del equipo" 
-                      data-href="equipo_eliminar_integrante.php?id={$integrantes[i].id_equipo_persona}&id_equipo={$lider.id}">
+                      data-href="equipo_eliminar_integrante.php?id={$integrantes[i].id}&id_equipo={$lider.id}">
                       <i class="fa fa-trash"></i>
                     </a>
                   {/if}

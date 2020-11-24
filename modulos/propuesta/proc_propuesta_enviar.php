@@ -8,6 +8,6 @@ $propuestas = $_POST['id_propuestas'];
 $observacion = $_POST['observacion'];
 $status = $_POST['status'];
 
-bd_propuesta_cambiar_estatus($propuestas, $observacion, $status);
+#bd_propuesta_cambiar_estatus($propuestas, $observacion, $status);
 
 vq($status);

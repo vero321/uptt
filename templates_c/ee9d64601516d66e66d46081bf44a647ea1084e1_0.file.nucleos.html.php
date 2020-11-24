@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-10-31 21:20:21
+/* Smarty version 3.1.30, created on 2020-11-18 16:38:45
   from "/home/palencia/public_html/proyecto4/uptt/modulos/nucleo/templates/nucleos.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5f9e0d559a0342_61979199',
+  'unifunc' => 'content_5fb5865567b3b4_19915010',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'ee9d64601516d66e66d46081bf44a647ea1084e1' => 
     array (
       0 => '/home/palencia/public_html/proyecto4/uptt/modulos/nucleo/templates/nucleos.html',
-      1 => 1604193620,
+      1 => 1605731924,
       2 => 'file',
     ),
   ),
@@ -27,7 +27,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:../../pie/pie_interno.html' => 1,
   ),
 ),false)) {
-function content_5f9e0d559a0342_61979199 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5fb5865567b3b4_19915010 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:../../navegacion/cab.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -128,7 +128,8 @@ for ($__section_i_0_iteration = 1, $_smarty_tpl->tpl_vars['__smarty_section_i']-
                           <div class="row">
                             <div class="col-md-4">
                            <?php if ($_smarty_tpl->tpl_vars['persona']->value['foto_perfil'] == NULL) {?>
-                              <img class="img-thumbnail img-user rounded-circle" src="../../imagenes/perfil/user.png">
+                 <i class="fas fa-user fa-2x img-profile rounded-circle p-1"></i>
+
                             <?php } else { ?>
                             <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title=""
                            data-image="../../imagenes/perfil/<?php echo $_smarty_tpl->tpl_vars['persona']->value['foto_perfil'];?>
@@ -252,7 +253,7 @@ for ($__section_i_1_iteration = 1, $_smarty_tpl->tpl_vars['__smarty_section_i']-
                           <div class="row">
                             <div class="col-md-4">
                            <?php if ($_smarty_tpl->tpl_vars['persona']->value['foto_perfil'] == NULL) {?>
-                              <img class="img-thumbnail img-user rounded-circle" src="../../imagenes/perfil/user.png">
+                 <i class="fas fa-user fa-2x img-profile rounded-circle p-1"></i>
                             <?php } else { ?>
                             <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title=""
                            data-image="../../imagenes/perfil/<?php echo $_smarty_tpl->tpl_vars['persona']->value['foto_perfil'];?>

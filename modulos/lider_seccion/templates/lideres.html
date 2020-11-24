@@ -67,7 +67,7 @@
                   {$persona=bd_personas_datos($lider_seccion[i].id_persona)}
                     
                    {if $persona.foto_perfil == NULL}
-                      <img class="img-thumbnail img-user rounded-circle" src="../../imagenes/perfil/user.png">
+                      <i class="fas fa-user fa-4x img-profile rounded-circle p-2 bg-gray-200"></i>
                     {else}
                     <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title=""
                    data-image="../../imagenes/perfil/{$persona.foto_perfil}"
@@ -101,7 +101,7 @@
                   {$persona=bd_personas_datos($lider_seccion[i].tutor_academico)}
                  
                    {if $persona.foto_perfil == NULL}
-                      <img class="img-thumbnail img-user rounded-circle" src="../../imagenes/perfil/user.png">
+                      <i class="fas fa-user fa-2x img-profile rounded-circle p-2 bg-gray-200"></i>
                     {else}
                     <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title=""
                    data-image="../../imagenes/perfil/{$persona.foto_perfil}"
@@ -136,7 +136,7 @@
                   {$persona=bd_personas_datos($lider_seccion[i].tutor_comunitario)}
                   
                    {if $persona.foto_perfil == NULL}
-                      <img class="img-thumbnail img-user rounded-circle" src="../../imagenes/perfil/user.png">
+                      <i class="fas fa-user fa-2x img-profile rounded-circle p-2 bg-gray-200"></i>
                     {else}
                     <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title=""
                    data-image="../../imagenes/perfil/{$persona.foto_perfil}"
@@ -163,7 +163,7 @@
 
             <td>
               <a href="../equipo/equipo_profesor.php?id_l={if $lider_seccion[i].id_persona !=  NULL}{$lider_seccion[i].id_persona}{/if}&id_e={if $lider_seccion[i].id !=  NULL}{$lider_seccion[i].id}{/if}" class="p-1" title="Ver detalles integrantes del equipo"><i class="fa fa-info-circle"></i></a>
-              <a href="../propuesta/propuestas_profesor.php?id_s={$seccion_profesor[i].id}&id_l={if $lider_seccion[i].id_persona !=  NULL}{$lider_seccion[i].id_persona}{/if}&id_e={if $lider_seccion[i].id !=  NULL}{$lider_seccion[i].id}{/if}
+              <a href="../propuesta/propuesta_enviar.php?id_s={$seccion_profesor[i].id}&id_l={if $lider_seccion[i].id_persona !=  NULL}{$lider_seccion[i].id_persona}{/if}&id_e={if $lider_seccion[i].id !=  NULL}{$lider_seccion[i].id}{/if}
               " class="-1" title="Ver Propuestas del equipo"><i class="fas fa-clipboard-list"></i></a>
               {if in_array("LIDE_E",$verificar) == TRUE}
               <a 

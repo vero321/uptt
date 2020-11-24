@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-11-01 14:55:09
+/* Smarty version 3.1.30, created on 2020-11-18 16:37:09
   from "/home/palencia/public_html/proyecto4/uptt/modulos/navegacion/cabecera2.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5f9f048d080539_56686672',
+  'unifunc' => 'content_5fb585f5067dc5_68734154',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '507eaf89331b0494b6c581289a0859d243ea44aa' => 
     array (
       0 => '/home/palencia/public_html/proyecto4/uptt/modulos/navegacion/cabecera2.html',
-      1 => 1604256897,
+      1 => 1605731744,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5f9f048d080539_56686672 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5fb585f5067dc5_68734154 (Smarty_Internal_Template $_smarty_tpl) {
 if (!is_callable('smarty_modifier_capitalize')) require_once '/home/palencia/public_html/proyecto4/uptt/vendor/smarty/libs/plugins/modifier.capitalize.php';
 ?>
 
@@ -141,7 +141,8 @@ $_smarty_tpl->tpl_vars['__smarty_section_i'] = $__section_i_0_saved;
                 <span class="mr-2 d-none d-lg-inline small text-primary"><?php echo $_SESSION["u"]["correo"];?>
 </span>
                 <?php if ($_SESSION['u']['foto_perfil'] == NULL) {?>
-                  <img class="img-profile rounded-circle" src="../../imagenes/perfil/user.png">
+                <i class="fas fa-user fa-2x img-profile rounded-circle p-1"></i>
+
                  <?php } else { ?>
                     <img class="img-profile rounded-circle"
                          src="../../imagenes/perfil/<?php echo $_SESSION['u']['foto_perfil'];?>

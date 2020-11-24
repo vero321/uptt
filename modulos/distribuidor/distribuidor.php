@@ -17,8 +17,8 @@ verificar();
 
 $rol=$_GET['r'];
 $n=$_GET['n'];
-$_SESSION['actual']=$rol;
-$_SESSION['numero']=$n;
+$r=$_SESSION['actual']=$rol;
+$n=$_SESSION['numero']=$n;
 
 #vq($_SESSION);
 

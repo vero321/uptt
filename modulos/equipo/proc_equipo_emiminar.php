@@ -3,7 +3,6 @@ define('MOD', 'equipo');
 require_once '../config/app.php';
 include_once APP.'/modulos/config/inicializacion.php';
 
-
 $id=$_GET['id'];
 $id_equipo=$_GET['id_equipo'];
 $equipo=bd_equipo_lider($id_equipo);

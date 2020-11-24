@@ -11,9 +11,11 @@ $lider=bd_equipo_lider();
 $confmar_lider=count($lider);
 
 if ($confmar_lider >1){
+	#si el lider tiene mas de un equipo asignado lo envia a una pagina par seleccionar el equipo
 	$smarty->assign('lider',$lider);
 	$smarty->display('verificar_equipo.html');
 }else{
+	#en caso contrario lo envia a la pagina equipo donde se muesttan los integrantes y las interacciones del lider
 	$lider=$lider[0];
 	$personas=bd_equipo_personas_datos($lider['id']);
 	$i=0;
@@ -30,5 +32,5 @@ if ($confmar_lider >1){
 	}
 	$smarty->assign('lider',$lider);
 	$smarty->display('equipo.html');
-
+	#vq($integrantes);
 }

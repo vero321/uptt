@@ -20,7 +20,6 @@ foreach ($personas as $persona ) {
 	#Buscamos lo nombres de las personas pertenecientes al equipo
 	$datos_persona= bd_personas_datos($persona['id']);
 	$integrantes[$i]= $datos_persona;
-	$integrantes[$i]['id_equipo_persona']=$persona['id'];
 	$i=$i+1;
 }
 

@@ -1346,7 +1346,7 @@ function bd_asignar_profesor_proyecto($id_seccion,$id_rol,$id_usuario){
     $n = sql2array($sql0);
     $numero = count($n);
     
-if ($numero == 0) 
+if ($numero < 1) 
 {
      $sql0 = "
         INSERT INTO USUARIOS__ROLES (id_usuario, id_rol, id_nucleo, id_pnf)
@@ -1424,9 +1424,9 @@ function bd_areas_pnf_datos($id_pnf, $id_nucleo){
 }
 
 
-function bd_areas_pnf_agregar($nombre, $id, $id_pnf, $id_nucleo){
-    $sql = "INSERT INTO AREAS_PNF (nombre, id, id_pnf, id_nucleo)
-    VALUES ('{$nombre}', '{$id}', '{$id_pnf}', '{$id_nucleo}')
+function bd_areas_pnf_agregar($nombre, $id_pnf, $id_nucleo){
+    $sql = "INSERT INTO AREAS_PNF (nombre, id_pnf, id_nucleo)
+    VALUES ('{$nombre}', '{$id_pnf}', '{$id_nucleo}')
     ";
     sql($sql);    
 }
@@ -1520,17 +1520,18 @@ function bd_agregar_equipo($nombre, $id_seccion){
 function bd_asignar_lider_equipo($id_usuario,$id_rol,$seccion,$equipo){
     $id_pnf = $_SESSION['r'][$_SESSION['numero']]['id_pnf'];
     $id_nucleo=$_SESSION['r'][$_SESSION['numero']]['id_nucleo'];
-    $sql0="
+    
+    $sql1 = "
         INSERT INTO USUARIOS__ROLES (id_usuario, id_rol, id_nucleo, id_pnf)
         VALUES ('{$id_usuario}','{$id_rol}', '{$id_nucleo}', '{$id_pnf}')
         ";
-    sql($sql0);
-    $sql1 = " 
+    sql($sql1);
+    $sql2 = " 
         UPDATE EQUIPOS SET
         id_persona = '{$id_usuario}'
         WHERE id = '{$equipo}'
     ";
-    sql($sql1);
+    sql($sql2);
 }
 
 function bd_lider_equipo_cambiar($id_equipo, $id_rol, $id_usuario){
@@ -1654,7 +1655,9 @@ function bd_cambiar_nombre($id, $nombre){
 function bd_agregar_integrante($id,$id_rol,$id_usuario,$numero_integrantes){
     $id_pnf = $_SESSION['r'][$_SESSION['numero']]['id_pnf'];
     $id_nucleo=$_SESSION['r'][$_SESSION['numero']]['id_nucleo'];
-
+    # sql0 incerta el rol a la persona en la tabla USUARIOS__ROLES
+    # sql1 inserta la ci del nuevo intef¿grante en el equipo correspondiente   
+    # sql2 actualiza el numero de integrantes del equipo 
     $sql0="
         INSERT INTO USUARIOS__ROLES (id_usuario, id_rol, id_nucleo, id_pnf)
         VALUES ('{$id_usuario}','{$id_rol}', '{$id_nucleo}', '{$id_pnf}')
@@ -1668,15 +1671,17 @@ function bd_agregar_integrante($id,$id_rol,$id_usuario,$numero_integrantes){
     $sql2="
         UPDATE EQUIPOS SET
         numero_integrantes = '{$numero_integrantes}'
-        WHERE id = $id
+        WHERE id = '{$id}'
     ";
     sql($sql2);
 }
 
 function bd_equipo_eliminar_integrante($id,$numero_integrantes,$id_equipo){
+    #sql elimna el usuario correspondiente 
+    #sql actualiza el numero de integrantes 
     $sql = "
         DELETE FROM EQUIPOS__PERSONAS
-        WHERE id = '{$id}'
+        WHERE id_persona = '{$id}' and  id_equipo = '{$id_equipo}'
         ";
     sql($sql);
     $sql1="

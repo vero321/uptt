@@ -1,0 +1,54 @@
+{include file="../../navegacion/cab.html"}
+{include file="../../navegacion/sidebar2.html"}
+{include file="../../navegacion/cabecera2.html"}
+
+<div class="container-fluid">
+	<ol class="breadcrumb">
+	    <li class="breadcrumb-item"><a href="../inicio/inicio_interno.php">Repo</a></li>
+	    <li class="breadcrumb-item"><a href="../distribuidor/distribuidor.php?r={$smarty.session['r'][$smarty.session['numero']].id_rol}&n={$smarty.session['numero']}">Panel {$smarty.session["r"][$smarty.session["numero"]].rol}</a></li>
+	    <li class="breadcrumb-item active" aria-current="page">Secciones</li>
+	</ol>	
+
+	<div class="card">
+
+		<div class="card-header">
+			<ul class="nav nav-tabs card-header-tabs" id="myTab" role="tablist">
+			{section name=i loop= $trayectos}
+			  <li class="nav-item" role="presentation">
+			    <a class="nav-link" id="nav_{$trayectos[i].id}-tab" data-toggle="tab" href="#nav_{$trayectos[i].id}" role="tab" aria-controls="nav_{$trayectos[i].id}" aria-selected="true">{$trayectos[i].trayecto}</a>
+			  </li>
+			{/section}
+			 
+			</ul>
+
+		</div>
+		<div class="card-body p-0">
+			
+			<div class="tab-content" id="myTabContent">
+			{section name=i loop= $trayectos}
+			  <div class="tab-pane fade " id="nav_{$trayectos[i].id}" role="tabpanel" aria-labelledby="nav_{$trayectos[i].id}-tab">
+
+			  	<div class="list-group list-group-flush">
+				  {section name=ii loop= $trayectos_secciones}
+				    {section name=iii loop = $trayectos_secciones[ii]}
+				  		{if $trayectos_secciones[ii][iii].id_trayecto == $trayectos[i].id_trayecto }
+						  <a href="propuesta_evaluar.php?id={{$trayectos_secciones[ii][iii].id}}" class="list-group-item list-group-item-action ">
+						    	{$trayectos_secciones[ii][iii].nombre}
+						  </a>
+				  		{/if}
+				    {/section}
+				  {/section}
+				</div>
+
+			  </div>
+			{/section}
+			  
+			</div>
+
+		</div>
+
+	</div>
+
+</div>
+   
+{include file="../../pie/pie_interno.html"}

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-10-28 16:37:43
+/* Smarty version 3.1.30, created on 2020-11-18 16:59:29
   from "/home/palencia/public_html/proyecto4/uptt/modulos/modal/modal_galeria.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5f99d69750fc41_68164001',
+  'unifunc' => 'content_5fb58b31cb52c6_66886280',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'df25173fce5da327eac117fcc3d47437e42fa617' => 
     array (
       0 => '/home/palencia/public_html/proyecto4/uptt/modulos/modal/modal_galeria.html',
-      1 => 1601387401,
+      1 => 1605382250,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5f99d69750fc41_68164001 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5fb58b31cb52c6_66886280 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <div class="modal fade" id="image-gallery" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-sm">
@@ -30,7 +30,7 @@ function content_5f99d69750fc41_68164001 (Smarty_Internal_Template $_smarty_tpl)
         <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span>
         </button>
       </div>
-      <div class="modal-body">
+      <div class="modal-body p-0">
           <img id="image-gallery-image" class="img-responsive col-md-12" src="">
       </div>
       
