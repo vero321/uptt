@@ -17,19 +17,6 @@
                     	id="propuesta_agregar"
                     	name="propuesta_agregar">
                   
-                      	<div class="form-group">
-                          <label for="nombre_pnf">Nombre Del PNF</label>
-                          <input 
-                            type="text" 
-                            title="Escriba el Nombre Completo del PNF" 
-                            required="required" 
-                            class="form-control" 
-                            id="nombre_largo" 
-                            name="nombre_largo"
-                            value="{$pnf.nombre_largo}" disabled="">
-                        </div>
-
-
 
                       <input type="hidden" name="equipo_id" value="{$equipo_id}">
                       
@@ -54,6 +41,12 @@
 
                         <div class="form-group">
                         <label for="autores">Autores</label>
+                        <div class="form_datos">{$lider.nombre|capitalize} {$lider.apellido|capitalize}</div>
+                        <input 
+                            type="hidden" 
+                            name="lider" 
+                            value="{$lider.id}">
+                        
                         {section loop=$equipo name=i}
                         <input 
                             type="hidden" 
@@ -83,8 +76,13 @@
                             class="form-control" 
                             id="fecha" 
                             name="fecha"  
+<<<<<<< HEAD
                             placeholder='{$smarty.now|date_format:"%d/%m/%Y"}'
                             value='{$fecha}' 
+=======
+                            placeholder='{$smarty.now|date_format:"%Y/%m/%d"}'
+                            value='{$smarty.now|date_format:"%Y/%m/%d"}' 
+>>>>>>> 06628816d654405f34b992fc255aefdf2b4f91e6
                             name="fecha" 
                             value="{$fecha}" 
 

@@ -1623,6 +1623,14 @@ function bd_equipo_lider($id=NULL){
         return sql2row($sql);
 } 
 
+ function bd_equipo_seccion_lider($id)
+{
+   $sql="SELECT id, nombre, apellido 
+        FROM PERSONAS WHERE id = ( SELECT id_persona FROM EQUIPOS WHERE id = '{$id}' )";
+
+        return sql2row($sql);
+} 
+
 function bd_equipo_seccion_trayecto($id)
 {
    $sql="SELECT id, trayecto 
@@ -1803,7 +1811,28 @@ function  bd_tutor_seccion($id_seccion){
 
 ####    Funciones Propuestas ######
 
+
+function bd_propuestas_datos($id=NULL){
+    if ($id!=NULL) {
+        $sql="
+            SELECT *
+            FROM PROPUESTAS_DATOS
+            WHERE id LIKE '{$id}'
+            ";
+        $salida = sql2row($sql);
+    } else {
+            $sql="
+            SELECT *
+            FROM PROPUESTAS_DATOS
+            ";
+            $salida = sql2array($sql);
+       }
+    return $salida;
+}
+
+
 function bd_propuestas_datos_lider($id=NULL, $status)
+
 {
     /*
     la funcion utiliza dos paramatros para filtrar la id del usuario y status la cual hace referencia al estado de la propuesta los valores de esta DEBEN ser:
@@ -1824,7 +1853,7 @@ function bd_propuestas_datos_lider($id=NULL, $status)
         $sql="
             SELECT *
             FROM PROPUESTAS
-            WHERE id LIKE '{$id}' and status = '{$status}'
+            WHERE id_datos_propuestas LIKE '{$id}' and status = '{$status}'
             ";
         $salida = sql2row($sql);
     } else {
@@ -1939,3 +1968,5 @@ function bd_propuesta_cambiar_estatus($propuesta, $observacion, $status){
     ";
     sql($sql);
 }
+
+############################

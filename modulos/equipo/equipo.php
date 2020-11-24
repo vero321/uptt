@@ -10,6 +10,8 @@ $id=$_GET['id'];
 
 $lider=bd_equipo_lider($id);
 
+$propuesta=bd_propuestas_datos($id); #guarda los datos de las propuestas 
+#vq($propuesta);
 
 $seccion=bd_equipo_seccion_profesor($id);
 
@@ -26,5 +28,6 @@ foreach ($personas as $persona ) {
 if (isset($integrantes) == true) {
 	$smarty->assign('integrantes',$integrantes);
 }
+$smarty->assign('propuesta',$propuesta);
 $smarty->assign('lider',$lider);
 $smarty->display('equipo.html');

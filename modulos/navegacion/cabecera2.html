@@ -32,7 +32,7 @@
               <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <i class="fa fa-search fa-fw"></i>
               </a>
-              <!-- Dropdown - Messages
+              Dropdown - Messages
               <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in" aria-labelledby="searchDropdown">
                 <form class="form-inline mr-auto w-100 navbar-search">
                   <div class="input-group">
@@ -68,7 +68,11 @@
                 {section  name=i loop= $smarty.session["r"]}
                 <a class="dropdown-item d-flex align-items-center" href="../distribuidor/distribuidor.php?r={$smarty.session['r'][i].id_rol}&n={$smarty.section.i.index}">
                   <div class="mr-3">
+<<<<<<< HEAD
                     <div class="icon-circle bg-gray-500">
+=======
+                    <div class="icon-circle bg-primary"> 
+>>>>>>> 06628816d654405f34b992fc255aefdf2b4f91e6
                       <i class="fa fa-desktop fa-fw text-white"></i>
                     </div>
                   </div>
