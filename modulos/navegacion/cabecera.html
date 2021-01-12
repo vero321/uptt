@@ -55,7 +55,15 @@
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">{$smarty.session["u"]["correo"]}</span>
-                <img class="img-profile rounded-circle" src="../../imagenes/user.png">
+                {if $smarty.session['u']['foto_perfil'] == NULL}
+                <i class="fas fa-user fa-2x img-profile rounded-circle p-2 bg-gray-200"></i>
+
+                 {else}
+                    <img class="img-profile rounded-circle"
+                         src="../../imagenes/perfil/{$smarty.session['u']['foto_perfil']}"
+                         alt="User profile picture"
+                         >
+                {/if}
               </a>
               <!-- Dropdown - User Information -->
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">

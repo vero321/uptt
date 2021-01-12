@@ -1,65 +1,95 @@
-
+  <style type="text/css">
+  #regiration_form fieldset:not(:first-of-type) {
+    display: none;
+  }
+  </style>
 <div class="container">
   <div class="row">
-    <div class="col">
-      <h2>Modificar Persona</h2>
-
-      <form 
-      action="proc_personas_modificar.php" 
-      method="POST" 
-      class="px-4 py-3" 
-      id="registro_usuario"
-      name="registro_usuario">
-      <input type="hidden" name="id" value="{$personas.id}">
-      <div class="form-group">
-          <label for="id0">Cedula</label>
-          <input 
-            type="text" 
-            required="required" 
-            class="form-control" 
-            id="id0" 
-            name="id0" 
-            placeholder="1234567"
-            value="{$personas.id}"
-            disabled="disable">
+    <div class="col-md-2">
+    </div>
+    <div class="col-md-8">
+      <div class="container my-4">
+        <h2 class="p-2">Modificar datos personales</h2>
+        <div class="progress m-2">
+          <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
         </div>
-    
-        <div class="form-group">
-          <label for="nombre">Nombre</label>
-          <input 
-            type="text" 
-            title="Escriba el Nombre" 
-            required="required" 
-            class="form-control" 
-            id="nombre" 
-            name="nombre"
-            placeholder="Jhon Doe"
-            value="{$personas.nombre}">
-        </div> 
 
-        <div class="form-group">
-          <label for="apellido">Apellido</label>
-          <input 
-            type="text" 
-            title="Escriba el apellido" 
-            required="required" 
-            class="form-control" 
-            id="apellido" 
-            name="apellido"
-            placeholder="Jhon Doe"
-            value="{$personas.apellido}">
-        </div> 
+        <form id="regiration_form" novalidate action="proc_personas_modificar.php"  method="post">
+        <fieldset>
+          <h3><span class="badge badge-primary rounded-circle">1</span> Confirma tus datos</h3>
+              <input type="hidden" name="id" value="{$personas.id}">
+              <div class="form-group">
+                  <label for="id0">Cedula</label>
+                  <input 
+                    type="text" 
+                    required="required" 
+                    class="form-control" 
+                    id="id0" 
+                    name="id0" 
+                    placeholder="1234567"
+                    value="{$personas.id}"
+                    disabled="disable">
+                </div>
+                <div class="form-group">
+                  <label for="id0">Correo</label>
+                  <input 
+                    type="text" 
+                    required="required" 
+                    class="form-control" 
+                    id="id0" 
+                    name="id0" 
+                    placeholder="1234567"
+                    value="{$usuarios.correo}"
+                    disabled="disable">
+                </div>
 
-           
-      
-      <div class="form-group">
-      <input 
-        class="btn btn-primary boton" 
-        type="submit" 
-        name="enviar" 
-        value="Modificar">
-      </div>
-    </form>
+          <input type="button" name="data[password]" class="next btn btn-info" value="Siguiente" />
+        </fieldset>
+        <fieldset>
+          <h3><span class="badge badge-primary rounded-circle">2</span> Agregar detalles personales</h3>
+                <div class="form-group">
+                  <label for="nombre">Nombre</label>
+                  <input 
+                    type="text" 
+                    title="Escriba el Nombre" 
+                    required="required" 
+                    class="form-control" 
+                    id="nombre" 
+                    name="nombre"
+                    placeholder="Jhon Doe"
+                    value="{$personas.nombre}">
+                </div> 
+
+                <div class="form-group">
+                  <label for="apellido">Apellido</label>
+                  <input 
+                    type="text" 
+                    title="Escriba el apellido" 
+                    required="required" 
+                    class="form-control" 
+                    id="apellido" 
+                    name="apellido"
+                    placeholder="Jhon Doe"
+                    value="{$personas.apellido}">
+                </div> 
+          <input type="button" name="previous" class="previous btn btn-default" value="Previo" />
+          <input type="button" name="next" class="next btn btn-info" value="Siguiente" />
+        </fieldset>
+        <fieldset>
+          <h3><span class="badge badge-primary rounded-circle">3</span> Información de contacto</h3>
+          <small>Esta información es usada para complementar tu targeta de perfil, esta misma puede ser vista por los usuarios de Repo </small>
+          <div class="form-group">
+          <label for="mob">Numero Celular</label>
+          <input type="text" class="form-control" id="telefono" name="telefono" placeholder="Numero Celular" value="{$personas.telefono}">
+        </div>
+        <div class="form-group">
+          <label >Estado</label>
+          <textarea  class="form-control" name="texto" placeholder="Puedes completar este campo con información personal para complementar tu perfil">{$personas.texto}</textarea>
+        </div>
+          <input type="button" name="previous" class="previous btn btn-default" value="Previo" />
+          <input type="submit" name="submit" class="submit btn btn-success" value="Enviar" id="submit_data" />
+        </fieldset>
+      </form>
 
 
     </div>
@@ -68,3 +98,32 @@
 </div>
 
 
+<script type="text/javascript">
+$(document).ready(function(){
+  var current = 1,current_step,next_step,steps;
+  steps = $("fieldset").length;
+  $(".next").click(function(){
+    current_step = $(this).parent();
+    next_step = $(this).parent().next();
+    next_step.show();
+    current_step.hide();
+    setProgressBar(++current);
+  });
+  $(".previous").click(function(){
+    current_step = $(this).parent();
+    next_step = $(this).parent().prev();
+    next_step.show();
+    current_step.hide();
+    setProgressBar(--current);
+  });
+  setProgressBar(current);
+  // Change progress bar action
+  function setProgressBar(curStep){
+    var percent = parseFloat(100 / steps) * curStep;
+    percent = percent.toFixed();
+    $(".progress-bar")
+      .css("width",percent+"%")
+      .html(percent+"%");   
+  }
+});
+</script>

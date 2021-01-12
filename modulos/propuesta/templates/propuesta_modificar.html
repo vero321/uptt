@@ -1,0 +1,245 @@
+{include file="../../navegacion/cab.html"}
+{include file="../../navegacion/sidebar2.html"}
+{include file="../../navegacion/cabecera2.html"}
+{include file="../../navegacion/barra_nucleo_pnf.html"}
+
+<div class="container">
+	<div class="card">
+		<div class="card-header">
+			<h3 class="text-primary">Editar Propuesta</h3>
+		</div>
+		<div class=" card-body">
+			<form 
+            	action="proc_propuesta_modificar.php" 
+            	method="POST" 
+            	class="px-4 py-3" 
+            	id="propuesta_agregar"
+            	name="propuesta_agregar">
+          
+
+              <input type="hidden" name="id" value="{$propuesta.id}">
+              
+              <div class="form-group"> 
+                PNF
+                <div class="form_datos">{$datos.pnf.nombre_corto}</div>
+                <input 
+                    type="hidden" 
+                    id="pnf_id" 
+                    name="pnf_id"
+                    value="{$datos.pnf.id}">
+                </div>
+
+                <div class="form-group">
+                  Docente Asesor Responsable
+                  <div class="form_datos">{$datos.docente.nombre|capitalize} {$datos.docente.apellido|capitalize}</div>
+                <input 
+                    type="hidden" 
+                    name="docente" 
+                    value="{$datos.docente.id}">
+                </div>
+
+                <div class="form-group">
+                <label for="autores">Autores</label>
+                <div class="form_datos">{$datos_lider.nombre|capitalize} {$datos_lider.apellido|capitalize}</div>
+                <input 
+                    type="hidden" 
+                    name="lider" 
+                    value="{$datos_lider.id}">
+                
+                {section loop=$equipo name=i}
+                <div class="form_datos">{$equipo[i].nombre|capitalize} {$equipo[i].apellido|capitalize}</div>
+                
+                {/section}
+                </div>
+
+              <div class="form-group">
+                Trayecto
+                <div class="form_datos">{$datos.trayecto.trayecto|capitalize}</div>
+                <input 
+                    type="hidden" 
+                    id="trayecto_id" 
+                    name="trayecto_id"
+                    value="{$datos.trayecto.id}">
+              </div>
+              <div class="form-group">
+                  <label for="fecha">Fecha</label>
+                  <input 
+                    width="20px" 
+                    type="date" 
+                    title="Coloque la Fecha Correspondiente" 
+                    required="required" 
+                    class="form-control" 
+                    id="fecha" 
+                    name="fecha"  
+                    placeholder='{$smarty.now|date_format:"%d/%m/%Y"}'
+                    value='{$datos.fecha}' 
+                    name="fecha" 
+                    disabled
+                    >
+              </div>
+
+            <div class="form-group">
+              <label>Buscar comunidad</label>
+              <br>
+              <small>Escriba el nombre o las siglas de la comunidad o institución</small>
+              <input 
+              type="text"
+              id="buscar_comunidad"
+              class="form-control" 
+              title="Escriba el nombre o las siglas de la comunidad o institución"
+              placeholder="Escriba el nombre o las siglas de la comunidad o institución" 
+               >
+            </div>
+           <div id="alerta-comunidad">
+             
+           </div>
+            <button class="btn btn-secondary " 
+               title="Registrar comunidad"
+               id="btn-comunidad" 
+               disabled>
+               <i class="fa fa-plus"></i>
+             </button>
+            <div class="form-group">
+              
+            </div>
+            <div class="form-group" >
+                      <label>Selecione comunidad</label>
+                      <select id="comunidad" name="comunidad" class="form-control" required="">
+                          
+                        </select>
+                    </div>
+
+            
+
+            <div class="form-group">
+              
+              <label for="linea_investigacion">Línea de Investigación</label>
+              <select id="linea_investigacion" name="linea_investigacion" class="form-control" required="">
+                  <option selected value="{$datos.linea.id}">{$datos.linea.nombre}</option>
+                  {section name=a loop=$lineas}
+                  <option value="{$lineas[a].id}">{$lineas[a].nombre}</option>
+                  {/section}
+                </select>
+                  
+            </div>
+
+            <div class="card mb-4">
+              <div class="card-header">
+                <a class="link" data-toggle="collapse" href="#proposicion1" aria-expanded="true" aria-controls="proposicion1">
+                Proposicion 1</a>
+              </div>
+            <div class="collapse show" id="proposicion1">
+              <div class="card-body">
+                <div class="form-group">
+                  <label for="proposicion1">Descripción de la Proposición</label>
+                  <input type="hidden" name="id_proposicion_1" value="{$proposiciones[0].id}">
+                  <textarea
+                    type="text" 
+                    title="Descripción de la Proposicion" 
+                    required="required" 
+                    class="form-control " 
+                    id="proposicion1" 
+                    name="proposicion1"
+                    >{$proposiciones[0].descripcion}</textarea> 
+                </div>
+                <div class="form-group">
+                  <label for="objetivo1">Objetivo</label>
+                  <textarea 
+                    type="text" 
+                    title="Objetivo General" 
+                    required="required" 
+                    class="form-control " 
+                    id="objetivo1" 
+                    name="objetivo1"
+                    >{$proposiciones[0].objetivo}</textarea>
+                </div>
+              </div>
+            </div>
+          </div>
+
+            <div class="card mb-4">
+              <div class="card-header">
+               <a class="link" data-toggle="collapse" href="#proposicion2" aria-expanded="false" aria-controls="proposicion2">
+                Proposicion 2</a>
+              </div>
+            <div class="collapse" id="proposicion2">
+              <div class="card-body">
+                <div class="form-group">
+                  <label for="propuesta2">Descripción de la Proposicion</label>
+                  <input type="hidden" name="id_proposicion_2" value="{$proposiciones[1].id}">
+                  
+                  <textarea 
+                    type="text" 
+                    title="Descripción de la Proposicion" 
+                    required="required" 
+                    class="form-control " 
+                    id="proposicion2" 
+                    name="proposicion2"
+                    >{$proposiciones[1].descripcion}</textarea>
+                </div>
+                <div class="form-group">
+                  <label for="objetivo2">Objetivo</label>
+                  <textarea 
+                    type="text" 
+                    title="Objetivo General" 
+                    required="required" 
+                    class="form-control " 
+                    id="objetivo2" 
+                    name="objetivo2"
+                    >{$proposiciones[1].objetivo}</textarea>
+                </div>
+              </div>
+            </div>
+          </div>
+
+            <div class="card mb-4">
+              <div class="card-header">
+                <a class="link" data-toggle="collapse" href="#proposicion3" aria-expanded="false" aria-controls="proposicion3">
+                Proposicion 3</a>
+              </div>
+             <div class="collapse" id="proposicion3">  
+              <div class="card-body">
+                <div class="form-group">
+                  <label for="proposicion3">Descripción de la Proposicion</label>
+                  <input type="hidden" name="id_proposicion_3" value="{$proposiciones[2].id}">
+                  
+                  <textarea 
+                    type="text" 
+                    title="Descripción de la Proposicion" 
+                    required="required" 
+                    class="form-control " 
+                    id="proposicion3" 
+                    name="proposicion3"
+                    >{$proposiciones[2].descripcion}</textarea>
+                </div>
+                <div class="form-group">
+                  <label for="objetivo3">Objetivo</label>
+                  <textarea 
+                    type="text" 
+                    title="Objetivo General" 
+                    required="required" 
+                    class="form-control " 
+                    id="objetivo3" 
+                    name="objetivo3"
+                    >{$proposiciones[2].objetivo}</textarea>
+                </div>
+              </div>
+            </div>
+          </div>                
+            
+            	<div class="form-group">
+					<input 
+					class="btn btn-primary" 
+					type="submit" 
+					name="enviar" 
+					value="Registrar">
+            	</div>
+            </form>
+		</div>
+	</div>
+</div>
+
+{include "../../modal/modal_comunidad.html"} 
+
+{include file="../../pie/pie_interno.html"}
+

@@ -72,8 +72,8 @@ input:checked + .slider:before {
 }
 
 .img-perfil{
-  height: 8rem;
-  width: 8rem;
+  height: 10rem;
+  width: 10rem;
 }
 
 .img-user{
@@ -86,8 +86,16 @@ input:checked + .slider:before {
   width: 3rem;
 }
 .img-user4{
-  height: 4rem;
-  width: 4rem;
+  height: 5rem;
+  width: 5rem;
+}
+.img-user16{
+  height: 16rem;
+  width: 16rem;
+}
+.img-user20{
+  height: 20rem;
+  width: 20rem;
 }
 .form_datos
 {
@@ -98,3 +106,21 @@ input:checked + .slider:before {
   padding: 6px;
   margin-bottom: 6px;
 }
+
+.pie_interno {
+    margin-top: 60px;
+    position: absolute;
+    border-top: solid 1px #C0C0C0;
+    bottom:0;
+    height:80px; /*Alto del Pie de Página vero*/ 
+    text-align: right;
+    background: #F0F0F0;
+    color:#0747a6;
+    padding-top:30px;
+    padding-bottom:10px;
+    width:100%;
+    z-index: 900;
+}
+
+//wizar
+

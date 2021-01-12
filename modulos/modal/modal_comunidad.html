@@ -1,0 +1,81 @@
+<div class="modal fade" id="modal_comunidad" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-md">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="image-gallery-title">Registrar comunidad</h4>
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span>
+        </button>
+      </div>
+      <div class="modal-body p-3">
+
+        <form id="from_datos_comunidad">
+
+          <div class="form-group">
+            <label for="comunidad">Organismo, Institución o Comunidad a quien va dirigido el Proyecto</label>
+            <textarea
+              title="Escriba el Nombre de la Comunidad o Institución" 
+              required="required" 
+              class="form-control" 
+              id="comunidad" 
+              name="comunidad"
+              rows="2"
+              ></textarea> 
+          </div>
+          <div class="form-group">
+                <label for="direccion">Siglas</label>
+                <input 
+                  type="text" 
+                  title="Escriba las siglas ejemplo UPTT" 
+                  class="form-control" 
+                  id="siglas" 
+                  name="siglas"
+                  value="">
+                
+          </div>
+
+          <div class="form-group">
+              <label for="direccion">Dirección</label>
+              <textarea
+                title="Escriba la Dirección exacta" 
+                required="required" 
+                class="form-control direccion" 
+                id="direccion" 
+                name="direccion"
+                rows="2"
+                ></textarea> 
+                
+          </div>
+          
+          <div class="form-row">
+            <div class="form-group col">
+              <label for="estado">Estado</label>
+              <select id="estado" name="estado" class="form-control" required="">
+                <option selected></option>
+                {section name=j loop=$estados}
+                <option value="{$estados[j].id}">{$estados[j].nombre}</option>
+                {/section}
+              </select>
+            </div>
+            <div class="form-group col">
+              <label for="municipio">Municipio</label>
+              <select id="municipio" name="municipio" class="form-control" required="">
+                
+              </select>
+            </div>
+            <div class="form-group col">
+              <label for="parroquia">Parroquia</label>
+              <select id="parroquia" name="parroquia" class="form-control" required="">
+               
+                
+              </select>
+            </div>
+
+          </div>
+          <button type="submit" class="btn btn-primary" id="btn_comunidad_registrar">Registra</button>
+          <button type="button" class="btn btn-secondary" id="btn_comunidad_cacelar" data-dismiss="modal">cancelar</button>
+        </form>
+      </div>
+      
+    </div>
+  </div>
+</div>

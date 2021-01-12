@@ -10,206 +10,207 @@
       <li class="breadcrumb-item"><a href="../distribuidor/distribuidor.php?r={$smarty.session['r'][$smarty.session['numero']].id_rol}&n={$smarty.session['numero']}">Panel {$smarty.session["r"][$smarty.session["numero"]].rol}</a></li>
       <li class="breadcrumb-item active" aria-current="page">Nucleos y Extenciones</li>
     </ol>
-        <h2 class="text-primary my-2"><span class="badge badge-secondary badge-pill">{$n_nucleos}</span> Nucleos y Extensiones
-        {if in_array("NUCL_A",$verificar) == TRUE}
-             <a class="btn btn-sm btn-outline-primary mimodal mimodal" type="button" 
+        <h2 class="text-primary my-3"><span class="badge badge-secondary badge-pill">{$n_nucleos}</span> Nucleos y Extensiones
+        </h2>
+      <div class="card">
+        <div class="card-header pb-0">
+             {if in_array("NUCL_A",$verificar) == TRUE}
+             <a class="btn btn-sm btn-outline-primary mimodal mimodal float-right" type="button" 
             data-href="nucleos_agregar.php" title="Agregar nucleo o extensión"><span class="fa fa-plus"></span></a>
           {/if}
-        </h2>
-      <div class="card shadow">
-      <div class="card-header">
-        <a href="#collapse_nucleos" class="d-block card-header py-3" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="collapse_nucleos">
-          <h6 class="m-0 font-weight-bold text-primary">Nucleos</h6>
-        </a>
-      </div>
-         <div class="collapse" id="collapse_nucleos">
-          <div class="card-body">
-            <div class="table-responsive">
-              <table class="table " id="tabla_repo" style="width:100%">
-                <thead class="text-dark">
-                  <tr>
-                    <th>Nombre Largo</th>
-                    <th>Nombre Corto</th>
-                    <th>Funciones</th>
-                    {if in_array("NUCL_R", $verificar) == TRUE }
-                    <th>Responsable</th>
-                    {/if}
-                  </tr>
-                </thead>
-                <tbody class="text-dark">
+          <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item">
+              <a class="nav-link active" id="nucleos-tab" data-toggle="tab" href="#nucleos" role="tab" aria-controls="nucleos" aria-selected="true">Nucleos</a>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link" id="extesiones-tab" data-toggle="tab" href="#extesiones" role="tab" aria-controls="extesiones" aria-selected="false">Extenciones</a>
+            </li>
+          </ul>
+        
+        </div>
+        <div class="card-body">
+          <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="nucleos" role="tabpanel" aria-labelledby="nucleos-tab">
+              <div class="table-responsive">
+                <table class="table " id="tabla_repo" style="width:100%">
+                  <thead class="text-dark">
+                    <tr>
+                      <th>Nombre Largo</th>
+                      <th>Nombre Corto</th>
+                      <th>Funciones</th>
+                      {if in_array("NUCL_R", $verificar) == TRUE }
+                      <th>Responsable</th>
+                      {/if}
+                    </tr>
+                  </thead>
+                  <tbody class="text-dark">
 
-                {section name=i loop=$nucleos}
-                {if $nucleos[i].id_nucleo == NULL}
-                  <tr class="text-dark">
-                    <td>{$nucleos[i].nombre_largo}</td>
-                    <td>{$nucleos[i].nombre_corto}</td>
-                    <td class="text-center" style="white-space: nowrap;">
-                    {if in_array("NUCL_M",$verificar) == TRUE}
-                    <a 
-                      style="margin-bottom:3px; color:blue;" 
-                      class="btn btn-default mimodal" 
-                      title="Modificar Nucleo o Extensión" 
-                      data-href="nucleos_modificar.php?id={$nucleos[i].id}">
-                      <i class="fa fa-edit"></i>
-                    </a>
-                    {/if}
-                    {if in_array("NUCL_E",$verificar) == TRUE}
-                    <a 
-                      style="margin-bottom:3px; color:blue;" 
-                      class="btn btn-default mimodal"
-                      title="Eliminar Nucleo o Extensión" 
-                      data-href="nucleos_eliminar.php?id={$nucleos[i].id}">
-                      <i class="fa fa-trash"></i>
-                    </a>
-                    {/if}
+                  {section name=i loop=$nucleos}
+                  {if $nucleos[i].id_nucleo == NULL}
+                    <tr class="text-dark">
+                      <td>{$nucleos[i].nombre_largo}</td>
+                      <td>{$nucleos[i].nombre_corto}</td>
+                      <td class="text-center" style="white-space: nowrap;">
+                      {if in_array("NUCL_M",$verificar) == TRUE}
+                      <a 
+                        style="margin-bottom:3px; color:blue;" 
+                        class="btn btn-default mimodal" 
+                        title="Modificar Nucleo o Extensión" 
+                        data-href="nucleos_modificar.php?id={$nucleos[i].id}">
+                        <i class="fa fa-edit"></i>
+                      </a>
+                      {/if}
+                      {if in_array("NUCL_E",$verificar) == TRUE}
+                      <a 
+                        style="margin-bottom:3px; color:blue;" 
+                        class="btn btn-default mimodal"
+                        title="Eliminar Nucleo o Extensión" 
+                        data-href="nucleos_eliminar.php?id={$nucleos[i].id}">
+                        <i class="fa fa-trash"></i>
+                      </a>
+                      {/if}
 
-                    </td>
-                    {if in_array("NUCL_R", $verificar) == TRUE }
-                      <td>
-                        {if $nucleos[i].responsable ==  NULL}
-                          <a class="btn btn-sm btn-outline-primary" type="button" href="nucleo_responsable.php?id={$nucleos[i].id}" title="Asignar responsable Nucleo o Extensión"><span class="fa fa-plus"></span></a>
-                        {else}
-                          {$persona=bd_personas_datos($nucleos[i].responsable)}
-                          <div class="row">
-                            <div class="col-md-4">
-                           {if $persona.foto_perfil == NULL}
-                 <i class="fas fa-user fa-4x img-profile rounded-circle p-2 bg-gray-200"></i>
+                      </td>
+                      {if in_array("NUCL_R", $verificar) == TRUE }
+                        <td>
+                          {if $nucleos[i].responsable ==  NULL}
+                            <a class="btn btn-sm btn-outline-primary" type="button" href="nucleo_responsable.php?id={$nucleos[i].id}" title="Asignar responsable Nucleo o Extensión"><span class="fa fa-plus"></span></a>
+                          {else}
+                            {$persona=bd_personas_datos($nucleos[i].responsable)}
+                            <div class="row">
+                              <div class="col-md-12">
+                             {if $persona.foto_perfil == NULL}
+                   <i class="fas fa-user fa-4x img-profile rounded-circle p-2 bg-gray-200"></i>
 
+                              {else}
+                              <a class="thumbnail" href="#"  data-toggle="modal" data-id="{$persona.id}"
+                             data-image="../../imagenes/perfil/{$persona.foto_perfil}"
+                             data-target="#image-gallery">
+                                <img class="img-thumbnail img-user rounded-circle" src="../../imagenes/perfil/{$persona.foto_perfil}" alt="User profile picture">
+                                </a>
+                            {/if}
+                              </div>
+                            <div class="col-md-12">
+                            {if isset($persona.nombre)}
+                              {$persona.nombre}
                             {else}
-                            <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title=""
-                           data-image="../../imagenes/perfil/{$persona.foto_perfil}"
-                           data-target="#image-gallery">
-                              <img class="img-thumbnail img-user rounded-circle" src="../../imagenes/perfil/{$persona.foto_perfil}" alt="User profile picture">
-                              </a>
+                            El usuario aun no actualiza sus datos
+                            {/if}
+                            <br>
+                            {$usuario=bd_usuarios_datos($nucleos[i].responsable)}
+                            <span><b>Usuario:</b></span>
+                            {$usuario.correo}
+                            <a href="nucleo_responsable.php?id={$nucleos[i].id}&cambiar={$nucleos[i].responsable}">Cambiar</a>
                           {/if}
                             </div>
-                          <div class="col-md-6">
-                            <span><b>Nombre:</b></span>
-                          {if isset($persona.nombre)}
-                            {$persona.nombre}
-                          {else}
-                          El usuario aun no actualiza sus datos
-                          {/if}
-                          <br>
-                          {$usuario=bd_usuarios_datos($nucleos[i].responsable)}
-                          <span><b>Usuario:</b></span>
-                          {$usuario.correo}
-                          <a href="nucleo_responsable.php?id={$nucleos[i].id}&cambiar={$nucleos[i].responsable}">Cambiar</a>
-                        {/if}
-                          </div>
-                      </div>
+                        </div>
+                        </td>
+                      {/if}
+                    </tr>
+                      {/if}
+                  {/section}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="tab-pane fade" id="extesiones" role="tabpanel" aria-labelledby="extesiones-tab">
+              <div class="table-responsive">
+                <table class="table " id="tabla_repo1" style="width:100%">
+                  <thead class="text-dark">
+                    <tr>
+                      <th>Nombre Largo</th>
+                      <th>Nombre Corto</th>
+                      <th>Nucleo</th>
+                      <th>Funciones</th>
+                      {if in_array("NUCL_R", $verificar) == TRUE }
+                      <th>Responsable</th>
+                      {/if}
+                    </tr>
+                  </thead>
+                  <tbody class="text-dark">
+
+                  {section name=i loop=$nucleos}
+                    {if $nucleos[i].id_nucleo != NULL}
+                    <tr class="text-dark">
+                      <td>{$nucleos[i].nombre_largo}</td>
+                      <td>{$nucleos[i].nombre_corto}</td>
+                      {$extesion=bd_nucleos_datos($nucleos[i].id_nucleo)}
+                      <td>{$extesion.nombre_corto}</td>
+                      <td class="text-center" style="white-space: nowrap;">
+                      {if in_array("NUCL_M",$verificar) == TRUE}
+                      <a 
+                        style="margin-bottom:3px; color:blue;" 
+                        class="btn btn-default mimodal" 
+                        title="Modificar Nucleo o Extensión" 
+                        data-href="nucleos_modificar.php?id={$nucleos[i].id}">
+                        <i class="fa fa-edit"></i>
+                      </a>
+                      {/if}
+                      {if in_array("NUCL_E",$verificar) == TRUE}
+                      <a 
+                        style="margin-bottom:3px; color:blue;" 
+                        class="btn btn-default mimodal"
+                        title="Eliminar Nucleo o Extensión" 
+                        data-href="nucleos_eliminar.php?id={$nucleos[i].id}">
+                        <i class="fa fa-trash"></i>
+                      </a>
+                      {/if}
+
                       </td>
+                      {if in_array("NUCL_R", $verificar) == TRUE }
+                        <td>
+                          {if $nucleos[i].responsable ==  NULL}
+                            <a class="btn btn-sm btn-outline-primary" type="button" href="nucleo_responsable.php?id={$nucleos[i].id}" title="Asignar responsable Nucleo o Extensión"><span class="fa fa-plus"></span></a>
+                          {else}
+                            {$persona=bd_personas_datos($nucleos[i].responsable)}
+                            <div class="row">
+                              <div class="col-md-12">
+                             {if $persona.foto_perfil == NULL}
+                   <i class="fas fa-user fa-4x img-profile rounded-circle p-2 bg-gray-200"></i>
+                              {else}
+                              <a class="thumbnail" href="#"  data-toggle="modal" data-id="{$persona.id}"
+                             data-image="../../imagenes/perfil/{$persona.foto_perfil}"
+                             data-target="#image-gallery">
+                                <img class="img-thumbnail img-user rounded-circle" src="../../imagenes/perfil/{$persona.foto_perfil}" alt="User profile picture">
+                                </a>
+                            {/if}
+                              </div>
+                            <div class="col-md-12">
+                              <span><b>Nombre:</b></span>
+                            {if isset($persona.nombre)}
+                              {$persona.nombre}
+                            {else}
+                            El usuario aun no actualiza sus datos
+                            {/if}
+                            <br>
+                            {$usuario=bd_usuarios_datos($nucleos[i].responsable)}
+                            <span><b>Usuario:</b></span>
+                            {$usuario.correo}
+                            <a href="nucleo_responsable.php?id={$nucleos[i].id}&cambiar={$nucleos[i].responsable}">Cambiar</a>
+                          {/if}
+                            </div>
+                        </div>
+                        </td>
+                      {/if}
+                    </tr>
                     {/if}
-                  </tr>
-                    {/if}
-                {/section}
-                </tbody>
-              </table>
+                  {/section}
+                  </tbody>
+                </table>
+              </div>
             </div>
           </div>
         </div>
+        
       </div>
 
-    <div class="card shadow my-3">
-      <div class="card-header">
-        <a href="#collapse_extenciones" class="d-block card-header py-3" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="collapse_extenciones">
-          <h6 class="m-0 font-weight-bold text-primary">Extenciones</h6>
-        </a>
-      </div>
-         <div class="collapse" id="collapse_extenciones">
-          <div class="card-body">
-            <div class="table-responsive">
-              <table class="table " id="tabla_repo1" style="width:100%">
-                <thead class="text-dark">
-                  <tr>
-                    <th>Nombre Largo</th>
-                    <th>Nombre Corto</th>
-                    <th>Nucleo</th>
-                    <th>Funciones</th>
-                    {if in_array("NUCL_R", $verificar) == TRUE }
-                    <th>Responsable</th>
-                    {/if}
-                  </tr>
-                </thead>
-                <tbody class="text-dark">
 
-                {section name=i loop=$nucleos}
-                  {if $nucleos[i].id_nucleo != NULL}
-                  <tr class="text-dark">
-                    <td>{$nucleos[i].nombre_largo}</td>
-                    <td>{$nucleos[i].nombre_corto}</td>
-                    {$extesion=bd_nucleos_datos($nucleos[i].id_nucleo)}
-                    <td>{$extesion.nombre_corto}</td>
-                    <td class="text-center" style="white-space: nowrap;">
-                    {if in_array("NUCL_M",$verificar) == TRUE}
-                    <a 
-                      style="margin-bottom:3px; color:blue;" 
-                      class="btn btn-default mimodal" 
-                      title="Modificar Nucleo o Extensión" 
-                      data-href="nucleos_modificar.php?id={$nucleos[i].id}">
-                      <i class="fa fa-edit"></i>
-                    </a>
-                    {/if}
-                    {if in_array("NUCL_E",$verificar) == TRUE}
-                    <a 
-                      style="margin-bottom:3px; color:blue;" 
-                      class="btn btn-default mimodal"
-                      title="Eliminar Nucleo o Extensión" 
-                      data-href="nucleos_eliminar.php?id={$nucleos[i].id}">
-                      <i class="fa fa-trash"></i>
-                    </a>
-                    {/if}
 
-                    </td>
-                    {if in_array("NUCL_R", $verificar) == TRUE }
-                      <td>
-                        {if $nucleos[i].responsable ==  NULL}
-                          <a class="btn btn-sm btn-outline-primary" type="button" href="nucleo_responsable.php?id={$nucleos[i].id}" title="Asignar responsable Nucleo o Extensión"><span class="fa fa-plus"></span></a>
-                        {else}
-                          {$persona=bd_personas_datos($nucleos[i].responsable)}
-                          <div class="row">
-                            <div class="col-md-4">
-                           {if $persona.foto_perfil == NULL}
-                 <i class="fas fa-user fa-4x img-profile rounded-circle p-2 bg-gray-200"></i>
-                            {else}
-                            <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title=""
-                           data-image="../../imagenes/perfil/{$persona.foto_perfil}"
-                           data-target="#image-gallery">
-                              <img class="img-thumbnail img-user rounded-circle" src="../../imagenes/perfil/{$persona.foto_perfil}" alt="User profile picture">
-                              </a>
-                          {/if}
-                            </div>
-                          <div class="col-md-6">
-                            <span><b>Nombre:</b></span>
-                          {if isset($persona.nombre)}
-                            {$persona.nombre}
-                          {else}
-                          El usuario aun no actualiza sus datos
-                          {/if}
-                          <br>
-                          {$usuario=bd_usuarios_datos($nucleos[i].responsable)}
-                          <span><b>Usuario:</b></span>
-                          {$usuario.correo}
-                          <a href="nucleo_responsable.php?id={$nucleos[i].id}&cambiar={$nucleos[i].responsable}">Cambiar</a>
-                        {/if}
-                          </div>
-                      </div>
-                      </td>
-                    {/if}
-                  </tr>
-                  {/if}
-                {/section}
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-      </div>
 
-    </div>
   
 
-{include "../../modal/modal_galeria.html" prueba="Usuario"} 
+{include "../../modal/modal_galeria.html"} 
 {include "../../modal/modal_box.html" prueba="Usuario"} 
 
 {include file="../../pie/pie_interno.html"}

@@ -10245,25 +10245,35 @@ a:focus {
 .sidebar {
   width: 6.5rem;
   min-height: 100vh;
+  background 1s;
+  transition: width 1s;
 }
 
 .sidebar .nav-item {
   position: relative;
+  background 1s;
+  transition: width 1s
 }
 
 .sidebar .nav-item:last-child {
   margin-bottom: 1rem;
+  background 1s;
+  transition: width 1s
 }
 
 .sidebar .nav-item .nav-link {
   text-align: center;
   padding: 0.75rem 1rem;
   width: 6.5rem;
+  background 1s;
+  transition: width 1s
 }
 
 .sidebar .nav-item .nav-link span {
   font-size: 0.65rem;
   display: block;
+  background 1s;
+  transition: width 1s
 }
 
 .sidebar .nav-item.active .nav-link {
@@ -10275,6 +10285,8 @@ a:focus {
   left: calc(6.5rem + 1.5rem / 2);
   z-index: 1;
   top: 2px;
+  background 1s;
+  transition: width 1s
 }
 
 .sidebar .nav-item .collapse .collapse-inner {
@@ -10284,7 +10296,8 @@ a:focus {
 
 .sidebar .nav-item .collapsing {
   display: none;
-  transition: none;
+  background 1s;
+  transition: width 1s
 }
 
 .sidebar .nav-item .collapse .collapse-inner,
@@ -10359,6 +10372,8 @@ a:focus {
 .sidebar.toggled {
   width: 0 !important;
   overflow: hidden;
+  background 1s;
+  transition: width 1s;
 }
 
 .sidebar.toggled #sidebarToggle::after {
@@ -10683,10 +10698,14 @@ a:focus {
 
 .card .card-header .dropdown {
   line-height: 1;
+   background 1s;
+  transition: width 1s
 }
 
 .card .card-header .dropdown .dropdown-menu {
   line-height: 1.5;
+  background 1s;
+  transition: width 1s
 }
 
 .card .card-header[data-toggle="collapse"] {
@@ -10815,6 +10834,8 @@ form.user .btn-user {
   color: #fff;
   background-color: #d62516;
   border-color: #dfdfdf;
+  background 1s;
+  transition: width 1s
 }
 
 .btn-google:not(:disabled):not(.disabled):active:focus, .btn-google:not(:disabled):not(.disabled).active:focus,

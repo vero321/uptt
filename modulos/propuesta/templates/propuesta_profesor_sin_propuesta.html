@@ -1,0 +1,84 @@
+{include file="../../navegacion/cab.html"}
+{include file="../../navegacion/sidebar2.html"}
+{include file="../../navegacion/cabecera2.html"}
+{include file="../../navegacion/barra_nucleo_pnf.html"}
+
+<div class="container-fluid">
+	<nav aria-label="breadcrumb" role="navigation">
+	  <ol class="breadcrumb">
+	    <li class="breadcrumb-item"><a href="../inicio/inicio_interno.php">Repo</a></li>
+	    <li class="breadcrumb-item"><a href="../distribuidor/distribuidor.php?r={$smarty.session['r'][$smarty.session['numero']].id_rol}&n={$smarty.session['numero']}">Panel {$smarty.session["r"][$smarty.session["numero"]].rol}</a></li>
+	    <li class="breadcrumb-item"><a href="../lider_seccion/lideres.php?id={$id_seccion}">Secciones</a></li>
+	    <li class="breadcrumb-item active" aria-current="page">Propuesta</li>
+	  </ol>
+	</nav>
+
+	<div class="card-body">
+              <div class="row">
+                <div class="col-md-6">
+                 <!-- Card - Autores -->
+                  <div class="card  mb-4">
+                    <div class="card-header">
+                      <h6 class="m-0 font-weight-bold text-primary">Autores</h6>
+                    </div>
+                      <!-- Card Content  -->
+                    <div class="card-body ">
+                      <table class="table">
+                        <thead>
+                          <tr>
+                            <th>Autor</th>
+                            <th>Rol</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>
+                            {if $datos_lider.foto_perfil == NULL}
+                              <i class="fas fa-user fa-4x img-profile rounded-circle p-2 bg-gray-200"></i>
+                            {else}
+                              <a class="thumbnail" href="#" data-id="{$datos_lider.id}" data-toggle="modal"
+                               data-image="../../imagenes/perfil/{$datos_lider.foto_perfil}" data-target="#image-gallery">
+                                <img class="img-thumbnail img-user4 rounded-circle" src="../../imagenes/perfil/{$datos_lider.foto_perfil}" alt="User profile picture">
+                              </a>
+                            {/if}
+                            {$datos_lider.nombre} {$datos_lider.apellido}
+                            </td>
+                              <td>LIDER</td>
+                              
+                            </tr>
+                            {section name=i loop=$equipo}
+                            <tr>
+                              <td>
+                              {if $equipo[i].foto_perfil == NULL}
+                                <i class="fas fa-user fa-4x img-profile rounded-circle p-2 bg-gray-200"></i>
+                              {else}
+                                <a class="thumbnail" href="#" data-id="{$equipo[i].id}" data-toggle="modal" data-image="../../imagenes/perfil/{$equipo[i].foto_perfil}" data-target="#image-gallery">
+                                <img class="img-thumbnail img-user4 rounded-circle" src="../../imagenes/perfil/{$equipo[i].foto_perfil}" alt="User profile picture">
+                                </a>
+                              {/if}
+                              {$equipo[i].nombre} {$equipo[i].apellido}
+                              </td>
+                              <td>ESTUDIANTE</td>
+                            </tr>
+                            {/section}
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  <!-- CARD-->
+                </div>
+              <!-- Col-->
+              <div class="col-md-6">
+              	<div class="alert alert-success" role="alert">
+				  <h4 class="alert-heading">Atención importante!</h4>
+				  <p>El equipo an no ha enviado una propuesta</p>
+				</div>
+              </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+{include "../../modal/modal_galeria.html" prueba="Usuario"} 
+{include file="../../pie/pie_interno.html"}

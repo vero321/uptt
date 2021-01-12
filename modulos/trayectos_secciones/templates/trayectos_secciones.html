@@ -32,7 +32,7 @@
 				  {section name=ii loop= $trayectos_secciones}
 				    {section name=iii loop = $trayectos_secciones[ii]}
 				  		{if $trayectos_secciones[ii][iii].id_trayecto == $trayectos[i].id_trayecto }
-						  <a href="propuesta_evaluar.php?id={{$trayectos_secciones[ii][iii].id}}" class="list-group-item list-group-item-action ">
+						  <a href="propuesta_evaluando.php?id={{$trayectos_secciones[ii][iii].id_trayecto}}" class="list-group-item list-group-item-action ">
 						    	{$trayectos_secciones[ii][iii].nombre}
 						  </a>
 				  		{/if}

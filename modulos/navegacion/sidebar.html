@@ -3,7 +3,7 @@
   <div id="wrapper">
 
     <!-- Sidebar -->
-    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+    <ul class="navbar-nav bg-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
       <!-- Sidebar - Brand -->
       <a class="sidebar-brand d-flex align-items-center justify-content-center" href="../inicio/inicio_interno.php">
@@ -28,7 +28,7 @@
           <div id="collapse{$smarty.section.rol.index}" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
               <h6 class="collapse-header">{$smarty.session["r"][rol].rol}</h6>
-              <a class="collapse-item" href="../distribuidor/distribuidor.php?r={$smarty.session['r'][rol].id_rol}&n={$smarty.section.rol.index}">Resumen</a>
+              <a class="collapse-item" href="../distribuidor/distribuidor.php?r={$smarty.session['r'][rol].id_rol}&n={$smarty.section.rol.index}">Panel Administrativo</a>
               {section name = p loop = $smarty.session[$smarty.session["r"][rol].id_rol]}
                 {if {$smarty.session[$smarty.session["r"][rol].id_rol][p].direccion != NULL} }
                   <a class="collapse-item" href="../{$smarty.session[$smarty.session['r'][rol].id_rol][p].direccion}"><i class="{$smarty.session[$smarty.session['r'][rol].id_rol][p].icono} fa-fw"></i> {$smarty.session[$smarty.session["r"][rol].id_rol][p].nombre}</a>

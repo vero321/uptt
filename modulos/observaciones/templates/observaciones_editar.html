@@ -1,0 +1,11 @@
+<div class="container">
+	<h3>Editar observacion</h3>
+	<form method="POST" action="../observaciones/proc_observaciones_editar.php">
+		<div class="form-group">
+			<input type="hidden" name="id" value="{$datos.id}">
+    		<label for="descripcion">Obsrvacón</label>
+    		<textarea class="form-control" id="descripcion" name="descripcion" rows="3" required="" value=>{$datos.descripcion}</textarea>
+  		</div>
+  		<button type="subtmi" class="btn btn-primary">Guardar</button>
+  	</form>
+</div>

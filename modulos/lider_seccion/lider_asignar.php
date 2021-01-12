@@ -67,5 +67,7 @@ if (isset($_POST['id_usuario']) and !isset($_POST['id_rol']) ){
     ir("../mensaje/mensaje.php?m=$m&d=../lider_seccion/lideres.php?id=".$seccion);
 }
 
+$smarty->assign('seccion',$seccion);
+$smarty->assign('equipo',$equipo);
 $smarty->assign('id_rol',$id_rol);
-$smarty->display('lider_asignar1.html');
+$smarty->display('lider_asignar.html');

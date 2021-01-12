@@ -4,7 +4,6 @@ require_once '../config/app.php';
 include_once APP.'/modulos/config/inicializacion.php';
 
 $id = $_SESSION['u']['id'];
-
 $personas = $_POST;
 $nombre=bd_personas_modicar($personas);
 

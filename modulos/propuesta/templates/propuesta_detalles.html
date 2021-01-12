@@ -1,0 +1,282 @@
+{include file="../../navegacion/cab.html"}
+{include file="../../navegacion/sidebar2.html"}
+{include file="../../navegacion/cabecera2.html"}
+{include file="../../navegacion/barra_nucleo_pnf.html"}
+
+<div class="container-fluid">
+	<div class="card">
+		        <!--car-header menu  -->        
+            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+              <h5 class="m-0 font-weight-bold text-primary">Propuesta
+             <span class="badge badge-pill badge-success ml-2 p-2">{$status}</span>
+              </h5>
+            {if $opciones == 'TRUE'}
+            <!--dropdwn -->        
+              <div class="dropdown no-arrow">
+                <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-900"></i>
+                </a>
+                
+              <!--cotenido dropdwn -->        
+                <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink">
+                  <div class="dropdown-header">Opciones propuesta:</div>
+                  <a class="dropdown-item" href="propuesta_modificar.php?id={$propuesta.id}">
+                    <i class="fa fa-edit fa-sm fa-fw mr-2 text-gray-800"></i>
+                    Modificar
+                  </a>
+                  <a class="dropdown-item mimodal" data-href="propuesta_eliminar.php?id={$propuesta.id}">
+                    <i class="fa fa-trash fa-sm fa-fw mr-2 text-gray-800"></i>
+                    Eliminar
+                  </a>
+                  <div class="dropdown-divider"></div>
+                   <a class="dropdown-item mimodal" data-href="../observaciones/añadir_observacion.php?tipo=PROPUESTAS&fila={$propuesta.id}&r={$r}">
+                    <i class="fa fa-eye fa-sm fa-fw mr-2 text-gray-800"></i>
+                    Añadir Observación
+                  </a>
+                  <a class="dropdown-item mimodal" data-href="propuesta_enviar.php?id={$propuesta.id}&r={$r}&e=1">
+                    <i class="fa fa-paper-plane fa-sm fa-fw mr-2 text-gray-800"></i>
+                    Enviar a profesor
+                  </a>
+                </div>
+              <!--/cotenido dropdwn -->        
+              </div>
+            <!--/dropdwn -->  
+            {/if}      
+            </div>
+            <!-- Card Body propuesta-->
+            <div class="card-body">
+              <div class="row">
+                <!--Inicio card Datos-->
+                <div class="col-md-12">
+                  <div class="card mb-4">
+                    <div class="card-header">
+                      <h6 class="m-0 font-weight-bold text-primary">Datos del PNF</h6>                    
+                    </div>
+                    <div class="card">
+                      <div class="row">
+                        <div class="col-md-3 p-2">
+                          <div class="card-body">
+                            <h6 class=" font-weight-bold text-gray-800">Docente Asesor</h6>                    
+                            <div class="row">
+                              <div class="col-md-12 m-3">
+                                {if $datos['docente'].foto_perfil == NULL}
+                                  <i class="fas fa-user fa-4x img-profile rounded-circle p-2 bg-gray-200"></i>
+                                {else}
+                                  <a class="thumbnail" href="#" data-id="{$datos['docente'].id}" data-toggle="modal"  data-image="../../imagenes/perfil/{$datos['docente'].foto_perfil}" data-target="#image-gallery">
+                                  <img class="img-thumbnail img-user4 rounded-circle" src="../../imagenes/perfil/{$datos['docente'].foto_perfil}" alt="User profile picture">
+                                  </a>
+                                {/if}
+                              </div>
+                              <div class="col-md-12">
+                                <span class="text-gray-700">{$datos['docente'].nombre} {$datos['docente'].apellido}</span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-3 p.2">
+                          <div class="card-body">
+                            <h6 class="m-2 font-weight-bold text-gray-800">PNF</h6> 
+                              <span class="text-gray-700">{$datos.pnf}</span>
+                            <h6 class="m-2 font-weight-bold text-gray-800">Trayecto</h6> 
+                              <span class="text-gray-700">{$datos.trayecto}</span>
+                          </div>
+                        </div> 
+                        <div class="col-md-3 p-2">
+                          <div class="card-body">
+                            <h6 class="m-2 font-weight-bold text-gray-800">Linea de investigacion</h6> 
+                            <span class="text-gray-700">{$datos.linea}</span>
+                          </div>
+                        </div>
+                        <div class="col-md-3 p-2">
+                          <div class="card-body">
+                            <h6 class="m-2 font-weight-bold text-gray-800">Fecha de creación</h6> 
+                            <span class="text-gray-700">{$datos.fecha}</span>
+                          </div>
+                        </div> 
+                      </div>
+                      <!--row-->
+                    </div>
+                  </div>
+                </div>
+                <!-- fin card Datos-->
+                <div class="col-md-6">
+                 <!-- Card - Autores -->
+                  <div class="card  mb-4">
+                    <div class="card-header">
+                      <h6 class="m-0 font-weight-bold text-primary">Autores</h6>
+                    </div>
+                      <!-- Card Content  -->
+                    <div class="card-body ">
+                      <div class="row mb-3">
+                        <div class="col-md-5">
+                          {if $datos_lider.foto_perfil == NULL}
+                                <i class="fas fa-user fa-4x img-profile rounded-circle p-2 bg-gray-200"></i>
+                              {else}
+                                <a class="thumbnail" href="#" data-id="{$datos_lider.id}" data-toggle="modal" 
+                                 data-image="../../imagenes/perfil/{$datos_lider.foto_perfil}" data-target="#image-gallery">
+                                  <img class="img-thumbnail img-user4 rounded-circle" src="../../imagenes/perfil/{$datos_lider.foto_perfil}" alt="User profile picture">
+                                </a>
+                              {/if}
+                          </div>
+                          <div class="col-md-7">
+                            <span>{$datos_lider.nombre} {$datos_lider.apellido}</span>
+                            <br>
+                            <small>Lider de equipo</small>
+                          </div>
+                      </div>
+                      {section name=i loop=$equipo}
+                        <div class="row my-3">
+                          <div class="col-md-5">
+                          {if $equipo[i].foto_perfil == NULL}
+                            <i class="fas fa-user fa-4x img-profile rounded-circle p-2 bg-gray-200"></i>
+                          {else}
+                            <a class="thumbnail" href="#" data-id="{$equipo[i].id}" data-toggle="modal"  data-image="../../imagenes/perfil/{$equipo[i].foto_perfil}" data-target="#image-gallery">
+                              <img class="img-thumbnail img-user4 rounded-circle" src="../../imagenes/perfil/{$equipo[i].foto_perfil}" alt="User profile picture">
+                            </a>
+                          {/if}
+                        </div>
+                        <div class="col-md-7">
+                          <span>{$equipo[i].nombre} {$equipo[i].apellido}</span>
+                          <br>
+                          <small>Estudiante</small>
+                        </div>
+                      </div>
+                    {/section} 
+                  </div>
+                </div>
+              <!-- CARD-->
+            </div>
+              <!-- Col-->
+              <div class="col-md-6">
+                <!-- Card Header - Localidad -->
+                  <div class="card  mb-4">
+                    <div class="card-header">
+                      <h6 class="m-0 font-weight-bold text-primary">Comunidad</h6>
+                    </div>
+                      <div class="card-body">
+                       <h6 class="font-weight-bold text-gray-800">Organismo, Institución o Comunidad a quien va dirigido el Proyecto:</h6>
+                       {$comunidad.nombre_comunidad} 
+                        <br>
+                        <h6 class="font-weight-bold text-gray-800">Dirección:</h6>
+                       {$comunidad.direccion}
+                        <h6 class="font-weight-bold text-gray-800">Estado</h6>
+                       {$comunidad.estado}
+                        <h6 class="font-weight-bold text-gray-800">Municipio</h6>
+                       {$comunidad.municipio}
+                        <h6 class="font-weight-bold text-gray-800">Parroquia</h6>  
+                       {$comunidad.parroquia}
+                      </div>
+                  </div>
+              </div>
+
+            <!--card propociones -->
+              <div class="col-md-6">
+                <div class="card  mb-4">
+                  <div class="card-header">
+                    <h6 class="m-0 font-weight-bold text-primary">Proposiciones</h6>
+                  </div>
+                <!-- Card Content  -->
+                  <div class="card-body p-1">
+                    <nav class="nav nav-tabs" id="myTab" role="tablist">
+                    {section name=i loop=$proposiciones}
+                      <a class="nav-item nav-link {if $smarty.section.i.index_next == 1}active{/if} " id="propuesta_{$smarty.section.i.index_next}-tab" data-toggle="tab" href="#nav_propuesta_{$smarty.section.i.index_next}" role="tab" aria-controls="nav_propuesta_{$smarty.section.i.index_next}" aria-selected="true">Propuesta {$smarty.section.i.index_next}</a>
+                        {/section}  
+                    </nav>
+                    <div class="tab-content p-3" id="nav-tabContent">
+                      {section name=i loop=$proposiciones}
+                       <div class="tab-pane fade {if $smarty.section.i.index_next == 1}show active{/if}" id="nav_propuesta_{$smarty.section.i.index_next}" role="tabpanel" aria-labelledby="propuesta_{$smarty.section.i.index_next}-tab">
+                          <h6>Estado: <span class="badge badge-pill badge-success ml-2 p-2">{$proposiciones[i].status}</span></h6>
+                          <h6 class="font-weight-bold">Descripción:</h6>
+                          <p class="p-1">{$proposiciones[i].descripcion}</p>
+                          <h6 class="font-weight-bold">Objetvo:</h6>
+                          <p class="p-1">{$proposiciones[i].objetivo}</p>
+                        </div>
+                      {/section}
+                    </div>
+                  </div>
+                <!--/Card Content  -->
+                </div>
+              </div>
+            <!--/card propociones -->
+
+              {if count($observaciones) > 0}
+
+              <!-- Card - Obserbaciones -->
+              <div class="col-md-6">
+                <div class="card  mb-4">
+                  <div class="card-header">
+                    <h6 class="m-0 font-weight-bold text-primary">Observaciones</h6>
+                  </div>
+                  <div class="card-body p-1">
+                    <div class="row">
+                      {section name=i loop=$observaciones}
+                      <div class="col-md-12">
+                        <div class="media p-3">
+                          {if $observaciones[i].id_persona != NULL}
+                            {$usuario=bd_personas_datos($observaciones[i].id_persona)}
+                            {if $usuario.foto_perfil == NULL }
+                            <i class="fas fa-user fa-4x img-profile rounded-circle p-2 bg-gray-200 mr-3"></i>
+                            {else}
+                            <a class="thumbnail mr-3" href="#" data-id="{$usuario.id}" data-toggle="modal" data-image="../../imagenes/perfil/{$usuario.foto_perfil}"
+                            data-target="#image-gallery">
+                            <img class="img-thumbnail img-user4 rounded-circle" src="../../imagenes/perfil/{$usuario.foto_perfil}" alt="User profile picture">
+                            </a>
+                            {/if}
+                          {/if}
+                          <div class="media-body card">
+                            <div class="card-body bg-gray-200">
+                              {if $observaciones[i].id_persona != NULL}
+                                {$usuario=bd_personas_datos($observaciones[i].id_persona)}
+                              {/if}
+                              
+                              <h6 class=" text-gray-900 font-weight-bold">{if $usuario.nombre != NULL and $usuario.apellido != NULL}{$usuario.nombre} {$usuario.apellido}{/if} 
+                                <small>{$observaciones[i].fecha}</small>
+                              </h6>
+                                 
+                              <p class="card-text">{$observaciones[i].descripcion}
+                              </p>
+                              {if $smarty.session["u"]["id"] == $observaciones[i].id_persona and $opciones == 'TRUE'}
+                              <!--dropdwn -->        
+                                <div class="dropdown no-arrow">
+                                  <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-900"></i>
+                                  </a>
+                                  
+                                <!--cotenido dropdwn -->        
+                                  <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink">
+                                    <div class="dropdown-header">Opciones Obsevación:</div>
+                                    <a class="dropdown-item mimodal" data-href="../observaciones/observaciones_editar.php?id={$observaciones[i].id}&r={$r}">
+                                      <i class="fa fa-edit fa-sm fa-fw mr-2 text-gray-800"></i>
+                                      Editar
+                                    </a>
+                                    <a class="dropdown-item mimodal" data-href="../observaciones/observaciones_eliminar.php?id={$observaciones[i].id}&r={$r}">
+                                      <i class="fa fa-trash fa-sm fa-fw mr-2 text-gray-800"></i>
+                                      Eliminar
+                                    </a>
+                                <!--/cotenido dropdwn -->        
+                                  </div>
+                                </div>
+                              <!--/dropdwn -->
+                              {/if} 
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      {/section}
+                    </div>
+                  </div>
+                </div>
+               
+              </div>
+              <!--/ Card - Obserbaciones -->
+            </div>
+            {/if}
+          </div>
+	</div>
+</div>
+
+
+
+{include "../../modal/modal_galeria.html"} 
+{include "../../modal/modal_box.html" prueba="Comunidad"} 
+{include file="../../pie/pie_interno.html"}

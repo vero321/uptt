@@ -1,77 +1,88 @@
 {include file="../../navegacion/cab.html"}
 {include file="../../navegacion/sidebar2.html"}
 {include file="../../navegacion/cabecera2.html"}
+{include file="../../navegacion/barra_nucleo_pnf.html"}
    
-        <div class="container-fluid">
-          <div class="card shadow">
-              <div class="card-header ">
-                <h2 class="text-primary"><span class="badge badge-secondary badge-pill">{$propuesta.numero_propuestas}</span> Propuestas
-                  {if in_array("PROP_A",$verificar) == TRUE}
-                  <a class="btn btn-sm btn-outline-primary mimodal 
-                    {if $propuesta.numero_propuestas >= $propuesta.limite_propuestas}
-                    disabled
-                    {/if}
-                    " type="button" 
-                          href="propuesta_agregar.php?equipo_id={$equipo_id}" title="Agregar una Propuesta"><span class="fa fa-plus"></span>
-                    </a>
-                  | Equipo: {$lider.nombre_equipo}
-                  {/if}
-                </h2>
-                <div class="col-md-6 ">
-                Limite de Propuestas:
-                <span class="badge badge-info badge-pill">{$propuesta.limite_propuestas}</div>
- 
-              </div>
+<div class="container-fluid">
+<!--container titulo -->
+  <div class="container m-2 my-3">
+    <h2 class="text-primary">Propuestas</h2>
+  </div>
+<!--/container titulo -->
 
-              <div class="card-body">
-                <div class="table-responsive">
-                  
-                  <table class="table" id="tabla_repo" style="width:100%">
-                    <thead>
-                      <tr>
-                        <th>Propuesta</th>
-                        <th>Objetivo</th>
-                        <th>Funciones</th>
-                      </tr>
-                    </thead>
-                    <tbody class="buscar" id="personas">
-
-                    {section name=i loop=$propuestas}
-
-                      <tr>
-                        <td>{$propuestas[i].propuesta}</td>
-                        <td>{$propuestas[i].objetivo}</td>
-                        <td class="text-center" style="white-space: nowrap;">
-                        {if in_array("PNF_M",$verificar) == TRUE}
-                        <a 
-                          style="margin-bottom:3px; color:blue;" 
-                          class="btn btn-default mimodal" 
-                          title="Modificar PNF" 
-                          data-href="pnf_modificar.php?id={$pnf[i].id}">
-                          <i class="fa fa-edit"></i>
-                        </a>
-                        {/if}
-                        {if in_array("PNF_E",$verificar) == TRUE}
-                        <a 
-                          style="margin-bottom:3px; color:blue;" 
-                          class="btn btn-default mimodal"
-                          title="Eliminar PNF" 
-                          data-href="pnf_eliminar.php?id={$pnf[i].id}">
-                          <i class="fa fa-trash"></i>
-                        </a>
-                        {/if}
-                        </td>
-                      </tr>
-                    {/section}
-
-                    </tbody>
-                  </table>
-                </div> 
-              </div>
+<!--card principal -->
+  <div class="card mb-5 shadow">
+  <!--header card principal -->
+    <div class="card-header py-0">
+      <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item">
+          <a class="nav-link active" id="mi_propuesta-tab" data-toggle="tab" href="#mi_propuesta" role="tab" aria-controls="mi_propuesta" aria-selected="true">Mi propuesta</a>
+        </li>
+        
+        <li class="nav-item">
+          <a class="nav-link " id="propuestas_disponibles-tab" data-toggle="tab" href="#propuestas_disponibles" role="tab" aria-controls="propuestas_disponibles" aria-selected="false" data-equipo="{$equipo_id}" >Propuestas disponibles</a>
+        </li>
+      </ul>
+    </div>
+  <!--/header card principal -->
+  <!--body card principal -->
+    <div class="card-body p-0">
+    <!--Tab -->        
+      <div class="tab-content" id="myTabContent">
+      <!--Tab propuesta -->        
+        <div class="tab-pane fade show active" id="mi_propuesta" role="tabpanel" aria-labelledby="mi_propuesta-tab">
+   
+          <div class="mx-auto p-5">
+            <div class="alert alert-info alert-dismissible fade show" role="alert">
+              <h4 class="alert-heading">Atencion importante!</h4>
+              <p>
+                Aun no has registrado niguna propuesta. 
+              </p>
+              <hr>
+              <p> Para reagistrar una propuesta preciona el Boton [+] y rellena el firmolario.</p>
+              {if in_array("PROP_A",$verificar) == TRUE}
+              <a class="btn btn-md btn-primary align-middle" 
+                type="button" 
+                href="propuesta_agregar.php?equipo_id={$equipo_id}" title="Agregar una Propuesta"><span class="fa fa-plus"></span>
+               </a>
+              {/if}
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
             </div>
           </div>
-        </div>
 
-{include "../../../modal/modal_box.html" prueba="Usuario"} 
+      </div>
+    <!--/Tab propuesta -->        
+
+        <div class="tab-pane fade" id="propuestas_disponibles" role="tabpanel" aria-labelledby="propuestas_disponibles-tab">
+
+          <div class="table-responsive p-5">
+            <table id="tabla_disponibles" class="table" style="width:100%">
+              <thead>
+                <tr>
+                  <td>Codigo</td>
+                  <td>Descripción</td>
+                  <td>Objetivo</td>
+                  <td>Comunidad</td>
+                  <td>Funciones</td>
+                </tr>
+              </thead>
+              <tbody>
+                
+              </tbody>
+            
+            </table>
+            
+          </div>
+                    
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{include "../../modal/modal_galeria.html"} 
+{include "../../modal/modal_box.html" prueba="Comunidad"} 
 
 {include file="../../pie/pie_interno.html"}

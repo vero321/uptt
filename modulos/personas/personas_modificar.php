@@ -12,7 +12,6 @@ $id = $_SESSION['u']['id'];
 
 $personas= bd_personas_datos($id);
 
-
+$smarty->assign('usuarios', bd_usuarios_datos($id));
 $smarty->assign ('personas', $personas);
-
 $smarty->display('personas_modificar.html');

@@ -1,18 +1,15 @@
 {include file="../../navegacion/cab.html"}
 {include file="../../navegacion/cabecera2.html"}
 
-        <div  class="container-fluid">
+        <div  class="container">
           <div  class="row">
             <div class="col-md-4">
               <div class="card card-primary card-outline border-left-primary shadow" >
                 <div class="card-body">
-                  <div class="text-center">
+                  <div class="text-center m-2">
                     <a class="btn btn-link mimodal" data-href="../personas/usuarios_cambiar_foto.php">
                     {if $smarty.session['u']['foto_perfil'] == NULL}
-                      <img class="img-thumbnail rounded-circle img-perfil"
-                           src="../../imagenes/perfil/user.png"
-                           alt="User profile picture"
-                           >
+                      <i class="fas fa-user fa-5x img-profile rounded-circle p-2 bg-gray-200"></i>
                         </a>
                     {else}
                     <img class="img-thumbnail rounded-circle img-perfil"
@@ -22,24 +19,37 @@
                       </a>
                     {/if}
                   </div>
-                  <div class="text-muted text-center">
-                    
+                  <div class="text-muted ">
+                    <ul class="list-group p-1 my-3">
+                      <li class="list-group-item border-0 d-flex justify-content-between align-items-center">
+                        <h5 class="profile-username text-center">{$personas.nombre|capitalize} {$personas.apellido|capitalize}</h5>
+                      </li>
+                      <li class="list-group-item border-0 d-flex justify-content-between align-items-center">
+                        {$usuarios.id}
+                        <span class="fa fa-id-card"></span>
+                      </li>
+                      <li class="list-group-item border-0 d-flex justify-content-between align-items-center">
+                        {$usuarios.correo}
+                        <span class="fa fa-envelope"></span>
+                      </li>
+                      <li class="list-group-item border-0 d-flex justify-content-between align-items-center">
+                        {$personas.telefono}
+                        <span class="fa fa-phone"></span>
+                      </li>
+                      <li class="list-group-item border-0"><h5 class="">Sobre mí</h5><p class="mb-1">{$personas.texto}</p></li>'
+                    </ul>
                   </div>
 
-                  <h3 class="profile-username text-center">{$personas.nombre|capitalize} {$personas.apellido|capitalize}</h3>
-
-                  <p class="text-muted text-center">{$usuarios.correo}</p>
-                  <p class="text-muted text-center">{$usuarios.id}</p>
-
-                  <a class="btn btn-outline-primary  btn-block mimodal" data-href="personas_modificar.php?id={$personas.id}" value="Modificar Datos">
-                    <i class="fa fa-edit fa-fw"></i>Modificar Datos
-                  </a>
-                  <a class="btn btn-outline-primary  btn-block mimodal" data-href="../personas/usuarios_cambiar_clave.php">
-                  <i class="fa fa-unlock-alt fa-sm fa-fw text-gray-400"></i>
-                  Cambiar clave
-
-                </a>
-
+                  <div class="p-1 my-3">
+                    <a class="btn btn-outline-primary  btn-block mimodal d-flex justify-content-between align-items-center" data-href="personas_modificar.php?id={$personas.id}" value="Modificar Datos">
+                      Modificar Datos
+                      <i class="fa fa-edit fa-fw"></i>
+                    </a>
+                    <a class="btn btn-outline-primary  btn-block mimodal d-flex justify-content-between align-items-center" data-href="../personas/usuarios_cambiar_clave.php">
+                    Cambiar clave
+                    <i class="fa fa-unlock-alt fa-sm fa-fw"></i>
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>

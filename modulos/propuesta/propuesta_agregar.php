@@ -13,8 +13,7 @@ $pnf=bd_pnf_datos($id_pnf);#Guarda los Datos del pnf
 
 $docente=bd_equipo_seccion_profesor($_GET['equipo_id']);#Guarda el docente asesor encargado de la seccion
 
-$lider=bd_equipo_seccion_lider($_GET['equipo_id']);#Guarda el lider de equipo
-#vq($lider);
+$lider=bd_personas_datos($_SESSION['u']['id']);#Guarda el lider de equipo
 
 $equipo=bd_equipo_personas_datos($_GET['equipo_id']);#Guarada el los datos del equipo asignados por el lider
 
@@ -26,8 +25,7 @@ $trayecto=bd_equipo_seccion_trayecto($_GET['equipo_id']);#Guarda el trayecto per
 
 
 $smarty->assign('estados',bd_ubicaciones('estado'));
-$smarty->assign('municipios',bd_ubicaciones('municipio',20));
-$smarty->assign('parroquias',bd_ubicaciones('parroquia',300));
+$smarty->assign('lineas', bd_lineas_datos());
 $smarty->assign('fecha',$fecha);
 $smarty->assign('pnf',$pnf);
 $smarty->assign('docente',$docente);

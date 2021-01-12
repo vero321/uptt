@@ -192,7 +192,10 @@ function bd_ubicaciones($tabla, $id=1)
     return sql2array("SELECT id, nombre FROM UBICACIONES WHERE tabla LIKE '{$tabla}' AND localidad_id = '{$id}' ORDER BY nombre ASC");
 }
 
-
+function bd_ubicaciones2($id){
+    $dato = sql2row("SELECT nombre FROM UBICACIONES WHERE id = '{$id}' ");
+    return $dato['nombre'];
+}
 
 
 
@@ -422,7 +425,7 @@ function bd_usuarios_registrar($usuario){
     sql($sql1);
 
     $consulta="SELECT id FROM PERSONAS WHERE id ='{$usuario['id']}'";
-    $verificar= sql($consulta);
+    $verificar= sql2row($consulta);
 
     if ($verificar < 1){
         $sql2="
@@ -954,17 +957,15 @@ function bd_roles_eliminar($id){
 ############################# Funciones Personas
 
 
-function bd_personas_datos($login=NULL)
-{
-    if ($login!=NULL){
+function bd_personas_datos($id=NULL){
+    if ($id!=NULL){
         $sql="
                 SELECT *
                 FROM  PERSONAS 
-                WHERE id LIKE '{$login}'
+                WHERE id LIKE '{$id}'
                 ";
             $salida = sql2row($sql);
-    }else
-    {
+    }else{
         $sql="
             SELECT *
             FROM PERSONAS
@@ -980,7 +981,9 @@ function bd_personas_modicar($personas)
         UPDATE PERSONAS SET
             id = '{$personas['id']}',
             nombre = '{$personas['nombre']}',
-            apellido = '{$personas['apellido']}'
+            apellido = '{$personas['apellido']}',
+            telefono = '{$personas['telefono']}',
+            texto = '{$personas['texto']}'
         WHERE
             id = '{$personas['id']}'
     ";
@@ -1012,8 +1015,8 @@ function bd_pnf_contar(){
     return sql2value("SELECT COUNT(*) FROM PNF");
 }
 
-function bd_propuesta_contar_lider(){
-    return sql2value("SELECT COUNT(*) FROM PROPUESTAS WHERE status = 'CORRECCIONES'");
+function bd_propuesta_contar_equipo($id, $status){
+    return sql2value("SELECT COUNT(*) FROM PROPUESTAS WHERE id_equipo = {$id} and status = '{$status}'");
 }
 
 function bd_trayectos_contar(){
@@ -1808,7 +1811,43 @@ function  bd_tutor_seccion($id_seccion){
     return $salida;
 }
 
+####    Funciones Proposiciones ######
 
+function bd_proposiciones_datos($id=NULL){
+    if ($id!=NULL) {
+        $sql="
+            SELECT *
+            FROM PROPOSICIONES
+            WHERE id LIKE '{$id}'
+            ";
+        $salida = sql2row($sql);
+    } else {
+            $sql="
+            SELECT *
+            FROM PROPOSICIONES
+            ";
+            $salida = sql2array($sql);
+       }
+    return $salida;
+}
+function bd_proposiones($propuesta){
+    $proposiciones = array(
+        0 => bd_proposiciones_datos($propuesta['id_proposicion_1']),
+        1 => bd_proposiciones_datos($propuesta['id_proposicion_2']),
+        2 => bd_proposiciones_datos($propuesta['id_proposicion_3']),
+    );
+    return $proposiciones;  
+}
+function proposiones_eliminar($proposiciones){
+    foreach ($$proposiciones as $proposicion) {
+        # code...
+        $sql = "
+            DELETE FROM PROPOSICIONES
+            WHERE id = '{$proposiciones['id']}'
+            ";
+        sql($sql);
+    }
+}
 ####    Funciones Propuestas ######
 
 
@@ -1816,102 +1855,43 @@ function bd_propuestas_datos($id=NULL){
     if ($id!=NULL) {
         $sql="
             SELECT *
-            FROM PROPUESTAS_DATOS
+            FROM PROPUESTAS
             WHERE id LIKE '{$id}'
             ";
         $salida = sql2row($sql);
     } else {
             $sql="
             SELECT *
-            FROM PROPUESTAS_DATOS
+            FROM PROPUESTAS
             ";
             $salida = sql2array($sql);
        }
     return $salida;
 }
 
-
-function bd_propuestas_datos_lider($id=NULL, $status)
-
-{
-    /*
-    la funcion utiliza dos paramatros para filtrar la id del usuario y status la cual hace referencia al estado de la propuesta los valores de esta DEBEN ser:
-    NUEVA
-    ENVIAR
-    EVALUAR
-    APROVADA
-    RECHAZADA
-    DECLINADA
-    
-    se utiliza de la siguiente manera:
-
-    bd_propuestas_datos_lider($id=NULL,'NUEVA')
-
-    De esta manera una sola funcion cirve para todos los estados de la propuesta
-    */
-    if ($id!=NULL) {
-        $sql="
-            SELECT *
-            FROM PROPUESTAS
-            WHERE id_datos_propuestas LIKE '{$id}' and status = '{$status}'
-            ";
-        $salida = sql2row($sql);
-    } else {
-        $sql="
-            SELECT *
-            FROM PROPUESTAS
-            WHERE status = '{$status}'
-            ";
-        $salida = sql2array($sql);
-    }
-    return $salida;
-}
-
-
-
-function bd_propuestas_datos_agregar($d)
-{
-   $sql="  INSERT INTO PROPUESTAS_DATOS (
-            id, 
-            id_pnf_nucleo, 
-            id_trayceto_pnf, 
-            fecha, 
-            id_docente, 
-            id_equipo, 
-            comunidad_objeto, 
-            id_parroquia, 
-            direccion, 
-            linea_investigacion
-            ) 
-        VALUES (
-            NULL, 
-            '{$d['pnf_id']}', 
-            '{$d['trayecto_id']}', 
-            '{$d['fecha']}', 
-            '{$d['docente']}', 
-            '{$d['equipo_id']}', 
-            '{$d['comunidad']}', 
-            '{$d['parroquia']}', 
-            '{$d['direccion']}', 
-            '{$d['linea_investigacion']}'
-            );";
-        
-    $propuesta_id= sql($sql);
-
-    $sql= "INSERT INTO PROPUESTAS  (id, propuesta, objetivo, id_datos_propuestas, status) 
-            VALUES 
-            (NULL, '{$d['propuesta1']}','{$d['objetivo1']}', $propuesta_id, 'NUEVA'),
-            (NULL, '{$d['propuesta2']}','{$d['objetivo2']}', $propuesta_id, 'NUEVA'),
-            (NULL, '{$d['propuesta3']}','{$d['objetivo3']}', $propuesta_id, 'NUEVA');
-            ";
+function bd_propuestas_eliminar($id){
+    # para eliminar una propuesta tambien se eliminanlas proposiones
+    $propuesta = bd_propuestas_datos($id);
+    $proposiciones=bd_proposiones($propuesta);
+    proposiones_eliminar($proposiciones);
+    $sql = "
+        DELETE FROM PROPUESTAS
+        WHERE id = '{$id}'
+        ";
     sql($sql);
 }
 
-function bd_propuestas_datos_equipo($id){
+
+function bd_propuestas_equipo($id=NULL, $status=NULL){
+    /*
+    la funcion utiliza dos paramatros para filtrar la id del equipo y  el status el cual hace referencia al estado de la propuesta los valores de esta DEBEN ser:
+    NUEVA, ENVIAR, EVALUAR, APROVADA, RECHAZADA    
+    */
+
     if ($id!=NULL) {
         $sql="
             SELECT *
-            FROM PROPUESTAS_DATOS
+            FROM PROPUESTAS
             WHERE id_equipo LIKE '{$id}'
             ";
         $salida = sql2row($sql);
@@ -1925,48 +1905,252 @@ function bd_propuestas_datos_equipo($id){
     }
     return $salida;
 }
-function bd_propuestas_datos_id_datos_propuestas($id=NULL, $status)
+
+/*
 {
-    /*
-    la funcion utiliza dos paramatros para filtrar la id del usuario y status la cual hace referencia al estado de la propuesta los valores de esta DEBEN ser:
-    NUEVA
-    ENVIAR
-    EVALUAR
-    APROVADA
-    RECHAZADA
-    DECLINADA
+   $sql="  INSERT INTO PROPUESTAS_DATOS (
+            id, 
+            id_pnf_nucleo, 
+            id_trayceto_pnf, 
+            fecha, 
+            id_docente, 
+            id_equipo, 
+            id_comunidad, 
+            id_linea_investigacion
+            ) 
+        VALUES (
+            NULL, 
+            '{$d['pnf_id']}', 
+            '{$d['trayecto_id']}', 
+            '{$d['fecha']}', 
+            '{$d['docente']}', 
+            '{$d['equipo_id']}', 
+            '{$d['comunidad']}', 
+            '{$d['linea_investigacion']}'
+            );";
+    $propuesta_id= sql($sql);
+
+    $sql= "INSERT INTO PROPUESTAS  (id, propuesta, objetivo, id_datos_propuestas, status) 
+            VALUES 
+            (NULL, '{$d['propuesta1']}','{$d['objetivo1']}', $propuesta_id, 'NUEVA'),
+            (NULL, '{$d['propuesta2']}','{$d['objetivo2']}', $propuesta_id, 'NUEVA'),
+            (NULL, '{$d['propuesta3']}','{$d['objetivo3']}', $propuesta_id, 'NUEVA');
+            ";
+    sql($sql);
+}
+*/
+
+function bd_propuestas_agregar($datos, $proposiciones){
+    #ver($datos);
+    #vq($proposiciones);
+    $id_propuesta = uniqid(true);
+    $sql="  INSERT INTO PROPUESTAS (
+            id,
+            fecha, 
+            id_docente, 
+            id_equipo,
+            id_lider, 
+            id_comunidad, 
+            id_pnf, 
+            id_trayecto, 
+            id_linea_investigacion
+            ) 
+        VALUES (
+            '{$id_propuesta}',
+            '{$datos['fecha']}', 
+            '{$datos['docente']}', 
+            '{$datos['equipo_id']}', 
+            '{$datos['lider']}', 
+            '{$datos['comunidad']}', 
+            '{$datos['pnf_id']}', 
+            '{$datos['trayecto_id']}', 
+            '{$datos['linea_investigacion']}'
+            );";
+    sql($sql);
+    foreach ($proposiciones as $proposicion) {
+        $sql = "
+            INSERT INTO PROPOSICIONES (id, descripcion, objetivo)
+            VALUES ( '{$proposicion['id']}','{$proposicion['proposicion']}', '{$proposicion['objetivo']}' )
+        ";
+        sql($sql);
+        #$sql0 = "
+        #    UPDATE PROPUESTAS SET
+        #    {$proposicion['n_proposicion']} = '{$proposicion['id']}'
+        #    WHERE id = '{$id_propuesta}'
+        #";
+        #sql($sql0);
+    }
+}
+
+function bd_propuestas_modificar($datos){
+    $sql0 = "
+        UPDATE  PROPUESTAS SET
+        id_comunidad = '{$datos['comunidad']}',
+        id_linea_investigacion = '{$datos['linea_investigacion']}'
+        WHERE id = '{$datos['id']}'
+    ";
+    sql($sql0);
+    for ($i=1; $i <= 3 ; $i++) { 
+        # code...
+        $a = 'proposicion'.$i;
+        $b = 'objetivo'.$i;
+        $id ='id_proposicion_'.$i;
+        $sql1 = " 
+            UPDATE PROPOSICIONES SET
+            descripcion = '{$datos[$a]}',
+            objetivo = '{$datos[$b]}'
+            WHERE id = '{$datos[$id]}'
+        ";
+        sql($sql1);
+    }
     
-    se utiliza de la siguiente manera:
+}
+function bd_propuestas_trayectos($trayecto, $status, $id_pnf){
+    $sql="
+        SELECT *
+        FROM PROPUESTAS
+        WHERE id_trayecto = '{$trayecto}' and status = '{$status}' and id_pnf = '{$id_pnf}'
+        ";
+    $salida = sql2array($sql);
 
-    bd_propuestas_datos_lider($id=NULL,'NUEVA')
+    return $salida;
+}
 
-    De esta manera una sola funcion cirve para todos los estados de la propuesta
-    */
+function bd_propuesta_cambiar_estatus($propuesta, $status){
+    $sql="
+        UPDATE PROPUESTAS SET
+        status = '{$status}'
+        WHERE id = '{$propuesta}'
+    ";
+    sql($sql);
+}
+
+function bd_proposicion_disponible($trayecto, $pnf){
+    $sql = "
+        SELECT PROPOSICIONES.id, descripcion, objetivo, id_comunidad 
+        FROM PROPOSICIONES, PROPOSICIONES_DATOS
+        WHERE id_proposiciones_datos = PROPOSICIONES_DATOS.id and status = 'RECHAZADA' and sub_status = 'NIVEL' and PROPOSICIONES_DATOS.id_pnf = '{$pnf}' and PROPOSICIONES_DATOS.id_trayecto = '{$trayecto['id']}'
+    ";
+    $salida=sql2array($sql);
+    return $salida;
+}
+
+############################
+
+function    bd_buscar($tabla, $campos, $palabras){
+    # Esta Funcion es la funcion de buscar usuarios 
+
+    $miscampos = explode(',', $campos);
+    foreach ($miscampos as $key => $value)
+    {
+        $miscampos[$key] .= " LIKE '%{$palabras}%'";
+    }
+    $condicion = implode(' OR ', $miscampos);
+    $sql="
+    SELECT * FROM {$tabla}
+    WHERE ($condicion )
+    ";
+    $resultado=sql2array($sql);
+        
+
+ return $resultado;
+}
+
+
+#
+# Funciones comunidades
+#
+
+function bd_comunidad($comunidad){
+    $datos=bd_comunidades_datos($comunidad);
+    $datos['estado'] = bd_ubicaciones2($datos['id_estado']);
+    $datos['municipio'] = bd_ubicaciones2($datos['id_municipio']);
+    $datos['parroquia'] = bd_ubicaciones2($datos['id_parroquia']);
+    return $datos;
+}
+
+function bd_comunidades_datos($id){
     if ($id!=NULL) {
         $sql="
             SELECT *
-            FROM PROPUESTAS
-            WHERE id_datos_propuestas LIKE '{$id}' and status = '{$status}'
+            FROM COMUNIDADES
+            WHERE id LIKE '{$id}'
             ";
-        $salida = sql2array($sql);
+        $salida = sql2row($sql);
     } else {
         $sql="
             SELECT *
-            FROM PROPUESTAS
-            WHERE status = '{$status}'
+            FROM COMUNIDADES
             ";
         $salida = sql2array($sql);
     }
     return $salida;
 }
 
-function bd_propuesta_cambiar_estatus($propuesta, $observacion, $status){
-    $sql="
-        UPDATE PROPUESTAS SET
-        status = '{$status}'
-        WHERE id = $propuesta
-    ";
-    sql($sql);
+function bd_comunidad_registrar($valores){
+    $sql1 = "
+        INSERT INTO COMUNIDADES (nombre_comunidad, siglas, direccion, id_estado, id_municipio, id_parroquia)
+        VALUES ('{$valores['comunidad']}','{$valores['siglas']}', '{$valores['direccion']}', '{$valores['estado']}', '{$valores['municipio']}', '{$valores['parroquia']}')
+        ";
+    sql($sql1);
+    return 0;
 }
 
-############################
+#
+#funciones observaciones
+#
+
+function bd_observaciones_datos($tabla, $fila, $id=NULL){
+    if ($tabla!=NULL and $fila !=NULL) {
+        $sql="
+            SELECT *
+            FROM OBSERVACIONES
+            WHERE tabla = '{$tabla}' and fila = '{$fila}'
+            ";
+        $salida = sql2array($sql);
+    }elseif ($id!=NULL) {
+        $sql="
+            SELECT *
+            FROM OBSERVACIONES
+            WHERE id = '{$id}'
+            ";
+        $salida = sql2row($sql);
+    }
+    else {
+        $sql="
+            SELECT *
+            FROM OBSERVACIONES
+            ";
+        $salida = sql2array($sql);
+    }
+    return $salida;
+}
+
+
+function bd_observaciones_añadir($datos){
+    $fecha = date('Y-m-d');
+    $id_persona = $_SESSION['u']['id'];
+   $sql ="
+        INSERT INTO OBSERVACIONES(fecha, descripcion, tabla, fila, id_persona)
+        VALUES('{$fecha}', '{$datos['descripcion']}', '{$datos['tipo']}', '{$datos['fila']}','{$id_persona}')
+   ";
+   sql($sql);
+}
+
+function bd_observasiones_modficar($datos){
+    $sql = "
+        UPDATE OBSERVACIONES SET
+            descripcion = '{$datos['descripcion']}'
+        WHERE id = '{$datos['id']}' 
+            ";
+    sql($sql);
+    return $datos['id'];
+}
+
+function bd_obdervaciones_eliminar($id){
+    $sql = "
+        DELETE FROM OBSERVACIONES
+        WHERE id = '{$id}'
+        ";
+    sql($sql);
+}

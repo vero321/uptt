@@ -1,0 +1,93 @@
+{include file="../../navegacion/cab.html"}
+{include file="../../navegacion/sidebar2.html"}
+{include file="../../navegacion/cabecera2.html"}
+
+<div class="container-fluid">
+	<ol class="breadcrumb">
+	    <li class="breadcrumb-item"><a href="../inicio/inicio_interno.php">Repo</a></li>
+	    <li class="breadcrumb-item"><a href="../distribuidor/distribuidor.php?r={$smarty.session['r'][$smarty.session['numero']].id_rol}&n={$smarty.session['numero']}">Panel {$smarty.session["r"][$smarty.session["numero"]].rol}</a></li>
+	    <li class="breadcrumb-item"><a href="propuesta_evaluando.php?id=NULL">Seciones</a></li>
+	    <li class="breadcrumb-item active" aria-current="page">Propuestas evaluar</li>
+	</ol>
+	<div class="card">
+		<div class="card-header">
+			<h2>Propuestas Equipos</h2>
+		</div>
+		<div class="card-body">
+			<div class="table-responsive">
+                <table class="table " id="tabla_repo" style="width:100%">
+                	<thead class="text-dark">
+                		<tr>
+                			<th>Codigo</th>
+                			<th>Docente</th>
+                			<th>Equipo</th>
+                			<th>Lider de equipo</th>
+                			<th>Funciones</th>
+                		</tr>
+                  	</thead>
+                  	<tbody>
+                  		{section name=i loop=$propuestas}
+                  		<tr>
+                  			<td>{$propuestas[i].id}</td>
+                  			<td>
+                  				<div class="col-md-12">
+                            {if $propuestas[i]['docente'].foto_perfil == NULL}
+                   				<i class="fas fa-user fa-4x img-profile rounded-circle p-2 bg-gray-200"></i>
+                            {else}
+                              <a class="thumbnail" href="#"  data-toggle="modal" data-id="{$propuestas[i]['docente'].id}"
+                             data-image="../../imagenes/perfil/{$propuestas[i]['docente'].foto_perfil}"
+                             data-target="#image-gallery">
+                                <img class="img-thumbnail img-user rounded-circle" src="../../imagenes/perfil/{$propuestas[i]['docente'].foto_perfil}" alt="User profile picture">
+                                </a>
+                            {/if}
+                              </div>
+                            <div class="col-md-12">
+                            {if isset($propuestas[i]['docente'].nombre) or isset($propuestas[i]['docente'].apellido)}
+                              {$propuestas[i]['docente'].nombre} {$propuestas[i]['docente'].apellido}
+                            {else}
+                            El usuario aun no actualiza sus datos
+                            {/if}
+                  			</td>
+                  			<td>
+                  				{$propuestas[i]['equipo'].nombre_equipo}
+                  			</td>
+                  			<td>
+                            <div class="row">
+                              <div class="col-md-12">
+                            {if $propuestas[i]['lider'].foto_perfil == NULL}
+                   				<i class="fas fa-user fa-4x img-profile rounded-circle p-2 bg-gray-200"></i>
+                            {else}
+                              <a class="thumbnail" href="#"  data-toggle="modal" data-id="{$propuestas[i]['lider'].id}"
+                             data-image="../../imagenes/perfil/{$propuestas[i]['lider'].foto_perfil}"
+                             data-target="#image-gallery">
+                                <img class="img-thumbnail img-user rounded-circle" src="../../imagenes/perfil/{$propuestas[i]['lider'].foto_perfil}" alt="User profile picture">
+                                </a>
+                            {/if}
+                              </div>
+                            <div class="col-md-12">
+                            {if isset($propuestas[i]['lider'].nombre) or isset($propuestas[i]['lider'].apellido)}
+                              {$propuestas[i]['lider'].nombre} {$propuestas[i]['lider'].apellido}
+                            {else}
+                            El usuario aun no actualiza sus datos
+                            {/if}
+                            
+                            </div>
+                        </div>
+                      </td>
+                      <td>
+                        <a style="margin-bottom:3px; color:blue;" class="btn btn-default" title="Ver Propuesta" href="propuesta_detalle.php?id={$propuestas[i].id}">
+                        <i class="fa fa-info-circle"></i>
+                      </a>
+                      </td>
+                  		</tr>
+                  		{/section}
+                  	</tbody>
+                </table>
+            </div>
+		</div>
+		
+	</div>	
+</div>
+   
+{include file="../../modal/modal_galeria.html"}
+{include file="../../pie/pie_interno.html"}

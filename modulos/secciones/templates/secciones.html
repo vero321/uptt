@@ -70,7 +70,7 @@
                            {if $persona.foto_perfil == NULL}
                               <i class="fas fa-user fa-4x img-profile rounded-circle p-2 bg-gray-200"></i>
                             {else}
-                            <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title=""
+                            <a class="thumbnail" href="#" data-id="{$persona.id}" data-toggle="modal"
                            data-image="../../imagenes/perfil/{$persona.foto_perfil}"
                            data-target="#image-gallery">
                               <img class="img-thumbnail img-user rounded-circle myimage" src="../../imagenes/perfil/{$persona.foto_perfil}" alt="User profile picture">
@@ -117,7 +117,7 @@
 		  	<div class="card-header">
 		  		<h4 class="text-primary">Seciones</h4>
 		  	</div>
-		  	<div class="card-body">
+		  	<div>
 			  	<div class="list-group">
 				        {section name=i loop=$trayecto_pnf}
 							<a href="secciones.php?t={$trayecto_pnf[i].id_trayecto}" class="list-group-item list-group-item">

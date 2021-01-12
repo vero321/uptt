@@ -69,14 +69,13 @@
                    {if $persona.foto_perfil == NULL}
                       <i class="fas fa-user fa-4x img-profile rounded-circle p-2 bg-gray-200"></i>
                     {else}
-                    <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title=""
+                    <a class="thumbnail" href="#" data-toggle="modal" data-id="{$persona.id}"
                    data-image="../../imagenes/perfil/{$persona.foto_perfil}"
                    data-target="#image-gallery">
                       <img class="img-thumbnail img-user rounded-circle" src="../../imagenes/perfil/{$persona.foto_perfil}" alt="User profile picture">
                       </a>
                   {/if}
-                    
-                    <span><b>Nombre:</b></span>
+                  <br>
                   {if isset($persona.nombre)}
                     {$persona.nombre}
                   {else}
@@ -84,7 +83,6 @@
                   {/if}
                   <br>
                   {$usuario=bd_usuarios_datos($lider_seccion[i].id_persona)}
-                  <span><b>Usuario:</b></span>
                   {$usuario.correo}
                   <br>
                   <a href="lider_asignar.php?equipo={$lider_seccion[i].id}&cambiar={$lider_seccion[i].id_persona}&seccion={$seccion.id}">Cambiar</a>
@@ -103,14 +101,14 @@
                    {if $persona.foto_perfil == NULL}
                       <i class="fas fa-user fa-2x img-profile rounded-circle p-2 bg-gray-200"></i>
                     {else}
-                    <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title=""
+                    <a class="thumbnail" href="#" data-toggle="modal" data-id="{$persona.id}"
                    data-image="../../imagenes/perfil/{$persona.foto_perfil}"
                    data-target="#image-gallery">
                       <img class="img-thumbnail img-user rounded-circle" src="../../imagenes/perfil/{$persona.foto_perfil}" alt="User profile picture">
                       </a>
                   {/if}
                     
-                    <span><b>Nombre:</b></span>
+                    <br>
                   {if isset($persona.nombre)}
                     {$persona.nombre}
                   {else}
@@ -118,7 +116,6 @@
                   {/if}
                   <br>
                   {$usuario=bd_usuarios_datos($lider_seccion[i].tutor_academico)}
-                  <span><b>Usuario:</b></span>
                   {$usuario.correo}
                   <a href="tutor_academico_asignar.php?id={$lider_seccion[i].id}&cambiar={$lider_seccion[i].tutor_academico}&seccion={$seccion.id}">Cambiar</a>
                 {/if}
@@ -138,13 +135,13 @@
                    {if $persona.foto_perfil == NULL}
                       <i class="fas fa-user fa-2x img-profile rounded-circle p-2 bg-gray-200"></i>
                     {else}
-                    <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title=""
+                    <a class="thumbnail" href="#" data-toggle="modal" data-id="{$persona.id}"
                    data-image="../../imagenes/perfil/{$persona.foto_perfil}"
                    data-target="#image-gallery">
                       <img class="img-thumbnail img-user rounded-circle" src="../../imagenes/perfil/{$persona.foto_perfil}" alt="User profile picture">
                       </a>
                   {/if}
-                    <span><b>Nombre:</b></span>
+                    <br>
                   {if isset($persona.nombre)}
                     {$persona.nombre}
                   {else}
@@ -152,7 +149,6 @@
                   {/if}
                   <br>
                   {$usuario=bd_usuarios_datos($lider_seccion[i].tutor_comunitario)}
-                  <span><b>Usuario:</b></span>
                   {$usuario.correo}
                   <a href="tutor_comunitario_asignar.php?id={$lider_seccion[i].id}&cambiar={$lider_seccion[i].tutor_comunitario}&seccion={$seccion.id}&equipo={$lider_seccion[i].id}">Cambiar</a>
                 {/if}
@@ -163,7 +159,7 @@
 
             <td>
               <a href="../equipo/equipo_profesor.php?id_l={if $lider_seccion[i].id_persona !=  NULL}{$lider_seccion[i].id_persona}{/if}&id_e={if $lider_seccion[i].id !=  NULL}{$lider_seccion[i].id}{/if}" class="p-1" title="Ver detalles integrantes del equipo"><i class="fa fa-info-circle"></i></a>
-              <a href="../propuesta/propuesta_enviar.php?id_s={$seccion_profesor[i].id}&id_l={if $lider_seccion[i].id_persona !=  NULL}{$lider_seccion[i].id_persona}{/if}&id_e={if $lider_seccion[i].id !=  NULL}{$lider_seccion[i].id}{/if}
+              <a href="../propuesta/propuesta_profesor.php?id_s={$seccion_profesor[i].id}&id_l={if $lider_seccion[i].id_persona !=  NULL}{$lider_seccion[i].id_persona}{/if}&id_e={if $lider_seccion[i].id !=  NULL}{$lider_seccion[i].id}{/if}
               " class="-1" title="Ver Propuestas del equipo"><i class="fas fa-clipboard-list"></i></a>
               {if in_array("LIDE_E",$verificar) == TRUE}
               <a 

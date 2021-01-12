@@ -1,8 +1,22 @@
 {include file="../../navegacion/cab.html"}
 {include file="../../navegacion/sidebar2.html"}
 {include file="../../navegacion/cabecera2.html"}
+{include file="../../navegacion/barra_nucleo_pnf.html"}
+
 
 <div class="container-fluid">
+
+     <nav aria-label="breadcrumb" role="navigation">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="../inicio/inicio_interno.php">Repo</a></li>
+        <li class="breadcrumb-item"><a href="../distribuidor/distribuidor.php?r={$smarty.session['r'][$smarty.session['numero']].id_rol}&n={$smarty.session['numero']}">Panel {$smarty.session["r"][$smarty.session["numero"]].rol}</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Equipo 
+        {if isset($lider.nombre_equipo)}
+          {$lider.nombre_equipo}
+        {/if}
+    </li>
+      </ol>
+    </nav>
 	<div class="m-3">
 		
 	<h4>  Equipo: <a class="btn btn-link mimodal text-primary" data-href="cambiar_nombre.php?id={$lider.id}" title="Cambiar nombre">
@@ -77,7 +91,7 @@
                 	{if $integrantes[i].foto_perfil == NULL}
                 		<i class="fas fa-user fa-4x img-profile rounded-circle p-2 bg-gray-200"></i>
                     {else}
-                    <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title=""
+                    <a class="thumbnail" href="#" data-toggle="modal" data-id="{$integrantes[i].id}"
                    data-image="../../imagenes/perfil/{$integrantes[i].foto_perfil}"
                    data-target="#image-gallery">
                       <img class="img-thumbnail img-user rounded-circle myimage" src="../../imagenes/perfil/{$integrantes[i].foto_perfil}" alt="User profile picture">

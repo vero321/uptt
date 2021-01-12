@@ -14,13 +14,13 @@
 </nav>
   <h2>{$pnf['nombre_corto']}</h2>
   <div class="row">
-  	<div class="col-md-6 col-sm-4">
+  	<div class="col-md-4 col-sm-4">
   	
-	  <div class="card shadow">
+	  <div class="card shadow m-3">
 			<div class="card-header ">
 				<h3 class="text-primary">Secciones</h3>
 			</div>
-			<div class="card-body p-0">
+			<div>
 				<div class="list-group list-group-flush">	
 					{section name=i loop=$seccion_profesor}
 						<a href="lideres.php?id={$seccion_profesor[i].id}" class="list-group-item list-group-item-action">{$seccion_profesor[i].nombre}</a>

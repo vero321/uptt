@@ -24,7 +24,6 @@ foreach ($personas as $persona ) {
 	$integrantes[$i]= $datos_persona;
 	$i=$i+1;
 }
-
 if (isset($integrantes) == true) {
 	$smarty->assign('integrantes',$integrantes);
 }
