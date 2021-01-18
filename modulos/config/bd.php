@@ -900,7 +900,7 @@ function bd_roles__privilegios($id){
                 break;
 
             default:
-                $priv['cant']=0;
+                $priv['cant']= '';
                 break;
 
         }
@@ -1830,14 +1830,7 @@ function bd_proposiciones_datos($id=NULL){
        }
     return $salida;
 }
-function bd_proposiones($propuesta){
-    $proposiciones = array(
-        0 => bd_proposiciones_datos($propuesta['id_proposicion_1']),
-        1 => bd_proposiciones_datos($propuesta['id_proposicion_2']),
-        2 => bd_proposiciones_datos($propuesta['id_proposicion_3']),
-    );
-    return $proposiciones;  
-}
+
 function proposiones_eliminar($proposiciones){
     foreach ($$proposiciones as $proposicion) {
         # code...
@@ -1872,7 +1865,7 @@ function bd_propuestas_datos($id=NULL){
 function bd_propuestas_eliminar($id){
     # para eliminar una propuesta tambien se eliminanlas proposiones
     $propuesta = bd_propuestas_datos($id);
-    $proposiciones=bd_proposiones($propuesta);
+    $proposiciones=proposiones($propuesta);
     proposiones_eliminar($proposiciones);
     $sql = "
         DELETE FROM PROPUESTAS
@@ -1906,39 +1899,7 @@ function bd_propuestas_equipo($id=NULL, $status=NULL){
     return $salida;
 }
 
-/*
-{
-   $sql="  INSERT INTO PROPUESTAS_DATOS (
-            id, 
-            id_pnf_nucleo, 
-            id_trayceto_pnf, 
-            fecha, 
-            id_docente, 
-            id_equipo, 
-            id_comunidad, 
-            id_linea_investigacion
-            ) 
-        VALUES (
-            NULL, 
-            '{$d['pnf_id']}', 
-            '{$d['trayecto_id']}', 
-            '{$d['fecha']}', 
-            '{$d['docente']}', 
-            '{$d['equipo_id']}', 
-            '{$d['comunidad']}', 
-            '{$d['linea_investigacion']}'
-            );";
-    $propuesta_id= sql($sql);
 
-    $sql= "INSERT INTO PROPUESTAS  (id, propuesta, objetivo, id_datos_propuestas, status) 
-            VALUES 
-            (NULL, '{$d['propuesta1']}','{$d['objetivo1']}', $propuesta_id, 'NUEVA'),
-            (NULL, '{$d['propuesta2']}','{$d['objetivo2']}', $propuesta_id, 'NUEVA'),
-            (NULL, '{$d['propuesta3']}','{$d['objetivo3']}', $propuesta_id, 'NUEVA');
-            ";
-    sql($sql);
-}
-*/
 
 function bd_propuestas_agregar($datos, $proposiciones){
     #ver($datos);
@@ -2025,11 +1986,68 @@ function bd_propuesta_cambiar_estatus($propuesta, $status){
     sql($sql);
 }
 
+function bd_proposicion_cambiar($datos){
+    for ($i=1; $i <=3 ; $i++) { 
+        # code...
+        $id = 'id_'.$i;
+        $status = 'status_'.$i;
+        $sub_status = 'sub_status_'.$i;
+        if ($datos[$sub_status] == 'NULL') {
+            $sql =" 
+        UPDATE PROPOSICIONES SET
+        status = '{$datos[$status]}',
+        sub_status = NULL
+        WHERE id = '{$datos[$id]}'
+    ";
+    sql($sql);
+        }elseif ($datos[$sub_status] === 'NIVEL') {
+            $sql =" 
+                UPDATE PROPOSICIONES SET
+                status = '{$datos[$status]}',
+                sub_status = '{$datos[$sub_status]}'
+                WHERE id = '{$datos[$id]}'
+            ";
+            sql($sql);
+            $trayecto = 'trayecto_adecuado_'.$i;
+            $sql1="
+                INSERT INTO PROPOSICIONES_DISPONIBES (
+                id_propuesta,
+                id_proposicion,
+                id_pnf,
+                id_trayecto
+                )
+                VALUES(
+                '{$datos['id']}',
+                '{$datos[$id]}',
+                '{$_SESSION['r'][$_SESSION['numero']]['id_pnf']}',
+                '{$datos[$trayecto]}'
+                ) 
+            ";
+            sql($sql1);
+        }else{
+            $sql =" 
+                UPDATE PROPOSICIONES SET
+                status = '{$datos[$status]}',
+                sub_status = '{$datos[$sub_status]}'
+                WHERE id = '{$datos[$id]}'
+            ";
+            sql($sql);
+        }
+        $fecha = date('Y-m-d');
+        $sql2= "
+            UPDATE PROPUESTAS SET 
+            fecha_evaluacion = '{$fecha}'
+            WHERE id = '{$datos['id']}' 
+        ";
+        sql($sql2);
+    }
+}
+
 function bd_proposicion_disponible($trayecto, $pnf){
     $sql = "
-        SELECT PROPOSICIONES.id, descripcion, objetivo, id_comunidad 
-        FROM PROPOSICIONES, PROPOSICIONES_DATOS
-        WHERE id_proposiciones_datos = PROPOSICIONES_DATOS.id and status = 'RECHAZADA' and sub_status = 'NIVEL' and PROPOSICIONES_DATOS.id_pnf = '{$pnf}' and PROPOSICIONES_DATOS.id_trayecto = '{$trayecto['id']}'
+        SELECT PROPOSICIONES.id, descripcion, objetivo, id_propuesta, id_proposicion
+        FROM PROPOSICIONES, PROPOSICIONES_DISPONIBES
+        WHERE PROPOSICIONES.id = id_proposicion and  status = 'RECHAZADA' and sub_status = 'NIVEL' and PROPOSICIONES_DISPONIBES.id_pnf = '{$pnf}' and PROPOSICIONES_DISPONIBES.id_trayecto = '{$trayecto['id']}'
     ";
     $salida=sql2array($sql);
     return $salida;
@@ -2089,8 +2107,8 @@ function bd_comunidades_datos($id){
 
 function bd_comunidad_registrar($valores){
     $sql1 = "
-        INSERT INTO COMUNIDADES (nombre_comunidad, siglas, direccion, id_estado, id_municipio, id_parroquia)
-        VALUES ('{$valores['comunidad']}','{$valores['siglas']}', '{$valores['direccion']}', '{$valores['estado']}', '{$valores['municipio']}', '{$valores['parroquia']}')
+        INSERT INTO COMUNIDADES (nombre_comunidad, siglas, direccion, url, correo, telefono, id_estado, id_municipio, id_parroquia)
+        VALUES ('{$valores['comunidad']}','{$valores['siglas']}', '{$valores['direccion']}', '{$valores['url']}', '{$valores['correo']}', '{$valores['tel']}','{$valores['estado']}', '{$valores['municipio']}', '{$valores['parroquia']}')
         ";
     sql($sql1);
     return 0;
@@ -2102,12 +2120,22 @@ function bd_comunidad_registrar($valores){
 
 function bd_observaciones_datos($tabla, $fila, $id=NULL){
     if ($tabla!=NULL and $fila !=NULL) {
-        $sql="
-            SELECT *
-            FROM OBSERVACIONES
-            WHERE tabla = '{$tabla}' and fila = '{$fila}'
-            ";
-        $salida = sql2array($sql);
+        $verificar= verificar();
+        if (in_array('COMI_T', $verificar)){
+            $sql="
+                SELECT *
+                FROM OBSERVACIONES
+                WHERE tabla = '{$tabla}' and fila = '{$fila}'
+                ";
+            $salida = sql2array($sql);
+        }else{
+            $sql="
+                SELECT *
+                FROM OBSERVACIONES
+                WHERE tabla = '{$tabla}' and fila = '{$fila}' and comite = 0
+                ";
+            $salida = sql2array($sql);
+        }
     }elseif ($id!=NULL) {
         $sql="
             SELECT *
@@ -2130,10 +2158,29 @@ function bd_observaciones_datos($tabla, $fila, $id=NULL){
 function bd_observaciones_añadir($datos){
     $fecha = date('Y-m-d');
     $id_persona = $_SESSION['u']['id'];
-   $sql ="
+    $sql ="
         INSERT INTO OBSERVACIONES(fecha, descripcion, tabla, fila, id_persona)
         VALUES('{$fecha}', '{$datos['descripcion']}', '{$datos['tipo']}', '{$datos['fila']}','{$id_persona}')
-   ";
+        ";
+   sql($sql);
+}
+
+function bd_observaciones_añadir_comite($datos){
+    $fecha = date('Y-m-d');
+    $id_persona = $_SESSION['u']['id'];
+    
+    if ($datos['comite'] = 1){
+        $sql ="
+        INSERT INTO OBSERVACIONES(fecha, descripcion, tabla, fila, id_persona, comite)
+        VALUES('{$fecha}', '{$datos['descripcion']}', '{$datos['tipo']}', '{$datos['fila']}','{$id_persona}',1)
+        ";
+    }else{
+        $sql ="
+        INSERT INTO OBSERVACIONES(fecha, descripcion, tabla, fila, id_persona)
+        VALUES('{$fecha}', '{$datos['descripcion']}', '{$datos['tipo']}', '{$datos['fila']}','{$id_persona}')
+        ";
+    }
+   
    sql($sql);
 }
 
@@ -2151,6 +2198,106 @@ function bd_obdervaciones_eliminar($id){
     $sql = "
         DELETE FROM OBSERVACIONES
         WHERE id = '{$id}'
+        ";
+    sql($sql);
+}
+
+#
+# Tipos de documentos
+#
+
+function bd_tipos_documento_datos($id=NULL){
+    if ($id!=NULL) {
+        $sql="
+            SELECT *
+            FROM TIPOS_DE_DOCUMENTOS
+            WHERE id LIKE '{$id}'
+            ";
+        $salida = sql2row($sql);
+    } else {
+        $sql="
+            SELECT *
+            FROM TIPOS_DE_DOCUMENTOS
+            ";
+        $salida = sql2array($sql);
+    }
+    return $salida;
+}
+
+function bd_tipos_documento_agregar($datos){
+    $sql ="
+        INSERT INTO TIPOS_DE_DOCUMENTOS
+        (nombre)
+        VALUES('{$datos['nombre']}')
+    ";
+    sql($sql);
+}
+
+function bd_tipos_documento_eliminar($datos){
+    $sql = "
+        DELETE FROM TIPOS_DE_DOCUMENTOS
+        WHERE id = '{$datos['id']}'
+        ";
+    sql($sql);
+}
+
+function bd_tipos_documento_modificar($datos){
+    $sql = "
+        UPDATE TIPOS_DE_DOCUMENTOS SET
+            nombre = '{$datos['nombre']}'
+        WHERE id = '{$datos['id']}' 
+            ";
+    sql($sql);
+    return $datos['nombre'];
+}
+
+#
+#estructuras
+#
+function bd_estructuras_datos($id=NULL, $id_tipo = NULL){
+    if ($id!=NULL) {
+        $sql="
+            SELECT *
+            FROM ESTRUCTURAS
+            WHERE id = '{$id}'
+            ";
+        $salida = sql2row($sql);
+    } else {
+        $sql="
+            SELECT *
+            FROM ESTRUCTURAS
+            WHERE id_tipo_de_documento = '{$id_tipo}'
+            ";
+        $salida = sql2array($sql);
+    }
+    return $salida;
+}
+
+function bd_estructura_agregar($datos){
+    $sql ="
+        INSERT INTO ESTRUCTURAS
+        (nombre, descripcion, parte, id_tipo_de_documento)
+        VALUES('{$datos['nombre']}', '{$datos['descripcion']}', '{$datos['parte']}', {$datos['id']})
+    ";
+    sql($sql);
+}
+
+function bd_estructura_modificar($datos){
+    $sql = "
+        UPDATE ESTRUCTURAS SET
+            nombre = '{$datos['nombre']}',
+            descripcion = '{$datos['descripcion']}',
+            parte = '{$datos['parte']}'
+        WHERE id = '{$datos['id']}' 
+            ";
+    sql($sql);
+    return $datos['nombre'];
+}
+
+function bd_estructura_eliminar($datos){
+    $sql = "
+        DELETE FROM ESTRUCTURAS
+        WHERE id = '{$datos['id']}'
         ";
     sql($sql);
 }

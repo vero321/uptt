@@ -58,7 +58,7 @@
                     </div>
                   </div>
                   <div>
-                    <span class="font-weight-bold text-gray-800">{$smarty.session["r"][i].rol|capitalize}
+                    <span class="font-weight-bold text-gray-900">{$smarty.session["r"][i].rol|capitalize}
                     {if $smarty.session["r"][i].id_nucleo != NULL }
                       {$smarty.session["r"][i].nucleo}
                     {/if}
@@ -91,13 +91,13 @@
               <!-- Dropdown - User Information -->
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
                 <a class="dropdown-item" href="../personas/personas_datos.php?id={$smarty.session['u']['id']}">
-                  <i class="fa fa-user fa-sm fa-fw mr-2  text-gray-800"></i>
-                  Perfil
+                  <i class="far fa-user  fa-fw mr-2  text-primary"></i>
+                  <span class="text-gray-800">Perfil</span>
                 </a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
-                  <i class="fa fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-800"></i>
-                  Cerrar sesión
+                  <i class="fa fa-sign-out-alt  fa-fw mr-2 text-danger"></i>
+                  <span class="text-gray-800">Cerrar sesión</span>
                 </a>
               </div>
             </li>

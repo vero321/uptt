@@ -11,14 +11,14 @@
       <li class="breadcrumb-item active" aria-current="page">Líneas de Investigación</li>
     </ol>
       <div class="card shadow">
-          <div class="card-header ">
+          <div class="card-header d-flex justify-content-between">
 
             <h2 class="text-primary"><span class="badge badge-secondary badge-pill">{$n_lineas}</span> Líneas de Investigación
-            {if in_array("LINE_A",$verificar) == TRUE}
-             <a class="btn btn-sm btn-outline-primary mimodal" type="button"
-            data-href="lineas_agregar.php" title="Agregar Línea de Investigación"><span class="fa fa-plus"></span></a>
-            {/if}
           </h2>
+            {if in_array("LINE_A",$verificar) == TRUE}
+             <a class="btn btn-primary btn-circle mimodal" type="button"
+            data-href="lineas_agregar.php" title="Agregar Línea de Investigación"><span class="fa fa-plus text-white"></span></a>
+            {/if}
         </div>
         <div class="card-body">
           <div class="table-responsive">
@@ -41,20 +41,18 @@
                     <td class="text-center" style="white-space: nowrap;">
                   {if in_array("LINE_M",$verificar) == TRUE}
                     <a 
-                      style="margin-bottom:3px; color:blue;" 
-                      class="btn btn-default mimodal" 
+                      class="btn btn-info btn-circle btn-sm mimodal" 
                       title="Modificar Línea de Investigación" 
                       data-href="lineas_modificar.php?id={$lineas[i].id}">
-                      <i class="fa fa-edit"></i>
+                      <i class="fa fa-edit text-white"></i>
                     </a>
                     {/if}
                   {if in_array("LINE_E",$verificar) == TRUE}
                     <a 
-                      style="margin-bottom:3px; color:blue;" 
-                      class="btn btn-default mimodal"
+                      class="btn btn-danger btn-circle btn-sm mimodal"
                       title="Eliminar Línea de Investigación" 
                       data-href="lineas_eliminar.php?id={$lineas[i].id}">
-                      <i class="fa fa-trash"></i>
+                      <i class="fa fa-trash text-white"></i>
                     </a>
                     {/if}
                     </td>

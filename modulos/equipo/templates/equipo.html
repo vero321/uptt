@@ -17,18 +17,18 @@
     </li>
       </ol>
     </nav>
-	<div class="m-3">
+	<div class="m-3 d-flex justify-content-between">
 		
-	<h4>  Equipo: <a class="btn btn-link mimodal text-primary" data-href="cambiar_nombre.php?id={$lider.id}" title="Cambiar nombre">
-		{if isset($lider.nombre_equipo)}
-			{$lider.nombre_equipo}
-		{else}
-			El equipo aun no tiene nombre
-		{/if}
-		<i class="fa fa-edit fa-sm"></i>
-		</a>
+  	<h4>  Equipo: <a class="btn btn-link mimodal text-primary" data-href="cambiar_nombre.php?id={$lider.id}" title="Cambiar nombre">
+  		{if isset($lider.nombre_equipo)}
+  			{$lider.nombre_equipo}
+  		{else}
+  			El equipo aun no tiene nombre
+  		{/if}
+  		<i class="fa fa-edit fa-sm"></i>
+  		</a>
 
-  <h5 align="right" style="margin-top: 10px;"><a href="../propuesta/propuesta.php?equipo_id={$lider.id}"><span class="badge lg badge-pill badge-secondary" title="Propuesta"><i class="fa fa-list-alt">&nbsp;&nbsp;</i>Propuesta</span></a></h5>
+    <h5><a href="../propuesta/propuesta.php?equipo_id={$lider.id}"><span class="badge lg badge-pill badge-primary" title="Propuesta"><i class="fa fa-list-alt">&nbsp;&nbsp;</i>Propuesta</span></a></h5>
 	</h4>
 	</div>
 	<div class="card">
@@ -36,14 +36,14 @@
     <div class="row">
       <div class="col-md-6">
         
-  		<h5><span class="badge badge-secondary badge-pill">{$lider.numero_integrantes}</span> Integrantes 
+  		<h5 class="font-weight-bold"><span class="badge badge-success badge-pill">{$lider.numero_integrantes}</span> Integrantes 
   			{if in_array('EQUI_A',$verificar) == TRUE}
     			<a class="btn btn-sm btn-outline-primary mimodal 
           {if $lider.numero_integrantes >= $lider.limite_integrantes}
           disabled
           {/if}
           " type="button" 
-                href="agregar_integrante.php?id={$lider.id}" title="Agregar un nuevo integrante"><span class="fa fa-plus"></span>
+            href="agregar_integrante.php?id={$lider.id}" title="Agregar un nuevo integrante"><span class="fa fa-plus"></span>
           </a>
        {/if}
   		</h5>
@@ -54,7 +54,6 @@
       </div>
     </div>
 
-		</div>
 		<div class="card-body">
 			<div class="table-responsive">
 				<table class="table" id="tabla_repo" style="width:100%">
@@ -101,11 +100,10 @@
               <td>
                   {if in_array('EQUI_E',$verificar) == TRUE}
                   	<a 
-                      style="margin-bottom:3px; color:blue;" 
-                      class="btn btn-default mimodal"
+                      class="btn btn-danger btn-circle btn-sm  mimodal"
                       title="Eliminar integrante del equipo" 
                       data-href="equipo_eliminar_integrante.php?id={$integrantes[i].id}&id_equipo={$lider.id}">
-                      <i class="fa fa-trash"></i>
+                      <i class="fa fa-trash text-white"></i>
                     </a>
                   {/if}
                   </td>

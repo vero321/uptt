@@ -8,11 +8,10 @@ $pnf=$_SESSION['r'][$_SESSION['numero']]['id_pnf'];#Guarda la id del PNF
 $data=bd_proposicion_disponible($trayecto, $pnf);
 foreach ($data as $dato) {
 	# code...
-	$comunidad = bd_comunidades_datos($dato['id_comunidad']);
-	$r['codigo'] = $dato['id'];
+	$r['codigo'] = $dato['id_proposicion'];
+	$r['codigo_propuesta'] = $dato['id_propuesta'];
 	$r['descripcion'] = $dato['descripcion'];
 	$r['objetivo'] = $dato['objetivo'];
-	$r['comunidad'] = $comunidad['nombre_comunidad'];
 	$respuesta[] = $r;
 }
 if (isset($respuesta)) {

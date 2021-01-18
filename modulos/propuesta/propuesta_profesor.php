@@ -33,7 +33,7 @@ if ($n_propuestas > 0) {
 	# si tiene una propuesta solicitamos los datos de esta misma
 	$status =$propuesta['status'];
 	
-	if ($status == 'ENVIADA' or $status == 'EVALUANDO') {
+	if ($status == 'ENVIADA' or $status == 'EVALUANDO' or  $status == 'EVALUADA') {
 
 		#Datos del PNF
 		$trayecto = bd_trayectos_datos($propuesta['id_trayecto']);
@@ -48,7 +48,7 @@ if ($n_propuestas > 0) {
 
 		#/Datos del PNF
 		# propociones
-		$proposiciones = bd_proposiones($propuesta);
+		$proposiciones = proposiones($propuesta);
 		# /propociones
 
 		# comunidad
@@ -65,6 +65,11 @@ if ($n_propuestas > 0) {
 				$smarty->assign('opciones', 'TRUE');
 				break;
 			case 'EVALUANDO':
+				# No mostramos las opciones de la propuesta
+				#se le informa al usuario que la propuesta fue enviada
+				$smarty->assign('opciones', 'FALSE');
+				break;
+			case 'EVALUADA':
 				# No mostramos las opciones de la propuesta
 				#se le informa al usuario que la propuesta fue enviada
 				$smarty->assign('opciones', 'FALSE');

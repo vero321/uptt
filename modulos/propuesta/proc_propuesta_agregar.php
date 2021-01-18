@@ -33,6 +33,3 @@ bd_propuestas_agregar($_POST, $proposiones);
 
 $m="La propuesta se agregó correctamente.";
 ir("../mensaje/mensaje_retorno.php?m=$m");
-#vq($id);
-
-

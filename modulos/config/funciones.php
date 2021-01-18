@@ -85,7 +85,14 @@ function verificar(){
   }
 }
 
-
+function proposiones($propuesta){
+    $proposiciones = array(
+        0 => bd_proposiciones_datos($propuesta['id_proposicion_1']),
+        1 => bd_proposiciones_datos($propuesta['id_proposicion_2']),
+        2 => bd_proposiciones_datos($propuesta['id_proposicion_3']),
+    );
+    return $proposiciones;  
+}
 
 
 function frm_modal_editor($t){

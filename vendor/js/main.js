@@ -351,14 +351,8 @@ $(document).ready(function(){
                 type:  'POST',
                 dataType: 'json',
                 data: { buscar : buscar },
-                beforeSend: function () 
-                {
-                    comunidad.prop('disabled', true);
-                },
                 success:  function (data) 
                 {
-                    comunidad.prop('disabled', false);
-
                     // Limpiamos el select
                     comunidad.find('option').remove();
                   if (data != 0){
@@ -366,12 +360,7 @@ $(document).ready(function(){
                     $(data).each(function(i, v){ // indice, valor
                         comunidad.append('<option value="' + v.id + '">' + v.nombre_comunidad + '</option>');
                     })
-        console.log(comunidad);
-                    
-
-                    comunidad.prop('disabled', false);
                   }else{
-                    comunidad.prop('disabled', true);
                     var alerta = $('#alerta-comunidad');
                     alerta.empty();
                     alerta.append(' <div class="alert alert-info alert-dismissible fade show" role="alert"><strong>Importate!</strong> No se a encontrado ninguna comunidad registrada, para continuar precione el boton [+] y registre la comunidad. <button type="button" class="close" data-dismiss="alert" aria-label="Close"> <span aria-hidden="true">&times;</span> </button> </div>');
@@ -380,15 +369,13 @@ $(document).ready(function(){
                 },
                 error: function()
                 {
-                    alert('Ocurrio un error en el servidor ..');
-                    comunidad.prop('disabled', false);
+                  alert('Ocurrio un error en el servidor comunicate con el administrados..');
                 }
             });
         }
         else
         {
             comunidad.find('option').remove();
-            comunidad.prop('disabled', true);
         }
         
     })
@@ -598,9 +585,9 @@ $(document).ready(function() {
         },//Asignamos los datos a las columnas correspondientes
         "columns":[
             {"data": "codigo"},
+            {"data": "codigo_propuesta"},
             {"data": "descripcion"},
             {"data": "objetivo"},
-            {"data": "comunidad"},
             {"defaultContent": "<div class='text-center'><button class='btn btn-outline-info btn-sm btn_propuesta_info' title='Ver informacion de la propuesta'><i class='fa fa-info-circle'></i></button></div>"}
         ]
     });
@@ -639,3 +626,17 @@ $(document).ready(function(){
       .html(percent+"%");   
   }
 });
+
+$(document).on("click", ".btn_propuesta_info", function(){               
+    fila = $(this).closest("tr");           
+    id_propuesta = fila.find('td:eq(1)').text();; //capturo el id de la propuesta
+    var URL = '../propuesta/propuesta_disponible.php?id='+id_propuesta;
+    window.location = URL;
+    /*  
+    $('.modal-body_repo').load(URL,function(){
+      var etiqueta = URL.split('.php')[0];
+      $('#myModal').modal({show:true});
+    });
+    */
+
+  });

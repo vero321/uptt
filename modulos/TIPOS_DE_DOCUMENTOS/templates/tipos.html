@@ -1,0 +1,75 @@
+{include file="../../navegacion/cab.html"}
+{include file="../../navegacion/sidebar2.html"}
+{include file="../../navegacion/cabecera2.html"}
+{include file="../../navegacion/barra_nucleo_pnf.html"}
+
+ <div class="container-fluid">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="../inicio/inicio_interno.php">Repo</a></li>
+      <li class="breadcrumb-item"><a href="../distribuidor/distribuidor.php?r={$smarty.session['r'][$smarty.session['numero']].id_rol}&n={$smarty.session['numero']}">Panel {$smarty.session["r"][$smarty.session["numero"]].rol}</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Tipos de documentos</li>
+    </ol>
+
+    <div class="card">
+    	<div class="card-header d-flex justify-content-between">
+    		<h4 class="text-primary card-title font-weight-bold">
+    			Tipos de documentos
+    		</h4>
+    			{if in_array("TIPO_DOC_A",$verificar) == TRUE}
+	             <a class="btn  btn-primary  btn-circle mimodal" type="button" 
+	            data-href="tipos_agregar.php" title="Agregar Tipo de documento"><span class="fa fa-plus text-white"></span></a>
+	            {/if}
+    	</div>
+    	<div class="card-body">
+    		<div class="table-responsive">
+	           <table class="table" id="tabla_repo">
+                <thead>
+                  <tr>
+                    <th>tipo de documento</th>
+                    <th>Funciones</th>
+                  </tr>
+                </thead>
+                <tbody>
+
+                {section name=i loop=$tipos_documento}
+                  <tr>
+                    <td>{$tipos_documento[i].nombre}</td>
+                    <td>
+                    {if in_array("TIPO_DOC_EXTR",$verificar) == TRUE}
+                      <a 
+                        class="btn btn-success btn-circle btn-sm"
+                        title="Modificar tipo de documento" 
+                        href="tipos_estructura.php?id={$tipos_documento[i].id}">
+                        <i class="fa fa-file-signature text-white"></i>
+                      </a>
+                    {/if}
+                    {if in_array("TIPO_DOC_M",$verificar) == TRUE}
+                      <a 
+                        class="btn btn-info btn-circle btn-sm mimodal"
+                        title="Modificar tipo de documento" 
+                        data-href="tipos_modificar.php?id={$tipos_documento[i].id}">
+                        <i class="fa fa-edit text-white"></i>
+                      </a>
+                      {/if}
+                      {if in_array("TIPO_DOC_E",$verificar) == TRUE}
+                      <a 
+                        class="btn btn-danger btn-circle btn-sm mimodal"
+                        title="Eliminar tipo de documento" 
+                        data-href="tipos_eliminar.php?id={$tipos_documento[i].id}">
+                        <i class="fa fa-trash text-white"></i>
+                      </a>
+                      {/if}
+                    </td>
+                  </tr>
+                {/section}
+                </tbody>
+              </table>
+
+      </div>
+    		
+    	</div>
+    </div>
+</div>
+
+{include "../../modal/modal_box.html" prueba="Tipos de trabajo"} 
+{include file="../../pie/pie_interno.html"}

@@ -9,6 +9,9 @@
             <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
               <h5 class="m-0 font-weight-bold text-primary">Propuesta
              <span class="badge badge-pill badge-success ml-2 p-2">{$status}</span>
+              {if isset($propuesta.fecha_evaluacion)}
+                {$propuesta.fecha_evaluacion}
+              {/if}
               </h5>
             {if $opciones == 'TRUE'}
             <!--dropdwn -->        
@@ -20,13 +23,9 @@
               <!--cotenido dropdwn -->        
                 <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink">
                   <div class="dropdown-header">Opciones propuesta:</div>
-                  <a class="dropdown-item" href="propuesta_modificar.php?id={$propuesta.id}">
+                  <a class="dropdown-item mimodal" data-href="propuesta_cambio.php?id={$propuesta.id}&trayecto={$datos.id_trayecto}">
                     <i class="fa fa-edit fa-sm fa-fw mr-2 text-gray-800"></i>
-                    Modificar
-                  </a>
-                  <a class="dropdown-item mimodal" data-href="propuesta_eliminar.php?id={$propuesta.id}">
-                    <i class="fa fa-trash fa-sm fa-fw mr-2 text-gray-800"></i>
-                    Eliminar
+                    Evaluar
                   </a>
                   <div class="dropdown-divider"></div>
                    <a class="dropdown-item mimodal" data-href="../observaciones/añadir_observacion.php?tipo=PROPUESTAS&fila={$propuesta.id}">
@@ -165,6 +164,23 @@
                        {$comunidad.municipio}
                         <h6 class="font-weight-bold text-gray-800">Parroquia</h6>  
                        {$comunidad.parroquia}
+                       <br>
+                       {if $comunidad.url != 'NULL'}
+                        <h6 class="font-weight-bold text-gray-800">Web</h6>
+                        <a href="{$comunidad.url}" class="btn-link" target="_blank">{$comunidad.url}</a>
+                        <br>
+                       {/if}
+                       {if $comunidad.correo != 'NULL'}
+                        <h6 class="font-weight-bold text-gray-800">Correo</h6>
+                        <a href="mailto:{$comunidad.correo}" class="btn-link">{$comunidad.correo}</a>
+                        <br>
+                       {/if}
+
+                       {if $comunidad.telefono != 'NULL'}
+                        <h6 class="font-weight-bold text-gray-800">Telefono</h6>
+                        <a href="tel:{$comunidad.telefono}" class="btn-link">{$comunidad.telefono}</a>
+                        <br>
+                       {/if}
                       </div>
                   </div>
               </div>

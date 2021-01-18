@@ -13,11 +13,7 @@
         <h2 class="text-primary my-3"><span class="badge badge-secondary badge-pill">{$n_nucleos}</span> Nucleos y Extensiones
         </h2>
       <div class="card">
-        <div class="card-header pb-0">
-             {if in_array("NUCL_A",$verificar) == TRUE}
-             <a class="btn btn-sm btn-outline-primary mimodal mimodal float-right" type="button" 
-            data-href="nucleos_agregar.php" title="Agregar nucleo o extensión"><span class="fa fa-plus"></span></a>
-          {/if}
+        <div class="card-header pb-0 d-flex justify-content-between">
           <ul class="nav nav-tabs" id="myTab" role="tablist">
             <li class="nav-item">
               <a class="nav-link active" id="nucleos-tab" data-toggle="tab" href="#nucleos" role="tab" aria-controls="nucleos" aria-selected="true">Nucleos</a>
@@ -27,6 +23,10 @@
               <a class="nav-link" id="extesiones-tab" data-toggle="tab" href="#extesiones" role="tab" aria-controls="extesiones" aria-selected="false">Extenciones</a>
             </li>
           </ul>
+             {if in_array("NUCL_A",$verificar) == TRUE}
+             <a class="btn  btn-primary btn-circle mimodal mimodal float-right" type="button" 
+            data-href="nucleos_agregar.php" title="Agregar nucleo o extensión"><span class="fa fa-plus text-white"></span></a>
+          {/if}
         
         </div>
         <div class="card-body">
@@ -54,20 +54,18 @@
                       <td class="text-center" style="white-space: nowrap;">
                       {if in_array("NUCL_M",$verificar) == TRUE}
                       <a 
-                        style="margin-bottom:3px; color:blue;" 
-                        class="btn btn-default mimodal" 
+                        class="btn btn-info btn-circle btn-sm mimodal"
                         title="Modificar Nucleo o Extensión" 
                         data-href="nucleos_modificar.php?id={$nucleos[i].id}">
-                        <i class="fa fa-edit"></i>
+                        <i class="fa fa-edit text-white"></i>
                       </a>
                       {/if}
                       {if in_array("NUCL_E",$verificar) == TRUE}
                       <a 
-                        style="margin-bottom:3px; color:blue;" 
-                        class="btn btn-default mimodal"
+                        class="btn btn-danger btn-circle btn-sm mimodal"
                         title="Eliminar Nucleo o Extensión" 
                         data-href="nucleos_eliminar.php?id={$nucleos[i].id}">
-                        <i class="fa fa-trash"></i>
+                        <i class="fa fa-trash text-white"></i>
                       </a>
                       {/if}
 
@@ -75,7 +73,7 @@
                       {if in_array("NUCL_R", $verificar) == TRUE }
                         <td>
                           {if $nucleos[i].responsable ==  NULL}
-                            <a class="btn btn-sm btn-outline-primary" type="button" href="nucleo_responsable.php?id={$nucleos[i].id}" title="Asignar responsable Nucleo o Extensión"><span class="fa fa-plus"></span></a>
+                            <a class="btn btn-sm btn-circle btn-outline-primary" type="button" href="nucleo_responsable.php?id={$nucleos[i].id}" title="Asignar responsable Nucleo o Extensión"><span class="fa fa-plus"></span></a>
                           {else}
                             {$persona=bd_personas_datos($nucleos[i].responsable)}
                             <div class="row">
@@ -141,19 +139,18 @@
                       {if in_array("NUCL_M",$verificar) == TRUE}
                       <a 
                         style="margin-bottom:3px; color:blue;" 
-                        class="btn btn-default mimodal" 
+                        class="btn btn-info btn-circle btn-sm mimodal" 
                         title="Modificar Nucleo o Extensión" 
                         data-href="nucleos_modificar.php?id={$nucleos[i].id}">
-                        <i class="fa fa-edit"></i>
+                        <i class="fa fa-edit text-white"></i>
                       </a>
                       {/if}
                       {if in_array("NUCL_E",$verificar) == TRUE}
                       <a 
-                        style="margin-bottom:3px; color:blue;" 
-                        class="btn btn-default mimodal"
+                        class="btn btn-danger btn-circle btn-sm mimodal"
                         title="Eliminar Nucleo o Extensión" 
                         data-href="nucleos_eliminar.php?id={$nucleos[i].id}">
-                        <i class="fa fa-trash"></i>
+                        <i class="fa fa-trash text-white"></i>
                       </a>
                       {/if}
 
@@ -161,7 +158,7 @@
                       {if in_array("NUCL_R", $verificar) == TRUE }
                         <td>
                           {if $nucleos[i].responsable ==  NULL}
-                            <a class="btn btn-sm btn-outline-primary" type="button" href="nucleo_responsable.php?id={$nucleos[i].id}" title="Asignar responsable Nucleo o Extensión"><span class="fa fa-plus"></span></a>
+                            <a class="btn btn-sm btn-circle btn-outline-primary" type="button" href="nucleo_responsable.php?id={$nucleos[i].id}" title="Asignar responsable Nucleo o Extensión"><span class="fa fa-plus"></span></a>
                           {else}
                             {$persona=bd_personas_datos($nucleos[i].responsable)}
                             <div class="row">

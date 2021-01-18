@@ -10,13 +10,13 @@
       <li class="breadcrumb-item active" aria-current="page">Trayectos</li>
     </ol>
     <div class="card shadow">
-        <div class="card-header">
+        <div class="card-header d-flex justify-content-between">
 	        <h2 class="text-primary"><span class="badge badge-secondary badge-pill">{$n_trayectos}</span>Trayetos
-	            {if in_array("TRAY_A",$verificar) == TRUE}
-	             <a class="btn btn-sm btn-outline-primary mimodal" type="button" 
-	            data-href="trayecto_agregar.php" title="Agregar trayecto"><span class="fa fa-plus"></span></a>
-	            {/if}
 	          </h2>
+	            {if in_array("TRAY_A",$verificar) == TRUE}
+	             <a class="btn btn-primary btn-circle mimodal" type="button" 
+	            data-href="trayecto_agregar.php" title="Agregar trayecto"><span class="fa fa-plus text-white"></span></a>
+	            {/if}
         </div>
         <div class="card-body">
           <div class="table-responsive">
@@ -32,26 +32,24 @@
                 {section name=i loop=$trayectos}
                   <tr>
                     <td>{$trayectos[i].trayecto}</td>
-                    {if in_array("TRAY_M",$verificar) == TRUE}
                     <td>
+                    {if in_array("TRAY_M",$verificar) == TRUE}
                       <a 
-                        style="margin-bottom:3px; color:blue;" 
-                        class="btn btn-default mimodal"
+                        class="btn btn-info btn-circle btn-sm mimodal"
                         title="Modificar trayectos" 
                         data-href="trayecto_modificar.php?id={$trayectos[i].id}">
-                        <i class="fa fa-edit"></i>
+                        <i class="fa fa-edit text-white"></i>
                       </a>
                       {/if}
                       {if in_array("TRAY_E",$verificar) == TRUE}
                       <a 
-                        style="margin-bottom:3px; color:blue;" 
-                        class="btn btn-default mimodal"
+                        class="btn btn-danger btn-circle btn-sm mimodal"
                         title="Eliminar trayectos" 
                         data-href="trayecto_eliminar.php?id={$trayectos[i].id}">
-                        <i class="fa fa-trash"></i>
+                        <i class="fa fa-trash text-white"></i>
                       </a>
                       {/if}
-                    <td>
+                    </td>
                   </tr>
                 {/section}
                 </tbody>

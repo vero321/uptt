@@ -10,14 +10,14 @@
             <li class="breadcrumb-item active" aria-current="page">Usuarios</li>
           </ol>
             <div class="card shadow">
-              <div class="card-header">
+              <div class="card-header d-flex justify-content-between">
                 <h2 class="text-primary"><span class="badge badge-secondary badge-pill">{$n_usuarios}</span> Usuarios
+                </h2>
                 {if in_array("USUA_A",$verificar) == TRUE}
 
-                  <a class="btn btn-sm btn-outline-primary mimodal" type="button"
-                data-href="agregar_admin.php?5ea6fd8de7329={$rol}" title="Agregar Usuario"><span class="fa fa-plus"></span></a>
+                  <a class="btn  btn-primary btn-circle mimodal" type="button"
+                data-href="agregar_admin.php?5ea6fd8de7329={$rol}" title="Agregar Usuario"><span class="fa fa-plus text-white"></span></a>
                 {/if}
-                </h2>
               </div>
               <div class="card-body">
               <div class="table-responsive">
@@ -38,30 +38,27 @@
                     <td class="text-center" style="white-space: nowrap;">
                     {if in_array("USUA_VR",$verificar) == TRUE}
                     <a 
-                      style="margin-bottom:3px; color:blue;" 
-                      class="btn btn-default"
+                      class="btn btn-success btn-circle btn-sm"
                       title="Gestionar rol del usuario" 
                       href="usuarios_roles.php?id={$usuarios[i].id}{if isset($asignar)}&r={$asignar}{/if}">
-                      <i class="fa fa-share"></i>
+                      <i class="fa fa-folder-open text-whithe"></i>
                     </a>
                     {/if}
                     {if in_array("USUA_M",$verificar) == TRUE}
                     <a 
-                      style="margin-bottom:3px; color:blue;" 
-                      class="btn btn-default mimodal" 
+                      class="btn btn-info btn-circle btn-sm mimodal" 
                       title="Modificar Usuario" 
                       data-href="usuarios_modificar.php?id={$usuarios[i].id}&5ea6fd8de7329={$rol}">
-                      <i class="fa fa-edit"></i>
+                      <i class="fa fa-edit text-white"></i>
                     </a>
                     {/if}
                     {if in_array("USUA_E",$verificar) == TRUE}
                     <a 
-                      style="margin-bottom:3px; color:blue;" 
-                      class="btn btn-default mimodal"
+                      class="btn btn-danger btn-circle btn-sm mimodal"
                       title="Eliminar Usuario" 
                       data-href="usuarios_eliminar.php?id={$usuarios[i].id}&5ea6fd8de7329={$nivel}&rol_a={$rol}{if array_key_exists('id_rol', $usuarios[i])}&r={$usuarios[i].id_rol}{/if}">
                       <!-- en el if anterior verificamos si existe la key id_rol dentro del array para elminar este rol en espesifico se debe enviar el valor de esta variable como parametro -->
-                      <i class="fa fa-trash"></i>
+                      <i class="fa fa-trash text-white"></i>
                     </a>
                     {/if}
                   

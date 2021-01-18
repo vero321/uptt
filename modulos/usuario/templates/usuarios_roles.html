@@ -28,7 +28,7 @@
                   <tr>
                     <th>Roles
                     {if in_array("USUA_AR",$verificar) == TRUE} 
-						          <a class="btn btn-sm btn-outline-primary mimodal" type="button" data-href="usuarios_rol_asignar.php?id={$usuario['id']}" title="Asignar un Rol a el Usuario"><span class="fa fa-plus"></span></a>
+						          <a class="btn btn-primary btn-circle mimodal" type="button" data-href="usuarios_rol_asignar.php?id={$usuario['id']}" title="Asignar un Rol a el Usuario"><span class="fa fa-plus text-white"></span></a>
                     {/if}
                   </th>
                   <th></th>
@@ -53,11 +53,10 @@
                     <td>
                       {if in_array("USUA_ER",$verificar) == TRUE}
                             <a 
-                              style="margin-bottom:2px; color:blue;" 
-                              class="btn btn-default"
+                              class="btn btn-danger btn-circle btn-sm"
                               title="Eliminar Rol a el Usuario" 
                               href="proc_usuarios_rol_eliminar.php?id={$roles[i].id}&usuario={$usuario.id}">
-                              <i class="fa fa-trash"></i>
+                              <i class="fa fa-trash text-white"></i>
                             </a>
                           {/if}
                     </td>
@@ -66,7 +65,7 @@
                             {$nucleos=bd_nucleos_datos($roles[i].id_nucleo)}
                             {$nucleos['nombre_corto']}
                           {elseif $roles[i].id_rol != "5e7ec3342d4ee"}
-                            <a class="btn btn-sm btn-outline-primary mimodal" type="button" data-href="usuarios_rol_asignar_nucleo.php?id={$roles[i].id}&id_usuario={$usuario['id']}" title="Asignar un Nucleo a el Rol"><span class="fa fa-plus"></span></a>
+                            <a class="btn btn-sm btn-outline-primary btn-circle mimodal" type="button" data-href="usuarios_rol_asignar_nucleo.php?id={$roles[i].id}&id_usuario={$usuario['id']}" title="Asignar un Nucleo a el Rol"><span class="fa fa-plus"></span></a>
                             </a>
                           {/if}
 
@@ -75,7 +74,7 @@
                             {$nucleos=bd_pnf_datos($roles[i].id_pnf)}
                             {$nucleos['nombre_corto']}
                           {elseif $roles[i].id_rol != "5e7ec3342d4ee"}
-                            <a class="btn btn-sm btn-outline-primary mimodal" type="button" data-href="usuarios_rol_asignar_pnf_a_rol.php?id={$roles[i].id}&id_usuario={$usuario['id']}&nucleo={$roles[i].id_nucleo}" title="Asignar un PNF a el Rol"><span class="fa fa-plus"></span></a>
+                            <a class="btn btn-sm btn-outline-primary btn-circle mimodal" type="button" data-href="usuarios_rol_asignar_pnf_a_rol.php?id={$roles[i].id}&id_usuario={$usuario['id']}&nucleo={$roles[i].id_nucleo}" title="Asignar un PNF a el Rol"><span class="fa fa-plus"></span></a>
                             </a>
                           {/if}
                       </td>

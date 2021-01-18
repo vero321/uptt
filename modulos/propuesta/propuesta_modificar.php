@@ -26,7 +26,7 @@ $propuesta = bd_propuestas_datos($id);
 #/Datos del PNF
 
 # propociones
-	$proposiciones = bd_proposiones($propuesta);
+	$proposiciones = proposiones($propuesta);
 # /propociones
 
 # comunidad

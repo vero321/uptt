@@ -163,6 +163,23 @@
                        {$comunidad.municipio}
                         <h6 class="font-weight-bold">Parroquia</h6>  
                        {$comunidad.parroquia}
+                       <br>
+                       {if $comunidad.url != 'NULL'}
+                        <h6 class="font-weight-bold text-gray-800">Web</h6>
+                        <a href="{$comunidad.url}" class="btn-link" target="_blank">{$comunidad.url}</a>
+                        <br>
+                       {/if}
+                       {if $comunidad.correo != 'NULL'}
+                        <h6 class="font-weight-bold text-gray-800">Correo</h6>
+                        <a href="mailto:{$comunidad.correo}" class="btn-link">{$comunidad.correo}</a>
+                        <br>
+                       {/if}
+
+                       {if $comunidad.telefono != 'NULL'}
+                        <h6 class="font-weight-bold text-gray-800">Telefono</h6>
+                        <a href="tel:{$comunidad.telefono}" class="btn-link">{$comunidad.telefono}</a>
+                        <br>
+                       {/if}
                       </div>
                   </div>
               </div>
@@ -183,6 +200,7 @@
                     <div class="tab-content p-3" id="nav-tabContent">
                       {section name=i loop=$proposiciones}
                        <div class="tab-pane fade {if $smarty.section.i.index_next == 1}show active{/if}" id="nav_propuesta_{$smarty.section.i.index_next}" role="tabpanel" aria-labelledby="propuesta_{$smarty.section.i.index_next}-tab">
+                        <h6>Estado <span class="badge badge-pill badge-success ml-2 p-2">{$proposiciones[i].status}</span></h6>
                           <h6 class="font-weight-bold">Descripción:</h6>
                           <p class="p-1">{$proposiciones[i].descripcion}</p>
                           <h6 class="font-weight-bold">Objetvo:</h6>

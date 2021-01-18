@@ -23,14 +23,14 @@ $_SESSION['retorno']=$r;
 
 	$datos['docente'] = bd_personas_datos($propuesta['id_docente']);
 	$datos['trayecto'] = $trayecto['trayecto'];
+	$datos['id_trayecto'] = $trayecto['id'];
 	$datos['pnf'] = $pnf['nombre_corto'];
 	$datos['linea'] = $linea['nombre'];
 	$datos['fecha'] = $propuesta['fecha'];
-
 #/Datos del PNF
 
 # propociones
-	$proposiciones = bd_proposiones($propuesta);
+	$proposiciones = proposiones($propuesta);
 # /propociones
 
 # comunidad
@@ -59,6 +59,11 @@ switch ($status) {
 			#se le informa al usuario que la propuesta fue enviada
 			$smarty->assign('opciones', 'TRUE');
 			break;
+		case 'EVALUADA':
+			# No mostramos las opciones de la propuesta
+			#se le informa al usuario que la propuesta fue enviada
+			$smarty->assign('opciones', 'TRUE');
+			break;
 		default:
 			#
 			break;
@@ -66,7 +71,6 @@ switch ($status) {
 
 $smarty->assign('observaciones', $observaciones );
 $smarty->assign('status', $status );
-
 $smarty->assign('proposiciones', $proposiciones);
 $smarty->assign('comunidad',$comunidad);
 $smarty->assign('datos_lider',$datos_lider);

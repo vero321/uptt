@@ -58,7 +58,7 @@ if ($n_propuestas > 0) {
 	#/Datos del PNF
 
 	# propociones
-	$proposiciones = bd_proposiones($propuesta);
+	$proposiciones = proposiones($propuesta);
 	# /propociones
 
 	# comunidad
@@ -84,6 +84,11 @@ if ($n_propuestas > 0) {
 			$smarty->assign('opciones', 'FALSE');
 			break;
 		case 'EVALUANDO':
+			# No mostramos las opciones de la propuesta
+			#se le informa al usuario que la propuesta fue enviada
+			$smarty->assign('opciones', 'FALSE');
+			break;
+		case 'EVALUADA':
 			# No mostramos las opciones de la propuesta
 			#se le informa al usuario que la propuesta fue enviada
 			$smarty->assign('opciones', 'FALSE');

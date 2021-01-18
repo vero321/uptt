@@ -1,0 +1,25 @@
+<div class="container m-3">
+	<h3>Añadir observación</h3>
+	<form method="POST" action="../observaciones/proc_añadir_observacion.php">
+		<div class="form-group">
+			<input type="hidden" name="tipo" value="{$datos.tipo}">
+			<input type="hidden" name="fila" value="{$datos.fila}">
+    		<label for="descripcion">Observación</label>
+    		<textarea class="form-control" id="descripcion" name="descripcion" rows="3" required=""></textarea>
+  		</div>
+  		<div class="form-check">
+		  <label class="form-check-label">
+		    <input class="form-check-input" type="radio" name="comite" id="comite1" value="1" checked>
+		    Visible solo para el comité técnico 
+		  </label>
+		</div>
+		<div class="form-check">
+		  <label class="form-check-label">
+		    <input class="form-check-input" type="radio" name="comite" id="comite2" value="0">
+		    Publica
+		  </label>
+		</div>
+		
+  		<button type="subtmi" class="btn btn-primary btn-circle rounded-pill m-3">Añadir</button>
+  	</form>
+</div>
