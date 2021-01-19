@@ -1900,7 +1900,6 @@ function bd_propuestas_equipo($id=NULL, $status=NULL){
 }
 
 
-
 function bd_propuestas_agregar($datos, $proposiciones){
     #ver($datos);
     #vq($proposiciones);
@@ -1913,6 +1912,7 @@ function bd_propuestas_agregar($datos, $proposiciones){
             id_lider, 
             id_comunidad, 
             id_pnf, 
+            id_nucleo, 
             id_trayecto, 
             id_linea_investigacion
             ) 
@@ -1924,6 +1924,7 @@ function bd_propuestas_agregar($datos, $proposiciones){
             '{$datos['lider']}', 
             '{$datos['comunidad']}', 
             '{$datos['pnf_id']}', 
+            '{$_SESSION['r'][$_SESSION['numero']]['id_nucleo']}', 
             '{$datos['trayecto_id']}', 
             '{$datos['linea_investigacion']}'
             );";
@@ -2299,5 +2300,64 @@ function bd_estructura_eliminar($datos){
         DELETE FROM ESTRUCTURAS
         WHERE id = '{$datos['id']}'
         ";
+    sql($sql);
+}
+
+#
+# Trabajos
+#
+
+function bd_trabajos_datos($id=NULL, $verificar = NULL ){
+    if ($id!=NULL) {
+        $sql="
+            SELECT *
+            FROM TRABAJOS
+            WHERE id LIKE '{$id}'
+            ";
+        $salida = sql2row($sql);
+    }elseif ($verificar != NULL) {
+        $sql="
+            SELECT *
+            FROM TRABAJOS
+            WHERE responsable = '{$verificar['responsable']}' and id_pnf = '{$verificar['pnf']}' and id_nucleo = '{$verificar['nucleo']}'
+            ";
+        $salida = sql2row($sql);
+    } else {
+        $sql="
+            SELECT *
+            FROM TRABAJOS
+            ";
+        $salida = sql2array($sql);
+    }
+    return $salida;
+}
+
+function bd_trabajos_iniciar($datos){
+    $sql ="
+        INSERT INTO TRABAJOS( 
+            titulo,
+            fecha_inicio,
+            responsable,
+            id_docente,
+            id_equipo,
+            id_linea_investigacion,
+            id_nucleo,
+            id_pnf,
+            id_trayecto,
+            status
+        )
+        VALUES(
+            '{$datos['titulo']}',
+            '{$datos['fecha_inicio']}',
+            '{$datos['responsable']}',
+            '{$datos['id_docente']}',
+            '{$datos['id_equipo']}',
+            '{$datos['id_linea_investigacion']}',
+            '{$datos['id_nucleo']}',
+            '{$datos['id_pnf']}',
+            '{$datos['id_trayecto']}'
+            'EN PROCESÓ'
+        )
+    ";
     sql($sql);
 }

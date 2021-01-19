@@ -1,0 +1,38 @@
+{include file="../../navegacion/cab.html"}
+{include file="../../navegacion/sidebar2.html"}
+{include file="../../navegacion/cabecera2.html"}
+{include file="../../navegacion/barra_nucleo_pnf.html"}
+
+	 <div class="container-fluid">
+
+		<div class="card">
+			<div class="card-header">
+				<h4 class="card-title text-primary">Popuesta Aprobada</h4>
+			</div>
+			<div class="card-body">
+				<h5>Descripción</h5>
+				<p class="card-text">{$datos.descripcion}</p>
+				<h5>Objetivo</h5>
+				<p class="card-text">{$datos.objetivo}</p>
+				<div class="p-3 m-2">
+				
+                    <div class="alert alert-success">
+                    	
+                    	<div class="media">
+							<i class="far fa-check-circle fa-2x mr-3 my-3"></i>
+							<div class="media-body my-2">
+								<p class="notificaiton-title mb-2"><strong>Exelente!</strong> Tu propuesta ha sido aprovada ahora puesdesiniciar tu trabajo.</p>
+								<p>Para iniar tu trabajo preciona el boton <strong>Iniciar</strong></p>
+							<a class="btn btn-success rounded-pill" href="proc_iniciar.php?i={$datos.id}&e={$equipo_id}&l={$id_lider}&p={$id_propuesta}">Iniciar</a>
+							</div>
+						</div>
+                    	
+                    </div>
+				</div>
+
+			</div>
+		</div>	
+
+	</div>
+
+{include file="../../pie/pie_interno.html"}

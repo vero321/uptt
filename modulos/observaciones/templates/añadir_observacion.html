@@ -1,5 +1,5 @@
-<div class="container m-3">
-	<h3>Añadir observación</h3>
+<div class="container my-5">
+	<h3 class="font-weight-bold text-gray-900">Añadir observación</h3>
 	<form method="POST" action="../observaciones/proc_añadir_observacion.php">
 		<div class="form-group">
 			<input type="hidden" name="tipo" value="{$datos.tipo}">
@@ -7,6 +7,6 @@
     		<label for="descripcion">Observación</label>
     		<textarea class="form-control" id="descripcion" name="descripcion" rows="3" required=""></textarea>
   		</div>
-  		<button type="subtmi" class="btn btn-primary btn-circle rounded-pilly">Añadir</button>
+  		<button type="subtmi" class="btn btn-primary rounded-pill p-2">Añadir</button>
   	</form>
 </div>

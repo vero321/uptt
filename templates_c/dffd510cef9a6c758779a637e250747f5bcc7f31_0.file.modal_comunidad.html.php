@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2021-01-17 10:45:55
+/* Smarty version 3.1.30, created on 2021-01-18 12:10:27
   from "/home/palencia/public_html/proyecto4/uptt/modulos/modal/modal_comunidad.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_60044da32e9350_29365583',
+  'unifunc' => 'content_6005b2f30ccec1_87110488',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'dffd510cef9a6c758779a637e250747f5bcc7f31' => 
     array (
       0 => '/home/palencia/public_html/proyecto4/uptt/modulos/modal/modal_comunidad.html',
-      1 => 1610894752,
+      1 => 1610917721,
       2 => 'file',
     ),
   ),
@@ -20,14 +20,14 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_60044da32e9350_29365583 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6005b2f30ccec1_87110488 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <div class="modal fade" id="modal_comunidad" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-md">
     <div class="modal-content">
       <div class="modal-header">
         <h4 class="modal-title text-primary font-weight-bold" id="image-gallery-title">Registrar comunidad</h4>
-        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span>
+        <button type="button" class="close btn-sm btn-danger btn-circle" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span>
         </button>
       </div>
       <div class="modal-body p-3">
@@ -124,7 +124,7 @@ $_smarty_tpl->tpl_vars['__smarty_section_j'] = $__section_j_0_saved;
           </div>
           
 
-          <button type="submit" class="btn btn-primary" id="btn_comunidad_registrar">Registra</button>
+          <button type="submit" class="btn btn-primary rounded-pill" id="btn_comunidad_registrar rounded-pill">Registra</button>
           <button type="button" class="btn btn-secondary" id="btn_comunidad_cacelar" data-dismiss="modal">cancelar</button>
         </form>
 

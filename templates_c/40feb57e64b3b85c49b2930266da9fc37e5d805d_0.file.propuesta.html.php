@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2021-01-16 18:03:02
+/* Smarty version 3.1.30, created on 2021-01-18 12:30:20
   from "/home/palencia/public_html/proyecto4/uptt/modulos/propuesta/templates/propuesta.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_600362963ec3e4_64632514',
+  'unifunc' => 'content_6005b79c128424_70437907',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '40feb57e64b3b85c49b2930266da9fc37e5d805d' => 
     array (
       0 => '/home/palencia/public_html/proyecto4/uptt/modulos/propuesta/templates/propuesta.html',
-      1 => 1610834538,
+      1 => 1610986190,
       2 => 'file',
     ),
   ),
@@ -27,7 +27,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:../../pie/pie_interno.html' => 1,
   ),
 ),false)) {
-function content_600362963ec3e4_64632514 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6005b79c128424_70437907 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:../../navegacion/cab.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -125,7 +125,7 @@ $_smarty_tpl->_subTemplateRender("file:../../navegacion/cab.html", $_smarty_tpl-
 <?php $_smarty_tpl->_subTemplateRender("file:../../modal/modal_galeria.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
  
-<?php $_smarty_tpl->_subTemplateRender("file:../../modal/modal_box.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('prueba'=>"Comunidad"), 0, false);
+<?php $_smarty_tpl->_subTemplateRender("file:../../modal/modal_box.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('prueba'=>"Propuesta"), 0, false);
 ?>
  
 

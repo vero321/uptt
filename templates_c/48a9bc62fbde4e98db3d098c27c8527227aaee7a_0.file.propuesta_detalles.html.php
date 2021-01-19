@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2021-01-18 10:42:13
+/* Smarty version 3.1.30, created on 2021-01-18 18:27:06
   from "/home/palencia/public_html/proyecto4/uptt/modulos/propuesta/templates/propuesta_detalles.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_60059e45965727_43631334',
+  'unifunc' => 'content_60060b3a36be11_42918095',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '48a9bc62fbde4e98db3d098c27c8527227aaee7a' => 
     array (
       0 => '/home/palencia/public_html/proyecto4/uptt/modulos/propuesta/templates/propuesta_detalles.html',
-      1 => 1610852413,
+      1 => 1611008765,
       2 => 'file',
     ),
   ),
@@ -27,7 +27,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:../../pie/pie_interno.html' => 1,
   ),
 ),false)) {
-function content_60059e45965727_43631334 (Smarty_Internal_Template $_smarty_tpl) {
+function content_60060b3a36be11_42918095 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:../../navegacion/cab.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -320,10 +320,10 @@ $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index_next'] = $_smarty_tpl
                           <h6>Estado: <span class="badge badge-pill badge-success ml-2 p-2"><?php echo $_smarty_tpl->tpl_vars['proposiciones']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['status'];?>
 </span></h6>
                           <h6 class="font-weight-bold">Descripción:</h6>
-                          <p class="p-1"><?php echo $_smarty_tpl->tpl_vars['proposiciones']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['descripcion'];?>
+                          <p class="p-1 card-text"><?php echo $_smarty_tpl->tpl_vars['proposiciones']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['descripcion'];?>
 </p>
                           <h6 class="font-weight-bold">Objetvo:</h6>
-                          <p class="p-1"><?php echo $_smarty_tpl->tpl_vars['proposiciones']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['objetivo'];?>
+                          <p class="p-1 card-text"><?php echo $_smarty_tpl->tpl_vars['proposiciones']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['objetivo'];?>
 </p>
                         </div>
                       <?php
@@ -447,7 +447,7 @@ $_smarty_tpl->tpl_vars['__smarty_section_i'] = $__section_i_3_saved;
 <?php $_smarty_tpl->_subTemplateRender("file:../../modal/modal_galeria.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
  
-<?php $_smarty_tpl->_subTemplateRender("file:../../modal/modal_box.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('prueba'=>"Comunidad"), 0, false);
+<?php $_smarty_tpl->_subTemplateRender("file:../../modal/modal_box.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('prueba'=>"Propuesta"), 0, false);
 ?>
  
 <?php $_smarty_tpl->_subTemplateRender("file:../../pie/pie_interno.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);

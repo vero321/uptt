@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2021-01-14 13:49:51
+/* Smarty version 3.1.30, created on 2021-01-18 19:59:36
   from "/home/palencia/public_html/proyecto4/uptt/modulos/pie/pie_interno.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_6000843f6a21b0_80787868',
+  'unifunc' => 'content_600620e871f240_52358299',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '30dce3fce40b20410baa3572ebdb7f80e02abb98' => 
     array (
       0 => '/home/palencia/public_html/proyecto4/uptt/modulos/pie/pie_interno.html',
-      1 => 1610410503,
+      1 => 1611006759,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6000843f6a21b0_80787868 (Smarty_Internal_Template $_smarty_tpl) {
+function content_600620e871f240_52358299 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
     <!-- Scroll to Top Button-->
   <a class="scroll-to-top rounded" href="#page-top">
@@ -32,15 +32,20 @@ function content_6000843f6a21b0_80787868 (Smarty_Internal_Template $_smarty_tpl)
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">¿Preparado para salir?</h5>
+          <h5 class="modal-title font-weight-bold text-gray-900" id="exampleModalLabel">¿Preparado para salir?</h5>
           <button class="close" type="button" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">×</span>
           </button>
         </div>
-        <div class="modal-body">Seleccione "Cerrar sesión" a continuación si está listo para finalizar su sesión actual.</div>
+        <div class="modal-body">
+        <p class="text-gray-800">
+        Seleccione "Cerrar sesión" a continuación si está listo para finalizar su sesión actual.
+        </p>
+
+      </div>
         <div class="modal-footer">
-          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
-          <a class="btn btn-primary" href="../login/proc_exit.php">Cerrar sesión</a>
+          <button class="btn btn-secondary rounded-pill" type="button" data-dismiss="modal">Cancelar</button>
+          <a class="btn btn-primary rounded-pill " href="../login/proc_exit.php">Cerrar sesión</a>
         </div>
       </div>
     </div>

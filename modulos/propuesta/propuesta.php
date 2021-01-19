@@ -57,9 +57,9 @@ if ($n_propuestas > 0) {
 
 	#/Datos del PNF
 
-	# propociones
+	# proposiciones
 	$proposiciones = proposiones($propuesta);
-	# /propociones
+	# /proposiciones
 
 	# comunidad
 	$comunidad = bd_comunidad($propuesta['id_comunidad']);

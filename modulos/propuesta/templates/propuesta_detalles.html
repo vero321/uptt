@@ -204,9 +204,9 @@
                        <div class="tab-pane fade {if $smarty.section.i.index_next == 1}show active{/if}" id="nav_propuesta_{$smarty.section.i.index_next}" role="tabpanel" aria-labelledby="propuesta_{$smarty.section.i.index_next}-tab">
                           <h6>Estado: <span class="badge badge-pill badge-success ml-2 p-2">{$proposiciones[i].status}</span></h6>
                           <h6 class="font-weight-bold">Descripción:</h6>
-                          <p class="p-1">{$proposiciones[i].descripcion}</p>
+                          <p class="p-1 card-text">{$proposiciones[i].descripcion}</p>
                           <h6 class="font-weight-bold">Objetvo:</h6>
-                          <p class="p-1">{$proposiciones[i].objetivo}</p>
+                          <p class="p-1 card-text">{$proposiciones[i].objetivo}</p>
                         </div>
                       {/section}
                     </div>
@@ -295,5 +295,5 @@
 
 
 {include "../../modal/modal_galeria.html"} 
-{include "../../modal/modal_box.html" prueba="Comunidad"} 
+{include "../../modal/modal_box.html" prueba="Propuesta"} 
 {include file="../../pie/pie_interno.html"}

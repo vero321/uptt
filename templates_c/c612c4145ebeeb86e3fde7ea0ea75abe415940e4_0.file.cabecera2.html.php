@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2021-01-14 10:24:58
+/* Smarty version 3.1.30, created on 2021-01-18 11:36:20
   from "/home/palencia/public_html/proyecto4/uptt/modulos/navegacion/cabecera2.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_6000543a814c59_19882200',
+  'unifunc' => 'content_6005aaf4ca3023_33032242',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'c612c4145ebeeb86e3fde7ea0ea75abe415940e4' => 
     array (
       0 => '/home/palencia/public_html/proyecto4/uptt/modulos/navegacion/cabecera2.html',
-      1 => 1609879033,
+      1 => 1610980688,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6000543a814c59_19882200 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6005aaf4ca3023_33032242 (Smarty_Internal_Template $_smarty_tpl) {
 if (!is_callable('smarty_modifier_capitalize')) require_once '/home/palencia/public_html/proyecto4/uptt/vendor/smarty/libs/plugins/modifier.capitalize.php';
 ?>
 
@@ -94,7 +94,7 @@ for ($__section_i_0_iteration = 1, $_smarty_tpl->tpl_vars['__smarty_section_i']-
                     </div>
                   </div>
                   <div>
-                    <span class="font-weight-bold text-gray-800"><?php echo smarty_modifier_capitalize($_SESSION["r"][(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['rol']);?>
+                    <span class="font-weight-bold text-gray-900"><?php echo smarty_modifier_capitalize($_SESSION["r"][(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['rol']);?>
 
                     <?php if ($_SESSION["r"][(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['id_nucleo'] != NULL) {?>
                       <?php echo $_SESSION["r"][(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['nucleo'];?>
@@ -139,13 +139,13 @@ $_smarty_tpl->tpl_vars['__smarty_section_i'] = $__section_i_0_saved;
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
                 <a class="dropdown-item" href="../personas/personas_datos.php?id=<?php echo $_SESSION['u']['id'];?>
 ">
-                  <i class="fa fa-user fa-sm fa-fw mr-2  text-gray-800"></i>
-                  Perfil
+                  <i class="far fa-user  fa-fw mr-2  text-primary"></i>
+                  <span class="text-gray-800">Perfil</span>
                 </a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
-                  <i class="fa fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-800"></i>
-                  Cerrar sesión
+                  <i class="fa fa-sign-out-alt  fa-fw mr-2 text-danger"></i>
+                  <span class="text-gray-800">Cerrar sesión</span>
                 </a>
               </div>
             </li>

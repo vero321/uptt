@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2021-01-12 15:29:20
+/* Smarty version 3.1.30, created on 2021-01-18 12:12:47
   from "/home/palencia/public_html/proyecto4/uptt/modulos/propuesta/templates/propuesta_modificar.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5ffdf8904d7560_39832463',
+  'unifunc' => 'content_6005b37f784a25_15202889',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'a3491bb7049598a7102a37d2cb7928eff0f9c1da' => 
     array (
       0 => '/home/palencia/public_html/proyecto4/uptt/modulos/propuesta/templates/propuesta_modificar.html',
-      1 => 1610398610,
+      1 => 1610986365,
       2 => 'file',
     ),
   ),
@@ -26,7 +26,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:../../pie/pie_interno.html' => 1,
   ),
 ),false)) {
-function content_5ffdf8904d7560_39832463 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6005b37f784a25_15202889 (Smarty_Internal_Template $_smarty_tpl) {
 if (!is_callable('smarty_modifier_capitalize')) require_once '/home/palencia/public_html/proyecto4/uptt/vendor/smarty/libs/plugins/modifier.capitalize.php';
 if (!is_callable('smarty_modifier_date_format')) require_once '/home/palencia/public_html/proyecto4/uptt/vendor/smarty/libs/plugins/modifier.date_format.php';
 $_smarty_tpl->_subTemplateRender("file:../../navegacion/cab.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
@@ -160,7 +160,7 @@ $_smarty_tpl->tpl_vars['__smarty_section_i'] = $__section_i_0_saved;
            <div id="alerta-comunidad">
              
            </div>
-            <button class="btn btn-secondary " 
+            <button class="btn btn-secondary btn-circle" 
                title="Registrar comunidad"
                id="btn-comunidad" 
                disabled>
@@ -322,7 +322,7 @@ $_smarty_tpl->tpl_vars['__smarty_section_a'] = $__section_a_1_saved;
             
             	<div class="form-group">
 					<input 
-					class="btn btn-primary" 
+					class="btn btn-primary rounded-pill" 
 					type="submit" 
 					name="enviar" 
 					value="Registrar">

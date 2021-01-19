@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2021-01-18 19:02:05
-  from "/home/palencia/public_html/proyecto4/uptt/modulos/mi_trabajo/templates/mi_trabajo.html" */
+/* Smarty version 3.1.30, created on 2021-01-18 23:08:01
+  from "/home/palencia/public_html/proyecto4/uptt/modulos/mi_trabajo/templates/trabajo.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_6006136de16fc4_56561270',
+  'unifunc' => 'content_60064d11334154_29290061',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    'd664ee615c7f61b5a898e2c13c526ae87befa2ab' => 
+    'a1f4a3b1273d2bd7ff44abf131e33b91a5d1bf76' => 
     array (
-      0 => '/home/palencia/public_html/proyecto4/uptt/modulos/mi_trabajo/templates/mi_trabajo.html',
-      1 => 1611010924,
+      0 => '/home/palencia/public_html/proyecto4/uptt/modulos/mi_trabajo/templates/trabajo.html',
+      1 => 1611025676,
       2 => 'file',
     ),
   ),
@@ -26,7 +26,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:../../pie/pie_interno.html' => 1,
   ),
 ),false)) {
-function content_6006136de16fc4_56561270 (Smarty_Internal_Template $_smarty_tpl) {
+function content_60064d11334154_29290061 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:../../navegacion/cab.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -40,38 +40,12 @@ $_smarty_tpl->_subTemplateRender("file:../../navegacion/cab.html", $_smarty_tpl-
 ?>
 
 
-	 <div class="container-fluid">
-
+	<div class="container-fluid">
 		<div class="card">
-			<div class="card-header">
-				<h4 class="card-title text-primary">Popuesta Aprobada</h4>
-			</div>
 			<div class="card-body">
-				<h5>Descripción</h5>
-				<p class="card-text"><?php echo $_smarty_tpl->tpl_vars['datos']->value['descripcion'];?>
-</p>
-				<h5>Objetivo</h5>
-				<p class="card-text"><?php echo $_smarty_tpl->tpl_vars['datos']->value['objetivo'];?>
-</p>
-				<div class="p-3 m-2">
-				
-                    <div class="alert alert-success">
-                    	
-                    	<div class="media">
-						  <i class="far fa-check-circle fa-2x mr-3 my-3"></i>
-						  <div class="media-body my-2">
-						   <p class="notificaiton-title mb-2"><strong>Exelente!</strong> Tu propuesta ha sido aprovada ahora puesdesiniciar tu trabajo.</p>
-                        	<p>Para iniar tu trabajo preciona el boton <strong>Iniciar</strong></p>
-                        	<button class="btn btn-success rounded-pill">Iniciar</button>
-						  </div>
-						</div>
-                    	
-                    </div>
-				</div>
-
+				<h1>Aun no se que va aca pero si vez esto ya tienes un trabajo en proceso</h1>
 			</div>
-		</div>	
-
+		</div>
 	</div>
 
 
