@@ -1933,7 +1933,7 @@ function bd_propuestas_agregar($datos, $proposiciones){
             '{$proposiciones[0]['id']}',
             '{$proposiciones[1]['id']}',
             '{$proposiciones[2]['id']}'
-            );";
+            )";
     sql($sql);
     foreach ($proposiciones as $proposicion) {
         $sql = "
