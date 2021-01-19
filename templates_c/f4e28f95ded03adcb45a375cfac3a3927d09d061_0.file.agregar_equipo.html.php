@@ -1,3 +1,27 @@
+<?php
+/* Smarty version 3.1.30, created on 2021-01-19 09:05:02
+  from "/home/palencia/public_html/proyecto4/uptt/modulos/lider_seccion/templates/agregar_equipo.html" */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.30',
+  'unifunc' => 'content_6006d8fe432cc8_72828535',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    'f4e28f95ded03adcb45a375cfac3a3927d09d061' => 
+    array (
+      0 => '/home/palencia/public_html/proyecto4/uptt/modulos/lider_seccion/templates/agregar_equipo.html',
+      1 => 1611061498,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_6006d8fe432cc8_72828535 (Smarty_Internal_Template $_smarty_tpl) {
+?>
 <div class="container my-3">
 <div class="row">
   <div class="col-12">   
@@ -18,7 +42,8 @@
                	class="px-4 py-3" 
                	id="registro_seccion"
                	name="registro_seccion">
-                 <input type="hidden" name="id_seccion" value="{$seccion}">
+                 <input type="hidden" name="id_seccion" value="<?php echo $_smarty_tpl->tpl_vars['seccion']->value;?>
+">
                 
                	<div class="form-group">
                 	<label for="id">Nombre</label>
@@ -46,3 +71,5 @@
 
 </div>  
 </div>
+<?php }
+}

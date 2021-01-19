@@ -1914,7 +1914,10 @@ function bd_propuestas_agregar($datos, $proposiciones){
             id_pnf, 
             id_nucleo, 
             id_trayecto, 
-            id_linea_investigacion
+            id_linea_investigacion,
+            id_proposicion_1,
+            id_proposicion_2,
+            id_proposicion_3
             ) 
         VALUES (
             '{$id_propuesta}',
@@ -1926,7 +1929,10 @@ function bd_propuestas_agregar($datos, $proposiciones){
             '{$datos['pnf_id']}', 
             '{$_SESSION['r'][$_SESSION['numero']]['id_nucleo']}', 
             '{$datos['trayecto_id']}', 
-            '{$datos['linea_investigacion']}'
+            '{$datos['linea_investigacion']}',
+            '{$proposiciones[0]['id']}',
+            '{$proposiciones[1]['id']}',
+            '{$proposiciones[2]['id']}'
             );";
     sql($sql);
     foreach ($proposiciones as $proposicion) {
@@ -2355,7 +2361,7 @@ function bd_trabajos_iniciar($datos){
             '{$datos['id_linea_investigacion']}',
             '{$datos['id_nucleo']}',
             '{$datos['id_pnf']}',
-            '{$datos['id_trayecto']}'
+            '{$datos['id_trayecto']}',
             'EN PROCESÓ'
         )
     ";

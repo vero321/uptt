@@ -4,7 +4,6 @@ require_once '../config/app.php';
 include_once APP.'/modulos/config/inicializacion.php';
 $verificar = verificar();
 $smarty->assign('verificar',$verificar);
-
 $propuesta = bd_propuestas_datos($_GET['p']);
 $proposicion = bd_proposiciones_datos($_GET['i']);
 $datos = array(
