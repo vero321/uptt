@@ -49,6 +49,7 @@ if ($n_propuestas > 0) {
 		#/Datos del PNF
 		# propociones
 		$proposiciones = proposiones($propuesta);
+
 		# /propociones
 
 		# comunidad
