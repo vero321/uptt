@@ -17,7 +17,7 @@ $proposiones = array(
 		'objetivo' => $_POST['objetivo2'],
 			'n_proposicion' => 'id_proposicion_2'
 		),
-	3 => array(
+	2 => array(
 		'id' => uniqid(true),
 		'proposicion' => $_POST['proposicion3'],
 		'objetivo' => $_POST['objetivo3'],
