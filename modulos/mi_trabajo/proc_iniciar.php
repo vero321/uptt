@@ -7,7 +7,7 @@ $smarty->assign('verificar',$verificar);
 $propuesta = bd_propuestas_datos($_GET['p']);
 $proposicion = bd_proposiciones_datos($_GET['i']);
 $datos = array(
-	'titulo' => $proposicion['objetivo'],
+	'titulo' => $proposicion['descripcion'],
 	'fecha_inicio' => date('Y-m-d'), 
 	'responsable' => $_GET['l'],
 	'id_docente' => $propuesta['id_docente'],

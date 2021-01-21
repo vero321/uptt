@@ -14,12 +14,13 @@ $_SESSION['retorno']=$r;
 
  */
 
+$lider=bd_equipo_lider();
 
 if (isset($_GET['equipo_id'])) {
 	# si equipo
 	$equipo_id=$_GET['equipo_id'];
 }else{
-	$lider=bd_equipo_lider();
+	#vq($lider);
 	$confmar_lider=count($lider);
 	if ($confmar_lider >1){
 	#si el lider tiene mas de un equipo asignado lo envia a una pagina par seleccionar el trabajo segun el equipo
@@ -33,15 +34,18 @@ if (isset($_GET['equipo_id'])) {
 }
 
 $propuesta=bd_propuestas_equipo($equipo_id);
-
 $verificar = array(
 	'responsable' => $_SESSION['u']['id'],
 	'nucleo' => $_SESSION['r'][$_SESSION['numero']]['id_nucleo'],
-	'pnf' => $_SESSION['r'][$_SESSION['numero']]['id_pnf']
+	'pnf' => $_SESSION['r'][$_SESSION['numero']]['id_pnf'],
+	'seccion' => $lider[0]['id_seccion'],
+	'caso' => 'lider'
 );
 
 $trabajo = bd_trabajos_datos($id=NULL, $verificar );
 if (count($trabajo) > 0) {
+	$entregables = bd_entregables_caso($verificar);
+	$smarty->assign('entregables',$entregables);
 	$smarty->assign('trabajo',$trabajo);
 	$smarty->display('trabajo.html');
 }else{

@@ -1,0 +1,72 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">  
+    	<div align="center" class="m-3">
+    			
+		      <h3 class="font-weight-bold text-gray-900 m-3">¿Desea eliminar este entregable?</h3> 
+		      <div class="row">
+	<div class="col-md-12">
+		<div class="p-3 m-3">
+			
+			<h4 class="font-weight-bold text-gray-900 text-center">Entregable</h4>
+				<div class="row">
+				
+					<div class=" col-md-4">
+						<h6 class="font-weight-bold text-gray-900 my-2">Fecha de inicio</h6>
+						<p class="card-text pl-2">{$entregable.fecha_inicio}</p>
+					</div>
+				
+					<div class=" col-md-4">
+						<h6 class="font-weight-bold text-gray-900 my-2">Fecha de entrega</h6>
+						<p class="card-text pl-2">{$entregable.fecha_entrega}</p>
+					</div>
+					
+					<div class=" col-md-4">
+						<h6 class="font-weight-bold text-gray-900 my-2">Obsevaciones</h6>
+						<p class="card-text pl-2">{$entregable.observaciones}</p>
+					</div>
+
+					<div class="container my-3">
+						<h6 class="font-weight-bold text-gray-900 my-2">Estructura</h6> 
+						<div class="row">
+					  		<div class="col-4">
+					  			<div class="list-group" id="list-tab" role="tablist">
+					   			{section name=i loop=$estructura}
+					      			<a class="list-group-item list-group-item-action " id="{$smarty.section.i.index}" data-toggle="list" href="#list-{$smarty.section.i.index}" role="tab" aria-controls="{$smarty.section.i.index}">{$estructura[i].nombre}</a>
+								{/section}
+
+					    
+					    </div>
+					  </div>
+					  <div class="col-8">
+					  	<div class="alert alert-info alert-dismissible fade show"  aria-atomic="true" data-delay="5000">
+							<p>
+							<i class="fas fa-info-circle mr-2"></i>
+							Para ver la descripción has click sobre uno de los elementos de la lista
+							</p>
+							
+							<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+						    <span aria-hidden="true">&times;</span>
+						  </button>
+						</div>
+					    <div class="tab-content" id="nav-tabContent">
+					    	{section name=ii loop=$estructura}
+					     		<div class="tab-pane fade show " id="list-{$smarty.section.ii.index}" role="tabpanel" aria-labelledby="{$smarty.section.ii.index}">{$estructura[ii].descripcion}</div>
+							{/section}
+					      
+					    </div>
+					  </div>
+					</div>
+				</div>
+					
+				</div>	
+		</div>
+	</div>
+</div>
+		        <a  href="proc_entrable_emiminar.php?id={$entregable.id}"  class="btn btn-primary rounded-pill">SI</a>
+		        <a  href="#" data-dismiss="modal" class="btn btn-secondary rounded-pill">NO</a>
+    	</div>
+              
+    </div>
+  </div>
+</div>

@@ -1,0 +1,42 @@
+<div class="row">
+	<div class="col-md-2"></div>
+	<div class="col-md-8">
+		<div class="m-2 p-3">
+			
+			<h3 class="font-weight-bold text-gray-900 my-3">Solicitar entregable</h3>
+				<form action="proc_entregables_agregar.php" method="POST">
+					<input type="hidden" name="nucleo" value="{$datos.nucleo}">
+					<input type="hidden" name="pnf" value="{$datos.pnf}">
+					<input type="hidden" name="seccion" value="{$datos.seccion}">
+					<div class="form-group">
+						<label>Fecha de inicio</label>
+						<input type="date" name="fecha_inicio" class="form-control">
+					</div>
+					<div class="form-group">
+						<label>Fecha de entrega</label>
+						<input type="date" name="fecha_entrega" class="form-control">
+					</div>
+
+					<div class="form-group">
+						<label>Obsevaciones</label>
+						<textarea name="observaciones" class="form-control"></textarea>
+					</div>
+					<div class="form-group p-2">
+						<label>Estructura</label>
+					
+					{section name=i loop=$estructura}
+					<div class="custom-control custom-switch">
+					  <input type="checkbox" class="custom-control-input" id="{$smarty.section.i.index}" name="estructura[]" value="{$estructura[i].id}">
+					  <label class="custom-control-label" for="{$smarty.section.i.index}">{$estructura[i].nombre}</label>
+					</div>
+					
+					{/section}
+				</div>
+					<div class="form-group p-2">
+						<input class="btn-enviar btn btn-sm btn-primary rounded-pill" type="submit" value="Registrar">
+					</div>
+				</form>
+		</div>
+	</div>
+	<div class="col-md-2"></div>
+</div>

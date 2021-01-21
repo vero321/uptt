@@ -1,0 +1,43 @@
+<div class="row">
+	<div class="col-md-2"></div>
+	<div class="col-md-8">
+		<div class="m-2 p-3">
+			
+			<h3 class="font-weight-bold text-gray-900 my-3">Solicitar entregable</h3>
+				<form action="proc_entregables_modificar.php" method="POST">
+					<input type="hidden" name="id" value="{$entregable.id}">
+					
+					<div class="form-group">
+						<label>Fecha de inicio</label>
+						<input type="date" name="fecha_inicio" class="form-control" value="{$entregable.fecha_inicio}">
+					</div>
+					<div class="form-group">
+						<label>Fecha de entrega</label>
+						<input type="date" name="fecha_entrega" class="form-control" value="{$entregable.fecha_entrega}">
+					</div>
+
+					<div class="form-group">
+						<label>Obsevaciones</label>
+						<textarea name="observaciones" class="form-control">{$entregable.observaciones}</textarea>
+					</div>
+					<div class="form-group p-2">
+						<div class="alert alert-info">
+							<i class="fas fa-info-circle mr-2"></i>
+							<small> Para evitar confictos seleccione nuevamente la estrutura</small>
+						</div>
+						<label>Estructura</label> 
+					{section name=i loop=$estructura}
+					<div class="custom-control custom-switch">
+					  <input type="checkbox" class="custom-control-input" id="{$smarty.section.i.index}" name="estructura[]" value="{$estructura[i].id}">
+					  <label class="custom-control-label" for="{$smarty.section.i.index}">{$estructura[i].nombre}</label>
+					</div>
+					
+					{/section}
+				</div>
+					<div class="form-group p-2">
+						<input class="btn-enviar btn btn-sm btn-primary rounded-pill" type="submit" value="Modificar">
+					</div>
+		</div>
+	</div>
+	<div class="col-md-2"></div>
+</div>

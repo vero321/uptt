@@ -2325,7 +2325,7 @@ function bd_trabajos_datos($id=NULL, $verificar = NULL ){
         $sql="
             SELECT *
             FROM TRABAJOS
-            WHERE responsable = '{$verificar['responsable']}' and id_pnf = '{$verificar['pnf']}' and id_nucleo = '{$verificar['nucleo']}'
+            WHERE responsable = '{$verificar['responsable']}' and id_pnf = '{$verificar['pnf']}' and id_nucleo = '{$verificar['nucleo']}' and id_seccion = '{$verificar['seccion']}'
             ";
         $salida = sql2row($sql);
     } else {
@@ -2366,4 +2366,151 @@ function bd_trabajos_iniciar($datos){
         )
     ";
     sql($sql);
+}
+
+#
+#entregables
+#
+
+function bd_entregales_datos($id=NULL){
+    if ($id!=NULL) {
+        $sql="
+            SELECT *
+            FROM ENTREGABLES
+            WHERE id LIKE '{$id}'
+            ";
+        $salida = sql2row($sql);
+    } else {
+        $sql="
+            SELECT *
+            FROM ENTREGABLES
+            ";
+        $salida = sql2array($sql);
+    }
+    return $salida;
+}
+
+function bd_entregables_caso($datos){
+    switch ($datos['caso']) {
+        case 'docente':
+            # code...
+             $sql="
+                SELECT *
+                FROM ENTREGABLES
+                WHERE id_docente = '{$datos['id_docente']}' and id_pnf = '{$datos['pnf']}' and id_nucleo = '{$datos['nucleo']}' and id_seccion = '{$datos['seccion']}'
+            ";
+            $salida = sql2array($sql);
+            break;
+        case 'lider':
+            # code...
+             $sql="
+                SELECT *
+                FROM ENTREGABLES
+                WHERE id_pnf = '{$datos['pnf']}' and id_nucleo = '{$datos['nucleo']}' and id_seccion = '{$datos['seccion']}'
+            ";
+            $salida = sql2array($sql);
+            break;
+        
+        
+    }
+    return $salida;
+}
+
+function bd_seccion_tipo_documento($datos){
+    $sql = "
+        UPDATE SECCIONES SET
+            id_tipo_de_documento = '{$datos['tipo']}'
+        WHERE id = '{$datos['id']}' 
+            ";
+    sql($sql);
+    return $datos;
+}
+
+function bd_entregables_agregar($datos){
+    $sql ="
+        INSERT INTO ENTREGABLES
+        (
+        id,
+        fecha_inicio,
+        fecha_entrega,
+        observaciones,
+        id_tipo_de_documento,
+        id_nucleo,
+        id_pnf,
+        id_seccion,
+        id_docente
+        )
+        VALUES(
+        '{$datos['id']}',
+        '{$datos['fecha_inicio']}',
+        '{$datos['fecha_entrega']}',
+        '{$datos['observaciones']}',
+        '{$datos['id_tipo_de_documento']}',
+        '{$datos['nucleo']}',
+        '{$datos['pnf']}',
+        '{$datos['seccion']}',
+        '{$datos['docente']}'
+        )
+    ";
+    sql($sql);
+    foreach ($datos['estructura'] as $estructura) {
+        # code...
+         $sql1 ="
+            INSERT INTO ENTREGABLES__ESTRUCTURA
+            (id_entregable, id_estructura)
+            VALUES('{$datos['id']}', '{$estructura}')
+        ";
+        sql($sql1);
+    }
+
+}
+
+function bd_entregables_modificar($datos){
+    $sql = "
+        UPDATE ENTREGABLES SET
+            observaciones = '{$datos['observaciones']}',
+            fecha_inicio = '{$datos['fecha_inicio']}',
+            fecha_entrega = '{$datos['fecha_entrega']}'
+        WHERE id = '{$datos['id']}' 
+        ";
+    sql($sql);
+    $sql1 = "
+        DELETE FROM ENTREGABLES__ESTRUCTURA
+        WHERE id_entregable = '{$datos['id']}'
+        ";
+    sql($sql1);
+    foreach ($datos['estructura'] as $estructura) {
+        # code...
+         $sql2 ="
+            INSERT INTO ENTREGABLES__ESTRUCTURA
+            (id_entregable, id_estructura)
+            VALUES('{$datos['id']}', '{$estructura}')
+        ";
+        sql($sql2);
+    }
+
+    
+}
+
+function bd_entrgables_estructura($id){
+    $sql="
+        SELECT nombre, descripcion, parte
+            FROM ESTRUCTURAS, ENTREGABLES__ESTRUCTURA
+            WHERE id_entregable = '{$id}' and ESTRUCTURAS.id = id_estructura
+        ";
+        $salida = sql2array($sql);
+        return $salida;
+}
+
+function bd_entregables_eliminar($datos){
+    $sql = "
+        DELETE FROM ENTREGABLES
+        WHERE id = '{$datos['id']}'
+        ";
+    sql($sql);
+    $sql1 = "
+        DELETE FROM ENTREGABLES__ESTRUCTURA
+        WHERE id_entregable = '{$datos['id']}'
+        ";
+    sql($sql1);
 }

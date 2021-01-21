@@ -3,13 +3,44 @@
 {include file="../../navegacion/cabecera2.html"}
 {include file="../../navegacion/barra_nucleo_pnf.html"}
 
-	<div class="container-fluid">
-		<div class="card">
-			<div class="card-body">
-				<h1>Aun no se que va aca pero si vez esto ya tienes un trabajo en proceso</h1>
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-6">
+			<div class="card mb-3" style="max-width: 540px;">
+			  <div class="row no-gutters">
+			    <div class="col-md-4">
+			      <i class="far fa-file-word fa-6x text-center m-3 p-4 text-primary"></i>
+			    </div>
+			    <div class="col-md-8">
+			      <div class="card-body">
+			        <h5 class="card-title">{$trabajo.titulo}</h5>
+			       
+			        <p class="card-text"><small class="text-muted">Fecha de Inicio {$trabajo.fecha_inicio}</small></p>
+			      </div>
+			    </div>
+			  </div>
 			</div>
 		</div>
+		<div class="col-md-6">
+			{if count($entregables) > 0}
+				{section name=i loop=$entregables}
+				<div class="alert alert-info">
+	                    	
+		        	<div class="media">
+						<i class="fas fa-info-circle fa-2x mr-3 my-3"></i>
+						<div class="media-body my-2">
+							<p class="notificaiton-title mb-2"><strong>HEYYY!</strong> Parece que tienes un entregable pendiente</p>
+							<p>Para ver los detalles preciona el botón <strong>Detalles</strong></p>
+						<a class="btn btn-info rounded-pill mimodal mb-2" data-href="../entregables/entregables_detalle.php?id={$entregables[i].id}">Detalles</a>
+							<p><strong>Feche Limite para la entrega</strong> <span class="text-danger">{$entregables[0].fecha_entrega}</span> </p>
+						</div>
+					</div>
+				{/section}
+			{/if}
+		</div>
 	</div>
+</div>
+</div>
 
 
 {include "../../modal/modal_box.html" prueba="Tipos de trabajo"} 
