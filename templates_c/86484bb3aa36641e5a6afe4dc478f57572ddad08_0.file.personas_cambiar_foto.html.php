@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2021-01-19 21:42:39
+/* Smarty version 3.1.30, created on 2021-01-20 22:19:06
   from "/home/palencia/public_html/proyecto4/uptt/modulos/personas/templates/personas_cambiar_foto.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_60078a8f12abf8_64874436',
+  'unifunc' => 'content_6008e49a2e6017_04526250',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '86484bb3aa36641e5a6afe4dc478f57572ddad08' => 
     array (
       0 => '/home/palencia/public_html/proyecto4/uptt/modulos/personas/templates/personas_cambiar_foto.html',
-      1 => 1611106947,
+      1 => 1611107103,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_60078a8f12abf8_64874436 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6008e49a2e6017_04526250 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 
 <div class="container p-4">

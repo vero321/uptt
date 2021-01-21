@@ -12,13 +12,13 @@
   </ol>
 </nav>
     <div class="card shadow">
-        <div class="card-header">
+        <div class="card-header d-flex justify-content-between">
           <h3 class="text-primary"><span class="badge badge-secondary badge-pill"></span>AREAS
-              {if in_array("AREA_A",$verificar) == TRUE}
-               <a class="btn btn-sm btn-outline-primary mimodal" type="button" 
-              data-href="areas_pnf_agregar.php?id={$pnf['id']}" title="Agregar PNF a {$pnf['nombre_corto']}"><span class="fa fa-plus"></span></a>
-              {/if}
             </h3>
+              {if in_array("AREA_A",$verificar) == TRUE}
+               <a class="btn btn-primary btn-circle mimodal" type="button" 
+              data-href="areas_pnf_agregar.php?id={$pnf['id']}" title="Agregar PNF a {$pnf['nombre_corto']}"><span class="fa fa-plus text-white"></span></a>
+              {/if}
         </div>
         <div class="card-body">
           <div class="table-responsive">
@@ -41,20 +41,18 @@
                     {if in_array("AREA_M",$verificar) == TRUE}
                     <td>
                       <a 
-                        style="margin-bottom:3px; color:blue;" 
-                        class="btn btn-default mimodal"
+                        class="btn btn-info mimodal btn-circle btn-sm"
                         title="Modificar Area" 
                         data-href="areas_pnf_modificar.php?id={$areas_pnf[i].id}">
-                        <i class="fa fa-edit"></i>
+                        <i class="fa fa-edit text-white"></i>
                       </a>
                       {/if}
                       {if in_array("AREA_E",$verificar) == TRUE}
                       <a 
-                        style="margin-bottom:3px; color:blue;" 
-                        class="btn btn-default mimodal"
+                        class="btn btn-danger mimodal btn-circle btn-sm"
                         title="Eliminar Area" 
                         data-href="areas_pnf_eliminar.php?id={$areas_pnf[i].id}">
-                        <i class="fa fa-trash"></i>
+                        <i class="fa fa-trash text-white"></i>
                       </a>
                       {/if}
                   </td>
@@ -62,7 +60,7 @@
 
                     {if in_array("AREA_CT", $verificar) == TRUE }
                         {if $areas_pnf[i].comite_tecnico ==  NULL}
-                          <a class="btn btn-sm btn-outline-primary mimodal" type="button" href="areas_pnf_comite.php?id={$areas_pnf[i].id}" title="Asignar profesor de proyecto {$areas_pnf[i].nombre}"><span class="fa fa-plus"></span></a>
+                          <a class="btn btn-sm btn-primary btn_circle mimodal" type="button" href="areas_pnf_comite.php?id={$areas_pnf[i].id}" title="Asignar profesor de proyecto {$areas_pnf[i].nombre}"><span class="fa fa-plus"></span></a>
                         {else}
                         {$persona=bd_personas_datos($areas_pnf[i].comite_tecnico)}
                         <div class="row">

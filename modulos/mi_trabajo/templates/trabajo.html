@@ -30,8 +30,9 @@
 						<i class="fas fa-info-circle fa-2x mr-3 my-3"></i>
 						<div class="media-body my-2">
 							<p class="notificaiton-title mb-2"><strong>HEYYY!</strong> Parece que tienes un entregable pendiente</p>
-							<p>Para ver los detalles preciona el botón <strong>Detalles</strong></p>
+							
 						<a class="btn btn-info rounded-pill mimodal mb-2" data-href="../entregables/entregables_detalle.php?id={$entregables[i].id}">Detalles</a>
+						<a class="btn btn-light rounded-pill mimodal mb-2" data-href="../entregables/entregables_detalle.php?id={$entregables[i].id}">Entregar</a>
 							<p><strong>Feche Limite para la entrega</strong> <span class="text-danger">{$entregables[0].fecha_entrega}</span> </p>
 						</div>
 					</div>

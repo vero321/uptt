@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2021-01-19 21:36:50
+/* Smarty version 3.1.30, created on 2021-01-20 22:19:01
   from "/home/palencia/public_html/proyecto4/uptt/modulos/personas/templates/usuarios_cambiar_clave.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_60078932da2bb4_49820886',
+  'unifunc' => 'content_6008e495afd196_79227901',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'ea28f6610814d972f9555f0e01ded68ebd72bd2e' => 
     array (
       0 => '/home/palencia/public_html/proyecto4/uptt/modulos/personas/templates/usuarios_cambiar_clave.html',
-      1 => 1611106603,
+      1 => 1611106620,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_60078932da2bb4_49820886 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6008e495afd196_79227901 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 
 <div class="container" >
@@ -79,7 +79,7 @@ function content_60078932da2bb4_49820886 (Smarty_Internal_Template $_smarty_tpl)
                              
                         </div>
                       <div class="form-group">
-                        <input class="btn btn-primary rounded-pill p-2 shadow-lg" 
+                        <input class="btn btn-primary rounded-pill p-2 shadows" 
                           class="link float-left btn btn-light" 
                           type="submit" 
                           name="enviar" 

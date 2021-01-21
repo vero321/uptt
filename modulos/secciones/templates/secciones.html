@@ -12,12 +12,12 @@
     <li class="breadcrumb-item active" aria-current="page">{$trayecto['trayecto']}</li>
   </ol>
   <div class="card shadow">
-      <div class="card-header ">
+      <div class="card-header d-flex justify-content-between">
         <h3 class="text-primary"><span class="badge badge-secondary badge-pill">{$n_secciones}</span> Seciones
-            {if in_array("SECC_A",$verificar) == TRUE}
-             <a class="btn btn-sm btn-outline-primary mimodal" type="button" 
-            data-href="seccion_agregar.php?t={$trayecto['id']}" title="Agregar seccion a {$trayecto['trayecto']}"><span class="fa fa-plus"></span></a>
           </h3>
+            {if in_array("SECC_A",$verificar) == TRUE}
+             <a class="btn btn-primary mimodal btn-circle" type="button" 
+            data-href="seccion_agregar.php?t={$trayecto['id']}" title="Agregar seccion a {$trayecto['trayecto']}"><span class="fa fa-plus text-white"></span></a>
         {/if}
       </div>
       <div class="card-body">
@@ -42,27 +42,25 @@
                     {if in_array("SECC_M",$verificar) == TRUE}
                     <td class="text-center" style="white-space: nowrap;">
                     <a 
-                      style="margin-bottom:3px; color:blue;" 
-                      class="btn btn-default mimodal"
+                      class="btn btn-info mimodal btn-circle btn-sm"
                       title="Modificar seccion" 
                       data-href="seccion_modificar.php?id={$secciones[i].id}&t={$trayecto['id']}">
-                      <i class="fa fa-edit"></i>
+                      <i class="fa fa-edit text-white"></i>
                     </a>
                     {/if}
                     {if in_array("SECC_E",$verificar) == TRUE}
                     <a 
-                      style="margin-bottom:3px; color:blue;" 
-                      class="btn btn-default mimodal"
+                      class="btn btn-danger mimodal btn-circle btn-sm"
                       title="Eliminar seccion" 
                       data-href="seccion_eliminar.php?id={$secciones[i].id}&t={$trayecto['id']}">
-                      <i class="fa fa-trash"></i>
+                      <i class="fa fa-trash text-white"></i>
                     </a>
                     {/if}
                   </td>
                   <td>
                     {if in_array("SECC_AP", $verificar) == TRUE }
                         {if $secciones[i].profesor_proyecto ==  NULL}
-                          <a class="btn btn-sm btn-outline-primary mimodal" type="button" href="seccion_profesor.php?id={$secciones[i].id}&t={$trayecto['id']}" title="Asignar profesor de proyecto {$secciones[i].nombre}"><span class="fa fa-plus"></span></a>
+                          <a class="btn btn-sm btn-primary mimodal btn-circle" type="button" href="seccion_profesor.php?id={$secciones[i].id}&t={$trayecto['id']}" title="Asignar profesor de proyecto {$secciones[i].nombre}"><span class="fa fa-plus text-white"></span></a>
                         {else}
                         {$persona=bd_personas_datos($secciones[i].profesor_proyecto)}
                         <div class="row">

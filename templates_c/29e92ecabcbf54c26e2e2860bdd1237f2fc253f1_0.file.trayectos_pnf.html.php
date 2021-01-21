@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2021-01-19 14:00:21
+/* Smarty version 3.1.30, created on 2021-01-20 22:59:27
   from "/home/palencia/public_html/proyecto4/uptt/modulos/trayectos_pnf/templates/trayectos_pnf.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_60071e357a6c66_25953494',
+  'unifunc' => 'content_6008ee0f7efae8_13496105',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '29e92ecabcbf54c26e2e2860bdd1237f2fc253f1' => 
     array (
       0 => '/home/palencia/public_html/proyecto4/uptt/modulos/trayectos_pnf/templates/trayectos_pnf.html',
-      1 => 1611073924,
+      1 => 1611197964,
       2 => 'file',
     ),
   ),
@@ -26,7 +26,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:../../pie/pie_interno.html' => 1,
   ),
 ),false)) {
-function content_60071e357a6c66_25953494 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6008ee0f7efae8_13496105 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:../../navegacion/cab.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -50,15 +50,15 @@ $_smarty_tpl->_subTemplateRender("file:../../navegacion/cab.html", $_smarty_tpl-
     <li class="breadcrumb-item active" aria-current="page">Trayectos pnf</li>
   </ol>
     <div class="card shadow">
-        <div class="card-header">
+        <div class="card-header d-flex justify-content-between">
 	        <h3 class="text-primary"><span class="badge badge-secondary badge-pill"></span>Trayectos
+	        </h3>
 	            <?php if (in_array("TRPN_A",$_smarty_tpl->tpl_vars['verificar']->value) == TRUE) {?>
-	             <a class="btn btn-sm btn-outline-primary mimodal" type="button" 
+	             <a class="btn btn-primary mimodal btn-circle" type="button" 
 	            data-href="trayecto_pnf_asignar.php?id=<?php echo $_smarty_tpl->tpl_vars['pnf']->value['id'];?>
 " title="Agregar PNF a <?php echo $_smarty_tpl->tpl_vars['pnf']->value['nombre_corto'];?>
-"><span class="fa fa-plus"></span></a>
+"><span class="fa fa-plus text-white"></span></a>
 	            <?php }?>
-	          </h3>
         </div>
         <div class="card-body">
           <div class="table-responsive">
@@ -85,24 +85,23 @@ for ($__section_i_0_iteration = 1, $_smarty_tpl->tpl_vars['__smarty_section_i']-
                     <?php if (in_array("PNNU_M",$_smarty_tpl->tpl_vars['verificar']->value) == TRUE) {?>
                     <td>
                       <a 
-                        style="margin-bottom:3px; color:blue;" 
-                        class="btn btn-default mimodal"
+                        class="btn btn-info mimodal btn-circle btn-sm"
                         title="Modificar trayecto" 
                         data-href="trayecto_pnf_modificar.php?id=<?php echo $_smarty_tpl->tpl_vars['trayecto_pnf']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['id'];?>
 &id_trayecto=<?php echo $_smarty_tpl->tpl_vars['trayecto_pnf']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['id_trayecto'];?>
 ">
-                        <i class="fa fa-edit"></i>
+                        <i class="fa fa-edit text-white"></i>
                       </a>
                       <?php }?>
                       <?php if (in_array("PNNU_E",$_smarty_tpl->tpl_vars['verificar']->value) == TRUE) {?>
                       <a 
                         style="margin-bottom:3px; color:blue;" 
-                        class="btn btn-default mimodal"
+                        class="btn btn-danger mimodal btn-circle btn-sm"
                         title="Eliminar trayecto" 
                         data-href="trayecto_pnf_eliminar.php?id=<?php echo $_smarty_tpl->tpl_vars['trayecto_pnf']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['id'];?>
 &id_trayecto=<?php echo $_smarty_tpl->tpl_vars['trayecto_pnf']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['id_trayecto'];?>
 ">
-                        <i class="fa fa-trash"></i>
+                        <i class="fa fa-trash text-white"></i>
                       </a>
                       <?php }?>
                     <td>

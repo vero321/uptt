@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2021-01-19 14:00:16
+/* Smarty version 3.1.30, created on 2021-01-20 22:44:27
   from "/home/palencia/public_html/proyecto4/uptt/modulos/secciones/templates/secciones.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_60071e30b29fc1_20654785',
+  'unifunc' => 'content_6008ea8bb3e200_88473795',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '4aecc18433250305dba4fd0d05b0ea148f46c310' => 
     array (
       0 => '/home/palencia/public_html/proyecto4/uptt/modulos/secciones/templates/secciones.html',
-      1 => 1611073924,
+      1 => 1611197065,
       2 => 'file',
     ),
   ),
@@ -27,7 +27,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:../../pie/pie_interno.html' => 1,
   ),
 ),false)) {
-function content_60071e30b29fc1_20654785 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6008ea8bb3e200_88473795 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:../../navegacion/cab.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -54,15 +54,15 @@ $_smarty_tpl->_subTemplateRender("file:../../navegacion/cab.html", $_smarty_tpl-
 </li>
   </ol>
   <div class="card shadow">
-      <div class="card-header ">
+      <div class="card-header d-flex justify-content-between">
         <h3 class="text-primary"><span class="badge badge-secondary badge-pill"><?php echo $_smarty_tpl->tpl_vars['n_secciones']->value;?>
 </span> Seciones
+          </h3>
             <?php if (in_array("SECC_A",$_smarty_tpl->tpl_vars['verificar']->value) == TRUE) {?>
-             <a class="btn btn-sm btn-outline-primary mimodal" type="button" 
+             <a class="btn btn-primary mimodal btn-circle" type="button" 
             data-href="seccion_agregar.php?t=<?php echo $_smarty_tpl->tpl_vars['trayecto']->value['id'];?>
 " title="Agregar seccion a <?php echo $_smarty_tpl->tpl_vars['trayecto']->value['trayecto'];?>
-"><span class="fa fa-plus"></span></a>
-          </h3>
+"><span class="fa fa-plus text-white"></span></a>
         <?php }?>
       </div>
       <div class="card-body">
@@ -95,34 +95,32 @@ for ($__section_i_0_iteration = 1, $_smarty_tpl->tpl_vars['__smarty_section_i']-
                     <?php if (in_array("SECC_M",$_smarty_tpl->tpl_vars['verificar']->value) == TRUE) {?>
                     <td class="text-center" style="white-space: nowrap;">
                     <a 
-                      style="margin-bottom:3px; color:blue;" 
-                      class="btn btn-default mimodal"
+                      class="btn btn-info mimodal btn-circle btn-sm"
                       title="Modificar seccion" 
                       data-href="seccion_modificar.php?id=<?php echo $_smarty_tpl->tpl_vars['secciones']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['id'];?>
 &t=<?php echo $_smarty_tpl->tpl_vars['trayecto']->value['id'];?>
 ">
-                      <i class="fa fa-edit"></i>
+                      <i class="fa fa-edit text-white"></i>
                     </a>
                     <?php }?>
                     <?php if (in_array("SECC_E",$_smarty_tpl->tpl_vars['verificar']->value) == TRUE) {?>
                     <a 
-                      style="margin-bottom:3px; color:blue;" 
-                      class="btn btn-default mimodal"
+                      class="btn btn-danger mimodal btn-circle btn-sm"
                       title="Eliminar seccion" 
                       data-href="seccion_eliminar.php?id=<?php echo $_smarty_tpl->tpl_vars['secciones']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['id'];?>
 &t=<?php echo $_smarty_tpl->tpl_vars['trayecto']->value['id'];?>
 ">
-                      <i class="fa fa-trash"></i>
+                      <i class="fa fa-trash text-white"></i>
                     </a>
                     <?php }?>
                   </td>
                   <td>
                     <?php if (in_array("SECC_AP",$_smarty_tpl->tpl_vars['verificar']->value) == TRUE) {?>
                         <?php if ($_smarty_tpl->tpl_vars['secciones']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['profesor_proyecto'] == NULL) {?>
-                          <a class="btn btn-sm btn-outline-primary mimodal" type="button" href="seccion_profesor.php?id=<?php echo $_smarty_tpl->tpl_vars['secciones']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['id'];?>
+                          <a class="btn btn-sm btn-primary mimodal btn-circle" type="button" href="seccion_profesor.php?id=<?php echo $_smarty_tpl->tpl_vars['secciones']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['id'];?>
 &t=<?php echo $_smarty_tpl->tpl_vars['trayecto']->value['id'];?>
 " title="Asignar profesor de proyecto <?php echo $_smarty_tpl->tpl_vars['secciones']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['nombre'];?>
-"><span class="fa fa-plus"></span></a>
+"><span class="fa fa-plus text-white"></span></a>
                         <?php } else { ?>
                         <?php $_smarty_tpl->_assignInScope('persona', bd_personas_datos($_smarty_tpl->tpl_vars['secciones']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['profesor_proyecto']));
 ?>

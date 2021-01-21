@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2021-01-20 20:10:41
+/* Smarty version 3.1.30, created on 2021-01-20 20:33:25
   from "/home/palencia/public_html/proyecto4/uptt/modulos/mi_trabajo/templates/trabajo.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_6008c68113a618_84902372',
+  'unifunc' => 'content_6008cbd50d6c13_22814863',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'a1f4a3b1273d2bd7ff44abf131e33b91a5d1bf76' => 
     array (
       0 => '/home/palencia/public_html/proyecto4/uptt/modulos/mi_trabajo/templates/trabajo.html',
-      1 => 1611187836,
+      1 => 1611189204,
       2 => 'file',
     ),
   ),
@@ -26,7 +26,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:../../pie/pie_interno.html' => 1,
   ),
 ),false)) {
-function content_6008c68113a618_84902372 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6008cbd50d6c13_22814863 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:../../navegacion/cab.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -76,9 +76,11 @@ for ($__section_i_0_iteration = 1, $_smarty_tpl->tpl_vars['__smarty_section_i']-
 						<i class="fas fa-info-circle fa-2x mr-3 my-3"></i>
 						<div class="media-body my-2">
 							<p class="notificaiton-title mb-2"><strong>HEYYY!</strong> Parece que tienes un entregable pendiente</p>
-							<p>Para ver los detalles preciona el botón <strong>Detalles</strong></p>
+							
 						<a class="btn btn-info rounded-pill mimodal mb-2" data-href="../entregables/entregables_detalle.php?id=<?php echo $_smarty_tpl->tpl_vars['entregables']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['id'];?>
 ">Detalles</a>
+						<a class="btn btn-light rounded-pill mimodal mb-2" data-href="../entregables/entregables_detalle.php?id=<?php echo $_smarty_tpl->tpl_vars['entregables']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['id'];?>
+">Entregar</a>
 							<p><strong>Feche Limite para la entrega</strong> <span class="text-danger"><?php echo $_smarty_tpl->tpl_vars['entregables']->value[0]['fecha_entrega'];?>
 </span> </p>
 						</div>

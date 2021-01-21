@@ -10,13 +10,13 @@
     <li class="breadcrumb-item active" aria-current="page">Trayectos pnf</li>
   </ol>
     <div class="card shadow">
-        <div class="card-header">
+        <div class="card-header d-flex justify-content-between">
 	        <h3 class="text-primary"><span class="badge badge-secondary badge-pill"></span>Trayectos
+	        </h3>
 	            {if in_array("TRPN_A",$verificar) == TRUE}
-	             <a class="btn btn-sm btn-outline-primary mimodal" type="button" 
-	            data-href="trayecto_pnf_asignar.php?id={$pnf['id']}" title="Agregar PNF a {$pnf['nombre_corto']}"><span class="fa fa-plus"></span></a>
+	             <a class="btn btn-primary mimodal btn-circle" type="button" 
+	            data-href="trayecto_pnf_asignar.php?id={$pnf['id']}" title="Agregar PNF a {$pnf['nombre_corto']}"><span class="fa fa-plus text-white"></span></a>
 	            {/if}
-	          </h3>
         </div>
         <div class="card-body">
           <div class="table-responsive">
@@ -35,20 +35,19 @@
                     {if in_array("PNNU_M",$verificar) == TRUE}
                     <td>
                       <a 
-                        style="margin-bottom:3px; color:blue;" 
-                        class="btn btn-default mimodal"
+                        class="btn btn-info mimodal btn-circle btn-sm"
                         title="Modificar trayecto" 
                         data-href="trayecto_pnf_modificar.php?id={$trayecto_pnf[i].id}&id_trayecto={$trayecto_pnf[i].id_trayecto}">
-                        <i class="fa fa-edit"></i>
+                        <i class="fa fa-edit text-white"></i>
                       </a>
                       {/if}
                       {if in_array("PNNU_E",$verificar) == TRUE}
                       <a 
                         style="margin-bottom:3px; color:blue;" 
-                        class="btn btn-default mimodal"
+                        class="btn btn-danger mimodal btn-circle btn-sm"
                         title="Eliminar trayecto" 
                         data-href="trayecto_pnf_eliminar.php?id={$trayecto_pnf[i].id}&id_trayecto={$trayecto_pnf[i].id_trayecto}">
-                        <i class="fa fa-trash"></i>
+                        <i class="fa fa-trash text-white"></i>
                       </a>
                       {/if}
                     <td>
