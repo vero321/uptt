@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2021-01-19 23:03:47
+/* Smarty version 3.1.30, created on 2021-01-21 10:43:36
   from "/home/palencia/public_html/proyecto4/uptt/modulos/entregables/templates/entregables_tipo_trabajo.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_60079d932e5c27_83492392',
+  'unifunc' => 'content_600993181f3185_05720859',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '4d84ace3e5cadf506908066b2ce9e3630c2feba9' => 
     array (
       0 => '/home/palencia/public_html/proyecto4/uptt/modulos/entregables/templates/entregables_tipo_trabajo.html',
-      1 => 1611111822,
+      1 => 1611175829,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_60079d932e5c27_83492392 (Smarty_Internal_Template $_smarty_tpl) {
+function content_600993181f3185_05720859 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <div class="row">
 	<div class="col-md-2"></div>
@@ -90,7 +90,7 @@ $_smarty_tpl->tpl_vars['__smarty_section_i'] = $__section_i_0_saved;
 	  data:{tipo_d : tipo_d},    
 	  beforeSend: function(){
 	    //imagen de carga
-	      $('#carga').html('<div id="carga" class="d-flex justify-content-center m-5 p-5"><div class="spinner-grow text-primary" role="status"><span class="sr-only">Loading...</span></div></div');
+	      $('#carga').html('<div id="carga" class="d-flex justify-content-center m-5 p-5"><div class="spinner-grow text-primary" role="status"><span class="sr-only">Loading...</span></div></div>');
 	    }, 
 	  success: function(data) {
 	    $('#carga').remove();

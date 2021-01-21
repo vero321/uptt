@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2021-01-20 13:53:49
+/* Smarty version 3.1.30, created on 2021-01-21 11:05:41
   from "/home/palencia/public_html/proyecto4/uptt/modulos/entregables/templates/entregables_agregar.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_60086e2de40169_30748005',
+  'unifunc' => 'content_600998457e8628_96685739',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '6a23198da82e6d141c76c8f73619d36b9a848c78' => 
     array (
       0 => '/home/palencia/public_html/proyecto4/uptt/modulos/entregables/templates/entregables_agregar.html',
-      1 => 1611164897,
+      1 => 1611241539,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_60086e2de40169_30748005 (Smarty_Internal_Template $_smarty_tpl) {
+function content_600998457e8628_96685739 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <div class="row">
 	<div class="col-md-2"></div>
@@ -76,9 +76,24 @@ $_smarty_tpl->tpl_vars['__smarty_section_i'] = $__section_i_0_saved;
 }
 ?>
 				</div>
+				<?php if (count($_smarty_tpl->tpl_vars['estructura']->value) >= 1) {?>
 					<div class="form-group p-2">
 						<input class="btn-enviar btn btn-sm btn-primary rounded-pill" type="submit" value="Registrar">
 					</div>
+				<?php } else { ?>
+					 <div class="alert alert-danger">
+                    	
+                    	<div class="media">
+							<i class="fas fa-exclamation-triangle fa-2x mr-3 my-3"></i>
+							<div class="media-body my-2">
+								<p class="notificaiton-title mb-2"><strong>Algo esta mal!</strong><br> Parece  que la seccion aun no tiene definido un tipo de documento. </p>
+								<p>Para solucionar esto debes Asignar un <strong> Tipo de documento</strong> a la sección</p>
+							
+							</div>
+						</div>
+                    	
+                    </div>
+				<?php }?>
 				</form>
 		</div>
 	</div>

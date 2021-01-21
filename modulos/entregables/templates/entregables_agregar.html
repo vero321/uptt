@@ -32,9 +32,24 @@
 					
 					{/section}
 				</div>
+				{if count($estructura) >= 1  }
 					<div class="form-group p-2">
 						<input class="btn-enviar btn btn-sm btn-primary rounded-pill" type="submit" value="Registrar">
 					</div>
+				{else}
+					 <div class="alert alert-danger">
+                    	
+                    	<div class="media">
+							<i class="fas fa-exclamation-triangle fa-2x mr-3 my-3"></i>
+							<div class="media-body my-2">
+								<p class="notificaiton-title mb-2"><strong>Algo esta mal!</strong><br> Parece  que la seccion aun no tiene definido un tipo de documento. </p>
+								<p>Para solucionar esto debes Asignar un <strong> Tipo de documento</strong> a la sección</p>
+							
+							</div>
+						</div>
+                    	
+                    </div>
+				{/if}
 				</form>
 		</div>
 	</div>

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2021-01-20 22:47:27
+/* Smarty version 3.1.30, created on 2021-01-21 10:41:42
   from "/home/palencia/public_html/proyecto4/uptt/modulos/secciones/templates/seccion_profesor.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_6008eb3f04e660_22163377',
+  'unifunc' => 'content_600992a60e3699_09427132',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '5e827553bd9b8299231ec9055743f2215025a5b1' => 
     array (
       0 => '/home/palencia/public_html/proyecto4/uptt/modulos/secciones/templates/seccion_profesor.html',
-      1 => 1611197243,
+      1 => 1611197818,
       2 => 'file',
     ),
   ),
@@ -25,7 +25,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:../../pie/pie_interno.html' => 1,
   ),
 ),false)) {
-function content_6008eb3f04e660_22163377 (Smarty_Internal_Template $_smarty_tpl) {
+function content_600992a60e3699_09427132 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:../../navegacion/cab.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -39,7 +39,7 @@ $_smarty_tpl->_subTemplateRender("file:../../navegacion/cab.html", $_smarty_tpl-
 	<div class="container-fluid">
 	  <div class="card shadow">
 	    <div class="card-header ">
-			<h2 class="text-center">Asinar profesor de proyecto a la sección <?php echo $_smarty_tpl->tpl_vars['seccion']->value['nombre'];?>
+			<h2 class="text-center font-weight-bold text-gray-900">Asinar profesor de proyecto a la sección <?php echo $_smarty_tpl->tpl_vars['seccion']->value['nombre'];?>
 
 			</h2>
 		</div>

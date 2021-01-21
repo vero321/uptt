@@ -2349,7 +2349,9 @@ function bd_trabajos_iniciar($datos){
             id_linea_investigacion,
             id_nucleo,
             id_pnf,
+            id_tipo_de_documento,
             id_trayecto,
+            id_seccion,
             status
         )
         VALUES(
@@ -2361,7 +2363,9 @@ function bd_trabajos_iniciar($datos){
             '{$datos['id_linea_investigacion']}',
             '{$datos['id_nucleo']}',
             '{$datos['id_pnf']}',
+            '{$datos['id_tipo_de_documento']}',
             '{$datos['id_trayecto']}',
+            '{$datos['seccion']}',
             'EN PROCESÓ'
         )
     ";

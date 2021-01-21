@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2021-01-20 20:04:46
+/* Smarty version 3.1.30, created on 2021-01-21 11:02:53
   from "/home/palencia/public_html/proyecto4/uptt/modulos/mi_trabajo/templates/iniciar_trabajo.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_6008c51e632165_61414891',
+  'unifunc' => 'content_6009979d02ff96_96347088',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'fad2a45fc37db34adf39e8e86830c34cbc418b25' => 
     array (
       0 => '/home/palencia/public_html/proyecto4/uptt/modulos/mi_trabajo/templates/iniciar_trabajo.html',
-      1 => 1611156341,
+      1 => 1611241335,
       2 => 'file',
     ),
   ),
@@ -25,7 +25,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:../../pie/pie_interno.html' => 1,
   ),
 ),false)) {
-function content_6008c51e632165_61414891 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6009979d02ff96_96347088 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:../../navegacion/cab.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -46,11 +46,11 @@ $_smarty_tpl->_subTemplateRender("file:../../navegacion/cab.html", $_smarty_tpl-
 				<h4 class="card-title text-primary">Popuesta Aprobada</h4>
 			</div>
 			<div class="card-body">
-				<h5>Descripción</h5>
-				<p class="card-text"><?php echo $_smarty_tpl->tpl_vars['datos']->value['descripcion'];?>
+				<h5 class="text-gray-900">Propuesta</h5>
+				<p class="card-text pl-2"><?php echo $_smarty_tpl->tpl_vars['datos']->value['descripcion'];?>
 </p>
-				<h5>Objetivo</h5>
-				<p class="card-text"><?php echo $_smarty_tpl->tpl_vars['datos']->value['objetivo'];?>
+				<h5 class="text-gray-900">Objetivo</h5>
+				<p class="card-text pl-2"><?php echo $_smarty_tpl->tpl_vars['datos']->value['objetivo'];?>
 </p>
 				<div class="p-3 m-2">
 				

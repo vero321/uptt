@@ -13,6 +13,7 @@ $datos = array(
 $seccion = bd_secciones_datos($_GET['s']);
 $estructura = bd_estructuras_datos($id=NULL, $seccion['id_tipo_de_documento']);
 
+
 $smarty->assign('datos',$datos);
 $smarty->assign('estructura',$estructura);
 $smarty->display('entregables_agregar.html');
