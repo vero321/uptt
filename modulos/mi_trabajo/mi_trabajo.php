@@ -44,7 +44,10 @@ $verificar = array(
 
 $trabajo = bd_trabajos_datos($id=NULL, $verificar );
 if (count($trabajo) > 0) {
+	$documentos_nuevos = bd_documentos_datos($campo="id_trabajo", $trabajo['id'], $status="NUEVO");
+	#vq($documentos_nuevos);
 	$entregables = bd_entregables_caso($verificar);
+	$smarty->assign('documentos_nuevos',$documentos_nuevos);
 	$smarty->assign('entregables',$entregables);
 	$smarty->assign('trabajo',$trabajo);
 	$smarty->display('trabajo.html');

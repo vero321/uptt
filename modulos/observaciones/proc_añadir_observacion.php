@@ -3,7 +3,7 @@ define('MOD', 'observaciones');
 require_once '../config/app.php';
 include_once APP.'/modulos/config/inicializacion.php';
 
-if (isset($datos['comite'])){
+if (isset($datos['COMI_T'])){
 	bd_observaciones_añadir_comite($_POST);
 }else{
 	bd_observaciones_añadir($_POST);

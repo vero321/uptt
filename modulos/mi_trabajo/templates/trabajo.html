@@ -4,41 +4,98 @@
 {include file="../../navegacion/barra_nucleo_pnf.html"}
 
 <div class="container-fluid">
+	<h3 class="font-weight-bold text-gray-900">Hola de nuevo!</h3>
 	<div class="row">
-		<div class="col-md-6">
-			<div class="card mb-3" style="max-width: 540px;">
+		<div class="col-md-8">
+			<div class="card mb-2" style="max-width: 540px;">
 			  <div class="row no-gutters">
-			    <div class="col-md-4">
-			      <i class="far fa-file-word fa-6x text-center m-3 p-4 text-primary"></i>
+			    <div class="col-md-3">
+			      <i class="far fa-file-alt fa-6x text-center m-2 p-2 text-primary"></i>
 			    </div>
 			    <div class="col-md-8">
 			      <div class="card-body">
-			        <h5 class="card-title">{$trabajo.titulo}</h5>
+			        <h5 class="card-title">Tu trabajo</h5>
+			        <h6>{$trabajo.titulo}</h6>
 			       
 			        <p class="card-text"><small class="text-muted">Fecha de Inicio {$trabajo.fecha_inicio}</small></p>
 			      </div>
 			    </div>
+			    <div class="col-md-1">
+			    	<div class="dropdown no-arrow  bg-gray-200 p-2">
+                    <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-800"></i>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink" style="">
+                      <div class="dropdown-header">Opciones Trabajo:</div>
+                      <a class="dropdown-item" href="#">Entregas</a>
+                      <a class="dropdown-item" href="#">Documentos</a>
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item" href="#">Extructura del documento</a>
+                    </div>
+                  </div>
+			    </div>
 			  </div>
+			  
 			</div>
-		</div>
-		<div class="col-md-6">
+			{if count($documentos_nuevos) > 0}
+				
+			<div class="card-columns">
+			{section name=i loop=$documentos_nuevos}
+				  <div class="card">
+				  <i class="card-img-top far fa-file-pdf fa-6x text-center m-1 p-2 text-danger"></i>
+				    <div class="card-body">
+				      <h5 class="card-title">Documento nuevo</h5>
+				    <p class="text-muted">Subido el día {$documentos_nuevos[i].fecha_subida} </p>
+				    </div>
+				     <div class="card-footer">
+						<a data-href="../documentos/documento_enviar.php?i={$documentos_nuevos[i].id_documento}&t=0" class="btn btn-sm btn-circle mimodal btn-primary" title="Enviar al profesor documento"><i class="text-white far fa-paper-plane"></i></a>  
+						<a data-href="../documentos/documento_ver.php?i={$documentos_nuevos[i].id_documento}" class="btn btn-sm btn-circle mimodal btn-success" title="Ver el documento"><i class="text-white far fa-eye"></i></a>  
+						<a data-href="../documentos/documento_eliminar.php?i={$documentos_nuevos[i].id_documento}" class="btn btn-sm btn-circle mimodal btn-danger" title="Eliminar documento"><i class="text-white far fa-trash-alt"></i></a>  
+				    </div>
+				  </div>
+				{/section}
+			</div>
+	{/if}
+	</div>
+
+		<div class="col-md-4">
+
 			{if count($entregables) > 0}
 				{section name=i loop=$entregables}
-				<div class="alert alert-info">
+				<div class="alert alert-primary">
 	                    	
 		        	<div class="media">
-						<i class="fas fa-info-circle fa-2x mr-3 my-3"></i>
+						<i class="fas fa-primary-circle fa-2x mr-3 my-3"></i>
 						<div class="media-body my-2">
-							<p class="notificaiton-title mb-2"><strong>HEYYY!</strong> Parece que tienes un entregable pendiente</p>
+							<p class="notificaiton-title mb-2"><strong>HEYYY!</strong></p><p> Parece que tienes un entregable pendiente</p>
 							
-						<a class="btn btn-info rounded-pill mimodal mb-2" data-href="../entregables/entregables_detalle.php?id={$entregables[i].id}">Detalles</a>
-						<a class="btn btn-light rounded-pill mimodal mb-2" data-href="../entregables/entregables_detalle.php?id={$entregables[i].id}">Entregar</a>
+						<a class="btn btn-primary rounded-pill mimodal mb-2 text-white" data-href="../entregables/entregables_detalle.php?id={$entregables[i].id}">Detalles</a>
+						<a class="btn btn-light rounded-pill mimodal mb-2" data-href="../documentos/documento_agregar.php?t={$trabajo.id}&e={$entregables[i].id}"><i class="fas fa-file-import mx-2"></i> Subir</a>
 							<p><strong>Feche Limite para la entrega</strong> <span class="text-danger">{$entregables[0].fecha_entrega}</span> </p>
 						</div>
 					</div>
 				{/section}
 			{/if}
+
 		</div>
+		{if count($documentos_nuevos) > 0}
+			<div class="alert alert-info">
+                    	
+	        	<div class="media">
+					<i class="fas fa-info-circle fa-2x mr-3 my-3"></i>
+					<div class="media-body my-2">
+						<p class="notificaiton-title mb-2"><strong>Importante!</strong></p><p> Aun no has enviado el documento al profesor</p>
+						
+						<p>Para enviar haga click en botón enviar del documento que desea enviar</p>
+						<a href="#" class="btn btn-sm btn-circle btn-primary "><i class="text-white far fa-paper-plane"></i></a>  
+					</div>
+				</div>
+			{/if}
+	</div> 
+			 
+	
+
+		
 	</div>
 </div>
 </div>

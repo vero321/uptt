@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2021-01-20 14:24:37
+/* Smarty version 3.1.30, created on 2021-01-23 13:59:53
   from "/home/palencia/public_html/proyecto4/uptt/modulos/entregables/templates/entregables.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_600875656bc4d6_98758613',
+  'unifunc' => 'content_600c6419bbcae3_78614029',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '9210aa4359d14b141631073d500b9b08efee0fc2' => 
     array (
       0 => '/home/palencia/public_html/proyecto4/uptt/modulos/entregables/templates/entregables.html',
-      1 => 1611166992,
+      1 => 1611424788,
       2 => 'file',
     ),
   ),
@@ -26,7 +26,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:../../pie/pie_interno.html' => 1,
   ),
 ),false)) {
-function content_600875656bc4d6_98758613 (Smarty_Internal_Template $_smarty_tpl) {
+function content_600c6419bbcae3_78614029 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:../../navegacion/cab.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -93,7 +93,7 @@ for ($__section_i_0_iteration = 1, $_smarty_tpl->tpl_vars['__smarty_section_i']-
                     <?php if (in_array("ENTR_L",$_smarty_tpl->tpl_vars['verificar']->value) == TRUE) {?>
                       <a 
                         class="btn btn-success btn-circle btn-sm mimodal"
-                        title="Modificar tipo de documento" 
+                        title="Ver detalles" 
                         data-href="entregables_detalle.php?id=<?php echo $_smarty_tpl->tpl_vars['entregables']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['id'];?>
 ">
                         <i class="far fa-eye text-white"></i>

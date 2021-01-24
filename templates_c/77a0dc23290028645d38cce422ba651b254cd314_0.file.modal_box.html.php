@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2021-01-19 13:06:44
+/* Smarty version 3.1.30, created on 2021-01-22 20:05:44
   from "/home/palencia/public_html/proyecto4/uptt/modulos/modal/modal_box.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_600711a4d2a403_69954084',
+  'unifunc' => 'content_600b6858aa2397_57223636',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '77a0dc23290028645d38cce422ba651b254cd314' => 
     array (
       0 => '/home/palencia/public_html/proyecto4/uptt/modulos/modal/modal_box.html',
-      1 => 1611073924,
+      1 => 1611355522,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_600711a4d2a403_69954084 (Smarty_Internal_Template $_smarty_tpl) {
+function content_600b6858aa2397_57223636 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!-- The Modal -->
 <div class="modal" id="myModal">

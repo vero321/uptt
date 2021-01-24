@@ -1,0 +1,71 @@
+{include file="../../navegacion/cab.html"}
+{include file="../../navegacion/sidebar2.html"}
+{include file="../../navegacion/cabecera2.html"}
+{include file="../../navegacion/barra_nucleo_pnf.html"}
+
+ <div class="container-fluid">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="../inicio/inicio_interno.php">Repo</a></li>
+      <li class="breadcrumb-item"><a href="../distribuidor/distribuidor.php?r={$smarty.session['r'][$smarty.session['numero']].id_rol}&n={$smarty.session['numero']}">Panel {$smarty.session["r"][$smarty.session["numero"]].rol}</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Tipos de documentos</li>
+    </ol>
+
+    <div class="card">
+    	<div class="card-header d-flex justify-content-between">
+    		<h4 class="text-primary card-title font-weight-bold">
+    			Documentos
+    		</h4>
+
+    	</div>
+    	<div class="card-body">
+    		<div class="table-responsive">
+	           <table class="table" id="tabla_repo">
+                <thead>
+                  <tr>
+                    <th>Fecha en que se subio</th>
+                    <th>Status</th>
+                    <th>Funciones</th>
+                  </tr>
+                </thead>
+                <tbody>
+
+                {section name=i loop=$documentos}
+                  <tr>
+                  	{if $documentos[i].status != 'NUEVO'}
+	                    <td>{$documentos[i].fecha_subida}</td>
+	                    <td>{$documentos[i].status}</td>
+                    <td>
+                    {if in_array("DOCR_L",$verificar) == TRUE}
+                      <a 
+                        class="btn btn-primary btn-circle btn-sm mimodal"
+                        title="Evaluar" 
+                        data-href="documento_evaluar.php?i={$documentos[i].id_documento}">
+                        <i class="fas fa-medal text-white"></i>
+                      </a>
+                    {/if}
+                    {if in_array("DOCR_L",$verificar) == TRUE}
+                      <a 
+                        class="btn btn-success btn-circle btn-sm mimodal"
+                        title="Ver el documento" 
+                        data-href="documento_ver.php?i={$documentos[i].id_documento}">
+                        <i class="far fa-eye text-white"></i>
+                      </a>
+                    {/if}
+
+                    
+                    </td>
+                    {/if}
+                  </tr>
+                {/section}
+                </tbody>
+              </table>
+
+      </div>
+    		
+    	</div>
+    </div>
+</div>
+
+
+{include "../../modal/modal_box.html" prueba="Documento"} 
+{include file="../../pie/pie_interno.html"}

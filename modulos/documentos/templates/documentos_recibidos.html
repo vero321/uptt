@@ -1,0 +1,58 @@
+{include file="../../navegacion/cab.html"}
+{include file="../../navegacion/sidebar2.html"}
+{include file="../../navegacion/cabecera2.html"}
+{include file="../../navegacion/barra_nucleo_pnf.html"}
+
+ <div class="container-fluid">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="../inicio/inicio_interno.php">Repo</a></li>
+      <li class="breadcrumb-item"><a href="../distribuidor/distribuidor.php?r={$smarty.session['r'][$smarty.session['numero']].id_rol}&n={$smarty.session['numero']}">Panel {$smarty.session["r"][$smarty.session["numero"]].rol}</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Tipos de documentos</li>
+    </ol>
+
+    <div class="card">
+    	<div class="card-header d-flex justify-content-between">
+    		<h4 class="text-primary card-title font-weight-bold">
+    			Trabajos
+    		</h4>
+
+    	</div>
+    	<div class="card-body">
+    		<div class="table-responsive">
+	           <table class="table" id="tabla_repo">
+                <thead>
+                  <tr>
+                    <th>Titulo</th>
+                    <th>Funciones</th>
+                  </tr>
+                </thead>
+                <tbody>
+
+                {section name=i loop=$trabajos}
+                  <tr>
+                    <td>{$trabajos[i].titulo}</td>
+                    <td>
+                    {if in_array("DOCR_L",$verificar) == TRUE}
+                      <a 
+                        class="btn btn-success btn-circle btn-sm"
+                        title="Modificar tipo de documento" 
+                        href="documentos_trabajo.php?id={$trabajos[i].id}">
+                        <i class="far fa-folder-open text-white"></i>
+                      </a>
+                    {/if}
+                    
+                    </td>
+                  </tr>
+                {/section}
+                </tbody>
+              </table>
+
+      </div>
+    		
+    	</div>
+    </div>
+</div>
+
+
+{include "../../modal/modal_box.html" prueba="Entregables"} 
+{include file="../../pie/pie_interno.html"}

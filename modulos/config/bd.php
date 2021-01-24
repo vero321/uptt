@@ -2161,7 +2161,6 @@ function bd_observaciones_datos($tabla, $fila, $id=NULL){
     return $salida;
 }
 
-
 function bd_observaciones_añadir($datos){
     $fecha = date('Y-m-d');
     $id_persona = $_SESSION['u']['id'];
@@ -2313,6 +2312,15 @@ function bd_estructura_eliminar($datos){
 # Trabajos
 #
 
+function bd_trabajos_seccion($seccion){
+    $sql="
+        SELECT *
+        FROM TRABAJOS
+        WHERE id_seccion = '{$seccion}'
+        ";
+    $salida = sql2array($sql);
+    return $salida;
+}
 function bd_trabajos_datos($id=NULL, $verificar = NULL ){
     if ($id!=NULL) {
         $sql="
@@ -2485,7 +2493,7 @@ function bd_entregables_modificar($datos){
     sql($sql1);
     foreach ($datos['estructura'] as $estructura) {
         # code...
-         $sql2 ="
+        $sql2 ="
             INSERT INTO ENTREGABLES__ESTRUCTURA
             (id_entregable, id_estructura)
             VALUES('{$datos['id']}', '{$estructura}')
@@ -2517,4 +2525,67 @@ function bd_entregables_eliminar($datos){
         WHERE id_entregable = '{$datos['id']}'
         ";
     sql($sql1);
+}
+
+function bd_documento_agregar($datos){
+    $sql2 ="
+        INSERT INTO TRABAJOS__DOCUMENTOS
+        ( status, id_trabajo, id_documento, id_entregable, fecha_subida)
+        VALUES( 'NUEVO', '{$datos['id_trabajo']}', '{$datos['id_documento']}', '{$datos['id_entregable']}','{$datos['fecha']}' )
+    ";
+    sql($sql2);
+}
+
+function bd_documentos_datos($campo= NULL, $id, $status = NULL){
+    if ($campo == NULL) {
+        $sql="
+            SELECT *
+            FROM TRABAJOS__DOCUMENTOS
+            WHERE id LIKE '{$id}'
+            ";
+        $salida = sql2row($sql);
+    }elseif ($status  != NULL) {
+        # code...
+        $sql="
+            SELECT *
+            FROM TRABAJOS__DOCUMENTOS
+            WHERE $campo LIKE '{$id}' and status = '{$status}'
+            ";
+        $salida = sql2array($sql);
+    } else {
+        $sql="
+            SELECT *
+            FROM TRABAJOS__DOCUMENTOS
+            WHERE $campo LIKE '{$id}'
+            ";
+        $salida = sql2array($sql);
+    }
+    return $salida;
+}
+function bd_documento_eliminar($datos){
+    $sql = "
+        DELETE FROM TRABAJOS__DOCUMENTOS
+        WHERE id_documento = '{$datos['id']}'
+        ";
+    sql($sql);
+}
+
+function bd_documento_enviar($datos, $status){
+
+ $sql = "
+        UPDATE TRABAJOS__DOCUMENTOS SET
+            status = '{$status}'
+        WHERE id_documento = '{$datos['id']}' 
+        ";
+    sql($sql);
+}
+
+function bd_documentos($campo, $id){
+    $sql="
+        SELECT *
+        FROM TRABAJOS__DOCUMENTOS
+        WHERE $campo LIKE '{$id}'
+        ";
+    $salida = sql2array($sql);
+    return $salida;
 }

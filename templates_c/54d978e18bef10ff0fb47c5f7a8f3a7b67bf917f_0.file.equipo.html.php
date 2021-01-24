@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2021-01-20 01:10:19
+/* Smarty version 3.1.30, created on 2021-01-22 19:31:44
   from "/home/palencia/public_html/proyecto4/uptt/modulos/equipo/templates/equipo.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_6007bb3bd51a97_31667800',
+  'unifunc' => 'content_600b6060852809_89791392',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '54d978e18bef10ff0fb47c5f7a8f3a7b67bf917f' => 
     array (
       0 => '/home/palencia/public_html/proyecto4/uptt/modulos/equipo/templates/equipo.html',
-      1 => 1611073924,
+      1 => 1611358303,
       2 => 'file',
     ),
   ),
@@ -27,7 +27,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:../../pie/pie_interno.html' => 1,
   ),
 ),false)) {
-function content_6007bb3bd51a97_31667800 (Smarty_Internal_Template $_smarty_tpl) {
+function content_600b6060852809_89791392 (Smarty_Internal_Template $_smarty_tpl) {
 if (!is_callable('smarty_modifier_capitalize')) require_once '/home/palencia/public_html/proyecto4/uptt/vendor/smarty/libs/plugins/modifier.capitalize.php';
 $_smarty_tpl->_subTemplateRender("file:../../navegacion/cab.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
@@ -85,7 +85,7 @@ $_smarty_tpl->_subTemplateRender("file:../../navegacion/cab.html", $_smarty_tpl-
   		<h5 class="font-weight-bold"><span class="badge badge-success badge-pill"><?php echo $_smarty_tpl->tpl_vars['lider']->value['numero_integrantes'];?>
 </span> Integrantes 
   			<?php if (in_array('EQUI_A',$_smarty_tpl->tpl_vars['verificar']->value) == TRUE) {?>
-    			<a class="btn btn-sm btn-outline-primary mimodal 
+    			<a class="btn btn-sm btn-primary btn-circle mimodal 
           <?php if ($_smarty_tpl->tpl_vars['lider']->value['numero_integrantes'] >= $_smarty_tpl->tpl_vars['lider']->value['limite_integrantes']) {?>
           disabled
           <?php }?>
