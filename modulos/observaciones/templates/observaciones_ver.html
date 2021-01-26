@@ -1,0 +1,39 @@
+<div class="container">
+    <div class="d-flex justify-content-center m-2 p-3">
+        <h6 class="m-0 font-weight-bold text-primary">Observaciones</h6>
+        <div class="card-body p-1">
+            <div class="row">
+              {section name=i loop=$datos}
+              <div class="col-md-12">
+                <div class="media p-3">
+                  {if $datos[i].id_persona != NULL}
+                    {$usuario=bd_personas_datos($datos[i].id_persona)}
+                    {if $usuario.foto_perfil == NULL }
+                    <i class="fas fa-user fa-4x img-profile rounded-circle p-2 bg-gray-200 mr-3"></i>
+                    {else}
+                    <a class="thumbnail mr-3" href="#" data-id="{$usuario.id}" data-toggle="modal" data-image="../../imagenes/perfil/{$usuario.foto_perfil}"
+                    data-target="#image-gallery">
+                    <img class="img-thumbnail img-user4 rounded-circle" src="../../imagenes/perfil/{$usuario.foto_perfil}" alt="User profile picture">
+                    </a>
+                    {/if}
+                  {/if}
+                  <div class="media-body card">
+                    <div class="card-body bg-gray-200">
+                      {if $datos[i].id_persona != NULL}
+                        {$usuario=bd_personas_datos($datos[i].id_persona)}
+                      {/if}
+                      
+                      <h6 class=" text-gray-900 font-weight-bold">{if $usuario.nombre != NULL and $usuario.apellido != NULL}{$usuario.nombre} {$usuario.apellido}{/if} 
+                        <small>{$datos[i].fecha}</small>
+                      </h6>
+                         
+                      <p class="card-text">{$datos[i].descripcion}
+                      </p>
+                      
+                    </div>
+                </div>
+                {/section}
+            </div>
+        </div>
+    </div>
+</div>

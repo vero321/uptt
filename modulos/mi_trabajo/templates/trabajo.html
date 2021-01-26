@@ -37,26 +37,75 @@
 			  </div>
 			  
 			</div>
-			{if count($documentos_nuevos) > 0}
-				
-			<div class="card-columns">
-			{section name=i loop=$documentos_nuevos}
-				  <div class="card">
-				  <i class="card-img-top far fa-file-pdf fa-6x text-center m-1 p-2 text-danger"></i>
-				    <div class="card-body">
-				      <h5 class="card-title">Documento nuevo</h5>
-				    <p class="text-muted">Subido el día {$documentos_nuevos[i].fecha_subida} </p>
-				    </div>
-				     <div class="card-footer">
-						<a data-href="../documentos/documento_enviar.php?i={$documentos_nuevos[i].id_documento}&t=0" class="btn btn-sm btn-circle mimodal btn-primary" title="Enviar al profesor documento"><i class="text-white far fa-paper-plane"></i></a>  
-						<a data-href="../documentos/documento_ver.php?i={$documentos_nuevos[i].id_documento}" class="btn btn-sm btn-circle mimodal btn-success" title="Ver el documento"><i class="text-white far fa-eye"></i></a>  
-						<a data-href="../documentos/documento_eliminar.php?i={$documentos_nuevos[i].id_documento}" class="btn btn-sm btn-circle mimodal btn-danger" title="Eliminar documento"><i class="text-white far fa-trash-alt"></i></a>  
-				    </div>
-				  </div>
-				{/section}
+			{if count($documentos) > 0}
+			<div class="container">
+				<h4 class="font-weight-bold text-gray-800 mt-2">Documentos nuevos</h4>
+				<div class="card-columns">
+				{section name=i loop=$documentos}
+					{if $documentos[i].status == 'NUEVO'}
+					<div class="card">
+					<i class="card-img-top far fa-file-pdf fa-6x text-center m-1 p-2 text-danger"></i>
+						<div class="card-body">
+						<h5 class="card-title">Documento nuevo</h5>
+						<p class="text-muted">Subido el día {$documentos[i].fecha_subida} </p>
+						</div>
+						<div class="card-footer">
+							<a data-href="../documentos/documento_enviar.php?i={$documentos[i].id_documento}&t=0" class="btn btn-sm btn-circle mimodal btn-primary" title="Enviar al profesor documento"><i class="text-white far fa-paper-plane"></i></a>  
+							<a data-href="../documentos/documento_ver.php?i={$documentos[i].id_documento}" class="btn btn-sm btn-circle mimodal btn-success" title="Ver el documento"><i class="text-white far fa-eye"></i></a>  
+							<a data-href="../documentos/documento_eliminar.php?i={$documentos[i].id_documento}" class="btn btn-sm btn-circle mimodal btn-danger" title="Eliminar documento"><i class="text-white far fa-trash-alt"></i></a>  
+						</div>
+					</div>
+					{/if}
+					{/section}
+				</div>
 			</div>
-	{/if}
-	</div>
+			<div class="container">
+				<h4 class="font-weight-bold text-gray-800 mt-2">Documentos para corregir</h4>
+				<div class="card-columns">
+				{section name=i loop=$documentos}
+					{if $documentos[i].status == 'CORRECCIONES'}
+					<div class="card">
+					<i class="card-img-top far fa-file-pdf fa-6x text-center m-1 p-2 text-danger"></i>
+						<div class="card-body">
+						<h5 class="card-title">Documento</h5>
+						<p class="text-muted">Subido el día {$documentos[i].fecha_subida} </p>
+						</div>
+						<div class="card-footer">
+							<a class="btn btn-warning btn-sm btn-circle mimodal" data-href="../documentos/documento_agregar.php?t={$trabajo.id}&e=NULL" title="Subir correciones"><i class="fas fa-file-import mx-2 text-gray-900	"></i></a>
+							<a data-href="../documentos/documento_ver.php?i={$documentos[i].id_documento}" class="btn btn-sm btn-circle mimodal btn-success" title="Ver el documento"><i class="text-white fas fa-eye"></i></a>  
+							<a data-href="../observaciones/observaciones_ver.php?i={$documentos[i].id_documento}" class="btn btn-sm btn-circle mimodal btn-dark" title="Ver observaciones del documento"><i class="text-white far fa-eye"></i></a>  
+
+						</div>
+					</div>
+					{/if}
+					
+					{/section}
+				</div>
+			</div>
+			<div class="container">
+				<h4 class="font-weight-bold text-gray-800 mt-2">Documentos aprobados</h4>
+				<div class="card-columns">
+				{section name=i loop=$documentos}
+					{if $documentos[i].status == 'APROBADO'}
+					<div class="card">
+					<i class="card-img-top far fa-file-pdf fa-6x text-center m-1 p-2 text-danger"></i>
+						<div class="card-body">
+						<h5 class="card-title">Documento</h5>
+						<p class="text-muted">Subido el día {$documentos[i].fecha_subida} </p>
+						</div>
+						<div class="card-footer">
+							<a data-href="../documentos/documento_ver.php?i={$documentos[i].id_documento}" class="btn btn-sm btn-circle mimodal btn-success" title="Ver el documento"><i class="text-white fas fa-eye"></i></a>  
+							<a data-href="../observaciones/observaciones_ver.php?i={$documentos[i].id_documento}" class="btn btn-sm btn-circle mimodal btn-dark" title="Ver observaciones del documento"><i class="text-white far fa-eye"></i></a>  
+
+						</div>
+					</div>
+					{/if}
+					
+					{/section}
+				</div>
+			</div>
+			{/if}
+		</div>
 
 		<div class="col-md-4">
 
@@ -67,7 +116,7 @@
 		        	<div class="media">
 						<i class="fas fa-primary-circle fa-2x mr-3 my-3"></i>
 						<div class="media-body my-2">
-							<p class="notificaiton-title mb-2"><strong>HEYYY!</strong></p><p> Parece que tienes un entregable pendiente</p>
+							<p class="notificaiton-title mb-2"><strong>HEYYY!</strong></p><p> Parece que tienes un entregable pendiente.</p>
 							
 						<a class="btn btn-primary rounded-pill mimodal mb-2 text-white" data-href="../entregables/entregables_detalle.php?id={$entregables[i].id}">Detalles</a>
 						<a class="btn btn-light rounded-pill mimodal mb-2" data-href="../documentos/documento_agregar.php?t={$trabajo.id}&e={$entregables[i].id}"><i class="fas fa-file-import mx-2"></i> Subir</a>
@@ -78,28 +127,63 @@
 			{/if}
 
 		</div>
-		{if count($documentos_nuevos) > 0}
-			<div class="alert alert-info">
-                    	
-	        	<div class="media">
-					<i class="fas fa-info-circle fa-2x mr-3 my-3"></i>
-					<div class="media-body my-2">
-						<p class="notificaiton-title mb-2"><strong>Importante!</strong></p><p> Aun no has enviado el documento al profesor</p>
-						
-						<p>Para enviar haga click en botón enviar del documento que desea enviar</p>
-						<a href="#" class="btn btn-sm btn-circle btn-primary "><i class="text-white far fa-paper-plane"></i></a>  
+		{if count($documentos) > 0}
+			{section name=i loop=$documentos}
+				{if $documentos[i].status == 'NUEVO'}
+
+				<div class="alert alert-info">
+					<div class="media">
+						<i class="fas fa-info-circle fa-2x mr-3 my-3"></i>
+						<div class="media-body my-2">
+							<p class="notificaiton-title mb-2"><strong>Importante!</strong></p><p> Aun no has enviado el documento al profesor.</p>
+							
+							<p>Para enviar haga click en botón enviar del documento que desea enviar.</p>
+							<a href="#" class="btn btn-sm btn-circle btn-primary "><i class="text-white far fa-paper-plane"></i></a>  
+						</div>
 					</div>
-				</div>
-			{/if}
-	</div> 
+				</div> 
+				{/if}
+				{if $documentos[i].status == 'CORRECCIONES'}
+
+				<div class="alert alert-danger">
+					<div class="media">
+						<i class="fas fa-info-circle fa-2x mr-3 my-3"></i>
+						<div class="media-body my-2">
+							<p class="notificaiton-title mb-2"><strong>Importante!</strong></p><p> Tines un documento para realizarle correcciones.</p>
+							
+							<p>Para ver las observaciones del profesor haga click en el boton observaciones correspondiente al documento.</p>
+							<a href="#" class="btn btn-sm btn-circle mimodal btn-dark" title="Ver observaciones del documento"><i class="text-white far fa-eye"></i></a>  
+							
+						</div>
+					</div>
+				</div> 
+
+				{/if}
+				{if $documentos[i].status == 'APROBADO'}
+
+				<div class="alert alert-success">
+					<div class="media">
+						<i class="fas fa-check-circle fa-2x mr-3 my-3"></i>
+						<div class="media-body my-2">
+							<p class="notificaiton-title mb-2"><strong>Exelente!</strong></p><p> Uno de tus documentos a sido aprovado.</p>
+							
+							<p>Puede que tengaobservaciones del profesor haga click en el boton observaciones correspondiente al documento.</p>
+							<a href="#" class="btn btn-sm btn-circle mimodal btn-dark" title="Ver observaciones del documento"><i class="text-white far fa-eye"></i></a>  
+							
+						</div>
+					</div>
+				</div> 
+
+				{/if}				
+			{/section}
+		{/if}
 			 
 	
 
 		
+		</div>
 	</div>
 </div>
-</div>
 
-
-{include "../../modal/modal_box.html" prueba="Tipos de trabajo"} 
+{include "../../modal/modal_box.html" prueba="Trabajo"} 
 {include file="../../pie/pie_interno.html"}

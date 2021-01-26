@@ -11,7 +11,8 @@ $_SESSION['retorno']=$r;
  - si el usuario ya tiene un trabajo
  - si no verifica que el usuario tenga almenos una propuesta 
  - si el usuario tiene una propuesta verifica que tenga un propuesta aprovada
-
+ - si el trabajo tiene documentos
+ - los estados de los documentos
  */
 
 $lider=bd_equipo_lider();
@@ -44,10 +45,13 @@ $verificar = array(
 
 $trabajo = bd_trabajos_datos($id=NULL, $verificar );
 if (count($trabajo) > 0) {
-	$documentos_nuevos = bd_documentos_datos($campo="id_trabajo", $trabajo['id'], $status="NUEVO");
-	#vq($documentos_nuevos);
+	#$documentos_nuevos = bd_documentos_datos($campo="id_trabajo", $trabajo['id'], $status="NUEVO");
+	$documentos = bd_documentos_datos($campo="id_trabajo", $trabajo['id']);
+
+	#vq($documentos);
 	$entregables = bd_entregables_caso($verificar);
-	$smarty->assign('documentos_nuevos',$documentos_nuevos);
+	$smarty->assign('documentos',$documentos);
+	#$smarty->assign('documentos_nuevos',$documentos_nuevos);
 	$smarty->assign('entregables',$entregables);
 	$smarty->assign('trabajo',$trabajo);
 	$smarty->display('trabajo.html');
