@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2021-01-19 00:43:47
+/* Smarty version 3.1.30, created on 2021-01-26 11:03:34
   from "/home/veronica/public_html/uptt/modulos/area/templates/areas_pnf.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_600663836fcd39_81499441',
+  'unifunc' => 'content_60102f46424b31_04294836',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'a1923144e5c5a618b4506d268fbcd4336f0c3e18' => 
     array (
       0 => '/home/veronica/public_html/uptt/modulos/area/templates/areas_pnf.html',
-      1 => 1610626348,
+      1 => 1611255560,
       2 => 'file',
     ),
   ),
@@ -27,7 +27,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:../../pie/pie_interno.html' => 1,
   ),
 ),false)) {
-function content_600663836fcd39_81499441 (Smarty_Internal_Template $_smarty_tpl) {
+function content_60102f46424b31_04294836 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:../../navegacion/cab.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -53,15 +53,15 @@ $_smarty_tpl->_subTemplateRender("file:../../navegacion/cab.html", $_smarty_tpl-
   </ol>
 </nav>
     <div class="card shadow">
-        <div class="card-header">
+        <div class="card-header d-flex justify-content-between">
           <h3 class="text-primary"><span class="badge badge-secondary badge-pill"></span>AREAS
+            </h3>
               <?php if (in_array("AREA_A",$_smarty_tpl->tpl_vars['verificar']->value) == TRUE) {?>
-               <a class="btn btn-sm btn-outline-primary mimodal" type="button" 
+               <a class="btn btn-primary btn-circle mimodal" type="button" 
               data-href="areas_pnf_agregar.php?id=<?php echo $_smarty_tpl->tpl_vars['pnf']->value['id'];?>
 " title="Agregar PNF a <?php echo $_smarty_tpl->tpl_vars['pnf']->value['nombre_corto'];?>
-"><span class="fa fa-plus"></span></a>
+"><span class="fa fa-plus text-white"></span></a>
               <?php }?>
-            </h3>
         </div>
         <div class="card-body">
           <div class="table-responsive">
@@ -92,22 +92,20 @@ for ($__section_i_0_iteration = 1, $_smarty_tpl->tpl_vars['__smarty_section_i']-
                     <?php if (in_array("AREA_M",$_smarty_tpl->tpl_vars['verificar']->value) == TRUE) {?>
                     <td>
                       <a 
-                        style="margin-bottom:3px; color:blue;" 
-                        class="btn btn-default mimodal"
+                        class="btn btn-info mimodal btn-circle btn-sm"
                         title="Modificar Area" 
                         data-href="areas_pnf_modificar.php?id=<?php echo $_smarty_tpl->tpl_vars['areas_pnf']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['id'];?>
 ">
-                        <i class="fa fa-edit"></i>
+                        <i class="fa fa-edit text-white"></i>
                       </a>
                       <?php }?>
                       <?php if (in_array("AREA_E",$_smarty_tpl->tpl_vars['verificar']->value) == TRUE) {?>
                       <a 
-                        style="margin-bottom:3px; color:blue;" 
-                        class="btn btn-default mimodal"
+                        class="btn btn-danger mimodal btn-circle btn-sm"
                         title="Eliminar Area" 
                         data-href="areas_pnf_eliminar.php?id=<?php echo $_smarty_tpl->tpl_vars['areas_pnf']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['id'];?>
 ">
-                        <i class="fa fa-trash"></i>
+                        <i class="fa fa-trash text-white"></i>
                       </a>
                       <?php }?>
                   </td>
@@ -115,7 +113,7 @@ for ($__section_i_0_iteration = 1, $_smarty_tpl->tpl_vars['__smarty_section_i']-
 
                     <?php if (in_array("AREA_CT",$_smarty_tpl->tpl_vars['verificar']->value) == TRUE) {?>
                         <?php if ($_smarty_tpl->tpl_vars['areas_pnf']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['comite_tecnico'] == NULL) {?>
-                          <a class="btn btn-sm btn-outline-primary mimodal" type="button" href="areas_pnf_comite.php?id=<?php echo $_smarty_tpl->tpl_vars['areas_pnf']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['id'];?>
+                          <a class="btn btn-sm btn-primary btn_circle mimodal" type="button" href="areas_pnf_comite.php?id=<?php echo $_smarty_tpl->tpl_vars['areas_pnf']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['id'];?>
 " title="Asignar profesor de proyecto <?php echo $_smarty_tpl->tpl_vars['areas_pnf']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['nombre'];?>
 "><span class="fa fa-plus"></span></a>
                         <?php } else { ?>

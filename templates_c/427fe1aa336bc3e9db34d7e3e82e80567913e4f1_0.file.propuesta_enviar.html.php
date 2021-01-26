@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.30, created on 2021-01-19 00:43:13
+/* Smarty version 3.1.30, created on 2021-01-26 11:02:57
   from "/home/veronica/public_html/uptt/modulos/propuesta/templates/propuesta_enviar.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_600663619cf7a3_76786192',
+  'unifunc' => 'content_60102f2131f319_78149791',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_600663619cf7a3_76786192 (Smarty_Internal_Template $_smarty_tpl) {
+function content_60102f2131f319_78149791 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <div class="container my-5">
   <div class="row">

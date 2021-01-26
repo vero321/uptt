@@ -4,28 +4,20 @@
 <style>
 .dropdown {
   position: relative;
-  display: inline-block;
 }
 
 .dropdown-content {
   display: none;
   position: relative;
-  background-color: #D3D7CF;
   min-width: 320px;
   min-height: 50px;
-  box-shadow: 0px 8px 10px 0px rgba(0,0,0,0.2);
   padding: 10px 12px 0;
   z-index: 1;
-  border-radius: 30px;
 
 }
-.dropdown-content p{
-
-  text-align: justify;
-  letter-spacing: 2px;
-  color:black;
+.dropdown-content div{
+  margin-left: -26px;
 }
-
 .dropdown:hover .dropdown-content {
   display: block;
 }
@@ -46,13 +38,12 @@
                     {else}
                     <img class="img-thumbnail rounded-circle img-perfil"
                          src="../../imagenes/perfil/{$smarty.session['u']['foto_perfil']}"
-                         alt="User profile picture"
+                         alt="User profile picture" 
                          >
                       </a>
                     {/if}
                       <div class="dropdown-content">
-                      <p>Al presionar la imagen, se abrirá una ventana emergente
-                       que permitira modificar la misma</p>
+                      <div class="alert alert-dark p-1">Al presionar la imagen, se abrirá una ventana emergente que permitirá modificar la misma</div>
                       </div>
                     </div>
                     
@@ -84,7 +75,7 @@
                       <i class="fa fa-edit fa-fw"></i>
                     </a>
                     <div class="dropdown-content">
-                    <p>Hello World!</p>
+                    <div class="alert alert-dark p-1 text-center">Al presionar el botón, se abrirá una ventana emergente que permitirá modificar sus datos</div>
                     </div>
                   </div>
 
@@ -94,7 +85,7 @@
                     <i class="fa fa-unlock-alt fa-sm fa-fw"></i>
                     </a>
                     <div class="dropdown-content">
-                    <p>Hello World!</p>
+                    <div class="alert alert-dark p-1 text-center">Al presionar la imagen, se abrirá una ventana emergente que permitirá su clave de acceso</div>
                     </div>
                   </div>
                   

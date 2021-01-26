@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2021-01-19 00:43:49
+/* Smarty version 3.1.30, created on 2021-01-26 11:03:36
   from "/home/veronica/public_html/uptt/modulos/area/templates/areas_pnf_comite.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_60066385e6ba92_12335803',
+  'unifunc' => 'content_60102f48f28c68_95730824',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '3613086a36bf23873da39422c8d0a25147cd68c8' => 
     array (
       0 => '/home/veronica/public_html/uptt/modulos/area/templates/areas_pnf_comite.html',
-      1 => 1600272121,
+      1 => 1611255560,
       2 => 'file',
     ),
   ),
@@ -25,7 +25,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:../../pie/pie_interno.html' => 1,
   ),
 ),false)) {
-function content_60066385e6ba92_12335803 (Smarty_Internal_Template $_smarty_tpl) {
+function content_60102f48f28c68_95730824 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:../../navegacion/cab.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -121,7 +121,7 @@ $_smarty_tpl->tpl_vars['__smarty_section_i'] = $__section_i_0_saved;
 		                        </div>
 	                    		<div class="form-group">
 			                        <input 
-		                          class="btn-enviar btn btn-sm btn-primary" 
+		                          class="btn btn-primary rounded-pill" 
 			                          type="submit" 
 			                          name="enviar" 
 			                          value="Siguiente">

@@ -7,13 +7,13 @@
     <ol class="breadcrumb">
       <li class="breadcrumb-item"><a href="../inicio/inicio_interno.php">Repo</a></li>
       <li class="breadcrumb-item"><a href="../distribuidor/distribuidor.php?r={$smarty.session['r'][$smarty.session['numero']].id_rol}&n={$smarty.session['numero']}">Panel {$smarty.session["r"][$smarty.session["numero"]].rol}</a></li>
-      <li class="breadcrumb-item active" aria-current="page">Tipos de documentos</li>
+      <li class="breadcrumb-item active" aria-current="page">Tipos de Documentos</li>
     </ol>
 
     <div class="card">
     	<div class="card-header d-flex justify-content-between">
     		<h4 class="text-primary card-title font-weight-bold">
-    			Tipos de documentos
+    			Tipos de Documentos
     		</h4>
     			{if in_array("TIPO_DOC_A",$verificar) == TRUE}
 	             <a class="btn  btn-primary  btn-circle mimodal" type="button" 
@@ -38,7 +38,7 @@
                     {if in_array("TIPO_DOC_EXTR",$verificar) == TRUE}
                       <a 
                         class="btn btn-success btn-circle btn-sm"
-                        title="Modificar tipo de documento" 
+                        title="Modificar estructura del documento" 
                         href="tipos_estructura.php?id={$tipos_documento[i].id}">
                         <i class="fa fa-file-signature text-white"></i>
                       </a>

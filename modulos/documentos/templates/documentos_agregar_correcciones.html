@@ -1,0 +1,72 @@
+<div class="container">
+
+  <div class="p-3 m-2"> 
+  <form 
+    enctype="multipart/form-data"
+    method="POST"
+    name="f_agregar_pdf"
+    action="../documentos/proc_documentos_agregar_correcciones.php">
+   <div class="form-group">
+      <h3 class="font-weight-bold text-gray-900">Subir documento</h3>
+      <label for="text">Seleccione el archivo que desea subir para entregar. Recuerda que este archio o archivos deben cumplir con los requisitos del entregable</label>
+    <input type="hidden" name="id_trabajo" value="{$datos.t}">
+    <input 
+      type="hidden" 
+      name="MAX_FILE_SIZE" 
+      value="1000000000" />
+      <input 
+        type="file" 
+        class="form-control my-2" 
+        name="pdf[]"
+        required="required"
+        id="pdf0"
+        accept="application/pdf"
+        multiple="multiple" 
+        >
+        <input type="hidden"
+        value="{$datos.id_documento}"
+        name="id">
+    
+        <div class="form-group">
+          <input 
+            class="btn btn-primary rounded-pill my-2" 
+            type="submit" 
+            name="enviar" 
+            value="Continuar">
+        </div>
+    </div> 
+  </form>  
+</div>  
+</div>
+{literal}
+<script type="text/javascript">
+    function validarpdf(campo){
+        if($(campo)[0].files[0].type != 'application/pdf'){
+            return false;
+        }else{
+            return true;
+        }
+    }
+$(function() {
+    $("#pdf0").change(function() {
+        var pdf0 = $("#pdf0").val();
+            if (!validarpdf($(this))) {
+                $(this).val('');
+                $("#pdf1").hide();
+            }
+        if (pdf0!='') {
+            $("#pdf1").show();
+        }
+    });
+
+    $(".pdf1").change(function() {
+        var pdf0 = $(this).val();
+        if (pdf0!='') {
+            $(this).next().show();
+        } 
+    });
+
+
+});
+</script>
+{/literal}

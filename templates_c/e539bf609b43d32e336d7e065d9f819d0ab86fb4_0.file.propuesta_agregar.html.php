@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2021-01-19 10:05:28
+/* Smarty version 3.1.30, created on 2021-01-26 10:59:28
   from "/home/veronica/public_html/uptt/modulos/propuesta/templates/propuesta_agregar.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_6006e728ac0a58_48158678',
+  'unifunc' => 'content_60102e508e4dc1_82492146',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'e539bf609b43d32e336d7e065d9f819d0ab86fb4' => 
     array (
       0 => '/home/veronica/public_html/uptt/modulos/propuesta/templates/propuesta_agregar.html',
-      1 => 1610987319,
+      1 => 1611255560,
       2 => 'file',
     ),
   ),
@@ -25,7 +25,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:../../pie/pie_interno.html' => 1,
   ),
 ),false)) {
-function content_6006e728ac0a58_48158678 (Smarty_Internal_Template $_smarty_tpl) {
+function content_60102e508e4dc1_82492146 (Smarty_Internal_Template $_smarty_tpl) {
 if (!is_callable('smarty_modifier_capitalize')) require_once '/home/veronica/public_html/uptt/vendor/smarty/libs/plugins/modifier.capitalize.php';
 if (!is_callable('smarty_modifier_date_format')) require_once '/home/veronica/public_html/uptt/vendor/smarty/libs/plugins/modifier.date_format.php';
 $_smarty_tpl->_subTemplateRender("file:../../navegacion/cab.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
@@ -233,10 +233,10 @@ $_smarty_tpl->tpl_vars['__smarty_section_a'] = $__section_a_1_saved;
               <div class="collapse show" id="proposicion1">
                 <div class="card-body">
                   <div class="form-group">
-                    <label for="proposicion1">Descripción de la Proposición <i class="text-danger">*</i></label>
+                    <label for="proposicion1">Propuesta <i class="text-danger">*</i></label>
                     <textarea
                       type="text" 
-                      title="Descripción de la Proposicion" 
+                      title="propuesta" 
                       required="required" 
                       class="form-control " 
                       id="proposicion1" 
@@ -266,10 +266,10 @@ $_smarty_tpl->tpl_vars['__smarty_section_a'] = $__section_a_1_saved;
               <div class="collapse" id="proposicion2">
                 <div class="card-body">
                   <div class="form-group">
-                    <label for="propuesta2">Descripción de la Proposicion <i class="text-danger">*</i></label>
+                    <label for="propuesta2">Propuesta <i class="text-danger">*</i></label>
                     <textarea 
                       type="text" 
-                      title="Descripción de la Proposicion" 
+                      title="Propuesta" 
                       required="required" 
                       class="form-control " 
                       id="proposicion2" 
@@ -299,10 +299,10 @@ $_smarty_tpl->tpl_vars['__smarty_section_a'] = $__section_a_1_saved;
                <div class="collapse" id="proposicion3">  
                 <div class="card-body">
                   <div class="form-group">
-                    <label for="proposicion3">Descripción de la Proposicion <i class="text-danger">*</i></label>
+                    <label for="proposicion3">Propuesta <i class="text-danger">*</i></label>
                     <textarea 
                       type="text" 
-                      title="Descripción de la Proposicion" 
+                      title="Propuesta" 
                       required="required" 
                       class="form-control " 
                       id="proposicion3" 

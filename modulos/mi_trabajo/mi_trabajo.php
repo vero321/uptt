@@ -75,7 +75,7 @@ if (count($trabajo) > 0) {
 		}
 		if (empty($datos)) {
 			# code...
-			$m="Tu equipo aun no puede iniciar un trabajo esto se debe a que aun no tienes una propuesta aprobada";
+			$m="Tu equipo aún no puede iniciar un trabajo, esto se debe a que aun no tienes una propuesta aprobada";
 		ir("../mensaje/mensaje.php?m=$m&d=../propuesta/propuesta.php");
 		}else{
 			# si existe esta variable quiere decir que si hay una proposicion APROBADA
@@ -86,7 +86,7 @@ if (count($trabajo) > 0) {
 			$smarty->display('iniciar_trabajo.html');
 		}
 	}else{
-		$m="Tu equipo aun no puede iniciar un trabajo esto se debe a que aun no has realizado una propuesta";
+		$m="Tu equipo aún no puede iniciar un trabajo, esto se debe a que aun no has realizado una propuesta";
 		ir("../mensaje/mensaje.php?m=$m&d=../propuesta/propuesta.php");
 	}
 }

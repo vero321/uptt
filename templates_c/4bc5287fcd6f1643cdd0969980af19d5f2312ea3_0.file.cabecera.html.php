@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.30, created on 2021-01-19 00:38:01
+/* Smarty version 3.1.30, created on 2021-01-26 10:15:23
   from "/home/veronica/public_html/uptt/modulos/cabecera/cabecera.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_60066229e2b2f0_67541746',
+  'unifunc' => 'content_601023fbbabbf6_75783680',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_60066229e2b2f0_67541746 (Smarty_Internal_Template $_smarty_tpl) {
+function content_601023fbbabbf6_75783680 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="es">

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2021-01-19 10:05:27
+/* Smarty version 3.1.30, created on 2021-01-26 10:21:24
   from "/home/veronica/public_html/uptt/modulos/propuesta/templates/propuesta.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_6006e7272d8342_82388978',
+  'unifunc' => 'content_60102564873a67_02860092',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '7adc82ce4d189dbbe4390dfd2836021b323ec141' => 
     array (
       0 => '/home/veronica/public_html/uptt/modulos/propuesta/templates/propuesta.html',
-      1 => 1611026437,
+      1 => 1611075598,
       2 => 'file',
     ),
   ),
@@ -27,7 +27,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:../../pie/pie_interno.html' => 1,
   ),
 ),false)) {
-function content_6006e7272d8342_82388978 (Smarty_Internal_Template $_smarty_tpl) {
+function content_60102564873a67_02860092 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:../../navegacion/cab.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -73,12 +73,12 @@ $_smarty_tpl->_subTemplateRender("file:../../navegacion/cab.html", $_smarty_tpl-
    
           <div class="mx-auto p-5">
             <div class="alert alert-info alert-dismissible fade show" role="alert">
-              <h4 class="alert-heading">Atencion importante!</h4>
+              <h4 class="alert-heading">Atención importante!</h4>
               <p>
-                Aun no has registrado niguna propuesta. 
+                Aún no has registrado ningúna propuesta. 
               </p>
               <hr>
-              <p> Para reagistrar una propuesta preciona el Boton [+] y rellena el firmolario.</p>
+              <p> Para registrar una propuesta presione el Botón [+] y rellena el formulario.</p>
               <?php if (in_array("PROP_A",$_smarty_tpl->tpl_vars['verificar']->value) == TRUE) {?>
               <a class="btn btn-md btn-primary align-middle" 
                 type="button" 
@@ -101,8 +101,8 @@ $_smarty_tpl->_subTemplateRender("file:../../navegacion/cab.html", $_smarty_tpl-
             <table id="tabla_disponibles" class="table" style="width:100%">
               <thead>
                 <tr>
-                  <td>Codigo</td>
-                  <td>Codigo propuesta</td>
+                  <td>Código</td>
+                  <td>Código propuesta</td>
                   <td>Descripción</td>
                   <td>Objetivo</td>
                   <td>Funciones</td>

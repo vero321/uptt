@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.30, created on 2021-01-19 10:05:28
+/* Smarty version 3.1.30, created on 2021-01-26 10:59:28
   from "/home/veronica/public_html/uptt/modulos/modal/modal_comunidad.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_6006e728acf143_31416834',
+  'unifunc' => 'content_60102e5095d706_92419241',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6006e728acf143_31416834 (Smarty_Internal_Template $_smarty_tpl) {
+function content_60102e5095d706_92419241 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <div class="modal fade" id="modal_comunidad" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-md">

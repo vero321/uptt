@@ -71,7 +71,7 @@
 						<p class="text-muted">Subido el día {$documentos[i].fecha_subida} </p>
 						</div>
 						<div class="card-footer">
-							<a class="btn btn-warning btn-sm btn-circle mimodal" data-href="../documentos/documento_agregar.php?t={$trabajo.id}&e=NULL" title="Subir correciones"><i class="fas fa-file-import mx-2 text-gray-900	"></i></a>
+							<a class="btn btn-warning btn-sm btn-circle mimodal" data-href="../documentos/documentos_agregar_correcciones.php?t={$trabajo.id}&id_documento={$documentos[i].id_documento}" title="Subir correciones"><i class="fas fa-file-import mx-2 text-gray-900	"></i></a>
 							<a data-href="../documentos/documento_ver.php?i={$documentos[i].id_documento}" class="btn btn-sm btn-circle mimodal btn-success" title="Ver el documento"><i class="text-white fas fa-eye"></i></a>  
 							<a data-href="../observaciones/observaciones_ver.php?i={$documentos[i].id_documento}" class="btn btn-sm btn-circle mimodal btn-dark" title="Ver observaciones del documento"><i class="text-white far fa-eye"></i></a>  
 

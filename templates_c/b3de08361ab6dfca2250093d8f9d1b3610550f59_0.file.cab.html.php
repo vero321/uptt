@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2021-01-19 00:30:20
+/* Smarty version 3.1.30, created on 2021-01-26 10:15:58
   from "/home/veronica/public_html/uptt/modulos/navegacion/cab.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_6006605c92f775_01793096',
+  'unifunc' => 'content_6010241e30dfa8_88294872',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'b3de08361ab6dfca2250093d8f9d1b3610550f59' => 
     array (
       0 => '/home/veronica/public_html/uptt/modulos/navegacion/cab.html',
-      1 => 1610626348,
+      1 => 1611255560,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6006605c92f775_01793096 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6010241e30dfa8_88294872 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -28,6 +28,7 @@ function content_6006605c92f775_01793096 (Smarty_Internal_Template $_smarty_tpl)
 <!--Comienzo de la Cabecera-->
 <head>
   <meta charset="utf-8"/>
+  <meta name="theme-color" content="#f8f9fc">
    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
    <!-- llama los estilos de DataTablet -->
   <link href="../../vendor/DataTables/datatables.min.css" rel="stylesheet" type="text/css">
