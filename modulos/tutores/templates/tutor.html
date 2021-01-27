@@ -1,0 +1,63 @@
+{include file="../../navegacion/cab.html"}
+{include file="../../navegacion/sidebar2.html"}
+{include file="../../navegacion/cabecera2.html"}
+{include file="../../navegacion/barra_nucleo_pnf.html"}
+
+<div class="container-fluid">
+	<nav aria-label="breadcrumb" role="navigation">
+	  <ol class="breadcrumb">
+	    <li class="breadcrumb-item"><a href="../inicio/inicio_interno.php">Repo</a></li>
+	    <li class="breadcrumb-item"><a href="../distribuidor/distribuidor.php?r={$smarty.session['r'][$smarty.session['numero']].id_rol}&n={$smarty.session['numero']}">Panel {$smarty.session["r"][$smarty.session["numero"]].rol}</a></li>
+	    <li class="breadcrumb-item active">Equipos</li>
+	  </ol>
+	</nav>
+
+	    <div class="card-body">
+    		<div class="table-responsive">
+	           <table class="table" id="tabla_repo">
+                <thead>
+                  <tr>
+                    <th>Fecha en que se subio</th>
+                    <th>Status</th>
+                    <th>Funciones</th>
+                  </tr>
+                </thead>
+                <tbody>
+
+                {section name=i loop=$documentos}
+                  <tr>
+                  	{if $documentos[i].status != 'NUEVO'}
+	                    <td>{$documentos[i].fecha_subida}</td>
+	                    <td>{$documentos[i].status}</td>
+                    <td>
+                      <a 
+                        class="btn btn-primary btn-circle btn-sm mimodal"
+                        title="Evaluar" 
+                        data-href="../observaciones/añadir_observacion.php?tipo=TRABAJOS__DOCUMENTOS&fila={$documentos[i].id_documento}">
+                        <i class="fas fa-medal text-white"></i>
+                      </a>
+                    
+                      <a 
+                        class="btn btn-success btn-circle btn-sm mimodal"
+                        title="Ver el documento" 
+                        data-href="../documentos/documento_ver.php?i={$documentos[i].id_documento}">
+                        <i class="far fa-eye text-white"></i>
+                      </a>
+
+                    
+                    </td>
+                    {/if}
+                  </tr>
+                {/section}
+                </tbody>
+              </table>
+
+      		</div>
+    	</div>
+    </div>	
+
+</div>
+
+
+{include "../../modal/modal_box.html" prueba="Tipos de trabajo"} 
+{include file="../../pie/pie_interno.html"}

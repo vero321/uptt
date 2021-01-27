@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.30, created on 2021-01-26 10:15:32
+/* Smarty version 3.1.30, created on 2021-01-26 23:51:56
   from "/home/veronica/public_html/uptt/modulos/navegacion/barra_nucleo_pnf.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_601024047e8c00_61554722',
+  'unifunc' => 'content_6010e35ce97be1_40923072',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_601024047e8c00_61554722 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6010e35ce97be1_40923072 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
         <div class="container-fluid">
         <?php if (isset($_SESSION["numero"]) == true) {?>

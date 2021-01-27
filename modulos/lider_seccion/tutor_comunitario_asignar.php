@@ -31,12 +31,12 @@ foreach ($roles as $rol) {
 	# code...
 	$privilegios=bd_roles__privilegios($rol['id']);
 	foreach ($privilegios as $privilegio) {
-		if ($privilegio['codigo'] == "TUTO_ACO") {
+		if ($privilegio['codigo'] == "TUTO_CO") {
 			$id_rol=$privilegio['id_rol'];
-
 		}
 	}
 }
+	#vq($id_rol);
 if (!isset($id_rol)) {
 	# code...
 	$respuesta=1;
@@ -67,12 +67,12 @@ if (isset($_POST['id_usuario']) and !isset($_POST['id_rol']) ){
 	#Este paso Asigna el rol a la persona
 	$id_usuario=$_POST['id_usuario'];
 	bd_asignar_tutor_comunitario($equipo,$id_rol,$id_usuario);
-	$m="Tutor Académico asignado con exito";
+	$m="Tutor comunitario asignado con exito";
     ir("../mensaje/mensaje.php?m=$m&d=../lider_seccion/lideres.php?id=$seccion");
 } elseif (isset($_POST['id_usuario']) and !isset($_POST['id_rol']) ) {
-	# Este paso Asigna la seccion al Tutor Académico sin 
+	# Este paso Asigna la seccion al Tutor comunitario sin 
 	# asignarle nuevamente el rol a la persona
-	$m="Tutor Académico asignado con exito";
+	$m="Tutor comunitario asignado con exito";
     ir("../mensaje/mensaje.php?m=$m&d=../lider_seccion/lideres.php?id=$seccion");
 }
 

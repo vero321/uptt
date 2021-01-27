@@ -5,6 +5,7 @@ include_once APP.'/modulos/config/inicializacion.php';
 $verificar=verificar();
 $smarty->assign('verificar',$verificar);
 
+#vq($_GET);
 #Esta pagina busca Un usuario para Asignarlo como Tutor Académico
 #Recibe Tres parametros 
 #El primero es la ID del la seccion, este se utiliza para retornar al usuario en la seccion correspondiente

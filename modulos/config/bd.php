@@ -2321,6 +2321,17 @@ function bd_trabajos_seccion($seccion){
     $salida = sql2array($sql);
     return $salida;
 }
+function bd_trabajos_equipos($equipo){
+    $sql="
+        SELECT *
+        FROM TRABAJOS
+        WHERE id_equipo = '{$equipo}'
+    ";
+    $salida = sql2row($sql);
+    return $salida;
+    vq($salida);
+}
+
 function bd_trabajos_datos($id=NULL, $verificar = NULL ){
     if ($id!=NULL) {
         $sql="
@@ -2587,5 +2598,26 @@ function bd_documentos($campo, $id){
         WHERE $campo LIKE '{$id}'
         ";
     $salida = sql2array($sql);
+    return $salida;
+}
+
+### Funciones tutores
+
+function bd_tutor_comunitario($id=NULL, $tutor=NULL){
+    if ($id==NULL) {
+    $sql="
+        SELECT * 
+        FROM EQUIPOS
+        WHERE {$tutor} = '{$_SESSION['u']['id']}'
+    ";
+    $salida = sql2array($sql);
+    }else{
+        $sql="
+            SELECT * 
+            FROM EQUIPOS
+            WHERE id = '{$id}'
+        ";
+        $salida = sql2row($sql);
+    }
     return $salida;
 }

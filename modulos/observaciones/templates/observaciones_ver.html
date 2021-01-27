@@ -1,9 +1,9 @@
 <div class="container">
-    <div class="d-flex justify-content-center m-2 p-3">
+    <div class="m-2 p-3">
         <h6 class="m-0 font-weight-bold text-primary">Observaciones</h6>
+      {section name=i loop=$datos}
         <div class="card-body p-1">
             <div class="row">
-              {section name=i loop=$datos}
               <div class="col-md-12">
                 <div class="media p-3">
                   {if $datos[i].id_persona != NULL}
@@ -32,8 +32,8 @@
                       
                     </div>
                 </div>
-                {/section}
             </div>
         </div>
+                {/section}
     </div>
 </div>
