@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.30, created on 2021-01-19 14:00:16
+/* Smarty version 3.1.30, created on 2021-01-27 12:49:31
   from "/home/palencia/public_html/proyecto4/uptt/modulos/navegacion/barra_nucleo_pnf.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_60071e30bbabe1_46021019',
+  'unifunc' => 'content_6011999b0e46f1_52687831',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_60071e30bbabe1_46021019 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6011999b0e46f1_52687831 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
         <div class="container-fluid">
         <?php if (isset($_SESSION["numero"]) == true) {?>

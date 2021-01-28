@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2021-01-19 12:56:52
+/* Smarty version 3.1.30, created on 2021-01-27 22:14:16
   from "/home/palencia/public_html/proyecto4/uptt/modulos/inicio/templates/inicio.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_60070f544a8ae1_73153211',
+  'unifunc' => 'content_60121df89cb8b4_78320439',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'ec65a482acdbbe193039fef6988cf6aec57df5d5' => 
     array (
       0 => '/home/palencia/public_html/proyecto4/uptt/modulos/inicio/templates/inicio.html',
-      1 => 1611073924,
+      1 => 1611800053,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:../../pie/pie_externo.html' => 1,
   ),
 ),false)) {
-function content_60070f544a8ae1_73153211 (Smarty_Internal_Template $_smarty_tpl) {
+function content_60121df89cb8b4_78320439 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:../../cabecera/cabecera.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -35,14 +35,14 @@ $_smarty_tpl->_subTemplateRender("file:../../cabecera/cabecera.html", $_smarty_t
           <div class="centro">
             
             <a class="enlace-oscuro" data-toggle="collapse" href="#explicacion" aria-expanded="false" aria-controls="explicacion">
-            <h1 class="titulo" title="Breve explicación sobre el Repositorio">repositorio institucional</h1></a>
+            <h1 class="font-weight-bold mt-3 pt-2" title="Breve explicación sobre el Repositorio">Repositorio <br> institucional</h1></a>
             <div class=""></div>
-						  <div class="collapse " id="explicacion">
-						    <div class="">
-						      Explicación sobre el Repositorio Institucional.........
-						    </div>
-						  </div>
-					</div>
+			<div class="collapse " id="explicacion">
+			    <div class="">
+			      Explicación sobre el Repositorio Institucional.........
+			    </div>
+			</div>
+		</div>
 
 
 <!--Formulario de Busqueda -->
@@ -50,7 +50,7 @@ $_smarty_tpl->_subTemplateRender("file:../../cabecera/cabecera.html", $_smarty_t
 				<!--img src="../../imagenes/logo_ini.png" style="padding-top: 50px;" class="rounded float-left" alt="logo"-->
 				<img src="../../imagenes/uptt.png" class="rounded float-right" alt="uptt">
 				<br><br><br>
-				<form class="form-group form-portada" action="buscar.php" method="get">
+				<form class="form-group form-portada" action="../buscar/buscar.php" method="get">
 				  <div class="form-group" padding="2" >
 						<label class="sr-only" for="texto">Buscar</label>
 						

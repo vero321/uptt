@@ -2589,3 +2589,38 @@ function bd_documentos($campo, $id){
     $salida = sql2array($sql);
     return $salida;
 }
+function bd_documentos_buscar($texto)
+{
+    $sql="SELECT id
+        FROM TRABAJOS
+        WHERE titulo LIKE '%{$texto}%'
+        OR resumen LIKE '%{$texto}%'
+        OR palabras_clave LIKE '%{$texto}%'";
+    return sql2ids($sql);
+}
+
+function bd_documentos_ficha($id)
+{   
+    $sql="
+        SELECT *
+        FROM TRABAJOS
+        WHERE id LIKE '{$id}'";
+    $salida = sql2row($sql);
+    $salida['carrera_id'] = bd_pnf_datos($salida['id_pnf']);
+    $salida['equipo'] = bd_equipo_personas_datos($salida['id_equipo']);
+    $lider= bd_lider_datos($salida['id_equipo']);
+    $salida['lider'] = bd_personas_datos($lider['id_persona']);
+    $tutores_id = bd_tutores_datos($salida['id_equipo']);
+    $salida['tutor_comunitario'] = bd_personas_datos($tutores_id['tutor_comunitario']);
+    $salida['tutor_academico'] = bd_personas_datos($tutores_id['tutor_academico']);
+    return $salida;
+}
+
+function bd_tutores_datos($id){
+        $sql="
+        SELECT tutor_comunitario, tutor_academico
+        FROM EQUIPOS
+        WHERE id LIKE '{$id}'";
+    $salida = sql2row($sql);
+    return $salida;
+}

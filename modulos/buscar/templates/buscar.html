@@ -1,0 +1,96 @@
+{include file="../../cabecera/cabecera.html"}
+
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <h2 class="mt-3 p-2 font-weight-bold">Resultados de la búsqueda<hr></h2>
+    </div>
+    <div class="col-8 offset-2">
+      <form class="form-group form-portada" action="buscar.php" method="get">
+                              
+      <div class="form-group" padding="2" >
+        <label class="sr-only" for="texto">Buscar</label>
+            <small class="form-text text-muted text-muted-label">
+              Para buscar por título, resumen o palabras clave, escribe aquí y 
+              haz click en [Buscar]. Si desea una búsqueda más específica, haz
+              click en [Avanzada].
+              </small>
+          <div class="input-group">
+              <input type="text" class="form-control plaintext" name="texto" id="texto" placeholder="Texto a buscar" required="required" >
+      <input 
+        class="btn btn-primary btn-sm" 
+        type="submit" 
+        name="enviar" 
+        value="Buscar">
+              <div class="input-group-addon">
+                  <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+              </div>
+          </div>
+      </div>
+      <input type="hidden" name="avanzada" value="NO">
+
+      <a
+        class="link float-left" 
+        href="buscar_avanzada.php"
+        value="Avanzada"
+        >Búsqueda Avanzada</a>
+  </form>  
+    </div>
+    <div class="col-12">
+ 
+      {section name=i loop=$d} 
+      <div class="buscar-item">  
+        <div class="buscar-titulo">  
+            <a 
+              data-href="modal_busqueda.php?id={$d[i].id}"  
+              class="mimodal"
+              title="Detalles"
+              >{$d[i].titulo}&nbsp;<i class="fa fa-share-square-o"></i></a>
+        </div> 
+
+          <span class="mb-1 text-muted"><strong>{section name=j loop=$d[i].equipo}
+            {$d[i].equipo[j].nombre} {$d[i].equipo[j].apellido}.
+          {/section}
+          {$d[i].lider.nombre} {$d[i].lider.apellido}.
+        </strong> </span>
+          <span class="mb-1 text-muted">{$d[i].fecha_mes}, {$d[i].fecha_anyo}</span>
+
+          <p class="text-justify mb-auto">{$d[i].resumen|truncate:300:"..."}.</p>
+
+          <div >
+            <strong> Palabras Clave:</strong> <span class="buscar-pclave">{$d[i].palabras_clave}</span>
+
+           
+          </div>
+        </div>
+        {/section}
+
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</div>
+
+
+
+{include "../../modal/modal_box.html" prueba="Usuario"} 
+
+{include file="../../pie/pie_externo.html"}

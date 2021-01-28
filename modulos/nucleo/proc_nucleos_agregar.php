@@ -4,7 +4,8 @@ require_once '../config/app.php';
 require_once APP."/modulos/config/inicializacion.php";
 	$nucleos = $_POST['nombre_corto'];
 	$extension = $_POST['extension'];
-
+	$carpeta = $_POST['id'];
+	
 /*	Este arccivo agrega nucleos y extenciones por igual 
 	Un nucleo debe tener nombre_corto y nombre largo mientras que una extesion debe tener nombre_corto, nombre largo e id_nucleo lo cual indica que es una extecion
 
@@ -21,10 +22,13 @@ require_once APP."/modulos/config/inicializacion.php";
 	else{	
 		if ($extension != 'NULL') { #si extencion es != a NULL se concidera como una dependecia
 		# agregar dependencia 
+			mkdir("../../tmp/$carpeta",0777);
+
 			bd_nucleos_agregar_dependencia($_POST);
 			$m="Dependencia <strong>$nucleos</strong> se agregó correctamente a la lista de nucleos.";
 			ir("../mensaje/mensaje.php?m=$m&d=../nucleo/nucleos.php");
 		}else{
+			mkdir("../../tmp/$carpeta",0777);
 			bd_nucleos_agregar($_POST);
 			$m="Nucleo <strong>$nucleos</strong> se agregó correctamente a la lista de nucleos.";
 			ir("../mensaje/mensaje.php?m=$m&d=../nucleo/nucleos.php");

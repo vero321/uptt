@@ -1,15 +1,15 @@
 <?php
-/* Smarty version 3.1.30, created on 2021-01-27 12:13:28
+/* Smarty version 3.1.30, created on 2021-01-27 12:45:56
   from "/home/palencia/public_html/proyecto4/uptt/modulos/navegacion/sidebar2.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_601191282ccdd8_31336320',
+  'unifunc' => 'content_601198c4588f07_19142688',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    '88f5101736ea475101afd21dc72266b581d937b3' => 
+    '93be11479a4483dd686c00ddc60b9814e5fa1a43' => 
     array (
       0 => '/home/palencia/public_html/proyecto4/uptt/modulos/navegacion/sidebar2.html',
       1 => 1611073924,
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_601191282ccdd8_31336320 (Smarty_Internal_Template $_smarty_tpl) {
+function content_601198c4588f07_19142688 (Smarty_Internal_Template $_smarty_tpl) {
 if (!is_callable('smarty_modifier_capitalize')) require_once '/home/palencia/public_html/proyecto4/uptt/vendor/smarty/libs/plugins/modifier.capitalize.php';
 ?>
 
@@ -55,12 +55,12 @@ if (!is_callable('smarty_modifier_capitalize')) require_once '/home/palencia/pub
       <?php ob_start();
 echo $_SESSION['actual'];
 $_prefixVariable1=ob_get_clean();
-$__section_i_2_saved = isset($_smarty_tpl->tpl_vars['__smarty_section_i']) ? $_smarty_tpl->tpl_vars['__smarty_section_i'] : false;
-$__section_i_2_loop = (is_array(@$_loop=$_SESSION[$_prefixVariable1]) ? count($_loop) : max(0, (int) $_loop));
-$__section_i_2_total = $__section_i_2_loop;
+$__section_i_1_saved = isset($_smarty_tpl->tpl_vars['__smarty_section_i']) ? $_smarty_tpl->tpl_vars['__smarty_section_i'] : false;
+$__section_i_1_loop = (is_array(@$_loop=$_SESSION[$_prefixVariable1]) ? count($_loop) : max(0, (int) $_loop));
+$__section_i_1_total = $__section_i_1_loop;
 $_smarty_tpl->tpl_vars['__smarty_section_i'] = new Smarty_Variable(array());
-if ($__section_i_2_total != 0) {
-for ($__section_i_2_iteration = 1, $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] = 0; $__section_i_2_iteration <= $__section_i_2_total; $__section_i_2_iteration++, $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']++){
+if ($__section_i_1_total != 0) {
+for ($__section_i_1_iteration = 1, $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] = 0; $__section_i_1_iteration <= $__section_i_1_total; $__section_i_1_iteration++, $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']++){
 ?>
         <?php ob_start();
 echo $_SESSION['actual'];
@@ -91,8 +91,8 @@ echo smarty_modifier_capitalize($_SESSION[$_prefixVariable6][(isset($_smarty_tpl
       <?php
 }
 }
-if ($__section_i_2_saved) {
-$_smarty_tpl->tpl_vars['__smarty_section_i'] = $__section_i_2_saved;
+if ($__section_i_1_saved) {
+$_smarty_tpl->tpl_vars['__smarty_section_i'] = $__section_i_1_saved;
 }
 ?>
 

@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.30, created on 2021-01-19 14:00:16
+/* Smarty version 3.1.30, created on 2021-01-27 12:49:31
   from "/home/palencia/public_html/proyecto4/uptt/modulos/modal/modal_galeria.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_60071e30bc2db6_21202191',
+  'unifunc' => 'content_6011999b0e9907_95503921',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_60071e30bc2db6_21202191 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6011999b0e9907_95503921 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <div class="modal fade" id="image-gallery" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">
