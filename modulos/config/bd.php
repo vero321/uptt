@@ -1218,7 +1218,7 @@ function bd_trayecto_eliminar($id){
 #Funciones trayectos PNF
 function bd_trayectos_pnf_datos($id_pnf, $id_nucleo){
     $sql="
-    SELECT DISTINCT TRAYECTOS__PNF.id, id_pnf, id_trayecto, id_nucleo, trayecto
+    SELECT DISTINCT TRAYECTOS__PNF.id, id_pnf, id_trayecto, id_nucleo, trayecto, nivel_instruccion
     FROM TRAYECTOS__PNF, TRAYECTOS
     WHERE id_pnf = '{$id_pnf}' and TRAYECTOS.id = id_trayecto and id_nucleo = '{$id_nucleo}'
     ";
@@ -1265,6 +1265,18 @@ function bd_trayecto_pnf_modificar($id, $id_trayecto){
     sql($sql);
 
 }
+
+function bd_trayectos_nivel_agregar($id, $nivel_instruccion){
+    $sql = "
+        UPDATE TRAYECTOS__PNF SET
+            nivel_instruccion = '{$nivel_instruccion}'
+        WHERE
+            id = '{$id}'
+    ";
+    sql($sql);
+
+}
+
 
 # Funciones secciones
 
@@ -2321,6 +2333,17 @@ function bd_trabajos_seccion($seccion){
     $salida = sql2array($sql);
     return $salida;
 }
+function bd_trabajos_equipos($equipo){
+    $sql="
+        SELECT *
+        FROM TRABAJOS
+        WHERE id_equipo = '{$equipo}'
+    ";
+    $salida = sql2row($sql);
+    return $salida;
+    vq($salida);
+}
+
 function bd_trabajos_datos($id=NULL, $verificar = NULL ){
     if ($id!=NULL) {
         $sql="
@@ -2589,6 +2612,7 @@ function bd_documentos($campo, $id){
     $salida = sql2array($sql);
     return $salida;
 }
+<<<<<<< HEAD
 function bd_documentos_buscar($texto)
 {
     $sql="SELECT id
@@ -2781,4 +2805,26 @@ function bd_documento_avanzada($d)
         
     }
     return $resultados;
+=======
+
+### Funciones tutores
+
+function bd_tutor_comunitario($id=NULL, $tutor=NULL){
+    if ($id==NULL) {
+    $sql="
+        SELECT * 
+        FROM EQUIPOS
+        WHERE {$tutor} = '{$_SESSION['u']['id']}'
+    ";
+    $salida = sql2array($sql);
+    }else{
+        $sql="
+            SELECT * 
+            FROM EQUIPOS
+            WHERE id = '{$id}'
+        ";
+        $salida = sql2row($sql);
+    }
+    return $salida;
+>>>>>>> d20c19ec6b0a81263dc616ce6c8db59423318c84
 }

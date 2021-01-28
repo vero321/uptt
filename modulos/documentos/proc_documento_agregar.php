@@ -7,6 +7,7 @@ include_once APP.'/modulos/config/inicializacion.php';
 #vq($_FILES);
 
 $uploads_dir = '../../tmp';
+
 foreach ($_FILES["pdf"]["error"] as $key => $error) {
     if ($error == UPLOAD_ERR_OK) {
         
@@ -14,6 +15,7 @@ foreach ($_FILES["pdf"]["error"] as $key => $error) {
             
             $tmp_name = $_FILES["pdf"]["tmp_name"][$key];
             $nuevo_nombre = uniqid();
+             
             move_uploaded_file($tmp_name, "$uploads_dir/{$nuevo_nombre}.pdf");
             $datos = array(
                 'id_trabajo' => $_POST['id_trabajo'] ,
@@ -22,7 +24,6 @@ foreach ($_FILES["pdf"]["error"] as $key => $error) {
                 'fecha' =>date('Y-m-d')
              );
             bd_documento_agregar($datos);
-            
         }
     }
 }

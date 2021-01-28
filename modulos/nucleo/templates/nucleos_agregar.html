@@ -1,8 +1,8 @@
 
 <div class="container py-4">
   <div class="alert alert-info alert-dismissible fade show" role="alert">
-    <strong>Atencion.</strong><br> Para una Extensión debes rellenar los campos y selecionar un nucleo y dar click en registar.
-    <br>Para agregar un Nucleo solo debes Rellenar los campos y dar click en registar
+    <strong>Atencion.</strong><br> Para una Extensión debes rellenar los campos y selecionar un núcleo y dar click en registar.
+    <br>Para agregar un Núcleo solo debes Rellenar los campos y dar click en registar
     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
       <span aria-hidden="true">&times;</span>
     </button>
@@ -10,7 +10,7 @@
   <section id="intro">
     <div class="container">
       <div class="centro"> 
-        <h2>Agreagar Nucleo o Extensión</h2>
+        <h2>Agreagar Núcleo o Extensión</h2>
           <form 
           action="proc_nucleos_agregar.php" 
           method="POST" 
@@ -22,7 +22,7 @@
               <label for="nombre_largo">Nombre Completo</label>
               <input 
                 type="text" 
-                title="Escriba el Nombre Completo del Nucleo" 
+                title="Escriba el Nombre Completo del Núcleo" 
                 required="required" 
                 class="form-control" 
                 id="nombre_largo" 
@@ -34,7 +34,7 @@
               <label for="nombre_corto">Nombre Abreviado</label>
               <input 
               	type="text" 
-              	title="Escriba el Nombre Abreviado del Nucleo" 
+              	title="Escriba el Nombre Abreviado del Núcleo" 
               	required="required" 
               	class="form-control" 
               	id="nombre_corto" 
@@ -43,7 +43,7 @@
             </div>
 
             <div class="form-group">
-              <label for="exampleFormControlSelect1">Nucleos</label>
+              <label for="exampleFormControlSelect1">Núcleos</label>
                 <select class="form-control" id="extencion" name="extension">
                 <option class="form-control" value="NULL" id="-----">----</option>
                 {section name=i loop= $nucleos}

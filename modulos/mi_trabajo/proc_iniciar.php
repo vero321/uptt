@@ -27,5 +27,5 @@ if ($seccion['id_tipo_de_documento'] != NULL) {
 	$m="El trabajo se inico correctamente.";
 	ir("../mensaje/mensaje_retorno.php?m=$m");
 }
-$m="Aun  no puedes iniciar un trabajo, esto se debe a que el aun no se ha asignado un tipo de documento a tu sección";
+$m="Aún no puedes iniciar un trabajo, esto se debe a que el docente asesor aún no ha asignado un tipo de documento a tu sección";
 ir("../mensaje/mensaje_retorno.php?m=$m");
