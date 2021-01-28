@@ -2612,14 +2612,21 @@ function bd_documentos($campo, $id){
     $salida = sql2array($sql);
     return $salida;
 }
-<<<<<<< HEAD
-function bd_documentos_buscar($texto)
-{
+
+function bd_documentos_buscar($texto){
     $sql="SELECT id
         FROM TRABAJOS
         WHERE (titulo LIKE '%{$texto}%'
         OR resumen LIKE '%{$texto}%'
         OR palabras_clave LIKE '%{$texto}%') AND status = 'PUBLICADO'";
+    return sql2ids($sql);
+}
+function bd_documentos_buscar_nucleo($datos){
+    $sql="SELECT id
+        FROM TRABAJOS
+        WHERE id_pnf LIKE '{$datos['p']}'
+        AND id_nucleo LIKE '%{$datos['n']}%' AND status = 'PUBLICADO'
+        ";
     return sql2ids($sql);
 }
 
@@ -2650,8 +2657,7 @@ function bd_tutores_datos($id){
     return $salida;
 }
 
-function bd_documento_avanzada($d)
-{
+function bd_documento_avanzada($d){
     $resultados = [];
     $nproc = 0;
     foreach ($d['campo'] as $i => $campo)
@@ -2805,8 +2811,8 @@ function bd_documento_avanzada($d)
         
     }
     return $resultados;
-=======
 
+}
 ### Funciones tutores
 
 function bd_tutor_comunitario($id=NULL, $tutor=NULL){
@@ -2826,5 +2832,5 @@ function bd_tutor_comunitario($id=NULL, $tutor=NULL){
         $salida = sql2row($sql);
     }
     return $salida;
->>>>>>> d20c19ec6b0a81263dc616ce6c8db59423318c84
+
 }

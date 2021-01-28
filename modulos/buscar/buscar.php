@@ -30,7 +30,5 @@ foreach ($ids as $z)
 }
 
 
-
-#$smarty->assign('pie', file_get_contents('pie/personas.html'));
 $smarty->assign('d', $d);
 $smarty->display('buscar.html');

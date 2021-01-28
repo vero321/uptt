@@ -3,7 +3,7 @@
 <div class="container">
   <div class="row">
 
-    <div class="col-8 my-3 mx-4 p-2">
+    <div class="col-8 my-2 mx-4 p-2">
       <form class="form-group form-portada" action="buscar.php" method="get">
                               
       <div class="form-group" padding="2" >
@@ -34,7 +34,10 @@
         >Búsqueda Avanzada</a>
   </form>  
     </div>
-    <div class="col-10 mx-4">
+    <div class="col-10  mx-5 p-2">
+		<h2 class="" title="Nucleo Beatriz">{$nucleo.nombre_corto} <a href="buscar_nucleo.php?id={$nucleo.id}"><i class="fa fa-share-square-o"></i></a></h2>
+    </div>
+    <div class="col-10 mx-4 p-1">
  
       {section name=i loop=$d} 
       <div class="buscar-item mt-3 py-2">  

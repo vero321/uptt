@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2021-01-27 15:36:39
+/* Smarty version 3.1.30, created on 2021-01-28 12:19:08
   from "/home/palencia/public_html/proyecto4/uptt/modulos/pie/pie_interno2.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_6011c0c771e244_30958063',
+  'unifunc' => 'content_6012e3fc5a8636_98524279',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'f92e324e173adec729d0f677f22c9d4ed977cc57' => 
     array (
       0 => '/home/palencia/public_html/proyecto4/uptt/modulos/pie/pie_interno2.html',
-      1 => 1611073924,
+      1 => 1611850487,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6011c0c771e244_30958063 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6012e3fc5a8636_98524279 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
     <!-- Scroll to Top Button-->
   <a class="scroll-to-top rounded" href="#page-top">
@@ -48,7 +48,7 @@ function content_6011c0c771e244_30958063 (Smarty_Internal_Template $_smarty_tpl)
 <!--Comienzo del Pie de Página-->
 
 
-      <footer class="sticky-footer bg-gray-300">
+      <footer class="sticky-footer bg-gray-300 pie_interno2 ">
 
         <div class="container my-auto">
           <div class="copyright text-center ">
