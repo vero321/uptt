@@ -2593,9 +2593,9 @@ function bd_documentos_buscar($texto)
 {
     $sql="SELECT id
         FROM TRABAJOS
-        WHERE titulo LIKE '%{$texto}%'
+        WHERE (titulo LIKE '%{$texto}%'
         OR resumen LIKE '%{$texto}%'
-        OR palabras_clave LIKE '%{$texto}%'";
+        OR palabras_clave LIKE '%{$texto}%') AND status = 'PUBLICADO'";
     return sql2ids($sql);
 }
 
@@ -2609,6 +2609,7 @@ function bd_documentos_ficha($id)
     $salida['carrera_id'] = bd_pnf_datos($salida['id_pnf']);
     $salida['equipo'] = bd_equipo_personas_datos($salida['id_equipo']);
     $lider= bd_lider_datos($salida['id_equipo']);
+    #vq($salida);
     $salida['lider'] = bd_personas_datos($lider['id_persona']);
     $tutores_id = bd_tutores_datos($salida['id_equipo']);
     $salida['tutor_comunitario'] = bd_personas_datos($tutores_id['tutor_comunitario']);
@@ -2623,4 +2624,161 @@ function bd_tutores_datos($id){
         WHERE id LIKE '{$id}'";
     $salida = sql2row($sql);
     return $salida;
+}
+
+function bd_documento_avanzada($d)
+{
+    $resultados = [];
+    $nproc = 0;
+    foreach ($d['campo'] as $i => $campo)
+    {
+        $temp = [];
+        switch ($campo)
+        {
+            case 'titulo':
+                if ($nproc == 0)
+                {
+                    $sql = "SELECT id FROM TRABAJOS
+                            WHERE titulo LIKE '%{$d['texto'][$i]}%'";
+                    $resultados = sql2ids($sql);
+                    $nproc++;
+                }else{
+                    $ids=join(',',$resultados);
+                    $sql = "SELECT id FROM TRABAJOS
+                            WHERE titulo LIKE '%{$d['texto'][$i]}%'
+                            AND id IN ({$ids})";
+                    $resultados = sql2ids($sql);
+                }
+                #vq([$z,$sql]);
+                break;
+            case 'resumen':
+                if ($nproc == 0)
+                {
+                    $sql = "SELECT id FROM TRABAJOS
+                            WHERE resumen LIKE '%{$d['texto'][$i]}%'";
+                    $resultados = sql2ids($sql);
+                    $nproc++;
+                }else{
+                    $ids=join(',',$resultados);
+                    $sql = "SELECT id FROM TRABAJOS
+                            WHERE resumen LIKE '%{$d['texto'][$i]}%'
+                            AND id IN ({$ids})";
+                    $resultados = sql2ids($sql);
+                    
+                }
+                break;
+            case 'mes':
+                if ($nproc == 0)
+                {
+                    $sql = "SELECT id FROM TRABAJOS
+                            WHERE fecha_mes LIKE '%{$d['texto'][$i]}%'";
+                    $resultados = sql2ids($sql);
+                    $nproc++;
+                }else{
+                    $ids=join(',',$resultados);
+                    $sql = "SELECT id FROM TRABAJOS
+                            WHERE fecha_mes LIKE '%{$d['texto'][$i]}%'
+                            AND id IN ({$ids})";
+                    $resultados = sql2ids($sql);
+                }
+                break;
+            case 'anyo':
+                if ($nproc == 0)
+                {
+                    $sql = "SELECT id FROM TRABAJOS
+                            WHERE fecha_anyo LIKE '%{$d['texto'][$i]}%'";
+                    $resultados = sql2ids($sql);
+                    $nproc++;
+                }else{
+                    $ids=join(',',$resultados);
+                    $sql = "SELECT id FROM TRABAJOS
+                            WHERE fecha_anyo LIKE '%{$d['texto'][$i]}%'
+                            AND id IN ({$ids})";
+                    $resultados = sql2ids($sql);
+                }
+                break;
+            case 'p_clave':
+                if ($nproc == 0)
+                {
+                    $sql = "SELECT id FROM TRABAJOS
+                            WHERE palabras_clave LIKE '%{$d['texto'][$i]}%'";
+                    $resultados = sql2ids($sql);
+                    $nproc++;
+                }else{
+                    $ids=join(',',$resultados);
+                    $sql = "SELECT id FROM TRABAJOS
+                            WHERE palabras_clave LIKE '%{$d['texto'][$i]}%'
+                            AND id IN ({$ids})";
+                    $resultados = sql2ids($sql);
+                }
+                break;
+            case 'autor':
+                if ($nproc == 0)
+                {
+                    $sql = "SELECT documento_id id FROM autores
+                            WHERE nombre LIKE '%{$d['texto'][$i]}%'
+                            OR apellido LIKE '%{$d['texto'][$i]}%'
+                            OR persona_id LIKE '%{$d['texto'][$i]}%'
+                            ";
+                    $resultados = sql2ids($sql);
+                    $nproc++;
+                }else{
+                    $ids=join(',',$resultados);
+                    $sql = "SELECT documento_id id FROM autores
+                            WHERE nombre LIKE '%{$d['texto'][$i]}%'
+                            OR apellido LIKE '%{$d['texto'][$i]}%'
+                            OR persona_id LIKE '%{$d['texto'][$i]}%'
+                            AND documento_id IN ({$ids})";
+                    $resultados = sql2ids($sql);
+                }
+                
+                break;
+            case 'tutor':
+                if ($nproc == 0)
+                {
+                    $sql = "SELECT documento_id id FROM tutores
+                            WHERE nombre LIKE '%{$d['texto'][$i]}%'
+                            OR apellido LIKE '%{$d['texto'][$i]}%'
+                            OR persona_id LIKE '%{$d['texto'][$i]}%'
+                            ";
+                    $resultados = sql2ids($sql);
+                    $nproc++;
+                }else{
+                    $ids=join(',',$resultados);
+                    $sql = "SELECT documento_id id FROM tutores
+                            WHERE nombre LIKE '%{$d['texto'][$i]}%'
+                            OR apellido LIKE '%{$d['texto'][$i]}%'
+                            OR persona_id LIKE '%{$d['texto'][$i]}%'
+                            AND documento_id IN ({$ids})";
+                    $resultados = sql2ids($sql);
+                }
+                break;
+            case 'otro':
+                if ($nproc == 0)
+                {
+                    $sql = "SELECT documento_id id FROM tutores
+                            WHERE nombre LIKE '%{$d['texto'][$i]}%'
+                            OR apellido LIKE '%{$d['texto'][$i]}%'
+                            OR persona_id LIKE '%{$d['texto'][$i]}%'
+                            ";
+                    $resultados = sql2ids($sql);
+                    $nproc++;
+                }else{
+                    $ids=join(',',$resultados);
+                    $sql = "SELECT documento_id id FROM tutores
+                            WHERE nombre LIKE '%{$d['texto'][$i]}%'
+                            OR apellido LIKE '%{$d['texto'][$i]}%'
+                            OR persona_id LIKE '%{$d['texto'][$i]}%'
+                            AND documento_id IN ({$ids})";
+                    $resultados = sql2ids($sql);
+                }
+                break;
+            case 'carrera':
+                # code...
+                break;
+
+        }
+        
+    }
+    return $resultados;
 }

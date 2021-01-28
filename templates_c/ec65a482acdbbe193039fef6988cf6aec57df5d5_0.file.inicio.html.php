@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2021-01-27 22:14:16
+/* Smarty version 3.1.30, created on 2021-01-28 11:10:07
   from "/home/palencia/public_html/proyecto4/uptt/modulos/inicio/templates/inicio.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_60121df89cb8b4_78320439',
+  'unifunc' => 'content_6012d3cfd5c280_20159389',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'ec65a482acdbbe193039fef6988cf6aec57df5d5' => 
     array (
       0 => '/home/palencia/public_html/proyecto4/uptt/modulos/inicio/templates/inicio.html',
-      1 => 1611800053,
+      1 => 1611846604,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:../../pie/pie_externo.html' => 1,
   ),
 ),false)) {
-function content_60121df89cb8b4_78320439 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6012d3cfd5c280_20159389 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:../../cabecera/cabecera.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -34,8 +34,8 @@ $_smarty_tpl->_subTemplateRender("file:../../cabecera/cabecera.html", $_smarty_t
         <div class="col-md-8 offset-md-2 col-sm-12">
           <div class="centro">
             
-            <a class="enlace-oscuro" data-toggle="collapse" href="#explicacion" aria-expanded="false" aria-controls="explicacion">
-            <h1 class="font-weight-bold mt-3 pt-2" title="Breve explicación sobre el Repositorio">Repositorio <br> institucional</h1></a>
+            <a class="text-decoration-none" data-toggle="collapse" href="#explicacion" aria-expanded="false" aria-controls="explicacion">
+            <h1 class="text-gray-900 mt-3 pt-2" title="Breve explicación sobre el Repositorio">Repositorio <br> institucional</h1></a>
             <div class=""></div>
 			<div class="collapse " id="explicacion">
 			    <div class="">
@@ -74,7 +74,7 @@ $_smarty_tpl->_subTemplateRender("file:../../cabecera/cabecera.html", $_smarty_t
 					</div>
 					<input type="hidden" name="avanzada" value="NO">
 				</form>
-				  <a class="link float-left btn btn-light" href="buscar_avanzada.php"value="Avanzada"><i class="fa fa-search-plus fa-lg"></i>Búsqueda Avanzada</a>
+				  <a class="link float-left btn btn-light" href="../buscar/buscar_avanzada.php"value="Avanzada"><i class="fa fa-search-plus fa-lg"></i>Búsqueda Avanzada</a>
 		</div>
 	</div>
 			

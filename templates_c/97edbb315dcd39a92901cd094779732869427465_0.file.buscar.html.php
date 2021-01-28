@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2021-01-27 23:20:18
+/* Smarty version 3.1.30, created on 2021-01-28 11:05:00
   from "/home/palencia/public_html/proyecto4/uptt/modulos/buscar/templates/buscar.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_60122d72d5b589_38871853',
+  'unifunc' => 'content_6012d29c420245_28568140',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '97edbb315dcd39a92901cd094779732869427465' => 
     array (
       0 => '/home/palencia/public_html/proyecto4/uptt/modulos/buscar/templates/buscar.html',
-      1 => 1611804017,
+      1 => 1611846299,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:../../pie/pie_externo.html' => 1,
   ),
 ),false)) {
-function content_60122d72d5b589_38871853 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6012d29c420245_28568140 (Smarty_Internal_Template $_smarty_tpl) {
 if (!is_callable('smarty_modifier_truncate')) require_once '/home/palencia/public_html/proyecto4/uptt/vendor/smarty/libs/plugins/modifier.truncate.php';
 $_smarty_tpl->_subTemplateRender("file:../../cabecera/cabecera.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
@@ -31,23 +31,16 @@ $_smarty_tpl->_subTemplateRender("file:../../cabecera/cabecera.html", $_smarty_t
 
 <div class="container">
   <div class="row">
-    <div class="col-12">
-      <h2 class="mt-3 p-2 font-weight-bold">Resultados de la búsqueda<hr></h2>
-    </div>
-    <div class="col-8 offset-2">
+
+    <div class="col-8 my-2 mx-4 p-2">
       <form class="form-group form-portada" action="buscar.php" method="get">
                               
       <div class="form-group" padding="2" >
         <label class="sr-only" for="texto">Buscar</label>
-            <small class="form-text text-muted text-muted-label">
-              Para buscar por título, resumen o palabras clave, escribe aquí y 
-              haz click en [Buscar]. Si desea una búsqueda más específica, haz
-              click en [Avanzada].
-              </small>
           <div class="input-group">
               <input type="text" class="form-control plaintext" name="texto" id="texto" placeholder="Texto a buscar" required="required" >
       <input 
-        class="btn btn-primary btn-sm" 
+        class="btn btn-light btn-sm" 
         type="submit" 
         name="enviar" 
         value="Buscar">
@@ -56,16 +49,21 @@ $_smarty_tpl->_subTemplateRender("file:../../cabecera/cabecera.html", $_smarty_t
               </div>
           </div>
       </div>
+      <small class="form-text text-muted text-muted-label">
+              Para buscar por título, resumen o palabras clave, escribe aquí y 
+              haz click en [Buscar]. Si desea una búsqueda más específica, haz
+              click en [Avanzada].
+              </small>
       <input type="hidden" name="avanzada" value="NO">
 
       <a
-        class="link float-left" 
+        class="btn btn-link float-left " 
         href="buscar_avanzada.php"
         value="Avanzada"
         >Búsqueda Avanzada</a>
   </form>  
     </div>
-    <div class="col-12">
+    <div class="col-10 my-2 mx-4 p-2">
  
       <?php
 $__section_i_0_saved = isset($_smarty_tpl->tpl_vars['__smarty_section_i']) ? $_smarty_tpl->tpl_vars['__smarty_section_i'] : false;
