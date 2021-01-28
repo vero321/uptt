@@ -1218,7 +1218,7 @@ function bd_trayecto_eliminar($id){
 #Funciones trayectos PNF
 function bd_trayectos_pnf_datos($id_pnf, $id_nucleo){
     $sql="
-    SELECT DISTINCT TRAYECTOS__PNF.id, id_pnf, id_trayecto, id_nucleo, trayecto
+    SELECT DISTINCT TRAYECTOS__PNF.id, id_pnf, id_trayecto, id_nucleo, trayecto, nivel_instruccion
     FROM TRAYECTOS__PNF, TRAYECTOS
     WHERE id_pnf = '{$id_pnf}' and TRAYECTOS.id = id_trayecto and id_nucleo = '{$id_nucleo}'
     ";
@@ -1265,6 +1265,18 @@ function bd_trayecto_pnf_modificar($id, $id_trayecto){
     sql($sql);
 
 }
+
+function bd_trayectos_nivel_agregar($id, $nivel_instruccion){
+    $sql = "
+        UPDATE TRAYECTOS__PNF SET
+            nivel_instruccion = '{$nivel_instruccion}'
+        WHERE
+            id = '{$id}'
+    ";
+    sql($sql);
+
+}
+
 
 # Funciones secciones
 

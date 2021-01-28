@@ -4,14 +4,14 @@
 {include file="../../navegacion/barra_nucleo_pnf.html"}
 
 
-    <div class="container-fluid">
-    <ol class="breadcrumb">
-      <li class="breadcrumb-item"><a href="../inicio/inicio_interno.php">Repo</a></li>
-      <li class="breadcrumb-item"><a href="../distribuidor/distribuidor.php?r={$smarty.session['r'][$smarty.session['numero']].id_rol}&n={$smarty.session['numero']}">Panel {$smarty.session["r"][$smarty.session["numero"]].rol}</a></li>
-      <li class="breadcrumb-item active" aria-current="page">Núcleos y Extenciones</li>
-    </ol>
-        <h2 class="text-primary my-3"><span class="badge badge-secondary badge-pill">{$n_nucleos}</span> Núcleos y Extensiones
-        </h2>
+<div class="container-fluid">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="../inicio/inicio_interno.php">Repo</a></li>
+    <li class="breadcrumb-item"><a href="../distribuidor/distribuidor.php?r={$smarty.session['r'][$smarty.session['numero']].id_rol}&n={$smarty.session['numero']}">Panel {$smarty.session["r"][$smarty.session["numero"]].rol}</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Núcleos y Extenciones</li>
+  </ol>
+    <h2 class="text-primary my-3"><span class="badge badge-secondary badge-pill">{$n_nucleos}</span> Núcleos y Extensiones
+    </h2>
       <div class="card">
         <div class="card-header pb-0 d-flex justify-content-between">
           <ul class="nav nav-tabs" id="myTab" role="tablist">
@@ -201,6 +201,7 @@
         </div>
         
       </div>
+    </div>
 
 
 
