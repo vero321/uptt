@@ -1,0 +1,5 @@
+#
+#ignora los archivos de la carpeta templates_c
+#
+templates_c/*
+.phpintel/
