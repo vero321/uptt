@@ -1218,7 +1218,7 @@ function bd_trayecto_eliminar($id){
 #Funciones trayectos PNF
 function bd_trayectos_pnf_datos($id_pnf, $id_nucleo){
     $sql="
-    SELECT DISTINCT TRAYECTOS__PNF.id, id_pnf, id_trayecto, id_nucleo, trayecto, nivel_instruccion
+    SELECT DISTINCT TRAYECTOS__PNF.id, id_pnf, id_trayecto, id_nucleo, trayecto
     FROM TRAYECTOS__PNF, TRAYECTOS
     WHERE id_pnf = '{$id_pnf}' and TRAYECTOS.id = id_trayecto and id_nucleo = '{$id_nucleo}'
     ";

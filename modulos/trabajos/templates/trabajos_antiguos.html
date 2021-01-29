@@ -28,18 +28,17 @@
                 </thead>
                 <tbody>
 
-                {section name=i loop=$trabajos}
+                {section name=i loop=$archivos}
                   <tr>
-                    <td>{$trabajos[i].titulo}</td>
+                    <td>{$archivos[i]}</td>
                     <td>
-                    {if in_array("DOCR_L",$verificar) == TRUE}
-                      <a 
-                        class="btn btn-success btn-circle btn-sm"
+                    <a 
+                        class="btn btn-success btn-circle btn-sm mimodal" 
                         title="Modificar tipo de documento" 
-                        href="documentos_trabajo.php?id={$trabajos[i].id}">
-                        <i class="far fa-folder-open text-white"></i>
+                        data-href="../documentos/documento_ver.php?i={$archivos[i]}">
+                        <i class="far fa-eye text-white"></i>
                       </a>
-                    {/if}
+
                     
                     </td>
                   </tr>
