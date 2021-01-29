@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2021-01-27 12:13:28
+/* Smarty version 3.1.30, created on 2021-01-28 22:40:36
   from "/home/palencia/public_html/proyecto4/uptt/modulos/nucleo/templates/nucleos.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_601191281dee96_12525725',
+  'unifunc' => 'content_601375a453dd66_52186941',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'ee9d64601516d66e66d46081bf44a647ea1084e1' => 
     array (
       0 => '/home/palencia/public_html/proyecto4/uptt/modulos/nucleo/templates/nucleos.html',
-      1 => 1611073924,
+      1 => 1611850487,
       2 => 'file',
     ),
   ),
@@ -27,7 +27,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:../../pie/pie_interno.html' => 1,
   ),
 ),false)) {
-function content_601191281dee96_12525725 (Smarty_Internal_Template $_smarty_tpl) {
+function content_601375a453dd66_52186941 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:../../navegacion/cab.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -42,23 +42,23 @@ $_smarty_tpl->_subTemplateRender("file:../../navegacion/cab.html", $_smarty_tpl-
 
 
 
-    <div class="container-fluid">
-    <ol class="breadcrumb">
-      <li class="breadcrumb-item"><a href="../inicio/inicio_interno.php">Repo</a></li>
-      <li class="breadcrumb-item"><a href="../distribuidor/distribuidor.php?r=<?php echo $_SESSION['r'][$_SESSION['numero']]['id_rol'];?>
+<div class="container-fluid">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="../inicio/inicio_interno.php">Repo</a></li>
+    <li class="breadcrumb-item"><a href="../distribuidor/distribuidor.php?r=<?php echo $_SESSION['r'][$_SESSION['numero']]['id_rol'];?>
 &n=<?php echo $_SESSION['numero'];?>
 ">Panel <?php echo $_SESSION["r"][$_SESSION["numero"]]['rol'];?>
 </a></li>
-      <li class="breadcrumb-item active" aria-current="page">Nucleos y Extenciones</li>
-    </ol>
-        <h2 class="text-primary my-3"><span class="badge badge-secondary badge-pill"><?php echo $_smarty_tpl->tpl_vars['n_nucleos']->value;?>
-</span> Nucleos y Extensiones
-        </h2>
+    <li class="breadcrumb-item active" aria-current="page">Núcleos y Extenciones</li>
+  </ol>
+    <h2 class="text-primary my-3"><span class="badge badge-secondary badge-pill"><?php echo $_smarty_tpl->tpl_vars['n_nucleos']->value;?>
+</span> Núcleos y Extensiones
+    </h2>
       <div class="card">
         <div class="card-header pb-0 d-flex justify-content-between">
           <ul class="nav nav-tabs" id="myTab" role="tablist">
             <li class="nav-item">
-              <a class="nav-link active" id="nucleos-tab" data-toggle="tab" href="#nucleos" role="tab" aria-controls="nucleos" aria-selected="true">Nucleos</a>
+              <a class="nav-link active" id="nucleos-tab" data-toggle="tab" href="#nucleos" role="tab" aria-controls="nucleos" aria-selected="true">Núcleos</a>
             </li>
             
             <li class="nav-item">
@@ -67,7 +67,7 @@ $_smarty_tpl->_subTemplateRender("file:../../navegacion/cab.html", $_smarty_tpl-
           </ul>
              <?php if (in_array("NUCL_A",$_smarty_tpl->tpl_vars['verificar']->value) == TRUE) {?>
              <a class="btn  btn-primary btn-circle mimodal mimodal float-right" type="button" 
-            data-href="nucleos_agregar.php" title="Agregar nucleo o extensión"><span class="fa fa-plus text-white"></span></a>
+            data-href="nucleos_agregar.php" title="Agregar núcleo o extensión"><span class="fa fa-plus text-white"></span></a>
           <?php }?>
         
         </div>
@@ -106,7 +106,7 @@ for ($__section_i_0_iteration = 1, $_smarty_tpl->tpl_vars['__smarty_section_i']-
                       <?php if (in_array("NUCL_M",$_smarty_tpl->tpl_vars['verificar']->value) == TRUE) {?>
                       <a 
                         class="btn btn-info btn-circle btn-sm mimodal"
-                        title="Modificar Nucleo o Extensión" 
+                        title="Modificar Núcleo o Extensión" 
                         data-href="nucleos_modificar.php?id=<?php echo $_smarty_tpl->tpl_vars['nucleos']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['id'];?>
 ">
                         <i class="fa fa-edit text-white"></i>
@@ -115,7 +115,7 @@ for ($__section_i_0_iteration = 1, $_smarty_tpl->tpl_vars['__smarty_section_i']-
                       <?php if (in_array("NUCL_E",$_smarty_tpl->tpl_vars['verificar']->value) == TRUE) {?>
                       <a 
                         class="btn btn-danger btn-circle btn-sm mimodal"
-                        title="Eliminar Nucleo o Extensión" 
+                        title="Eliminar Núcleo o Extensión" 
                         data-href="nucleos_eliminar.php?id=<?php echo $_smarty_tpl->tpl_vars['nucleos']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['id'];?>
 ">
                         <i class="fa fa-trash text-white"></i>
@@ -127,7 +127,7 @@ for ($__section_i_0_iteration = 1, $_smarty_tpl->tpl_vars['__smarty_section_i']-
                         <td>
                           <?php if ($_smarty_tpl->tpl_vars['nucleos']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['responsable'] == NULL) {?>
                             <a class="btn btn-sm btn-circle btn-outline-primary" type="button" href="nucleo_responsable.php?id=<?php echo $_smarty_tpl->tpl_vars['nucleos']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['id'];?>
-" title="Asignar responsable Nucleo o Extensión"><span class="fa fa-plus"></span></a>
+" title="Asignar responsable Núcleo o Extensión"><span class="fa fa-plus"></span></a>
                           <?php } else { ?>
                             <?php $_smarty_tpl->_assignInScope('persona', bd_personas_datos($_smarty_tpl->tpl_vars['nucleos']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['responsable']));
 ?>
@@ -220,7 +220,7 @@ for ($__section_i_1_iteration = 1, $_smarty_tpl->tpl_vars['__smarty_section_i']-
                       <a 
                         style="margin-bottom:3px; color:blue;" 
                         class="btn btn-info btn-circle btn-sm mimodal" 
-                        title="Modificar Nucleo o Extensión" 
+                        title="Modificar Núcleo o Extensión" 
                         data-href="nucleos_modificar.php?id=<?php echo $_smarty_tpl->tpl_vars['nucleos']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['id'];?>
 ">
                         <i class="fa fa-edit text-white"></i>
@@ -229,7 +229,7 @@ for ($__section_i_1_iteration = 1, $_smarty_tpl->tpl_vars['__smarty_section_i']-
                       <?php if (in_array("NUCL_E",$_smarty_tpl->tpl_vars['verificar']->value) == TRUE) {?>
                       <a 
                         class="btn btn-danger btn-circle btn-sm mimodal"
-                        title="Eliminar Nucleo o Extensión" 
+                        title="Eliminar Núcleo o Extensión" 
                         data-href="nucleos_eliminar.php?id=<?php echo $_smarty_tpl->tpl_vars['nucleos']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['id'];?>
 ">
                         <i class="fa fa-trash text-white"></i>
@@ -241,7 +241,7 @@ for ($__section_i_1_iteration = 1, $_smarty_tpl->tpl_vars['__smarty_section_i']-
                         <td>
                           <?php if ($_smarty_tpl->tpl_vars['nucleos']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['responsable'] == NULL) {?>
                             <a class="btn btn-sm btn-circle btn-outline-primary" type="button" href="nucleo_responsable.php?id=<?php echo $_smarty_tpl->tpl_vars['nucleos']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['id'];?>
-" title="Asignar responsable Nucleo o Extensión"><span class="fa fa-plus"></span></a>
+" title="Asignar responsable Núcleo o Extensión"><span class="fa fa-plus"></span></a>
                           <?php } else { ?>
                             <?php $_smarty_tpl->_assignInScope('persona', bd_personas_datos($_smarty_tpl->tpl_vars['nucleos']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['responsable']));
 ?>
@@ -299,6 +299,7 @@ $_smarty_tpl->tpl_vars['__smarty_section_i'] = $__section_i_1_saved;
         </div>
         
       </div>
+    </div>
 
 
 

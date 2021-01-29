@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2021-01-28 09:40:42
+/* Smarty version 3.1.30, created on 2021-01-28 22:39:11
   from "/home/palencia/public_html/proyecto4/uptt/modulos/personas/templates/personas_datos.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_6012beda1ba6d7_99947144',
+  'unifunc' => 'content_6013754f091254_18351347',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '060b5185ec40eb173003ae13d6cf78d6ecbe41b2' => 
     array (
       0 => '/home/palencia/public_html/proyecto4/uptt/modulos/personas/templates/personas_datos.html',
-      1 => 1611106315,
+      1 => 1611850487,
       2 => 'file',
     ),
   ),
@@ -24,7 +24,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:../../pie/pie_interno.html' => 1,
   ),
 ),false)) {
-function content_6012beda1ba6d7_99947144 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6013754f091254_18351347 (Smarty_Internal_Template $_smarty_tpl) {
 if (!is_callable('smarty_modifier_capitalize')) require_once '/home/palencia/public_html/proyecto4/uptt/vendor/smarty/libs/plugins/modifier.capitalize.php';
 $_smarty_tpl->_subTemplateRender("file:../../navegacion/cab.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
@@ -36,28 +36,20 @@ $_smarty_tpl->_subTemplateRender("file:../../navegacion/cab.html", $_smarty_tpl-
 <style>
 .dropdown {
   position: relative;
-  display: inline-block;
 }
 
 .dropdown-content {
   display: none;
   position: relative;
-  background-color: #D3D7CF;
   min-width: 320px;
   min-height: 50px;
-  box-shadow: 0px 8px 10px 0px rgba(0,0,0,0.2);
   padding: 10px 12px 0;
   z-index: 1;
-  border-radius: 30px;
 
 }
-.dropdown-content p{
-
-  text-align: justify;
-  letter-spacing: 2px;
-  color:black;
+.dropdown-content div{
+  margin-left: -26px;
 }
-
 .dropdown:hover .dropdown-content {
   display: block;
 }
@@ -79,13 +71,12 @@ $_smarty_tpl->_subTemplateRender("file:../../navegacion/cab.html", $_smarty_tpl-
                     <img class="img-thumbnail rounded-circle img-perfil"
                          src="../../imagenes/perfil/<?php echo $_SESSION['u']['foto_perfil'];?>
 "
-                         alt="User profile picture"
+                         alt="User profile picture" 
                          >
                       </a>
                     <?php }?>
                       <div class="dropdown-content">
-                      <p>Al presionar la imagen, se abrirá una ventana emergente
-                       que permitira modificar la misma</p>
+                      <div class="alert alert-dark p-1">Al presionar la imagen, se abrirá una ventana emergente que permitirá modificar la misma</div>
                       </div>
                     </div>
                     
@@ -124,7 +115,7 @@ $_smarty_tpl->_subTemplateRender("file:../../navegacion/cab.html", $_smarty_tpl-
                       <i class="fa fa-edit fa-fw"></i>
                     </a>
                     <div class="dropdown-content">
-                    <p>Hello World!</p>
+                    <div class="alert alert-dark p-1 text-center">Al presionar el botón, se abrirá una ventana emergente que permitirá modificar sus datos</div>
                     </div>
                   </div>
 
@@ -134,7 +125,7 @@ $_smarty_tpl->_subTemplateRender("file:../../navegacion/cab.html", $_smarty_tpl-
                     <i class="fa fa-unlock-alt fa-sm fa-fw"></i>
                     </a>
                     <div class="dropdown-content">
-                    <p>Hello World!</p>
+                    <div class="alert alert-dark p-1 text-center">Al presionar la imagen, se abrirá una ventana emergente que permitirá su clave de acceso</div>
                     </div>
                   </div>
                   
