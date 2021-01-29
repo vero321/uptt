@@ -20,6 +20,8 @@ $n=$_GET['n'];
 $r=$_SESSION['actual']=$rol;
 $n=$_SESSION['numero']=$n;
 
+
+
 #vq($_SESSION);
 
 $privilegios=bd_roles__privilegios($rol);
